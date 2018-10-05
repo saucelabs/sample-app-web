@@ -1,0 +1,24 @@
+{
+  "name": "sample-app-web",
+  "version": "1.0.0",
+  "description": "This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saucelabs/sample-app-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saucelabs/sample-app-web/issues"
+  },
+  "homepage": "https://github.com/saucelabs/sample-app-web#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-react": "^7.0.0"
+  }
+}

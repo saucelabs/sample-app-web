@@ -1,0 +1,32 @@
+.login-button {
+	margin: 20px auto;
+	background: #61affe;
+	font-size: 18px;
+	font-weight: 800;
+	width: 100%;
+	max-width: 400px;
+	padding: 10px;
+	text-align: center;
+	font-family: Open Sans,sans-serif;
+	color: #fff;
+}
+
+.login-input {
+	margin: 20px 10px;
+	font-size: 14px;
+	width: 100%;
+	max-width: 380px;
+	border: 0px;
+	border-bottom: 1px solid #777;
+}
+
+.login-box {
+	background: #fff;
+	margin: 10% auto;
+	padding: 40px;
+	max-width: 400px;
+}
+
+.main-body {
+	background: #d0d5dd;
+}

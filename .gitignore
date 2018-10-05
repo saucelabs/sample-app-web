@@ -1,0 +1,5 @@
+*.log
+.vagrant
+.project
+node_modules
+bin
