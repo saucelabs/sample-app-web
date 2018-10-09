@@ -1,4 +1,4 @@
-'use strict';
+import { Credentials } from './credentials.js';
 
 const e = React.createElement;
 
@@ -32,8 +32,13 @@ class LoginButton extends React.Component {
       return this.setState({ error: 'Password is required' });
     }
 
-    // If we're here, we have a username and password. Redirect!
-    window.location.href = './inventory.html';
+    if (Credentials.verifyCredentials(this.state.username, this.state.password)) {
+      // If we're here, we have a username and password. Redirect!
+      window.location.href = './inventory.html';      
+    } else {
+      return this.setState({ error: 'Username and password do not match any user in this service' });
+    }
+
     return '';
   }
 
