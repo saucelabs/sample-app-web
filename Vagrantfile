@@ -2,8 +2,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/bionic64"
 
-  config.vm.network "public_network"
-
   # first boot is so slow when running inside a VM (i.e. vm-in-vm a la Inception)
   config.vm.boot_timeout = 1800
 
@@ -19,8 +17,5 @@ Vagrant.configure("2") do |config|
 
   # Wire up the application's one-time setup
   config.vm.provision "shell", inline: "/bin/sh -c 'cd /usr/local/saucelabs/sample-app-web; ./setup-app.sh'"
-
-  # Emit our IP address to the console
-  config.vm.provision "shell", inline: "ip addr"
 end
 
