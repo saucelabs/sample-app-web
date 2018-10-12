@@ -23,5 +23,5 @@ To build the application:
 
 To run the built application (which is a static website):
 
-1. Open _[project-root]_`/bin/index.html` in a web browser
+1. Open _[project-root]_`/dist/index.html` in a web browser
 2. Click around - this is the app!

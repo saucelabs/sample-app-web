@@ -1,8 +1,8 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Credentials } from './credentials.js';
 
-const e = React.createElement;
-
-class LoginButton extends React.Component {
+class LoginButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,12 +33,17 @@ class LoginButton extends React.Component {
     }
 
     if (Credentials.verifyCredentials(this.state.username, this.state.password)) {
+      // Catch our locked-out user and bail out
+      if (Credentials.isLockedOutUser()) {
+        return this.setState({ error: 'Sorry, this user has been locked out.' });
+      }
+
       // If we're here, we have a username and password. Redirect!
       window.location.href = './inventory.html';      
     } else {
       return this.setState({ error: 'Username and password do not match any user in this service' });
     }
-
+    
     return '';
   }
 
@@ -76,5 +81,7 @@ class LoginButton extends React.Component {
   }
 }
 
-const domContainer = document.querySelector('#login_button_container');
-ReactDOM.render(e(LoginButton), domContainer);
+export default LoginButton;
+
+const domContainer = document.getElementById('login_button_container');
+domContainer ? ReactDOM.render(<LoginButton />, domContainer) : false;

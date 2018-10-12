@@ -15,11 +15,21 @@ export class Credentials {
 
 	return true;
   }
+
+  static isLockedOutUser() {
+    return window.sessionStorage.getItem('session-username') === "locked_out_user";
+  }
+
+  static isProblemUser() {
+    return window.sessionStorage.getItem('session-username') === "problem_user";
+  }
 }
 
 Credentials.VALID_USERNAMES = [
   "standard_user",
-  "locked_out_user"
+  "locked_out_user",
+  "problem_user"
 ];
 
 Credentials.VALID_PASSWORD = "secret_sauce";
+
