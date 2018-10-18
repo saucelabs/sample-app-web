@@ -30,9 +30,17 @@ module.exports = {
       template: "src/inventory.html",
       filename: "inventory.html"
     }),
+    new HtmlWebPackPlugin({
+      template: "src/inventory-item.html",
+      filename: "inventory-item.html"
+    }),
     new CopyWebpackPlugin([{
       from: "src/css/",
       to: "css/"
+    },
+    {
+      from: "src/img/",
+      to: "img/"
     }])
   ]
 };

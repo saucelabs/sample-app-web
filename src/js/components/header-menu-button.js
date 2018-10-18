@@ -11,10 +11,9 @@ class MenuButton extends Component {
   render () {
     return (
       <Menu pageWrapId={ "contents_wrapper" } outerContainerId={ "page_wrapper" }>
-        <a id="home" className="menu-item" href="#">Home</a>
-        <a id="about" className="menu-item" href={ Credentials.isProblemUser() ? "https://saucelabs.com/error/404" : "https://saucelabs.com/" }>About</a>
-        <a id="contact" className="menu-item" href="./index.html">Logout</a>
-        <a className="menu-item--small" href="">Settings</a>
+        <a id="inventory_sidebar_link" className="menu-item" href="./inventory.html">All Items</a>
+        <a id="about_sidebar_link" className="menu-item" href={ Credentials.isProblemUser() ? "https://saucelabs.com/error/404" : "https://saucelabs.com/" }>About</a>
+        <a id="logout_sidebar_link" className="menu-item" href="./index.html">Logout</a>
       </Menu>
     );
   }

@@ -94,9 +94,68 @@
 .inventory_item_img {
 	padding: 10px;
 	width: 200px;
-	height: 200px;
+	htight: 250px;
 }
 
+.inventory_details {
+	border: 1px solid #777;
+	background: #fff;
+	width: 100%;
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+}
+
+.inventory_details_name {
+	padding: 10px;
+	font-size: 48px;
+	font-weight: 400;
+	font-family: Open Sans,sans-serif;
+	width: 60%;
+	display: inline-block;
+}
+
+.inventory_details_desc_container {
+	padding: 20px;
+	vertical-align: top;
+	display: inline-block;
+	width: 50%;
+}
+
+.inventory_details_desc {
+	font-size: 24px;
+}
+
+.inventory_details_back_button {
+	margin: 10px auto;
+	background: #61affe;
+	font-size: 18px;
+	font-weight: 800;
+	width: 35%;
+	max-width: 300px;
+	padding: 10px;
+	text-align: center;
+	font-family: Open Sans,sans-serif;
+	color: #fff;
+	position: absolute;
+	right: 10px;
+}
+
+.inventory_details_img {
+	padding: 10px;
+	width: 40%;
+	min-width: 200px;
+	min-height: 250px;
+	max-width: 1200px;
+	display: inline-block;
+}
+
+.inventory_details_price {
+	color: #3cc200;
+	font-size: 48px;
+	font-weight: 800;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
 .inventory_item_label {
 	padding: 10px;
 	height: 200px;
