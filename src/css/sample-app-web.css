@@ -168,13 +168,15 @@
 	padding: 32px 20px 20px 120px;
 }
 
-.saucelabs_logo {
+.shopping_cart_container {
 	height: 32px;
-	width: 230px;
-	padding: 10px 10px 0px 0px;
 	position: absolute;
-	top: 6px;
-	right: 10px;
+	top: 8px;
+	right: 18px;
+}
+
+.shopping_cart_link {
+	color: #777;
 }
 
 /* ===============Burger button styling==================== */
@@ -184,12 +186,12 @@
   width: 36px;
   height: 30px;
   left: 20px;
-  top: 20px;
+  top: 17px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #777;
 }
 
 /* Position and sizing of clickable cross button */
