@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { InventoryData } from '../data/inventory-data.js';
 import { Credentials } from './credentials.js';
+import { ShoppingCart } from './shopping-cart.js';
 
 class InventoryListItem extends Component {
 
@@ -15,12 +16,45 @@ class InventoryListItem extends Component {
       desc: props.desc,
       price: props.price
     };
+    
+    this.state = {
+      // Set our initial state now
+      itemInCart: ShoppingCart.isItemInCart(props.id)
+    };
 
     if (Credentials.isProblemUser()) {
       this.item_details.image_url = `${this.item_details.image_url}WithGarbageOnItToBreakTheUrl`
     }
   }
-  
+
+  addToCart(itemId) {
+
+    if (Credentials.isProblemUser()) {
+      // Bail out now, don't add to cart if the item ID is odd
+      if (itemId % 2 == 1) {
+        return;
+      }
+    }
+
+    ShoppingCart.addItem(itemId);
+    this.setState({itemInCart: true});
+    console.log(ShoppingCart.getCartContents());
+  }
+
+  removeFromCart(itemId) {
+
+    if (Credentials.isProblemUser()) {
+      // Bail out now, don't remove from cart if the item ID is even
+      if (itemId % 2 == 0) {
+        return;
+      }
+    }
+
+    ShoppingCart.removeItem(itemId);
+    this.setState({itemInCart: false});
+    console.log(ShoppingCart.getCartContents());
+  }
+
   render () {
     
     var linkId = this.item_details.id;
@@ -28,6 +62,14 @@ class InventoryListItem extends Component {
       linkId += 1; 
     }
     var itemLink = `./inventory-item.html?id=${linkId}`;
+
+    var cartButton;
+    
+    if (this.state.itemInCart) {
+      cartButton = <button className="remove-from-cart-button" onClick={() => this.removeFromCart(this.item_details.id)}>REMOVE</button>;
+    } else {
+      cartButton = <button className="add-to-cart-button" onClick={() => this.addToCart(this.item_details.id)}>ADD TO CART</button>;
+    }
 
     return (
         <div class="inventory_item">
@@ -40,6 +82,7 @@ class InventoryListItem extends Component {
           </a>
             <div class="inventory_item_desc">{this.item_details.desc}</div>
             <div class="inventory_item_price">{this.item_details.price}</div>
+            { cartButton }
           </div>
         </div>
     );
@@ -55,7 +98,7 @@ class InventoryList extends Component {
     return (
       <div class="inventory_list">
         {InventoryData.ITEMS.map((item, i) => {     
-          return (<InventoryListItem id={i} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} />) 
+          return (<InventoryListItem id={item.id} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} />) 
         })}
       </div>
     );

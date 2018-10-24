@@ -34,6 +34,10 @@ module.exports = {
       template: "src/inventory-item.html",
       filename: "inventory-item.html"
     }),
+    new HtmlWebPackPlugin({
+      template: "src/cart.html",
+      filename: "cart.html"
+    }),
     new CopyWebpackPlugin([{
       from: "src/css/",
       to: "css/"

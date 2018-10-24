@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { InventoryData } from '../data/inventory-data.js';
 import { Credentials } from './credentials.js';
+import { ShoppingCart } from './shopping-cart.js';
 
 class InventoryItem extends Component {
 
@@ -29,13 +30,56 @@ class InventoryItem extends Component {
           
       };
     }
+    this.item.id = inventoryId;
+    
+    this.state = {
+      // Set our initial state now
+      itemInCart: ShoppingCart.isItemInCart(inventoryId)
+    };
   }
 
   goBack() {
     window.history.back();
   }
 
+  addToCart(itemId) {
+
+    if (Credentials.isProblemUser()) {
+      // Bail out now, don't add to cart if the item ID is odd
+      if (itemId % 2 == 1) {
+        return;
+      }
+    }
+
+    ShoppingCart.addItem(itemId);
+    this.setState({itemInCart: true});
+    console.log(ShoppingCart.getCartContents());
+  }
+
+  removeFromCart(itemId) {
+
+    if (Credentials.isProblemUser()) {
+      // Bail out now, don't remove from cart if the item ID is even
+      if (itemId % 2 == 0) {
+        return;
+      }
+    }
+
+    ShoppingCart.removeItem(itemId);
+    this.setState({itemInCart: false});
+    console.log(ShoppingCart.getCartContents());
+  }
+
   render () {
+
+    var cartButton;
+    
+    if (this.state.itemInCart) {
+      cartButton = <button className="remove-from-cart-button" onClick={() => this.removeFromCart(this.item.id)}>REMOVE</button>;
+    } else {
+      cartButton = <button className="add-to-cart-button" onClick={() => this.addToCart(this.item.id)}>ADD TO CART</button>;
+    }
+
     return (
       <div class="inventory_details">
         <div class="inventory_details_name">{this.item.name}</div>
@@ -45,6 +89,7 @@ class InventoryItem extends Component {
           <div class="inventory_details_desc_container">
             <div class="inventory_details_desc">{this.item.desc}</div>
             <div class="inventory_details_price">{this.item.price}</div>
+            { cartButton }
           </div>
         </div>
       </div>

@@ -37,4 +37,9 @@ InventoryData.ITEMS = [
     price: '$49.99',
     image_url: './img/sauce-pullover-1200x1500.jpg'
   }
-]
+];
+
+InventoryData.ITEMS.map((item, i) => {
+  // Dynamically map our item IDs based on their positions in the item array
+  item.id = i;
+});

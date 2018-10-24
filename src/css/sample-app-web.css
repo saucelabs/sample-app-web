@@ -37,8 +37,10 @@
 }
 
 .main-body {
-	background: #d0d5dd;
+	background: #fff;
 	margin: 0px;
+	min-width: 1024px;
+	min-height: 768px;
 }
 
 .header_label {
@@ -48,6 +50,18 @@
 	font-size: 30px;
 	font-weight: 600;
 	font-family: Open Sans,sans-serif;
+}
+
+.subheader_label {
+	width: calc(100% - 20px);
+	background-color: #fff;
+	border: 1px solid #000;
+	border-left: 0px;
+	border-right: 0px;
+	padding: 20px 10px;
+	font-size: 24px;
+	font-family: Open Sans,sans-serif;
+	color: #555;
 }
 
 .header_secondary_container {
@@ -71,6 +85,7 @@
 	font-weight: 300;
 	font-family: Open Sans,sans-serif;
 	width: 100%;
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 }
 
 .inventory_item_name {
@@ -81,7 +96,6 @@
 
 .inventory_item_desc {
 	font-size: 14px;
-	height: 150px;
 }
 
 .inventory_item_price {
@@ -89,16 +103,19 @@
 	font-size: 24px;
 	font-weight: 800;
 	padding: 0px 0px 10px 0px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
 }
 
 .inventory_item_img {
 	padding: 10px;
 	width: 200px;
-	htight: 250px;
+	height: 250px;
 }
 
 .inventory_details {
-	border: 1px solid #777;
+	border-top: 1px solid #777;
 	background: #fff;
 	width: 100%;
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
@@ -117,7 +134,10 @@
 	padding: 20px;
 	vertical-align: top;
 	display: inline-block;
-	width: 50%;
+	width: 54%;
+	min-height: 498px;
+	min-width: 554px;
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 }
 
 .inventory_details_desc {
@@ -154,29 +174,133 @@
 	font-weight: 800;
 	position: absolute;
 	bottom: 10px;
-	right: 10px;
+	left: 10px;
 }
 .inventory_item_label {
 	padding: 10px;
-	height: 200px;
-	width: 70%;
+	height: 250px;
+	width: calc(99% - 270px);
 	display: inline-block;
 	vertical-align: top;
+	position: relative;	
 }
 
 .inventory_container {
-	padding: 32px 20px 20px 120px;
+	padding: 32px 20px 20px 20px;
 }
 
 .shopping_cart_container {
 	height: 32px;
 	position: absolute;
-	top: 8px;
-	right: 18px;
+	top: 25px;
+	right: 44px;
 }
 
 .shopping_cart_link {
 	color: #777;
+}
+
+.shopping_cart_badge {
+	font-weight: 400;
+	font-family: Open Sans, sans serif;
+	top: -20px;
+	right: -40px;
+	transform: scale(1.1);
+}
+
+.add-to-cart-button {
+	margin: 10px auto;
+	background: #61affe;
+	font-size: 18px;
+	font-weight: 800;
+	width: 35%;
+	max-width: 150px;
+	padding: 10px;
+	text-align: center;
+	font-family: Open Sans,sans-serif;
+	color: #fff;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	cursor: pointer;
+}
+
+.remove-from-cart-button {
+	margin: 10px auto;
+	background: #fff;
+	font-size: 18px;
+	font-weight: 800;
+	width: 35%;
+	max-width: 150px;
+	padding: 10px;
+	text-align: center;
+	font-family: Open Sans,sans-serif;
+	color: #0862bd;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	border: 0px;
+	cursor: pointer;
+}
+
+.remove-from-cart-button:hover {
+    text-decoration: underline;
+}
+
+.cart_item_label {
+	padding: 10px;
+	height: 130px;
+	width: calc(95% - 165px);
+	display: inline-block;
+	vertical-align: top;
+	position: relative;	
+}
+
+.cart_item {
+    border-top: 1px solid #777;
+	background: #fff;
+	color: #000;
+	font-weight: 300;
+	font-family: Open Sans,sans-serif;
+	width: 100%;
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+}
+
+.cart_quantity {
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+	font-size: 24px;
+	margin: 60px 50px;
+	border: 1px solid #777;
+	padding: 5px 30px 5px 10px;
+}
+
+.cart_contents_container {
+	background-color: #fff;
+}
+
+.cart_quantity_label {
+	display: inline-block;
+	font-size: 18px;
+	padding: 20px 60px;
+	text-align: center;
+	background-color: #fff;
+	color: #555;
+}
+
+.cart_desc_label {
+	padding: 20px 0px;
+	width: calc(100% - 160px);
+	display: inline-block;
+	font-size: 18px;
+	text-align: center;
+	color: #555;
+	background-color: #fff;
+}
+
+.menu-item {
+	cursor: pointer;
 }
 
 /* ===============Burger button styling==================== */
