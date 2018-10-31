@@ -38,6 +38,18 @@ module.exports = {
       template: "src/cart.html",
       filename: "cart.html"
     }),
+    new HtmlWebPackPlugin({
+      template: "src/checkout-step-one.html",
+      filename: "checkout-step-one.html"
+    }),
+    new HtmlWebPackPlugin({
+      template: "src/checkout-step-two.html",
+      filename: "checkout-step-two.html"
+    }),
+    new HtmlWebPackPlugin({
+      template: "src/checkout-complete.html",
+      filename: "checkout-complete.html"
+    }),
     new CopyWebpackPlugin([{
       from: "src/css/",
       to: "css/"

@@ -13,11 +13,18 @@
 
 .login-input {
 	margin: 20px 10px;
-	font-size: 14px;
+	font-size: 18px;
 	width: 100%;
 	max-width: 380px;
 	border: 0px;
 	border-bottom: 1px solid #777;
+}
+
+.error-button {
+	border: 0px;
+	background: #fff;
+	color: #f00;
+	cursor: pointer;
 }
 
 .login-box {
@@ -301,6 +308,117 @@
 
 .menu-item {
 	cursor: pointer;
+}
+
+.cart_footer {
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+	border-top: 1px solid #777;
+	height: 80px;
+}
+
+.cart_cancel_link {
+	margin: 10px auto;
+	background: #fff;
+	font-size: 18px;
+	font-weight: 800;
+	width: 35%;
+	max-width: 150px;
+	padding: 10px;
+	text-align: center;
+	font-family: Open Sans,sans-serif;
+	color: #61affe;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.cart_checkout_link {
+	margin: 10px auto;
+	background: #61affe;
+	font-size: 18px;
+	font-weight: 800;
+	width: 35%;
+	max-width: 150px;
+	padding: 10px;
+	text-align: center;
+	font-family: Open Sans,sans-serif;
+	color: #fff;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.checkout_info {
+	width: 30%;
+	margin: 40px auto;
+}
+
+.checkout-input {
+	margin: 20px 10px;
+	font-size: 18px;
+	width: 100%;
+	max-width: 380px;
+	border: 0px;
+	border-bottom: 1px solid #777;
+}
+
+.summary_quantity {
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+	font-size: 24px;
+	margin: 60px 50px;
+	padding: 5px 30px 5px 10px;
+}
+
+.summary_info_label {
+	width: calc(100% - 20px);
+	background-color: #fff;
+	border-top: 1px solid #777;
+	padding: 20px 10px 0px;
+	font-size: 18px;
+	font-family: Open Sans,sans-serif;
+	color: #555;
+}
+
+.summary_value_label {
+	font-weight: 800;
+	font-size: 18px;
+	color: #000;
+	padding: 20px 10px;
+}
+
+.summary_subtotal_label {
+	border-top: 1px solid #777;
+	padding: 20px 10px 10px;
+	font-size: 18px;
+	font-family: Open Sans,sans-serif;
+	color: #555;
+}
+
+.summary_tax_label {
+	padding: 0px 10px;
+	font-size: 18px;
+	font-family: Open Sans,sans-serif;
+	color: #555;
+}
+
+.summary_total_label {
+	padding: 10px;
+	font-size: 18px;
+	font-family: Open Sans,sans-serif;
+	color: #555;
+	font-weight: 800;
+	margin: 0px 0px 8px 0px;
+	border-bottom: 1px solid #777;
+}
+
+.checkout_complete_container {
+	text-align: center;
 }
 
 /* ===============Burger button styling==================== */
