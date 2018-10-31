@@ -152,6 +152,7 @@ class InventoryList extends Component {
       <div class="inventory_container">
 
       <div class="inventory_list">
+        {JSON.stringify(this.state.inventoryList)}
         {displayedList}
       </div>
       
