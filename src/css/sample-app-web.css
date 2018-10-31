@@ -1,3 +1,6 @@
+body {
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
 .login-button {
 	margin: 20px auto;
 	background: #61affe;
@@ -37,10 +40,7 @@
 }
 
 .main-body {
-	background: #fff;
 	margin: 0px;
-	min-width: 1024px;
-	min-height: 768px;
 }
 
 .header_label {
@@ -71,47 +71,110 @@
 }
 
 .product_label {
-	padding: 42px 0px 0px 120px;
-	font-size: 26px;
-	font-weight: 300;
-	font-family: Open Sans,sans-serif;
+	padding: 22px 0px 0px 20px;
+	font-size: 2em;
+	font-weight: 100;
 	color: #fff;
 }
 
-.inventory_item {
-    border: 1px solid #777;
-	background: #fff;
-	color: #000;
-	font-weight: 300;
-	font-family: Open Sans,sans-serif;
-	width: 100%;
-	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
-}
-
 .inventory_item_name {
-	padding: 0px 0px 10px 0px;
-	font-size: 18px;
-	font-weight: 800;
+	font-size: 1.5em;
 }
 
 .inventory_item_desc {
-	font-size: 14px;
+	font-size: .85em;
+	margin-top: 7px;
+}
+
+.pricebar {
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+	width: 76%;
 }
 
 .inventory_item_price {
 	color: #3cc200;
-	font-size: 24px;
-	font-weight: 800;
-	padding: 0px 0px 10px 0px;
+	font-size: 2em;
+	font-weight: 100;
 	position: absolute;
-	bottom: 10px;
-	left: 10px;
+	left: 0;
+	bottom: 0;
 }
 
-.inventory_item_img {
+.add-to-cart-button,
+.remove-from-cart-button {
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+	text-align: center;
+	padding: 10px 20px;
+	max-width: 150px;
+	cursor: pointer;
+	font-size: 1em;
+	outline: none;
+	border: none;
+	border-radius: 2px;
+}
+
+.add-to-cart-button {
+	background: #61affe;
+	color: #fff;	
+}
+
+.remove-from-cart-button {
+	background: #fff;
+	color: #0862bd;
+}
+
+.remove-from-cart-button:hover {
+    text-decoration: underline;
+}
+
+.inventory_item {
+    border: none;
+	background: #fff;
+	color: #000;
+	font-weight: 300;
+	width: 100%;
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+	overflow: hidden;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+	margin-bottom: 12px;
+	min-width: 500px;
+}
+
+/* Adjust inventory item width for larger screens */
+@media only screen and (min-width: 1200px) {
+	.inventory_item {
+		width: 45%;
+		float: left;
+		margin-right: 20px;
+	}
+}
+
+.inventory_item_label {
 	padding: 10px;
-	width: 200px;
-	height: 250px;
+	min-height: 150px;
+	width: 75%;
+	float: right;
+	vertical-align: top;
+	position: relative;	
+}
+
+.inventory_item_label > a {
+	color: #4A4A4A;
+	text-decoration: none;
+	font-weight: 300;
+}
+.inventory_item_img {
+	float: left;
+	width: 17%;
+	padding: 10px;
+}
+
+.inventory_item_img img{
+	width: 98%;
 }
 
 .inventory_details {
@@ -159,14 +222,7 @@
 	right: 10px;
 }
 
-.inventory_details_img {
-	padding: 10px;
-	width: 40%;
-	min-width: 200px;
-	min-height: 250px;
-	max-width: 1200px;
-	display: inline-block;
-}
+
 
 .inventory_details_price {
 	color: #3cc200;
@@ -175,14 +231,6 @@
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
-}
-.inventory_item_label {
-	padding: 10px;
-	height: 250px;
-	width: calc(99% - 270px);
-	display: inline-block;
-	vertical-align: top;
-	position: relative;	
 }
 
 .inventory_container {
@@ -200,51 +248,16 @@
 	color: #777;
 }
 
+.shopping_cart_link > svg {
+	width: 35px !important;
+}
+
 .shopping_cart_badge {
 	font-weight: 400;
 	font-family: Open Sans, sans serif;
 	top: -20px;
 	right: -40px;
 	transform: scale(1.1);
-}
-
-.add-to-cart-button {
-	margin: 10px auto;
-	background: #61affe;
-	font-size: 18px;
-	font-weight: 800;
-	width: 35%;
-	max-width: 150px;
-	padding: 10px;
-	text-align: center;
-	font-family: Open Sans,sans-serif;
-	color: #fff;
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-	cursor: pointer;
-}
-
-.remove-from-cart-button {
-	margin: 10px auto;
-	background: #fff;
-	font-size: 18px;
-	font-weight: 800;
-	width: 35%;
-	max-width: 150px;
-	padding: 10px;
-	text-align: center;
-	font-family: Open Sans,sans-serif;
-	color: #0862bd;
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-	border: 0px;
-	cursor: pointer;
-}
-
-.remove-from-cart-button:hover {
-    text-decoration: underline;
 }
 
 .cart_item_label {
@@ -307,10 +320,10 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
-  width: 36px;
-  height: 30px;
+  width: 26px;
+  height: 20px;
   left: 20px;
-  top: 17px;
+  top: 24px;
 }
 
 /* Color/shape of burger icon bars */
@@ -331,9 +344,10 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #333;
+  background: #fff;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  box-shadow: 5px 0px 5px 0 rgba(0,0,0,0.16);
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -349,8 +363,9 @@
 /* Individual item */
 .bm-item {
   display: inline-block;
-  color: #fff;
-  font-weight: 800;
+  color: #666;
+  font-weight: 300;
+  margin-bottom: 7px;
   text-decoration: none;
   padding: 4px;
 }

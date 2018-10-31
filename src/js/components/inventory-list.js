@@ -73,16 +73,20 @@ class InventoryListItem extends Component {
 
     return (
         <div class="inventory_item">
-          <a href={itemLink} id={`item_${this.item_details.id}_img_link`}>
-            <img class="inventory_item_img" src={this.item_details.image_url}/>
-          </a>
+          <div class="inventory_item_img">
+            <a href={itemLink} id={`item_${this.item_details.id}_img_link`}>
+              <img class="inventory_item_img" src={this.item_details.image_url}/>
+            </a>
+          </div>
           <div class="inventory_item_label">
-          <a href={itemLink} id={`item_${this.item_details.id}_title_link`}>
-            <div class="inventory_item_name">{this.item_details.name}</div>
-          </a>
+            <a href={itemLink} id={`item_${this.item_details.id}_title_link`}>
+              <div class="inventory_item_name">{this.item_details.name}</div>
+            </a>
             <div class="inventory_item_desc">{this.item_details.desc}</div>
-            <div class="inventory_item_price">{this.item_details.price}</div>
-            { cartButton }
+          </div>
+          <div class="pricebar">
+              <div class="inventory_item_price">{this.item_details.price}</div>
+              { cartButton }
           </div>
         </div>
     );
