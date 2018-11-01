@@ -64,12 +64,18 @@ class CartItem extends Component {
       var contents = ShoppingCart.getCartContents();
 
       return (
+        <div>
         <div class="cart_list">
           <div class="cart_quantity_label">QTY</div>
           <div class="cart_desc_label">DESCRIPTION</div>
           {contents.map((item, i) => {
             return (<CartItem item={InventoryData.ITEMS[item]} />) 
           })}
+        </div>
+        <div class="cart_footer">
+          <a class="cart_cancel_link" href="./inventory.html">CANCEL</a>
+          <a class="cart_checkout_link" href="./checkout-step-one.html">CHECKOUT</a>
+        </div>
         </div>
       );
     }

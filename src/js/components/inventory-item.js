@@ -88,7 +88,7 @@ class InventoryItem extends Component {
           <img class="inventory_details_img" src={this.item.image_url}/>
           <div class="inventory_details_desc_container">
             <div class="inventory_details_desc">{this.item.desc}</div>
-            <div class="inventory_details_price">{this.item.price}</div>
+            <div class="inventory_details_price">${this.item.price}</div>
             { cartButton }
           </div>
         </div>

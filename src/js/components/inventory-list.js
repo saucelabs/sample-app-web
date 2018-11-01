@@ -85,7 +85,7 @@ class InventoryListItem extends Component {
             <div class="inventory_item_desc">{this.item_details.desc}</div>
           </div>
           <div class="pricebar">
-              <div class="inventory_item_price">{this.item_details.price}</div>
+              <div class="inventory_item_price">${this.item_details.price}</div>
               { cartButton }
           </div>
         </div>

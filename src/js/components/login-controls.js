@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Credentials } from './credentials.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
 class LoginButton extends Component {
   constructor(props) {
@@ -58,7 +60,6 @@ class LoginButton extends Component {
       password: evt.target.value,
     });
   }
-
   
   render() {
 
@@ -69,11 +70,13 @@ class LoginButton extends Component {
 			  <input type="password" className="login-input" data-test="password" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} />			  
 			  <input type="submit" className="login-button" value="LOGIN" />
 			  {
-					  this.state.error &&
-					  <h3 data-test="error" onClick={this.dismissError}>
-					  <button onClick={this.dismissError}>✖</button>
-					  Epic sadface: {this.state.error}
-					  </h3>
+                  this.state.error &&
+                  <h3 data-test="error">
+                  <button class="error-button" onClick={this.dismissError}>
+                  <FontAwesomeIcon icon={faTimesCircle} size="2x" />
+                  </button>
+                  Epic sadface: {this.state.error}
+                  </h3>
 			  }
 		  </form>
 		</div>
