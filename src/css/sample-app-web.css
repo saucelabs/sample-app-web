@@ -1,5 +1,6 @@
 body {
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	color: #4A4A4A;
 }
 .login-button {
 	margin: 20px auto;
@@ -54,59 +55,56 @@ body {
 	background: #fff;
 	padding: 18px;
 	text-align: center;
-	font-size: 30px;
-	font-weight: 600;
-	font-family: Open Sans,sans-serif;
-}
-
-.subheader_label {
-	width: calc(100% - 20px);
-	background-color: #fff;
-	border: 1px solid #000;
-	border-left: 0px;
-	border-right: 0px;
-	padding: 20px 10px;
-	font-size: 24px;
-	font-family: Open Sans,sans-serif;
-	color: #555;
+	font-size: 1.7em;
 }
 
 .header_secondary_container {
-	background: #0862bd;
+	background: #474c55;
 	width: 100%;
 	height: 80px;
 }
 
-.product_label {
+.subheader_label {
+	background: #474c55;
+	height: 70px;
+}
+
+.product_label,
+.subheader_label {
 	padding: 22px 0px 0px 20px;
 	font-size: 2em;
 	font-weight: 100;
 	color: #fff;
 }
 
+.inventory_list,
+.cart_contents_container {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
 .inventory_item_name {
-	font-size: 1.5em;
+	font-size: 1.1em;
+	font-weight: 500;
 }
 
 .inventory_item_desc {
 	font-size: .85em;
 	margin-top: 7px;
+	color: #777777;
+	padding-right: 20px;
 }
 
 .pricebar {
 	position: absolute;
 	bottom: 15px;
 	right: 10px;
-	width: 76%;
+	width: 74%;
 }
 
 .inventory_item_price {
-	color: #3cc200;
-	font-size: 2em;
-	font-weight: 100;
-	position: absolute;
-	left: 0;
-	bottom: 0;
+	color: #569210;
+	font-size: 1.3em;
 }
 
 .add-to-cart-button,
@@ -116,7 +114,6 @@ body {
 	bottom: 0;
 	text-align: center;
 	padding: 10px 20px;
-	max-width: 150px;
 	cursor: pointer;
 	font-size: 1em;
 	outline: none;
@@ -125,43 +122,43 @@ body {
 }
 
 .add-to-cart-button {
-	background: #61affe;
-	color: #fff;	
+	background: #57c1e8;
+	color: #fff;
+	border: 2px solid #57c1e8;
+}
+
+.add-to-cart-button:hover {
+	background: #1395F0;
+	border: 2px solid #1395F0;
 }
 
 .remove-from-cart-button {
 	background: #fff;
-	color: #0862bd;
+	color: #CE2A2B;
+	border: 2px solid #CE2A2B;
 }
 
 .remove-from-cart-button:hover {
-    text-decoration: underline;
+	background: #fafafa;
+}
+
+.inventory_container {
+	padding: 0px;
 }
 
 .inventory_item {
     border: none;
 	background: #fff;
-	color: #000;
-	font-weight: 300;
 	width: 100%;
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 	overflow: hidden;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 	margin-bottom: 12px;
-	min-width: 500px;
-}
-
-/* Adjust inventory item width for larger screens */
-@media only screen and (min-width: 1200px) {
-	.inventory_item {
-		width: 45%;
-		float: left;
-		margin-right: 20px;
-	}
+	min-width: 480px;
 }
 
 .inventory_item_label {
-	padding: 15px;
+	padding-top: 15px;
 	min-height: 150px;
 	width: 75%;
 	float: right;
@@ -169,10 +166,32 @@ body {
 	position: relative;	
 }
 
-.inventory_item_label > a {
+.inventory_item:nth-child(odd) {
+	margin-right: 20px;
+}
+
+/* Adjust inventory item width for larger screens */
+@media only screen and (min-width: 1200px) {
+	.inventory_item {
+		width: 45%;
+		float: left;
+	}
+	.inventory_item_label {
+		width: 73%;
+	}
+	.inventory_container {
+		padding-top: 30px;
+	}
+	.pricebar {
+		width: 71%;
+	}
+	
+}
+
+.inventory_item_label > a,
+.cart_item_label > a {
 	color: #4A4A4A;
 	text-decoration: none;
-	font-weight: 300;
 }
 .inventory_item_img {
 	float: left;
@@ -229,8 +248,6 @@ body {
 	right: 10px;
 }
 
-
-
 .inventory_details_price {
 	color: #3cc200;
 	font-size: 48px;
@@ -238,10 +255,6 @@ body {
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
-}
-
-.inventory_container {
-	padding: 32px 20px 20px 20px;
 }
 
 .shopping_cart_container {
@@ -256,20 +269,19 @@ body {
 }
 
 .shopping_cart_link > svg {
-	width: 35px !important;
+	width: 30px !important;
 }
 
 .shopping_cart_badge {
 	font-weight: 400;
 	font-family: Open Sans, sans serif;
 	top: -20px;
-	right: -40px;
+	right: -30px;
 	transform: scale(1.1);
 }
 
 .cart_item_label {
-	padding: 10px;
-	height: 130px;
+	padding: 20px 10px 0;
 	width: calc(95% - 165px);
 	display: inline-block;
 	vertical-align: top;
@@ -277,13 +289,14 @@ body {
 }
 
 .cart_item {
-    border-top: 1px solid #777;
+    border-top: 1px solid #D8D8D8;
 	background: #fff;
-	color: #000;
-	font-weight: 300;
-	font-family: Open Sans,sans-serif;
 	width: 100%;
-	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+	position: relative; 
+}
+
+.item_pricebar {
+	margin-top: 20px;
 }
 
 .cart_quantity {
@@ -332,14 +345,8 @@ body {
 .cart_cancel_link {
 	margin: 10px auto;
 	background: #fff;
-	font-size: 18px;
-	font-weight: 800;
-	width: 35%;
-	max-width: 150px;
-	padding: 10px;
-	text-align: center;
-	font-family: Open Sans,sans-serif;
-	color: #61affe;
+	font-size: 1.2em;
+	color: #4184F3;
 	position: absolute;
 	left: 10px;
 	bottom: 10px;
@@ -349,14 +356,10 @@ body {
 
 .cart_checkout_link {
 	margin: 10px auto;
-	background: #61affe;
-	font-size: 18px;
-	font-weight: 800;
-	width: 35%;
-	max-width: 150px;
-	padding: 10px;
+	background: #4184F3;
+	font-size: 1.2em;
+	padding: 10px 20px;
 	text-align: center;
-	font-family: Open Sans,sans-serif;
 	color: #fff;
 	position: absolute;
 	right: 10px;
@@ -438,8 +441,8 @@ body {
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
-  width: 26px;
-  height: 20px;
+  width: 20px;
+  height: 15px;
   left: 20px;
   top: 24px;
 }

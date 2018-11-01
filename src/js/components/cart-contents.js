@@ -43,8 +43,10 @@ class CartItem extends Component {
                   <div class="inventory_item_name">{this.item.name}</div>
                 </a>
                 <div class="inventory_item_desc">{this.item.desc}</div>
-                <div class="inventory_item_price">{this.item.price}</div>
-                <button className="remove-from-cart-button" onClick={() => this.removeFromCart(this.item.id)}>REMOVE</button>
+                <div class="item_pricebar">
+                  <div class="inventory_item_price">{this.item.price}</div>
+                  <button className="remove-from-cart-button" onClick={() => this.removeFromCart(this.item.id)}>REMOVE</button>
+                </div>
               </div>
             </div>
         );
@@ -73,7 +75,7 @@ class CartItem extends Component {
           })}
         </div>
         <div class="cart_footer">
-          <a class="cart_cancel_link" href="./inventory.html">CANCEL</a>
+          <a class="cart_cancel_link" href="./inventory.html">Continue Shopping</a>
           <a class="cart_checkout_link" href="./checkout-step-one.html">CHECKOUT</a>
         </div>
         </div>
