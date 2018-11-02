@@ -1,6 +1,7 @@
 *.log
 .vagrant
 .project
+.vagrant
 node_modules
 bin
 dist
