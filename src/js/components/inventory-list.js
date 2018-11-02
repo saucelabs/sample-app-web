@@ -91,7 +91,7 @@ class InventoryList extends Component {
     super(props);
     
     this.state = {
-        inventoryList: InventoryData.ITEMS_PRICE_HILO
+        inventoryList: InventoryData.ITEMS_NAME_AZ
     };
 
     this.sortNameAZ = this.sortNameAZ.bind(this);
@@ -125,15 +125,7 @@ class InventoryList extends Component {
   }
   
   render () {
-    console.log(this.state.inventoryList);
     
-    var displayedList = [];
-    for (var i = 0; i < this.state.inventoryList.length; i++) {
-      var item = this.state.inventoryList[i];
-      displayedList.push(<InventoryListItem id={item.id} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} />);
-    }
-    console.log(displayedList);
-
     return (
       <div>
       <div class="header_secondary_container">
@@ -152,8 +144,9 @@ class InventoryList extends Component {
       <div class="inventory_container">
 
       <div class="inventory_list">
-        {JSON.stringify(this.state.inventoryList)}
-        {displayedList}
+        {this.state.inventoryList.map((item, i) => {     
+          return (<InventoryListItem key={item.id} id={item.id} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} />) 
+        })}
       </div>
       
       </div>
