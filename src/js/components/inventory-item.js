@@ -82,11 +82,11 @@ class InventoryItem extends Component {
 
     return (
       <div class="inventory_details">
-        <div class="inventory_details_name">{this.item.name}</div>
         <button class="inventory_details_back_button" onClick={this.goBack}>&lt;- Back</button>
         <div class="inventory_details_container">
           <img class="inventory_details_img" src={this.item.image_url}/>
           <div class="inventory_details_desc_container">
+            <div class="inventory_details_name">{this.item.name}</div>
             <div class="inventory_details_desc">{this.item.desc}</div>
             <div class="inventory_details_price">${this.item.price}</div>
             { cartButton }
