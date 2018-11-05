@@ -26,7 +26,8 @@ class InventoryItem extends Component {
           This is a recording.
           4 T 1.`,
           image_url: './img/sl-404.jpg',
-          price: '√-1'
+          price: '√-1',
+          unique_id: 'id-missing'
           
       };
     }
