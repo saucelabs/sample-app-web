@@ -14,7 +14,8 @@ class InventoryListItem extends Component {
       image_url: props.image_url,
       name: props.name,
       desc: props.desc,
-      price: props.price
+      price: props.price,
+      unique_id: props.unique_id
     };
     
     this.state = {
@@ -77,7 +78,7 @@ class InventoryListItem extends Component {
             <img class="inventory_item_img" src={this.item_details.image_url}/>
           </a>
           <div class="inventory_item_label">
-          <a href={itemLink} id={`item_${this.item_details.id}_title_link`}>
+						<a href={itemLink} id={this.item_details.unique_id}>
             <div class="inventory_item_name">{this.item_details.name}</div>
           </a>
             <div class="inventory_item_desc">{this.item_details.desc}</div>
@@ -98,7 +99,7 @@ class InventoryList extends Component {
     return (
       <div class="inventory_list">
         {InventoryData.ITEMS.map((item, i) => {     
-          return (<InventoryListItem id={item.id} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} />) 
+           return (<InventoryListItem id={item.id} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} unique_id={item.unique_id} />)
         })}
       </div>
     );
