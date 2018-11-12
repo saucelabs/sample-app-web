@@ -74,7 +74,7 @@ body {
 	background: #474c55;
 	width: 100%;
 	height: 80px;
-	position: relative;
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 }
 
 .subheader_label {
@@ -452,6 +452,14 @@ body {
 /*============ ITEM DETAILS ===============*/
 .inventory_details_img {
 	max-width: 400px;
+}
+
+.product_sort_container {
+	position: absolute;
+	right: 20px;
+	top: 40px;
+	height: 35px;
+	width: 200px;
 }
 
 /* ===============Burger button styling==================== */
