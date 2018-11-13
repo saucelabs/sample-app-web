@@ -70,16 +70,20 @@ class InventoryListItem extends Component {
 
     return (
         <div class="inventory_item">
-          <a href={itemLink} id={`item_${this.state.id}_img_link`}>
-            <img class="inventory_item_img" src={this.state.image_url}/>
-          </a>
+          <div class="inventory_item_img">
+            <a href={itemLink} id={`item_${this.state.id}_img_link`}>
+              <img class="inventory_item_img" src={this.state.image_url}/>
+            </a>
+          </div>
           <div class="inventory_item_label">
-          <a href={itemLink} id={`item_${this.state.id}_title_link`}>
-            <div class="inventory_item_name">{this.state.name}</div>
-          </a>
+            <a href={itemLink} id={`item_${this.state.id}_title_link`}>
+              <div class="inventory_item_name">{this.state.name}</div>
+            </a>
             <div class="inventory_item_desc">{this.state.desc}</div>
-            <div class="inventory_item_price">${this.state.price}</div>
-            { cartButton }
+          </div>
+          <div class="pricebar">
+              <div class="inventory_item_price">${this.state.price}</div>
+              { cartButton }
           </div>
         </div>
     );
@@ -125,10 +129,15 @@ class InventoryList extends Component {
   }
   
   render () {
-    
+
+    // NOTE: Sorting is broken on Chrome and Safari
+    // https://stackoverflow.com/questions/9972280/onclick-on-option-tag-not-working-on-ie-and-chrome/10058960#10058960
+    // TODO: Convert this in to a case for problem_user
+
     return (
       <div>
       <div class="header_secondary_container">
+        <div class="peek"></div>
         <div id="searchbox_container"></div>
         <div id="inventory_filter_container">
           <div class="product_label">Products</div>
@@ -141,7 +150,7 @@ class InventoryList extends Component {
         </div>
       </div>
   
-      <div class="inventory_container">
+      <div id="inventory_container" class="inventory_container">
 
       <div class="inventory_list">
         {this.state.inventoryList.map((item, i) => {     
