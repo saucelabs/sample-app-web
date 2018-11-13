@@ -129,7 +129,11 @@ class InventoryList extends Component {
   }
   
   render () {
-    
+
+    // NOTE: Sorting is broken on Chrome and Safari
+    // https://stackoverflow.com/questions/9972280/onclick-on-option-tag-not-working-on-ie-and-chrome/10058960#10058960
+    // TODO: Convert this in to a case for problem_user
+
     return (
       <div>
       <div class="header_secondary_container">
