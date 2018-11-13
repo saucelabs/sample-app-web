@@ -10,3 +10,4 @@ services:
       - '.:/usr/src/app'
     environment:
       - NODE_ENV=development
+      
