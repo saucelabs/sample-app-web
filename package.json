@@ -4,7 +4,6 @@
   "description": "This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production"
   },
   "repository": {
