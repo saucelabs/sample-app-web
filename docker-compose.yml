@@ -8,6 +8,5 @@ services:
       dockerfile: Dockerfile
     volumes:
       - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
     environment:
       - NODE_ENV=development
