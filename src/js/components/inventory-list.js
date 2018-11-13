@@ -133,6 +133,7 @@ class InventoryList extends Component {
     return (
       <div>
       <div class="header_secondary_container">
+        <div class="peek"></div>
         <div id="searchbox_container"></div>
         <div id="inventory_filter_container">
           <div class="product_label">Products</div>
@@ -145,7 +146,7 @@ class InventoryList extends Component {
         </div>
       </div>
   
-      <div class="inventory_container">
+      <div id="inventory_container" class="inventory_container">
 
       <div class="inventory_list">
         {this.state.inventoryList.map((item, i) => {     
