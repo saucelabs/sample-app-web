@@ -94,7 +94,7 @@ class InventoryList extends Component {
   constructor(props) {
     super(props);
     if (Credentials.isPerformanceGlitchUser()) {
-      this.mineBitcoin(5000);
+      this.startPerformanceGlitch(5000);
     }
 
     this.state = {
@@ -107,10 +107,10 @@ class InventoryList extends Component {
     this.sortPriceHiLo = this.sortPriceHiLo.bind(this);
   }
 
-  mineBitcoin(duration) {
+  startPerformanceGlitch(duration) {
     const start = new Date().getTime();
     while (new Date().getTime() < start + duration) {
-      // TODO(tony): Make $$$
+      // PageLoad increases
     }
   }
 
