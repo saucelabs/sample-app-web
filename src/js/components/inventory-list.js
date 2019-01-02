@@ -93,7 +93,10 @@ class InventoryListItem extends Component {
 class InventoryList extends Component {
   constructor(props) {
     super(props);
-    
+    if (Credentials.isPerformanceGlitchUser()) {
+      this.mineBitcoin(5000);
+    }
+
     this.state = {
         inventoryList: InventoryData.ITEMS_NAME_AZ
     };
@@ -102,6 +105,13 @@ class InventoryList extends Component {
     this.sortNameZA = this.sortNameZA.bind(this);
     this.sortPriceLoHi = this.sortPriceLoHi.bind(this);
     this.sortPriceHiLo = this.sortPriceHiLo.bind(this);
+  }
+
+  mineBitcoin(duration) {
+    const start = new Date().getTime();
+    while (new Date().getTime() < start + duration) {
+      // TODO(tony): Make $$$
+    }
   }
 
   sortNameAZ() {
