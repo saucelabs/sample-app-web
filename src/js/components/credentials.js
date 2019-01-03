@@ -23,12 +23,17 @@ export class Credentials {
   static isProblemUser() {
     return window.sessionStorage.getItem('session-username') === "problem_user";
   }
+
+  static isPerformanceGlitchUser() {
+    return window.sessionStorage.getItem('session-username') === "performance_glitch_user";
+  }
 }
 
 Credentials.VALID_USERNAMES = [
   "standard_user",
   "locked_out_user",
-  "problem_user"
+  "problem_user",
+  "performance_glitch_user"
 ];
 
 Credentials.VALID_PASSWORD = "secret_sauce";
