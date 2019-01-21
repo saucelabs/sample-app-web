@@ -101,6 +101,7 @@ class InventoryList extends Component {
         inventoryList: InventoryData.ITEMS_NAME_AZ
     };
 
+    this.sortByOption = this.sortByOption.bind(this);
     this.sortNameAZ = this.sortNameAZ.bind(this);
     this.sortNameZA = this.sortNameZA.bind(this);
     this.sortPriceLoHi = this.sortPriceLoHi.bind(this);
@@ -114,25 +115,86 @@ class InventoryList extends Component {
     }
   }
 
+  sortByOption(event) {
+
+    console.log(event);
+
+    if (Credentials.isProblemUser()) {
+      // Bail out now if we're problem user so that we have a behaviour which is broken in Chrome only for sort.
+      // select option onclick is not supported in Chrome but works in IE and FF
+      return;
+    }
+
+    switch (event.target.value) {
+      case "az":
+
+        this.setState({
+          inventoryList: InventoryData.ITEMS_NAME_AZ
+        });
+        break;
+
+      case "za":
+
+        this.setState({
+          inventoryList: InventoryData.ITEMS_NAME_ZA
+        });
+        break;
+
+      case "hilo":
+
+        this.setState({
+          inventoryList: InventoryData.ITEMS_PRICE_HILO
+        });
+        break;
+
+      case "lohi":
+
+        this.setState({
+          inventoryList: InventoryData.ITEMS_PRICE_LOHI
+        });
+        break;
+    }
+  }
+
   sortNameAZ() {
+    if (!Credentials.isProblemUser()) {
+      // Bail out now if we're not problem user - the select onchange will handle the sort
+      return;
+    }
+
     this.setState({
       inventoryList: InventoryData.ITEMS_NAME_AZ
     });
   }
 
   sortNameZA() {
+    if (!Credentials.isProblemUser()) {
+      // Bail out now if we're not problem user - the select onchange will handle the sort
+      return;
+    }
+
     this.setState({
       inventoryList: InventoryData.ITEMS_NAME_ZA
     });
   }
 
   sortPriceLoHi() {
+    if (!Credentials.isProblemUser()) {
+      // Bail out now if we're not problem user - the select onchange will handle the sort
+      return;
+    }
+
     this.setState({
       inventoryList: InventoryData.ITEMS_PRICE_LOHI
     });
   }
 
   sortPriceHiLo() {
+    if (!Credentials.isProblemUser()) {
+      // Bail out now if we're not problem user - the select onchange will handle the sort
+      return;
+    }
+
     this.setState({
       inventoryList: InventoryData.ITEMS_PRICE_HILO
     });
@@ -151,11 +213,11 @@ class InventoryList extends Component {
         <div id="searchbox_container"></div>
         <div id="inventory_filter_container">
           <div class="product_label">Products</div>
-          <select class="product_sort_container">
-            <option onClick={this.sortNameAZ}>Name (A to Z)</option>
-            <option onClick={this.sortNameZA}>Name (Z to A)</option>
-            <option onClick={this.sortPriceLoHi}>Price (low to high)</option>
-            <option onClick={this.sortPriceHiLo}>Price (high to low)</option>
+          <select onChange={this.sortByOption} class="product_sort_container">
+            <option value="az" onClick={this.sortNameAZ}>Name (A to Z)</option>
+            <option value="za" onClick={this.sortNameZA}>Name (Z to A)</option>
+            <option value="lohi" onClick={this.sortPriceLoHi}>Price (low to high)</option>
+            <option value="hilo" onClick={this.sortPriceHiLo}>Price (high to low)</option>
           </select>
         </div>
       </div>
