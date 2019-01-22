@@ -69,7 +69,7 @@ class SummaryItem extends Component {
         orderTotal = orderTotal + InventoryData.ITEMS[contents[curItem]].price;
         if (Credentials.isProblemUser()) {
           // double up for the problem user
-          orderTotal = orderTotal + InventoryData.ITEMS[curItem].price;
+          orderTotal = orderTotal + InventoryData.ITEMS[contents[curItem]].price;
         }
       }
 
