@@ -78,6 +78,7 @@ body {
 }
 
 .subheader_label {
+	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 	background: #474c55;
 	height: 70px;
 }

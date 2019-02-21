@@ -14,7 +14,7 @@ describe('Login', () => {
     loginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'standarduser-3-values-submitted');
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html', 'expected URL mismatch!');
+    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
   });
 
   it('should be able to login with the problem user', () => {
@@ -29,7 +29,7 @@ describe('Login', () => {
     loginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'problemuser-3-values-submitted');
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html', 'expected URL mismatch!');
+    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
   });
 
   it('should be able to login with the performance issue user', () => {
@@ -44,7 +44,7 @@ describe('Login', () => {
     loginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'perfuser-3-values-submitted');
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html', 'expected URL mismatch!');
+    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
   });
 
   it('should not be able to login with the locked out user', () => {
@@ -57,13 +57,13 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'lockedout-2-values-entered');
 
     // Make sure it's not there before we start, so we know it showed due to our action
-    expect(loginPage.isErrorMessagePresent()).toEqual(false, 'expected error message to be hidden!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(false);
 
     loginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'lockedout-3-values-submitted');
 
-    expect(loginPage.isErrorMessagePresent()).toEqual(true, 'expected error message to be displayed!');
-    expect(browser.getUrl()).toEqual('http://localhost/', 'expected URL mismatch!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(true);
+    expect(browser.getUrl()).toEqual('http://localhost/');
   });
 
   it('should not be able to login without a username', () => {
@@ -76,13 +76,13 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'blank-user-2-values-entered');
 
     // Make sure it's not there before we start, so we know it showed due to our action
-    expect(loginPage.isErrorMessagePresent()).toEqual(false, 'expected error message to be hidden!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(false);
 
     loginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'blank-user-3-values-submitted');
 
-    expect(loginPage.isErrorMessagePresent()).toEqual(true, 'expected error message to be displayed!');
-    expect(browser.getUrl()).toEqual('http://localhost/', 'expected URL mismatch!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(true);
+    expect(browser.getUrl()).toEqual('http://localhost/');
   });
 
   it('should not be able to login without a password', () => {
@@ -95,13 +95,13 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'blank-pass-2-values-entered');
 
     // Make sure it's not there before we start, so we know it showed due to our action
-    expect(loginPage.isErrorMessagePresent()).toEqual(false, 'expected error message to be hidden!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(false);
 
     loginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'blank-pass-3-values-submitted');
 
-    expect(loginPage.isErrorMessagePresent()).toEqual(true, 'expected error message to be displayed!');
-    expect(browser.getUrl()).toEqual('http://localhost/', 'expected URL mismatch!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(true);
+    expect(browser.getUrl()).toEqual('http://localhost/');
   });
 
   it('should not be able to login with the wrong password', () => {
@@ -114,12 +114,12 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'wrong-pass-2-values-entered');
 
     // Make sure it's not there before we start, so we know it showed due to our action
-    expect(loginPage.isErrorMessagePresent()).toEqual(false, 'expected error message to be hidden!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(false);
 
     loginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'wrong-pass-3-values-submitted');
 
-    expect(loginPage.isErrorMessagePresent()).toEqual(true, 'expected error message to be displayed!');
-    expect(browser.getUrl()).toEqual('http://localhost/', 'expected URL mismatch!');
+    expect(loginPage.isErrorMessagePresent()).toEqual(true);
+    expect(browser.getUrl()).toEqual('http://localhost/');
   });
 });

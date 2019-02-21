@@ -29,9 +29,9 @@ class LoginPage {
     
     // Pull our input fields and plug in the correct values
     
-    getUsernameInputElement().addValue(LoginPage.STANDARD_USER);
-    getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
-    getLoginButtonElement().click();
+    this.getUsernameInputElement().addValue(LoginPage.STANDARD_USER);
+    this.getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
+    this.getLoginButtonElement().click();
   }
 }
 

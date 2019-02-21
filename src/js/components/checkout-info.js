@@ -77,9 +77,9 @@ class CheckoutInfo extends Component {
     return (
         <div className="checkout_info">
         <form onSubmit={this.handleSubmit}>
-            <input type="text" className="checkout-input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} />              
-            <input type="text" className="checkout-input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} />              
-            <input type="text" className="checkout-input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} />              
+            <input id="first-name" type="text" className="checkout-input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} />              
+            <input id="last-name" type="text" className="checkout-input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} />              
+            <input id="postal-code" type="text" className="checkout-input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} />              
             <a class="cart_cancel_link" href="./cart.html">CANCEL</a>
             <input class="cart_checkout_link" type="submit" value="CONTINUE" />
             {

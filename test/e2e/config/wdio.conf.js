@@ -50,7 +50,11 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        // NOTE: this is at 2 right now because that seems like the optimal number of Chrome
+        // instances to get fastest test throughput - at 4 instances, thrash on the dev Vagrant
+        // VM causes tests to time out, and 3 is quite slow to start also which makes a
+        // big difference given that the tests are very small and quick to execute
+        maxInstances: 2,
         //
         browserName: 'chrome',
         "goog:chromeOptions": {

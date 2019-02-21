@@ -34,7 +34,7 @@
     "@wdio/jasmine-framework": "^5.4.14",
     "@wdio/local-runner": "^5.4.17",
     "@wdio/selenium-standalone-service": "^5.4.14",
-    "@wdio/spec-reporter": "^5.4.14",
+    "@wdio/spec-reporter": "^5.4.15",
     "@wdio/sync": "^5.4.14",
     "babel-loader": "8.0.4",
     "chromedriver": "2.46.0",
