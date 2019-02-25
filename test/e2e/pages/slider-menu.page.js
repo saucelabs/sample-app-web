@@ -35,4 +35,4 @@ class SliderMenuPage {
   }
 }
 
-module.exports = SliderMenuPage
+module.exports = new SliderMenuPage();

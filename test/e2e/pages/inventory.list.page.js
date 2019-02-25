@@ -60,6 +60,10 @@ class InventoryListPage {
     
     return retArray;
   }
+
+  addFirstUnaddedItemToCart() {
+    this.getAddToCartButton(0).click();
+  }
 }
 
-module.exports = InventoryListPage
+module.exports = new InventoryListPage();

@@ -19,4 +19,4 @@ class InventoryItemPage {
   }
 }
 
-module.exports = InventoryItemPage
+module.exports = new InventoryItemPage();

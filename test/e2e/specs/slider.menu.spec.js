@@ -5,145 +5,104 @@ const SliderMenuPage = require('../pages/slider-menu.page');
 const InventoryListPage = require('../pages/inventory.list.page');
 
 describe('Slider Menu', () => {
-  it('should be able to open and close the slider menu', () => {
+
+  beforeEach(() => {
     browser.url('/');
-    TestUtils.saveScreenshot('slider-menu', 'menu-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const headerPage = new HeaderPage();
-    const sliderPage = new SliderMenuPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('slider-menu', 'menu-2-login-complete');
-
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false, 'Menu should be closed on initial load!');
-
-    headerPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-3-slider-menu-click');
-
-    sliderPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('slider-menu', 'menu-4-slider-menu-open');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(true, 'Menu should be open after menu button click!');
     
-    sliderPage.getSliderMenuOverlay().click();
-    sliderPage.waitForSliderMenuHidden();
-    TestUtils.saveScreenshot('slider-menu', 'menu-5-slider-menu-closed');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false, 'Menu should be closed after click outside slider menu!');
+    // We sometimes manipulate the cart in these tests, so make sure session storage is clear.
+    // This has to happen AFTER a browser.url call, otherwise you will get:
+    // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
+    browser.clearSessionStorage();
+
+    // Make sure we're logged in before our tests start, and verify that we're at the right starting point
+    LoginPage.loginWithStandardUser();
+    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
+  });
+
+  it('should be able to open and close the slider menu', () => {
+    HeaderPage.getSliderMenuButton().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-1-slider-menu-click');
+
+    SliderMenuPage.waitForSliderMenuVisible();    
+    TestUtils.saveScreenshot('slider-menu', 'menu-2-slider-menu-open');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
+    
+    SliderMenuPage.getSliderMenuOverlay().click();
+    SliderMenuPage.waitForSliderMenuHidden();
+    TestUtils.saveScreenshot('slider-menu', 'menu-3-slider-menu-closed');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
   });
 
   it('should be able to navigate to menu about page', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('slider-menu', 'menu-about-1-initial-load');
+    HeaderPage.getSliderMenuButton().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-about-1-slider-menu-click');
 
-    const loginPage = new LoginPage();
-    const headerPage = new HeaderPage();
-    const sliderPage = new SliderMenuPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('slider-menu', 'menu-about-2-login-complete');
+    SliderMenuPage.waitForSliderMenuVisible();    
+    TestUtils.saveScreenshot('slider-menu', 'menu-about-2-slider-menu-open');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
 
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false, 'Menu should be closed on initial load!');
+    SliderMenuPage.getSliderMenuAboutLink().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-about-3-slider-about-link-click');
 
-    headerPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-about-3-slider-menu-click');
-
-    sliderPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('slider-menu', 'menu-about-4-slider-menu-open');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(true, 'Menu should be open after menu button click!');
-
-    sliderPage.getSliderMenuAboutLink().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-about-5-slider-about-link-click');
-
-    expect(browser.getUrl()).toEqual('https://saucelabs.com/', 'expected URL mismatch!');
+    expect(browser.getUrl()).toEqual('https://saucelabs.com/');
   });
 
   it('should be able to log out via menu', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('slider-menu', 'menu-logout-1-initial-load');
+    HeaderPage.getSliderMenuButton().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-logout-1-slider-menu-click');
 
-    const loginPage = new LoginPage();
-    const headerPage = new HeaderPage();
-    const sliderPage = new SliderMenuPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('slider-menu', 'menu-logout-2-login-complete');
+    SliderMenuPage.waitForSliderMenuVisible();    
+    TestUtils.saveScreenshot('slider-menu', 'menu-logout-2-slider-menu-open');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
 
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false, 'Menu should be closed on initial load!');
+    SliderMenuPage.getSliderMenuLogoutLink().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-logout-3-slider-logout-link-click');
 
-    headerPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-logout-3-slider-menu-click');
-
-    sliderPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('slider-menu', 'menu-logout-4-slider-menu-open');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(true, 'Menu should be open after menu button click!');
-
-    sliderPage.getSliderMenuLogoutLink().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-logout-5-slider-logout-link-click');
-
-    expect(browser.getUrl()).toEqual('http://localhost/index.html', 'expected URL mismatch!');
+    expect(browser.getUrl()).toEqual('http://localhost/index.html');
   });
 
   it('should be able to navigate to menu inventory page', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const headerPage = new HeaderPage();
-    const sliderPage = new SliderMenuPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-2-login-complete');
-
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false, 'Menu should be closed on initial load!');
-
     // By default we land on the inventory list page - it won't be a very effective test if we are already there,
     // we need to navigate elsewhere to make sure we actually navigate on click
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('inventory-list', 'menu-inventory-3-cart-click');
-    expect(browser.getUrl()).toEqual('http://localhost/cart.html', 'expected URL mismatch!');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('inventory-list', 'menu-inventory-1-cart-click');
+    expect(browser.getUrl()).toEqual('http://localhost/cart.html');
     
-    headerPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-4-slider-menu-click');
+    HeaderPage.getSliderMenuButton().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-2-slider-menu-click');
 
-    sliderPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-5-slider-menu-open');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(true, 'Menu should be open after menu button click!');
+    SliderMenuPage.waitForSliderMenuVisible();    
+    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-3-slider-menu-open');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
 
-    sliderPage.getSliderMenuInventoryLink().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-6-slider-inventory-link-click');
+    SliderMenuPage.getSliderMenuInventoryLink().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-inventory-4-slider-inventory-link-click');
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html', 'expected URL mismatch!');
+    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
   });
 
   it('should clear the cart on reset app state', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('slider-menu', 'menu-reset-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const headerPage = new HeaderPage();
-    const sliderPage = new SliderMenuPage();
-    const listPage = new InventoryListPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('slider-menu', 'menu-reset-2-login-complete');
-
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false, 'Menu should be closed on initial load!');
-
     // Now add an item to the cart
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('inventory-list', 'menu-reset-3-add-to-cart-click');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('inventory-list', 'menu-reset-1-add-to-cart-click');
     
-    expect(headerPage.getShoppingCartCount()).toEqual('1', 'Expected to have one item in the cart after add-to-cart!');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(1);
     
-    headerPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-reset-4-slider-menu-click');
+    HeaderPage.getSliderMenuButton().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-reset-2-slider-menu-click');
 
-    sliderPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('slider-menu', 'menu-reset-5-slider-menu-open');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(true, 'Menu should be open after menu button click!');
+    SliderMenuPage.waitForSliderMenuVisible();    
+    TestUtils.saveScreenshot('slider-menu', 'menu-reset-3-slider-menu-open');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
 
-    sliderPage.getSliderMenuResetLink().click();
-    TestUtils.saveScreenshot('slider-menu', 'menu-reset-6-slider-reset-link-click');
-    expect(headerPage.getShoppingCartCount()).toEqual('', 'Expected to have nothing in the cart after reset!');
+    SliderMenuPage.getSliderMenuResetLink().click();
+    TestUtils.saveScreenshot('slider-menu', 'menu-reset-4-slider-reset-link-click');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(0);
     
-    sliderPage.getSliderMenuOverlay().click();
-    sliderPage.waitForSliderMenuHidden();
-    TestUtils.saveScreenshot('slider-menu', 'menu-reset-7-slider-menu-closed');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false, 'Menu should be closed after click outside slider menu!');
+    SliderMenuPage.getSliderMenuOverlay().click();
+    SliderMenuPage.waitForSliderMenuHidden();
+    TestUtils.saveScreenshot('slider-menu', 'menu-reset-5-slider-menu-closed');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
   });
 });

@@ -16,6 +16,26 @@ class LoginPage {
     return $('h3[data-test=error]');
   }
 
+  get STANDARD_USER() {
+    return "standard_user";
+  }
+
+  get PROBLEM_USER() {
+    return "problem_user";
+  }
+
+  get LOCKED_OUT_USER() {
+    return "locked_out_user";
+  }
+
+  get BAD_PERF_USER() {
+    return "performance_glitch_user";
+  }
+
+  get VALID_PASSWORD() {
+    return "secret_sauce";
+  }
+
   /**
    * Check if the error message is displayed
    *
@@ -29,18 +49,10 @@ class LoginPage {
     
     // Pull our input fields and plug in the correct values
     
-    this.getUsernameInputElement().addValue(LoginPage.STANDARD_USER);
-    this.getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
+    this.getUsernameInputElement().addValue(this.STANDARD_USER);
+    this.getPasswordInputElement().addValue(this.VALID_PASSWORD);
     this.getLoginButtonElement().click();
   }
 }
 
-// Assign our users and passwords to static fields now
-LoginPage.STANDARD_USER = "standard_user";
-LoginPage.PROBLEM_USER = "problem_user";
-LoginPage.LOCKED_OUT_USER = "locked_out_user";
-LoginPage.BAD_PERF_USER = "performance_glitch_user";
-
-LoginPage.VALID_PASSWORD = "secret_sauce";
-
-module.exports = LoginPage
+module.exports = new LoginPage();
