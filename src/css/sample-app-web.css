@@ -1,8 +1,14 @@
 body {
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-size: 14px;
 	color: #4A4A4A;
 }
-
+.login_logo {
+	text-align: center;
+	padding: 30px 0;
+	background: url('../img/SwagLabs_logo.png') no-repeat center center;
+	margin-top: 30px;
+}
 .peek {
 	background: url('../img/peek.png') no-repeat;
 	width: 100px;
@@ -13,28 +19,94 @@ body {
 	z-index: 2;
 }
 
+/* LOGIN SCREEN */
+.login_wrapper{
+	padding: 30px;
+	margin: 0px auto;
+}
+.login_wrapper-inner {
+	overflow: hidden;
+}
+.login_wrapper-inner,
+.login_credentials_wrap-inner {
+	width: 70%;
+	max-width: 720px;
+	padding: 15px 30px 30px;
+	margin: 0 auto;
+	border: 2px solid #ededed;
+}
+.form_column {
+	float: none;
+	width: 100%;
+}
+.bot_column {
+	float: none;
+	width: 100%;
+	background: url('../img/Login_Bot_graphic.png') no-repeat center center;
+	min-height: 260px;
+	min-width: 300px;
+}
+@media only screen and (min-width: 900px) {
+	.form_column {
+		float: left;
+		width: 48%;
+		padding-top: 30px;
+	}
+	.bot_column {
+		float: right;
+		width: 48%;
+		background: url('../img/Login_Bot_graphic.png') no-repeat center center;
+		min-height: 260px;
+		min-width: 300px;
+	}
+}
+
 .login-button {
 	margin: 20px auto;
-	background: #61affe;
+	background: #fff;
+	border: 2px solid #CE2A2B;
 	font-size: 18px;
-	font-weight: 800;
 	width: 100%;
 	max-width: 400px;
 	padding: 10px;
 	text-align: center;
-	font-family: Open Sans,sans-serif;
-	color: #fff;
+	color: #CE2A2B;
+	outline: none;
+}
+.login-button:hover {
+	background: #efefef;
+	cursor: pointer;
+}
+.login-button:active {
+	background: #ccc;
 }
 
 .login-input {
-	margin: 20px 10px;
+	margin: 0 0 25px 0;
 	font-size: 18px;
 	width: 100%;
 	max-width: 380px;
 	border: 0px;
-	border-bottom: 1px solid #777;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	padding: 10px 0;
 }
-
+.login_credentials {
+	clear: both;
+	line-height: 24px;
+}
+.login_credentials {
+	float: left;
+	width: 48%;
+}
+.login_password{
+	float: right;
+	width: 48%;
+}
+.login_credentials_wrap-inner{
+	background-color: #efefef;
+	overflow: hidden;
+}
 .error-button {
 	border: 0px;
 	background: #fff;
@@ -42,21 +114,7 @@ body {
 	cursor: pointer;
 }
 
-.login-box {
-	background: #fff;
-	margin: 10% auto;
-	padding: 40px;
-	max-width: 400px;
-}
-
-.login-info-box {
-	font-size: 14px;
-	margin: 10px auto;
-	padding: 20px;
-	max-width: 600px;
-	background: #fff;
-	border: 4px dashed #000;
-}
+/* END LOGIN SCREEN */
 
 .main-body {
 	margin: 0px;
