@@ -45,7 +45,7 @@ class CartItem extends Component {
                 <div class="inventory_item_desc">{this.item.desc}</div>
                 <div class="item_pricebar">
                   <div class="inventory_item_price">{this.item.price}</div>
-                  <button className="remove-from-cart-button" onClick={() => this.removeFromCart(this.item.id)}>REMOVE</button>
+                  <button className="btn_secondary cart_button" onClick={() => this.removeFromCart(this.item.id)}>REMOVE</button>
                 </div>
               </div>
             </div>
@@ -75,8 +75,8 @@ class CartItem extends Component {
           })}
         </div>
         <div class="cart_footer">
-          <a class="cart_cancel_link" href="./inventory.html">Continue Shopping</a>
-          <a class="cart_checkout_link" href="./checkout-step-one.html">CHECKOUT</a>
+          <a class="btn_secondary" href="./inventory.html">Continue Shopping</a>
+          <a class="btn_action checkout_button" href="./checkout-step-one.html">CHECKOUT</a>
         </div>
         </div>
       );

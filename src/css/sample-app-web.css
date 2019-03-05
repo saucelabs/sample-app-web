@@ -68,7 +68,6 @@ body, html {
 		min-width: 300px;
 	}
 }
-
 .login-button {
 	margin: 20px auto;
 	background: #fff;
@@ -88,7 +87,6 @@ body, html {
 .login-button:active {
 	background: #ccc;
 }
-
 .login-input {
 	margin: 0 0 25px 0;
 	font-size: 18px;
@@ -121,7 +119,6 @@ body, html {
 	color: #f00;
 	cursor: pointer;
 }
-
 /* END LOGIN SCREEN */
 
 .main-body {
@@ -134,6 +131,9 @@ body, html {
 	font-size: 1.7em;
 	position: relative;
 }
+.header_container{
+	height: 70px;
+}
 
 .header_secondary_container {
 	background: #474c55;
@@ -142,10 +142,14 @@ body, html {
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 }
 
-.subheader_label {
+.subheader {
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 	background: #474c55;
 	height: 70px;
+	color: #fff;
+	font-size: 2em;
+	padding-left: 42px;
+	line-height: 66px;
 }
 
 .product_label,
@@ -164,71 +168,42 @@ body, html {
 	max-width: 1280px;
 	margin: 0 auto;
 }
-.inventory_item_img {}
-
 .inventory_item_name {
-	font-size: 1.1em;
+	font-size: 1.4em;
 	font-weight: 500;
+	color: #E2231A;
 }
-
 .inventory_item_desc {
 	font-size: .85em;
 	margin-top: 7px;
 	color: #777777;
 	padding-right: 20px;
 }
-
 .pricebar {
 	position: absolute;
 	bottom: 15px;
 	right: 10px;
 	width: 74%;
 }
+.checkout_button{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
 
 .inventory_item_price {
-	color: #569210;
-	font-size: 1.3em;
+	color: #E2231A;
+	font-size: 1.6em;
+	display: inline-block;
 }
-
-.add-to-cart-button,
-.remove-from-cart-button {
+.btn_inventory {
 	position: absolute;
 	right: 10px;
-	bottom: 0;
-	text-align: center;
-	padding: 10px 20px;
-	cursor: pointer;
-	font-size: 1em;
-	outline: none;
-	border: none;
-	border-radius: 2px;
+	bottom: 0;	
 }
-
-.add-to-cart-button {
-	background: #57c1e8;
-	color: #fff;
-	border: 2px solid #57c1e8;
-}
-
-.add-to-cart-button:hover {
-	background: #1395F0;
-	border: 2px solid #1395F0;
-}
-
-.remove-from-cart-button {
-	background: #fff;
-	color: #CE2A2B;
-	border: 2px solid #CE2A2B;
-}
-
-.remove-from-cart-button:hover {
-	background: #fafafa;
-}
-
 .inventory_container {
 	overflow: hidden;
 }
-
 .inventory_item {
     border: 2px solid #EDEDEF;
 	background: #fff;
@@ -238,16 +213,14 @@ body, html {
 	margin-bottom: 12px;
 	min-width: 480px;
 }
-
 .inventory_item_label {
 	padding-top: 15px;
 	min-height: 150px;
-	width: 75%;
+	width: 74%;
 	float: right;
 	vertical-align: top;
 	position: relative;	
 }
-
 .inventory_item:nth-child(odd) {
 	margin-right: 20px;
 }
@@ -259,17 +232,16 @@ body, html {
 		float: left;
 	}
 	.inventory_item_label {
-		width: 73%;
+		width: 72%;
 	}
 	.inventory_container {
-		padding-top: 30px;
+		padding-top: 65px;
 	}
 	.pricebar {
 		width: 71%;
 	}
 	
 }
-
 .inventory_item_label > a,
 .cart_item_label > a {
 	color: #4A4A4A;
@@ -277,31 +249,25 @@ body, html {
 }
 .inventory_item_img {
 	float: left;
-	width: 17%;
-	padding: 10px;
+	width: 24%;
 }
-
 .inventory_details_container {
 	margin-top: 50px;
 }
-
 .inventory_item_img img{
 	width: 98%;
 }
-
 .inventory_details {
 	border-top: 1px solid #777;
 	background: #fff;
 	width: 100%;
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 }
-
 .inventory_details_name {
 	font-size: 1.2em;
 	margin-bottom: 10px;
 	font-weight: 500;
 }
-
 .inventory_details_desc_container {
 	padding: 20px;
 	vertical-align: top;
@@ -309,12 +275,10 @@ body, html {
 	width: 50%;
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 }
-
 .inventory_details_desc {
 	font-size: 1em;
 	margin-bottom: 20px;
 }
-
 .inventory_details_back_button {
 	margin: 10px auto;
 	background: #57c1e8;
@@ -329,7 +293,6 @@ body, html {
 	border-radius: 2px;
 	border: none;
 }
-
 .inventory_details_price {
 	color: #569210;
 	font-size: 48px;
@@ -353,7 +316,6 @@ body, html {
 
 .shopping_cart_badge {
 	font-weight: 400;
-	font-family: Open Sans, sans serif;
 	top: -20px;
 	right: -30px;
 	transform: scale(1.1);
@@ -368,7 +330,7 @@ body, html {
 }
 
 .cart_item {
-    border-top: 1px solid #D8D8D8;
+	border-top: 2px solid #EDEDEF;
 	background: #fff;
 	width: 100%;
 	position: relative; 
@@ -384,67 +346,37 @@ body, html {
 	text-align: center;
 	font-size: 24px;
 	margin: 60px 50px;
-	border: 1px solid #777;
-	padding: 5px 30px 5px 10px;
+	border: 1px solid #ededed;
+	padding: 20px;
 }
 
 .cart_contents_container {
-	background-color: #fff;
+	padding-top: 30px;
 }
 
 .cart_quantity_label {
 	display: inline-block;
 	font-size: 18px;
 	padding: 20px 60px;
-	text-align: center;
 	background-color: #fff;
-	color: #555;
+	color: #484C55;
 }
-
 .cart_desc_label {
-	padding: 20px 0px;
-	width: calc(100% - 160px);
-	display: inline-block;
 	font-size: 18px;
-	text-align: center;
-	color: #555;
-	background-color: #fff;
+	color: #484C55;
+	display: inline-block;
 }
-
 .menu-item {
 	cursor: pointer;
 }
-
 .cart_footer {
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
-	border-top: 1px solid #777;
-	height: 80px;
+	border-top: 2px solid #EDEDEF;
+	padding: 20px 0 20px 20px;
+	margin-bottom: 30px;
 }
-
-.cart_cancel_link {
-	margin: 10px auto;
-	background: #fff;
-	font-size: 1.2em;
-	color: #4184F3;
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-.cart_checkout_link {
-	margin: 10px auto;
-	background: #4184F3;
-	font-size: 1.2em;
-	padding: 10px 20px;
-	text-align: center;
-	color: #fff;
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-	cursor: pointer;
-	text-decoration: none;
+.cart_button {
+	float: right;
 }
 
 .checkout_info {
@@ -596,13 +528,13 @@ body, html {
 }
 .page_wrapper {
 	margin-bottom: -360px;
+	min-height: 100%;
 }
 .push {
 	height: 360px;
 }
 @media only screen and (min-width: 1200px) {
 	.page_wrapper {
-		min-height: 100%;
 		margin-bottom: -360px;
 	}
 }
@@ -645,4 +577,44 @@ body, html {
 	height: 352px;
 	right: 0;
 	bottom: 0;
+}
+
+/*Button Styles*/
+.btn_primary,
+.btn_secondary,
+.btn_action,
+.btn_link {
+	cursor: pointer;
+	outline: none;
+	line-height: 40px;
+	padding: 0 20px;
+	font-size: 1.1em;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.btn_primary {
+	border: 2px solid #E2231A;
+	color: #E2231A;
+	background-color: #fff;
+}
+.btn_primary:hover {
+	background-color: #efefef;
+}
+.btn_secondary {
+	border: 2px solid #474C55;
+	background-color: #fff;
+	color: #474C55;
+}
+.btn_secondary:hover {
+	background: #efefef;
+}
+.btn_action{
+	background-color: #E2231A;
+	border: 2px solid #E2231A;
+	color: #fff;
+}
+.btn_link {
+	background-color: transparent;
+	border: 2px solid transparent;
 }
