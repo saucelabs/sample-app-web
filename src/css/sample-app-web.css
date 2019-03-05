@@ -1,13 +1,21 @@
-body {
+body, html {
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #4A4A4A;
+	height: 100%;
+	margin: 0;
 }
 .login_logo {
 	text-align: center;
 	padding: 30px 0;
 	background: url('../img/SwagLabs_logo.png') no-repeat center center;
 	margin-top: 30px;
+}
+.app_logo {
+	background: url('../img/SwagLabs_logo.png') no-repeat center center;
+	text-align: center;
+	margin: 0 50px;
+	height: 35px;
 }
 .peek {
 	background: url('../img/peek.png') no-repeat;
@@ -119,10 +127,9 @@ body {
 .main-body {
 	margin: 0px;
 }
-
 .header_label {
 	background: #fff;
-	padding: 18px;
+	padding: 18px 18px 0;
 	text-align: center;
 	font-size: 1.7em;
 	position: relative;
@@ -143,8 +150,10 @@ body {
 
 .product_label,
 .subheader_label {
-	padding: 32px 0px 0px 110px;
-	font-size: 2em;
+	position: absolute;
+	left: 110px;
+	top: 25px;
+	font-size: 2.2em;
 	font-weight: 100;
 	color: #fff;
 }
@@ -217,16 +226,15 @@ body {
 }
 
 .inventory_container {
-	padding: 0px;
+	overflow: hidden;
 }
 
 .inventory_item {
-    border: none;
+    border: 2px solid #EDEDEF;
 	background: #fff;
 	width: 100%;
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 	overflow: hidden;
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 	margin-bottom: 12px;
 	min-width: 480px;
 }
@@ -331,8 +339,8 @@ body {
 .shopping_cart_container {
 	height: 32px;
 	position: absolute;
-	top: 25px;
-	right: 44px;
+	top: 30px;
+	right: 40px;
 }
 
 .shopping_cart_link {
@@ -516,7 +524,7 @@ body {
 .product_sort_container {
 	position: absolute;
 	right: 20px;
-	top: 40px;
+	top: 23px;
 	height: 35px;
 	width: 200px;
 }
@@ -527,8 +535,8 @@ body {
   position: absolute;
   width: 20px;
   height: 15px;
-  left: 20px;
-  top: 24px;
+  left: 40px;
+  top: 30px;
 }
 
 /* Color/shape of burger icon bars */
@@ -578,4 +586,63 @@ body {
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* Sticky Footer */
+.footer {
+	background-color: #474C55;
+	height: 360px;
+	position: relative;
+}
+.page_wrapper {
+	margin-bottom: -360px;
+}
+.push {
+	height: 360px;
+}
+@media only screen and (min-width: 1200px) {
+	.page_wrapper {
+		min-height: 100%;
+		margin-bottom: -360px;
+	}
+}
+.footer_copy,
+.footer_robot,
+.social {
+	position: absolute;
+}
+.footer_copy {
+	left: 50px;
+	bottom: 40px;
+	color: #fff;
+}
+.social {
+	list-style-type: none;
+	left: 10px;
+	top: 20px;
+}
+.social li {
+	float: left;
+	margin-right: 20px;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	text-indent: -999em;
+}
+.social_twitter {
+	background: url('../img/twitter.png') no-repeat;
+}
+.social_facebook {
+	background: url('../img/facebook.png') no-repeat;
+}
+.social_linkedin {
+	background: url('../img/linkedIn.png') no-repeat;
+}
+
+.footer_robot {
+	background: url('../img/SwagBot_Footer_graphic.png') no-repeat;
+	width: 470px;
+	height: 352px;
+	right: 0;
+	bottom: 0;
 }
