@@ -87,7 +87,7 @@ body, html {
 .login-button:active {
 	background: #ccc;
 }
-.login-input {
+.form_input {
 	margin: 0 0 25px 0;
 	font-size: 18px;
 	width: 100%;
@@ -375,22 +375,23 @@ body, html {
 	padding: 20px 0 20px 20px;
 	margin-bottom: 30px;
 }
+.checkout_info_container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+.checkout_info {
+	max-width: 380px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+.checkout_buttons{
+	margin-top: 50px;
+	border-top: 2px solid #EDEDEF;
+	padding: 20px 0;
+}
 .cart_button {
 	float: right;
-}
-
-.checkout_info {
-	width: 30%;
-	margin: 40px auto;
-}
-
-.checkout-input {
-	margin: 20px 10px;
-	font-size: 18px;
-	width: 100%;
-	max-width: 380px;
-	border: 0px;
-	border-bottom: 1px solid #777;
 }
 
 .summary_quantity {

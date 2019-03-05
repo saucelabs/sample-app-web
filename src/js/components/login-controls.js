@@ -66,9 +66,9 @@ class LoginButton extends Component {
 	  return (
 		<div className="login-box">
 		  <form onSubmit={this.handleSubmit}>
-			  <input type="text" className="login-input" data-test="username" id="user-name" placeholder="Username" value={this.state.username} onChange={this.handleUserChange} />			  
-			  <input type="text" className="login-input" data-test="password" id="password" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} />			  
-			  <input type="submit" className="login-button" value="LOGIN" />
+			  <input type="text" className="form_input" data-test="username" id="user-name" placeholder="Username" value={this.state.username} onChange={this.handleUserChange} />			  
+			  <input type="text" className="form_inputt" data-test="password" id="password" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} />			  
+			  <input type="submit" className="form_input" value="LOGIN" />
 			  {
                   this.state.error &&
                   <h3 data-test="error">
