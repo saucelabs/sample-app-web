@@ -33,15 +33,15 @@ describe('Checkout Info', () => {
     expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
 
     HeaderPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('inventory-item', 'checkout-info-menu-3-slider-menu-click');
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-3-slider-menu-click');
 
     SliderMenuPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('inventory-item', 'checkout-info-menu-4-slider-menu-open');
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-4-slider-menu-open');
     expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
     
     SliderMenuPage.getSliderMenuOverlay().click();    
     SliderMenuPage.waitForSliderMenuHidden();
-    TestUtils.saveScreenshot('inventory-item', 'checkout-info-menu-5-slider-menu-closed');
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-5-slider-menu-closed');
     expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
   });
 
