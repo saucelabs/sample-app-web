@@ -164,9 +164,12 @@ body, html {
 
 .inventory_list,
 .cart_contents_container,
-.inventory_details_container {
+.inventory_details_container,
+.checkout_summary_container,
+.checkout_complete_container {
 	max-width: 1280px;
 	margin: 0 auto;
+	padding-top: 30px;
 }
 .inventory_item_name {
 	font-size: 1.4em;
@@ -203,6 +206,7 @@ body, html {
 }
 .inventory_container {
 	overflow: hidden;
+	margin-bottom: 30px;
 }
 .inventory_item {
     border: 2px solid #EDEDEF;
@@ -235,7 +239,7 @@ body, html {
 		width: 72%;
 	}
 	.inventory_container {
-		padding-top: 65px;
+		padding-top: 40px;
 	}
 	.pricebar {
 		width: 71%;
@@ -405,48 +409,42 @@ body, html {
 
 .summary_info_label {
 	width: calc(100% - 20px);
-	background-color: #fff;
-	border-top: 1px solid #777;
+	border-top: 1px solid #efefef;
 	padding: 20px 10px 0px;
-	font-size: 18px;
-	font-family: Open Sans,sans-serif;
-	color: #555;
+	font-size: 1.2em;
 }
 
 .summary_value_label {
 	font-weight: 800;
 	font-size: 18px;
-	color: #000;
 	padding: 20px 10px;
 }
 
 .summary_subtotal_label {
-	border-top: 1px solid #777;
+	border-top: 1px solid #efefef;
 	padding: 20px 10px 10px;
 	font-size: 18px;
-	font-family: Open Sans,sans-serif;
-	color: #555;
 }
 
 .summary_tax_label {
 	padding: 0px 10px;
-	font-size: 18px;
-	font-family: Open Sans,sans-serif;
-	color: #555;
+	font-size: 1.2em;
 }
 
 .summary_total_label {
 	padding: 10px;
-	font-size: 18px;
-	font-family: Open Sans,sans-serif;
-	color: #555;
-	font-weight: 800;
+	font-size: 1.2em;
 	margin: 0px 0px 8px 0px;
-	border-bottom: 1px solid #777;
 }
 
 .checkout_complete_container {
 	text-align: center;
+}
+.pony_express {
+	background: url('../img/pony-express.png') no-repeat;
+	width: 523px;
+	height: 381px;
+	margin: 30px auto;
 }
 
 /*============ ITEM DETAILS ===============*/

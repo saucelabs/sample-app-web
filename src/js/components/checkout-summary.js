@@ -93,8 +93,8 @@ class SummaryItem extends Component {
             <div class="summary_tax_label">Tax: ${orderTax}</div>
             <div class="summary_total_label">Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}</div>
             <div class="cart_footer">
-              <a class="cart_cancel_link" href="./inventory.html">CANCEL</a>
-              <a class="cart_checkout_link" href="./checkout-complete.html" onClick={this.clearCart}>FINISH</a>
+              <a class="ccart_cancel_link btn_secondary" href="./inventory.html">CANCEL</a>
+              <a class="btn_action cart_button" href="./checkout-complete.html" onClick={this.clearCart}>FINISH</a>
             </div>
           </div>
         </div>

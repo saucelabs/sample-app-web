@@ -77,6 +77,15 @@ class CheckoutInfo extends Component {
     return (
         <div className="checkout_info_wrapper">
         <form onSubmit={this.handleSubmit}>
+        {
+                    this.state.error &&
+                    <h3 data-test="error">
+                    <button class="error-button" onClick={this.dismissError}>
+                    <FontAwesomeIcon icon={faTimesCircle} size="2x" />
+                    </button>
+                    Error: {this.state.error}
+                    </h3>
+            } 
           <div className="checkout_info">
             <input id="first-name" type="text" className="form_input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} />              
             <input id="last-name" type="text" className="form_input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} />              
@@ -85,15 +94,7 @@ class CheckoutInfo extends Component {
           <div className="checkout_buttons">
             <a class="cart_cancel_link btn_secondary" href="./cart.html">CANCEL</a>
             <input class="btn_primary cart_button" type="submit" value="CONTINUE" />
-            {
-                    this.state.error &&
-                    <h3 data-test="error">
-                    <button class="error-button" onClick={this.dismissError}>
-                    <FontAwesomeIcon icon={faTimesCircle} size="2x" />
-                    </button>
-                    Epic sadface: {this.state.error}
-                    </h3>
-            }
+
           </div>
         </form>
       </div>
