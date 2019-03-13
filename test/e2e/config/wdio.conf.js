@@ -7,7 +7,10 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
-    
+
+    // Custom property which enables and disables taking of screenshots in tests
+    enableScreenshots: true,
+
     //
     // ==================
     // Specify Test Files
