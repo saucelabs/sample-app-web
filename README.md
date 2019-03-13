@@ -16,7 +16,7 @@ To build the application:
 
 1. `vagrant ssh` inside the project folder
 2. On the VM: `cd /usr/local/saucelabs/sample-app-web`
-3. On the VM: `./build-app.sh`
+3. On the VM: `npm run build`
 4. Again, no step 4. The build is complete!
 
 # Run
