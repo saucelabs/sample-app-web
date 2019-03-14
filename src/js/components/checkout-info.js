@@ -75,22 +75,27 @@ class CheckoutInfo extends Component {
   render () {
 
     return (
-        <div className="checkout_info">
+        <div className="checkout_info_wrapper">
         <form onSubmit={this.handleSubmit}>
-            <input id="first-name" type="text" className="checkout-input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} />              
-            <input id="last-name" type="text" className="checkout-input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} />              
-            <input id="postal-code" type="text" className="checkout-input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} />              
-            <a class="cart_cancel_link" href="./cart.html">CANCEL</a>
-            <input class="cart_checkout_link" type="submit" value="CONTINUE" />
-            {
+        {
                     this.state.error &&
                     <h3 data-test="error">
                     <button class="error-button" onClick={this.dismissError}>
                     <FontAwesomeIcon icon={faTimesCircle} size="2x" />
                     </button>
-                    Epic sadface: {this.state.error}
+                    Error: {this.state.error}
                     </h3>
-            }
+            } 
+          <div className="checkout_info">
+            <input id="first-name" type="text" className="form_input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} />              
+            <input id="last-name" type="text" className="form_input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} />              
+            <input id="postal-code" type="text" className="form_input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} />              
+          </div>
+          <div className="checkout_buttons">
+            <a class="cart_cancel_link btn_secondary" href="./cart.html">CANCEL</a>
+            <input class="btn_primary cart_button" type="submit" value="CONTINUE" />
+
+          </div>
         </form>
       </div>
     );

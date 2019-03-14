@@ -63,9 +63,9 @@ class InventoryListItem extends Component {
     var cartButton;
     
     if (this.state.itemInCart) {
-      cartButton = <button className="remove-from-cart-button" onClick={() => this.removeFromCart(this.state.id)}>REMOVE</button>;
+      cartButton = <button className="btn_secondary btn_inventory" onClick={() => this.removeFromCart(this.state.id)}>REMOVE</button>;
     } else {
-      cartButton = <button className="add-to-cart-button" onClick={() => this.addToCart(this.state.id)}>ADD TO CART</button>;
+      cartButton = <button className="btn_primary btn_inventory" onClick={() => this.addToCart(this.state.id)}>ADD TO CART</button>;
     }
 
     return (

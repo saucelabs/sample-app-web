@@ -4,22 +4,39 @@
 <meta charset="UTF-8">
 <title>Swag Labs</title>
 <link rel="stylesheet" type="text/css" href="css/sample-app-web.css">
-
+<link rel="icon" type="image/png" href="favicon.ico">
 </head>
 <body class="main-body">
 
-  <div id="login_button_container"></div>
+  <div class="login_logo"></div>
 
-  <pre id="login_credentials" class="login-info-box">The currently accepted usernames for this application are:
+  <div class="login_wrapper">
 
-standard_user
-locked_out_user
-problem_user
-performance_glitch_user
+    <div class="login_wrapper-inner">
 
-And the password for all users is:
+      <div id="login_button_container" class="form_column"></div>
 
-secret_sauce</pre>
+      <div class="bot_column"></div>
 
+    </div>
+    <div class="login_credentials_wrap">
+      <div class="login_credentials_wrap-inner">
+          <div id="login_credentials" class="login_credentials">
+              <h4>Accepted usernames are:</h4>
+              standard_user<br/>
+              locked_out_user<br/>
+              problem_user<br/>
+              performance_glitch_user<br/>
+              
+            </div>
+            <div class="login_password">
+                <h4>Password for all users:</h4>
+                secret_sauce
+            </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
