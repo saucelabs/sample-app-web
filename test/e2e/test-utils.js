@@ -7,6 +7,11 @@ class TestUtils {
     const screenshotLocation = `./${screenshotDir}/${page}/${filePrefix}.png`;
     const pageUrl = browser.getUrl();
 
+    if (!browser.config.enableScreenshots) {
+      console.log(`skipping screenshot [${screenshotLocation}] for url: [${pageUrl}], enableScreenshots property set to false`);
+      return;
+    }
+
     // Log out where we're going to write to in case something blows up - lets us debug more easily
     console.log(`Saving screenshot to [${screenshotLocation}] for url: [${pageUrl}]`);
 

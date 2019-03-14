@@ -7,154 +7,116 @@ const CartPage = require('../pages/cart.page');
 const CheckoutInfoPage = require('../pages/checkout.info.page');
 
 describe('Checkout Info', () => {
-  it('should be able to open and close the slider menu', () => {
+
+  beforeEach(() => {
     browser.url('/');
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-1-initial-load');
+    
+    // We sometimes manipulate the cart in these tests, so make sure session storage is clear.
+    // This has to happen AFTER a browser.url call, otherwise you will get:
+    // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
+    browser.clearSessionStorage();
 
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    const sliderPage = new SliderMenuPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-2-login-complete');
-
+    // Make sure we're logged in before our tests start, and verify that we're at the right starting point
+    LoginPage.loginWithStandardUser();
     expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+  });
 
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-3-cart-click');
+  it('should be able to open and close the slider menu', () => {
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-1-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    cartPage.getCheckoutButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-4-checkout-click');
+    CartPage.getCheckoutButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-2-checkout-click');
     expect(browser.getUrl()).toEqual('http://localhost/checkout-step-one.html');
 
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false);
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
 
-    headerPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('inventory-item', 'checkout-info-menu-5-slider-menu-click');
+    HeaderPage.getSliderMenuButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-3-slider-menu-click');
 
-    sliderPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('inventory-item', 'checkout-info-menu-6-slider-menu-open');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(true);
+    SliderMenuPage.waitForSliderMenuVisible();    
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-4-slider-menu-open');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
     
-    sliderPage.getSliderMenuOverlay().click();    
-    sliderPage.waitForSliderMenuHidden();
-    TestUtils.saveScreenshot('inventory-item', 'checkout-info-menu-7-slider-menu-closed');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false);
+    SliderMenuPage.getSliderMenuOverlay().click();    
+    SliderMenuPage.waitForSliderMenuHidden();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-menu-5-slider-menu-closed');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
   });
 
   it('should be able to navigate to shopping cart page', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-3-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-1-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    cartPage.getCheckoutButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-4-checkout-click');
+    CartPage.getCheckoutButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-2-checkout-click');
     expect(browser.getUrl()).toEqual('http://localhost/checkout-step-one.html');
 
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-5-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cart-3-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
   });
 
   it('should be able to return to cart page from checkout info page', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    const infoPage = new CheckoutInfoPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-3-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-1-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    cartPage.getCheckoutButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-4-checkout-click');
+    CartPage.getCheckoutButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-2-checkout-click');
     expect(browser.getUrl()).toEqual('http://localhost/checkout-step-one.html');
 
-    infoPage.getCancelButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-5-cancel-click');
+    CheckoutInfoPage.getCancelButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-3-cancel-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
   });
 
   it('should be able to continue checkout process from info page', () => {
-    browser.url('/');
-    // We manipulate the cart in this test, so make sure session storage is clear.
-    // This has to happen AFTER a browser.url call, otherwise you will get:
-    // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
-    browser.clearSessionStorage();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    const infoPage = new CheckoutInfoPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-3-add-to-cart-click');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-1-add-to-cart-click');
     
-    expect(headerPage.getShoppingCartCount()).toEqual('1');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(1);
 
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-4-second-add-to-cart-click');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-2-second-add-to-cart-click');
 
-    expect(headerPage.getShoppingCartCount()).toEqual('2');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(2);
 
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-5-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-3-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    expect(cartPage.getCartItemCount()).toEqual(2);
+    expect(CartPage.getCartItemCount()).toEqual(2);
 
-    cartPage.getCheckoutButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-6-checkout-click');
+    CartPage.getCheckoutButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-4-checkout-click');
     expect(browser.getUrl()).toEqual('http://localhost/checkout-step-one.html');
 
     const firstName = 'Selenium first name';
     const lastName = 'Selenium last name';
     const postalCode = 'H0H 0H0';
-    infoPage.getFirstNameInput().addValue(firstName);
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-7-first-name');
-    expect(infoPage.getFirstNameInput().getValue()).toEqual(firstName);
+    CheckoutInfoPage.getFirstNameInput().addValue(firstName);
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-5-first-name');
+    expect(CheckoutInfoPage.getFirstNameInput().getValue()).toEqual(firstName);
 
-    infoPage.getLastNameInput().addValue(lastName);
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-8-last-name');
-    expect(infoPage.getFirstNameInput().getValue()).toEqual(firstName);
-    expect(infoPage.getLastNameInput().getValue()).toEqual(lastName);
+    CheckoutInfoPage.getLastNameInput().addValue(lastName);
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-6-last-name');
 
-    infoPage.getPostalCodeInput().addValue(postalCode);
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-9-postal-code');
-    expect(infoPage.getFirstNameInput().getValue()).toEqual(firstName);
-    expect(infoPage.getLastNameInput().getValue()).toEqual(lastName);
-    expect(infoPage.getPostalCodeInput().getValue()).toEqual(postalCode);
+    // Keep re-checking existing fields to make sure field A isn't mutated when field B
+    // is updated
+    expect(CheckoutInfoPage.getFirstNameInput().getValue()).toEqual(firstName);
+    expect(CheckoutInfoPage.getLastNameInput().getValue()).toEqual(lastName);
 
-    infoPage.getContinueButton().click();
-    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-10-continue-click');
+    CheckoutInfoPage.getPostalCodeInput().addValue(postalCode);
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-checkout-7-postal-code');
+    expect(CheckoutInfoPage.getFirstNameInput().getValue()).toEqual(firstName);
+    expect(CheckoutInfoPage.getLastNameInput().getValue()).toEqual(lastName);
+    expect(CheckoutInfoPage.getPostalCodeInput().getValue()).toEqual(postalCode);
+
+    CheckoutInfoPage.getContinueButton().click();
+    TestUtils.saveScreenshot('checkout-info', 'checkout-info-cancel-8-continue-click');
     expect(browser.getUrl()).toEqual('http://localhost/checkout-step-two.html');
   });
 });

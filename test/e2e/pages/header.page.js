@@ -8,10 +8,10 @@ class HeaderPage {
     const cartBadge = $('.shopping_cart_badge');
     
     if (cartBadge.isExisting()) {
-      return cartBadge.getText();
+      return parseInt(cartBadge.getText());
     }
 
-    return '';
+    return 0;
   }
 
   getSliderMenuButton() {
@@ -19,4 +19,4 @@ class HeaderPage {
   }
 }
 
-module.exports = HeaderPage
+module.exports = new HeaderPage();

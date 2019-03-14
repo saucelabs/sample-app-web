@@ -6,198 +6,127 @@ const InventoryListPage = require('../pages/inventory.list.page');
 const CartPage = require('../pages/cart.page');
 
 describe('Shopping Cart', () => {
-  it('should be able to open and close the cart page slider menu', () => {
+
+  beforeEach(() => {
     browser.url('/');
-    TestUtils.saveScreenshot('shopping-cart', 'cart-menu-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    const sliderPage = new SliderMenuPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-menu-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-menu-3-cart-click');
-    expect(browser.getUrl()).toEqual('http://localhost/cart.html');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false);
-
-    headerPage.getSliderMenuButton().click();
-    TestUtils.saveScreenshot('inventory-item', 'cart-menu-4-slider-menu-click');
-
-    sliderPage.waitForSliderMenuVisible();    
-    TestUtils.saveScreenshot('inventory-item', 'cart-menu-5-slider-menu-open');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(true);
     
-    sliderPage.getSliderMenuOverlay().click();    
-    sliderPage.waitForSliderMenuHidden();
-    TestUtils.saveScreenshot('inventory-item', 'cart-menu-6-slider-menu-closed');
-    expect(sliderPage.isSliderMenuPresent()).toEqual(false);
+    // We sometimes manipulate the cart in these tests, so make sure session storage is clear.
+    // This has to happen AFTER a browser.url call, otherwise you will get:
+    // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
+    browser.clearSessionStorage();
+
+    // Make sure we're logged in before our tests start, and verify that we're at the right starting point
+    LoginPage.loginWithStandardUser();
+    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+  });
+  
+  it('should be able to open and close the cart page slider menu', () => {
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-menu-1-cart-click');
+    expect(browser.getUrl()).toEqual('http://localhost/cart.html');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
+
+    HeaderPage.getSliderMenuButton().click();
+    TestUtils.saveScreenshot('inventory-item', 'cart-menu-2-slider-menu-click');
+
+    SliderMenuPage.waitForSliderMenuVisible();    
+    TestUtils.saveScreenshot('inventory-item', 'cart-menu-3-slider-menu-open');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
+    
+    SliderMenuPage.getSliderMenuOverlay().click();    
+    SliderMenuPage.waitForSliderMenuHidden();
+    TestUtils.saveScreenshot('inventory-item', 'cart-menu-4-slider-menu-closed');
+    expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
   });
 
   // Sure, it's kinda pointless to go to the shopping cart page from the shopping
   // cart page, but we should still verify the standard header link isn't broken
   it('should be able to navigate to cart page shopping cart page', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cart-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cart-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cart-3-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-cart-1-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cart-4-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-cart-2-cart-click');
     // Should still be at the same spot post-click
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
   });
 
   it('should be able to add items to cart and see on cart page', () => {
-    browser.url('/');
-    // We manipulate the cart in this test, so make sure session storage is clear.
-    // This has to happen AFTER a browser.url call, otherwise you will get:
-    // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
-    browser.clearSessionStorage();
-    TestUtils.saveScreenshot('shopping-cart', 'add-cart-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('shopping-cart', 'add-cart-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('shopping-cart', 'add-cart-3-add-to-cart-click');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('shopping-cart', 'add-cart-1-add-to-cart-click');
     
-    expect(headerPage.getShoppingCartCount()).toEqual('1');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(1);
 
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('shopping-cart', 'add-cart-4-second-add-to-cart-click');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('shopping-cart', 'add-cart-2-second-add-to-cart-click');
 
-    expect(headerPage.getShoppingCartCount()).toEqual('2');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(2);
 
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'add-cart-5-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'add-cart-3-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    expect(cartPage.getCartItemCount()).toEqual(2);
+    expect(CartPage.getCartItemCount()).toEqual(2);
   });
 
   it('should be able to remove items from cart on cart page', () => {
-    browser.url('/');
-    // We manipulate the cart in this test, so make sure session storage is clear.
-    // This has to happen AFTER a browser.url call, otherwise you will get:
-    // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
-    browser.clearSessionStorage();
-    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-1-initial-load');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-1-add-to-cart-click');
 
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-2-login-complete');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(1);
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-2-second-add-to-cart-click');
 
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-3-add-to-cart-click');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(2);
 
-    expect(headerPage.getShoppingCartCount()).toEqual('1');
-
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-4-second-add-to-cart-click');
-
-    expect(headerPage.getShoppingCartCount()).toEqual('2');
-
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-5-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-3-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    expect(cartPage.getCartItemCount()).toEqual(2);
+    expect(CartPage.getCartItemCount()).toEqual(2);
 
-    cartPage.getRemoveFromCartButton(1).click();
-    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-5-remove-from-cart-click-1');
+    CartPage.getRemoveFromCartButton(1).click();
+    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-4-remove-from-cart-click-1');
 
-    expect(cartPage.getCartItemCount()).toEqual(1);
+    expect(CartPage.getCartItemCount()).toEqual(1);
 
-    cartPage.getRemoveFromCartButton(0).click();
-    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-6-remove-from-cart-click-2');
+    CartPage.getRemoveFromCartButton(0).click();
+    TestUtils.saveScreenshot('shopping-cart', 'remove-cart-5-remove-from-cart-click-2');
 
-    expect(cartPage.getCartItemCount()).toEqual(0);
+    expect(CartPage.getCartItemCount()).toEqual(0);
   });
 
   it('should be able to return to inventory list from cart page', () => {
-    browser.url('/');
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cancel-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cancel-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cancel-3-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-cancel-1-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    cartPage.getCancelButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-cancel-4-cancel-click');
+    CartPage.getCancelButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-cancel-2-cancel-click');
     expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
   });
 
   it('should be able to start checkout process from cart page', () => {
-    browser.url('/');
-    // We manipulate the cart in this test, so make sure session storage is clear.
-    // This has to happen AFTER a browser.url call, otherwise you will get:
-    // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
-    browser.clearSessionStorage();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-1-initial-load');
-
-    const loginPage = new LoginPage();
-    const listPage = new InventoryListPage();
-    const headerPage = new HeaderPage();
-    const cartPage = new CartPage();
-    loginPage.loginWithStandardUser();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-2-login-complete');
-
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
-
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-3-add-to-cart-click');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-1-add-to-cart-click');
     
-    expect(headerPage.getShoppingCartCount()).toEqual('1');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(1);
 
-    listPage.getAddToCartButton(0).click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-4-second-add-to-cart-click');
+    InventoryListPage.addFirstUnaddedItemToCart();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-2-second-add-to-cart-click');
 
-    expect(headerPage.getShoppingCartCount()).toEqual('2');
+    expect(HeaderPage.getShoppingCartCount()).toEqual(2);
 
-    headerPage.getShoppingCartButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-5-cart-click');
+    HeaderPage.getShoppingCartButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-3-cart-click');
     expect(browser.getUrl()).toEqual('http://localhost/cart.html');
 
-    expect(cartPage.getCartItemCount()).toEqual(2);
+    expect(CartPage.getCartItemCount()).toEqual(2);
 
-    cartPage.getCheckoutButton().click();
-    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-6-checkout-click');
+    CartPage.getCheckoutButton().click();
+    TestUtils.saveScreenshot('shopping-cart', 'cart-checkout-4-checkout-click');
     expect(browser.getUrl()).toEqual('http://localhost/checkout-step-one.html');
   });
 });

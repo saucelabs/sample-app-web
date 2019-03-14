@@ -21,4 +21,4 @@ class CheckoutInfoPage {
   }
 }
 
-module.exports = CheckoutInfoPage
+module.exports = new CheckoutInfoPage();

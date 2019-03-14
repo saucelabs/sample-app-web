@@ -19,4 +19,4 @@ class CartPage {
   }
 }
 
-module.exports = CartPage
+module.exports = new CartPage();

@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "webpack --mode production",
+    "pretest": "npm run build",
     "test": "./node_modules/.bin/wdio test/e2e/config/wdio.conf.js"
   },
   "repository": {
