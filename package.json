@@ -2,9 +2,22 @@
   "name": "sample-app-web",
   "version": "1.0.0",
   "description": "This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers",
-  "main": "index.html",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saucelabs/sample-app-web.git"
@@ -16,7 +29,19 @@
   },
   "homepage": "https://github.com/saucelabs/sample-app-web#readme",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8"
   },
   "devDependencies": {
+    "@storybook/react": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@babel/core": "^7.4.4"
   }
 }
