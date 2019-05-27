@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Credentials } from './credentials.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/index'
 
 class CheckoutInfo extends Component {
 
@@ -32,7 +32,7 @@ class CheckoutInfo extends Component {
   };
 
   handleLastNameChange(evt) {
-    
+
     var newState = {
       lastName: evt.target.value,
     };
@@ -67,8 +67,8 @@ class CheckoutInfo extends Component {
     }
 
     // If we're here, we have our required info. Redirect!
-    window.location.href = './checkout-step-two.html';      
-    
+    window.location.href = './checkout-step-two.html';
+
     return '';
   }
 
@@ -85,11 +85,11 @@ class CheckoutInfo extends Component {
                     </button>
                     Error: {this.state.error}
                     </h3>
-            } 
+            }
           <div className="checkout_info">
-            <input id="first-name" type="text" className="form_input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} />              
-            <input id="last-name" type="text" className="form_input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} />              
-            <input id="postal-code" type="text" className="form_input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} />              
+            <input id="first-name" type="text" className="form_input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} />
+            <input id="last-name" type="text" className="form_input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} />
+            <input id="postal-code" type="text" className="form_input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} />
           </div>
           <div className="checkout_buttons">
             <a class="cart_cancel_link btn_secondary" href="./cart.html">CANCEL</a>

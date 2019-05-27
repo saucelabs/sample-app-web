@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Credentials } from './credentials.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome/index';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/index'
 
 class LoginButton extends Component {
   constructor(props) {
@@ -41,11 +41,11 @@ class LoginButton extends Component {
       }
 
       // If we're here, we have a username and password. Redirect!
-      window.location.href = './inventory.html';      
+      window.location.href = './inventory.html';
     } else {
       return this.setState({ error: 'Username and password do not match any user in this service' });
     }
-    
+
     return '';
   }
 
@@ -60,14 +60,14 @@ class LoginButton extends Component {
       password: evt.target.value,
     });
   }
-  
+
   render() {
 
 	  return (
 		<div className="login-box">
 		  <form onSubmit={this.handleSubmit}>
-			  <input type="text" className="form_input" data-test="username" id="user-name" placeholder="Username" value={this.state.username} onChange={this.handleUserChange} />			  
-			  <input type="password" className="form_input" data-test="password" id="password" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} />			  
+			  <input type="text" className="form_input" data-test="username" id="user-name" placeholder="Username" value={this.state.username} onChange={this.handleUserChange} />
+			  <input type="password" className="form_input" data-test="password" id="password" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} />
 			  <input type="submit" className="btn_action" value="LOGIN" />
 			  {
                   this.state.error &&
