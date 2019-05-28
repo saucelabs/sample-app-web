@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../utils/Colors'
+import { FONT_FAMILY } from '../utils/Constants'
 
 const styles = theme => ({
   root: {
@@ -17,10 +18,12 @@ const styles = theme => ({
     backgroundColor: colors.slRed,
   },
   errorText: {
+    fontFamily: FONT_FAMILY,
     display: 'flex',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    textAlign: 'center',
     fontSize: 14,
     color: colors.white,
     paddingLeft: 10,

@@ -30,6 +30,7 @@ class BaseButton extends React.Component {
   static propTypes = {
     buttonType: PropTypes.string.isRequired,
     classes: PropTypes.object.isRequired,
+    dataTest: PropTypes.string,
     fallBackClasses: PropTypes.string,
     label: PropTypes.string.isRequired,
     testID: PropTypes.string,
@@ -48,7 +49,7 @@ class BaseButton extends React.Component {
   }
 
   render() {
-    const { classes, fallBackClasses, label, buttonType, onClick } = this.props;
+    const { classes, dataTest, fallBackClasses, label, buttonType, onClick, testID } = this.props;
 
     return (
       <Button
@@ -58,9 +59,11 @@ class BaseButton extends React.Component {
           root: classes[ `root${ buttonType }` ] + ` ${ fallBackClasses }`,
           label: classes[ `label${ buttonType }` ]
         } }
+        {...(dataTest ? { 'data-test': dataTest } : {})}
         disableFocusRipple
         disableRipple
         fullWidth
+        id={ testID }
         onClick={ onClick }
       >
         { label }

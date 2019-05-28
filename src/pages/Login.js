@@ -175,7 +175,7 @@ class Login extends React.Component {
                     className="form_input"
                     dataTest="password"
                     error={ this.state.passwordError }
-                    id="user-name"
+                    id="password"
                     onChange={ this.handlePassChange }
                     placeholder="Password"
                     type={ INPUT_TYPES.PASSWORD }
@@ -191,6 +191,7 @@ class Login extends React.Component {
                     fallBackClasses="btn_action"
                     label="Login"
                     onClick={ this.handleSubmit }
+                    testID="loginButton"
                   />
                 </form>
               </Grid>
