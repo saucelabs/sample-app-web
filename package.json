@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers",
   "scripts": {
+    "lint": "eslint src/**/*.js stories/**/*.js --ignore-pattern src/old/**/*.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "prepush": "npm run lint",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -38,10 +40,12 @@
     "react-scripts": "2.1.8"
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.11",
+    "@babel/core": "^7.4.4",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
-    "@babel/core": "^7.4.4"
+    "@storybook/react": "^5.0.11",
+    "eslint-plugin-eslint-comments": "^3.1.1",
+    "eslint-plugin-jest": "^22.6.4"
   }
 }

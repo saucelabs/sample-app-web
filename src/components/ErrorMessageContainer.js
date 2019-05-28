@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
+import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { colors } from '../utils/Colors'
-import { FONT_FAMILY } from '../utils/Constants'
+import { colors } from '../utils/Colors';
+import { FONT_FAMILY } from '../utils/Constants';
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     backgroundColor: colors.white,
     height: 45,
@@ -28,26 +28,24 @@ const styles = theme => ({
     color: colors.white,
     paddingLeft: 10,
     paddingRight: 10,
-  }
+  },
 });
 
-class ErrorMessageContainer extends React.Component {
+const { object, string } = PropTypes;
+
+class ErrorMessageContainer extends Component {
   static propTypes = {
-    classes: PropTypes.object.isRequired,
-    dataTest: PropTypes.string,
-    errorMessage: PropTypes.string.isRequired,
-    testID: PropTypes.string,
-  }
+    classes: object.isRequired,
+    dataTest: string,
+    errorMessage: string.isRequired,
+    testID: string,
+  };
 
   static defaultProps = {
     error: false,
     placeholder: 'Placeholder',
     testID: 'test-id',
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const { classes, dataTest, errorMessage, testID } = this.props;
@@ -63,9 +61,5 @@ class ErrorMessageContainer extends React.Component {
     );
   }
 }
-
-ErrorMessageContainer.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(ErrorMessageContainer);

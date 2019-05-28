@@ -1,40 +1,74 @@
-export class Credentials {
+import { VALID_PASSWORD,VALID_USERNAMES } from './Constants';
 
-  static verifyCredentials(username, password) {
-	if (password !== Credentials.VALID_PASSWORD) {
-	  return false;
-	}
-	
-	if (Credentials.VALID_USERNAMES.indexOf(username) < 0) {
-	  return false;
-	}
-
-	// If we're here, we had a valid username and password.
-	// Store the username in our session storage.
-	window.sessionStorage.setItem('session-username', username);
-
-	return true;
+/**
+ * Verify the credentials
+ *
+ * @param {string} username
+ * @param {string} password
+ *
+ * @return {boolean}
+ */
+export function verifyCredentials(username, password) {
+  if (password !== VALID_PASSWORD) {
+    return false;
   }
 
-  static isLockedOutUser() {
-    return window.sessionStorage.getItem('session-username') === "locked_out_user";
+  if (!VALID_USERNAMES.includes(username)) {
+    return false;
   }
 
-  static isProblemUser() {
-    return window.sessionStorage.getItem('session-username') === "problem_user";
-  }
+  // If we're here, we had a valid username and password.
+  // Store the username in our session storage.
+  sessionStorage.setItem('session-username', username);
 
-  static isPerformanceGlitchUser() {
-    return window.sessionStorage.getItem('session-username') === "performance_glitch_user";
-  }
+  return true;
 }
 
-Credentials.VALID_USERNAMES = [
-  "standard_user",
-  "locked_out_user",
-  "problem_user",
-  "performance_glitch_user"
-];
+/**
+ * Check if this is a problem user
+ *
+ * @return {boolean}
+ */
+export function isProblemUser() {
+  return getSessionUsername() === 'problem_user';
+}
 
-Credentials.VALID_PASSWORD = "secret_sauce";
+/**
+ * Check if this is a performance user
+ *
+ * @return {boolean}
+ */
+export function isPerformanceGlitchUser() {
+  return getSessionUsername() === 'performance_glitch_user';
+}
 
+/**
+ * Check if this a logged out user
+ *
+ * @return {boolean}
+ */
+export function isLockedOutUser() {
+  return getSessionUsername() === 'locked_out_user';
+}
+
+/**
+ * Check if the user is logged in with a valid username
+ *
+ * @return {boolean}
+ */
+export function isLoggedIn(){
+  const sessionUsername = getSessionUsername();
+  const isValidUsername = VALID_USERNAMES.includes(sessionUsername);
+
+  return isValidUsername && sessionUsername !== 'locked_out_user';
+}
+
+/**
+ * Get the session username
+ *
+ * @return {string}
+ */
+export function getSessionUsername() {
+  return sessionStorage.getItem('session-username');
+
+}

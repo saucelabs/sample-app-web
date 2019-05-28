@@ -1,15 +1,15 @@
-import React from 'react';
-import Input from '@material-ui/core/Input'
+import React, { Component } from 'react';
+import * as PropTypes from 'prop-types';
+import Input from '@material-ui/core/Input';
 import { withStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Icon from '@material-ui/core/Icon';
-import PropTypes from 'prop-types';
 import { colors } from '../utils/Colors';
 
 export const INPUT_TYPES = {
   TEXT: 'text',
   PASSWORD: 'password',
-}
+};
 const styles = () => ({
   root: {
     borderBottom: `2px solid ${ colors.lightGray }`,
@@ -22,18 +22,20 @@ const styles = () => ({
   },
   icon: {
     color: colors.slRed,
-  }
+  },
 });
 
-class InputError extends React.Component {
+const { object, string, bool, func } = PropTypes;
+
+class InputError extends Component {
   static propTypes = {
-    classes: PropTypes.object.isRequired,
-    dataTest: PropTypes.string,
-    error: PropTypes.bool,
-    onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
-    testID: PropTypes.string,
-    type: PropTypes.string,
+    classes: object.isRequired,
+    dataTest: string,
+    error: bool,
+    onChange: func.isRequired,
+    placeholder: string,
+    testID: string,
+    type: string,
   }
 
   static defaultProps = {
@@ -43,12 +45,8 @@ class InputError extends React.Component {
     type: INPUT_TYPES.TEXT,
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const { classes, dataTest, error, testID, onChange, placeholder, type, } = this.props;
+    const { classes, dataTest, error, testID, onChange, placeholder, type } = this.props;
     const endAdornment = (error ? (
       <InputAdornment>
         <Icon style={ { color: colors.slRed } }>
@@ -78,7 +76,6 @@ class InputError extends React.Component {
       />
     );
   }
-
 }
 
 export default withStyles(styles)(InputError);

@@ -1,7 +1,7 @@
-import { colors } from '../../src/utils/Colors'
+import { colors } from '../../src/utils/Colors';
 
 export const style = {
-  componentWrapper:{
+  componentWrapper: {
     border: `1px solid ${colors.lightGray}`,
     margin: '20px auto',
     padding: 50,
