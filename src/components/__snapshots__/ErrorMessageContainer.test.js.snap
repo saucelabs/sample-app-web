@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessageContainer should render correctly with full options 1`] = `
+<div
+  className="ErrorMessageContainer-root-1 ErrorMessageContainer-error-2"
+  data-test="data-test-string"
+  id="test-id-string"
+>
+  <span
+    className="ErrorMessageContainer-errorText-3"
+  >
+    Error Message
+  </span>
+</div>
+`;
+
+exports[`ErrorMessageContainer should render correctly with the required options 1`] = `
+<div
+  className="ErrorMessageContainer-root-1 ErrorMessageContainer-error-2"
+  id="test-id"
+>
+  <span
+    className="ErrorMessageContainer-errorText-3"
+  >
+    Error Message
+  </span>
+</div>
+`;
+
+exports[`ErrorMessageContainer should render without with having an empty string 1`] = `
+<div
+  className="ErrorMessageContainer-root-1"
+  id="test-id"
+>
+  <span
+    className="ErrorMessageContainer-errorText-3"
+  />
+</div>
+`;

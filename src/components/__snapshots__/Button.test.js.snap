@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly with full options 1`] = `
+<WithStyles(Button)
+  classes={
+    Object {
+      "label": "BaseButton-labelAction-2",
+      "root": "BaseButton-rootAction-1 fallback-classes",
+    }
+  }
+  data-test="data-test-string"
+  disableFocusRipple={true}
+  disableRipple={true}
+  fullWidth={true}
+  id="test-id"
+  onClick={[MockFunction]}
+>
+  Test Label
+</WithStyles(Button)>
+`;
+
+exports[`Button should render correctly with the required options 1`] = `
+<WithStyles(Button)
+  classes={
+    Object {
+      "label": "BaseButton-labelAction-2",
+      "root": "BaseButton-rootAction-1 ",
+    }
+  }
+  disableFocusRipple={true}
+  disableRipple={true}
+  fullWidth={true}
+  id="test-id"
+  onClick={[MockFunction]}
+>
+  Test Label
+</WithStyles(Button)>
+`;

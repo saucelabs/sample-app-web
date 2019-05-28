@@ -42,7 +42,6 @@ class ErrorMessageContainer extends Component {
   };
 
   static defaultProps = {
-    error: false,
     placeholder: 'Placeholder',
     testID: 'test-id',
   };

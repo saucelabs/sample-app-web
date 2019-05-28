@@ -24,7 +24,6 @@ const styles = () => ({
     },
   }
 );
-
 const { string, func, object } = PropTypes;
 const { isRequired } = string;
 
@@ -44,11 +43,6 @@ class BaseButton extends Component {
     fallBackClasses: '',
     testID: 'test-id',
   };
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
   render() {
     const { classes, dataTest, fallBackClasses, label, buttonType, onClick, testID } = this.props;

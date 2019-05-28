@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputError should render an error component 1`] = `
+<WithStyles(Input)
+  classes={
+    Object {
+      "input": "InputError-inputError-3 form-input",
+      "root": "InputError-rootError-2",
+    }
+  }
+  disableUnderline={true}
+  endAdornment={
+    <WithStyles(WithFormControlContext(InputAdornment))>
+      <WithStyles(Icon)
+        style={
+          Object {
+            "color": "#E2231A",
+          }
+        }
+      >
+        cancel
+      </WithStyles(Icon)>
+    </WithStyles(WithFormControlContext(InputAdornment))>
+  }
+  fullWidth={true}
+  id="test-id"
+  inputProps={
+    Object {
+      "placeholder": "Placeholder",
+    }
+  }
+  onChange={[MockFunction]}
+  type="text"
+/>
+`;
+
+exports[`InputError should render correctly with the required options 1`] = `
+<WithStyles(Input)
+  classes={
+    Object {
+      "input": "[object Object] form-input",
+      "root": "InputError-root-1",
+    }
+  }
+  disableUnderline={true}
+  endAdornment={null}
+  fullWidth={true}
+  id="test-id"
+  inputProps={
+    Object {
+      "placeholder": "Placeholder",
+    }
+  }
+  onChange={[MockFunction]}
+  type="text"
+/>
+`;
+
+exports[`InputError should render secure input 1`] = `
+<WithStyles(Input)
+  classes={
+    Object {
+      "input": "[object Object] form-input",
+      "root": "InputError-root-1",
+    }
+  }
+  disableUnderline={true}
+  endAdornment={null}
+  fullWidth={true}
+  id="test-id"
+  inputProps={
+    Object {
+      "placeholder": "Placeholder",
+    }
+  }
+  onChange={[MockFunction]}
+  type="password"
+/>
+`;
+
+exports[`InputError should render with full options 1`] = `
+<WithStyles(Input)
+  classes={
+    Object {
+      "input": "[object Object] form-input",
+      "root": "InputError-root-1",
+    }
+  }
+  disableUnderline={true}
+  endAdornment={null}
+  fullWidth={true}
+  id="testid-string"
+  inputProps={
+    Object {
+      "data-test": "data-test-string",
+      "placeholder": "placeholder-string",
+    }
+  }
+  onChange={[MockFunction]}
+  type="text"
+/>
+`;
