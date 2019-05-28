@@ -83,15 +83,6 @@ class Login extends Component {
     this.handlePassChange = this.handlePassChange.bind(this);
     this.handleUserChange = this.handleUserChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.dismissError = this.dismissError.bind(this);
-  }
-
-  dismissError() {
-    this.setState({
-      error: '',
-      passwordError: false,
-      usernameError: false,
-    });
   }
 
   handleSubmit(evt) {
