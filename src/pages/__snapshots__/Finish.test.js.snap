@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Finish should render correctly for a logged in user 1`] = `
+<h1>
+  Finish
+</h1>
+`;
+
+exports[`Finish should render correctly for a logged out user 1`] = `
+<Redirect
+  to="./"
+/>
+`;
