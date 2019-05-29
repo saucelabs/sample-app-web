@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should empty the state and redirect when valid credentials are used 1`] = `
+Object {
+  "error": "",
+  "password": "",
+  "passwordError": false,
+  "username": "",
+  "usernameError": false,
+}
+`;
+
+exports[`Login should render correctly 1`] = `
+<div
+  className="Login-root-1"
+>
+  <div
+    className="Login-logo-7"
+  />
+  <div
+    className="Login-loginWrapper-2"
+  >
+    <div
+      className="Login-loginWrapperInner-3"
+    >
+      <WithStyles(Grid)
+        className="Login-wrapper-4"
+        container={true}
+      >
+        <WithStyles(Grid)
+          className="Login-contentWrapper-6"
+          item={true}
+          sm={6}
+          xs={12}
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <WithStyles(InputError)
+              className="form_input"
+              dataTest="username"
+              error={false}
+              id="user-name"
+              onChange={[Function]}
+              placeholder="Username"
+              testID="username"
+              value=""
+            />
+            <div
+              className="Login-divider-9"
+            />
+            <WithStyles(InputError)
+              className="form_input"
+              dataTest="password"
+              error={false}
+              id="password"
+              onChange={[Function]}
+              placeholder="Password"
+              testID="password"
+              type="password"
+              value=""
+            />
+            <WithStyles(ErrorMessageContainer)
+              dataTest="error"
+              errorMessage=""
+              testID="errorMessage"
+            />
+            <WithStyles(BaseButton)
+              buttonType="Action"
+              fallBackClasses="btn_action"
+              label="Login"
+              onClick={[Function]}
+              testID="loginButton"
+            />
+          </form>
+        </WithStyles(Grid)>
+        <WithStyles(Grid)
+          item={true}
+          sm={6}
+          xs={12}
+        >
+          <div
+            className="Login-bot-8"
+          />
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+      <WithStyles(Grid)
+        className="Login-wrapper-4 Login-greyWrapper-5"
+        container={true}
+      >
+        <WithStyles(Grid)
+          className="Login-contentWrapper-6"
+          item={true}
+          sm={6}
+          xs={12}
+        >
+          <b>
+            Accepted usernames are:
+          </b>
+          <br />
+          standard_user
+          <br />
+          locked_out_user
+          <br />
+          problem_user
+          <br />
+          performance_glitch_user
+          <br />
+        </WithStyles(Grid)>
+        <WithStyles(Grid)
+          className="Login-contentWrapper-6"
+          item={true}
+          sm={6}
+          xs={12}
+        >
+          <b>
+            Password for all users:
+          </b>
+          <br />
+          secret_sauce
+        </WithStyles(Grid)>
+      </WithStyles(Grid)>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Login should set the data does not match state when incorrect credentials are used 1`] = `
+Object {
+  "error": "Username and password do not match any user in this service",
+  "password": "password",
+  "passwordError": false,
+  "username": "username",
+  "usernameError": false,
+}
+`;
+
+exports[`Login should set the locked out state when the locked out credentials are used 1`] = `
+Object {
+  "error": "Sorry, this user has been locked out.",
+  "password": "password",
+  "passwordError": false,
+  "username": "username",
+  "usernameError": false,
+}
+`;
+
+exports[`Login should set the no password state when the login button is being pressed 1`] = `
+Object {
+  "error": "Password is required",
+  "password": "",
+  "passwordError": true,
+  "username": "username",
+  "usernameError": false,
+}
+`;
+
+exports[`Login should set the no username state when the login button is being pressed 1`] = `
+Object {
+  "error": "Username is required",
+  "password": "",
+  "passwordError": false,
+  "username": "",
+  "usernameError": true,
+}
+`;
+
+exports[`Login should update the password state when data is typed 1`] = `
+Object {
+  "error": "",
+  "password": "password",
+  "passwordError": false,
+  "username": "",
+  "usernameError": false,
+}
+`;
+
+exports[`Login should update the username state when data is typed 1`] = `
+Object {
+  "error": "",
+  "password": "",
+  "passwordError": false,
+  "username": "username",
+  "usernameError": false,
+}
+`;

@@ -6,3 +6,12 @@ export const VALID_USERNAMES = [
   'performance_glitch_user',
 ];
 export const VALID_PASSWORD = 'secret_sauce';
+export const ROUTES = {
+  LOGIN: '/',
+  INVENTORY: '/inventory.html',
+  INVENTORY_LIST: '/inventory-item.html',
+  CART: '/cart.html',
+  CHECKOUT_STEP_ONE: '/checkout-step-one.html',
+  CHECKOUT_STEP_TWO: '/checkout-step-two.html',
+  CHECKOUT_COMPLETE: '/checkout-complete.html',
+};

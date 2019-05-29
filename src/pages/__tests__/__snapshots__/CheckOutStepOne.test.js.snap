@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckOutStepOne should render correctly for a logged in user 1`] = `
+<h1>
+  CheckOut: Your Information
+</h1>
+`;
+
+exports[`CheckOutStepOne should render correctly for a logged out user 1`] = `
+<Redirect
+  to="/"
+/>
+`;

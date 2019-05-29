@@ -11,6 +11,7 @@ import LoginBot from '../img/Login_Bot_graphic.png';
 import { isLockedOutUser, verifyCredentials } from '../utils/Credentials';
 import ErrorMessageContainer from '../components/ErrorMessageContainer';
 import { withRouter } from 'react-router-dom';
+import { ROUTES } from '../utils/Constants';
 
 const styles = theme => ({
   root: {
@@ -116,12 +117,14 @@ class Login extends Component {
 
       // If we're here, we have a username and password. Redirect!
       this.setState({
-        error: '',
+        username: '',
         usernameError: false,
         passwordError: false,
+        password: '',
+        error: '',
       });
 
-      this.props.history.push('./inventory.html');
+      this.props.history.push(ROUTES.INVENTORY);
     } else {
       return this.setState({
         error: 'Username and password do not match any user in this service',

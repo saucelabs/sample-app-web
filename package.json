@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers",
   "scripts": {
-    "lint": "eslint src/**/*.js stories/**/*.js --ignore-pattern src/old/**/*.js",
+    "lint": "eslint . --ext .js",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "prepush": "npm run lint",
-    "test": "node scripts/test.js",
+    "test": "node scripts/test.js --verbose",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -95,13 +95,17 @@
     "enzyme-to-json": "^3.3.5",
     "eslint-plugin-eslint-comments": "^3.1.1",
     "eslint-plugin-jest": "^22.6.4",
+    "history": "^4.9.0",
+    "husky": "^2.3.0",
     "react-test-renderer": "^16.8.6"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!src/old/**/*.{js,jsx,ts,tsx}",
       "!./node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/index.js"
     ],
     "collectCoverage": true,
     "coverageThreshold": {
@@ -126,11 +130,20 @@
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
     ],
+    "moduleNameMapper": {
+      "\\.(jpg|png)$": "<rootDir>/src/utils/__mocks__/fileMock.js"
+    },
     "testEnvironment": "jsdom"
   },
   "babel": {
     "presets": [
       "react-app"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorMessageContainer from '../../../src/components/ErrorMessageContainer'
+import ErrorMessageContainer from '../../../src/components/ErrorMessageContainer';
 
 export default class SmallErrorMessage extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { style } from '../../utils/styling';
-import Button, { BUTTON_TYPES } from '../../../src/components/Button'
+import Button, { BUTTON_TYPES } from '../../../src/components/Button';
 
 export default class ActionButton extends React.Component {
   constructor(props) {
@@ -10,14 +10,14 @@ export default class ActionButton extends React.Component {
       componentState: 0,
     };
 
-    this.handleOnClick = this.handleOnClick.bind(this)
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   handleOnClick() {
     this.setState({
       componentState: this.state.componentState + 1,
     });
-  };
+  }
 
   render() {
     return (

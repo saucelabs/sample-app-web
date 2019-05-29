@@ -10,14 +10,14 @@ export default class SecureInput extends React.Component {
       componentState: '',
     };
 
-    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(event) {
     this.setState({
       componentState: event.target.value,
     });
-  };
+  }
 
   render() {
     return (
