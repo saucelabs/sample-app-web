@@ -7,7 +7,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "prepush": "npm run lint",
-    "test": "node scripts/test.js --verbose",
+    "test": "node scripts/test.js --verbose --no-watch",
+    "test:watch": "node scripts/test.js --verbose",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
