@@ -157,13 +157,12 @@ class Login extends Component {
 
             <Grid container className={ classes.wrapper }>
 
-              <Grid item xs={ 12 } sm={ 6 } className={ classes.contentWrapper }>
+              <Grid id="login_button_container" item xs={ 12 } sm={ 6 } className={ classes.contentWrapper }>
                 <form onSubmit={ this.handleSubmit }>
                   <InputError
                     className="form_input"
                     dataTest="username"
                     error={ this.state.usernameError }
-                    id="user-name"
                     onChange={ this.handleUserChange }
                     placeholder="Username"
                     testID="username"
@@ -174,7 +173,6 @@ class Login extends Component {
                     className="form_input"
                     dataTest="password"
                     error={ this.state.passwordError }
-                    id="password"
                     onChange={ this.handlePassChange }
                     placeholder="Password"
                     testID="password"

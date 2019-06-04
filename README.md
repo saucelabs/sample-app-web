@@ -32,6 +32,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## `npm run serve`
+
+Builds the app for production to the `build` folder and starts a server so the site can be tested against a production build.<br>
+The site will be hosted on [http://localhost:5000/](http://localhost:5000/)
+
 ## `npm run build-storybook`
 
 Builds storybook<br>

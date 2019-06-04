@@ -5,3 +5,4 @@ dist/
 config/
 .coverage/
 test/
+build/

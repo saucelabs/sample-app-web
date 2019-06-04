@@ -52,8 +52,8 @@ class ErrorMessageContainer extends Component {
     return (
       <div
         className={ classNames(classes.root, errorMessage ? classes.error : null) }
-        { ...(dataTest ? { 'data-test': dataTest } : {}) }
-        id={ testID }
+        { ...(errorMessage && dataTest ? { 'data-test': dataTest } : {}) }
+        { ...(errorMessage ? { id: testID } : {}) }
       >
         <span className={ classes.errorText }>{ errorMessage }</span>
       </div>

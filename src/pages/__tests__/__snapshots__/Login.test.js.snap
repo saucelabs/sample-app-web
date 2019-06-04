@@ -29,6 +29,7 @@ exports[`Login should render correctly 1`] = `
       >
         <WithStyles(Grid)
           className="Login-contentWrapper-6"
+          id="login_button_container"
           item={true}
           sm={6}
           xs={12}
@@ -40,7 +41,6 @@ exports[`Login should render correctly 1`] = `
               className="form_input"
               dataTest="username"
               error={false}
-              id="user-name"
               onChange={[Function]}
               placeholder="Username"
               testID="username"
@@ -53,7 +53,6 @@ exports[`Login should render correctly 1`] = `
               className="form_input"
               dataTest="password"
               error={false}
-              id="password"
               onChange={[Function]}
               placeholder="Password"
               testID="password"

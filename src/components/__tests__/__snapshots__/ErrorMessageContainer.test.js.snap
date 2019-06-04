@@ -30,7 +30,6 @@ exports[`ErrorMessageContainer should render correctly with the required options
 exports[`ErrorMessageContainer should render without with having an empty string 1`] = `
 <div
   className="ErrorMessageContainer-root-1"
-  id="test-id"
 >
   <span
     className="ErrorMessageContainer-errorText-3"
