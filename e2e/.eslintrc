@@ -1,0 +1,9 @@
+{
+  "globals": {
+    "$": true,
+    "$$": true,
+    "browser": true,
+    "describe": true,
+    "it": true
+  }
+}
