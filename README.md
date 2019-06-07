@@ -19,6 +19,11 @@ You will also see any lint errors in the console.
 
 ## `npm test`
 
+Launches the test runner.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+## `npm test:watch`
+
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
@@ -48,4 +53,10 @@ Starts storybook<br>
 
 See the [https://storybook.js.org/](https://storybook.js.org/) for more information.
 
+## `test.e2e.local.chrome`
 
+Will run all E2E tests against a local hosted version of Chrome. Make sure you first run `npm run serve` to build and serve the app
+
+## `test.e2e.sauce.all`
+
+Will run all E2E tests against a lot of browsers on Sauce Labs on the EU DC. It needs to have a local Sauce Connect tunnel and `npm run serve` need to have been ran so there is a build server running.  
