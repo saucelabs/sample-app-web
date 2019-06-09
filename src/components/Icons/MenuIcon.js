@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { IconButton, withStyles } from '@material-ui/core';
 import * as PropTypes from 'prop-types';
 import menuIconPng from '../../assets/img/menu.png';
-import menuIconSvg from '../../assets/svg/menu@3x.svg';
+import menuIconSvg from '../../assets/svg/menu3x.svg';
 import { colors } from '../../utils/Colors';
 
 const styles = () => ({

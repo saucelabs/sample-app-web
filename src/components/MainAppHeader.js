@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core';
 import { colors } from '../utils/Colors';
 import headerLogoPng from '../assets/img/header-logo.png';
-import headerLogoSvg from '../assets/svg/logo@3x.svg';
+import headerLogoSvg from '../assets/svg/logo3x.svg';
 import MenuIcon from './Icons/MenuIcon';
 import CartIcon from './Icons/CartIcon';
 

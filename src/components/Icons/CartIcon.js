@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Badge, IconButton, withStyles } from '@material-ui/core';
 import * as PropTypes from 'prop-types';
 import cartIconPng from '../../assets/img/cart.png';
-import cartIconSvg from '../../assets/svg/cart@3x.svg';
+import cartIconSvg from '../../assets/svg/cart3x.svg';
 import { colors } from '../../utils/Colors';
 
 const styles = () => ({
