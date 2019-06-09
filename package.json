@@ -8,12 +8,12 @@
     "build": "node scripts/build.js",
     "prepush": "npm run lint",
     "test": "node scripts/test.js --verbose --no-watch",
-    "test:watch": "node scripts/test.js --verbose",
+    "test.watch": "node scripts/test.js --verbose",
     "test.e2e.local.chrome": "wdio e2e/configs/wdio.local.chrome.conf.js",
     "test.e2e.sauce.all": "wdio e2e/configs/wdio.sauce.all.browsers.conf.js",
     "storybook": "start-storybook -p 6006",
     "serve": "npm run build && node scripts/createServeFile.js && serve -s build",
-    "build-storybook": "build-storybook"
+    "build.storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
