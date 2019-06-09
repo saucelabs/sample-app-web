@@ -92,7 +92,9 @@
     "@babel/core": "^7.4.4",
     "@babel/register": "^7.4.4",
     "@storybook/addon-actions": "^5.1.3",
+    "@storybook/addon-backgrounds": "^5.1.3",
     "@storybook/addon-links": "^5.1.3",
+    "@storybook/addon-viewport": "^5.1.3",
     "@storybook/addons": "^5.1.3",
     "@storybook/react": "^5.1.3",
     "@wdio/appium-service": "^5.9.3",
@@ -145,7 +147,7 @@
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|png)$": "<rootDir>/src/utils/__mocks__/fileMock.js"
+      "\\.(jpg|png|svg)$": "<rootDir>/src/utils/__mocks__/fileMock.js"
     },
     "testEnvironment": "jsdom"
   },
