@@ -72,7 +72,7 @@ class MainAppHeader extends Component {
             <img src={ headerLogoPng } srcSet={ headerLogoSvg } className={ classes.headerLogo }/>
             <CartIcon
               fallBackClasses="shopping_cart_link"
-              onClick={ this.handleMenu() }
+              onClick={ this.openCart() }
               testID="cart-icon"
               cartContent={1}
             />
