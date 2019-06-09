@@ -2,7 +2,10 @@
 
 ## Breaking changes
 **Login**
-- ID of the username input field changed from `#user-name` to `#username`  
+- ID of the username input field changed from `#user-name` to `#username`
+
+**Header**
+- the shopping cart had a container with the `id: shopping_cart_container` and a class called `class: shopping_cart_container`. These have been removed.
 
 **Generic**
 - all pages after login validate if the user has been logged in by validating the `sessionStorage` prop `session-username`. If this is not a valid user the page will redirect to the login page.

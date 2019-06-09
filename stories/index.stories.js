@@ -1,5 +1,5 @@
 import React from 'react';
-import {style} from './utils/styling';
+import { style } from './utils/styling';
 
 import { storiesOf } from '@storybook/react';
 import DefaultInput from './components/sl-input/default.input.stories';
@@ -9,6 +9,10 @@ import SecureErrorInput from './components/sl-input/secure.error.input.stories';
 import LargeErrorMessage from './components/sl-error-message/error.message.large.stories';
 import SmallErrorMessage from './components/sl-error-message/error.message.small.stories';
 import Button from './components/sl-button/button.stories';
+import MainAppHeader from '../src/components/MainAppHeader';
+import { colors } from '../src/utils/Colors';
+import SlMenuIcon from './components/sl-icons/meniu.icon.storie';
+import SlCartIcon from './components/sl-icons/cart.icon.storie';
 
 storiesOf('Components/Inputs', module)
   .addDecorator(storyFn => <div style={ style.componentWrapper }>{ storyFn() }</div>)
@@ -25,3 +29,17 @@ storiesOf('Components/Error Message', module)
 storiesOf('Components/Buttons', module)
   .addDecorator(storyFn => <div style={ style.componentWrapper }>{ storyFn() }</div>)
   .add('Button', () => <Button/>);
+
+storiesOf('Components/AppBar', module)
+  .addParameters({
+    backgrounds: [
+      { name: 'Secondary App Header', value: colors.gray, default: true },
+      { name: 'Sauce Labs Red', value: colors.slRed },
+    ],
+  })
+  .add('MainAppHeader', () => <MainAppHeader/>);
+
+storiesOf('Components/Icons', module)
+  .addDecorator(storyFn => <div style={ style.componentWrapper }>{ storyFn() }</div>)
+  .add('CartIcon', () => <SlCartIcon/>)
+  .add('MenuIcon', () => <SlMenuIcon/>);

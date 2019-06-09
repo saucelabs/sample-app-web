@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartIcon should render correctly with full options 1`] = `
+<WithStyles(IconButton)
+  classes={
+    Object {
+      "root": "CartIcon-root-1 fallback-classes",
+    }
+  }
+  id="foo-test-bar-id"
+  onClick={[MockFunction]}
+>
+  <WithStyles(Badge)
+    badgeContent={2}
+    classes={
+      Object {
+        "badge": "CartIcon-badge-3",
+      }
+    }
+    color="secondary"
+    id="foo-test-bar-id-content"
+  >
+    <div
+      className="CartIcon-cartIcon-2"
+    />
+  </WithStyles(Badge)>
+</WithStyles(IconButton)>
+`;
+
+exports[`CartIcon should render correctly with the required options 1`] = `
+<WithStyles(IconButton)
+  classes={
+    Object {
+      "root": "CartIcon-root-1 ",
+    }
+  }
+  id="cart-icon-id"
+  onClick={[MockFunction]}
+>
+  <WithStyles(Badge)
+    badgeContent={0}
+    classes={
+      Object {
+        "badge": "CartIcon-badge-3",
+      }
+    }
+    color="secondary"
+    id="cart-icon-id-content"
+  >
+    <div
+      className="CartIcon-cartIcon-2"
+    />
+  </WithStyles(Badge)>
+</WithStyles(IconButton)>
+`;

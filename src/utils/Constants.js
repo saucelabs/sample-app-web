@@ -15,3 +15,4 @@ export const ROUTES = {
   CHECKOUT_STEP_TWO: '/checkout-step-two.html',
   CHECKOUT_COMPLETE: '/checkout-complete.html',
 };
+export const CART_CONTENTS = 'cart-contents';

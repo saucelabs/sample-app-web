@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuIcon should render correctly with full options 1`] = `
+<WithStyles(IconButton)
+  classes={
+    Object {
+      "root": "MenuIcon-menuIcon-1 fallback-classes",
+    }
+  }
+  id="foo-test-bar-id"
+  onClick={[MockFunction]}
+/>
+`;
+
+exports[`MenuIcon should render correctly with the required options 1`] = `
+<WithStyles(IconButton)
+  classes={
+    Object {
+      "root": "MenuIcon-menuIcon-1 ",
+    }
+  }
+  id="menu-icon-id"
+  onClick={[MockFunction]}
+/>
+`;
