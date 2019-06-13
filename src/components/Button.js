@@ -4,32 +4,55 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../utils/Colors';
 
+// @TODO: Fix later
+// Needed to do this because `PropTypes.oneOf(Object.values(BUTTON_TYPES))` gave an error
+// during compilation. It's an dependency issue, but not important enough for now.
+const buttonTypesArray = [ 'Action', 'Add', 'Back', 'Next', 'Remove' ];
 export const BUTTON_TYPES = {
   ACTION: 'Action',
+  ADD: 'Add',
+  BACK: 'Back',
+  NEXT: 'NEXT',
+  REMOVE: 'Remove',
 };
-const styles = () => ({
-    rootAction: {
+const styles = theme => (
+  {
+    root: {
       backgroundColor: colors.white,
       '&:hover': {
         //you want this to be the same as the backgroundColor above
         backgroundColor: colors.white,
       },
-      border: `2px solid ${ colors.slRed }`,
       borderRadius: 0,
     },
-    labelAction: {
-      color: colors.slRed,
+    rootAction: {
+      border: `2px solid ${ colors.slRed }`,
+    },
+    rootAdd: {
+      border: `2px solid ${ colors.slRed }`,
+      width: 220,
+      [ theme.breakpoints.down('md') ]: {
+        width: '100%',
+      },
+    },
+    label: {
       fontSize: 18,
       textTransform: 'uppercase',
     },
+    labelAction: {
+      color: colors.slRed,
+    },
+    labelAdd: {
+      color: colors.slRed,
+    },
   }
 );
-const { string, func, object } = PropTypes;
+const { string, func, object, oneOf } = PropTypes;
 const { isRequired } = string;
 
 class BaseButton extends Component {
   static propTypes = {
-    buttonType: isRequired,
+    buttonType: oneOf(buttonTypesArray).isRequired,
     classes: object.isRequired,
     dataTest: string,
     fallBackClasses: string,
@@ -52,8 +75,8 @@ class BaseButton extends Component {
         classes={ {
           // ` ${fallBackClasses}` is there to make it backwards compatible,
           // it doesn't not have an other function
-          root: classes[ `root${ buttonType }` ] + ` ${ fallBackClasses }`,
-          label: classes[ `label${ buttonType }` ],
+          root: classes.root + ' ' + classes[ `root${ buttonType }` ] + ` ${ fallBackClasses }`,
+          label: classes.label + ' ' + classes[ `label${ buttonType }` ],
         } }
         { ...(dataTest ? { 'data-test': dataTest } : {}) }
         disableFocusRipple

@@ -1,16 +1,16 @@
 import React from 'react';
 import { style } from './utils/styling';
-
 import { storiesOf } from '@storybook/react';
+import { colors } from '../src/utils/Colors';
 import DefaultInput from './components/sl-input/default.input.stories';
 import ErrorInput from './components/sl-input/error.input.stories';
 import SecureInput from './components/sl-input/secure.input.stories';
 import SecureErrorInput from './components/sl-input/secure.error.input.stories';
 import LargeErrorMessage from './components/sl-error-message/error.message.large.stories';
 import SmallErrorMessage from './components/sl-error-message/error.message.small.stories';
-import Button from './components/sl-button/button.stories';
+import SlActionButton from './components/sl-button/action.button.stories';
+import SlAddButton from './components/sl-button/add.button.stories';
 import MainAppHeader from '../src/components/MainAppHeader';
-import { colors } from '../src/utils/Colors';
 import SlMenuIcon from './components/sl-icons/meniu.icon.storie';
 import SlCartIcon from './components/sl-icons/cart.icon.storie';
 
@@ -28,7 +28,8 @@ storiesOf('Components/Error Message', module)
 
 storiesOf('Components/Buttons', module)
   .addDecorator(storyFn => <div style={ style.componentWrapper }>{ storyFn() }</div>)
-  .add('Button', () => <Button/>);
+  .add('Action Button', () => <SlActionButton/>)
+  .add('Add Button', () => <SlAddButton/>);
 
 storiesOf('Components/AppBar', module)
   .addParameters({

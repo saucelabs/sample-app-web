@@ -7,27 +7,47 @@ let props;
 describe('Button', () => {
   beforeEach(() => {
     props = {
-      buttonType: BUTTON_TYPES.ACTION,
       label: 'Test Label',
       onClick: jest.fn(),
     };
   });
 
-  it('should render correctly with the required options', () => {
-    const component = shallow(<Button { ...props } />).dive();
+  describe('Action Button', () => {
+    it('should render correctly with the required options', () => {
+      const component = shallow(
+        <Button
+          { ...props }
+          buttonType={ BUTTON_TYPES.ACTION }
+        />
+      ).dive();
 
-    expect(component).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
+    });
+
+    it('should render correctly with full options', () => {
+      const component = shallow(
+        <Button
+          { ...props }
+          buttonType={ BUTTON_TYPES.ACTION }
+          dataTest="data-test-string"
+          fallBackClasses="fallback-classes"
+        />
+      ).dive();
+
+      expect(component).toMatchSnapshot();
+    });
   });
 
-  it('should render correctly with full options', () => {
-    const component = shallow(
-      <Button
-        { ...props }
-        dataTest="data-test-string"
-        fallBackClasses="fallback-classes"
-      />
-    ).dive();
+  describe('Add Button', () => {
+    it('should render correctly with the required options', () => {
+      const component = shallow(
+        <Button
+          { ...props }
+          buttonType={ BUTTON_TYPES.ADD }
+        />
+      ).dive();
 
-    expect(component).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
+    });
   });
 });
