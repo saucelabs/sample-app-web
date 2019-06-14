@@ -51,6 +51,19 @@ describe('Button', () => {
     });
   });
 
+  describe('Back Button', () => {
+    it('should render correctly with the required options', () => {
+      const component = shallow(
+        <Button
+          { ...props }
+          buttonType={ BUTTON_TYPES.BACK }
+        />
+      ).dive();
+
+      expect(component).toMatchSnapshot();
+    });
+  });
+
   describe('Next Button', () => {
     it('should render correctly with the required options', () => {
       const component = shallow(

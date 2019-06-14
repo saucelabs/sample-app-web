@@ -25,7 +25,7 @@ export default class RemoveButton extends React.Component {
         <Button
           buttonType={ BUTTON_TYPES.REMOVE }
           fallBackClasses="btn_action"
-          label="Remove text"
+          label="Remove Button"
           onClick={ this.handleOnClick }
         />
         <div style={ style.stateContainer }>

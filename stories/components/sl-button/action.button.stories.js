@@ -25,7 +25,7 @@ export default class ActionButton extends React.Component {
         <Button
           buttonType={ BUTTON_TYPES.ACTION }
           fallBackClasses="btn_action"
-          label="Action Button text"
+          label="Action Button"
           onClick={ this.handleOnClick }
         />
         <div style={ style.stateContainer }>

@@ -25,7 +25,7 @@ export default class AddButton extends React.Component {
         <Button
           buttonType={ BUTTON_TYPES.ADD }
           fallBackClasses="btn_action"
-          label="Add Button text"
+          label="Add Button"
           onClick={ this.handleOnClick }
         />
         <div style={ style.stateContainer }>

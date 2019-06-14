@@ -3,6 +3,8 @@ import * as PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../utils/Colors';
+import backPng from '../assets/img/arrow.png';
+import backSvg from '../assets/svg/arrow3x.svg';
 
 // @TODO: Fix later
 // Needed to do this because `PropTypes.oneOf(Object.values(BUTTON_TYPES))` gave an error
@@ -24,20 +26,30 @@ const styles = theme => (
         backgroundColor: colors.white,
       },
       borderRadius: 0,
+      padding: '6px 28px',
     },
     rootAction: {
       border: `2px solid ${ colors.slRed }`,
+      width: '100%',
     },
     rootAdd: {
       border: `2px solid ${ colors.slRed }`,
-      width: 220,
+      minWidth: 220,
+      [ theme.breakpoints.down('md') ]: {
+        width: '100%',
+      },
+    },
+    rootBack: {
+      border: `2px solid ${ colors.gray }`,
+      minWidth: 220,
       [ theme.breakpoints.down('md') ]: {
         width: '100%',
       },
     },
     rootNext: {
+      border: `2px solid ${ colors.slRed }`,
       backgroundColor: colors.slRed,
-      width: 220,
+      minWidth: 220,
       [ theme.breakpoints.down('md') ]: {
         width: '100%',
       },
@@ -48,7 +60,7 @@ const styles = theme => (
     },
     rootRemove: {
       border: `2px solid ${ colors.gray }`,
-      width: 220,
+      minWidth: 220,
       [ theme.breakpoints.down('md') ]: {
         width: '100%',
       },
@@ -63,11 +75,18 @@ const styles = theme => (
     labelAdd: {
       color: colors.slRed,
     },
+    labelBack: {
+      color: colors.gray,
+    },
     labelNext: {
       color: colors.white,
     },
     labelRemove: {
       color: colors.gray,
+    },
+    backImage: {
+      position: 'absolute',
+      left: 10,
     },
   }
 );
@@ -83,16 +102,23 @@ class BaseButton extends Component {
     label: isRequired,
     testID: string,
     onClick: func.isRequired,
+    width: string,
   };
 
   static defaultProps = {
     buttonType: BUTTON_TYPES.ACTION,
     fallBackClasses: '',
     testID: 'test-id',
+    width: null,
   };
 
   render() {
     const { classes, dataTest, fallBackClasses, label, buttonType, onClick, testID } = this.props;
+    let backButton = null;
+
+    if (buttonType === BUTTON_TYPES.BACK) {
+      backButton = <img src={ backPng } srcSet={ backSvg } className={ classes.backImage }/>;
+    }
 
     return (
       <Button
@@ -105,10 +131,10 @@ class BaseButton extends Component {
         { ...(dataTest ? { 'data-test': dataTest } : {}) }
         disableFocusRipple
         disableRipple
-        fullWidth
         id={ testID }
         onClick={ onClick }
       >
+        { backButton }
         { label }
       </Button>
     );

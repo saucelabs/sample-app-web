@@ -2,7 +2,7 @@ import React from 'react';
 import { style } from '../../utils/styling';
 import Button, { BUTTON_TYPES } from '../../../src/components/Button';
 
-export default class NextButton extends React.Component {
+export default class BackButton extends React.Component {
   constructor(props) {
     super(props);
 
@@ -23,10 +23,11 @@ export default class NextButton extends React.Component {
     return (
       <div>
         <Button
-          buttonType={ BUTTON_TYPES.NEXT }
+          buttonType={ BUTTON_TYPES.BACK }
           fallBackClasses="btn_action"
-          label="Next Button"
+          label="Continue shopping"
           onClick={ this.handleOnClick }
+          width="260"
         />
         <div style={ style.stateContainer }>
           <b>Amount of times that the event was triggered: </b>
