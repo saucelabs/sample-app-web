@@ -50,4 +50,30 @@ describe('Button', () => {
       expect(component).toMatchSnapshot();
     });
   });
+
+  describe('Next Button', () => {
+    it('should render correctly with the required options', () => {
+      const component = shallow(
+        <Button
+          { ...props }
+          buttonType={ BUTTON_TYPES.NEXT }
+        />
+      ).dive();
+
+      expect(component).toMatchSnapshot();
+    });
+  });
+
+  describe('Remove Button', () => {
+    it('should render correctly with the required options', () => {
+      const component = shallow(
+        <Button
+          { ...props }
+          buttonType={ BUTTON_TYPES.REMOVE }
+        />
+      ).dive();
+
+      expect(component).toMatchSnapshot();
+    });
+  });
 });

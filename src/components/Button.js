@@ -12,7 +12,7 @@ export const BUTTON_TYPES = {
   ACTION: 'Action',
   ADD: 'Add',
   BACK: 'Back',
-  NEXT: 'NEXT',
+  NEXT: 'Next',
   REMOVE: 'Remove',
 };
 const styles = theme => (
@@ -35,6 +35,24 @@ const styles = theme => (
         width: '100%',
       },
     },
+    rootNext: {
+      backgroundColor: colors.slRed,
+      width: 220,
+      [ theme.breakpoints.down('md') ]: {
+        width: '100%',
+      },
+      '&:hover': {
+        //you want this to be the same as the backgroundColor above
+        backgroundColor: colors.slRed,
+      },
+    },
+    rootRemove: {
+      border: `2px solid ${ colors.gray }`,
+      width: 220,
+      [ theme.breakpoints.down('md') ]: {
+        width: '100%',
+      },
+    },
     label: {
       fontSize: 18,
       textTransform: 'uppercase',
@@ -44,6 +62,12 @@ const styles = theme => (
     },
     labelAdd: {
       color: colors.slRed,
+    },
+    labelNext: {
+      color: colors.white,
+    },
+    labelRemove: {
+      color: colors.gray,
     },
   }
 );
