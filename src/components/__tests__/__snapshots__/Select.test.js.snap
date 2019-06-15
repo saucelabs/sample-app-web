@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render correctly with full options 1`] = `
+<WithStyles(WithFormControlContext(Select))
+  classes={
+    Object {
+      "root": "SelectBox-root-1 fallback-classes",
+      "select": "SelectBox-select-2",
+    }
+  }
+  data-test="data-test-string"
+  native={true}
+  onChange={[MockFunction]}
+  testID="select"
+>
+  <option
+    value="az"
+  >
+    Name (A to Z)
+  </option>
+  <option
+    value="za"
+  >
+    Name (Z to A)
+  </option>
+  <option
+    value="lohi"
+  >
+    Price (low to high)
+  </option>
+  <option
+    value="hilo"
+  >
+    Price (high to low)
+  </option>
+</WithStyles(WithFormControlContext(Select))>
+`;
+
+exports[`Select should render correctly with the required options 1`] = `
+<WithStyles(WithFormControlContext(Select))
+  classes={
+    Object {
+      "root": "SelectBox-root-1 ",
+      "select": "SelectBox-select-2",
+    }
+  }
+  native={true}
+  onChange={[MockFunction]}
+>
+  <option
+    value="az"
+  >
+    Name (A to Z)
+  </option>
+  <option
+    value="za"
+  >
+    Name (Z to A)
+  </option>
+  <option
+    value="lohi"
+  >
+    Price (low to high)
+  </option>
+  <option
+    value="hilo"
+  >
+    Price (high to low)
+  </option>
+</WithStyles(WithFormControlContext(Select))>
+`;

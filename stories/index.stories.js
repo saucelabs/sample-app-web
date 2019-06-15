@@ -13,6 +13,7 @@ import SlAddButton from './components/sl-button/add.button.stories';
 import SlBackButton from './components/sl-button/back.button.stories';
 import SlNextButton from './components/sl-button/next.button.stories';
 import SlRemoveButton from './components/sl-button/remove.button.stories';
+import SlSelect from './components/sl-selectbox/select.box.stories';
 import MainAppHeader from '../src/components/MainAppHeader';
 import SlMenuIcon from './components/sl-icons/meniu.icon.storie';
 import SlCartIcon from './components/sl-icons/cart.icon.storie';
@@ -45,6 +46,10 @@ storiesOf('Components/AppBar', module)
     ],
   })
   .add('MainAppHeader', () => <MainAppHeader/>);
+
+storiesOf('Components/Select', module)
+  .addDecorator(storyFn => <div style={ style.grayComponentWrapper }>{ storyFn() }</div>)
+  .add('Select', () => <SlSelect/>);
 
 storiesOf('Components/Icons', module)
   .addDecorator(storyFn => <div style={ style.componentWrapper }>{ storyFn() }</div>)
