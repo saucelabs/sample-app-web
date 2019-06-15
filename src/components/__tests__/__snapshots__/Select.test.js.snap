@@ -4,6 +4,7 @@ exports[`Select should render correctly with full options 1`] = `
 <WithStyles(WithFormControlContext(Select))
   classes={
     Object {
+      "icon": "SelectBox-icon-3",
       "root": "SelectBox-root-1 fallback-classes",
       "select": "SelectBox-select-2",
     }
@@ -40,6 +41,7 @@ exports[`Select should render correctly with the required options 1`] = `
 <WithStyles(WithFormControlContext(Select))
   classes={
     Object {
+      "icon": "SelectBox-icon-3",
       "root": "SelectBox-root-1 ",
       "select": "SelectBox-select-2",
     }

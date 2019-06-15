@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { colors } from '../utils/Colors';
 import filterSvg from '../assets/svg/filter3x.svg';
 
-const styles = () => (
+const styles = theme => (
   {
     root: {
       backgroundColor: colors.white,
@@ -32,7 +32,19 @@ const styles = () => (
       width: 220,
       textAlign: 'center',
       textAlignLast: 'center',
+      position: 'relative',
+      [ theme.breakpoints.down('md') ]: {
+        // Dirty little hack to hide the text but still make it clickable
+        width: 0,
+        paddingLeft: 40,
+        minWidth: 0,
+      },
     },
+    icon: {
+      [ theme.breakpoints.down('md') ]: {
+        display: 'none'
+      },
+    }
   }
 );
 const { string, func, object } = PropTypes;
@@ -64,6 +76,7 @@ class SelectBox extends Component {
           // it doesn't not have an other function
           root: classes.root + ` ${ fallBackClasses }`,
           select: classes.select,
+          icon: classes.icon,
         } }
         { ...(dataTest ? { 'data-test': dataTest } : {}) }
         { ...(testID ? { testID } : {}) }
@@ -71,7 +84,7 @@ class SelectBox extends Component {
         onChange={ onChange }
       >
         { options.map(option =>
-          <option key={option.id} value={ option.value }>{ option.label }</option>
+          <option key={ option.id } value={ option.value }>{ option.label }</option>
         ) }
       </Select>
     );
