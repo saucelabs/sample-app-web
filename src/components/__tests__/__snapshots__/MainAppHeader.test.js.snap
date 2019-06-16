@@ -1,30 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Main App Header should render the component correctly 1`] = `
-<div
-  className="MainAppHeader-grow-1"
+<WithStyles(AppBar)
+  className="MainAppHeader-root-1"
 >
-  <WithStyles(AppBar)
-    className="MainAppHeader-root-2"
+  <WithStyles(Toolbar)
+    className="MainAppHeader-toolBar-2"
   >
-    <WithStyles(Toolbar)
-      className="MainAppHeader-toolBar-3"
-    >
-      <WithStyles(MenuIcon)
-        fallBackClasses="bm-burger-button"
-        testID="open-menu-icon"
-      />
-      <img
-        className="MainAppHeader-headerLogo-4"
-        src="test-file-stub"
-        srcSet="test-file-stub"
-      />
-      <WithStyles(CartIcon)
-        cartContent={1}
-        fallBackClasses="shopping_cart_link"
-        testID="cart-icon"
-      />
-    </WithStyles(Toolbar)>
-  </WithStyles(AppBar)>
-</div>
+    <WithStyles(MenuIcon)
+      fallBackClasses="bm-burger-button"
+      testID="open-menu-icon"
+    />
+    <img
+      className="MainAppHeader-headerLogo-3"
+      src="test-file-stub"
+      srcSet="test-file-stub"
+    />
+    <WithStyles(CartIcon)
+      cartContent={1}
+      fallBackClasses="shopping_cart_link"
+      testID="cart-icon"
+    />
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
 `;
