@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Secondary App Header should render a full option component correctly 1`] = `
+<WithStyles(AppBar)
+  className="SecondaryAppHeader-root-1"
+>
+  <WithStyles(Toolbar)
+    className="SecondaryAppHeader-toolBar-2"
+  >
+    <span
+      className="SecondaryAppHeader-title-3"
+    >
+      Full options
+    </span>
+    <img
+      className="SecondaryAppHeader-headerBot-4"
+      src="test-file-stub"
+      srcSet="test-file-stub"
+    />
+    <div
+      className="SecondaryAppHeader-leftComponent-5"
+    >
+      <div />
+    </div>
+    <div
+      className="SecondaryAppHeader-rightComponent-6"
+    >
+      <div />
+    </div>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
+
+exports[`Secondary App Header should render the component correctly 1`] = `
+<WithStyles(AppBar)
+  className="SecondaryAppHeader-root-1"
+>
+  <WithStyles(Toolbar)
+    className="SecondaryAppHeader-toolBar-2"
+  >
+    <Component />
+    <Component />
+    <Component />
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;

@@ -17,6 +17,9 @@ import SlSelect from './components/sl-selectbox/select.box.stories';
 import MainAppHeader from '../src/components/MainAppHeader';
 import SlMenuIcon from './components/sl-icons/meniu.icon.storie';
 import SlCartIcon from './components/sl-icons/cart.icon.storie';
+import SlSecondaryFullAppHeader from './components/sl-app-header/secondary.app.header.full.storie';
+import SlSecondarySingleAppHeader from './components/sl-app-header/secondary.app.header.single.title.storie';
+import SlLeftComponentAppHeader from './components/sl-app-header/secondary.app.left.component.storie';
 
 storiesOf('Components/Inputs', module)
   .addDecorator(storyFn => <div style={ style.componentWrapper }>{ storyFn() }</div>)
@@ -38,14 +41,18 @@ storiesOf('Components/Buttons', module)
   .add('Next Button', () => <SlNextButton/>)
   .add('Remove Button', () => <SlRemoveButton/>);
 
-storiesOf('Components/AppBar', module)
+storiesOf('Components/App Header', module)
   .addParameters({
     backgrounds: [
-      { name: 'Secondary App Header', value: colors.gray, default: true },
-      { name: 'Sauce Labs Red', value: colors.slRed },
+      { name: 'White', value: colors.white },
+      { name: 'Sauce Labs gray', value: colors.gray },
+      { name: 'Sauce Labs Red', value: colors.slRed, default: true },
     ],
   })
-  .add('MainAppHeader', () => <MainAppHeader/>);
+  .add('Main', () => <MainAppHeader/>)
+  .add('Secondary Full', () => <SlSecondaryFullAppHeader/>)
+  .add('Secondary Title', () => <SlSecondarySingleAppHeader/>)
+  .add('Secondary Left Component', () => <SlLeftComponentAppHeader/>);
 
 storiesOf('Components/Select', module)
   .addDecorator(storyFn => <div style={ style.grayComponentWrapper }>{ storyFn() }</div>)

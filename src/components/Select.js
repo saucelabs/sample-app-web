@@ -42,9 +42,9 @@ const styles = theme => (
     },
     icon: {
       [ theme.breakpoints.down('md') ]: {
-        display: 'none'
+        display: 'none',
       },
-    }
+    },
   }
 );
 const { string, func, object } = PropTypes;

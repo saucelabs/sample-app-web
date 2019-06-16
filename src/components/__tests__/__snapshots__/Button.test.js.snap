@@ -4,7 +4,7 @@ exports[`Button Action Button should render correctly with full options 1`] = `
 <WithStyles(Button)
   classes={
     Object {
-      "label": "BaseButton-label-7 BaseButton-labelAction-8",
+      "label": "BaseButton-label-7 BaseButton-labelAction-11 BaseButton-mediumLabel-9",
       "root": "BaseButton-root-1 BaseButton-rootAction-2 fallback-classes",
     }
   }
@@ -22,7 +22,7 @@ exports[`Button Action Button should render correctly with the required options 
 <WithStyles(Button)
   classes={
     Object {
-      "label": "BaseButton-label-7 BaseButton-labelAction-8",
+      "label": "BaseButton-label-7 BaseButton-labelAction-11 BaseButton-mediumLabel-9",
       "root": "BaseButton-root-1 BaseButton-rootAction-2 ",
     }
   }
@@ -39,7 +39,7 @@ exports[`Button Add Button should render correctly with the required options 1`]
 <WithStyles(Button)
   classes={
     Object {
-      "label": "BaseButton-label-7 BaseButton-labelAdd-9",
+      "label": "BaseButton-label-7 BaseButton-labelAdd-12 BaseButton-mediumLabel-9",
       "root": "BaseButton-root-1 BaseButton-rootAdd-3 ",
     }
   }
@@ -56,7 +56,7 @@ exports[`Button Back Button should render correctly with the required options 1`
 <WithStyles(Button)
   classes={
     Object {
-      "label": "BaseButton-label-7 BaseButton-labelBack-10",
+      "label": "BaseButton-label-7 BaseButton-labelBack-13 BaseButton-mediumLabel-9",
       "root": "BaseButton-root-1 BaseButton-rootBack-4 ",
     }
   }
@@ -66,7 +66,7 @@ exports[`Button Back Button should render correctly with the required options 1`
   onClick={[MockFunction]}
 >
   <img
-    className="BaseButton-backImage-13"
+    className="BaseButton-backImage-16"
     src="test-file-stub"
     srcSet="test-file-stub"
   />
@@ -78,7 +78,7 @@ exports[`Button Next Button should render correctly with the required options 1`
 <WithStyles(Button)
   classes={
     Object {
-      "label": "BaseButton-label-7 BaseButton-labelNext-11",
+      "label": "BaseButton-label-7 BaseButton-labelNext-14 BaseButton-mediumLabel-9",
       "root": "BaseButton-root-1 BaseButton-rootNext-5 ",
     }
   }
@@ -95,7 +95,7 @@ exports[`Button Remove Button should render correctly with the required options 
 <WithStyles(Button)
   classes={
     Object {
-      "label": "BaseButton-label-7 BaseButton-labelRemove-12",
+      "label": "BaseButton-label-7 BaseButton-labelRemove-15 BaseButton-mediumLabel-9",
       "root": "BaseButton-root-1 BaseButton-rootRemove-6 ",
     }
   }

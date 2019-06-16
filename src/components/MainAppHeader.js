@@ -10,9 +10,6 @@ import MenuIcon from './Icons/MenuIcon';
 import CartIcon from './Icons/CartIcon';
 
 const styles = theme => ({
-    grow: {
-      flexGrow: 1,
-    },
     root: {
       backgroundColor: colors.white,
       boxShadow: 'none',
@@ -61,24 +58,22 @@ class MainAppHeader extends Component {
     const { classes } = this.props;
 
     return (
-      <div className={ classes.grow }>
-        <AppBar className={ classes.root }>
-          <Toolbar className={ classes.toolBar }>
-            <MenuIcon
-              fallBackClasses="bm-burger-button"
-              onClick={ this.handleMenu() }
-              testID="open-menu-icon"
-            />
-            <img src={ headerLogoPng } srcSet={ headerLogoSvg } className={ classes.headerLogo }/>
-            <CartIcon
-              fallBackClasses="shopping_cart_link"
-              onClick={ this.openCart() }
-              testID="cart-icon"
-              cartContent={1}
-            />
-          </Toolbar>
-        </AppBar>
-      </div>
+      <AppBar className={ classes.root }>
+        <Toolbar className={ classes.toolBar }>
+          <MenuIcon
+            fallBackClasses="bm-burger-button"
+            onClick={ this.handleMenu() }
+            testID="open-menu-icon"
+          />
+          <img src={ headerLogoPng } srcSet={ headerLogoSvg } className={ classes.headerLogo }/>
+          <CartIcon
+            fallBackClasses="shopping_cart_link"
+            onClick={ this.openCart() }
+            testID="cart-icon"
+            cartContent={ 1 }
+          />
+        </Toolbar>
+      </AppBar>
     );
   }
 }

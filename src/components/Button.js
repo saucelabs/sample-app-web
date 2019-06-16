@@ -6,16 +6,17 @@ import { colors } from '../utils/Colors';
 import backPng from '../assets/img/arrow.png';
 import backSvg from '../assets/svg/arrow3x.svg';
 
-// @TODO: Fix later
-// Needed to do this because `PropTypes.oneOf(Object.values(BUTTON_TYPES))` gave an error
-// during compilation. It's an dependency issue, but not important enough for now.
-const buttonTypesArray = [ 'Action', 'Add', 'Back', 'Next', 'Remove' ];
 export const BUTTON_TYPES = {
   ACTION: 'Action',
   ADD: 'Add',
   BACK: 'Back',
   NEXT: 'Next',
   REMOVE: 'Remove',
+};
+export const LABEL_SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
 };
 const styles = theme => (
   {
@@ -66,8 +67,16 @@ const styles = theme => (
       },
     },
     label: {
-      fontSize: 18,
       textTransform: 'uppercase',
+    },
+    smallLabel: {
+      fontSize: 14,
+    },
+    mediumLabel: {
+      fontSize: 18,
+    },
+    largeLabel: {
+      fontSize: 22,
     },
     labelAction: {
       color: colors.slRed,
@@ -91,15 +100,15 @@ const styles = theme => (
   }
 );
 const { string, func, object, oneOf } = PropTypes;
-const { isRequired } = string;
 
 class BaseButton extends Component {
   static propTypes = {
-    buttonType: oneOf(buttonTypesArray).isRequired,
+    buttonType: oneOf(Object.values(BUTTON_TYPES)).isRequired,
     classes: object.isRequired,
     dataTest: string,
     fallBackClasses: string,
-    label: isRequired,
+    label: string.isRequired,
+    labelSize: oneOf(Object.values(LABEL_SIZE)),
     testID: string,
     onClick: func.isRequired,
     width: string,
@@ -108,33 +117,43 @@ class BaseButton extends Component {
   static defaultProps = {
     buttonType: BUTTON_TYPES.ACTION,
     fallBackClasses: '',
+    labelSize: LABEL_SIZE.MEDIUM,
     testID: 'test-id',
     width: null,
   };
 
-  render() {
-    const { classes, dataTest, fallBackClasses, label, buttonType, onClick, testID } = this.props;
-    let backButton = null;
+  /**
+   * Get the backbutton
+   *
+   * @return {element|null}
+   */
+  backButton() {
+    const { classes, buttonType } = this.props;
 
-    if (buttonType === BUTTON_TYPES.BACK) {
-      backButton = <img src={ backPng } srcSet={ backSvg } className={ classes.backImage }/>;
-    }
+    return buttonType === BUTTON_TYPES.BACK ? (
+        <img src={ backPng } srcSet={ backSvg } className={ classes.backImage }/>
+      )
+      : null;
+  }
+
+  render() {
+    const { classes, dataTest, fallBackClasses, label, labelSize, buttonType, onClick, testID } = this.props;
+
+    // ` ${fallBackClasses}` is there to make it backwards compatible,
+    // it doesn't not have an other function
+    const rootClass = classes.root + ' ' + classes[ `root${ buttonType }` ] + ` ${ fallBackClasses }`;
+    const labelClass = classes.label + ' ' + classes[ `label${ buttonType }` ] + ' ' + classes[ `${ labelSize }Label` ];
 
     return (
       <Button
-        classes={ {
-          // ` ${fallBackClasses}` is there to make it backwards compatible,
-          // it doesn't not have an other function
-          root: classes.root + ' ' + classes[ `root${ buttonType }` ] + ` ${ fallBackClasses }`,
-          label: classes.label + ' ' + classes[ `label${ buttonType }` ],
-        } }
+        classes={ { root: rootClass, label: labelClass } }
         { ...(dataTest ? { 'data-test': dataTest } : {}) }
         disableFocusRipple
         disableRipple
         id={ testID }
         onClick={ onClick }
       >
-        { backButton }
+        { this.backButton() }
         { label }
       </Button>
     );
