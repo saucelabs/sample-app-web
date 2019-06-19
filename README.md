@@ -10,6 +10,50 @@ To set up the development environment for this sample app:
 3. Run the `setup-env.sh` script in the root of the repository
 4. There is no step 4, you're done!
 
+## Direct development environment setup
+
+You can also choose to build the application directly on your host computer rather than via Vagrant/Virtualbox, however this is discouraged due to interdependency issues which frequently crop up when running multiple NPM projects in the same development environment. The usage of Vagrant/Virtualbox is intended to prevent this issue by giving this application a pristine build environment with only its dependencies present, however the usage of Vagrant/Virtualbox is not a strict requirement for building this application.
+
+To set up the development environment directly on your host computer:
+
+1. Install [NodeJS 10 LTS](https://nodejs.org/en/download/)
+2. Update NPM to the latest version: `sudo npm i npm@latest -g`
+3. Install the application dependencies - in the root of the repository: `npm install`
+4. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
+5. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
+
+## Setup issues
+
+If you encounter any issues with this build process, e.g.:
+
+```
+$ npm run build
+> sample-app-web@1.0.0 build /Users/unlucky-user/sample-app-web
+> webpack --mode production
+
+sh: webpack: command not found
+npm ERR! file sh
+npm ERR! code ELIFECYCLE
+npm ERR! errno ENOENT
+npm ERR! syscall spawn
+npm ERR! sample-app-web@1.0.0 build: `webpack --mode production`
+npm ERR! spawn ENOENT
+npm ERR! 
+npm ERR! Failed at the sample-app-web@1.0.0 build script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/unlucky-user/.npm/_logs/2019-06-19T02_09_09_082Z-debug.log
+$
+```
+
+You have probably hit a dependency conflict issue. To resolve this, do the following in the root of the repository:
+
+1. `npm cache clean --force`
+2. `rm -rf node_modules`
+3. `npm install`
+4. `npm run build`
+
 # Build
 
 To build the application:
