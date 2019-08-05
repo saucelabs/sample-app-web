@@ -116,14 +116,6 @@ class Login extends Component {
       }
 
       // If we're here, we have a username and password. Redirect!
-      this.setState({
-        username: '',
-        usernameError: false,
-        passwordError: false,
-        password: '',
-        error: '',
-      });
-
       this.props.history.push(ROUTES.INVENTORY);
     } else {
       return this.setState({

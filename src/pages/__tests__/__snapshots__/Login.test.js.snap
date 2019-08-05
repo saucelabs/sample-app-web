@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login should empty the state and redirect when valid credentials are used 1`] = `
-Object {
-  "error": "",
-  "password": "",
-  "passwordError": false,
-  "username": "",
-  "usernameError": false,
-}
-`;
-
 exports[`Login should render correctly 1`] = `
 <div
   className="Login-root-1"

@@ -35,7 +35,7 @@ pipeline {
 
         stage('Run Functional Tests') {
             steps {
-              sauce('SAUCE_ACCESS_KEY_EU') {
+              sauce('SAUCE_ACCESS_KEY') {
                 sauceconnect(options: '', sauceConnectPath: '', useGeneratedTunnelIdentifier: true, useLatestSauceConnect: true) {
                   wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
                     sh "npm run test.e2e.sauce.all ${env.CLI_ARGS}"
