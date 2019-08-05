@@ -18,7 +18,7 @@ exports.config = {
   // Test Configurations
   // ===================
   logLevel: 'silent',
-  baseUrl: `http://${ getNetworkAddress() || 'localhost' }:5000/`,
+  baseUrl: `http://${ getNetworkAddress() || 'localhost' }:3000/`,
   waitforTimeout: 15000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
