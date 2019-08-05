@@ -74,7 +74,7 @@ class SelectBox extends Component {
         classes={ {
           // ` ${fallBackClasses}` is there to make it backwards compatible,
           // it doesn't not have an other function
-          root: classes.root + ` ${ fallBackClasses }`,
+          root: `${ classes.root } ${ fallBackClasses }`,
           select: classes.select,
           icon: classes.icon,
         } }

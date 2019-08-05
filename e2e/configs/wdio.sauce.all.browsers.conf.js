@@ -4,8 +4,8 @@ const screenResolution = '1600x1200';
 const defaultBrowserSauceOptions = {
   screenResolution,
   seleniumVersion: '3.141.59',
-  ...(process.env.SAUCE_BUILD_NAME ? { build: process.env.SAUCE_BUILD_NAME } : {}),
-  tunnelIdentifier: process.env.TUNNEL_IDENTIFIER || 'testMe',
+  build: process.env.SAUCE_BUILD_NAME || `localBuild-${new Date().getTime()}`,
+  ...(process.env.TUNNEL_IDENTIFIER ? { tunnelIdentifier: process.env.TUNNEL_IDENTIFIER } : {}),
 };
 const chromeOptions = {
   'goog:chromeOptions': {
@@ -46,7 +46,7 @@ config.capabilities = [
   //     iedriverVersion: '3.141.59',
   //   },
   // },
-  // //@TODO There is a Sauce issue with the response on not finding elements, that's  why it is diabled for now
+  // //@TODO There is a Sauce issue with the response on not finding elements, that's  why it is disabled for now
   // {
   //   browserName: 'MicrosoftEdge',
   //   browserVersion: 'latest',

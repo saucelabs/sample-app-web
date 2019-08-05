@@ -8,7 +8,7 @@ import { colors } from '../../utils/Colors';
 const styles = () => ({
     menuIcon: {
       background: `url(${ menuIconPng }) no-repeat center center`,
-      backgroundImage: `url(${menuIconSvg})`,
+      backgroundImage: `url(${ menuIconSvg })`,
       borderRadius: 0,
       height: 40,
       width: 40,
@@ -41,7 +41,7 @@ class MenuIcon extends Component {
         classes={ {
           // ` ${fallBackClasses}` is there to make it backwards compatible,
           // it doesn't not have an other function
-          root: classes.menuIcon + ` ${ fallBackClasses }`,
+          root: `${ classes.menuIcon } ${ fallBackClasses }`,
         } }
         id={ testID }
         onClick={ onClick }
