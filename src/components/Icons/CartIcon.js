@@ -15,7 +15,7 @@ const styles = () => ({
     },
     cartIcon: {
       background: `url(${ cartIconPng }) no-repeat center center`,
-      backgroundImage: `url(${cartIconSvg})`,
+      backgroundImage: `url(${ cartIconSvg })`,
       height: 40,
       width: 40,
     },
@@ -50,7 +50,7 @@ class CartIcon extends Component {
         classes={ {
           // ` ${fallBackClasses}` is there to make it backwards compatible,
           // it doesn't not have an other function
-          root: classes.root + ` ${ fallBackClasses }`,
+          root: `${ classes.root } ${ fallBackClasses }`,
         } }
         id={ testID }
         onClick={ onClick }
@@ -59,7 +59,7 @@ class CartIcon extends Component {
           badgeContent={ cartContent }
           color="secondary"
           classes={ { badge: classes.badge } }
-          id={ testID + '-content' }
+          id={ `${ testID }-content` }
         >
           <div className={ classes.cartIcon }/>
         </Badge>
