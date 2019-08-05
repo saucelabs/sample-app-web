@@ -5,7 +5,7 @@ export default class SlSingleTitleAppHeader extends React.Component {
   render() {
     return (
       <SecondaryAppHeader
-        title="Single  title"
+        title="Single title"
       />
     );
   }

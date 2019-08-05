@@ -141,8 +141,8 @@ class BaseButton extends Component {
 
     // ` ${fallBackClasses}` is there to make it backwards compatible,
     // it doesn't not have an other function
-    const rootClass = classes.root + ' ' + classes[ `root${ buttonType }` ] + ` ${ fallBackClasses }`;
-    const labelClass = classes.label + ' ' + classes[ `label${ buttonType }` ] + ' ' + classes[ `${ labelSize }Label` ];
+    const rootClass = `${classes.root} ${classes[`root${buttonType}`]} ${fallBackClasses}`;
+    const labelClass = `${classes.label} ${classes[`label${buttonType}`]} ${classes[`${labelSize}Label`]}`;
 
     return (
       <Button
