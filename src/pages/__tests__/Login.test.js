@@ -90,7 +90,7 @@ describe('Login', () => {
     verifyCredentialsSpy.mockClear();
   });
 
-  it('should empty the state and redirect when valid credentials are used', () => {
+  it('should redirect when valid credentials are used', () => {
     const verifyCredentialsSpy = jest.spyOn(Credentials, 'verifyCredentials');
     const isLockedOutUserSpy = jest.spyOn(Credentials, 'isLockedOutUser');
     const pushSpy = jest.spyOn(Router.history, 'push');
@@ -105,7 +105,6 @@ describe('Login', () => {
     passwordInput.at(1).simulate('change', { target: { value: 'password' } });
     button.simulate('click', { preventDefault: () => {} });
 
-    expect(wrapper.state()).toMatchSnapshot();
     expect(pushSpy).toHaveBeenCalled();
 
     verifyCredentialsSpy.mockClear();
