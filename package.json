@@ -118,7 +118,7 @@
       "!./node_modules/"
     ],
     "coveragePathIgnorePatterns": [
-      "src/index.js"
+      "src/index.jsx"
     ],
     "collectCoverage": true,
     "coverageThreshold": {
