@@ -1,9 +1,17 @@
 const TestUtils = require('../test-utils');
 const LoginPage = require('../pages/login.page');
 
-describe('Login', () => {
-  beforeEach(() => {
-    browser.url('/');
+describe('Login Page', () => {
+  beforeEach("annotate before", function beforeEach() {
+    console.log("[BEFORE:currentTest.title]", this.currentTest.title);
+    console.log("[BEFORE:currentTest.fullTitle()", this.currentTest.fullTitle());
+    browser.url('');
+  });
+  afterEach("annotate before", function afterEach() 
+  {
+      console.log("[AFTER:currentTest.title]", this.currentTest.title);
+      console.log("[AFTER:currentTest.fullTitle()", this.currentTest.fullTitle());
+      console.log("[AFTER:currentTest.state", this.currentTest.state);
   });
 
   it('should be able to login with the standard user', () => {
