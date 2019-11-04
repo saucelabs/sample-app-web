@@ -1,6 +1,11 @@
 class LoginPage {
-
-  getUsernameInputElement() {
+  get usernameField() {
+    return $('#user-name');
+  }
+  get passwordField() {
+    return $('#password');
+  }
+  usernameLocator() {
     return $('#user-name');
   }
 
@@ -46,12 +51,13 @@ class LoginPage {
   }
 
   loginWithStandardUser() {
-    
-    // Pull our input fields and plug in the correct values
-    
-    this.getUsernameInputElement().addValue(this.STANDARD_USER);
+    this.usernameLocator().addValue(this.STANDARD_USER);
     this.getPasswordInputElement().addValue(this.VALID_PASSWORD);
     this.getLoginButtonElement().click();
+  }
+  login(userName, password){
+    this.usernameField.addValue(userName);
+    this.passwordField.addValue(password);
   }
 }
 
