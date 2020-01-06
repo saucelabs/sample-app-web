@@ -1,5 +1,6 @@
 const TestUtils = require('../test-utils');
 const LoginPage = require('../pages/login.page');
+const InventoryListPage = require('../pages/inventory.list.page');
 
 describe('Login', () => {
   beforeEach(() => {
@@ -14,7 +15,7 @@ describe('Login', () => {
     LoginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'standarduser-2-values-submitted');
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should be able to login with the problem user', () => {
@@ -25,7 +26,7 @@ describe('Login', () => {
     LoginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'problemuser-2-values-submitted');
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should be able to login with the performance issue user', () => {
@@ -36,7 +37,7 @@ describe('Login', () => {
     LoginPage.getLoginButtonElement().click();
     TestUtils.saveScreenshot('login', 'perfuser-2-values-submitted');
 
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should not be able to login with the locked out user', () => {
@@ -51,7 +52,7 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'lockedout-2-values-submitted');
 
     expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(browser.getUrl()).toEqual('http://localhost/');
+    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should not be able to login without a username', () => {
@@ -66,7 +67,7 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'blank-user-2-values-submitted');
 
     expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(browser.getUrl()).toEqual('http://localhost/');
+    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should not be able to login without a password', () => {
@@ -81,7 +82,7 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'blank-pass-2-values-submitted');
 
     expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(browser.getUrl()).toEqual('http://localhost/');
+    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should not be able to login with the wrong password', () => {
@@ -96,6 +97,6 @@ describe('Login', () => {
     TestUtils.saveScreenshot('login', 'wrong-pass-2-values-submitted');
 
     expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(browser.getUrl()).toEqual('http://localhost/');
+    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
   });
 });

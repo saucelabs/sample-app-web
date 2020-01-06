@@ -1,13 +1,17 @@
 class InventoryItemPage {
 
+  getItemDetailsPage() {
+    return $('#inventory_item_container');
+  }
+
   // NOTE: when the remove-from-cart button is clicked, it becomes the add-to-cart button (and
   // vice versa for add-to-cart -> remove-from-cart)
   getRemoveFromCartButton() {
-    return $('.remove-from-cart-button');
+    return $('.btn_secondary.btn_inventory');
   }
-  
+
   getAddToCartButton() {
-    return $('.add-to-cart-button');
+    return $('.btn_primary.btn_inventory');
   }
 
   getItemTitleText() {
