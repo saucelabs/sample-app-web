@@ -1,3 +1,7 @@
+/**
+ * More information about the WebdriverIO configuration file can be found here:
+ * https://webdriver.io/docs/configurationfile.html
+ */
 exports.config = {
     //
     // ====================
