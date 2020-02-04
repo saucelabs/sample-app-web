@@ -3,12 +3,13 @@ const LoginPage = require('../pages/login.page');
 const HeaderPage = require('../pages/header.page');
 const SliderMenuPage = require('../pages/slider-menu.page');
 const InventoryListPage = require('../pages/inventory.list.page');
+const InventoryItemPage = require('../pages/inventory.item.page');
 
 describe('Inventory List', () => {
 
   beforeEach(() => {
     browser.url('/');
-    
+
     // We sometimes manipulate the cart in these tests, so make sure session storage is clear.
     // This has to happen AFTER a browser.url call, otherwise you will get:
     // Failed to read the 'sessionStorage' property from 'Window': Storage is disabled inside 'data:' URLs.
@@ -16,12 +17,12 @@ describe('Inventory List', () => {
 
     // Make sure we're logged in before our tests start, and verify that we're at the right starting point
     LoginPage.loginWithStandardUser();
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should land on inventory list page after login', () => {
     TestUtils.saveScreenshot('inventory-list', 'landing-list-1-initial-load');
-    expect(browser.getUrl()).toEqual('http://localhost/inventory.html');
+    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should be able to open and close the slider menu', () => {
@@ -30,11 +31,11 @@ describe('Inventory List', () => {
     HeaderPage.getSliderMenuButton().click();
     TestUtils.saveScreenshot('inventory-list', 'list-menu-1-slider-menu-click');
 
-    SliderMenuPage.waitForSliderMenuVisible();    
+    SliderMenuPage.waitForSliderMenuVisible();
     TestUtils.saveScreenshot('inventory-list', 'list-menu-2-slider-menu-open');
     expect(SliderMenuPage.isSliderMenuPresent()).toEqual(true);
-    
-    SliderMenuPage.getSliderMenuOverlay().click();    
+
+    SliderMenuPage.getSliderMenuOverlay().click();
     SliderMenuPage.waitForSliderMenuHidden();
     TestUtils.saveScreenshot('inventory-list', 'list-menu-3-slider-menu-closed');
     expect(SliderMenuPage.isSliderMenuPresent()).toEqual(false);
@@ -43,13 +44,13 @@ describe('Inventory List', () => {
   it('should be able to navigate to shopping cart page', () => {
     HeaderPage.getShoppingCartButton().click();
     TestUtils.saveScreenshot('inventory-list', 'list-cart-1-cart-click');
-    expect(browser.getUrl()).toEqual('http://localhost/cart.html');
+    expect(browser.getUrl()).toEqual('http://localhost:3000/cart.html');
   });
 
   it('should be able to add items to cart and remove items from cart', () => {
     InventoryListPage.addFirstUnaddedItemToCart();
     TestUtils.saveScreenshot('inventory-list', 'add-cart-1-add-to-cart-click');
-    
+
     expect(HeaderPage.getShoppingCartCount()).toEqual(1);
 
     InventoryListPage.addFirstUnaddedItemToCart();
@@ -59,7 +60,7 @@ describe('Inventory List', () => {
 
     InventoryListPage.getRemoveFromCartButton(0).click();
     TestUtils.saveScreenshot('inventory-list', 'add-cart-3-remove-from-cart-click');
-    
+
     expect(HeaderPage.getShoppingCartCount()).toEqual(1);
   });
 
@@ -67,7 +68,7 @@ describe('Inventory List', () => {
     InventoryListPage.getItemTitleLink(1).click();
     TestUtils.saveScreenshot('inventory-list', 'item-title-1-item-title-link-click');
 
-    expect(browser.getUrl()).toEqual(jasmine.stringMatching(/^http:\/\/localhost\/inventory-item\.html\?id=.$/));
+    expect(InventoryItemPage.getItemDetailsPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('should be able to navigate to item page via item image', () => {
@@ -76,7 +77,7 @@ describe('Inventory List', () => {
     InventoryListPage.getItemImageLink(1).click();
     TestUtils.saveScreenshot('inventory-list', 'item-image-1-item-title-link-click');
 
-    expect(browser.getUrl()).toEqual(jasmine.stringMatching(/^http:\/\/localhost\/inventory-item\.html\?id=.$/));
+    expect(InventoryItemPage.getItemDetailsPage().waitForDisplayed(15000)).toEqual(true);
   });
 
   it('item images should not be broken', () => {

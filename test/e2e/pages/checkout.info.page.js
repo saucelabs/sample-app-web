@@ -1,5 +1,9 @@
 class CheckoutInfoPage {
 
+  getCheckoutInfoPage() {
+    return $('#checkout_info_container');
+  }
+
   getFirstNameInput() {
     return $('#first-name');
   }
@@ -11,9 +15,9 @@ class CheckoutInfoPage {
   getPostalCodeInput() {
     return $('#postal-code');
   }
-  
+
   getContinueButton() {
-    return $('.cart_checkout_link');
+    return $('.btn_primary.cart_button');
   }
 
   getCancelButton() {

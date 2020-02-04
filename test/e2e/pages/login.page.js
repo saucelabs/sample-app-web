@@ -1,5 +1,9 @@
 class LoginPage {
 
+  getLoginPage() {
+    return $('.login_wrapper')
+  }
+
   getUsernameInputElement() {
     return $('#user-name');
   }
@@ -46,9 +50,9 @@ class LoginPage {
   }
 
   loginWithStandardUser() {
-    
+
     // Pull our input fields and plug in the correct values
-    
+
     this.getUsernameInputElement().addValue(this.STANDARD_USER);
     this.getPasswordInputElement().addValue(this.VALID_PASSWORD);
     this.getLoginButtonElement().click();
