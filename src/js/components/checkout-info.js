@@ -67,7 +67,7 @@ class CheckoutInfo extends Component {
     }
 
     // If we're here, we have our required info. Redirect!
-    window.location.href = './checkout-step-two.ejs';
+    window.location.href = './checkout-step-two.html';
 
     return '';
   }
@@ -80,20 +80,20 @@ class CheckoutInfo extends Component {
         {
                     this.state.error &&
                     <h3 data-test="error">
-                    <button class="error-button" onClick={this.dismissError}>
+                    <button className="error-button" onClick={this.dismissError}>
                     <FontAwesomeIcon icon={faTimesCircle} size="2x" />
                     </button>
                     Error: {this.state.error}
                     </h3>
             }
           <div className="checkout_info">
-            <input id="first-name" type="text" className="form_input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} autocorrect="off" autocapitalize="none" />
-            <input id="last-name" type="text" className="form_input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} autocorrect="off" autocapitalize="none" />
-            <input id="postal-code" type="text" className="form_input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} autocorrect="off" autocapitalize="none" />
+            <input id="first-name" type="text" className="form_input" data-test="firstName" placeholder="First Name" value={this.state.firstName} onChange={this.handleFirstNameChange} autoCorrect="off" autoCapitalize="none" />
+            <input id="last-name" type="text" className="form_input" data-test="lastName" placeholder="Last Name" value={this.state.lastName} onChange={this.handleLastNameChange} autoCorrect="off" autoCapitalize="none" />
+            <input id="postal-code" type="text" className="form_input" data-test="postalCode" placeholder="Zip/Postal Code" value={this.state.postalCode} onChange={this.handlePostalCodeChange} autoCorrect="off" autoCapitalize="none" />
           </div>
           <div className="checkout_buttons">
-            <a class="cart_cancel_link btn_secondary" href="./cart.html">CANCEL</a>
-            <input class="btn_primary cart_button" type="submit" value="CONTINUE" />
+            <a className="cart_cancel_link btn_secondary" href="./cart.html">CANCEL</a>
+            <input className="btn_primary cart_button" type="submit" value="CONTINUE" />
 
           </div>
         </form>

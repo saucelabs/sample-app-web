@@ -66,13 +66,13 @@ class LoginButton extends Component {
 	  return (
 		<div className="login-box">
 		  <form onSubmit={this.handleSubmit}>
-			  <input type="text" className="form_input" data-test="username" id="user-name" placeholder="Username" value={this.state.username} onChange={this.handleUserChange} autocorrect="off" autocapitalize="none" />
-			  <input type="password" className="form_input" data-test="password" id="password" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} autocorrect="off" autocapitalize="none" />
+			  <input type="text" className="form_input" data-test="username" id="user-name" placeholder="Username" value={this.state.username} onChange={this.handleUserChange} autoCorrect="off" autoCapitalize="none" />
+			  <input type="password" className="form_input" data-test="password" id="password" placeholder="Password" value={this.state.password} onChange={this.handlePassChange} autoCorrect="off" autoCapitalize="none" />
 			  <input type="submit" className="btn_action" value="LOGIN" />
 			  {
                   this.state.error &&
                   <h3 data-test="error">
-                  <button class="error-button" onClick={this.dismissError}>
+                  <button className="error-button" onClick={this.dismissError}>
                   <FontAwesomeIcon icon={faTimesCircle} size="2x" />
                   </button>
                   Epic sadface: {this.state.error}
