@@ -1,3 +1,5 @@
+// Needed for IE 11
+import 'url-search-params-polyfill';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { InventoryData } from '../data/inventory-data.js';
@@ -27,11 +29,10 @@ class InventoryItem extends Component {
           4 T 1.`,
           image_url: './img/sl-404.jpg',
           price: '√-1'
-          
       };
     }
     this.item.id = inventoryId;
-    
+
     this.state = {
       // Set our initial state now
       itemInCart: ShoppingCart.isItemInCart(inventoryId)
@@ -73,7 +74,7 @@ class InventoryItem extends Component {
   render () {
 
     var cartButton;
-    
+
     if (this.state.itemInCart) {
       cartButton = <button className="btn_secondary btn_inventory" onClick={() => this.removeFromCart(this.item.id)}>REMOVE</button>;
     } else {
