@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development",
-    "test": "./node_modules/.bin/wdio test/e2e/config/wdio.conf.js",
+    "test": "./node_modules/.bin/wdio test/e2e/configs/wdio.local.chrome.conf.js",
     "pretest.vagrant": "npm run build",
     "test.vagrant": "npm run test"
   },
@@ -31,6 +31,7 @@
   "devDependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-private-methods": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "@babel/register": "^7.8.3",

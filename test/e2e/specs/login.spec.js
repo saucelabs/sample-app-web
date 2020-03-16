@@ -1,102 +1,60 @@
-const TestUtils = require('../test-utils');
-const LoginPage = require('../pages/login.page');
-const InventoryListPage = require('../pages/inventory.list.page');
+import { LOGIN_USERS } from '../configs/e2eConstants';
+import Login from '../page-objects/Login';
+import SwagOverview from '../page-objects/SwagOverview';
 
 describe('Login', () => {
-  beforeEach(() => {
-    browser.url('/');
-  });
+    beforeEach(() => {
+        browser.url('');
+        Login.waitForIsDisplayed();
+    });
 
-  it('should be able to login with the standard user', () => {
-    LoginPage.getUsernameInputElement().addValue(LoginPage.STANDARD_USER);
-    LoginPage.getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
-    TestUtils.saveScreenshot('login', 'standarduser-1-values-entered');
+    it('should be able to test loading of login page', () => {
+        expect(Login.waitForIsDisplayed()).toEqual(
+            true,
+            'Login page was not shown',
+        );
+    });
 
-    LoginPage.getLoginButtonElement().click();
-    TestUtils.saveScreenshot('login', 'standarduser-2-values-submitted');
+    it('should be able to login with a standard user', () => {
+        Login.signIn(LOGIN_USERS.STANDARD);
 
-    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
-  });
+        // Wait for the inventory screen and check it
+        expect(SwagOverview.waitForIsDisplayed()).toEqual(
+            true,
+            'Inventory List screen was not shown',
+        );
+    });
 
-  it('should be able to login with the problem user', () => {
-    LoginPage.getUsernameInputElement().addValue(LoginPage.PROBLEM_USER);
-    LoginPage.getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
-    TestUtils.saveScreenshot('login', 'problemuser-1-values-entered');
+    it('should not be able to login with a locked user', () => {
+        // Login
+        Login.signIn(LOGIN_USERS.LOCKED);
 
-    LoginPage.getLoginButtonElement().click();
-    TestUtils.saveScreenshot('login', 'problemuser-2-values-submitted');
+        expect(Login.isErrorMessageDisplayed()).toEqual(true, 'Error message is shown');
+        expect(Login.getErrorMessage()).toContain(
+            'Epic sadface: Sorry, this user has been locked out.',
+            'The error message is not as expected',
+        );
+    });
 
-    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
-  });
+    it('should not be able to login with an invalid username', () => {
+        // Login
+        Login.signIn(LOGIN_USERS.NO_MATCH);
 
-  it('should be able to login with the performance issue user', () => {
-    LoginPage.getUsernameInputElement().addValue(LoginPage.BAD_PERF_USER);
-    LoginPage.getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
-    TestUtils.saveScreenshot('login', 'perfuser-1-values-entered');
+        expect(Login.isErrorMessageDisplayed()).toEqual(true, 'Error message is shown');
+        expect(Login.getErrorMessage()).toContain(
+            'Epic sadface: Username and password do not match any user in this service',
+            'The error message is not as expected',
+        );
+    });
 
-    LoginPage.getLoginButtonElement().click();
-    TestUtils.saveScreenshot('login', 'perfuser-2-values-submitted');
+    it('should not be able to login with an invalid password', () => {
+        // Login
+        Login.signIn(LOGIN_USERS.NO_MATCH);
 
-    expect(InventoryListPage.getInventoryListPage().waitForDisplayed(15000)).toEqual(true);
-  });
-
-  it('should not be able to login with the locked out user', () => {
-    LoginPage.getUsernameInputElement().addValue(LoginPage.LOCKED_OUT_USER);
-    LoginPage.getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
-    TestUtils.saveScreenshot('login', 'lockedout-1-values-entered');
-
-    // Make sure it's not there before we start, so we know it showed due to our action
-    expect(LoginPage.isErrorMessagePresent()).toEqual(false);
-
-    LoginPage.getLoginButtonElement().click();
-    TestUtils.saveScreenshot('login', 'lockedout-2-values-submitted');
-
-    expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
-  });
-
-  it('should not be able to login without a username', () => {
-    // Leave out our username
-    LoginPage.getPasswordInputElement().addValue(LoginPage.VALID_PASSWORD);
-    TestUtils.saveScreenshot('login', 'blank-user-1-values-entered');
-
-    // Make sure it's not there before we start, so we know it showed due to our action
-    expect(LoginPage.isErrorMessagePresent()).toEqual(false);
-
-    LoginPage.getLoginButtonElement().click();
-    TestUtils.saveScreenshot('login', 'blank-user-2-values-submitted');
-
-    expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
-  });
-
-  it('should not be able to login without a password', () => {
-    LoginPage.getUsernameInputElement().addValue(LoginPage.STANDARD_USER);
-    // Leave out our password
-    TestUtils.saveScreenshot('login', 'blank-pass-1-values-entered');
-
-    // Make sure it's not there before we start, so we know it showed due to our action
-    expect(LoginPage.isErrorMessagePresent()).toEqual(false);
-
-    LoginPage.getLoginButtonElement().click();
-    TestUtils.saveScreenshot('login', 'blank-pass-2-values-submitted');
-
-    expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
-  });
-
-  it('should not be able to login with the wrong password', () => {
-    LoginPage.getUsernameInputElement().addValue(LoginPage.STANDARD_USER);
-    LoginPage.getPasswordInputElement().addValue('ThouShaltNotPass!');
-    TestUtils.saveScreenshot('login', 'wrong-pass-1-values-entered');
-
-    // Make sure it's not there before we start, so we know it showed due to our action
-    expect(LoginPage.isErrorMessagePresent()).toEqual(false);
-
-    LoginPage.getLoginButtonElement().click();
-    TestUtils.saveScreenshot('login', 'wrong-pass-2-values-submitted');
-
-    expect(LoginPage.isErrorMessagePresent()).toEqual(true);
-    expect(LoginPage.getLoginPage().waitForDisplayed(15000)).toEqual(true);
-  });
+        expect(Login.isErrorMessageDisplayed()).toEqual(true, 'Error message is shown');
+        expect(Login.getErrorMessage()).toContain(
+            'Epic sadface: Username and password do not match any user in this service',
+            'The error message is not as expected',
+        );
+    });
 });
