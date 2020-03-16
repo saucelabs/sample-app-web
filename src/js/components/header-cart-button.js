@@ -11,16 +11,16 @@ class CartButton extends Component {
   }
 
   render () {
-    
+
     var cartBadge = "";
     var cartContents = ShoppingCart.getCartContents();
-    
+
     if (cartContents.length > 0) {
-      cartBadge = <span class="fa-layers-counter shopping_cart_badge">{ cartContents.length }</span>;
+      cartBadge = <span className="fa-layers-counter shopping_cart_badge">{ cartContents.length }</span>;
     }
-    
+
     return (
-      <a href="./cart.html" class="shopping_cart_link fa-layers fa-fw">
+      <a href="./cart.html" className="shopping_cart_link fa-layers fa-fw">
         <FontAwesomeIcon icon={faShoppingCart} size="3x" />
         { cartBadge }
       </a>

@@ -22,14 +22,21 @@ body, html {
 	width: 100px;
 	height: 100px;
 	position: absolute;
-	left: 20px;
+	left: 15px;
 	bottom: -40px;
 	z-index: 2;
 }
 
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+}
+
 /* LOGIN SCREEN */
 .login_wrapper{
-	padding: 30px;
+	padding: 30px 0;
 	margin: 0px auto;
 }
 .login_wrapper-inner {
@@ -50,9 +57,7 @@ body, html {
 .bot_column {
 	float: none;
 	width: 100%;
-	background: url('../img/Login_Bot_graphic.png') no-repeat center center;
-	min-height: 260px;
-	min-width: 300px;
+	height: auto;
 }
 @media only screen and (min-width: 900px) {
 	.form_column {
@@ -148,7 +153,7 @@ body, html {
 	height: 70px;
 	color: #fff;
 	font-size: 2em;
-	padding-left: 42px;
+	padding-left: 15px;
 	line-height: 66px;
 }
 
@@ -162,6 +167,10 @@ body, html {
 	color: #fff;
 }
 
+.inventory_item_container{
+	border-top: 1px solid #777;
+}
+
 .inventory_list,
 .cart_contents_container,
 .inventory_details_container,
@@ -169,7 +178,7 @@ body, html {
 .checkout_complete_container {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding-top: 30px;
+	padding: 0 15px 30px;
 }
 .inventory_item_name {
 	font-size: 1.4em;
@@ -180,17 +189,16 @@ body, html {
 	font-size: .85em;
 	margin-top: 7px;
 	color: #777777;
-	padding-right: 20px;
 }
 .pricebar {
 	position: absolute;
-	bottom: 15px;
+	bottom: 10px;
 	right: 10px;
 	width: 74%;
 }
 .checkout_button{
 	position: absolute;
-	right: 20px;
+	right: 0;
 	top: 20px;
 }
 
@@ -201,8 +209,8 @@ body, html {
 }
 .btn_inventory {
 	position: absolute;
-	right: 10px;
-	bottom: 0;	
+	right: 0;
+	bottom: 0;
 }
 .inventory_container {
 	overflow: hidden;
@@ -215,20 +223,24 @@ body, html {
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 	overflow: hidden;
 	margin-bottom: 12px;
-	min-width: 480px;
 }
 .inventory_item_label {
 	padding-top: 15px;
-	min-height: 150px;
+	min-height: 180px;
 	width: 74%;
 	float: right;
 	vertical-align: top;
-	position: relative;	
+	position: relative;
 }
 .inventory_item:nth-child(odd) {
 	margin-right: 20px;
 }
 
+@media only screen and (min-width: 900px) {
+	.inventory_item_label {
+		min-height: 150px;
+	}
+}
 /* Adjust inventory item width for larger screens */
 @media only screen and (min-width: 1200px) {
 	.inventory_item {
@@ -244,7 +256,7 @@ body, html {
 	.pricebar {
 		width: 71%;
 	}
-	
+
 }
 .inventory_item_label > a,
 .cart_item_label > a {
@@ -262,7 +274,6 @@ body, html {
 	width: 98%;
 }
 .inventory_details {
-	border-top: 1px solid #777;
 	background: #fff;
 	width: 100%;
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
@@ -273,7 +284,7 @@ body, html {
 	font-weight: 500;
 }
 .inventory_details_desc_container {
-	padding: 20px;
+	padding: 20px 20px 0;
 	vertical-align: top;
 	display: inline-block;
 	width: 50%;
@@ -294,8 +305,8 @@ body, html {
 	position: absolute;
 	right: 10px;
 	padding: 10px 20px;
-	border-radius: 2px;
 	border: none;
+	right: 15px;
 }
 .inventory_details_price {
 	color: #569210;
@@ -326,18 +337,18 @@ body, html {
 }
 
 .cart_item_label {
-	padding: 20px 10px 0;
-	width: calc(95% - 165px);
+	padding: 20px 0 0 10px;
+	width: calc(99% - 165px);
 	display: inline-block;
 	vertical-align: top;
-	position: relative;	
+	position: relative;
 }
 
 .cart_item {
 	border-top: 2px solid #EDEDEF;
 	background: #fff;
 	width: 100%;
-	position: relative; 
+	position: relative;
 }
 
 .item_pricebar {
@@ -376,9 +387,14 @@ body, html {
 .cart_footer {
 	position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
 	border-top: 2px solid #EDEDEF;
-	padding: 20px 0 20px 20px;
+	padding: 20px 0;
 	margin-bottom: 30px;
 }
+
+.checkout_info_wrapper{
+	padding: 0 15px;
+}
+
 .checkout_info_container {
 	max-width: 600px;
 	margin: 0 auto;
@@ -408,31 +424,31 @@ body, html {
 }
 
 .summary_info_label {
-	width: calc(100% - 20px);
+	width: 100%;
 	border-top: 1px solid #efefef;
-	padding: 20px 10px 0px;
+	padding: 20px 0 0;
 	font-size: 1.2em;
 }
 
 .summary_value_label {
 	font-weight: 800;
 	font-size: 18px;
-	padding: 20px 10px;
+	padding: 20px 0;
 }
 
 .summary_subtotal_label {
 	border-top: 1px solid #efefef;
-	padding: 20px 10px 10px;
+	padding: 20px 0 10px;
 	font-size: 18px;
 }
 
 .summary_tax_label {
-	padding: 0px 10px;
+	padding: 0;
 	font-size: 1.2em;
 }
 
 .summary_total_label {
-	padding: 10px;
+	padding: 10px 0;
 	font-size: 1.2em;
 	margin: 0px 0px 8px 0px;
 }
@@ -441,14 +457,16 @@ body, html {
 	text-align: center;
 }
 .pony_express {
-	background: url('../img/pony-express.png') no-repeat;
-	width: 523px;
-	height: 381px;
+	width: 100%;
+	height: 100%;
+	max-width: 523px;
+	max-height: 381px;
 	margin: 30px auto;
 }
 
 /*============ ITEM DETAILS ===============*/
 .inventory_details_img {
+	width: 100%;
 	max-width: 400px;
 }
 
@@ -457,7 +475,15 @@ body, html {
 	right: 20px;
 	top: 23px;
 	height: 35px;
-	width: 200px;
+	width: 115px;
+}
+
+@media only screen and (max-width: 960px) {
+	.inventory_details_desc_container{
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 /* ===============Burger button styling==================== */
@@ -466,7 +492,7 @@ body, html {
   position: absolute;
   width: 20px;
   height: 15px;
-  left: 40px;
+  left: 15px;
   top: 30px;
 }
 
@@ -571,11 +597,45 @@ body, html {
 }
 
 .footer_robot {
-	background: url('../img/SwagBot_Footer_graphic.png') no-repeat;
 	width: 470px;
 	height: 352px;
 	right: 0;
 	bottom: 0;
+}
+
+@media only screen and (max-width: 960px) {
+	.footer{
+		height: auto;
+		text-align: center;
+		padding: 0 10px;
+	}
+	.social, .footer_copy, .footer_robot{
+		position: relative;
+	}
+	.social{
+		width: 100%;
+		padding: 0;
+		left: 0;
+	}
+	.social li{
+		float: none;
+	}
+
+	.footer_copy{
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		margin: 40px 0;
+	}
+	.footer_robot{
+		position: relative;
+	}
+	.footer_robot {
+		width: 100%;
+		height: 100%;
+		max-width: 470px;
+		max-height: 352px;
+	}
 }
 
 /*Button Styles*/

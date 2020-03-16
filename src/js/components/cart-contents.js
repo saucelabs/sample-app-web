@@ -13,7 +13,7 @@ class CartItem extends Component {
       this.state = {
           itemVisible: true
       }
-      
+
       if (props.item == null) {
         // Hide this if the item is invalid
         this.state.itemVisible = false;
@@ -27,31 +27,31 @@ class CartItem extends Component {
     }
 
     render () {
-      
+
       if (this.state.itemVisible) {
         var linkId = this.item.id;
         if (Credentials.isProblemUser()) {
-          linkId += 1; 
+          linkId += 1;
         }
         var itemLink = `./inventory-item.html?id=${linkId}`;
-        
+
         return (
-            <div class="cart_item">
-              <div class="cart_quantity">1</div>
-              <div class="cart_item_label">
+            <div className="cart_item">
+              <div className="cart_quantity">1</div>
+              <div className="cart_item_label">
                 <a href={itemLink} id={`item_${this.item.id}_title_link`}>
-                  <div class="inventory_item_name">{this.item.name}</div>
+                  <div className="inventory_item_name">{this.item.name}</div>
                 </a>
-                <div class="inventory_item_desc">{this.item.desc}</div>
-                <div class="item_pricebar">
-                  <div class="inventory_item_price">{this.item.price}</div>
+                <div className="inventory_item_desc">{this.item.desc}</div>
+                <div className="item_pricebar">
+                  <div className="inventory_item_price">{this.item.price}</div>
                   <button className="btn_secondary cart_button" onClick={() => this.removeFromCart(this.item.id)}>REMOVE</button>
                 </div>
               </div>
             </div>
         );
       } else {
-        return ( <div class="removed_cart_item"/> );
+        return ( <div className="removed_cart_item"/> );
       }
     }
   }
@@ -62,21 +62,21 @@ class CartItem extends Component {
     }
 
     render () {
-      
+
       var contents = ShoppingCart.getCartContents();
 
       return (
         <div>
-        <div class="cart_list">
-          <div class="cart_quantity_label">QTY</div>
-          <div class="cart_desc_label">DESCRIPTION</div>
+        <div className="cart_list">
+          <div className="cart_quantity_label">QTY</div>
+          <div className="cart_desc_label">DESCRIPTION</div>
           {contents.map((item, i) => {
-            return (<CartItem item={InventoryData.ITEMS[item]} />) 
+            return (<CartItem key={i} item={InventoryData.ITEMS[item]} />)
           })}
         </div>
-        <div class="cart_footer">
-          <a class="btn_secondary" href="./inventory.html">Continue Shopping</a>
-          <a class="btn_action checkout_button" href="./checkout-step-one.html">CHECKOUT</a>
+        <div className="cart_footer">
+          <a className="btn_secondary" href="./inventory.html">Continue Shopping</a>
+          <a className="btn_action checkout_button" href="./checkout-step-one.html">CHECKOUT</a>
         </div>
         </div>
       );

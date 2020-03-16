@@ -14,41 +14,45 @@ module.exports = {
             },
             {
                 test: /\.html$/,
+                use: ['html-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
                 use: [
                     {
-                        loader: "html-loader"
-                    }
-                ]
+                        loader: 'file-loader',
+                    },
+                ],
             },
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "src/index.html",
+            template: "src/index.ejs",
             filename: "index.html"
         }),
         new HtmlWebPackPlugin({
-            template: "src/inventory.html",
+            template: "src/inventory.ejs",
             filename: "inventory.html"
         }),
         new HtmlWebPackPlugin({
-            template: "src/inventory-item.html",
+            template: "src/inventory-item.ejs",
             filename: "inventory-item.html"
         }),
         new HtmlWebPackPlugin({
-            template: "src/cart.html",
+            template: "src/cart.ejs",
             filename: "cart.html"
         }),
         new HtmlWebPackPlugin({
-            template: "src/checkout-step-one.html",
+            template: "src/checkout-step-one.ejs",
             filename: "checkout-step-one.html"
         }),
         new HtmlWebPackPlugin({
-            template: "src/checkout-step-two.html",
+            template: "src/checkout-step-two.ejs",
             filename: "checkout-step-two.html"
         }),
         new HtmlWebPackPlugin({
-            template: "src/checkout-complete.html",
+            template: "src/checkout-complete.ejs",
             filename: "checkout-complete.html"
         }),
         new CopyWebpackPlugin([{
