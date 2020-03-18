@@ -2,7 +2,7 @@ import Base from './Base';
 
 const SCREEN_SELECTOR = '#checkout_summary_container';
 
-class CheckoutOverview extends Base {
+class CheckoutSummary extends Base {
     constructor() {
         super(SCREEN_SELECTOR);
     }
@@ -88,4 +88,4 @@ class CheckoutOverview extends Base {
     }
 }
 
-export default new CheckoutOverview();
+export default new CheckoutSummary();

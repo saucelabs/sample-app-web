@@ -132,15 +132,15 @@ Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 [0-5] RUNNING in chrome - /test/e2e/specs/item.list.spec.js
 [0-4] RUNNING in chrome - /test/e2e/specs/item.details.spec.js
 [0-1] RUNNING in chrome - /test/e2e/specs/checkout.complete.spec.js
-[0-0] RUNNING in chrome - /test/e2e/specs/cart.overview.spec.js
-[0-2] RUNNING in chrome - /test/e2e/specs/checkout.overview.spec.js
+[0-0] RUNNING in chrome - /test/e2e/specs/cart.summary.spec.js
+[0-2] RUNNING in chrome - /test/e2e/specs/checkout.summary.spec.js
 [0-3] RUNNING in chrome - /test/e2e/specs/checkout.personal.info.spec.js
 [0-1] PASSED in chrome - /test/e2e/specs/checkout.complete.spec.js
-[0-2] PASSED in chrome - /test/e2e/specs/checkout.overview.spec.js
+[0-2] PASSED in chrome - /test/e2e/specs/checkout.summary.spec.js
 [0-3] PASSED in chrome - /test/e2e/specs/checkout.personal.info.spec.js
 [0-6] PASSED in chrome - /test/e2e/specs/login.spec.js
 [0-5] PASSED in chrome - /test/e2e/specs/item.list.spec.js
-[0-0] PASSED in chrome - /test/e2e/specs/cart.overview.spec.js
+[0-0] PASSED in chrome - /test/e2e/specs/cart.summary.spec.js
 [0-4] PASSED in chrome - /test/e2e/specs/item.details.spec.js
 
  "spec" Reporter:
@@ -154,7 +154,7 @@ Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 [chrome 80.0.3987.132 Mac OS X #0-1]
 [chrome 80.0.3987.132 Mac OS X #0-1] 1 passing (2.7s)
 ------------------------------------------------------------------
-[chrome 80.0.3987.132 Mac OS X #0-2] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/checkout.overview.spec.js
+[chrome 80.0.3987.132 Mac OS X #0-2] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/checkout.summary.spec.js
 [chrome 80.0.3987.132 Mac OS X #0-2] Running: chrome (v80.0.3987.132) on Mac OS X
 [chrome 80.0.3987.132 Mac OS X #0-2] Session ID: d4606de66ea107a7745f2b03eddde27b
 [chrome 80.0.3987.132 Mac OS X #0-2]
@@ -200,7 +200,7 @@ Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 [chrome 80.0.3987.132 Mac OS X #0-5]
 [chrome 80.0.3987.132 Mac OS X #0-5] 3 passing (5.5s)
 ------------------------------------------------------------------
-[chrome 80.0.3987.132 Mac OS X #0-0] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/cart.overview.spec.js
+[chrome 80.0.3987.132 Mac OS X #0-0] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/cart.summary.spec.js
 [chrome 80.0.3987.132 Mac OS X #0-0] Running: chrome (v80.0.3987.132) on Mac OS X
 [chrome 80.0.3987.132 Mac OS X #0-0] Session ID: 32d2b2f5ce518b505f002b11bcecb6f1
 [chrome 80.0.3987.132 Mac OS X #0-0]

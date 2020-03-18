@@ -2,7 +2,7 @@ import Base from './Base';
 
 const SCREEN_SELECTOR = '#cart_contents_container';
 
-class CartOverview extends Base {
+class CartSummary extends Base {
     constructor() {
         super(SCREEN_SELECTOR);
     }
@@ -88,4 +88,4 @@ class CartOverview extends Base {
     }
 }
 
-export default new CartOverview();
+export default new CartSummary();

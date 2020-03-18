@@ -1,6 +1,6 @@
-import CartOverview from '../page-objects/CartOverview';
+import CartSummary from '../page-objects/CartSummary';
 import CheckoutPersonalInfo from '../page-objects/CheckoutPersonalInfo';
-import CheckoutOverview from '../page-objects/CheckoutOverview';
+import CheckoutSummary from '../page-objects/CheckoutSummary';
 import {PERSONAL_INFO} from "../configs/e2eConstants";
 import {prepareEnvironment} from '../helpers';
 
@@ -24,14 +24,14 @@ describe('Checkout - Personal info', () => {
     });
 
     it('should validate that we can cancel the first checkout', () => {
-        expect(CartOverview.isDisplayed()).toEqual(
+        expect(CartSummary.isDisplayed()).toEqual(
             false,
             'Cart screen is already visible'
         );
 
         CheckoutPersonalInfo.cancelCheckout();
 
-        expect(CartOverview.waitForIsDisplayed()).toEqual(
+        expect(CartSummary.waitForIsDisplayed()).toEqual(
             true,
             'Cart content screen is still not visible'
         );
@@ -40,7 +40,7 @@ describe('Checkout - Personal info', () => {
     it('should be able to continue the checkout', () => {
         CheckoutPersonalInfo.submitPersonalInfo(PERSONAL_INFO.STANDARD);
 
-        expect(CheckoutOverview.waitForIsDisplayed()).toEqual(
+        expect(CheckoutSummary.waitForIsDisplayed()).toEqual(
             true,
             'Checkout page two is still not visible'
         );

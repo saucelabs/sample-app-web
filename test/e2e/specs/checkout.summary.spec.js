@@ -1,18 +1,18 @@
 import SwagOverview from '../page-objects/SwagOverview';
 import CheckoutComplete from '../page-objects/CheckoutComplete';
-import CheckoutOverview from '../page-objects/CheckoutOverview';
+import CheckoutSummary from '../page-objects/CheckoutSummary';
 import {prepareEnvironment} from '../helpers';
 
 describe('Checkout - Overview', () => {
     beforeEach(() => {
         prepareEnvironment('/checkout-step-two.html', [4]);
-        CheckoutOverview.waitForIsDisplayed();
+        CheckoutSummary.waitForIsDisplayed();
     });
 
     it('should validate that we can continue shopping', () => {
         // It doesn't matter which error we check here, all error states should have been tested in a UT
         // Reason for selecting this one is that it triggers multiple fields and thus triggers the state
-        CheckoutOverview.finishCheckout();
+        CheckoutSummary.finishCheckout();
 
         expect(CheckoutComplete.waitForIsDisplayed()).toEqual(
             true,
@@ -21,7 +21,7 @@ describe('Checkout - Overview', () => {
     });
 
     it('should validate that we can cancel checkout and go to the inventory page', () => {
-        CheckoutOverview.cancelCheckout();
+        CheckoutSummary.cancelCheckout();
 
         expect(SwagOverview.waitForIsDisplayed()).toEqual(
             true,
@@ -30,7 +30,7 @@ describe('Checkout - Overview', () => {
     });
 
     it('should validate that we have 1 product in our checkout overview', () => {
-        expect(CheckoutOverview.getSwagAmount()).toEqual(
+        expect(CheckoutSummary.getSwagAmount()).toEqual(
             1,
             'Not the correct items are shown in the checkout overview page'
         );

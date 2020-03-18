@@ -1,6 +1,6 @@
 import AppHeader from '../page-objects/AppHeader';
 import SwagOverview from '../page-objects/SwagOverview';
-import CartOverview from '../page-objects/CartOverview';
+import CartSummary from '../page-objects/CartSummary';
 import CheckoutPersonalInfo from '../page-objects/CheckoutPersonalInfo';
 import {prepareEnvironment} from '../helpers';
 
@@ -8,7 +8,7 @@ describe('Cart', () => {
     it('should validate that we can continue shopping', () => {
         prepareEnvironment('/cart.html');
 
-        CartOverview.waitForIsDisplayed();
+        CartSummary.waitForIsDisplayed();
 
         // Actual test starts here
         expect(SwagOverview.isDisplayed()).toEqual(
@@ -16,7 +16,7 @@ describe('Cart', () => {
             'Inventory screen is already visible'
         );
 
-        CartOverview.continueShopping();
+        CartSummary.continueShopping();
 
         expect(SwagOverview.waitForIsDisplayed()).toEqual(
             true,
@@ -29,7 +29,7 @@ describe('Cart', () => {
         browser.url('');
         browser.execute('sessionStorage.setItem("session-username", "standard_user");');
         browser.url('/cart.html');
-        CartOverview.waitForIsDisplayed();
+        CartSummary.waitForIsDisplayed();
 
         // Actual test starts here
         expect(CheckoutPersonalInfo.isDisplayed()).toEqual(
@@ -37,7 +37,7 @@ describe('Cart', () => {
             'Inventory screen is already visible'
         );
 
-        CartOverview.goToCheckout();
+        CartSummary.goToCheckout();
 
         expect(CheckoutPersonalInfo.waitForIsDisplayed()).toEqual(
             true,
@@ -47,26 +47,26 @@ describe('Cart', () => {
 
     it('should validate that a product can be removed from the cart', () => {
         prepareEnvironment('/cart.html', [4]);
-        CartOverview.waitForIsDisplayed();
+        CartSummary.waitForIsDisplayed();
 
         // Actual test starts here
         expect(AppHeader.getCartAmount()).toEqual(
             '1',
             'The amount of cart items is not equal to 1',
         );
-        expect(CartOverview.getSwagAmount()).toEqual(
+        expect(CartSummary.getSwagAmount()).toEqual(
             1,
             'The amount of items in the cart overview is not equal to 1',
         );
 
-        CartOverview.removeSwag(0);
+        CartSummary.removeSwag(0);
 
         expect(AppHeader.getCartAmount()).toEqual(
             '',
             'The amount of cart items is not equal to nothing',
         );
 
-        expect(CartOverview.getSwagAmount()).toEqual(
+        expect(CartSummary.getSwagAmount()).toEqual(
             0,
             'The amount of items in the cart overview is not equal to 1',
         );
