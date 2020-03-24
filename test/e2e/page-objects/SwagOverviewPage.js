@@ -1,8 +1,8 @@
-import Base from './Base';
+import BasePage from './BasePage';
 
 const SCREEN_SELECTOR = '.inventory_list';
 
-class SwagOverview extends Base {
+class SwagOverviewPage extends BasePage {
     constructor() {
         super(SCREEN_SELECTOR);
     }
@@ -79,4 +79,4 @@ class SwagOverview extends Base {
     }
 }
 
-export default new SwagOverview();
+export default new SwagOverviewPage();

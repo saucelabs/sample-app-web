@@ -1,8 +1,8 @@
-import Base from './Base';
+import BasePage from './BasePage';
 
 const SCREEN_SELECTOR = '.inventory_details';
 
-class SwagDetails extends Base {
+class SwagDetailsPage extends BasePage {
     constructor() {
         super(SCREEN_SELECTOR);
     }
@@ -68,4 +68,4 @@ class SwagDetails extends Base {
     }
 }
 
-export default new SwagDetails();
+export default new SwagDetailsPage();

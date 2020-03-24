@@ -1,10 +1,10 @@
-import Base from './Base';
+import BasePage from './BasePage';
 import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
 import {triggerOnChange} from "../helpers";
 
 const SCREEN_SELECTOR = '#checkout_info_container';
 
-class CheckoutPersonalInfo extends Base {
+class CheckoutPersonalInfoPage extends BasePage {
     constructor() {
         super(SCREEN_SELECTOR);
     }
@@ -79,4 +79,4 @@ class CheckoutPersonalInfo extends Base {
     }
 }
 
-export default new CheckoutPersonalInfo();
+export default new CheckoutPersonalInfoPage();

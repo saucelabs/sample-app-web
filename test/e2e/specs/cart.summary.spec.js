@@ -1,24 +1,24 @@
-import AppHeader from '../page-objects/AppHeader';
-import SwagOverview from '../page-objects/SwagOverview';
-import CartSummary from '../page-objects/CartSummary';
-import CheckoutPersonalInfo from '../page-objects/CheckoutPersonalInfo';
+import AppHeaderPage from '../page-objects/AppHeaderPage';
+import SwagOverviewPage from '../page-objects/SwagOverviewPage';
+import CartSummaryPage from '../page-objects/CartSummaryPage';
+import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage';
 import {prepareEnvironment} from '../helpers';
 
 describe('Cart', () => {
     it('should validate that we can continue shopping', () => {
         prepareEnvironment('/cart.html');
 
-        CartSummary.waitForIsDisplayed();
+        CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(SwagOverview.isDisplayed()).toEqual(
+        expect(SwagOverviewPage.isDisplayed()).toEqual(
             false,
             'Inventory screen is already visible'
         );
 
-        CartSummary.continueShopping();
+        CartSummaryPage.continueShopping();
 
-        expect(SwagOverview.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -29,17 +29,17 @@ describe('Cart', () => {
         browser.url('');
         browser.execute('sessionStorage.setItem("session-username", "standard_user");');
         browser.url('/cart.html');
-        CartSummary.waitForIsDisplayed();
+        CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(CheckoutPersonalInfo.isDisplayed()).toEqual(
+        expect(CheckoutPersonalInfoPage.isDisplayed()).toEqual(
             false,
             'Inventory screen is already visible'
         );
 
-        CartSummary.goToCheckout();
+        CartSummaryPage.goToCheckout();
 
-        expect(CheckoutPersonalInfo.waitForIsDisplayed()).toEqual(
+        expect(CheckoutPersonalInfoPage.waitForIsDisplayed()).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -47,26 +47,26 @@ describe('Cart', () => {
 
     it('should validate that a product can be removed from the cart', () => {
         prepareEnvironment('/cart.html', [4]);
-        CartSummary.waitForIsDisplayed();
+        CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(AppHeader.getCartAmount()).toEqual(
+        expect(AppHeaderPage.getCartAmount()).toEqual(
             '1',
             'The amount of cart items is not equal to 1',
         );
-        expect(CartSummary.getSwagAmount()).toEqual(
+        expect(CartSummaryPage.getSwagAmount()).toEqual(
             1,
             'The amount of items in the cart overview is not equal to 1',
         );
 
-        CartSummary.removeSwag(0);
+        CartSummaryPage.removeSwag(0);
 
-        expect(AppHeader.getCartAmount()).toEqual(
+        expect(AppHeaderPage.getCartAmount()).toEqual(
             '',
             'The amount of cart items is not equal to nothing',
         );
 
-        expect(CartSummary.getSwagAmount()).toEqual(
+        expect(CartSummaryPage.getSwagAmount()).toEqual(
             0,
             'The amount of items in the cart overview is not equal to 1',
         );

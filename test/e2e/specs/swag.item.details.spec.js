@@ -1,6 +1,6 @@
-import AppHeader from '../page-objects/AppHeader';
-import SwagOverview from '../page-objects/SwagOverview';
-import SwagDetails from '../page-objects/SwagDetails';
+import AppHeaderPage from '../page-objects/AppHeaderPage';
+import SwagOverviewPage from '../page-objects/SwagOverviewPage';
+import SwagDetailsPage from '../page-objects/SwagDetailsPage';
 import {prepareEnvironment} from '../helpers';
 
 describe('Swag Item Details', () => {
@@ -8,18 +8,18 @@ describe('Swag Item Details', () => {
         // Need to start with the inventory url here to get the correct routing
         prepareEnvironment('/inventory.html');
         browser.url('/inventory-item.html?id=4');
-        SwagDetails.waitForIsDisplayed();
+        SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(SwagOverview.isDisplayed()).toEqual(
+        expect(SwagOverviewPage.isDisplayed()).toEqual(
             false,
             'Inventory screen is already visible'
         );
 
-        SwagDetails.goBack();
+        SwagDetailsPage.goBack();
 
         // Actual test starts here
-        expect(SwagOverview.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -29,18 +29,18 @@ describe('Swag Item Details', () => {
         // Need to start with the inventory url here to get the correct routing
         prepareEnvironment('/inventory.html');
         browser.url('/inventory-item.html?id=4');
-        SwagDetails.waitForIsDisplayed();
+        SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(AppHeader.getCartAmount()).toEqual(
+        expect(AppHeaderPage.getCartAmount()).toEqual(
             '',
             'The amount of cart items is not equal to nothing',
         );
 
         // Add an swag to the cart
-        SwagDetails.addToCart();
+        SwagDetailsPage.addToCart();
 
-        expect(AppHeader.getCartAmount()).toEqual(
+        expect(AppHeaderPage.getCartAmount()).toEqual(
             '1',
             'The amount of cart items is not equal to 1',
         );
@@ -50,17 +50,17 @@ describe('Swag Item Details', () => {
         // Need to start with the inventory url here to get the correct routing
         prepareEnvironment('/inventory.html', [4]);
         browser.url('/inventory-item.html?id=4');
-        SwagDetails.waitForIsDisplayed();
+        SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(AppHeader.getCartAmount()).toEqual(
+        expect(AppHeaderPage.getCartAmount()).toEqual(
             '1',
             'The amount of cart items is not equal to 1',
         );
 
-        SwagDetails.removeFromCart();
+        SwagDetailsPage.removeFromCart();
 
-        expect(AppHeader.getCartAmount()).toEqual(
+        expect(AppHeaderPage.getCartAmount()).toEqual(
             '',
             'The amount of cart items is not equal to nothing',
         );

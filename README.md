@@ -129,8 +129,8 @@ $ ./node_modules/.bin/wdio test/e2e/configs/wdio.local.chrome.conf.js
 Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 
 [0-6] RUNNING in chrome - /test/e2e/specs/login.spec.js
-[0-5] RUNNING in chrome - /test/e2e/specs/item.list.spec.js
-[0-4] RUNNING in chrome - /test/e2e/specs/item.details.spec.js
+[0-5] RUNNING in chrome - /test/e2e/specs/swag.items.list.spec.js
+[0-4] RUNNING in chrome - /test/e2e/specs/swag.item.details.spec.js
 [0-1] RUNNING in chrome - /test/e2e/specs/checkout.complete.spec.js
 [0-0] RUNNING in chrome - /test/e2e/specs/cart.summary.spec.js
 [0-2] RUNNING in chrome - /test/e2e/specs/checkout.summary.spec.js
@@ -139,9 +139,9 @@ Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 [0-2] PASSED in chrome - /test/e2e/specs/checkout.summary.spec.js
 [0-3] PASSED in chrome - /test/e2e/specs/checkout.personal.info.spec.js
 [0-6] PASSED in chrome - /test/e2e/specs/login.spec.js
-[0-5] PASSED in chrome - /test/e2e/specs/item.list.spec.js
+[0-5] PASSED in chrome - /test/e2e/specs/swag.items.list.spec.js
 [0-0] PASSED in chrome - /test/e2e/specs/cart.summary.spec.js
-[0-4] PASSED in chrome - /test/e2e/specs/item.details.spec.js
+[0-4] PASSED in chrome - /test/e2e/specs/swag.item.details.spec.js
 
  "spec" Reporter:
 ------------------------------------------------------------------
@@ -180,7 +180,7 @@ Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 [chrome 80.0.3987.132 Mac OS X #0-6] Running: chrome (v80.0.3987.132) on Mac OS X
 [chrome 80.0.3987.132 Mac OS X #0-6] Session ID: 9f2fbc308744858da9800cc44c62fb87
 [chrome 80.0.3987.132 Mac OS X #0-6]
-[chrome 80.0.3987.132 Mac OS X #0-6] Login
+[chrome 80.0.3987.132 Mac OS X #0-6] LoginPage
 [chrome 80.0.3987.132 Mac OS X #0-6]    ✓ should be able to test loading of login page
 [chrome 80.0.3987.132 Mac OS X #0-6]    ✓ should be able to login with a standard user
 [chrome 80.0.3987.132 Mac OS X #0-6]    ✓ should not be able to login with a locked user
@@ -189,7 +189,7 @@ Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 [chrome 80.0.3987.132 Mac OS X #0-6]
 [chrome 80.0.3987.132 Mac OS X #0-6] 5 passing (5s)
 ------------------------------------------------------------------
-[chrome 80.0.3987.132 Mac OS X #0-5] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/item.list.spec.js
+[chrome 80.0.3987.132 Mac OS X #0-5] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/swag.items.list.spec.js
 [chrome 80.0.3987.132 Mac OS X #0-5] Running: chrome (v80.0.3987.132) on Mac OS X
 [chrome 80.0.3987.132 Mac OS X #0-5] Session ID: 434956e2aa60d20e0f9b6cbe4b37a261
 [chrome 80.0.3987.132 Mac OS X #0-5]
@@ -211,7 +211,7 @@ Execution of 7 spec files started at 2020-03-16T20:05:40.330Z
 [chrome 80.0.3987.132 Mac OS X #0-0]
 [chrome 80.0.3987.132 Mac OS X #0-0] 3 passing (5.6s)
 ------------------------------------------------------------------
-[chrome 80.0.3987.132 Mac OS X #0-4] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/item.details.spec.js
+[chrome 80.0.3987.132 Mac OS X #0-4] Spec: /Users/Sauce/Git/sample-app-web/test/e2e/specs/swag.item.details.spec.js
 [chrome 80.0.3987.132 Mac OS X #0-4] Running: chrome (v80.0.3987.132) on Mac OS X
 [chrome 80.0.3987.132 Mac OS X #0-4] Session ID: 4d25a80281a498b1e9aead254c2c56d0
 [chrome 80.0.3987.132 Mac OS X #0-4]

@@ -1,6 +1,6 @@
 import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
 
-export default class Base {
+export default class BasePage {
     constructor(selector) {
         this.selector = selector;
     }

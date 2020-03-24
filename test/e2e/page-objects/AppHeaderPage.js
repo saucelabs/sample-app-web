@@ -1,4 +1,4 @@
-class AppHeader {
+class AppHeaderPage {
     // Make it private so people can't mess with it
     // Source: https://github.com/tc39/proposal-class-fields#private-fields
     get #cart() {
@@ -26,4 +26,4 @@ class AppHeader {
     }
 }
 
-export default new AppHeader();
+export default new AppHeaderPage();

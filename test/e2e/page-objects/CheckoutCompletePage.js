@@ -1,8 +1,8 @@
-import Base from './Base';
+import BasePage from './BasePage';
 
 const SCREEN_SELECTOR = '#checkout_complete_container';
 
-class CheckoutComplete extends Base {
+class CheckoutCompletePage extends BasePage {
     constructor() {
         super(SCREEN_SELECTOR);
     }
@@ -14,4 +14,4 @@ class CheckoutComplete extends Base {
     }
 }
 
-export default new CheckoutComplete();
+export default new CheckoutCompletePage();
