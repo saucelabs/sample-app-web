@@ -11,11 +11,6 @@ describe('Cart', () => {
         CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(SwagOverviewPage.isDisplayed()).toEqual(
-            false,
-            'Inventory screen is already visible'
-        );
-
         CartSummaryPage.continueShopping();
 
         expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
