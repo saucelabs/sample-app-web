@@ -19,13 +19,19 @@ export function triggerOnChange(selector) {
 }
 
 /**
- * Prepare the environment
+ * Set the test context
  *
- * @param {string} path
- * @param {array} products
+ * @param {object} data
+ * @param {object} data.user
+ * @param {string} data.user.username
+ * @param {string} data.user.password
+ * @param {string} data.path
+ * @param {array} data.products
  */
-export function prepareEnvironment(path, products = []) {
-    const userStorage = `sessionStorage.setItem("session-username", "standard_user");`;
+export function setTestContext(data = {}) {
+    const {path, products = [], user} = data;
+    const {username} = user;
+    const userStorage = `sessionStorage.setItem("session-username", "${username}");`;
     const productStorage = products.length > 0 ? `sessionStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
 
     // Go to the domain and set the storage

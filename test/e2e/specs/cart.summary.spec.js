@@ -2,12 +2,15 @@ import AppHeaderPage from '../page-objects/AppHeaderPage';
 import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import CartSummaryPage from '../page-objects/CartSummaryPage';
 import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage';
-import {prepareEnvironment} from '../helpers';
+import {setTestContext} from '../helpers';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
 
 describe('Cart', () => {
     it('should validate that we can continue shopping', () => {
-        prepareEnvironment('/cart.html');
-
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.CART,
+        });
         CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here
@@ -20,10 +23,10 @@ describe('Cart', () => {
     });
 
     it('should validate that we can go from the cart to the checkout page', () => {
-        // Prepare the environment
-        browser.url('');
-        browser.execute('sessionStorage.setItem("session-username", "standard_user");');
-        browser.url('/cart.html');
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.CART,
+        });
         CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here
@@ -41,7 +44,11 @@ describe('Cart', () => {
     });
 
     it('should validate that a product can be removed from the cart', () => {
-        prepareEnvironment('/cart.html', [4]);
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.CART,
+            products: [PRODUCTS.BACKPACK],
+        });
         CartSummaryPage.waitForIsDisplayed();
 
         // Actual test starts here

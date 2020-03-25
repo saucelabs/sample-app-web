@@ -1,12 +1,15 @@
 import CartSummaryPage from '../page-objects/CartSummaryPage';
 import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage';
 import CheckoutSummaryPage from '../page-objects/CheckoutSummaryPage';
-import {PERSONAL_INFO} from "../configs/e2eConstants";
-import {prepareEnvironment} from '../helpers';
+import {LOGIN_USERS, PAGES, PERSONAL_INFO} from "../configs/e2eConstants";
+import {setTestContext} from '../helpers';
 
 describe('Checkout - Personal info', () => {
     beforeEach(() => {
-        prepareEnvironment('/checkout-step-one.html');
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.CHECKOUT_PERSONAL_INFO,
+        });
         CheckoutPersonalInfoPage.waitForIsDisplayed();
     });
 

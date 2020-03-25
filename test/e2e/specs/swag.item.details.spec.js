@@ -1,13 +1,17 @@
 import AppHeaderPage from '../page-objects/AppHeaderPage';
 import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import SwagDetailsPage from '../page-objects/SwagDetailsPage';
-import {prepareEnvironment} from '../helpers';
+import {setTestContext} from '../helpers';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
 
 describe('Swag Item Details', () => {
     it('should validate that we can go back from the details to the inventory page', () => {
         // Need to start with the inventory url here to get the correct routing
-        prepareEnvironment('/inventory.html');
-        browser.url('/inventory-item.html?id=4');
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.SWAG_ITEMS,
+        });
+        browser.url(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
         SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here
@@ -27,8 +31,11 @@ describe('Swag Item Details', () => {
 
     it('should validate that a product can be added to a cart', () => {
         // Need to start with the inventory url here to get the correct routing
-        prepareEnvironment('/inventory.html');
-        browser.url('/inventory-item.html?id=4');
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.SWAG_ITEMS,
+        });
+        browser.url(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
         SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here
@@ -48,8 +55,12 @@ describe('Swag Item Details', () => {
 
     it('should validate that a product can be removed from the cart', () => {
         // Need to start with the inventory url here to get the correct routing
-        prepareEnvironment('/inventory.html', [4]);
-        browser.url('/inventory-item.html?id=4');
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.SWAG_ITEMS,
+            products: [PRODUCTS.BACKPACK],
+        });
+        browser.url(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
         SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here

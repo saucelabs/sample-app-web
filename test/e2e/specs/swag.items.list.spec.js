@@ -1,11 +1,15 @@
 import AppHeaderPage from '../page-objects/AppHeaderPage';
 import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import SwagDetailsPage from '../page-objects/SwagDetailsPage';
-import {prepareEnvironment} from '../helpers';
+import {setTestContext} from '../helpers';
+import {LOGIN_USERS, PAGES} from "../configs/e2eConstants";
 
 describe('Swag items list', () => {
     beforeEach(() => {
-        prepareEnvironment('/inventory.html');
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.SWAG_ITEMS,
+        });
         SwagOverviewPage.waitForIsDisplayed();
     });
 

@@ -1,11 +1,16 @@
 import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import CheckoutCompletePage from '../page-objects/CheckoutCompletePage';
 import CheckoutSummaryPage from '../page-objects/CheckoutSummaryPage';
-import {prepareEnvironment} from '../helpers';
+import {setTestContext} from '../helpers';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
 
-describe('Checkout - Overview', () => {
+describe('Checkout - Summary', () => {
     beforeEach(() => {
-        prepareEnvironment('/checkout-step-two.html', [4]);
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.CHECKOUT_SUMMARY,
+            products: [PRODUCTS.BACKPACK],
+        });
         CheckoutSummaryPage.waitForIsDisplayed();
     });
 
