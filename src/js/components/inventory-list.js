@@ -8,7 +8,7 @@ class InventoryListItem extends Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       id: props.id,
       image_url: props.image_url,
@@ -53,15 +53,15 @@ class InventoryListItem extends Component {
   }
 
   render () {
-    
+
     var linkId = this.state.id;
     if (Credentials.isProblemUser()) {
-      linkId += 1; 
+      linkId += 1;
     }
     var itemLink = `./inventory-item.html?id=${linkId}`;
 
     var cartButton;
-    
+
     if (this.state.itemInCart) {
       cartButton = <button className="btn_secondary btn_inventory" onClick={() => this.removeFromCart(this.state.id)}>REMOVE</button>;
     } else {
@@ -69,20 +69,20 @@ class InventoryListItem extends Component {
     }
 
     return (
-        <div class="inventory_item">
-          <div class="inventory_item_img">
+        <div className="inventory_item">
+          <div className="inventory_item_img">
             <a href={itemLink} id={`item_${this.state.id}_img_link`}>
-              <img class="inventory_item_img" src={this.state.image_url}/>
+              <img className="inventory_item_img" src={this.state.image_url}/>
             </a>
           </div>
-          <div class="inventory_item_label">
+          <div className="inventory_item_label">
             <a href={itemLink} id={`item_${this.state.id}_title_link`}>
-              <div class="inventory_item_name">{this.state.name}</div>
+              <div className="inventory_item_name">{this.state.name}</div>
             </a>
-            <div class="inventory_item_desc">{this.state.desc}</div>
+            <div className="inventory_item_desc">{this.state.desc}</div>
           </div>
-          <div class="pricebar">
-              <div class="inventory_item_price">${this.state.price}</div>
+          <div className="pricebar">
+              <div className="inventory_item_price">${this.state.price}</div>
               { cartButton }
           </div>
         </div>
@@ -199,7 +199,7 @@ class InventoryList extends Component {
       inventoryList: InventoryData.ITEMS_PRICE_HILO
     });
   }
-  
+
   render () {
 
     // NOTE: Sorting is broken on Chrome and Safari
@@ -208,12 +208,12 @@ class InventoryList extends Component {
 
     return (
       <div>
-      <div class="header_secondary_container">
-        <div class="peek"></div>
+      <div className="header_secondary_container">
+        <div className="peek"></div>
         <div id="searchbox_container"></div>
         <div id="inventory_filter_container">
-          <div class="product_label">Products</div>
-          <select onChange={this.sortByOption} class="product_sort_container">
+          <div className="product_label">Products</div>
+          <select onChange={this.sortByOption} className="product_sort_container">
             <option value="az" onClick={this.sortNameAZ}>Name (A to Z)</option>
             <option value="za" onClick={this.sortNameZA}>Name (Z to A)</option>
             <option value="lohi" onClick={this.sortPriceLoHi}>Price (low to high)</option>
@@ -221,15 +221,15 @@ class InventoryList extends Component {
           </select>
         </div>
       </div>
-  
-      <div id="inventory_container" class="inventory_container">
 
-      <div class="inventory_list">
-        {this.state.inventoryList.map((item, i) => {     
-          return (<InventoryListItem key={item.id} id={item.id} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} />) 
+      <div id="inventory_container" className="inventory_container">
+
+      <div className="inventory_list">
+        {this.state.inventoryList.map((item, i) => {
+          return (<InventoryListItem key={item.id} id={item.id} image_url={item.image_url} name={item.name} desc={item.desc} price={item.price} />)
         })}
       </div>
-      
+
       </div>
       </div>
     );

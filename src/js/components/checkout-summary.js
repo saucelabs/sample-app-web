@@ -13,7 +13,7 @@ class SummaryItem extends Component {
       this.state = {
           itemVisible: true
       }
-      
+
       if (props.item == null) {
         // Hide this if the item is invalid
         this.state.itemVisible = false;
@@ -21,28 +21,28 @@ class SummaryItem extends Component {
     }
 
     render () {
-      
+
       if (this.state.itemVisible) {
         var linkId = this.item.id;
         if (Credentials.isProblemUser()) {
-          linkId += 1; 
+          linkId += 1;
         }
         var itemLink = `./inventory-item.html?id=${linkId}`;
-        
+
         return (
-            <div class="cart_item">
-              <div class="summary_quantity">1</div>
-              <div class="cart_item_label">
+            <div className="cart_item">
+              <div className="summary_quantity">1</div>
+              <div className="cart_item_label">
                 <a href={itemLink} id={`item_${this.item.id}_title_link`}>
-                  <div class="inventory_item_name">{this.item.name}</div>
+                  <div className="inventory_item_name">{this.item.name}</div>
                 </a>
-                <div class="inventory_item_desc">{this.item.desc}</div>
-                <div class="inventory_item_price">${this.item.price}</div>
+                <div className="inventory_item_desc">{this.item.desc}</div>
+                <div className="inventory_item_price">${this.item.price}</div>
               </div>
             </div>
         );
       } else {
-        return ( <div class="removed_cart_item"/> );
+        return ( <div className="removed_cart_item"/> );
       }
     }
   }
@@ -59,12 +59,12 @@ class SummaryItem extends Component {
         ShoppingCart.resetCart();
       }
     }
-    
+
     render () {
-      
+
       var contents = ShoppingCart.getCartContents();
       var orderTotal = 0;
-      
+
       for (var curItem in contents) {
         orderTotal = orderTotal + InventoryData.ITEMS[contents[curItem]].price;
         if (Credentials.isProblemUser()) {
@@ -74,27 +74,27 @@ class SummaryItem extends Component {
       }
 
       var orderTax = (orderTotal * 0.08).toFixed(2);
-      
+
       return (
         <div>
-          <div class="cart_list">
-            <div class="cart_quantity_label">QTY</div>
-            <div class="cart_desc_label">DESCRIPTION</div>
+          <div className="cart_list">
+            <div className="cart_quantity_label">QTY</div>
+            <div className="cart_desc_label">DESCRIPTION</div>
             {contents.map((item, i) => {
-              return (<SummaryItem item={InventoryData.ITEMS[item]} />) 
+              return (<SummaryItem key={i} item={InventoryData.ITEMS[item]} />)
             })}
           </div>
-          <div class="summary_info">
-            <div class="summary_info_label">Payment Information:</div>
-            <div class="summary_value_label">SauceCard #31337</div>
-            <div class="summary_info_label">Shipping Information:</div>
-            <div class="summary_value_label">FREE PONY EXPRESS DELIVERY!</div>
-            <div class="summary_subtotal_label">Item total: ${orderTotal}</div>
-            <div class="summary_tax_label">Tax: ${orderTax}</div>
-            <div class="summary_total_label">Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}</div>
-            <div class="cart_footer">
-              <a class="cart_cancel_link btn_secondary" href="./inventory.html">CANCEL</a>
-              <a class="btn_action cart_button" href="./checkout-complete.html" onClick={this.clearCart}>FINISH</a>
+          <div className="summary_info">
+            <div className="summary_info_label">Payment Information:</div>
+            <div className="summary_value_label">SauceCard #31337</div>
+            <div className="summary_info_label">Shipping Information:</div>
+            <div className="summary_value_label">FREE PONY EXPRESS DELIVERY!</div>
+            <div className="summary_subtotal_label">Item total: ${orderTotal}</div>
+            <div className="summary_tax_label">Tax: ${orderTax}</div>
+            <div className="summary_total_label">Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}</div>
+            <div className="cart_footer">
+              <a className="cart_cancel_link btn_secondary" href="./inventory.html">CANCEL</a>
+              <a className="btn_action cart_button" href="./checkout-complete.html" onClick={this.clearCart}>FINISH</a>
             </div>
           </div>
         </div>
