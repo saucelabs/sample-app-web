@@ -16,7 +16,9 @@ There are 2 ways to use this project.
 
 ## Node development environment
 
-In order to set up and use this project and start contributing follow this step by step guide:
+You can choose to build the application directly on your host computer rather than via Vagrant/Virtualbox, however this is discouraged due to interdependency issues which frequently crop up when running multiple NPM projects in the same development environment. The usage of Vagrant/Virtualbox is intended to prevent this issue by giving this application a pristine build environment with only its dependencies present, however the usage of Vagrant/Virtualbox is not a strict requirement for building this application.
+
+To set up the development environment directly on your host computer:
 
 1. You’ll need [Node.js](http://nodejs.org) installed (at least v10.x.x or higher). If you don't have Node installed, we recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
 1. Fork the project. 
@@ -35,6 +37,9 @@ In order to set up and use this project and start contributing follow this step 
     This will build the application, start Chrome and load the website on [http://localhost:3000/](http://localhost:3000/)
  
 1. Click around - this is the app!
+1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
+
+1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
 
 ## Vagrant
 To set up the development environment for this sample app:
@@ -43,17 +48,6 @@ To set up the development environment for this sample app:
 2. Install [VirtualBox](https://www.virtualbox.org/)
 3. Run the `setup-env.sh` script in the root of the repository
 
-### Direct development environment setup
-
-You can also choose to build the application directly on your host computer rather than via Vagrant/Virtualbox, however this is discouraged due to interdependency issues which frequently crop up when running multiple NPM projects in the same development environment. The usage of Vagrant/Virtualbox is intended to prevent this issue by giving this application a pristine build environment with only its dependencies present, however the usage of Vagrant/Virtualbox is not a strict requirement for building this application.
-
-To set up the development environment directly on your host computer:
-
-1. Install [NodeJS 10 LTS](https://nodejs.org/en/download/)
-2. Update NPM to the latest version: `sudo npm i npm@latest -g`
-3. Install the application dependencies - in the root of the repository: `npm install`
-4. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
-5. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
 
 ### Setup issues
 
