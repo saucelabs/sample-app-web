@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-svg-core": "1.2.7",
     "@fortawesome/free-solid-svg-icons": "5.4.2",
     "@fortawesome/react-fontawesome": "0.1.3",
+    "backtrace-js": "0.0.12",
     "react": "16.6.0",
     "react-burger-menu": "2.5.4",
     "react-dom": "16.6.0",
