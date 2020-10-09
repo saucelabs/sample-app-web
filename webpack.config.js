@@ -1,6 +1,7 @@
 const {resolve} = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     module: {
@@ -27,6 +28,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.EnvironmentPlugin({
+            BACKTRACE_TOKEN: '',
+        }),
         new HtmlWebPackPlugin({
             template: "src/index.ejs",
             filename: "index.html"
