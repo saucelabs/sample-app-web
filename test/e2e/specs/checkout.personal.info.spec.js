@@ -10,20 +10,23 @@ describe('Checkout - Personal info', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CHECKOUT_PERSONAL_INFO,
         });
-        CheckoutPersonalInfoPage.waitForIsDisplayed();
+        CheckoutPersonalInfoPage.waitForIsShown();
     });
 
-    it('should validate that we can continue shopping', () => {
+    it('should validate we get an error if we don not provide all personal information', () => {
         // It doesn't matter which error we check here, all error states should have been tested in a UT
         // Reason for selecting this one is that it triggers multiple fields and thus triggers the state
         CheckoutPersonalInfoPage.submitPersonalInfo(PERSONAL_INFO.NO_POSTAL_CODE);
 
-        expect(CheckoutPersonalInfoPage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutPersonalInfoPage.waitForIsShown()).toEqual(
             true,
             'Error message is shown, this is not correct',
         );
 
-        // I'm not validating the error message here because that's content and should be a UT
+        expect(CheckoutPersonalInfoPage.getErrorMessage()).toEqual(
+            'Error: Postal Code is required',
+            'Error message is shown, but not with the correct message',
+        );
     });
 
     it('should validate that we can cancel the first checkout', () => {
@@ -34,7 +37,7 @@ describe('Checkout - Personal info', () => {
 
         CheckoutPersonalInfoPage.cancelCheckout();
 
-        expect(CartSummaryPage.waitForIsDisplayed()).toEqual(
+        expect(CartSummaryPage.waitForIsShown()).toEqual(
             true,
             'Cart content screen is still not visible'
         );
@@ -43,7 +46,7 @@ describe('Checkout - Personal info', () => {
     it('should be able to continue the checkout', () => {
         CheckoutPersonalInfoPage.submitPersonalInfo(PERSONAL_INFO.STANDARD);
 
-        expect(CheckoutSummaryPage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutSummaryPage.waitForIsShown()).toEqual(
             true,
             'Checkout page two is still not visible'
         );

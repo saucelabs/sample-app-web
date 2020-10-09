@@ -79,9 +79,7 @@ class CheckoutSummaryPage extends BasePage {
     }
 
     /**
-     * Finsh checkout
-     *
-     * @return {void}
+     * Finish checkout
      */
     finishCheckout() {
         this.#finishButton.click();

@@ -18,11 +18,9 @@ class AppHeaderPage {
 
     /**
      * Open the cart
-     *
-     * @return {void}
      */
     openCart() {
-        return this.#cart.click();
+        this.#cart.click();
     }
 }
 

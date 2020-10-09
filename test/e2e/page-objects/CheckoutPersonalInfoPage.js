@@ -1,6 +1,5 @@
 import BasePage from './BasePage';
 import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
-import {triggerOnChange} from "../helpers";
 
 const SCREEN_SELECTOR = '#checkout_info_container';
 
@@ -50,13 +49,10 @@ class CheckoutPersonalInfoPage extends BasePage {
     submitPersonalInfo(personalInfo) {
         const {firstName, lastName, zip} = personalInfo;
 
-        this.waitForIsDisplayed();
+        this.waitForIsShown();
         this.#firstName.addValue(firstName);
-        triggerOnChange('[data-test="firstName"]');
         this.#lastName.addValue(lastName);
-        triggerOnChange('[data-test="lastName"]');
         this.#postalCode.addValue(zip);
-        triggerOnChange('[data-test="postalCode"]');
         this.#continueCheckoutButton.click();
     }
 
@@ -66,7 +62,7 @@ class CheckoutPersonalInfoPage extends BasePage {
      * @return {string}
      */
     getErrorMessage() {
-        this.#errorMessage.waitForDisplayed(DEFAULT_TIMEOUT);
+        this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
         return this.#errorMessage.getText();
     }
