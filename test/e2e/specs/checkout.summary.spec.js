@@ -11,15 +11,13 @@ describe('Checkout - Summary', () => {
             path: PAGES.CHECKOUT_SUMMARY,
             products: [PRODUCTS.BACKPACK],
         });
-        CheckoutSummaryPage.waitForIsDisplayed();
+        CheckoutSummaryPage.waitForIsShown();
     });
 
     it('should validate that we can continue shopping', () => {
-        // It doesn't matter which error we check here, all error states should have been tested in a UT
-        // Reason for selecting this one is that it triggers multiple fields and thus triggers the state
         CheckoutSummaryPage.finishCheckout();
 
-        expect(CheckoutCompletePage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutCompletePage.waitForIsShown()).toEqual(
             true,
             'The checkout complete page is still not shown',
         );
@@ -28,7 +26,7 @@ describe('Checkout - Summary', () => {
     it('should validate that we can cancel checkout and go to the inventory page', () => {
         CheckoutSummaryPage.cancelCheckout();
 
-        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsShown()).toEqual(
             true,
             'Inventory screen is still not visible'
         );

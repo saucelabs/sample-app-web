@@ -61,7 +61,7 @@ class SwagOverviewPage extends BasePage {
     }
 
     /**
-     * Remove a swag items from the cart
+     * Remove swag items from the cart
      *
      * @param {number|string} needle
      */

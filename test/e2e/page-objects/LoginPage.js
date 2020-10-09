@@ -1,6 +1,5 @@
 import BasePage from './BasePage';
 import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
-import {triggerOnChange} from "../helpers";
 
 const SCREEN_SELECTOR = '#login_button_container';
 
@@ -41,11 +40,9 @@ class LoginPage extends BasePage {
     signIn(userDetails) {
         const {password, username} = userDetails;
 
-        this.waitForIsDisplayed();
+        this.waitForIsShown();
         this.#username.setValue(username);
-        triggerOnChange('#user-name');
         this.#password.setValue(password);
-        triggerOnChange('#password');
         if (browser.isAndroid) {
             return browser.execute('document.querySelector(\'.btn_action\').click()');
         }
@@ -59,7 +56,7 @@ class LoginPage extends BasePage {
      * @return {string}
      */
     getErrorMessage() {
-        this.#errorMessage.waitForDisplayed(DEFAULT_TIMEOUT);
+        this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
         return this.#errorMessage.getText();
     }

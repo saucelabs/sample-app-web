@@ -5,18 +5,22 @@ import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage';
 import {setTestContext} from '../helpers';
 import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
 
-describe('Cart', () => {
+describe('Cart Summary page', () => {
     it('should validate that we can continue shopping', () => {
         setTestContext({
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CART,
         });
-        CartSummaryPage.waitForIsDisplayed();
+
+        expect(CartSummaryPage.waitForIsShown()).toEqual(
+            true,
+            'Cart summary screen is still not visible'
+        );
 
         // Actual test starts here
         CartSummaryPage.continueShopping();
 
-        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
+        expect(SwagOverviewPage.waitForIsShown()).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -27,17 +31,16 @@ describe('Cart', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CART,
         });
-        CartSummaryPage.waitForIsDisplayed();
 
-        // Actual test starts here
-        expect(CheckoutPersonalInfoPage.isDisplayed()).toEqual(
-            false,
-            'Inventory screen is already visible'
+        expect(CartSummaryPage.waitForIsShown()).toEqual(
+            true,
+            'Cart summary screen is still not visible'
         );
 
+        // Actual test starts here
         CartSummaryPage.goToCheckout();
 
-        expect(CheckoutPersonalInfoPage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutPersonalInfoPage.waitForIsShown()).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -49,7 +52,11 @@ describe('Cart', () => {
             path: PAGES.CART,
             products: [PRODUCTS.BACKPACK],
         });
-        CartSummaryPage.waitForIsDisplayed();
+
+        expect(CartSummaryPage.waitForIsShown()).toEqual(
+            true,
+            'Cart summary screen is still not visible'
+        );
 
         // Actual test starts here
         expect(AppHeaderPage.getCartAmount()).toEqual(

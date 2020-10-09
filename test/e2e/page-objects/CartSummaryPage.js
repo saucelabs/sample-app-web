@@ -62,29 +62,23 @@ class CartSummaryPage extends BasePage {
      * Remove an swag from the cart
      *
      * @param {number|string} needle
-     *
-     * @return {void}
      */
     removeSwag(needle) {
-        return this.swag(needle).$('.btn_secondary.cart_button').click();
+        this.swag(needle).$('.btn_secondary.cart_button').click();
     }
 
     /**
      * Continue shopping
-     *
-     * @return {void}
      */
     continueShopping() {
-        return this.#continueShoppingButton.click();
+        this.#continueShoppingButton.click();
     }
 
     /**
      * Go to the checkout process
-     *
-     * @return {void}
      */
     goToCheckout() {
-        return this.#checkoutButton.click();
+        this.#checkoutButton.click();
     }
 }
 

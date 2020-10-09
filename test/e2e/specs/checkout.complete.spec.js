@@ -8,9 +8,8 @@ describe('Checkout - Complete', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CHECKOUT_COMPLETE,
         });
-        CheckoutCompletePage.waitForIsDisplayed();
 
-        expect(CheckoutCompletePage.waitForIsDisplayed()).toEqual(
+        expect(CheckoutCompletePage.waitForIsShown()).toEqual(
             true,
             'Checkout complete page was not shown',
         );

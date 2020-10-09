@@ -1,5 +1,4 @@
 import AppHeaderPage from '../page-objects/AppHeaderPage';
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import SwagDetailsPage from '../page-objects/SwagDetailsPage';
 import {setTestContext} from '../helpers';
 import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
@@ -12,18 +11,12 @@ describe('Swag Item Details', () => {
             path: PAGES.SWAG_ITEMS,
         });
         browser.url(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
-        SwagDetailsPage.waitForIsDisplayed();
 
         // Actual test starts here
-        expect(SwagOverviewPage.isDisplayed()).toEqual(
-            false,
-            'Inventory screen is already visible'
-        );
-
+        SwagDetailsPage.waitForIsShown()
         SwagDetailsPage.goBack();
 
-        // Actual test starts here
-        expect(SwagOverviewPage.waitForIsDisplayed()).toEqual(
+        expect(SwagDetailsPage.waitForIsShown(false)).toEqual(
             true,
             'Inventory screen is still not visible'
         );
@@ -36,7 +29,7 @@ describe('Swag Item Details', () => {
             path: PAGES.SWAG_ITEMS,
         });
         browser.url(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
-        SwagDetailsPage.waitForIsDisplayed();
+        SwagDetailsPage.waitForIsShown();
 
         // Actual test starts here
         expect(AppHeaderPage.getCartAmount()).toEqual(
@@ -44,7 +37,6 @@ describe('Swag Item Details', () => {
             'The amount of cart items is not equal to nothing',
         );
 
-        // Add an swag to the cart
         SwagDetailsPage.addToCart();
 
         expect(AppHeaderPage.getCartAmount()).toEqual(
@@ -61,7 +53,7 @@ describe('Swag Item Details', () => {
             products: [PRODUCTS.BACKPACK],
         });
         browser.url(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
-        SwagDetailsPage.waitForIsDisplayed();
+        SwagDetailsPage.waitForIsShown();
 
         // Actual test starts here
         expect(AppHeaderPage.getCartAmount()).toEqual(
