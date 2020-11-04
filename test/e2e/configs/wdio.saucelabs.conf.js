@@ -110,6 +110,8 @@ config.services = config.services.concat([
             sauceConnect: true,
             sauceConnectOpts: {
                 logfile: './sc.log',
+                verbose: 1,
+                restUrl: 'https://eu-central-1.saucelabs.com/rest/v1'
             }
         },
     ]
