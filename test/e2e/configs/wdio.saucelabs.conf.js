@@ -108,6 +108,9 @@ config.services = config.services.concat([
     ['sauce',
         {
             sauceConnect: true,
+            sauceConnectOpts: {
+                logFile: './sc.log',
+            }
         },
     ]
 ]);
