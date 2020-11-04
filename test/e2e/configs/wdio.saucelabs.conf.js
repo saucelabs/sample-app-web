@@ -43,7 +43,7 @@ config.capabilities = [
         },
         ...chromeOptions,
     },
-                    {
+    {
         browserName: 'firefox',
         platformName: 'Windows 10',
         browserVersion: 'latest',
@@ -109,7 +109,7 @@ config.services = config.services.concat([
         {
             sauceConnect: true,
             sauceConnectOpts: {
-                logFile: './sc.log',
+                logfile: './sc.log',
             }
         },
     ]
