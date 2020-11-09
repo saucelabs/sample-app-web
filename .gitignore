@@ -9,3 +9,4 @@ screenshots
 .idea
 .coverage
 storybook-static
+.tmp
