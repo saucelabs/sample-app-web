@@ -1,53 +1,39 @@
 # What is this codebase?
 This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers
 
-- [Setup](#Setup)
-  - [Build](#Build)
-  - [Run](#Run)
-  - [Test](#Test)
-- [Deploying](#Deploying)
+- [Setup](#setup)
+  - [Requirements](#requirements)
+  - [Build](#build)
+- [Test](#test)
+- [Deploy](#deploy)
 
+## Setup
 
-# Setup
-There are 2 ways to use this project. 
-
-- use an existing Nodejs setup where you already have a Development/Test environment set up which has all dependencies installed, like Chrome, Java and all prerequisites for ReactJS, see [Node development environment](#node-development-environment)
-- use [Vagrant](#vagrant) which gives you all the tools and dependencies out of the box
-
-## Node development environment
-
-You can choose to build the application directly on your host computer rather than via Vagrant/Virtualbox, however this is discouraged due to interdependency issues which frequently crop up when running multiple NPM projects in the same development environment. The usage of Vagrant/Virtualbox is intended to prevent this issue by giving this application a pristine build environment with only its dependencies present, however the usage of Vagrant/Virtualbox is not a strict requirement for building this application.
+### Requirements
 
 To set up the development environment directly on your host computer:
 
 1. You’ll need [Node.js](http://nodejs.org) installed (at least v10.x.x or higher). If you don't have Node installed, we recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
-1. Fork the project. 
+1. Fork the project.
 1. Clone the project somewhere on your computer
-    
+
         git clone git@github.com:<your-username>/sample-app-web.git
 
 1. Install all dependencies
 
         npm install
 
+### Build
 1. Build the application with
 
         npm run start
-    
+
     This will build the application, start Chrome and load the website on [http://localhost:3000/](http://localhost:3000/)
- 
+
 1. Click around - this is the app!
 1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
 
 1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
-
-## Vagrant
-To set up the development environment for this sample app:
-
-1. Install [Vagrant](https://www.vagrantup.com/)
-2. Install [VirtualBox](https://www.virtualbox.org/)
-3. Run the `setup-env.sh` script in the root of the repository
-
 
 ### Setup issues
 
@@ -68,43 +54,25 @@ You have probably hit a dependency conflict issue. To resolve this, do the follo
 3. `npm install`
 4. `npm run build`
 
-## Build
-
-To build the application:
-
-1. `vagrant ssh` inside the project folder
-2. On the VM: `cd /usr/local/saucelabs/sample-app-web`
-3. On the VM: `npm run build`
-
-## Run
-
-To run the built application (which is a static website):
-
-1. Open _[project-root]_`/dist/index.html` in a web browser
-2. Click around - this is the app!
-
-
 ## Test
 
-### With Node in your development environment
+### Testing locally
 
 To run the application test suite (which uses Webdriver.io, Selenium, and Chrome) make sure the application is running on [http://localhost:3000/](http://localhost:3000/) (see above steps)
 
-1. `npm test`
+1. `npm run test.e2e.local`
 
 This will run the application test suite
 
-### With Vagrant
+### Testing on Saucelabs
 
-To run the application test suite (which uses Webdriver.io, Selenium, and Chrome):
+Running on Sauce Labs uses Environment Variables to authenticate credentials. You can find a guide on how to do this [here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)
 
-1. `vagrant ssh` inside the project folder
-2. On the VM: `cd /usr/local/saucelabs/sample-app-web`
-3. On the VM: `npm test.vagrant`
+1. `npm run test.e2e.sauce.us` to run tests on the Sauce Labs in the US Data Center
+2. `npm run test.e2e.sayce.edu` to run tests in the EU Data Center
 
-This will run the application test suite.
 
-# Deploying
+## Deploy
 
 Merges to master will automatically deploy to:
 * https://www.saucedemo.com
