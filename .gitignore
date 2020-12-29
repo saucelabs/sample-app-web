@@ -1,6 +1,5 @@
 .DS_Store
 *.log
-.vagrant
 .project
 node_modules
 bin

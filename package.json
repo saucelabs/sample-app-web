@@ -9,8 +9,6 @@
     "test.e2e.local": "wdio test/e2e/configs/wdio.local.chrome.conf.js",
     "test.e2e.sauce.eu": "REGION=eu wdio test/e2e/configs/wdio.saucelabs.conf.js",
     "test.e2e.sauce.us": "wdio test/e2e/configs/wdio.saucelabs.conf.js",
-    "pretest.vagrant": "npm run build",
-    "test.vagrant": "npm run test",
     "serve": "npm run build && node scripts/createServeFile.js && serve -s dist"
   },
   "repository": {
