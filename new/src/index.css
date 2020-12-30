@@ -1,0 +1,122 @@
+body, html {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #4A4A4A;
+  height: 100vh;
+  margin: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.page_wrapper {
+  display:flex;
+  height: 100vh;
+  flex-direction:column;
+}
+@media only screen and (min-width: 1200px) {
+  .page_wrapper {
+    margin-bottom: -360px;
+  }
+}
+
+/* Secondary header */
+.header_secondary_container {
+  background: #474c55;
+  width: 100%;
+  height: 80px;
+  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+}
+
+.peek {
+  background: url('./assets/img/peek.png') no-repeat;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 15px;
+  bottom: -40px;
+  z-index: 2;
+}
+
+/*Sub header */
+.subheader {
+  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+  background: #474c55;
+  height: 70px;
+  color: #fff;
+  font-size: 2em;
+  padding-left: 15px;
+  line-height: 66px;
+}
+
+.subheader_label {
+  position: absolute;
+  left: 110px;
+  top: 25px;
+  font-size: 2.2em;
+  font-weight: 100;
+  color: #fff;
+}
+
+/*Button Styles*/
+.btn_primary,
+.btn_secondary,
+.btn_action,
+.btn_link {
+  cursor: pointer;
+  outline: none;
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 1.1em;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.btn_primary {
+  border: 2px solid #E2231A;
+  color: #E2231A;
+  background-color: #fff;
+}
+.btn_primary:hover {
+  background-color: #efefef;
+}
+.btn_secondary {
+  border: 2px solid #474C55;
+  background-color: #fff;
+  color: #474C55;
+}
+.btn_secondary:hover {
+  background: #efefef;
+}
+.btn_action{
+  background-color: #E2231A;
+  border: 2px solid #E2231A;
+  color: #fff;
+}
+.btn_link {
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+.checkout_button{
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+.btn_inventory {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.cart_button {
+  float: right;
+}
+
