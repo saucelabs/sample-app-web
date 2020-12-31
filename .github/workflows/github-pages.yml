@@ -24,12 +24,12 @@ jobs:
           ls
           yarn
           yarn build
-        env:
-          CI: false
 
       # build new site
       - name: New site
         working-directory: ./new
+        env:
+          CI: false
         run: |
           ls
           yarn
