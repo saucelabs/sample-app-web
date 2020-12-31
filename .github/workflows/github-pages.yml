@@ -15,23 +15,26 @@ jobs:
       - name: Build
         uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: '14.x'
+
+      # switch to yarn
+      - uses: borales/actions-yarn@v2.0.0
 
       # build current site
       - name: Current site
         working-directory: ./
         run: |
           ls
-          npm ci
-          npm run build
+          yarn
+          yarn build
 
       # build new site
       - name: New site
         working-directory: ./new
         run: |
           ls
-          npm ci
-          npm run build
+          yarn
+          yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
