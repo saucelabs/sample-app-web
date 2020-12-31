@@ -1,5 +1,9 @@
+// Needed to add the below due to issues in IE11, see this thread
+// https://github.com/facebook/create-react-app/issues/9906#issuecomment-720905753
+/** @jsxRuntime classic */
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Route, BrowserRouter as Router} from 'react-router-dom';
