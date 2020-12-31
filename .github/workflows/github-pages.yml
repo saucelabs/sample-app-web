@@ -19,18 +19,19 @@ jobs:
 
       # build current site
       - name: Current site
-      - working-directory: ./
-        - run: ls
-        - run: npm ci
-        - run: npm run build
+        working-directory: ./
+        run: |
+          ls
+          npm ci
+          npm run build
 
       # build new site
       - name: New site
-      - working-directory: ./new
-        - run: ls
-  #      - uses: borales/actions-yarn@v2.0.0
-        - run: npm ci
-        - run: npm run build
+        working-directory: ./new
+        run: |
+          ls
+          npm ci
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
