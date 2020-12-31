@@ -26,9 +26,10 @@ jobs:
           npm run build
 
       # build new site
+      - uses: borales/actions-yarn@v2.0.0
       - name: New site
         working-directory: ./new
-        uses: borales/actions-yarn@v2.0.0
+
         run: |
           ls
           yarn
