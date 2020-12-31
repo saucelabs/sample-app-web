@@ -27,11 +27,11 @@ jobs:
 
       # build new site
       - name: New site
-        - working-directory: ./new
-          run: |
-            ls
-            npm ci
-            npm run build
+        working-directory: ./new
+        run: |
+          ls
+          npm ci
+          npm run build
 
       # go back
       - working-directory: ./
