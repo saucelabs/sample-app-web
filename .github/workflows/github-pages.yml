@@ -23,9 +23,10 @@ jobs:
 
       # build new site
       - run: cd new
-      - uses: borales/actions-yarn@v2.0.0
-      - run: yarn
-      - run: yarn build
+      - run: ls
+#      - uses: borales/actions-yarn@v2.0.0
+      - run: npm ci
+      - run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
