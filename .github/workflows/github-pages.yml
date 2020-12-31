@@ -33,11 +33,9 @@ jobs:
           npm ci
           npm run build
 
-      # go back
-      - working-directory: ./
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ../dist
           cname: www.saucedemo.com
