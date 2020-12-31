@@ -75,5 +75,5 @@
       "sizes": "16x16"
     }
   ],
-  "prefer_related_applications": "false"
+  "prefer_related_applications": false
 }
