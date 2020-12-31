@@ -31,10 +31,11 @@ jobs:
 
         run: |
           ls
-          npm i
+          npm ci
           npm run build
 
       - name: Deploy
+        working-directory: ./
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
