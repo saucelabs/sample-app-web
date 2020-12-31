@@ -27,15 +27,15 @@ jobs:
 
       # build new site
       - name: New site
-        working-directory: ./new
+        - working-directory: ./new
+          run: |
+            ls
+            npm ci
+            npm run build
 
-        run: |
-          ls
-          npm ci
-          npm run build
-
+      # go back
+      - working-directory: ./
       - name: Deploy
-        working-directory: ./
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
