@@ -28,10 +28,11 @@ jobs:
       # build new site
       - name: New site
         working-directory: ./new
+        uses: borales/actions-yarn@v2.0.0
         run: |
           ls
-          npm ci
-          npm run build
+          yarn
+          build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
