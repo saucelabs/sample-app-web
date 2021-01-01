@@ -12,9 +12,6 @@ function MenuButton(props) {
     // Wipe out our shopping cart now
     ShoppingCart.resetCart();
   };
-  const logout = () => {
-
-  };
 
   return (
     <Menu pageWrapId={"contents_wrapper"} outerContainerId={"page_wrapper"}>

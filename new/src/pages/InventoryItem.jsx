@@ -91,7 +91,11 @@ function InventoryItem(props) {
           <div className="inventory_details">
             <button className="inventory_details_back_button" onClick={goBack}>&lt;- Back</button>
             <div className="inventory_details_container">
-              <img className="inventory_details_img" src={require(`../assets/img/${item.image_url}`).default}/>
+              <img
+                alt={item.name}
+                className="inventory_details_img"
+                src={require(`../assets/img/${item.image_url}`).default}
+              />
               <div className="inventory_details_desc_container">
                 <div className="inventory_details_name">{item.name}</div>
                 <div className="inventory_details_desc">{item.desc}</div>

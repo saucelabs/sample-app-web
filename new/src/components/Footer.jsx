@@ -15,7 +15,7 @@ function SwagLabsFooter (){
       <div className="footer_copy">
         &copy; {new Date().getFullYear()} Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
       </div>
-      <img className="footer_robot" src={SwagBotFooter}/>
+      <img alt="Swag Bot Footer" className="footer_robot" src={SwagBotFooter}/>
     </footer>
   )
 }

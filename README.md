@@ -1,6 +1,41 @@
 # What is this codebase?
 This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers
 
+## Notes
+The new site has been build to run in a subdirectory `https://www.saucedemo.com/new`. You can find more information in 
+[this](./new)-folder. You need to go to the folder by running `cd new` and run it from there. The GitHub Workflow will
+automatically publish the new site in a sub-directory on `https://www.saucedemo.com/new`.
+
+When we deploy it for the main domain we need to change (based on 
+[this](https://medium.com/@svinkle/how-to-deploy-a-react-app-to-a-subdirectory-f694d46427c1)):
+- [ ] [`homepage.package.json`](./new/package.json) from `"homepage": "https://www.saucedemo.com/new",` 
+to `"homepage": "https://www.saucedemo.com",`
+- [ ] Router in the [`index.js`](./new/src/index.jsx)-file by removing the `basename={'/new'}`
+- [ ] Change the [`index.html`](./new/public/index.html)-file from
+
+    ```js
+    window.history.replaceState(null, null,
+            '/new' +
+            (q.pathname || '') +
+            (q.query || '') +
+            l.hash
+    );
+  
+    // TO
+    window.history.replaceState(null, null,
+            (q.pathname || '') +
+            (q.query || '') +
+            l.hash
+    );
+    ```
+- [ ] Remove the comment in the [`404.html`](./new/public/404.html)-file when we deploy to the main directory instead of the 
+subdirectory
+- [ ] Remove the `postbuild`-script and it's files from the [`package.json`](./new/package.json)-file and 
+[`scripts`](./scripts)-folder
+- [ ] Change the `baseUrl` in the [`wdio.shared.conf.js`](./new/test/e2e/configs/wdio.shared.conf.js)-file from 
+`baseUrl: 'http://localhost:3000/new'` to `baseUrl: 'http://localhost:3000'`
+- remove the new site references and steps in the [GitHub Workflow](./.github/workflows/github-pages.yml)
+
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Build](#build)

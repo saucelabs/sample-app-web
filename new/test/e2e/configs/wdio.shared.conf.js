@@ -19,7 +19,7 @@ exports.config = {
     // ===================
     logLevel: 'silent',
     bail: 0,
-    baseUrl: 'http://localhost:5000',
+    baseUrl: 'http://localhost:3000/new',
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
