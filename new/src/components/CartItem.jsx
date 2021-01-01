@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, {useState} from "react";
 import {withRouter} from "react-router-dom";
 import {ShoppingCart} from "../utils/shopping-cart";
 import {isProblemUser} from "../utils/Credentials";
@@ -32,7 +32,13 @@ function CartItem(props) {
       <div className="cart_item">
         <div className="cart_quantity">1</div>
         <div className="cart_item_label">
-          <a href="#" id={`item_${item.id}_title_link`} onClick={() => history.push(itemLink)}>
+          <a
+            href="#"
+            id={`item_${item.id}_title_link`}
+            onClick={(evt) => {
+              evt.preventDefault();
+              history.push(itemLink);
+            }}>
             <div className="inventory_item_name">{item.name}</div>
           </a>
           <div className="inventory_item_desc">{item.desc}</div>
@@ -44,7 +50,7 @@ function CartItem(props) {
       </div>
     );
   } else {
-    return ( <div className="removed_cart_item"/> );
+    return (<div className="removed_cart_item"/>);
   }
 }
 

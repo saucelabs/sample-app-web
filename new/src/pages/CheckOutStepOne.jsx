@@ -111,7 +111,10 @@ function CheckOutStepOne(props) {
                 <a
                   className="cart_cancel_link btn_secondary"
                   href="#"
-                  onClick={() => history.push(ROUTES.CART)}
+                  onClick={(evt) => {
+                    evt.preventDefault();
+                    history.push(ROUTES.CART);
+                  }}
                 >CANCEL</a>
                 <input className="btn_primary cart_button" type="submit" value="CONTINUE"/>
               </div>

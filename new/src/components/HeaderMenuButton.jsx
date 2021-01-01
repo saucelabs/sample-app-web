@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom";
 import {slide as Menu} from 'react-burger-menu';
 import {ShoppingCart} from '../utils/shopping-cart';
 import {ROUTES} from "../utils/Constants";
-import {isProblemUser} from "../utils/Credentials";
+import {isProblemUser, removeCredentials} from "../utils/Credentials";
 import './HeaderMenuButton.css';
 
 function MenuButton(props) {
@@ -11,7 +11,10 @@ function MenuButton(props) {
   const resetStorage = () => {
     // Wipe out our shopping cart now
     ShoppingCart.resetCart();
-  }
+  };
+  const logout = () => {
+
+  };
 
   return (
     <Menu pageWrapId={"contents_wrapper"} outerContainerId={"page_wrapper"}>
@@ -19,7 +22,10 @@ function MenuButton(props) {
         id="inventory_sidebar_link"
         className="menu-item"
         href="#"
-        onClick={()=>history.push(ROUTES.INVENTORY)}
+        onClick={(evt) => {
+          evt.preventDefault();
+          history.push(ROUTES.INVENTORY);
+        }}
       >All Items</a>
       <a
         id="about_sidebar_link"
@@ -30,13 +36,20 @@ function MenuButton(props) {
         id="logout_sidebar_link"
         className="menu-item"
         href="#"
-        onClick={()=>history.push(ROUTES.LOGIN)}
+        onClick={(evt) => {
+          evt.preventDefault();
+          removeCredentials();
+          history.push(ROUTES.LOGIN);
+        }}
       >Logout</a>
       <a
         id="reset_sidebar_link"
         className="menu-item"
         href="#"
-        onClick={resetStorage}
+        onClick={(evt) => {
+          evt.preventDefault();
+          resetStorage();
+        }}
       >Reset App State</a>
     </Menu>
   );

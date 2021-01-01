@@ -58,12 +58,16 @@ function CheckOutStepTwo(props) {
                 <a
                   className="cart_cancel_link btn_secondary"
                   href="#"
-                  onClick={() => history.push(ROUTES.INVENTORY)}
+                  onClick={(evt) => {
+                    evt.preventDefault();
+                    history.push(ROUTES.INVENTORY);
+                  }}
                 >CANCEL</a>
                 <a
                   className="btn_action cart_button"
                   href="#"
-                  onClick={() => {
+                  onClick={(evt) => {
+                    evt.preventDefault();
                     clearCart();
                     history.push(ROUTES.CHECKOUT_COMPLETE);
                   }}

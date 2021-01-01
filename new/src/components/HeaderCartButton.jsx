@@ -53,7 +53,13 @@ class CartButton extends Component {
     }
 
     return (
-      <a href="#" className="shopping_cart_link fa-layers fa-fw" onClick={()=> history.push(ROUTES.CART)}>
+      <a
+        href="#"
+        className="shopping_cart_link fa-layers fa-fw"
+        onClick={(evt)=> {
+          evt.preventDefault();
+          history.push(ROUTES.CART);
+        }}>
         <FontAwesomeIcon icon={faShoppingCart} size="3x" />
         { cartBadge }
       </a>

@@ -25,6 +25,13 @@ export function verifyCredentials(username, password) {
 }
 
 /**
+ * Remove the credentials
+ */
+export function removeCredentials(){
+  localStorage.removeItem('session-username');
+}
+
+/**
  * Check if this is a problem user
  *
  * @return {boolean}

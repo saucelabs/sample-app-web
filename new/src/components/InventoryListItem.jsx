@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import {ShoppingCart} from "../utils/shopping-cart";
 import {isProblemUser} from "../utils/Credentials";
 import './InventoryListItem.css'
@@ -60,12 +60,23 @@ function InventoryListItem(props) {
   return (
     <div className="inventory_item">
       <div className="inventory_item_img">
-        <a href="#" id={`item_${id}_img_link`} onClick={() => history.push(itemLink)}>
+        <a
+          href="#"
+          id={`item_${id}_img_link`}
+          onClick={(evt) => {
+            evt.preventDefault();
+            history.push(itemLink);
+          }}>
           <img alt={name} className="inventory_item_img" src={require(`../assets/img/${image_url}`).default}/>
         </a>
       </div>
       <div className="inventory_item_label">
-        <a href="#" id={`item_${id}_title_link`} onClick={() => history.push(itemLink)}>
+        <a
+          href="#" id={`item_${id}_title_link`}
+          onClick={(evt) => {
+            evt.preventDefault();
+            history.push(itemLink);
+          }}>
           <div className="inventory_item_name">{name}</div>
         </a>
         <div className="inventory_item_desc">{desc}</div>

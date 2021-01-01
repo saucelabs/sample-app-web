@@ -25,7 +25,13 @@ function SummaryItem(props){
       <div className="cart_item">
         <div className="summary_quantity">1</div>
         <div className="cart_item_label">
-          <a href="#" id={`item_${item.id}_title_link`} onClick={() => history.push(itemLink)}>
+          <a
+            href="#"
+            id={`item_${item.id}_title_link`}
+            onClick={(evt) => {
+            evt.preventDefault();
+            history.push(itemLink);
+          }}>
             <div className="inventory_item_name">{item.name}</div>
           </a>
           <div className="inventory_item_desc">{item.desc}</div>

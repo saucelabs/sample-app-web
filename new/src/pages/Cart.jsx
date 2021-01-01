@@ -30,12 +30,18 @@ function Cart(props) {
               <a
                 className="btn_secondary"
                 href="#"
-                onClick={() => history.push(ROUTES.INVENTORY)}
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  history.push(ROUTES.INVENTORY);
+                }}
               >Continue Shopping</a>
               <a
                 className="btn_action checkout_button"
                 href="#"
-                onClick={() => history.push(ROUTES.CHECKOUT_STEP_ONE)}
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  history.push(ROUTES.CHECKOUT_STEP_ONE);
+                }}
               >CHECKOUT</a>
             </div>
           </div>
