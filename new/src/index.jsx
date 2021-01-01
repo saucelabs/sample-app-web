@@ -20,14 +20,16 @@ import PrivateRoute from "./components/PrivateRoute";
 
 const routing = (
   <Router basename={'/new'}>
-    <Route exact path={ROUTES.LOGIN} component={Login}/>
-    <PrivateRoute path={ROUTES.INVENTORY} component={Inventory} />
-    <PrivateRoute path={ROUTES.INVENTORY_LIST} component={InventoryItem} />
-    <PrivateRoute path={ROUTES.CART} component={Cart} />
-    <PrivateRoute path={ROUTES.CHECKOUT_STEP_ONE} component={CheckOutStepOne} />
-    <PrivateRoute path={ROUTES.CHECKOUT_STEP_TWO} component={CheckOutStepTwo} />
-    <PrivateRoute path={ROUTES.CHECKOUT_COMPLETE} component={Finish} />
+    <Route exact path={`${process.env.PUBLIC_URL}/${ROUTES.LOGIN}`} component={Login}/>
+    <PrivateRoute path={`${process.env.PUBLIC_URL}/${ROUTES.INVENTORY}`} component={Inventory} />
+    <PrivateRoute path={`${process.env.PUBLIC_URL}/${ROUTES.INVENTORY_LIST}`} component={InventoryItem} />
+    <PrivateRoute path={`${process.env.PUBLIC_URL}/${ROUTES.CART}`} component={Cart} />
+    <PrivateRoute path={`${process.env.PUBLIC_URL}/${ROUTES.CHECKOUT_STEP_ONE}`} component={CheckOutStepOne} />
+    <PrivateRoute path={`${process.env.PUBLIC_URL}/${ROUTES.CHECKOUT_STEP_TWO}`} component={CheckOutStepTwo} />
+    <PrivateRoute path={`${process.env.PUBLIC_URL}/${ROUTES.CHECKOUT_COMPLETE}`} component={Finish} />
   </Router>
 );
+
+console.log('process.env.PUBLIC_URL = ', process.env.PUBLIC_URL)
 
 ReactDOM.render(routing, document.getElementById('root'));
