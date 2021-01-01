@@ -66,7 +66,11 @@ module.exports = {
             {
                 from: "src/img/",
                 to: "img/"
-            }])
+            },
+            {
+              from: "src/404.html",
+              to: "404.html"
+            },])
     ],
     devServer: {
         contentBase: resolve(__dirname, "dist"),
