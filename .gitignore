@@ -12,3 +12,4 @@ storybook-static
 
 .eslintcache
 build
+coverage
