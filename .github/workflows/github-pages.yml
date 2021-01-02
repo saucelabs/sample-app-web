@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - feat/upgrade-react-components
 
 jobs:
   deploy:

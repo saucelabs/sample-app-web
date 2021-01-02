@@ -39,8 +39,7 @@
     "test": "react-scripts test",
     "test.e2e.local": "wdio test/e2e/configs/wdio.local.chrome.conf.js",
     "test.e2e.sauce.eu": "REGION=eu wdio test/e2e/configs/wdio.saucelabs.conf.js",
-    "test.e2e.sauce.us": "wdio test/e2e/configs/wdio.saucelabs.conf.js",
-    "serve": "npm run build && node scripts/createServeFile.js && npx serve -s build"
+    "test.e2e.sauce.us": "wdio test/e2e/configs/wdio.saucelabs.conf.js"
   },
   "eslintConfig": {
     "extends": [

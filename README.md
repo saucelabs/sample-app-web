@@ -32,8 +32,7 @@ to `"homepage": "https://www.saucedemo.com",`
 subdirectory
 - [ ] Remove the `postbuild`-script and it's files from the [`package.json`](./new/package.json)-file and 
 [`scripts`](./scripts)-folder
-- [ ] Change the `baseUrl` in the [`wdio.shared.conf.js`](./new/test/e2e/configs/wdio.shared.conf.js)-file from 
-`baseUrl: 'http://localhost:3000/new'` to `baseUrl: 'http://localhost:3000'`
+- [ ] Remove the `before`-hook in the [`wdio.shared.conf.js`](./new/test/e2e/configs/wdio.shared.conf.js)-file
 - remove the new site references and steps in the [GitHub Workflow](./.github/workflows/github-pages.yml)
 
 - [Setup](#setup)
