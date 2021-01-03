@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom";
 import {isProblemUser} from "../utils/Credentials";
 import {ROUTES} from "../utils/Constants";
 import {ShoppingCart} from "../utils/shopping-cart";
-import {InventoryData} from "../utils/inventory-data";
+import {InventoryData} from "../utils/InventoryData";
 import SummaryItem from "../components/SummaryItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
@@ -22,10 +22,10 @@ function CheckOutStepTwo(props) {
   let orderTotal = 0;
 
   for (const curItem in contents) {
-    orderTotal = orderTotal + InventoryData.ITEMS[contents[curItem]].price;
+    orderTotal = orderTotal + InventoryData[contents[curItem]].price;
     if (isProblemUser()) {
       // double up for the problem user
-      orderTotal = orderTotal + InventoryData.ITEMS[contents[curItem]].price;
+      orderTotal = orderTotal + InventoryData[contents[curItem]].price;
     }
   }
 
@@ -43,7 +43,7 @@ function CheckOutStepTwo(props) {
               <div className="cart_quantity_label">QTY</div>
               <div className="cart_desc_label">DESCRIPTION</div>
               {contents.map((item, i) => {
-                return (<SummaryItem key={i} item={InventoryData.ITEMS[item]}/>)
+                return (<SummaryItem key={i} item={InventoryData[item]}/>)
               })}
             </div>
             <div className="summary_info">

@@ -36,7 +36,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "postbuild": "cd scripts && ./postbuild.sh",
-    "test": "react-scripts test",
+    "test.coverage": "react-scripts test --coverage --watchAll",
     "test.e2e.local": "wdio test/e2e/configs/wdio.local.chrome.conf.js",
     "test.e2e.sauce.eu": "REGION=eu wdio test/e2e/configs/wdio.saucelabs.conf.js",
     "test.e2e.sauce.us": "wdio test/e2e/configs/wdio.saucelabs.conf.js"
@@ -59,6 +59,11 @@
       "last 1 firefox version",
       "last 1 safari version",
       "ie 11"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
     ]
   }
 }

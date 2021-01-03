@@ -5,7 +5,7 @@ import {ROUTES} from "../utils/Constants";
 import MenuButton from "../components/HeaderMenuButton";
 import CartButton from "../components/HeaderCartButton";
 import {ShoppingCart} from "../utils/shopping-cart";
-import {InventoryData} from "../utils/inventory-data";
+import {InventoryData} from "../utils/InventoryData";
 import './InventoryItem.css';
 
 function InventoryItem(props) {
@@ -18,8 +18,8 @@ function InventoryItem(props) {
     inventoryId = parseInt(queryParams.get('id'));
   }
 
-  if ((inventoryId >= 0) && (InventoryData.ITEMS.length > inventoryId)) {
-    item = InventoryData.ITEMS[inventoryId];
+  if ((inventoryId >= 0) && (InventoryData.length > inventoryId)) {
+    item = InventoryData[inventoryId];
   } else {
     item = {
       name: 'ITEM NOT FOUND',

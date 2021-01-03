@@ -2,7 +2,7 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 import {ROUTES} from "../utils/Constants";
 import {ShoppingCart} from "../utils/shopping-cart";
-import {InventoryData} from "../utils/inventory-data";
+import {InventoryData} from "../utils/InventoryData";
 import CartItem from "../components/CartItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
@@ -23,7 +23,7 @@ function Cart(props) {
               <div className="cart_quantity_label">QTY</div>
               <div className="cart_desc_label">DESCRIPTION</div>
               {contents.map((item, i) => {
-                return (<CartItem key={i} item={InventoryData.ITEMS[item]}/>)
+                return (<CartItem key={i} item={InventoryData[item]}/>)
               })}
             </div>
             <div className="cart_footer">
