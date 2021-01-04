@@ -7,8 +7,6 @@ const defaultBrowserSauceOptions = {
 // =========================
 // Sauce RDC specific config
 // =========================
-console.log('process.env.SAUCE_USERNAME = ', process.env.SAUCE_USERNAME.substr(process.env.SAUCE_USERNAME.length - 4));
-console.log('process.env.SAUCE_ACCESS_KEY = ', process.env.SAUCE_ACCESS_KEY.substr(process.env.SAUCE_ACCESS_KEY.length - 4));
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
 // If you run your tests on Sauce Labs you can specify the region you want to run your tests
