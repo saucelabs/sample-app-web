@@ -38,6 +38,4 @@ jobs:
 
     - name: New site - Build and E2E test the new site
       working-directory: ./new
-      run: |
-        yarn start
-        yarn test.e2e.sauce.us
+      run: yarn start & npx wait-on --timeout 10000 http://localhost:3000/new && yarn test.e2e.sauce.us
