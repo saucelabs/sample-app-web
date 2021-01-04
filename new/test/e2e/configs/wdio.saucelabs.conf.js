@@ -1,4 +1,4 @@
-const BUILD_PREFIX = process.env.BUILD_PREFIX ? `GitHub Actions-: ` : '';
+const BUILD_PREFIX = process.env.BUILD_PREFIX ? `GitHub Actions-` : '';
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
     build: `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`,
