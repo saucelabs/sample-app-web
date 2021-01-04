@@ -26,7 +26,7 @@ To set up the development environment directly on your host computer:
 
 1. You’ll need [Node.js](http://nodejs.org) installed (at least v12.x.x or higher). If you don't have Node installed, we
 recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
-1. Use `yarn` instead of npm, see [this link](https://classic.yarnpkg.com/en/docs/install/#mac-stable) on how to install
+1. Use `yarn` instead of `npm`, see [this link](https://classic.yarnpkg.com/en/docs/install/#mac-stable) on how to install
 1. Fork the project.
 1. Clone the project somewhere on your computer
 
@@ -34,7 +34,7 @@ recommend installing [NVM](https://github.com/creationix/nvm) to assist managing
 
 1. Install all dependencies
 
-        npm install
+        yarn
 
 ### Build
 1. Build the application with
