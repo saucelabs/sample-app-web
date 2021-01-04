@@ -1,6 +1,7 @@
+const BUILD_PREFIX = process.env.BUILD_PREFIX ? `GitHub Actions-${process.env.BUILD_PREFIX}: ` : '';
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
-    build: `Sauce Demo App build-${new Date().getTime()}`,
+    build: `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
 };
 
