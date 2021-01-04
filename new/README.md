@@ -2,20 +2,31 @@
 This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers
 
 - [Setup](#setup)
-  - [Requirements](#requirements)
-  - [Build](#build)
-- [Test](#test)
+    - [Requirements](#requirements)
+    - [Build](#build)
+- [Developing](#developing)
+    - [Create React App](#create-react-app)
+        - [Available Scripts](#available-scripts)
+            - [`yarn start`](#yarn-start) 
+            - [`yarn test`](#yarn-test) 
+            - [`yarn build`](#yarn-build)
+        - [Learn more](#learn-more)
+    - [Linting](#linting)
+- [Testing](#testing)
+    - [Unit tests](#unit-tests)
+    - [E2E tests](#e2e-tests)
+        - [Local](#local-machine)
+        - [Sauce Labs](#sauce-labs)
 - [Deploy](#deploy)
-- [More information about the Creat React App](#more-information-about-the-creat-react-app)
 
 ## Setup
-
 ### Requirements
 
 To set up the development environment directly on your host computer:
 
-1. You’ll need [Node.js](http://nodejs.org) installed (at least v10.x.x or higher). If you don't have Node installed, we
+1. You’ll need [Node.js](http://nodejs.org) installed (at least v12.x.x or higher). If you don't have Node installed, we
 recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
+1. Use `yarn` instead of npm, see [this link](https://classic.yarnpkg.com/en/docs/install/#mac-stable) on how to install
 1. Fork the project.
 1. Clone the project somewhere on your computer
 
@@ -28,85 +39,35 @@ recommend installing [NVM](https://github.com/creationix/nvm) to assist managing
 ### Build
 1. Build the application with
 
-        npm run start
+        yarn start
 
     This will build the application, start Chrome and load the website on [http://localhost:3000/](http://localhost:3000/)
 
 1. Click around - this is the app!
 1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
+1. Install [Google Chrome](https://www.google.com/chrome/) for running the [local end-to-end tests](#local-machine)
 
-1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
+## Developing
+### Create React App
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Please read the
+documentation to understand what it can do.
 
-### Setup issues
-
-If you encounter any issues with this build process, e.g.:
-
-```
-$ npm run build
-> sample-app-web@1.0.0 build /Users/unlucky-user/sample-app-web
-> webpack --mode production
-
-sh: webpack: command not found
-```
-
-You have probably hit a dependency conflict issue. To resolve this, do the following in the root of the repository:
-
-1. `npm cache clean --force`
-2. `rm -rf node_modules`
-3. `npm install`
-4. `npm run build`
-
-## Test
-
-### Testing locally
-
-To run the application test suite (which uses Webdriver.io, Selenium, and Chrome) make sure the application is running 
-on [http://localhost:3000](http://localhost:3000) (see above steps)
-
-1. `npm run test.e2e.local`
-
-This will run the application test suite
-
-### Testing on Saucelabs
-
-Running on Sauce Labs uses Environment Variables to authenticate credentials. You can find a guide on how to do this 
-[here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)
-
-1. `npm run test.e2e.sauce.us` to run tests on the Sauce Labs in the US Data Center
-2. `npm run test.e2e.sayce.edu` to run tests in the EU Data Center
-
-
-## Deploy
-
-Merges to master will automatically deploy to:
-* https://www.saucedemo.com
-* https://saucelabs.github.io/sample-app-web
-
-See: [.github/workflows/github-pages.yml GitHub Action](.github/workflows/github-pages.yml)
-  
-## More information about the Creat React App
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Available Scripts
-
+#### Available Scripts
 In the project directory, you can run:
 
-#### `yarn start`
-
+##### `yarn start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-#### `yarn test`
-
+##### `yarn test`
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more 
 information.
 
-#### `yarn build`
-
+##### `yarn build`
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
@@ -115,34 +76,44 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Learn More
-
+#### Learn More
 You can learn more in the 
 [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### Code Splitting
+### Linting
+Linting will be done with Prettier which is included in Create React App. To configure Prettier in your editor please 
+check [this](https://prettier.io/docs/en/editors.html) link.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Testing
+### Unit tests
+Every file in the [`src`](./src)-folder needs to have a unit test. The goal is to get 100% coverage. Every commit will\
+be unit tested before pushed. How to run unit tests can be found [here](#yarn-test). Running them with coverage can be
+done with `yarn test.coverage`.
 
-#### Analyzing the Bundle Size
+### E2E tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Local machine
+To run the application test suite (which uses Webdriver.io, Selenium, and Chrome) make sure the application is running 
+on [http://localhost:3000](http://localhost:3000) (see [above steps](#yarn-start)). Then run:
 
-#### Making a Progressive Web App
+    `yarn test.e2e.local`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will run the application test suite
 
-#### Advanced Configuration
+#### Sauce Labs
+Running on Sauce Labs uses Environment Variables to authenticate credentials. You can find a guide on how to do this 
+[here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials).
+Make sure you have the application running on [http://localhost:3000](http://localhost:3000) 
+(see [above steps](#yarn-start)). Then run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. `yarn test.e2e.sauce.eu` to run tests on the Sauce Labs in the EU Data Center
+2. `yarn test.e2e.sauce.us` to run tests in the US Data Center
 
-#### Deployment
+## Deploy
+Merges to master will automatically deploy to:
+* https://www.saucedemo.com
+* https://saucelabs.github.io/sample-app-web
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-#### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-  
+See: [.github/workflows/github-pages.yml GitHub Action](.github/workflows/github-pages.yml)

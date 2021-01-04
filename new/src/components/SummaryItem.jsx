@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import { withRouter} from "react-router-dom";
-import {isProblemUser} from "../utils/Credentials";
-import './SummaryItem.css';
-import {ROUTES} from "../utils/Constants";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { isProblemUser } from "../utils/Credentials";
+import "./SummaryItem.css";
+import { ROUTES } from "../utils/Constants";
 
-function SummaryItem(props){
-  const {history}= props;
+function SummaryItem(props) {
+  const { history } = props;
   const [itemVisible, setItemVisible] = useState(true);
-  const {item} = props;
+  const { item } = props;
 
   if (item == null) {
     // Hide this if the item is invalid
@@ -29,9 +29,10 @@ function SummaryItem(props){
             href="#"
             id={`item_${item.id}_title_link`}
             onClick={(evt) => {
-            evt.preventDefault();
-            history.push(itemLink);
-          }}>
+              evt.preventDefault();
+              history.push(itemLink);
+            }}
+          >
             <div className="inventory_item_name">{item.name}</div>
           </a>
           <div className="inventory_item_desc">{item.desc}</div>
@@ -40,7 +41,7 @@ function SummaryItem(props){
       </div>
     );
   } else {
-    return ( <div className="removed_cart_item"/> );
+    return <div className="removed_cart_item" />;
   }
 }
 

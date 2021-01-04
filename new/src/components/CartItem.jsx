@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import {withRouter} from "react-router-dom";
-import {ShoppingCart} from "../utils/shopping-cart";
-import {isProblemUser} from "../utils/Credentials";
-import './CartItem.css'
-import {ROUTES} from "../utils/Constants";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { ShoppingCart } from "../utils/shopping-cart";
+import { isProblemUser } from "../utils/Credentials";
+import "./CartItem.css";
+import { ROUTES } from "../utils/Constants";
 
 function CartItem(props) {
-  const {item, history} = props;
-  const [itemVisible, setItemVisible] = useState(true)
+  const { item, history } = props;
+  const [itemVisible, setItemVisible] = useState(true);
 
   if (item == null) {
     // Hide this if the item is invalid
@@ -18,7 +18,7 @@ function CartItem(props) {
     ShoppingCart.removeItem(itemId);
     console.log(ShoppingCart.getCartContents());
     setItemVisible(false);
-  }
+  };
 
   if (itemVisible) {
     let linkId = item.id;
@@ -38,19 +38,25 @@ function CartItem(props) {
             onClick={(evt) => {
               evt.preventDefault();
               history.push(itemLink);
-            }}>
+            }}
+          >
             <div className="inventory_item_name">{item.name}</div>
           </a>
           <div className="inventory_item_desc">{item.desc}</div>
           <div className="item_pricebar">
             <div className="inventory_item_price">{item.price}</div>
-            <button className="btn_secondary cart_button" onClick={() => removeFromCart(item.id)}>REMOVE</button>
+            <button
+              className="btn_secondary cart_button"
+              onClick={() => removeFromCart(item.id)}
+            >
+              REMOVE
+            </button>
           </div>
         </div>
       </div>
     );
   } else {
-    return (<div className="removed_cart_item"/>);
+    return <div className="removed_cart_item" />;
   }
 }
 

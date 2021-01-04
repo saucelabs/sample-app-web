@@ -1,26 +1,26 @@
 // Needed to add the below due to issues in IE11, see this thread
 // https://github.com/facebook/create-react-app/issues/9906#issuecomment-720905753
 /** @jsxRuntime classic */
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
+import "react-app-polyfill/ie11";
+import "react-app-polyfill/stable";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Route, BrowserRouter as Router} from 'react-router-dom';
-import './index.css';
-import Login from './pages/Login';
-import Inventory from './pages/Inventory';
-import InventoryItem from './pages/InventoryItem';
-import Cart from './pages/Cart';
-import CheckOutStepOne from './pages/CheckOutStepOne';
-import CheckOutStepTwo from './pages/CheckOutStepTwo';
-import Finish from './pages/Finish';
-import {ROUTES} from './utils/Constants';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import "./index.css";
+import Login from "./pages/Login";
+import Inventory from "./pages/Inventory";
+import InventoryItem from "./pages/InventoryItem";
+import Cart from "./pages/Cart";
+import CheckOutStepOne from "./pages/CheckOutStepOne";
+import CheckOutStepTwo from "./pages/CheckOutStepTwo";
+import Finish from "./pages/Finish";
+import { ROUTES } from "./utils/Constants";
 import PrivateRoute from "./components/PrivateRoute";
 
 const routing = (
-  <Router basename={'/new'}>
-    <Route exact path={ROUTES.LOGIN} component={Login}/>
+  <Router basename={"/new"}>
+    <Route exact path={ROUTES.LOGIN} component={Login} />
     <PrivateRoute path={ROUTES.INVENTORY} component={Inventory} />
     <PrivateRoute path={ROUTES.INVENTORY_LIST} component={InventoryItem} />
     <PrivateRoute path={ROUTES.CART} component={Cart} />
@@ -30,4 +30,4 @@ const routing = (
   </Router>
 );
 
-ReactDOM.render(routing, document.getElementById('root'));
+ReactDOM.render(routing, document.getElementById("root"));

@@ -5,7 +5,7 @@
  * @param {string} property
  * @returns {Array}
  */
-export function sortAsc(data, property){
+export function sortAsc(data, property) {
   return [...data].sort((a, b) => a[property].localeCompare(b[property]));
 }
 
@@ -16,7 +16,7 @@ export function sortAsc(data, property){
  * @param {string} property
  * @returns {Array}
  */
-export function sortDesc(data, property){
+export function sortDesc(data, property) {
   return [...data].sort((a, b) => b[property].localeCompare(a[property]));
 }
 
@@ -27,7 +27,7 @@ export function sortDesc(data, property){
  * @param {string} property
  * @returns {Array}
  */
-export function sortLoHi(data, property){
+export function sortLoHi(data, property) {
   return [...data].sort((a, b) => Number(a[property]) - Number(b[property]));
 }
 
@@ -38,6 +38,6 @@ export function sortLoHi(data, property){
  * @param {string} property
  * @returns {Array}
  */
-export function sortHiLo(data, property){
+export function sortHiLo(data, property) {
   return [...data].sort((a, b) => Number(b[property]) - Number(a[property]));
 }

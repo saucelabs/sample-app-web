@@ -1,21 +1,21 @@
 import React from "react";
-import {withRouter} from "react-router-dom";
-import {ROUTES} from "../utils/Constants";
-import {ShoppingCart} from "../utils/shopping-cart";
-import {InventoryData} from "../utils/InventoryData";
+import { withRouter } from "react-router-dom";
+import { ROUTES } from "../utils/Constants";
+import { ShoppingCart } from "../utils/shopping-cart";
+import { InventoryData } from "../utils/InventoryData";
 import CartItem from "../components/CartItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
-import './Cart.css'
+import "./Cart.css";
 
 function Cart(props) {
-  const {history} = props;
+  const { history } = props;
   const contents = ShoppingCart.getCartContents();
 
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer/>
+        <HeaderContainer />
         <div className="subheader">Your Cart</div>
         <div id="cart_contents_container" className="cart_contents_container">
           <div>
@@ -23,7 +23,7 @@ function Cart(props) {
               <div className="cart_quantity_label">QTY</div>
               <div className="cart_desc_label">DESCRIPTION</div>
               {contents.map((item, i) => {
-                return (<CartItem key={i} item={InventoryData[item]}/>)
+                return <CartItem key={i} item={InventoryData[item]} />;
               })}
             </div>
             <div className="cart_footer">
@@ -34,7 +34,9 @@ function Cart(props) {
                   evt.preventDefault();
                   history.push(ROUTES.INVENTORY);
                 }}
-              >Continue Shopping</a>
+              >
+                Continue Shopping
+              </a>
               <a
                 className="btn_action checkout_button"
                 href="#"
@@ -42,12 +44,14 @@ function Cart(props) {
                   evt.preventDefault();
                   history.push(ROUTES.CHECKOUT_STEP_ONE);
                 }}
-              >CHECKOUT</a>
+              >
+                CHECKOUT
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <SwagLabsFooter/>
+      <SwagLabsFooter />
     </div>
   );
 }

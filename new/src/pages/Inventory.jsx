@@ -1,21 +1,23 @@
-import React, {useState} from "react";
-import {withRouter} from "react-router-dom";
-import {isPerformanceGlitchUser, isProblemUser} from "../utils/Credentials";
-import {InventoryData} from '../utils/InventoryData.js';
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { isPerformanceGlitchUser, isProblemUser } from "../utils/Credentials";
+import { InventoryData } from "../utils/InventoryData.js";
 import InventoryListItem from "../components/InventoryListItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
-import {sortAsc, sortDesc, sortHiLo, sortLoHi} from "../utils/Sorting";
-import './Inventory.css'
+import { sortAsc, sortDesc, sortHiLo, sortLoHi } from "../utils/Sorting";
+import "./Inventory.css";
 
 function Inventory() {
-  const [inventoryList, setInventoryList] = useState(sortAsc(InventoryData, 'name'));
+  const [inventoryList, setInventoryList] = useState(
+    sortAsc(InventoryData, "name")
+  );
   const startPerformanceGlitch = (duration) => {
     const start = new Date().getTime();
     while (new Date().getTime() < start + duration) {
       // PageLoad increases
     }
-  }
+  };
   if (isPerformanceGlitchUser()) {
     startPerformanceGlitch(5000);
   }
@@ -29,33 +31,36 @@ function Inventory() {
 
     switch (event.target.value) {
       case "az":
-        setInventoryList(sortAsc(InventoryData, 'name'));
+        setInventoryList(sortAsc(InventoryData, "name"));
         break;
       case "za":
-        setInventoryList(sortDesc(InventoryData, 'name'));
+        setInventoryList(sortDesc(InventoryData, "name"));
         break;
       case "hilo":
-        setInventoryList(sortHiLo(InventoryData, 'price'));
+        setInventoryList(sortHiLo(InventoryData, "price"));
         break;
       case "lohi":
-        setInventoryList(sortLoHi(InventoryData, 'price'));
+        setInventoryList(sortLoHi(InventoryData, "price"));
         break;
       default:
         return;
     }
-  }
+  };
 
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer/>
+        <HeaderContainer />
         <div id="inventory_container">
           <div>
             <div className="header_secondary_container">
               <div className="peek"></div>
               <div id="inventory_filter_container">
                 <div className="product_label">Products</div>
-                <select onChange={sortByOption} className="product_sort_container">
+                <select
+                  onChange={sortByOption}
+                  className="product_sort_container"
+                >
                   <option value="az">Name (A to Z)</option>
                   <option value="za">Name (Z to A)</option>
                   <option value="lohi">Price (low to high)</option>
@@ -65,7 +70,6 @@ function Inventory() {
             </div>
 
             <div id="inventory_container" className="inventory_container">
-
               <div className="inventory_list">
                 {inventoryList.map((item, i) => {
                   return (
@@ -76,15 +80,15 @@ function Inventory() {
                       name={item.name}
                       desc={item.desc}
                       price={item.price}
-                    />)
+                    />
+                  );
                 })}
               </div>
-
             </div>
           </div>
         </div>
       </div>
-      <SwagLabsFooter/>
+      <SwagLabsFooter />
     </div>
   );
 }

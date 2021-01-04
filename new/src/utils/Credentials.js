@@ -1,4 +1,4 @@
-import { VALID_PASSWORD,VALID_USERNAMES } from './Constants';
+import { VALID_PASSWORD, VALID_USERNAMES } from "./Constants";
 
 /**
  * Verify the credentials
@@ -19,7 +19,7 @@ export function verifyCredentials(username, password) {
 
   // If we're here, we had a valid username and password.
   // Store the username in our session storage.
-  localStorage.setItem('session-username', username);
+  localStorage.setItem("session-username", username);
 
   return true;
 }
@@ -27,8 +27,8 @@ export function verifyCredentials(username, password) {
 /**
  * Remove the credentials
  */
-export function removeCredentials(){
-  localStorage.removeItem('session-username');
+export function removeCredentials() {
+  localStorage.removeItem("session-username");
 }
 
 /**
@@ -37,7 +37,7 @@ export function removeCredentials(){
  * @return {boolean}
  */
 export function isProblemUser() {
-  return getSessionUsername() === 'problem_user';
+  return getSessionUsername() === "problem_user";
 }
 
 /**
@@ -46,7 +46,7 @@ export function isProblemUser() {
  * @return {boolean}
  */
 export function isPerformanceGlitchUser() {
-  return getSessionUsername() === 'performance_glitch_user';
+  return getSessionUsername() === "performance_glitch_user";
 }
 
 /**
@@ -55,7 +55,7 @@ export function isPerformanceGlitchUser() {
  * @return {boolean}
  */
 export function isLockedOutUser() {
-  return getSessionUsername() === 'locked_out_user';
+  return getSessionUsername() === "locked_out_user";
 }
 
 /**
@@ -63,11 +63,11 @@ export function isLockedOutUser() {
  *
  * @return {boolean}
  */
-export function isLoggedIn(){
+export function isLoggedIn() {
   const sessionUsername = getSessionUsername();
   const isValidUsername = VALID_USERNAMES.includes(sessionUsername);
 
-  return isValidUsername && sessionUsername !== 'locked_out_user';
+  return isValidUsername && sessionUsername !== "locked_out_user";
 }
 
 /**
@@ -76,5 +76,5 @@ export function isLoggedIn(){
  * @return {string}
  */
 export function getSessionUsername() {
-  return localStorage.getItem('session-username');
+  return localStorage.getItem("session-username");
 }

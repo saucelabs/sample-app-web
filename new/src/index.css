@@ -1,7 +1,8 @@
-body, html {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+body,
+html {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   height: 100vh;
   margin: 0;
 }
@@ -18,9 +19,9 @@ input {
 }
 
 .page_wrapper {
-  display:flex;
+  display: flex;
   height: 100vh;
-  flex-direction:column;
+  flex-direction: column;
 }
 @media only screen and (min-width: 1200px) {
   .page_wrapper {
@@ -37,7 +38,7 @@ input {
 }
 
 .peek {
-  background: url('./assets/img/peek.png') no-repeat;
+  background: url("./assets/img/peek.png") no-repeat;
   width: 100px;
   height: 100px;
   position: absolute;
@@ -81,31 +82,31 @@ input {
   text-transform: uppercase;
 }
 .btn_primary {
-  border: 2px solid #E2231A;
-  color: #E2231A;
+  border: 2px solid #e2231a;
+  color: #e2231a;
   background-color: #fff;
 }
 .btn_primary:hover {
   background-color: #efefef;
 }
 .btn_secondary {
-  border: 2px solid #474C55;
+  border: 2px solid #474c55;
   background-color: #fff;
-  color: #474C55;
+  color: #474c55;
 }
 .btn_secondary:hover {
   background: #efefef;
 }
-.btn_action{
-  background-color: #E2231A;
-  border: 2px solid #E2231A;
+.btn_action {
+  background-color: #e2231a;
+  border: 2px solid #e2231a;
   color: #fff;
 }
 .btn_link {
   background-color: transparent;
   border: 2px solid transparent;
 }
-.checkout_button{
+.checkout_button {
   position: absolute;
   right: 0;
   top: 20px;
@@ -119,4 +120,3 @@ input {
 .cart_button {
   float: right;
 }
-

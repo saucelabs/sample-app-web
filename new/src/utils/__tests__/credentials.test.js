@@ -5,16 +5,16 @@ import {
   isPerformanceGlitchUser,
   isProblemUser,
   removeCredentials,
-  verifyCredentials
+  verifyCredentials,
 } from "../Credentials";
-import {VALID_PASSWORD, VALID_USERNAMES} from "../Constants";
+import { VALID_PASSWORD, VALID_USERNAMES } from "../Constants";
 
-const sessionKey = 'session-username';
+const sessionKey = "session-username";
 
-describe('Credentials', () => {
+describe("Credentials", () => {
   beforeEach(() => {
-    jest.spyOn(Storage.prototype, 'setItem');
-    jest.spyOn(Storage.prototype, 'removeItem');
+    jest.spyOn(Storage.prototype, "setItem");
+    jest.spyOn(Storage.prototype, "removeItem");
   });
 
   afterEach(() => {
@@ -22,13 +22,13 @@ describe('Credentials', () => {
     localStorage.setItem.mockRestore();
   });
 
-  describe('verifyCredentials', () => {
-    it('should be able to return false on an empty password', () => {
-      expect(verifyCredentials('username', '')).toEqual(false);
+  describe("verifyCredentials", () => {
+    it("should be able to return false on an empty password", () => {
+      expect(verifyCredentials("username", "")).toEqual(false);
     });
 
-    it('should be able to return false for a valid password but not a valid username', () => {
-      expect(verifyCredentials('username', VALID_PASSWORD)).toEqual(false);
+    it("should be able to return false for a valid password but not a valid username", () => {
+      expect(verifyCredentials("username", VALID_PASSWORD)).toEqual(false);
     });
 
     for (let username of VALID_USERNAMES) {
@@ -39,65 +39,69 @@ describe('Credentials', () => {
     }
   });
 
-  describe('removeCredentials', () => {
-    it('should verify that the removeCredentials calls the removal of the local storage', () => {
+  describe("removeCredentials", () => {
+    it("should verify that the removeCredentials calls the removal of the local storage", () => {
       removeCredentials();
       expect(localStorage.removeItem).toHaveBeenCalledWith(sessionKey);
     });
   });
 
-  describe('getSessionUsername', () => {
-    it('should be able to get the session username', () => {
-      localStorage.setItem(sessionKey, 'foobar');
+  describe("getSessionUsername", () => {
+    it("should be able to get the session username", () => {
+      localStorage.setItem(sessionKey, "foobar");
 
-      expect(getSessionUsername()).toEqual('foobar');
+      expect(getSessionUsername()).toEqual("foobar");
     });
   });
 
-  describe('isProblemUser', () => {
-    it('should be able to determine this is not a problem user', () => {
-      localStorage.setItem(sessionKey, 'foobar');
+  describe("isProblemUser", () => {
+    it("should be able to determine this is not a problem user", () => {
+      localStorage.setItem(sessionKey, "foobar");
 
       expect(isProblemUser()).toEqual(false);
     });
 
-    it('should be able to determine this is a problem user', () => {
-      localStorage.setItem(sessionKey, 'problem_user');
+    it("should be able to determine this is a problem user", () => {
+      localStorage.setItem(sessionKey, "problem_user");
 
       expect(isProblemUser()).toEqual(true);
     });
   });
 
-  describe('isPerformanceGlitchUser', () => {
-    it('should be able to determine this is not a performance glitch user', () => {
-      localStorage.setItem(sessionKey, 'foobar');
+  describe("isPerformanceGlitchUser", () => {
+    it("should be able to determine this is not a performance glitch user", () => {
+      localStorage.setItem(sessionKey, "foobar");
 
       expect(isPerformanceGlitchUser()).toEqual(false);
     });
 
-    it('should be able to determine this is a performance glitch user', () => {
-      localStorage.setItem(sessionKey, 'performance_glitch_user');
+    it("should be able to determine this is a performance glitch user", () => {
+      localStorage.setItem(sessionKey, "performance_glitch_user");
 
       expect(isPerformanceGlitchUser()).toEqual(true);
     });
   });
 
-  describe('isLockedOutUser', () => {
-    it('should be able to determine this is not a locked out user', () => {
-      localStorage.setItem(sessionKey, 'foobar');
+  describe("isLockedOutUser", () => {
+    it("should be able to determine this is not a locked out user", () => {
+      localStorage.setItem(sessionKey, "foobar");
 
       expect(isLockedOutUser()).toEqual(false);
     });
 
-    it('should be able to determine this is a locked out user', () => {
-      localStorage.setItem(sessionKey, 'locked_out_user');
+    it("should be able to determine this is a locked out user", () => {
+      localStorage.setItem(sessionKey, "locked_out_user");
 
       expect(isLockedOutUser()).toEqual(true);
     });
   });
 
-  describe('isLoggedIn', () => {
-    for (let username of ['standard_user', 'performance_glitch_user', 'problem_user']) {
+  describe("isLoggedIn", () => {
+    for (let username of [
+      "standard_user",
+      "performance_glitch_user",
+      "problem_user",
+    ]) {
       it(`should be able to determine if the user is logged in as valid "${username}" user`, () => {
         localStorage.setItem(sessionKey, username);
 
@@ -105,8 +109,8 @@ describe('Credentials', () => {
       });
     }
 
-    it('should be able to determine if the user is logged out as locket out user', () => {
-      localStorage.setItem(sessionKey, 'locked_out_user');
+    it("should be able to determine if the user is logged out as locket out user", () => {
+      localStorage.setItem(sessionKey, "locked_out_user");
 
       expect(isLoggedIn()).toEqual(false);
     });

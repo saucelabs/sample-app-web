@@ -1,22 +1,22 @@
-import React, {useState} from "react";
-import {withRouter} from "react-router-dom";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTimesCircle} from '@fortawesome/free-solid-svg-icons'
-import {isProblemUser} from "../utils/Credentials";
-import {ROUTES} from "../utils/Constants";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { isProblemUser } from "../utils/Credentials";
+import { ROUTES } from "../utils/Constants";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
-import './CheckOutStepOne.css';
+import "./CheckOutStepOne.css";
 
 function CheckOutStepOne(props) {
-  const {history} = props;
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [postalCode, setPostalCode] = useState('');
-  const [error, setError] = useState('');
+  const { history } = props;
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [error, setError] = useState("");
   const dismissError = () => {
-    setError('');
-  }
+    setError("");
+  };
 
   const handleFirstNameChange = (evt) => {
     setFirstName(evt.target.value);
@@ -28,7 +28,7 @@ function CheckOutStepOne(props) {
       return setFirstName(evt.target.value);
     }
 
-    setLastName(evt.target.value)
+    setLastName(evt.target.value);
   };
 
   const handlePostalCodeChange = (evt) => {
@@ -39,40 +39,39 @@ function CheckOutStepOne(props) {
     evt.preventDefault();
 
     if (!firstName) {
-      return setError('First Name is required');
+      return setError("First Name is required");
     }
 
     if (!lastName) {
-      return setError('Last Name is required');
+      return setError("Last Name is required");
     }
 
     if (!postalCode) {
-      return setError('Postal Code is required');
+      return setError("Postal Code is required");
     }
 
     // If we're here, we have our required info. Redirect!
-    history.push(ROUTES.CHECKOUT_STEP_TWO)
+    history.push(ROUTES.CHECKOUT_STEP_TWO);
 
-    return '';
-  }
+    return "";
+  };
 
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer/>
+        <HeaderContainer />
         <div className="subheader">Checkout: Your Information</div>
         <div id="checkout_info_container" className="checkout_info_container">
           <div className="checkout_info_wrapper">
             <form onSubmit={handleSubmit}>
-              {
-                error &&
+              {error && (
                 <h3 data-test="error">
                   <button className="error-button" onClick={dismissError}>
-                    <FontAwesomeIcon icon={faTimesCircle} size="2x"/>
+                    <FontAwesomeIcon icon={faTimesCircle} size="2x" />
                   </button>
                   Error: {error}
                 </h3>
-              }
+              )}
               <div className="checkout_info">
                 <input
                   id="first-name"
@@ -105,7 +104,8 @@ function CheckOutStepOne(props) {
                   value={postalCode}
                   onChange={handlePostalCodeChange}
                   autoCorrect="off"
-                  autoCapitalize="none"/>
+                  autoCapitalize="none"
+                />
               </div>
               <div className="checkout_buttons">
                 <a
@@ -115,14 +115,20 @@ function CheckOutStepOne(props) {
                     evt.preventDefault();
                     history.push(ROUTES.CART);
                   }}
-                >CANCEL</a>
-                <input className="btn_primary cart_button" type="submit" value="CONTINUE"/>
+                >
+                  CANCEL
+                </a>
+                <input
+                  className="btn_primary cart_button"
+                  type="submit"
+                  value="CONTINUE"
+                />
               </div>
             </form>
           </div>
         </div>
       </div>
-      <SwagLabsFooter/>
+      <SwagLabsFooter />
     </div>
   );
 }

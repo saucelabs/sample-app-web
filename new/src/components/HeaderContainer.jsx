@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 import MenuButton from "./HeaderMenuButton";
 import CartButton from "./HeaderCartButton";
-import './HeaderContainer.css'
+import "./HeaderContainer.css";
 
-function HeaderContainer(){
+function HeaderContainer() {
   return (
     <div id="header_container" className="header_container">
       <div id="menu_button_container">
-        <MenuButton/>
+        <MenuButton />
       </div>
       <div className="header_label">
-        <div className="app_logo"/>
+        <div className="app_logo" />
       </div>
       <div id="shopping_cart_container" className="shopping_cart_container">
-        <CartButton/>
+        <CartButton />
       </div>
     </div>
   );
