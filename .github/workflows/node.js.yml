@@ -41,5 +41,5 @@ jobs:
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        BUILD_PREFIX: GitHub Action ${{GITHUB_RUN_NUMBER}}
+        BUILD_PREFIX: ${{GITHUB_RUN_NUMBER}}
       run: yarn start & npx wait-on --timeout 60000 http://localhost:3000/new && yarn test.e2e.sauce.us
