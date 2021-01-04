@@ -30,8 +30,6 @@ jobs:
     # New Site steps
     - name: New site - Install dependencies
       working-directory: ./new
-      env:
-        CI: false
       run: yarn
 
     - name: New site - Run Unit Tests and generate coverage report
