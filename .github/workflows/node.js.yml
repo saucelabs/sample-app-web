@@ -35,10 +35,13 @@ jobs:
       run: yarn
 
     - name: New site - Run Unit Tests and generate coverage report
+      working-directory: ./new
       run: yarn test.coverage
 
     - name: New site - Build the new site
+      working-directory: ./new
       run: yarn build
 
     - name: New site - Run E2E Tests on Sauce Labs US
+      working-directory: ./new
       run: yarn test.e2e.sauce.us
