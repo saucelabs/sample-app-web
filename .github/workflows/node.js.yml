@@ -36,10 +36,7 @@ jobs:
       working-directory: ./new
       run: yarn test.coverage
 
-    - name: New site - Build the new site
+    - name: New site - Build and E2E test the new site
       working-directory: ./new
-      run: yarn build
-
-    - name: New site - Run E2E Tests on Sauce Labs US
-      working-directory: ./new
-      run: yarn test.e2e.sauce.us
+      - run: yarn start
+      - run: yarn test.e2e.sauce.us
