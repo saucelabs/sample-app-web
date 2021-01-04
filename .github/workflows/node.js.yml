@@ -36,7 +36,9 @@ jobs:
       working-directory: ./new
       run: yarn test.coverage
 
-# @TODO: make this work on GH
-#    - name: New site - Build and E2E test the new site
-#      working-directory: ./new
-#      run: yarn start & npx wait-on --timeout 60000 http://localhost:3000/new && yarn test.e2e.sauce.us
+    - name: New site - Build and E2E test the new site
+      working-directory: ./new
+      env:
+        SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+      run: yarn start & npx wait-on --timeout 60000 http://localhost:3000/new && yarn test.e2e.sauce.us
