@@ -25,7 +25,6 @@
   display: inline-block;
   width: 32px;
   height: 32px;
-  text-indent: -999em;
 }
 .social_twitter {
   background: url("../assets/img/twitter.png") no-repeat;
@@ -35,6 +34,12 @@
 }
 .social_linkedin {
   background: url("../assets/img/linkedIn.png") no-repeat;
+}
+
+.social a {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
 .footer_robot {

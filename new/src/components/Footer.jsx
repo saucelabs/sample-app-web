@@ -6,9 +6,18 @@ function SwagLabsFooter() {
   return (
     <footer className="footer">
       <ul className="social">
-        <li className="social_twitter">Twitter</li>
-        <li className="social_facebook">Facebook</li>
-        <li className="social_linkedin">LinkedIn</li>
+        <li className="social_twitter">
+          <a href="https://twitter.com/saucelabs" target="_blank" />
+        </li>
+        <li className="social_facebook">
+          <a href="https://www.facebook.com/saucelabs" target="_blank" />
+        </li>
+        <li className="social_linkedin">
+          <a
+            href="https://www.linkedin.com/company/sauce-labs/"
+            target="_blank"
+          />
+        </li>
       </ul>
 
       <div className="footer_copy">

@@ -86,6 +86,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 Linting will be done with Prettier which is included in Create React App. To configure Prettier in your editor please 
 check [this](https://prettier.io/docs/en/editors.html) link.
 
+You can manually trigger linting by using `yarn test.lint`.
+
 ## Testing
 ### Unit tests
 Every file in the [`src`](./src)-folder needs to have a unit test. The goal is to get 100% coverage. Every commit will\

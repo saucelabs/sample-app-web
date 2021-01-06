@@ -16,7 +16,6 @@ function CartItem(props) {
 
   const removeFromCart = (itemId) => {
     ShoppingCart.removeItem(itemId);
-    console.log(ShoppingCart.getCartContents());
     setItemVisible(false);
   };
 
@@ -55,9 +54,9 @@ function CartItem(props) {
         </div>
       </div>
     );
-  } else {
-    return <div className="removed_cart_item" />;
   }
+
+  return <div className="removed_cart_item" />;
 }
 
 export default withRouter(CartItem);

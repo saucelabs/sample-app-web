@@ -40,9 +40,9 @@ function SummaryItem(props) {
         </div>
       </div>
     );
-  } else {
-    return <div className="removed_cart_item" />;
   }
+
+  return <div className="removed_cart_item" />;
 }
 
 export default withRouter(SummaryItem);

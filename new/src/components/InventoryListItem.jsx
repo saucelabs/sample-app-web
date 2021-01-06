@@ -30,7 +30,6 @@ function InventoryListItem(props) {
 
     ShoppingCart.addItem(itemId);
     setItemInCart(true);
-    console.log(ShoppingCart.getCartContents());
   };
 
   const removeFromCart = (itemId) => {
@@ -43,7 +42,6 @@ function InventoryListItem(props) {
 
     ShoppingCart.removeItem(itemId);
     setItemInCart(false);
-    console.log(ShoppingCart.getCartContents());
   };
 
   let linkId = id;

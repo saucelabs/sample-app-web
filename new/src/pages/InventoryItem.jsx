@@ -52,7 +52,6 @@ function InventoryItem(props) {
 
     ShoppingCart.addItem(itemId);
     setItemInCart(true);
-    console.log(ShoppingCart.getCartContents());
   };
 
   const removeFromCart = (itemId) => {
@@ -65,7 +64,6 @@ function InventoryItem(props) {
 
     ShoppingCart.removeItem(itemId);
     setItemInCart(false);
-    console.log(ShoppingCart.getCartContents());
   };
   let cartButton;
 
