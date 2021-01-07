@@ -1,0 +1,14 @@
+.shopping_cart_badge {
+  font-weight: 400;
+  top: -20px;
+  right: -30px;
+  transform: scale(1.1);
+}
+
+.shopping_cart_link {
+  color: #777;
+}
+
+.shopping_cart_link > svg {
+  width: 30px !important;
+}

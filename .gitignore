@@ -9,3 +9,7 @@ screenshots
 .coverage
 storybook-static
 .tmp
+
+.eslintcache
+build
+coverage

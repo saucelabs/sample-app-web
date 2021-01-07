@@ -1,0 +1,21 @@
+.checkout_info_container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.checkout_info_wrapper {
+  padding: 0 15px;
+}
+
+.checkout_info {
+  max-width: 380px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.checkout_buttons {
+  margin-top: 50px;
+  border-top: 2px solid #ededef;
+  padding: 20px 0;
+}

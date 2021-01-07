@@ -1,0 +1,35 @@
+.checkout_summary_container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px 30px;
+}
+
+.summary_info_label {
+  width: 100%;
+  border-top: 1px solid #efefef;
+  padding: 20px 0 0;
+  font-size: 1.2em;
+}
+
+.summary_value_label {
+  font-weight: 800;
+  font-size: 18px;
+  padding: 20px 0;
+}
+
+.summary_subtotal_label {
+  border-top: 1px solid #efefef;
+  padding: 20px 0 10px;
+  font-size: 18px;
+}
+
+.summary_tax_label {
+  padding: 0;
+  font-size: 1.2em;
+}
+
+.summary_total_label {
+  padding: 10px 0;
+  font-size: 1.2em;
+  margin: 0px 0px 8px 0px;
+}

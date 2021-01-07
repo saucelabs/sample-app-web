@@ -1,0 +1,25 @@
+.header_container {
+  height: 70px;
+}
+
+.header_label {
+  background: #fff;
+  padding: 18px 18px 0;
+  text-align: center;
+  font-size: 1.7em;
+  position: relative;
+}
+
+.app_logo {
+  background: url("../assets/img/SwagLabs_logo.png") no-repeat center center;
+  text-align: center;
+  margin: 0 50px;
+  height: 35px;
+}
+
+.shopping_cart_container {
+  height: 32px;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}

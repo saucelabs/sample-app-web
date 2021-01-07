@@ -1,0 +1,78 @@
+.inventory_item {
+  border: 2px solid #ededef;
+  background: #fff;
+  width: 100%;
+  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.inventory_item:nth-child(odd) {
+  margin-right: 20px;
+}
+
+.inventory_item_img {
+  float: left;
+  width: 24%;
+}
+
+.inventory_item_img img {
+  width: 98%;
+}
+
+.inventory_item_label > a {
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+.inventory_item_label {
+  padding-top: 15px;
+  min-height: 180px;
+  width: 74%;
+  float: right;
+  vertical-align: top;
+  position: relative;
+}
+.inventory_item_name {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #e2231a;
+}
+.inventory_item_desc {
+  font-size: 0.85em;
+  margin-top: 7px;
+  color: #777777;
+}
+.pricebar {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 74%;
+}
+
+.inventory_item_price {
+  color: #e2231a;
+  font-size: 1.6em;
+  display: inline-block;
+}
+
+@media only screen and (min-width: 900px) {
+  .inventory_item_label {
+    min-height: 150px;
+  }
+}
+
+/* Adjust inventory item width for larger screens */
+@media only screen and (min-width: 1200px) {
+  .inventory_item {
+    width: 45%;
+    float: left;
+  }
+
+  .inventory_item_label {
+    width: 72%;
+  }
+  .pricebar {
+    width: 71%;
+  }
+}
