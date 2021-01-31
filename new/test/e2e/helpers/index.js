@@ -11,7 +11,7 @@
 export function setTestContext(data = {}) {
     const {path, products = [], user} = data;
     const {username} = user;
-    const userStorage = `localStorage.setItem("session-username", "${username}");`;
+    const userStorage = `document.cookie="session-username=${username}";`;
     const productStorage = products.length > 0 ? `localStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
     // // Needed to add this to verify the storage. We initially used `sessionStorage` in the browsers but that one didn't
     // // work properly and got lost after a new `browser.url('{some-url}')`. `localStorage` is more stable
