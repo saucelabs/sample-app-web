@@ -4,6 +4,13 @@ import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 
 describe('LoginPage', () => {
     beforeEach(() => {
+        // Load url to be able to clear cookies and storage
+        browser.url('');
+        // Clear the cookies and storage
+        browser.deleteAllCookies();
+        browser.execute('localStorage.clear();');
+
+        // Load again in a fresh state
         browser.url('');
         LoginPage.waitForIsShown();
     });
