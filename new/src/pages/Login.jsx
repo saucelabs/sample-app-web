@@ -4,7 +4,11 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import "./Login.css";
-import { isLockedOutUser, verifyCredentials } from "../utils/Credentials";
+import {
+  isLockedOutUser,
+  setCredentials,
+  verifyCredentials,
+} from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 
 function Login(props) {
@@ -37,12 +41,15 @@ function Login(props) {
     }
 
     if (verifyCredentials(username, password)) {
+      // If we're here, we have a username and password.
+      // Store the username in our cookies.
+      setCredentials(username, password);
       // Catch our locked-out user and bail out
       if (isLockedOutUser()) {
         return setError("Sorry, this user has been locked out.");
       }
 
-      // If we're here, we have a username and password. Redirect!
+      // Redirect!
       history.push(ROUTES.INVENTORY);
     } else {
       return setError(

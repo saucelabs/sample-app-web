@@ -16,3 +16,4 @@ export const ROUTES = {
   CHECKOUT_COMPLETE: "/checkout-complete.html",
 };
 export const CART_CONTENTS = "cart-contents";
+export const SESSION_USERNAME = "session-username";

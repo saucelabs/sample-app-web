@@ -1,4 +1,5 @@
-import { VALID_PASSWORD, VALID_USERNAMES } from "./Constants";
+import Cookies from "js-cookie";
+import { SESSION_USERNAME, VALID_PASSWORD, VALID_USERNAMES } from "./Constants";
 
 /**
  * Verify the credentials
@@ -13,22 +14,28 @@ export function verifyCredentials(username, password) {
     return false;
   }
 
-  if (!VALID_USERNAMES.includes(username)) {
-    return false;
-  }
+  return VALID_USERNAMES.includes(username);
+}
 
-  // If we're here, we had a valid username and password.
-  // Store the username in our session storage.
-  localStorage.setItem("session-username", username);
+/**
+ * Store the data in our cookies
+ *
+ * @param {string} username
+ *
+ * @param {string} password
+ */
+export function setCredentials(username, password) {
+  let date = new Date();
+  date.setTime(date.getTime() + 10 * 60 * 1000);
 
-  return true;
+  Cookies.set(SESSION_USERNAME, username, { expires: date });
 }
 
 /**
  * Remove the credentials
  */
 export function removeCredentials() {
-  localStorage.removeItem("session-username");
+  Cookies.remove(SESSION_USERNAME);
 }
 
 /**
@@ -37,7 +44,7 @@ export function removeCredentials() {
  * @return {boolean}
  */
 export function isProblemUser() {
-  return getSessionUsername() === "problem_user";
+  return Cookies.get(SESSION_USERNAME) === "problem_user";
 }
 
 /**
@@ -46,7 +53,7 @@ export function isProblemUser() {
  * @return {boolean}
  */
 export function isPerformanceGlitchUser() {
-  return getSessionUsername() === "performance_glitch_user";
+  return Cookies.get(SESSION_USERNAME) === "performance_glitch_user";
 }
 
 /**
@@ -55,7 +62,7 @@ export function isPerformanceGlitchUser() {
  * @return {boolean}
  */
 export function isLockedOutUser() {
-  return getSessionUsername() === "locked_out_user";
+  return Cookies.get(SESSION_USERNAME) === "locked_out_user";
 }
 
 /**
@@ -64,17 +71,8 @@ export function isLockedOutUser() {
  * @return {boolean}
  */
 export function isLoggedIn() {
-  const sessionUsername = getSessionUsername();
+  const sessionUsername = Cookies.get(SESSION_USERNAME);
   const isValidUsername = VALID_USERNAMES.includes(sessionUsername);
 
   return isValidUsername && sessionUsername !== "locked_out_user";
-}
-
-/**
- * Get the session username
- *
- * @return {string}
- */
-export function getSessionUsername() {
-  return localStorage.getItem("session-username");
 }
