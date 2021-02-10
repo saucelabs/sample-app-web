@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/new/static/css/main.57e549a6.chunk.css",
+    "main.js": "/new/static/js/main.000828ba.chunk.js",
+    "main.js.map": "/new/static/js/main.000828ba.chunk.js.map",
+    "runtime-main.js": "/new/static/js/runtime-main.2436e571.js",
+    "runtime-main.js.map": "/new/static/js/runtime-main.2436e571.js.map",
+    "static/js/2.917d4e4f.chunk.js": "/new/static/js/2.917d4e4f.chunk.js",
+    "static/js/2.917d4e4f.chunk.js.map": "/new/static/js/2.917d4e4f.chunk.js.map",
+    "index.html": "/new/index.html",
+    "static/css/main.57e549a6.chunk.css.map": "/new/static/css/main.57e549a6.chunk.css.map",
+    "static/js/2.917d4e4f.chunk.js.LICENSE.txt": "/new/static/js/2.917d4e4f.chunk.js.LICENSE.txt",
+    "static/media/Login_Bot_graphic.png": "/new/static/media/Login_Bot_graphic.20658452.png",
+    "static/media/SwagBot_Footer_graphic.png": "/new/static/media/SwagBot_Footer_graphic.2e87acec.png",
+    "static/media/bike-light-1200x1500.jpg": "/new/static/media/bike-light-1200x1500.a0c9caae.jpg",
+    "static/media/bolt-shirt-1200x1500.jpg": "/new/static/media/bolt-shirt-1200x1500.c0dae290.jpg",
+    "static/media/header-logo.png": "/new/static/media/header-logo.8398d104.png",
+    "static/media/pony-express.png": "/new/static/media/pony-express.46394a5d.png",
+    "static/media/red-onesie-1200x1500.jpg": "/new/static/media/red-onesie-1200x1500.1b15e1fa.jpg",
+    "static/media/red-tatt-1200x1500.jpg": "/new/static/media/red-tatt-1200x1500.e32b4ef9.jpg",
+    "static/media/sauce-backpack-1200x1500.jpg": "/new/static/media/sauce-backpack-1200x1500.34e7aa42.jpg",
+    "static/media/sauce-pullover-1200x1500.jpg": "/new/static/media/sauce-pullover-1200x1500.439fc934.jpg",
+    "static/media/sl-404.jpg": "/new/static/media/sl-404.168b1cce.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2436e571.js",
+    "static/js/2.917d4e4f.chunk.js",
+    "static/css/main.57e549a6.chunk.css",
+    "static/js/main.000828ba.chunk.js"
+  ]
+}
