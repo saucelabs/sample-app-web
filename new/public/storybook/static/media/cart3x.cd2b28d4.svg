@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>cart/icon@3x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="cart/icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polyline id="Path" stroke="#E2231A" stroke-width="2" fill-rule="nonzero" points="16.0500834 13.5 31.5597661 13.5 28 26 15 26 9.94265651 8.15110892 3.94265651 8.15110892"></polyline>
+        <path d="M15.8259816,33 C16.9305511,33 17.8259816,32.1045695 17.8259816,31 C17.8259816,29.8954305 16.9305511,29 15.8259816,29 C14.7214121,29 13.8259816,29.8954305 13.8259816,31 C13.8259816,32.1045695 14.7214121,33 15.8259816,33 Z" id="Oval" fill="#E2231A" fill-rule="nonzero"></path>
+        <path d="M27.0747051,33 C28.1792746,33 29.0747051,32.1045695 29.0747051,31 C29.0747051,29.8954305 28.1792746,29 27.0747051,29 C25.9701356,29 25.0747051,29.8954305 25.0747051,31 C25.0747051,32.1045695 25.9701356,33 27.0747051,33 Z" id="Oval-Copy" fill="#E2231A" fill-rule="nonzero"></path>
+    </g>
+</svg>
