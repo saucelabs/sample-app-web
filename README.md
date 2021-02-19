@@ -4,6 +4,7 @@ This is the Sauce Labs Sample Application which is designed to be used from desk
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Build](#build)
+  - [Storybook](#storybook)
 - [Test](#test)
 - [Deploy](#deploy)
 
@@ -32,6 +33,14 @@ we recommend installing [NVM](https://github.com/creationix/nvm) to assist manag
 1. Click around - this is the app!
 1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
 1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
+
+### Storybook
+This website uses components which can be tested with Storybook. To run Storybook execute the following command
+
+    npm run storybook 
+
+This will open Storybook on [http://localhost:6006/](http://localhost:6006/). More information about Storybook can be 
+found [here](https://storybook.js.org/docs/react/get-started/introduction).
 
 ## Test
 ### Testing locally
