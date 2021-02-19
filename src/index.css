@@ -38,7 +38,7 @@ input {
 }
 
 .peek {
-  background: url("./assets/img/peek.png") no-repeat;
+  background: url("assets/img/peek.png") no-repeat;
   width: 100px;
   height: 100px;
   position: absolute;
