@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import "./Login.css";
 import {
   isLockedOutUser,
@@ -10,6 +8,9 @@ import {
   verifyCredentials,
 } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
+import InputError, { INPUT_TYPES } from "../components/InputError";
+import SubmitButton from "../components/SubmitButton";
+import ErrorMessage from "../components/ErrorMessage";
 
 function Login(props) {
   const { history } = props;
@@ -77,44 +78,36 @@ function Login(props) {
           <div id="login_button_container" className="form_column">
             <div className="login-box">
               <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  className="form_input"
-                  data-test="username"
-                  id="user-name"
-                  name="user-name"
-                  placeholder="Username"
+                <InputError
+                  isError={Boolean(error)}
+                  type={INPUT_TYPES.TEXT}
                   value={username}
                   onChange={handleUserChange}
+                  testId="username"
+                  placeholder="Username"
+                  // Custom
+                  id="user-name"
+                  name="user-name"
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
-                <input
-                  type="password"
-                  className="form_input"
-                  data-test="password"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
+                <InputError
+                  isError={Boolean(error)}
+                  type={INPUT_TYPES.PASSWORD}
                   value={password}
                   onChange={handlePassChange}
+                  testId="password"
+                  placeholder="Password"
+                  // Custom
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
-                <input
-                  type="submit"
-                  className="btn_action"
-                  id="login-button"
-                  value="LOGIN"
+                <ErrorMessage
+                  isError={Boolean(error)}
+                  errorMessage={`Epic sadface: ${error}`}
+                  onClick={dismissError}
                 />
-                {error && (
-                  <h3 data-test="error">
-                    <button className="error-button" onClick={dismissError}>
-                      <FontAwesomeIcon icon={faTimesCircle} size="2x" />
-                    </button>
-                    Epic sadface: {error}
-                  </h3>
-                )}
+                <SubmitButton testId="login-button" value="Login" />
               </form>
             </div>
           </div>

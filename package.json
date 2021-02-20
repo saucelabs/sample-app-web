@@ -41,6 +41,10 @@
     "@wdio/spec-reporter": "^6.11.0",
     "@wdio/sync": "^6.11.0",
     "chromedriver": "^88.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
+    "prop-types": "^15.7.2",
     "wdio-chromedriver-service": "^6.0.4"
   },
   "scripts": {
@@ -73,6 +77,9 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "eslintConfig": {
@@ -83,7 +90,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-push": "npm run test.coverage && npm run test"
     }
   },
   "lint-staged": {

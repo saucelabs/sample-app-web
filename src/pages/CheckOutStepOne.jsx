@@ -7,6 +7,8 @@ import { ROUTES } from "../utils/Constants";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import "./CheckOutStepOne.css";
+import InputError, { INPUT_TYPES } from "../components/InputError";
+import ErrorMessage from "../components/ErrorMessage";
 
 function CheckOutStepOne(props) {
   const { history } = props;
@@ -17,11 +19,9 @@ function CheckOutStepOne(props) {
   const dismissError = () => {
     setError("");
   };
-
   const handleFirstNameChange = (evt) => {
     setFirstName(evt.target.value);
   };
-
   const handleLastNameChange = (evt) => {
     if (isProblemUser()) {
       // Overwrite the firstname also
@@ -30,11 +30,9 @@ function CheckOutStepOne(props) {
 
     setLastName(evt.target.value);
   };
-
   const handlePostalCodeChange = (evt) => {
     setPostalCode(evt.target.value);
   };
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
@@ -64,47 +62,47 @@ function CheckOutStepOne(props) {
         <div id="checkout_info_container" className="checkout_info_container">
           <div className="checkout_info_wrapper">
             <form onSubmit={handleSubmit}>
-              {error && (
-                <h3 data-test="error">
-                  <button className="error-button" onClick={dismissError}>
-                    <FontAwesomeIcon icon={faTimesCircle} size="2x" />
-                  </button>
-                  Error: {error}
-                </h3>
-              )}
               <div className="checkout_info">
-                <input
-                  id="first-name"
-                  type="text"
-                  className="form_input"
-                  data-test="firstName"
-                  placeholder="First Name"
+                <InputError
+                  isError={Boolean(error)}
+                  type={INPUT_TYPES.TEXT}
                   value={firstName}
                   onChange={handleFirstNameChange}
+                  testId="firstName"
+                  placeholder="First Name"
+                  // Custom
+                  id="first-name"
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
-                <input
-                  id="last-name"
-                  type="text"
-                  className="form_input"
-                  data-test="lastName"
-                  placeholder="Last Name"
+                <InputError
+                  isError={Boolean(error)}
+                  type={INPUT_TYPES.TEXT}
                   value={lastName}
                   onChange={handleLastNameChange}
+                  testId="lastName"
+                  placeholder="Last Name"
+                  // Custom
+                  id="last-name"
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
-                <input
-                  id="postal-code"
-                  type="text"
-                  className="form_input"
-                  data-test="postalCode"
-                  placeholder="Zip/Postal Code"
+                <InputError
+                  isError={Boolean(error)}
+                  type={INPUT_TYPES.TEXT}
                   value={postalCode}
                   onChange={handlePostalCodeChange}
+                  testId="postalCode"
+                  placeholder="Zip/Postal Code"
+                  // Custom
+                  id="postal-code"
                   autoCorrect="off"
                   autoCapitalize="none"
+                />
+                <ErrorMessage
+                  isError={Boolean(error)}
+                  errorMessage={`Error: ${error}`}
+                  onClick={dismissError}
                 />
               </div>
               <div className="checkout_buttons">
