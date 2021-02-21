@@ -78,6 +78,14 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}"
     ],
+    "coverageThreshold": {
+      "global": {
+        "branches":100,
+        "functions":100,
+        "lines":100,
+        "statements": 100
+      }
+    },
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
@@ -90,7 +98,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test.lint"
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {

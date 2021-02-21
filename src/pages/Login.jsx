@@ -13,18 +13,18 @@ import SubmitButton from "../components/SubmitButton";
 import ErrorMessage from "../components/ErrorMessage";
 
 function Login(props) {
-  const { history } = props;
+  const { history, location } = props;
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    if (props.location.state) {
+    if (location.state) {
       return setError(
-        `You can only access '${props.location.state.from.pathname}' when you are logged in.`
+        `You can only access '${location.state.from.pathname}' when you are logged in.`
       );
     }
-  }, [props.location.state]);
+  }, [location.state]);
 
   const dismissError = () => {
     setError("");
@@ -32,7 +32,6 @@ function Login(props) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-
     if (!username) {
       return setError("Username is required");
     }
