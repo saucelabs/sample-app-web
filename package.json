@@ -41,13 +41,17 @@
     "@wdio/spec-reporter": "^6.11.0",
     "@wdio/sync": "^6.11.0",
     "chromedriver": "^88.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
+    "prop-types": "^15.7.2",
     "wdio-chromedriver-service": "^6.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test.coverage": "react-scripts test --coverage",
+    "test.coverage": "react-scripts test --coverage --watchAll=false",
     "test.coverage.watch": "react-scripts test --coverage --watchAll",
     "test.e2e.local": "wdio test/e2e/configs/wdio.local.chrome.conf.js",
     "test.e2e.sauce.eu": "REGION=eu wdio test/e2e/configs/wdio.saucelabs.conf.js",
@@ -72,7 +76,19 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}"
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.stories.{js,jsx,ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches":20,
+        "functions":20,
+        "lines":20,
+        "statements": 20
+      }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   },
   "eslintConfig": {
@@ -83,7 +99,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {
