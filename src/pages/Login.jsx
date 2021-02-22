@@ -106,7 +106,13 @@ function Login(props) {
                   errorMessage={`Epic sadface: ${error}`}
                   onClick={dismissError}
                 />
-                <SubmitButton testId="login-button" value="Login" />
+                <SubmitButton
+                  // `btn_action` has no style function
+                  // but is there for backwards compatibility
+                  customClass="btn_action"
+                  testId="login-button"
+                  value="Login"
+                />
               </form>
             </div>
           </div>

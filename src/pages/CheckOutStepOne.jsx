@@ -9,6 +9,8 @@ import HeaderContainer from "../components/HeaderContainer";
 import "./CheckOutStepOne.css";
 import InputError, { INPUT_TYPES } from "../components/InputError";
 import ErrorMessage from "../components/ErrorMessage";
+import SubmitButton from "../components/SubmitButton";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 
 function CheckOutStepOne(props) {
   const { history } = props;
@@ -106,20 +108,21 @@ function CheckOutStepOne(props) {
                 />
               </div>
               <div className="checkout_buttons">
-                <a
-                  className="cart_cancel_link btn_secondary"
-                  href="#"
+                <Button
+                  // `cart_cancel_link` has no style function
+                  // but is there for backwards compatibility
+                  customClass="cart_cancel_link"
+                  label="Cancel"
                   onClick={(evt) => {
                     evt.preventDefault();
                     history.push(ROUTES.CART);
                   }}
-                >
-                  CANCEL
-                </a>
-                <input
-                  className="btn_primary cart_button"
-                  type="submit"
-                  value="CONTINUE"
+                  size={BUTTON_SIZES.MEDIUM}
+                  type={BUTTON_TYPES.BACK}
+                />
+                <SubmitButton
+                  customClass="btn btn_primary cart_button btn_action"
+                  value="Continue"
                 />
               </div>
             </form>

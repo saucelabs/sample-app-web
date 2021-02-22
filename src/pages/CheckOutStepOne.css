@@ -18,4 +18,21 @@
   margin-top: 5px;
   border-top: 2px solid #ededef;
   padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout_buttons .btn {
+  width: 220px;
+}
+
+@media only screen and (max-width: 900px) {
+  .checkout_buttons {
+    display: block;
+    justify-content: inherit;
+  }
+
+  .checkout_buttons .btn {
+    margin-bottom: 15px;
+  }
 }

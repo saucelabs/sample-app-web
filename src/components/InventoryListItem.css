@@ -56,9 +56,27 @@
   display: inline-block;
 }
 
+/* @TODO: A temporary fix, this needs to be fixed when the inventory page is being redesigned with Flexbox*/
+.btn_inventory {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.inventory_item_price {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+}
+
 @media only screen and (min-width: 900px) {
   .inventory_item_label {
     min-height: 150px;
+  }
+
+  .inventory_item_price {
+    position: relative;
+    left: 0;
+    bottom: 0;
   }
 }
 

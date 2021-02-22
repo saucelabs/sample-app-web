@@ -4,6 +4,7 @@ import { ShoppingCart } from "../utils/shopping-cart";
 import { isProblemUser } from "../utils/Credentials";
 import "./CartItem.css";
 import { ROUTES } from "../utils/Constants";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
 
 function CartItem(props) {
   const { item, history } = props;
@@ -44,12 +45,13 @@ function CartItem(props) {
           <div className="inventory_item_desc">{item.desc}</div>
           <div className="item_pricebar">
             <div className="inventory_item_price">{item.price}</div>
-            <button
-              className="btn_secondary cart_button"
+            <Button
+              customClass="cart_button"
+              label="Remove"
               onClick={() => removeFromCart(item.id)}
-            >
-              REMOVE
-            </button>
+              size={BUTTON_SIZES.SMALL}
+              type={BUTTON_TYPES.SECONDARY}
+            />
           </div>
         </div>
       </div>

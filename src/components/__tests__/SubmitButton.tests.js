@@ -43,4 +43,14 @@ describe("SubmitButton", () => {
 
     expect(component).toMatchSnapshot();
   });
+
+  it("should render with a custom class", () => {
+    const props = {
+      customClass: "custom_class",
+      value: "Submit",
+    };
+    const component = shallow(<SubmitButton {...props} />);
+
+    expect(component).toMatchSnapshot();
+  });
 });

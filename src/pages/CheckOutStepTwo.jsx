@@ -8,6 +8,7 @@ import SummaryItem from "../components/SummaryItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import "./CheckOutStepTwo.css";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 
 function CheckOutStepTwo(props) {
   const { history } = props;
@@ -63,27 +64,29 @@ function CheckOutStepTwo(props) {
                 Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}
               </div>
               <div className="cart_footer">
-                <a
-                  className="cart_cancel_link btn_secondary"
-                  href="#"
+                <Button
+                  // `cart_cancel_link` has no style function
+                  // but is there for backwards compatibility
+                  customClass="cart_cancel_link"
+                  label="Cancel"
                   onClick={(evt) => {
                     evt.preventDefault();
                     history.push(ROUTES.INVENTORY);
                   }}
-                >
-                  CANCEL
-                </a>
-                <a
-                  className="btn_action cart_button"
-                  href="#"
+                  size={BUTTON_SIZES.MEDIUM}
+                  type={BUTTON_TYPES.BACK}
+                />
+                <Button
+                  customClass="cart_button"
+                  label="Finish"
                   onClick={(evt) => {
                     evt.preventDefault();
                     clearCart();
                     history.push(ROUTES.CHECKOUT_COMPLETE);
                   }}
-                >
-                  FINISH
-                </a>
+                  size={BUTTON_SIZES.MEDIUM}
+                  type={BUTTON_TYPES.ACTION}
+                />
               </div>
             </div>
           </div>

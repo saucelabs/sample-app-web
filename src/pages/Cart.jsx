@@ -6,6 +6,7 @@ import { InventoryData } from "../utils/InventoryData";
 import CartItem from "../components/CartItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import "./Cart.css";
 
 function Cart(props) {
@@ -27,26 +28,27 @@ function Cart(props) {
               })}
             </div>
             <div className="cart_footer">
-              <a
-                className="btn_secondary"
-                href="#"
+              <Button
+                label="Continue Shopping"
                 onClick={(evt) => {
                   evt.preventDefault();
                   history.push(ROUTES.INVENTORY);
                 }}
-              >
-                Continue Shopping
-              </a>
-              <a
-                className="btn_action checkout_button"
-                href="#"
+                size={BUTTON_SIZES.MEDIUM}
+                type={BUTTON_TYPES.BACK}
+              />
+              <Button
+                label="Checkout"
+                // `checkout_button` has no style function
+                // but is there for backwards compatibility
+                customClass="checkout_button"
                 onClick={(evt) => {
                   evt.preventDefault();
                   history.push(ROUTES.CHECKOUT_STEP_ONE);
                 }}
-              >
-                CHECKOUT
-              </a>
+                size={BUTTON_SIZES.MEDIUM}
+                type={BUTTON_TYPES.ACTION}
+              />
             </div>
           </div>
         </div>
