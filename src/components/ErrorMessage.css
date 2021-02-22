@@ -34,3 +34,7 @@
   right: 5px;
   top: 5px;
 }
+
+.error-message-container .error-button:focus {
+  outline: none;
+}

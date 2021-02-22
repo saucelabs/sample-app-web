@@ -7,6 +7,7 @@ describe("ErrorMessage", () => {
     const props = {
       isError: false,
       errorMessage: "Error Message",
+      onClick: () => {},
     };
     const component = shallow(<ErrorMessage {...props} />);
 
@@ -17,6 +18,20 @@ describe("ErrorMessage", () => {
     const props = {
       isError: true,
       errorMessage: "Error Message",
+      onClick: () => {},
+    };
+    const component = shallow(<ErrorMessage {...props} />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should be able to render custom props on the container level", () => {
+    const props = {
+      isError: false,
+      errorMessage: "",
+      onClick: () => {},
+      foo: "bar",
+      bar: "foo-bar",
     };
     const component = shallow(<ErrorMessage {...props} />);
 

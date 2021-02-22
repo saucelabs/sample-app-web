@@ -1,14 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ErrorMessage should be able to render custom props on the container level 1`] = `
+<div
+  bar="foo-bar"
+  className="error-message-container"
+  foo="bar"
+/>
+`;
+
 exports[`ErrorMessage should render an error message when there is an error 1`] = `
 <div
-  className="error-message-container  error"
+  className="error-message-container error"
 >
   <h3
     data-test="error"
   >
     <button
       className="error-button"
+      onClick={[Function]}
     >
       <FontAwesomeIcon
         border={false}
@@ -49,6 +58,6 @@ exports[`ErrorMessage should render an error message when there is an error 1`] 
 
 exports[`ErrorMessage should render no error message when there is not error 1`] = `
 <div
-  className="error-message-container "
+  className="error-message-container"
 />
 `;

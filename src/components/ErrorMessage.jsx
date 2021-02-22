@@ -6,7 +6,10 @@ import "./ErrorMessage.css";
 
 const ErrorMessage = ({ isError, errorMessage, onClick, ...props }) => {
   return (
-    <div className={`error-message-container ${isError ? " error" : ""}`}>
+    <div
+      className={`error-message-container${isError ? " error" : ""}`}
+      {...props}
+    >
       {isError && (
         // This component is not structured how it should,
         // But this is done to keep backwards compatibility
@@ -25,11 +28,15 @@ ErrorMessage.propTypes = {
   /**
    * If this is an isError field yes or no
    */
-  isError: PropTypes.bool,
+  isError: PropTypes.bool.isRequired,
   /**
    * The value of the input
    */
   errorMessage: PropTypes.string.isRequired,
+  /**
+   * The on change handler
+   */
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ErrorMessage;
