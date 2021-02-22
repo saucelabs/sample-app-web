@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { isProblemUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import SwagLabsFooter from "../components/Footer";
@@ -118,10 +116,12 @@ function CheckOutStepOne(props) {
                     history.push(ROUTES.CART);
                   }}
                   size={BUTTON_SIZES.MEDIUM}
+                  testId="cancel"
                   type={BUTTON_TYPES.BACK}
                 />
                 <SubmitButton
                   customClass="btn btn_primary cart_button btn_action"
+                  testId="continue"
                   value="Continue"
                 />
               </div>

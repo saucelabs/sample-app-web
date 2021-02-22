@@ -51,10 +51,11 @@ function InventoryListItem(props) {
   }
   const itemLink = `${ROUTES.INVENTORY_LIST}?id=${linkId}`;
 
-  const ButtonType = ({ id, itemInCart }) => {
+  const ButtonType = ({ id, item, itemInCart }) => {
     const label = itemInCart ? "Remove" : "Add to cart";
     const onClick = itemInCart ? () => removeFromCart(id) : () => addToCart(id);
     const type = itemInCart ? BUTTON_TYPES.SECONDARY : BUTTON_TYPES.PRIMARY;
+    const testId = `${label}-${item}`.replace(/\s+/g, "-").toLowerCase();
 
     return (
       <Button
@@ -62,6 +63,7 @@ function InventoryListItem(props) {
         label={label}
         onClick={onClick}
         size={BUTTON_SIZES.SMALL}
+        testId={testId}
         type={type}
       />
     );
@@ -100,7 +102,7 @@ function InventoryListItem(props) {
       </div>
       <div className="pricebar">
         <div className="inventory_item_price">${price}</div>
-        <ButtonType id={id} itemInCart={itemInCart} />
+        <ButtonType id={id} itemInCart={itemInCart} item={name} />
       </div>
     </div>
   );

@@ -26,6 +26,10 @@
   width: 220px;
 }
 
+.checkout_buttons .btn {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 900px) {
   .checkout_buttons {
     display: block;

@@ -35,6 +35,7 @@ function Cart(props) {
                   history.push(ROUTES.INVENTORY);
                 }}
                 size={BUTTON_SIZES.MEDIUM}
+                testId="continue-shopping"
                 type={BUTTON_TYPES.BACK}
               />
               <Button
@@ -47,6 +48,7 @@ function Cart(props) {
                   history.push(ROUTES.CHECKOUT_STEP_ONE);
                 }}
                 size={BUTTON_SIZES.MEDIUM}
+                testId="checkout"
                 type={BUTTON_TYPES.ACTION}
               />
             </div>

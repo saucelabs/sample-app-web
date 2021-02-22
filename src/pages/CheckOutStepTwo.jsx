@@ -74,6 +74,7 @@ function CheckOutStepTwo(props) {
                     history.push(ROUTES.INVENTORY);
                   }}
                   size={BUTTON_SIZES.MEDIUM}
+                  testId="cancel"
                   type={BUTTON_TYPES.BACK}
                 />
                 <Button
@@ -85,6 +86,7 @@ function CheckOutStepTwo(props) {
                     history.push(ROUTES.CHECKOUT_COMPLETE);
                   }}
                   size={BUTTON_SIZES.MEDIUM}
+                  testId="finish"
                   type={BUTTON_TYPES.ACTION}
                 />
               </div>

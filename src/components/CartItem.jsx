@@ -48,6 +48,7 @@ function CartItem(props) {
             <Button
               customClass="cart_button"
               label="Remove"
+              testId={`remove-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
               onClick={() => removeFromCart(item.id)}
               size={BUTTON_SIZES.SMALL}
               type={BUTTON_TYPES.SECONDARY}
