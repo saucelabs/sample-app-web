@@ -23,8 +23,25 @@
 }
 
 .cart_footer {
-  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
   border-top: 2px solid #ededef;
   padding: 20px 0;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+  .cart_footer {
+    display: block;
+    justify-content: inherit;
+  }
+
+  .cart_footer .btn {
+    margin-bottom: 15px;
+  }
+}
+
+/* @TODO: Fix this when we are implementing Flexbox */
+.cart_button {
+  float: right;
 }

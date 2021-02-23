@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { isProblemUser } from "../utils/Credentials";
 import "./InventoryListItem.css";
 import { ROUTES } from "../utils/Constants";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
 
 function InventoryListItem(props) {
   const { history } = props;
@@ -49,27 +50,24 @@ function InventoryListItem(props) {
     linkId += 1;
   }
   const itemLink = `${ROUTES.INVENTORY_LIST}?id=${linkId}`;
-  let cartButton;
 
-  if (itemInCart) {
-    cartButton = (
-      <button
-        className="btn_secondary btn_inventory"
-        onClick={() => removeFromCart(id)}
-      >
-        REMOVE
-      </button>
+  const ButtonType = ({ id, item, itemInCart }) => {
+    const label = itemInCart ? "Remove" : "Add to cart";
+    const onClick = itemInCart ? () => removeFromCart(id) : () => addToCart(id);
+    const type = itemInCart ? BUTTON_TYPES.SECONDARY : BUTTON_TYPES.PRIMARY;
+    const testId = `${label}-${item}`.replace(/\s+/g, "-").toLowerCase();
+
+    return (
+      <Button
+        customClass="btn_inventory"
+        label={label}
+        onClick={onClick}
+        size={BUTTON_SIZES.SMALL}
+        testId={testId}
+        type={type}
+      />
     );
-  } else {
-    cartButton = (
-      <button
-        className="btn_primary btn_inventory"
-        onClick={() => addToCart(id)}
-      >
-        ADD TO CART
-      </button>
-    );
-  }
+  };
 
   return (
     <div className="inventory_item">
@@ -104,7 +102,7 @@ function InventoryListItem(props) {
       </div>
       <div className="pricebar">
         <div className="inventory_item_price">${price}</div>
-        {cartButton}
+        <ButtonType id={id} itemInCart={itemInCart} item={name} />
       </div>
     </div>
   );

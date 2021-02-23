@@ -49,6 +49,7 @@ exports[`Login should render correctly 1`] = `
               onClick={[Function]}
             />
             <SubmitButton
+              customClass="btn_action"
               testId="login-button"
               value="Login"
             />

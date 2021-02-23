@@ -2,13 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./SubmitButton.css";
 
-const SubmitButton = ({ testId, value, ...props }) => {
+const SubmitButton = ({ customClass, testId, value, ...props }) => {
+  const extraClass = customClass ? ` ${customClass}` : "";
   return (
     <input
       type="submit"
-      // `btn_action` has no style function
-      // but is there for backwards compatibility
-      className="submit-button btn_action"
+      className={`submit-button${extraClass}`}
       value={value}
       {...(testId
         ? {
@@ -24,6 +23,10 @@ const SubmitButton = ({ testId, value, ...props }) => {
 
 SubmitButton.propTypes = {
   /**
+   * A custom class
+   */
+  customClass: PropTypes.string,
+  /**
    * The test id
    */
   testId: PropTypes.string,
@@ -34,6 +37,7 @@ SubmitButton.propTypes = {
 };
 
 SubmitButton.defaultProps = {
+  customClass: undefined,
   testId: undefined,
 };
 
