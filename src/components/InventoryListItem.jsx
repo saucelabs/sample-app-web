@@ -87,22 +87,24 @@ function InventoryListItem(props) {
           />
         </a>
       </div>
-      <div className="inventory_item_label">
-        <a
-          href="#"
-          id={`item_${id}_title_link`}
-          onClick={(evt) => {
-            evt.preventDefault();
-            history.push(itemLink);
-          }}
-        >
-          <div className="inventory_item_name">{name}</div>
-        </a>
-        <div className="inventory_item_desc">{desc}</div>
-      </div>
-      <div className="pricebar">
-        <div className="inventory_item_price">${price}</div>
-        <ButtonType id={id} itemInCart={itemInCart} item={name} />
+      <div className="inventory_item_description">
+        <div className="inventory_item_label">
+          <a
+            href="#"
+            id={`item_${id}_title_link`}
+            onClick={(evt) => {
+              evt.preventDefault();
+              history.push(itemLink);
+            }}
+          >
+            <div className="inventory_item_name">{name}</div>
+          </a>
+          <div className="inventory_item_desc">{desc}</div>
+        </div>
+        <div className="pricebar">
+          <div className="inventory_item_price">${price}</div>
+          <ButtonType id={id} itemInCart={itemInCart} item={name} />
+        </div>
       </div>
     </div>
   );
