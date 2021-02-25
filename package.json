@@ -29,11 +29,11 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
     "@storybook/addon-actions": "^6.1.18",
-    "@storybook/addon-essentials": "^6.1.18",
+    "@storybook/addon-essentials": "^6.1.20",
     "@storybook/addon-links": "^6.1.18",
     "@storybook/node-logger": "^6.1.18",
     "@storybook/preset-create-react-app": "^3.1.6",
-    "@storybook/react": "^6.1.18",
+    "@storybook/react": "^6.1.20",
     "@wdio/cli": "^6.12.1",
     "@wdio/jasmine-framework": "^6.11.0",
     "@wdio/local-runner": "^6.12.1",
@@ -45,6 +45,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",
     "prop-types": "^15.7.2",
+    "storybook-react-router": "^1.0.8",
     "wdio-chromedriver-service": "^6.0.4"
   },
   "scripts": {
@@ -81,9 +82,9 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches":20,
-        "functions":20,
-        "lines":20,
+        "branches": 20,
+        "functions": 20,
+        "lines": 20,
         "statements": 20
       }
     },

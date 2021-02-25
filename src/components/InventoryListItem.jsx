@@ -1,22 +1,20 @@
-import React, {useState} from "react";
-import {withRouter} from "react-router-dom";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
-import {ShoppingCart} from "../utils/shopping-cart";
-import {isProblemUser} from "../utils/Credentials";
+import { ShoppingCart } from "../utils/shopping-cart";
+import { isProblemUser } from "../utils/Credentials";
 import "./InventoryListItem.css";
-import {ROUTES} from "../utils/Constants";
-import Button, {BUTTON_SIZES, BUTTON_TYPES} from "./Button";
+import { ROUTES } from "../utils/Constants";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
 
 const InventoryListItem = (props) => {
-  const {desc, id, image_url, history, name, price} = props;
+  const { desc, id, image_url, history, name, price } = props;
   const [swagId] = useState(id);
   const [imageUrl, setImageUrl] = useState(image_url);
   const [swagName] = useState(name);
   const [swagDescription] = useState(desc);
   const [swagPrice] = useState(price);
-  const [itemInCart, setItemInCart] = useState(
-    ShoppingCart.isItemInCart(id)
-  );
+  const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id));
   /**
    * @TODO:
    * This can't be tested yet because enzyme currently doesn't support ReactJS17,
@@ -70,7 +68,7 @@ const InventoryListItem = (props) => {
    * and functions
    */
   /* istanbul ignore next */
-  const ButtonType = ({id, item, itemInCart}) => {
+  const ButtonType = ({ id, item, itemInCart }) => {
     const label = itemInCart ? "Remove" : "Add to cart";
     const onClick = itemInCart ? () => removeFromCart(id) : () => addToCart(id);
     const type = itemInCart ? BUTTON_TYPES.SECONDARY : BUTTON_TYPES.PRIMARY;
@@ -122,12 +120,12 @@ const InventoryListItem = (props) => {
         </div>
         <div className="pricebar">
           <div className="inventory_item_price">${swagPrice}</div>
-          <ButtonType id={swagId} itemInCart={itemInCart} item={swagName}/>
+          <ButtonType id={swagId} itemInCart={itemInCart} item={swagName} />
         </div>
       </div>
     </div>
   );
-}
+};
 
 InventoryListItem.propTypes = {
   /**
@@ -138,7 +136,7 @@ InventoryListItem.propTypes = {
    * The history
    */
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired
+    push: PropTypes.func.isRequired,
   }).isRequired,
   /**
    * The id of the list item

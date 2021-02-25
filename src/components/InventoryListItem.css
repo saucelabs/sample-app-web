@@ -33,11 +33,13 @@
   text-decoration: none;
 }
 .inventory_item_name {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1.4em;
   font-weight: 500;
   color: #e2231a;
 }
 .inventory_item_desc {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1em;
   margin-top: 7px;
   color: #777777;
@@ -51,6 +53,7 @@
 .inventory_item_price {
   border-top: 2px solid #ededef;
   color: #e2231a;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1.6em;
   display: inline-block;
   padding-top: 5px;
