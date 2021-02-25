@@ -21,7 +21,7 @@ config.capabilities = [
 // ========
 // Services
 // ========
-config.services = ['selenium-standalone'];
+config.services = ['chromedriver'];
 
 exports.config = config;
 

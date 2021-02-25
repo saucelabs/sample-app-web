@@ -16,27 +16,19 @@ jobs:
         with:
           node-version: '14.x'
 
-      # build current site
-      - name: Current site
+      # build site
+      - name: Site site
         working-directory: ./
-        run: |
-          ls
-          yarn
-          yarn build
-
-      # build new site
-      - name: New site
-        working-directory: ./new
         env:
           CI: false
         run: |
           ls
-          yarn
-          yarn build
+          npm install
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./public
           cname: www.saucedemo.com

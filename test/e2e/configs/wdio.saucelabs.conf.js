@@ -1,13 +1,8 @@
+const BUILD_PREFIX = process.env.BUILD_PREFIX ? `GitHub Actions-` : '';
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
-    build: `Sauce Demo App build-${new Date().getTime()}`,
+    build: `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
-    seleniumVersion: '3.141.59',
-};
-const chromeOptions = {
-    'goog:chromeOptions': {
-        'w3c': true,
-    },
 };
 
 // =========================
@@ -21,12 +16,6 @@ config.key = process.env.SAUCE_ACCESS_KEY;
 // If you don't provide the region, it defaults to `us`.
 config.region = process.env.REGION || 'us';
 
-// ========
-// Base url
-// ========
-// For Sauce we serve a website with a server on this host
-config.baseUrl = 'http://localhost:5000';
-
 // ============
 // Capabilities
 // ============
@@ -35,13 +24,12 @@ config.capabilities = [
      * Desktop browsers
      */
     {
-        browserName: 'googlechrome',
+        browserName: 'chrome',
         platformName: 'Windows 10',
         browserVersion: 'latest',
         'sauce:options': {
             ...defaultBrowserSauceOptions,
         },
-        ...chromeOptions,
     },
     {
         browserName: 'firefox',

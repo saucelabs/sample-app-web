@@ -4,11 +4,6 @@
     <meta charset="utf-8">
     <title>Single Page Apps for GitHub Pages</title>
     <script type="text/javascript">
-      /**
-       * THIS 404 HAS NO VALUE NOW, BUT WILL HAVE WHEN WE DON'T DEPLOY TO THE `www.saucedemo.com/new`
-       * subdirectory anymore
-       */
-
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
@@ -22,7 +17,6 @@
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        '/new' + // ADD THIS LINE
         '/?' + 'redirect=true' +
         // DON'T INCLUDE /your-subdirectory IN REDIRECT QUERY
         (l.pathname ? '&pathname=' + l.pathname.replace('/new', '').replace(/\//g, '%2F').replace(/&/g, '%26') : '') +

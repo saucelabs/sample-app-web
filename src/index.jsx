@@ -19,7 +19,7 @@ import { ROUTES } from "./utils/Constants";
 import PrivateRoute from "./components/PrivateRoute";
 
 const routing = (
-  <Router basename={"/new"}>
+  <Router>
     <Route exact path={ROUTES.LOGIN} component={Login} />
     <PrivateRoute path={ROUTES.INVENTORY} component={Inventory} />
     <PrivateRoute path={ROUTES.INVENTORY_LIST} component={InventoryItem} />

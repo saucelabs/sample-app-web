@@ -4,8 +4,6 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -27,19 +25,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    # New Site steps
-    - name: New site - Install dependencies
-      working-directory: ./new
-      run: yarn
+    # Site Testing steps
+    - name: Install dependencies
+      working-directory: ./
+      run: npm install
 
-    - name: New site - Run Unit Tests and generate coverage report
-      working-directory: ./new
-      run: yarn test.coverage
+    - name: Run Unit Tests and generate coverage report
+      working-directory: ./
+      run: npm run test.coverage
 
-    - name: New site - Build and E2E test the new site
-      working-directory: ./new
+    - name: Build and E2E test the site
+      working-directory: ./
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         BUILD_PREFIX: true
-      run: yarn start & npx wait-on --timeout 60000 http://localhost:3000/new && yarn test.e2e.sauce.us
+      run: npm run start & npx wait-on --timeout 60000 http://localhost:3000 && npm run test.e2e.sauce.us
