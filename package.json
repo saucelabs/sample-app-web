@@ -1,6 +1,5 @@
 {
   "name": "sample-app-web",
-  "homepage": "https://www.saucedemo.com",
   "version": "2.0.0",
   "private": true,
   "dependencies": {
