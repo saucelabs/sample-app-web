@@ -89,7 +89,10 @@
     },
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|png|svg)$": "<rootDir>/src/utils/__mocks__/fileMock.js"
+    }
   },
   "eslintConfig": {
     "extends": [
