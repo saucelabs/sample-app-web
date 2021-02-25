@@ -17,7 +17,6 @@
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        '/new' + // ADD THIS LINE
         '/?' + 'redirect=true' +
         // DON'T INCLUDE /your-subdirectory IN REDIRECT QUERY
         (l.pathname ? '&pathname=' + l.pathname.replace('/new', '').replace(/\//g, '%2F').replace(/&/g, '%26') : '') +
