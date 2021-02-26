@@ -12,14 +12,17 @@
 
 .app_logo {
   background: url("../assets/img/SwagLabs_logo.png") no-repeat center center;
+  background: url("../assets/svg/logo3x.svg") no-repeat center center,
+    linear-gradient(transparent, transparent);
   text-align: center;
   margin: 0 50px;
   height: 35px;
 }
 
 .shopping_cart_container {
-  height: 32px;
+  height: 40px;
+  width: 40px;
   position: absolute;
-  top: 30px;
-  right: 40px;
+  top: 20px;
+  right: 20px;
 }

@@ -4,9 +4,11 @@ import { slide as Menu } from "react-burger-menu";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { ROUTES } from "../utils/Constants";
 import { isProblemUser, removeCredentials } from "../utils/Credentials";
-import "./HeaderMenuButton.css";
+import menuIconPng from "../assets/img/menu.png";
+import menuIconSvg from "../assets/svg/menu3x.svg";
+import "./DrawerMenu.css";
 
-function MenuButton(props) {
+function DrawerMenu(props) {
   const { history } = props;
   const resetStorage = () => {
     // Wipe out our shopping cart now
@@ -14,7 +16,12 @@ function MenuButton(props) {
   };
 
   return (
-    <Menu pageWrapId={"contents_wrapper"} outerContainerId={"page_wrapper"}>
+    <Menu
+      // customBurgerIcon={<img src={ menuIconPng } />}
+      customBurgerIcon={<img src={menuIconPng} srcSet={menuIconSvg} />}
+      outerContainerId={"page_wrapper"}
+      pageWrapId={"contents_wrapper"}
+    >
       <a
         id="inventory_sidebar_link"
         className="menu-item"
@@ -64,4 +71,4 @@ function MenuButton(props) {
   );
 }
 
-export default withRouter(MenuButton);
+export default withRouter(DrawerMenu);

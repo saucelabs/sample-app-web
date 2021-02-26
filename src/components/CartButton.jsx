@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { withRouter } from "react-router-dom";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { ROUTES } from "../utils/Constants";
-import "./HeaderCartButton.css";
+import "./CartButton.css";
 
 function CartButton(props) {
   const { history } = props;
@@ -29,11 +27,7 @@ function CartButton(props) {
   }
 
   return (
-    <a
-      className="shopping_cart_link fa-layers fa-fw"
-      onClick={() => history.push(ROUTES.CART)}
-    >
-      <FontAwesomeIcon icon={faShoppingCart} size="3x" />
+    <a className="shopping_cart_link" onClick={() => history.push(ROUTES.CART)}>
       {cartBadge}
     </a>
   );

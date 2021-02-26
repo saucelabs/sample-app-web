@@ -1,0 +1,26 @@
+.shopping_cart_link {
+  background: url("../assets/img/cart.png") no-repeat center center;
+  background: url("../assets/svg/cart3x.svg") no-repeat center center,
+    linear-gradient(transparent, transparent);
+  height: 40px;
+  width: 40px;
+  display: block;
+  position: relative;
+}
+
+.shopping_cart_badge {
+  background-color: #e2231a;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  color: #ffffff;
+  font-weight: 400;
+  top: 0;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
