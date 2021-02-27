@@ -1,5 +1,23 @@
+@media only screen and (max-width: 480px) {
+  .bm-menu-wrap{
+    width: 100% !important;
+  }
+}
 .menu-item {
+  border-bottom: 2px solid #474c55;
+  color: #474c55;
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 7px;
+  text-decoration: none;
   cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.menu-item:hover{
+  border-bottom: 2px solid #e2231a;
+  color: #e2231a;
 }
 
 /* ===============Burger button styling==================== */
@@ -19,13 +37,13 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 40px !important;
+  width: 40px !important;
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: #FFFFFF;
 }
 
 /* General sidebar styles */
@@ -41,19 +59,8 @@
   fill: #373a47;
 }
 
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-}
-
 /* Individual item */
 .bm-item {
-  display: inline-block;
-  color: #666;
-  font-weight: 300;
-  margin-bottom: 7px;
-  text-decoration: none;
-  padding: 4px;
 }
 
 /* Styling of overlay */
