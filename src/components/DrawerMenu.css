@@ -1,5 +1,5 @@
 @media only screen and (max-width: 480px) {
-  .bm-menu-wrap{
+  .bm-menu-wrap {
     width: 100% !important;
   }
 }
@@ -15,7 +15,7 @@
   padding: 10px 0;
 }
 
-.menu-item:hover{
+.menu-item:hover {
   border-bottom: 2px solid #e2231a;
   color: #e2231a;
 }
@@ -43,7 +43,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 /* General sidebar styles */
