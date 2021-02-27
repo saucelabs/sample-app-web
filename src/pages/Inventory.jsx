@@ -7,6 +7,7 @@ import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import { sortAsc, sortDesc, sortHiLo, sortLoHi } from "../utils/Sorting";
 import "./Inventory.css";
+import SecondaryHeader from "../components/header/SecondaryHeader";
 
 function Inventory() {
   const [inventoryList, setInventoryList] = useState(
@@ -53,10 +54,10 @@ function Inventory() {
         <HeaderContainer />
         <div id="inventory_container">
           <div>
-            <div className="header_secondary_container">
-              <div className="peek"></div>
-              <div id="inventory_filter_container">
-                <div className="product_label">Products</div>
+            <SecondaryHeader
+              title="Products"
+              headerBot
+              rightComponent={
                 <select
                   onChange={sortByOption}
                   className="product_sort_container"
@@ -66,8 +67,8 @@ function Inventory() {
                   <option value="lohi">Price (low to high)</option>
                   <option value="hilo">Price (high to low)</option>
                 </select>
-              </div>
-            </div>
+              }
+            />
 
             <div id="inventory_container" className="inventory_container">
               <div className="inventory_list">

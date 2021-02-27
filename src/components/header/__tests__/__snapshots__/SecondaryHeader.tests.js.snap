@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SecondaryHeader should render all props 1`] = `
+<div
+  className="header_secondary_container"
+>
+  <LeftComponent
+    leftComponent={
+      <bound Template
+        type="checkbox"
+      />
+    }
+  />
+  <Title
+    title="sample title"
+  />
+  <HeaderBot />
+  <RightComponent
+    rightComponent={
+      <bound Template
+        type="radio"
+      />
+    }
+  />
+</div>
+`;
+
+exports[`SecondaryHeader should render without any props 1`] = `
+<div
+  className="header_secondary_container"
+/>
+`;

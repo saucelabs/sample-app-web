@@ -13,20 +13,9 @@ exports[`Inventory should render correctly 1`] = `
       id="inventory_container"
     >
       <div>
-        <div
-          className="header_secondary_container"
-        >
-          <div
-            className="peek"
-          />
-          <div
-            id="inventory_filter_container"
-          >
-            <div
-              className="product_label"
-            >
-              Products
-            </div>
+        <SecondaryHeader
+          headerBot={true}
+          rightComponent={
             <select
               className="product_sort_container"
               onChange={[Function]}
@@ -52,8 +41,9 @@ exports[`Inventory should render correctly 1`] = `
                 Price (high to low)
               </option>
             </select>
-          </div>
-        </div>
+          }
+          title="Products"
+        />
         <div
           className="inventory_container"
           id="inventory_container"

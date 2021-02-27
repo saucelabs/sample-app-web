@@ -8,6 +8,7 @@ import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import "./Cart.css";
+import SecondaryHeader from "../components/header/SecondaryHeader";
 
 function Cart(props) {
   const { history } = props;
@@ -17,7 +18,7 @@ function Cart(props) {
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
         <HeaderContainer />
-        <div className="subheader">Your Cart</div>
+        <SecondaryHeader title="Your Cart" />
         <div id="cart_contents_container" className="cart_contents_container">
           <div>
             <div className="cart_list">

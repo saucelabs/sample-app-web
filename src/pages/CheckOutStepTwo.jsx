@@ -9,6 +9,7 @@ import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import "./CheckOutStepTwo.css";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
+import SecondaryHeader from "../components/header/SecondaryHeader";
 
 function CheckOutStepTwo(props) {
   const { history } = props;
@@ -36,7 +37,7 @@ function CheckOutStepTwo(props) {
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
         <HeaderContainer />
-        <div className="subheader">Checkout: Overview</div>
+        <SecondaryHeader title="Checkout: Overview" />
         <div
           id="checkout_summary_container"
           className="checkout_summary_container"

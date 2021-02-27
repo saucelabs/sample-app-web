@@ -9,6 +9,7 @@ import InputError, { INPUT_TYPES } from "../components/InputError";
 import ErrorMessage from "../components/ErrorMessage";
 import SubmitButton from "../components/SubmitButton";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
+import SecondaryHeader from "../components/header/SecondaryHeader";
 
 function CheckOutStepOne(props) {
   const { history } = props;
@@ -58,7 +59,7 @@ function CheckOutStepOne(props) {
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
         <HeaderContainer />
-        <div className="subheader">Checkout: Your Information</div>
+        <SecondaryHeader title="Checkout: Your Information" />
         <div id="checkout_info_container" className="checkout_info_container">
           <div className="checkout_info_wrapper">
             <form onSubmit={handleSubmit}>
