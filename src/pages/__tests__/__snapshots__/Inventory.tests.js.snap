@@ -106,3 +106,4 @@ exports[`Inventory should render correctly 1`] = `
   <SwagLabsFooter />
 </div>
 `;
+
