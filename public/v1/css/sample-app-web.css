@@ -314,28 +314,6 @@ input {
 }
 
 /*========= SHOPPING CART ==========*/
-.shopping_cart_container {
-	height: 32px;
-	position: absolute;
-	top: 30px;
-	right: 40px;
-}
-
-.shopping_cart_link {
-	color: #777;
-}
-
-.shopping_cart_link > svg {
-	width: 30px !important;
-}
-
-.shopping_cart_badge {
-	font-weight: 400;
-	top: -20px;
-	right: -30px;
-	transform: scale(1.1);
-}
-
 .cart_item_label {
 	padding: 20px 0 0 10px;
 	width: calc(99% - 165px);

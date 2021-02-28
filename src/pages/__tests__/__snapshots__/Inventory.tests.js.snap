@@ -8,52 +8,41 @@ exports[`Inventory should render correctly 1`] = `
   <div
     id="contents_wrapper"
   >
-    <HeaderContainer />
+    <HeaderContainer
+      secondaryHeaderBot={true}
+      secondaryRightComponent={
+        <select
+          className="product_sort_container"
+          onChange={[Function]}
+        >
+          <option
+            value="az"
+          >
+            Name (A to Z)
+          </option>
+          <option
+            value="za"
+          >
+            Name (Z to A)
+          </option>
+          <option
+            value="lohi"
+          >
+            Price (low to high)
+          </option>
+          <option
+            value="hilo"
+          >
+            Price (high to low)
+          </option>
+        </select>
+      }
+      secondaryTitle="Products"
+    />
     <div
       id="inventory_container"
     >
       <div>
-        <div
-          className="header_secondary_container"
-        >
-          <div
-            className="peek"
-          />
-          <div
-            id="inventory_filter_container"
-          >
-            <div
-              className="product_label"
-            >
-              Products
-            </div>
-            <select
-              className="product_sort_container"
-              onChange={[Function]}
-            >
-              <option
-                value="az"
-              >
-                Name (A to Z)
-              </option>
-              <option
-                value="za"
-              >
-                Name (Z to A)
-              </option>
-              <option
-                value="lohi"
-              >
-                Price (low to high)
-              </option>
-              <option
-                value="hilo"
-              >
-                Price (high to low)
-              </option>
-            </select>
-          </div>
-        </div>
         <div
           className="inventory_container"
           id="inventory_container"
@@ -117,3 +106,4 @@ exports[`Inventory should render correctly 1`] = `
   <SwagLabsFooter />
 </div>
 `;
+

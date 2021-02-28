@@ -16,8 +16,7 @@ function Cart(props) {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
-        <div className="subheader">Your Cart</div>
+        <HeaderContainer secondaryTitle="Your Cart" />
         <div id="cart_contents_container" className="cart_contents_container">
           <div>
             <div className="cart_list">

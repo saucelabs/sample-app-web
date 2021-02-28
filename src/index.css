@@ -30,24 +30,6 @@ input {
   }
 }
 
-/* Secondary header */
-.header_secondary_container {
-  background: #474c55;
-  width: 100%;
-  height: 80px;
-  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
-}
-
-.peek {
-  background: url("assets/img/peek.png") no-repeat;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 15px;
-  bottom: -40px;
-  z-index: 2;
-}
-
 /*Sub header */
 .subheader {
   position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */

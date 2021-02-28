@@ -35,8 +35,7 @@ function CheckOutStepTwo(props) {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
-        <div className="subheader">Checkout: Overview</div>
+        <HeaderContainer secondaryTitle="Checkout: Overview" />
         <div
           id="checkout_summary_container"
           className="checkout_summary_container"

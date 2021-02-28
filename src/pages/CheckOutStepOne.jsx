@@ -57,8 +57,7 @@ function CheckOutStepOne(props) {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
-        <div className="subheader">Checkout: Your Information</div>
+        <HeaderContainer secondaryTitle="Checkout: Your Information" />
         <div id="checkout_info_container" className="checkout_info_container">
           <div className="checkout_info_wrapper">
             <form onSubmit={handleSubmit}>

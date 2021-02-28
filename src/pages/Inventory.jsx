@@ -50,25 +50,20 @@ function Inventory() {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
+        <HeaderContainer
+          secondaryTitle="Products"
+          secondaryHeaderBot
+          secondaryRightComponent={
+            <select onChange={sortByOption} className="product_sort_container">
+              <option value="az">Name (A to Z)</option>
+              <option value="za">Name (Z to A)</option>
+              <option value="lohi">Price (low to high)</option>
+              <option value="hilo">Price (high to low)</option>
+            </select>
+          }
+        />
         <div id="inventory_container">
           <div>
-            <div className="header_secondary_container">
-              <div className="peek"></div>
-              <div id="inventory_filter_container">
-                <div className="product_label">Products</div>
-                <select
-                  onChange={sortByOption}
-                  className="product_sort_container"
-                >
-                  <option value="az">Name (A to Z)</option>
-                  <option value="za">Name (Z to A)</option>
-                  <option value="lohi">Price (low to high)</option>
-                  <option value="hilo">Price (high to low)</option>
-                </select>
-              </div>
-            </div>
-
             <div id="inventory_container" className="inventory_container">
               <div className="inventory_list">
                 {inventoryList.map((item, i) => {

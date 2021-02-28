@@ -9,8 +9,7 @@ function Finish() {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
-        <div className="subheader">Finish</div>
+        <HeaderContainer secondaryTitle="Checkout: Complete!" />
         <div
           id="checkout_complete_container"
           className="checkout_complete_container"
