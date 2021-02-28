@@ -51,7 +51,7 @@
   background: #fff;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  box-shadow: 5px 0px 5px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: none;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -61,9 +61,4 @@
 
 /* Individual item */
 .bm-item {
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
 }

@@ -23,6 +23,7 @@ function DrawerMenu(props) {
       customCrossIcon={<img src={menuClosePng} srcSet={menuCloseSvg} />}
       outerContainerId={"page_wrapper"}
       pageWrapId={"contents_wrapper"}
+      noOverlay
     >
       <a
         id="inventory_sidebar_link"

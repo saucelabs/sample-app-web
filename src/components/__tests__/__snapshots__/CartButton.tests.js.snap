@@ -6,7 +6,7 @@ exports[`CartButton should render the badge if products have been added into the
   onClick={[Function]}
 >
   <span
-    className="fa-layers-counter shopping_cart_badge"
+    className="shopping_cart_badge"
   >
     3
   </span>

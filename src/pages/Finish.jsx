@@ -4,14 +4,12 @@ import PonyExpress from "../assets/img/pony-express.png";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import "./Finish.css";
-import SecondaryHeader from "../components/header/SecondaryHeader";
 
 function Finish() {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
-        <SecondaryHeader title="Checkout: Complete!" />
+        <HeaderContainer secondaryTitle="Checkout: Complete!" />
         <div
           id="checkout_complete_container"
           className="checkout_complete_container"
