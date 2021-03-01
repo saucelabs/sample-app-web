@@ -3,7 +3,6 @@
   min-height: 360px;
   margin-top: auto;
   position: relative;
-  /*display: inline-table;*/
 }
 .footer_copy,
 .footer_robot,
@@ -55,6 +54,7 @@
     height: auto;
     text-align: center;
     padding: 0 10px;
+    display: inline-table;
   }
   .social,
   .footer_copy,

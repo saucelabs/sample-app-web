@@ -9,8 +9,7 @@ import HeaderContainer from "../components/HeaderContainer";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import "./Cart.css";
 
-function Cart(props) {
-  const { history } = props;
+const Cart = ({ history }) => {
   const contents = ShoppingCart.getCartContents();
 
   return (
@@ -22,9 +21,9 @@ function Cart(props) {
             <div className="cart_list">
               <div className="cart_quantity_label">QTY</div>
               <div className="cart_desc_label">DESCRIPTION</div>
-              {contents.map((item, i) => {
-                return <CartItem key={i} item={InventoryData[item]} />;
-              })}
+              {contents.map((item, i) => (
+                <CartItem key={i} item={InventoryData[item]} showButton />
+              ))}
             </div>
             <div className="cart_footer">
               <Button
@@ -57,6 +56,6 @@ function Cart(props) {
       <SwagLabsFooter />
     </div>
   );
-}
+};
 
 export default withRouter(Cart);
