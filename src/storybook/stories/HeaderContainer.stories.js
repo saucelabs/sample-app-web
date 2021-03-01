@@ -2,6 +2,7 @@ import React from "react";
 import HeaderContainer from "../../components/HeaderContainer";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 import StoryRouter from "storybook-react-router";
+import InventoryListItem from "../../components/InventoryListItem";
 
 export default {
   title: "SwagLabs/Headers",
@@ -15,6 +16,10 @@ export default {
 const Template = (args) => (
   <>
     <HeaderContainer {...args} />
+    <p>
+      Resize the preview to see the mobile view. The Sauce Bot will disappear in
+      mobile view.
+    </p>
   </>
 );
 
