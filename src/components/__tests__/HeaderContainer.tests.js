@@ -12,6 +12,7 @@ describe("HeaderContainer", () => {
   it("should render with all props", () => {
     const component = shallow(
       <HeaderContainer
+        customClass="custom_class"
         secondaryHeaderBot
         secondaryLeftComponent={<input type="checkbox" />}
         secondaryRightComponent={<input type="radio" />}

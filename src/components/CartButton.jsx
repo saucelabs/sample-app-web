@@ -23,9 +23,7 @@ const CartButton = (props) => {
 
   if (cartContents.length > 0) {
     cartBadge = (
-      <span className="shopping_cart_badge">
-        {cartContents.length}
-      </span>
+      <span className="shopping_cart_badge">{cartContents.length}</span>
     );
   }
 

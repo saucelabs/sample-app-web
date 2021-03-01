@@ -2,7 +2,7 @@
 
 exports[`HeaderContainer should render with all props 1`] = `
 <div
-  className="header_container"
+  className="header_container custom_class"
   id="header_container"
 >
   <div

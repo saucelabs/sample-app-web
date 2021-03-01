@@ -5,6 +5,7 @@ import DrawerMenu from "./DrawerMenu";
 import CartButton from "./CartButton";
 
 const HeaderContainer = ({
+  customClass,
   secondaryHeaderBot,
   secondaryLeftComponent,
   secondaryRightComponent,
@@ -50,9 +51,10 @@ const HeaderContainer = ({
    */
   /* istanbul ignore next */
   const Title = ({ title }) => <span className="title">{title}</span>;
+  const extraClass = customClass ? ` ${customClass}` : "";
 
   return (
-    <div id="header_container" className="header_container">
+    <div id="header_container" className={`header_container${extraClass}`}>
       <div className="primary_header">
         <div id="menu_button_container">
           <DrawerMenu />
@@ -79,6 +81,10 @@ const HeaderContainer = ({
 };
 HeaderContainer.propTypes = {
   /**
+   * A custom class for the header container
+   */
+  customClass: PropTypes.string,
+  /**
    * Show the header bot
    */
   secondaryHeaderBot: PropTypes.bool,
@@ -96,6 +102,7 @@ HeaderContainer.propTypes = {
   title: PropTypes.string,
 };
 HeaderContainer.defaultProps = {
+  customClass: undefined,
   secondaryHeaderBot: undefined,
   secondaryLeftComponent: undefined,
   secondaryRightComponent: undefined,
