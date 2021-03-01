@@ -3,6 +3,7 @@
   min-height: 360px;
   margin-top: auto;
   position: relative;
+  /*display: inline-table;*/
 }
 .footer_copy,
 .footer_robot,
