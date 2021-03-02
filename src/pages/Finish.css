@@ -1,13 +1,28 @@
 .checkout_complete_container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 15px 30px;
+  padding: 30px 15px 50px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .pony_express {
   width: 100%;
   height: 100%;
   max-width: 523px;
   max-height: 381px;
-  margin: 30px auto;
+  margin: 30px auto 50px auto;
+}
+
+.complete-header,
+.complete-text {
+  max-width: 350px;
+}
+
+@media only screen and (min-width: 900px) {
+  .checkout_complete_container {
+    padding-bottom: 100px;
+  }
 }
