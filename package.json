@@ -82,10 +82,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 55,
-        "functions": 55,
-        "lines": 55,
-        "statements": 55
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
       }
     },
     "snapshotSerializers": [
