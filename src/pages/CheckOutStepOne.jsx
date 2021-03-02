@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import { isProblemUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
-import "./CheckOutStepOne.css";
 import InputError, { INPUT_TYPES } from "../components/InputError";
 import ErrorMessage from "../components/ErrorMessage";
 import SubmitButton from "../components/SubmitButton";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
+import "./CheckOutStepOne.css";
 
-function CheckOutStepOne(props) {
-  const { history } = props;
+const CheckOutStepOne = ({ history }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [postalCode, setPostalCode] = useState("");
@@ -131,6 +131,14 @@ function CheckOutStepOne(props) {
       <SwagLabsFooter />
     </div>
   );
-}
+};
+CheckOutStepOne.propTypes = {
+  /**
+   * The history
+   */
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default withRouter(CheckOutStepOne);
