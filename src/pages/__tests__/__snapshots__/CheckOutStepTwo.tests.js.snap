@@ -1,0 +1,370 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckOutStepTwo should give the incorrect order total when we are logged in as a problem user 1`] = `
+<div
+  className="page_wrapper"
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      secondaryTitle="Checkout: Overview"
+    />
+    <div
+      className="checkout_summary_container"
+      id="checkout_summary_container"
+    >
+      <div>
+        <div
+          className="cart_list"
+        >
+          <div
+            className="cart_quantity_label"
+          >
+            QTY
+          </div>
+          <div
+            className="cart_desc_label"
+          >
+            DESCRIPTION
+          </div>
+          <withRouter(CartItem)
+            item={
+              Object {
+                "desc": "Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.",
+                "id": 1,
+                "image_url": "bolt-shirt-1200x1500.jpg",
+                "name": "Sauce Labs Bolt T-Shirt",
+                "price": 15.99,
+              }
+            }
+            key="0"
+          />
+          <withRouter(CartItem)
+            item={
+              Object {
+                "desc": "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.",
+                "id": 2,
+                "image_url": "red-onesie-1200x1500.jpg",
+                "name": "Sauce Labs Onesie",
+                "price": 7.99,
+              }
+            }
+            key="1"
+          />
+          <withRouter(CartItem)
+            item={
+              Object {
+                "desc": "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.",
+                "id": 3,
+                "image_url": "red-tatt-1200x1500.jpg",
+                "name": "Test.allTheThings() T-Shirt (Red)",
+                "price": 15.99,
+              }
+            }
+            key="2"
+          />
+        </div>
+        <div
+          className="summary_info"
+        >
+          <div
+            className="summary_info_label"
+          >
+            Payment Information:
+          </div>
+          <div
+            className="summary_value_label"
+          >
+            SauceCard #31337
+          </div>
+          <div
+            className="summary_info_label"
+          >
+            Shipping Information:
+          </div>
+          <div
+            className="summary_value_label"
+          >
+            FREE PONY EXPRESS DELIVERY!
+          </div>
+          <div
+            className="summary_subtotal_label"
+          >
+            Item total: $
+            79.94
+          </div>
+          <div
+            className="summary_tax_label"
+          >
+            Tax: $
+            6.40
+          </div>
+          <div
+            className="summary_total_label"
+          >
+            Total: $
+            86.34
+          </div>
+          <div
+            className="cart_footer"
+          >
+            <Button
+              customClass="cart_cancel_link"
+              label="Cancel"
+              onClick={[Function]}
+              size="medium"
+              testId="cancel"
+              type="secondary back"
+            />
+            <Button
+              customClass="cart_button"
+              label="Finish"
+              onClick={[Function]}
+              size="medium"
+              testId="finish"
+              type="action"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;
+
+exports[`CheckOutStepTwo should render correctly items 1`] = `
+<div
+  className="page_wrapper"
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      secondaryTitle="Checkout: Overview"
+    />
+    <div
+      className="checkout_summary_container"
+      id="checkout_summary_container"
+    >
+      <div>
+        <div
+          className="cart_list"
+        >
+          <div
+            className="cart_quantity_label"
+          >
+            QTY
+          </div>
+          <div
+            className="cart_desc_label"
+          >
+            DESCRIPTION
+          </div>
+          <withRouter(CartItem)
+            item={
+              Object {
+                "desc": "Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.",
+                "id": 1,
+                "image_url": "bolt-shirt-1200x1500.jpg",
+                "name": "Sauce Labs Bolt T-Shirt",
+                "price": 15.99,
+              }
+            }
+            key="0"
+          />
+          <withRouter(CartItem)
+            item={
+              Object {
+                "desc": "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.",
+                "id": 2,
+                "image_url": "red-onesie-1200x1500.jpg",
+                "name": "Sauce Labs Onesie",
+                "price": 7.99,
+              }
+            }
+            key="1"
+          />
+          <withRouter(CartItem)
+            item={
+              Object {
+                "desc": "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.",
+                "id": 3,
+                "image_url": "red-tatt-1200x1500.jpg",
+                "name": "Test.allTheThings() T-Shirt (Red)",
+                "price": 15.99,
+              }
+            }
+            key="2"
+          />
+        </div>
+        <div
+          className="summary_info"
+        >
+          <div
+            className="summary_info_label"
+          >
+            Payment Information:
+          </div>
+          <div
+            className="summary_value_label"
+          >
+            SauceCard #31337
+          </div>
+          <div
+            className="summary_info_label"
+          >
+            Shipping Information:
+          </div>
+          <div
+            className="summary_value_label"
+          >
+            FREE PONY EXPRESS DELIVERY!
+          </div>
+          <div
+            className="summary_subtotal_label"
+          >
+            Item total: $
+            39.97
+          </div>
+          <div
+            className="summary_tax_label"
+          >
+            Tax: $
+            3.20
+          </div>
+          <div
+            className="summary_total_label"
+          >
+            Total: $
+            43.17
+          </div>
+          <div
+            className="cart_footer"
+          >
+            <Button
+              customClass="cart_cancel_link"
+              label="Cancel"
+              onClick={[Function]}
+              size="medium"
+              testId="cancel"
+              type="secondary back"
+            />
+            <Button
+              customClass="cart_button"
+              label="Finish"
+              onClick={[Function]}
+              size="medium"
+              testId="finish"
+              type="action"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;
+
+exports[`CheckOutStepTwo should render correctly without any items 1`] = `
+<div
+  className="page_wrapper"
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      secondaryTitle="Checkout: Overview"
+    />
+    <div
+      className="checkout_summary_container"
+      id="checkout_summary_container"
+    >
+      <div>
+        <div
+          className="cart_list"
+        >
+          <div
+            className="cart_quantity_label"
+          >
+            QTY
+          </div>
+          <div
+            className="cart_desc_label"
+          >
+            DESCRIPTION
+          </div>
+        </div>
+        <div
+          className="summary_info"
+        >
+          <div
+            className="summary_info_label"
+          >
+            Payment Information:
+          </div>
+          <div
+            className="summary_value_label"
+          >
+            SauceCard #31337
+          </div>
+          <div
+            className="summary_info_label"
+          >
+            Shipping Information:
+          </div>
+          <div
+            className="summary_value_label"
+          >
+            FREE PONY EXPRESS DELIVERY!
+          </div>
+          <div
+            className="summary_subtotal_label"
+          >
+            Item total: $
+            0
+          </div>
+          <div
+            className="summary_tax_label"
+          >
+            Tax: $
+            0.00
+          </div>
+          <div
+            className="summary_total_label"
+          >
+            Total: $
+            0.00
+          </div>
+          <div
+            className="cart_footer"
+          >
+            <Button
+              customClass="cart_cancel_link"
+              label="Cancel"
+              onClick={[Function]}
+              size="medium"
+              testId="cancel"
+              type="secondary back"
+            />
+            <Button
+              customClass="cart_button"
+              label="Finish"
+              onClick={[Function]}
+              size="medium"
+              testId="finish"
+              type="action"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;
