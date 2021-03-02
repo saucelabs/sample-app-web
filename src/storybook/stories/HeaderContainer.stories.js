@@ -2,7 +2,6 @@ import React from "react";
 import HeaderContainer from "../../components/HeaderContainer";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 import StoryRouter from "storybook-react-router";
-import InventoryListItem from "../../components/InventoryListItem";
 
 export default {
   title: "SwagLabs/Headers",

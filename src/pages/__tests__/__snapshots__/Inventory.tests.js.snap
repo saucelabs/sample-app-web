@@ -11,31 +11,31 @@ exports[`Inventory should render correctly 1`] = `
     <HeaderContainer
       secondaryHeaderBot={true}
       secondaryRightComponent={
-        <select
-          className="product_sort_container"
+        <Select
+          activeOption="az"
           onChange={[Function]}
-        >
-          <option
-            value="az"
-          >
-            Name (A to Z)
-          </option>
-          <option
-            value="za"
-          >
-            Name (Z to A)
-          </option>
-          <option
-            value="lohi"
-          >
-            Price (low to high)
-          </option>
-          <option
-            value="hilo"
-          >
-            Price (high to low)
-          </option>
-        </select>
+          options={
+            Array [
+              Object {
+                "key": "az",
+                "value": "Name (A to Z)",
+              },
+              Object {
+                "key": "za",
+                "value": "Name (Z to A)",
+              },
+              Object {
+                "key": "lohi",
+                "value": "Price (low to high)",
+              },
+              Object {
+                "key": "hilo",
+                "value": "Price (high to low)",
+              },
+            ]
+          }
+          testId="product_sort_container"
+        />
       }
       secondaryTitle="Products"
     />

@@ -20,6 +20,28 @@ describe('Swag items list', () => {
         );
     });
 
+    it('should be able to sort the items', () => {
+        setTestContext({
+            user: LOGIN_USERS.STANDARD,
+            path: PAGES.SWAG_ITEMS,
+        });
+        SwagOverviewPage.waitForIsShown();
+
+        // Actual test starts here
+        expect(SwagOverviewPage.getSwagText(0)).toContain(
+          'Sauce Labs Backpack',
+          'Initial order is not correct',
+        );
+
+        AppHeaderPage.selectProductOrder('Price (high to low)');
+
+        expect(SwagOverviewPage.getSwagText(0)).toContain(
+          'Sauce Labs Fleece Jacket',
+          'Sorted order is not correct',
+        );
+
+    });
+
     it('should validate that the details of a product can be opened', () => {
         setTestContext({
             user: LOGIN_USERS.STANDARD,

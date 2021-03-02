@@ -5,6 +5,10 @@ class AppHeaderPage {
         return $('.shopping_cart_link');
     }
 
+    get #productFilter() {
+        return $('.product_sort_container');
+    }
+
     /**
      * Get the cart amount
      *
@@ -21,6 +25,15 @@ class AppHeaderPage {
      */
     openCart() {
         this.#cart.click();
+    }
+
+    /**
+     * Select the order based on visible text
+     *
+     * @param {string} text
+     */
+    selectProductOrder(text){
+        this.#productFilter.selectByVisibleText(text)
     }
 }
 
