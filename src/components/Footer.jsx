@@ -2,7 +2,7 @@ import React from "react";
 import SwagBotFooter from "../assets/img/SwagBot_Footer_graphic.png";
 import "./Footer.css";
 
-function SwagLabsFooter() {
+const SwagLabsFooter = () => {
   return (
     <footer className="footer">
       <ul className="social">
@@ -27,6 +27,6 @@ function SwagLabsFooter() {
       <img alt="Swag Bot Footer" className="footer_robot" src={SwagBotFooter} />
     </footer>
   );
-}
+};
 
 export default SwagLabsFooter;

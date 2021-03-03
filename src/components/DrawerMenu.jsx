@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import { slide as Menu } from "react-burger-menu";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { ROUTES } from "../utils/Constants";
@@ -10,12 +11,14 @@ import menuIconPng from "../assets/img/menu.png";
 import menuIconSvg from "../assets/svg/menu3x.svg";
 import "./DrawerMenu.css";
 
-function DrawerMenu(props) {
-  const { history } = props;
+const DrawerMenu = ({ history }) => {
   const resetStorage = () => {
     // Wipe out our shopping cart now
     ShoppingCart.resetCart();
   };
+  const aboutLink = isProblemUser()
+    ? "https://saucelabs.com/error/404"
+    : "https://saucelabs.com/";
 
   return (
     <Menu
@@ -36,15 +39,7 @@ function DrawerMenu(props) {
       >
         All Items
       </a>
-      <a
-        id="about_sidebar_link"
-        className="menu-item"
-        href={
-          isProblemUser()
-            ? "https://saucelabs.com/error/404"
-            : "https://saucelabs.com/"
-        }
-      >
+      <a id="about_sidebar_link" className="menu-item" href={aboutLink}>
         About
       </a>
       <a
@@ -72,6 +67,14 @@ function DrawerMenu(props) {
       </a>
     </Menu>
   );
-}
+};
+DrawerMenu.propTypes = {
+  /**
+   * The history
+   */
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default withRouter(DrawerMenu);
