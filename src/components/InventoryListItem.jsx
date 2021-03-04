@@ -6,20 +6,8 @@ import "./InventoryListItem.css";
 import { ROUTES } from "../utils/Constants";
 
 function InventoryListItem(props) {
-  const { history } = props;
-  const [id] = useState(props.id);
-  const [image_url, setImage_url] = useState(props.image_url);
-  const [name] = useState(props.name);
-  const [desc] = useState(props.desc);
-  const [price] = useState(props.price);
-  const [itemInCart, setItemInCart] = useState(
-    ShoppingCart.isItemInCart(props.id)
-  );
-
-  if (isProblemUser()) {
-    setImage_url(`${image_url}WithGarbageOnItToBreakTheUrl`);
-  }
-
+  const { id, image_url, name, desc, price, history } = props;
+  const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id));
   const addToCart = (itemId) => {
     if (isProblemUser()) {
       // Bail out now, don't add to cart if the item ID is odd
@@ -31,7 +19,6 @@ function InventoryListItem(props) {
     ShoppingCart.addItem(itemId);
     setItemInCart(true);
   };
-
   const removeFromCart = (itemId) => {
     if (isProblemUser()) {
       // Bail out now, don't remove from cart if the item ID is even
@@ -43,7 +30,6 @@ function InventoryListItem(props) {
     ShoppingCart.removeItem(itemId);
     setItemInCart(false);
   };
-
   let linkId = id;
   if (isProblemUser()) {
     linkId += 1;
@@ -70,6 +56,7 @@ function InventoryListItem(props) {
       </button>
     );
   }
+  const url = isProblemUser() ? "sl-404.jpg" : image_url;
 
   return (
     <div className="inventory_item">
@@ -85,7 +72,7 @@ function InventoryListItem(props) {
           <img
             alt={name}
             className="inventory_item_img"
-            src={require(`../assets/img/${image_url}`).default}
+            src={require(`../assets/img/${url}`).default}
           />
         </a>
       </div>
