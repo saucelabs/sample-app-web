@@ -67,7 +67,7 @@ describe("InventoryListItem", () => {
     );
   });
 
-  it("should be able to set the image url and id for a problem user", () => {
+  it("should be able to open the details page for a problem user when the swag item title is clicked", () => {
     const isProblemUserSpy = jest.spyOn(Credentials, "isProblemUser");
     isProblemUserSpy.mockReturnValue(true);
     const component = shallow(
@@ -80,9 +80,6 @@ describe("InventoryListItem", () => {
 
     expect(props.history.push).toBeCalledWith(
       `/inventory-item.html?id=${props.id + 1}`
-    );
-    expect(setState).toHaveBeenCalledWith(
-      `${props.image_url}WithGarbageOnItToBreakTheUrl`
     );
 
     isProblemUserSpy.mockClear();

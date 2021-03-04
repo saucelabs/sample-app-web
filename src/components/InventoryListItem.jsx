@@ -9,11 +9,6 @@ import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
 
 const InventoryListItem = (props) => {
   const { desc, id, image_url, history, name, price } = props;
-  const [swagId] = useState(id);
-  const [imageUrl, setImageUrl] = useState(image_url);
-  const [swagName] = useState(name);
-  const [swagDescription] = useState(desc);
-  const [swagPrice] = useState(price);
   const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id));
   /**
    * @TODO:
@@ -53,9 +48,8 @@ const InventoryListItem = (props) => {
     ShoppingCart.removeItem(itemId);
     setItemInCart(false);
   };
-  let linkId = swagId;
+  let linkId = id;
   if (isProblemUser()) {
-    setImageUrl(`${imageUrl}WithGarbageOnItToBreakTheUrl`);
     linkId += 1;
   }
   const itemLink = `${ROUTES.INVENTORY_LIST}?id=${linkId}`;
@@ -85,22 +79,23 @@ const InventoryListItem = (props) => {
       />
     );
   };
+  const url = isProblemUser() ? "sl-404.jpg" : image_url;
 
   return (
     <div className="inventory_item">
       <div className="inventory_item_img">
         <a
           href="#"
-          id={`item_${swagId}_img_link`}
+          id={`item_${id}_img_link`}
           onClick={(evt) => {
             evt.preventDefault();
             history.push(itemLink);
           }}
         >
           <img
-            alt={swagName}
+            alt={name}
             className="inventory_item_img"
-            src={require(`../assets/img/${imageUrl}`).default}
+            src={require(`../assets/img/${url}`).default}
           />
         </a>
       </div>
@@ -108,19 +103,19 @@ const InventoryListItem = (props) => {
         <div className="inventory_item_label">
           <a
             href="#"
-            id={`item_${swagId}_title_link`}
+            id={`item_${id}_title_link`}
             onClick={(evt) => {
               evt.preventDefault();
               history.push(itemLink);
             }}
           >
-            <div className="inventory_item_name">{swagName}</div>
+            <div className="inventory_item_name">{name}</div>
           </a>
-          <div className="inventory_item_desc">{swagDescription}</div>
+          <div className="inventory_item_desc">{desc}</div>
         </div>
         <div className="pricebar">
-          <div className="inventory_item_price">${swagPrice}</div>
-          <ButtonType id={swagId} itemInCart={itemInCart} item={swagName} />
+          <div className="inventory_item_price">${price}</div>
+          <ButtonType id={id} itemInCart={itemInCart} item={name} />
         </div>
       </div>
     </div>
