@@ -27,3 +27,4 @@ screenshots
 storybook-static
 .tmp
 .eslintcache
+.DS_Store
