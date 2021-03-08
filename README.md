@@ -1,6 +1,9 @@
 # What is this codebase?
 This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers
 
+![sample-app-web workflow](https://github.com/saucelabs/sample-app-web/actions/workflows/sample-app-web.yml/badge.svg)
+[![codecov](https://codecov.io/gh/saucelabs/sample-app-web/branch/master/graph/badge.svg?token=Q4UsgDSRd3)](https://codecov.io/gh/saucelabs/sample-app-web)
+
 - [Setup](#setup)
   - [Requirements](#requirements)
   - [Build](#build)
