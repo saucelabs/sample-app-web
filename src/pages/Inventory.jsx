@@ -14,10 +14,6 @@ const Inventory = () => {
     sortAsc(InventoryData, "name")
   );
   const [activeOption, setActiveOption] = useState("az");
-  /**
-   * @TODO: Need to investigate this in the future
-   * not working how it should
-   */
   /* istanbul ignore next */
   const startPerformanceGlitch = (duration) => {
     const start = new Date().getTime();
@@ -25,10 +21,7 @@ const Inventory = () => {
       // PageLoad increases
     }
   };
-  /**
-   * @TODO: Need to investigate this in the future
-   * not working how it should
-   */
+
   /* istanbul ignore next */
   if (isPerformanceGlitchUser()) {
     startPerformanceGlitch(5000);

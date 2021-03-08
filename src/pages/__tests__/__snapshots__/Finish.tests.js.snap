@@ -34,6 +34,7 @@ exports[`CheckOutStepTwo should render correctly with default props 1`] = `
         label="Back Home"
         onClick={[Function]}
         size="small"
+        testId="back-to-products"
         type="primary"
       />
     </div>

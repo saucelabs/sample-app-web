@@ -15,6 +15,7 @@ exports[`InventoryItem should render with default props 1`] = `
           label="Back to products"
           onClick={[Function]}
           size="large"
+          testId="back-to-products"
           type="secondary back"
         />
       }
@@ -85,6 +86,7 @@ exports[`InventoryItem should render with error data if a not known product is o
           label="Back to products"
           onClick={[Function]}
           size="large"
+          testId="back-to-products"
           type="secondary back"
         />
       }

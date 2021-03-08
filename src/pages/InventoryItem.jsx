@@ -18,10 +18,12 @@ const InventoryItem = (props) => {
   const queryParams = new URLSearchParams(window.location.search);
   let inventoryId = -1;
   let item;
+
   /* istanbul ignore else */
   if (queryParams.has("id")) {
     inventoryId = parseInt(queryParams.get("id"));
   }
+
   if (inventoryId >= 0 && InventoryData.length > inventoryId) {
     item = InventoryData[inventoryId];
   } else {
@@ -36,6 +38,7 @@ const InventoryItem = (props) => {
       price: "√-1",
     };
   }
+
   item.id = inventoryId;
 
   const [itemInCart, setItemInCart] = useState(
@@ -127,6 +130,7 @@ const InventoryItem = (props) => {
               label="Back to products"
               onClick={goBack}
               type={BUTTON_TYPES.BACK}
+              testId="back-to-products"
             />
           }
         />

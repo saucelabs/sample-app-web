@@ -27,6 +27,7 @@ const Finish = ({ history }) => {
             label="Back Home"
             onClick={() => history.push(ROUTES.INVENTORY)}
             size={BUTTON_SIZES.SMALL}
+            testId="back-to-products"
           />
         </div>
       </div>

@@ -31,8 +31,8 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  z-index: 1;
-  opacity: 0;
+  /* This needs to be like this because otherwise Safari can't click on an element that is not visible */
+  opacity: 0.001;
 }
 
 @media only screen and (min-width: 900px) {
