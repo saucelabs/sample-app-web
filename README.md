@@ -59,7 +59,9 @@ Running on Sauce Labs uses Environment Variables to authenticate credentials. Yo
 [here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)
 
 1. `npm run test.e2e.sauce.us` to run tests on the Sauce Labs in the US Data Center
-2. `npm run test.e2e.sayce.edu` to run tests in the EU Data Center
+2. `npm run test.e2e.sayce.eu` to run tests in the EU Data Center
+
+> Make sure you've added the `SCREENER_API_KEY` variable to your environment variables.
 
 ### Visual Component Testing
 You can test the components with Screener Component testing by running the following commands
@@ -74,7 +76,9 @@ You can test the components with Screener Component testing by running the follo
     # with different desktop resolutions
     npm run test.storybook.desktop
 
-Each PR to master will also test the components with the `test.storybook.ci`-command 
+Each PR to master will also test the components with the `test.storybook.ci`-command.
+
+> Make sure you've added the `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY` variables to your environment variables.
 
 ## Deploy
 
