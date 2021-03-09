@@ -37,6 +37,10 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
 
+    - name: Run Storybook tests
+      working-directory: ./
+      run: npm run test.storybook.ci
+
     - name: Build and E2E test the site
       working-directory: ./
       env:

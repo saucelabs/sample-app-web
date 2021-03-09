@@ -46,7 +46,8 @@ This will open Storybook on [http://localhost:6006/](http://localhost:6006/). Mo
 found [here](https://storybook.js.org/docs/react/get-started/introduction).
 
 ## Test
-### Testing locally
+### E2E
+#### Testing locally
 To run the application test suite (which uses Webdriver.io, Selenium, and Chrome) make sure the application is running
 on [http://localhost:3000/](http://localhost:3000/) (see above steps)
 
@@ -54,14 +55,27 @@ on [http://localhost:3000/](http://localhost:3000/) (see above steps)
 
 This will run the application test suite
 
-### Testing on Saucelabs
-
+#### Testing on Saucelabs
 Running on Sauce Labs uses Environment Variables to authenticate credentials. You can find a guide on how to do this
 [here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)
 
 1. `npm run test.e2e.sauce.us` to run tests on the Sauce Labs in the US Data Center
 2. `npm run test.e2e.sayce.edu` to run tests in the EU Data Center
 
+### Visual Component Testing
+You can test the components with Screener Component testing by running the following commands
+
+    # This will test all components on Chrome only
+    npm run test.storybook.ci
+    
+    # This will test all components on Chrome and Safari in mobile viewports
+    npm run test.storybook.mobile
+    
+    # This will test all componentes on Chrome, Safari, Firefox and Safari
+    # with different desktop resolutions
+    npm run test.storybook.desktop
+
+Each PR to master will also test the components with the `test.storybook.ci`-command 
 
 ## Deploy
 

@@ -1,8 +1,9 @@
 .btn {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   padding: 6px 28px;
-  font-size: 1.1em;
+  font-size: 14px;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   display: inline-block;
   text-decoration: none;

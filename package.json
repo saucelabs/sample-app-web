@@ -45,6 +45,7 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",
     "prop-types": "^15.7.2",
+    "screener-storybook": "^0.21.2",
     "storybook-react-router": "^1.0.8",
     "wdio-chromedriver-service": "^6.0.4"
   },
@@ -58,6 +59,9 @@
     "test.e2e.sauce.eu": "REGION=eu wdio test/e2e/configs/wdio.saucelabs.conf.js",
     "test.e2e.sauce.us": "wdio test/e2e/configs/wdio.saucelabs.conf.js",
     "test.lint": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "test.storybook.ci": "screener-storybook --conf test/visual/storybook/ci.config.js",
+    "test.storybook.desktop": "screener-storybook --conf test/visual/storybook/desktop.config.js",
+    "test.storybook.mobile": "screener-storybook --conf test/visual/storybook/mobile.config.js",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
