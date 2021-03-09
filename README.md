@@ -15,14 +15,15 @@ This is the Sauce Labs Sample Application which is designed to be used from desk
 ### Requirements
 To set up the development environment directly on your host computer:
 
-1. You’ll need [Node.js](http://nodejs.org) installed (at least v10.x.x or higher). If you don't have Node installed,
+1. You’ll need [Node.js](http://nodejs.org) installed (at least v12.x.x or higher). If you don't have Node installed,
 we recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
-1. Fork the project.
+1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
+1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
 1. Clone the project somewhere on your computer
 
         git clone git@github.com:<your-username>/sample-app-web.git
 
-1. Install all dependencies
+1. Install all dependencies by running this command from the root of the project
 
         npm install
 
@@ -34,11 +35,9 @@ we recommend installing [NVM](https://github.com/creationix/nvm) to assist manag
     This will build the application, start Chrome and load the website on [http://localhost:3000/](http://localhost:3000/)
 
 1. Click around - this is the app!
-1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
-1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
 
 ### Storybook
-This website uses components which can be tested with Storybook. To run Storybook execute the following command
+This website uses components which can be tested with Storybook. To run Storybook execute the following command:
 
     npm run storybook 
 
@@ -51,11 +50,11 @@ found [here](https://storybook.js.org/docs/react/get-started/introduction).
 To run the application test suite (which uses Webdriver.io, Selenium, and Chrome) make sure the application is running
 on [http://localhost:3000/](http://localhost:3000/) (see above steps)
 
-1. `npm run test.e2e.local`
+    npm run test.e2e.local
 
 This will run the application test suite
 
-#### Testing on Saucelabs
+#### Testing on Sauce Labs
 Running on Sauce Labs uses Environment Variables to authenticate credentials. You can find a guide on how to do this
 [here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)
 
