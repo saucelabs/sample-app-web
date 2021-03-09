@@ -17,4 +17,5 @@ module.exports = {
       deviceName: 'Galaxy S8'
     },
   ],
+  failureExitCode: 0,
 };
