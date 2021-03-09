@@ -39,6 +39,8 @@ jobs:
 
     - name: Run Storybook tests
       working-directory: ./
+      env:
+        SCREENER_API_KEY: ${{ secrets.SCREENER_API_KEY }}
       run: npm run test.storybook.ci
 
     - name: Build and E2E test the site
