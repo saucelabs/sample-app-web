@@ -10,12 +10,14 @@ exports[`DrawerMenu should render correctly 1`] = `
   crossClassName=""
   customBurgerIcon={
     <img
+      alt="Open Menu"
       src="test-file-stub"
       srcSet="test-file-stub"
     />
   }
   customCrossIcon={
     <img
+      alt="Close Menu"
       src="test-file-stub"
       srcSet="test-file-stub"
     />

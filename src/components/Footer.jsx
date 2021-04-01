@@ -7,16 +7,31 @@ const SwagLabsFooter = () => {
     <footer className="footer">
       <ul className="social">
         <li className="social_twitter">
-          <a href="https://twitter.com/saucelabs" target="_blank" />
+          <a
+            href="https://twitter.com/saucelabs"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Twitter
+          </a>
         </li>
         <li className="social_facebook">
-          <a href="https://www.facebook.com/saucelabs" target="_blank" />
+          <a
+            href="https://www.facebook.com/saucelabs"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Facebook
+          </a>
         </li>
         <li className="social_linkedin">
           <a
             href="https://www.linkedin.com/company/sauce-labs/"
             target="_blank"
-          />
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
         </li>
       </ul>
 

@@ -41,6 +41,7 @@
   width: 32px;
   height: 32px;
   display: block;
+  font-size: 0;
 }
 
 .footer_robot {

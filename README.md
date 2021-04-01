@@ -23,7 +23,7 @@ we recommend installing [NVM](https://github.com/creationix/nvm) to assist manag
 
         git clone git@github.com:<your-username>/sample-app-web.git
 
-1. Install all dependencies by running this command from the root of the project
+1. Install all dependencies by running this command from the **root of the project**
 
         npm install
 
@@ -59,7 +59,7 @@ Running on Sauce Labs uses Environment Variables to authenticate credentials. Yo
 [here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)
 
 1. `npm run test.e2e.sauce.us` to run tests on the Sauce Labs in the US Data Center
-2. `npm run test.e2e.sayce.eu` to run tests in the EU Data Center
+2. `npm run test.e2e.sauce.eu` to run tests in the EU Data Center
 
 > Make sure you've added the `SCREENER_API_KEY` variable to your environment variables.
 

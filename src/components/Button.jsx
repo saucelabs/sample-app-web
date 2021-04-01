@@ -27,7 +27,9 @@ const Button = ({
   const extraClass = customClass ? ` ${customClass}` : "";
   const buttonSize = ` btn_${size}`;
   /* istanbul ignore next */
-  const BackImage = () => <img src={backPng} className="back-image" />;
+  const BackImage = () => (
+    <img src={backPng} className="back-image" alt="Go back" />
+  );
 
   return (
     <button

@@ -22,8 +22,12 @@ const DrawerMenu = ({ history }) => {
 
   return (
     <Menu
-      customBurgerIcon={<img src={menuIconPng} srcSet={menuIconSvg} />}
-      customCrossIcon={<img src={menuClosePng} srcSet={menuCloseSvg} />}
+      customBurgerIcon={
+        <img src={menuIconPng} srcSet={menuIconSvg} alt="Open Menu" />
+      }
+      customCrossIcon={
+        <img src={menuClosePng} srcSet={menuCloseSvg} alt="Close Menu" />
+      }
       outerContainerId={"page_wrapper"}
       pageWrapId={"contents_wrapper"}
       noOverlay
