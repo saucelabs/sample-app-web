@@ -50,15 +50,6 @@
 .login-button:active {
   background: #ccc;
 }
-.form_input {
-  margin: 0 0 25px 0;
-  font-size: 18px;
-  width: 100%;
-  border: 0px;
-  border-bottom: 1px solid #ccc;
-  outline: none;
-  padding: 10px 0;
-}
 .login_credentials {
   clear: both;
   line-height: 24px;
@@ -74,12 +65,6 @@
 .login_credentials_wrap-inner {
   background-color: #efefef;
   overflow: hidden;
-}
-.error-button {
-  border: 0px;
-  background: #fff;
-  color: #f00;
-  cursor: pointer;
 }
 @media only screen and (min-width: 900px) {
   .form_column {

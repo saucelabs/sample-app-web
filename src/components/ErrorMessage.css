@@ -1,0 +1,40 @@
+.error-message-container {
+  background-color: #ffffff;
+  height: 45px;
+  margin-bottom: 5px;
+  margin-top: -10px;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+}
+
+.error-message-container.error {
+  background-color: #e2231a;
+}
+
+.error-message-container h3 {
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.error-message-container .error-button {
+  border: 0px;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.error-message-container .error-button:focus {
+  outline: none;
+}

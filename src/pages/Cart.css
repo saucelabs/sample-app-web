@@ -11,9 +11,10 @@
 .cart_quantity_label {
   display: inline-block;
   font-size: 18px;
-  padding: 20px 60px;
+  padding: 20px 0;
   background-color: #fff;
   color: #484c55;
+  width: 80px;
 }
 
 .cart_desc_label {
@@ -23,8 +24,24 @@
 }
 
 .cart_footer {
-  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
   border-top: 2px solid #ededef;
-  padding: 20px 0;
+  padding: 40px 0;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+  .cart_quantity_label {
+    width: 50px;
+  }
+  .cart_footer {
+    display: block;
+    justify-content: inherit;
+    padding: 20px 0;
+  }
+
+  .cart_footer .btn {
+    margin-bottom: 15px;
+  }
 }

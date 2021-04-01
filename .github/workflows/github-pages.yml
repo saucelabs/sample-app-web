@@ -16,8 +16,7 @@ jobs:
         with:
           node-version: '14.x'
 
-      # build site
-      - name: Site site
+      - name: Build site
         working-directory: ./
         env:
           CI: false
@@ -25,6 +24,14 @@ jobs:
           ls
           npm install
           npm run build
+
+      - name: Build storybook
+        working-directory: ./
+        env:
+          CI: false
+        run: |
+          ls
+          npm run build.storybook
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckOutStepTwo should render correctly with default props 1`] = `
+<div
+  className="page_wrapper"
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      secondaryTitle="Checkout: Complete!"
+    />
+    <div
+      className="checkout_complete_container"
+      id="checkout_complete_container"
+    >
+      <h2
+        className="complete-header"
+      >
+        THANK YOU FOR YOUR ORDER
+      </h2>
+      <div
+        className="complete-text"
+      >
+        Your order has been dispatched, and will arrive just as fast as the pony can get there!
+      </div>
+      <img
+        alt="Pony Express"
+        className="pony_express"
+        src="test-file-stub"
+      />
+      <Button
+        label="Back Home"
+        onClick={[Function]}
+        size="small"
+        testId="back-to-products"
+        type="primary"
+      />
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;

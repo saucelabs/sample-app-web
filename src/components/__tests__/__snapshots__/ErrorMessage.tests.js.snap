@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage should be able to render custom props on the container level 1`] = `
+<div
+  bar="foo-bar"
+  className="error-message-container"
+  foo="bar"
+/>
+`;
+
+exports[`ErrorMessage should render an error message when there is an error 1`] = `
+<div
+  className="error-message-container error"
+>
+  <h3
+    data-test="error"
+  >
+    <button
+      className="error-button"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              352,
+              512,
+              Array [],
+              "f00d",
+              "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
+            ],
+            "iconName": "times",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        swapOpacity={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+    Error Message
+  </h3>
+</div>
+`;
+
+exports[`ErrorMessage should render no error message when there is not error 1`] = `
+<div
+  className="error-message-container"
+/>
+`;

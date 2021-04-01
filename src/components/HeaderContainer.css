@@ -1,25 +1,80 @@
 .header_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.primary_header {
   height: 70px;
 }
 
-.header_label {
+.primary_header .header_label {
   background: #fff;
   padding: 18px 18px 0;
   text-align: center;
-  font-size: 1.7em;
+  font-size: 24px;
   position: relative;
 }
 
-.app_logo {
+.primary_header .app_logo {
   background: url("../assets/img/SwagLabs_logo.png") no-repeat center center;
+  background: url("../assets/svg/logo3x.svg") no-repeat center center,
+    linear-gradient(transparent, transparent);
   text-align: center;
   margin: 0 50px;
   height: 35px;
 }
 
-.shopping_cart_container {
-  height: 32px;
+.primary_header .shopping_cart_container {
+  height: 40px;
+  width: 40px;
   position: absolute;
-  top: 30px;
-  right: 40px;
+  top: 20px;
+  right: 20px;
+}
+
+.header_secondary_container {
+  background: #474c55;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.header_secondary_container .title {
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.header_secondary_container .peek {
+  background: url("../assets/img/headerBot2x.png") no-repeat center center;
+  background: url("../assets/svg/headerBot3x.svg") no-repeat center center,
+    linear-gradient(transparent, transparent);
+  display: block;
+  height: 91px;
+  width: 90px;
+  margin-top: 13px;
+  margin-left: 25px;
+}
+
+.right_component {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 640px) {
+  .header_secondary_container {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .header_secondary_container .title {
+    font-size: 20px;
+  }
+
+  .header_secondary_container .peek {
+    display: none;
+  }
 }

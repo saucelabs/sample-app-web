@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerMenu should render correctly 1`] = `
+<Menu
+  bodyClassName=""
+  burgerBarClassName=""
+  burgerButtonClassName=""
+  className=""
+  crossButtonClassName=""
+  crossClassName=""
+  customBurgerIcon={
+    <img
+      alt="Open Menu"
+      src="test-file-stub"
+      srcSet="test-file-stub"
+    />
+  }
+  customCrossIcon={
+    <img
+      alt="Close Menu"
+      src="test-file-stub"
+      srcSet="test-file-stub"
+    />
+  }
+  disableAutoFocus={false}
+  disableCloseOnEsc={false}
+  htmlClassName=""
+  id=""
+  itemClassName=""
+  itemListClassName=""
+  itemListElement="nav"
+  menuClassName=""
+  morphShapeClassName=""
+  noOverlay={true}
+  noTransition={false}
+  onIconHoverChange={[Function]}
+  onStateChange={[Function]}
+  outerContainerId="page_wrapper"
+  overlayClassName=""
+  pageWrapId="contents_wrapper"
+  styles={Object {}}
+  width={300}
+>
+  <a
+    className="menu-item"
+    href="#"
+    id="inventory_sidebar_link"
+    onClick={[Function]}
+  >
+    All Items
+  </a>
+  <a
+    className="menu-item"
+    href="https://saucelabs.com/"
+    id="about_sidebar_link"
+  >
+    About
+  </a>
+  <a
+    className="menu-item"
+    href="#"
+    id="logout_sidebar_link"
+    onClick={[Function]}
+  >
+    Logout
+  </a>
+  <a
+    className="menu-item"
+    href="#"
+    id="reset_sidebar_link"
+    onClick={[Function]}
+  >
+    Reset App State
+  </a>
+</Menu>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartButton should render the badge if products have been added into the cart 1`] = `
+<a
+  className="shopping_cart_link"
+  onClick={[Function]}
+>
+  <span
+    className="shopping_cart_badge"
+  >
+    3
+  </span>
+</a>
+`;
+
+exports[`CartButton should render with default props 1`] = `
+<a
+  className="shopping_cart_link"
+  onClick={[Function]}
+/>
+`;

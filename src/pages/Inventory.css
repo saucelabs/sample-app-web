@@ -1,33 +1,23 @@
+.product_label {
+  position: absolute;
+  left: 110px;
+  top: 25px;
+  font-size: 32px;
+  font-weight: 100;
+  color: #fff;
+}
+
 .inventory_container {
   overflow: hidden;
   margin-bottom: 30px;
-}
-
-.product_sort_container {
-  position: absolute;
-  right: 20px;
-  top: 23px;
-  height: 35px;
-  width: 115px;
+  padding-top: 40px;
 }
 
 .inventory_list {
   max-width: 1280px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
   padding: 0 15px 30px;
-}
-
-.product_label {
-  position: absolute;
-  left: 110px;
-  top: 25px;
-  font-size: 2.2em;
-  font-weight: 100;
-  color: #fff;
-}
-
-@media only screen and (min-width: 1200px) {
-  .inventory_container {
-    padding-top: 40px;
-  }
 }

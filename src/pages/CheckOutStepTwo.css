@@ -5,31 +5,57 @@
 }
 
 .summary_info_label {
-  width: 100%;
-  border-top: 1px solid #efefef;
+  border-top: 2px solid #efefef;
   padding: 20px 0 0;
-  font-size: 1.2em;
 }
 
 .summary_value_label {
   font-weight: 800;
-  font-size: 18px;
-  padding: 20px 0;
+  padding: 5px 0 20px 0;
 }
 
 .summary_subtotal_label {
-  border-top: 1px solid #efefef;
+  border-top: 2px solid #efefef;
   padding: 20px 0 10px;
-  font-size: 18px;
 }
 
 .summary_tax_label {
   padding: 0;
-  font-size: 1.2em;
 }
 
 .summary_total_label {
   padding: 10px 0;
-  font-size: 1.2em;
-  margin: 0px 0px 8px 0px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.summary_info_label,
+.summary_value_label,
+.summary_subtotal_label,
+.summary_tax_label,
+.summary_total_label {
+  font-size: 16px;
+  margin-left: 50px;
+}
+
+@media only screen and (min-width: 900px) {
+  .summary_info_label,
+  .summary_value_label,
+  .summary_subtotal_label,
+  .summary_tax_label,
+  .summary_total_label {
+    margin-left: 80px;
+  }
+
+  .summary_info_label {
+    padding: 40px 0 0;
+  }
+
+  .summary_value_label {
+    padding: 5px 0 40px 0;
+  }
+
+  .summary_subtotal_label {
+    padding: 40px 0 10px;
+  }
 }

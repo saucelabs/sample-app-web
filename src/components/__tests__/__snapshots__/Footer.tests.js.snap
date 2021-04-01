@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render correctly 1`] = `
+<footer
+  className="footer"
+>
+  <ul
+    className="social"
+  >
+    <li
+      className="social_twitter"
+    >
+      <a
+        href="https://twitter.com/saucelabs"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Twitter
+      </a>
+    </li>
+    <li
+      className="social_facebook"
+    >
+      <a
+        href="https://www.facebook.com/saucelabs"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Facebook
+      </a>
+    </li>
+    <li
+      className="social_linkedin"
+    >
+      <a
+        href="https://www.linkedin.com/company/sauce-labs/"
+        rel="noreferrer"
+        target="_blank"
+      >
+        LinkedIn
+      </a>
+    </li>
+  </ul>
+  <div
+    className="footer_copy"
+  >
+    © 
+    1234
+     Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+  </div>
+  <img
+    alt="Swag Bot Footer"
+    className="footer_robot"
+    src="test-file-stub"
+  />
+</footer>
+`;

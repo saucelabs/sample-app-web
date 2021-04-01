@@ -1,69 +1,115 @@
 .inventory_item_container {
-  border-top: 1px solid #777;
-}
-
-.inventory_details {
-  background: #fff;
-  width: 100%;
-  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
-}
-
-.inventory_details_back_button {
-  margin: 10px auto;
-  background: #57c1e8;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  padding: 10px 20px;
-  border: none;
-  right: 15px;
+  padding: 40px 15px;
 }
 
 .inventory_details_container {
+  display: flex;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 15px 30px;
+  border: 2px solid #ededef;
 }
 
-.inventory_details_container {
-  margin-top: 50px;
+.inventory_details_container .inventory_details_img_container {
+  flex: 2;
+  display: block;
 }
 
-.inventory_details_img {
+.inventory_details_container .inventory_details_img {
+  flex: 1;
+  height: 100%;
   width: 100%;
-  max-width: 400px;
 }
 
-.inventory_details_desc_container {
+.inventory_details_container .inventory_details_desc_container {
   padding: 20px 20px 0;
-  vertical-align: top;
-  display: inline-block;
-  width: 50%;
-  position: relative; /* Need this here so the position: absolute on subelements anchors here rather than to the browser viewport */
+  flex: 3;
 }
 
-.inventory_details_name {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+.inventory_details_container .inventory_details_name {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 20px;
   font-weight: 500;
+  color: #e2231a;
+  margin-bottom: 15px;
 }
 
-.inventory_details_desc {
-  font-size: 1em;
-  margin-bottom: 20px;
+.inventory_details_container .inventory_details_desc {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 30px;
 }
 
-.inventory_details_price {
-  color: #569210;
-  font-size: 48px;
+.inventory_details_container .inventory_details_price {
+  border-top: 2px solid #ededef;
+  color: #e2231a;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  display: inline-block;
+  padding-top: 10px;
 }
 
-@media only screen and (max-width: 960px) {
-  .inventory_details_desc_container {
+.inventory_details_container .inventory_details_desc_container .btn {
+  margin-top: 30px;
+  display: block;
+}
+
+.inventory_details_container .large_size {
+  width: 50%;
+}
+
+@media only screen and (max-width: 900px) {
+  .inventory_details_container .large_size {
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+  }
+
+  .inventory_details_container .inventory_details_img_container {
+    flex: 1;
+  }
+
+  .inventory_details_container .inventory_details_desc_container {
+    flex: 2;
+  }
+
+  .inventory_details_container .inventory_details_desc {
+    margin-bottom: 15px;
+  }
+
+  .inventory_details_container .inventory_details_desc_container .btn {
+    display: inline;
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 160px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .inventory_details_container {
+    border: none;
+    flex-direction: column;
+  }
+
+  .inventory_details .left_component {
+    width: 100%;
+  }
+
+  .inventory_details_container .inventory_item_container {
+    padding: 40px 35px;
+  }
+
+  .inventory_details_container .inventory_details_desc_container {
+    flex: 1;
+    padding: 20px 0;
+  }
+
+  .inventory_details_container .inventory_details_desc {
+    margin-bottom: 20px;
+  }
+
+  .inventory_details_container .inventory_details_desc_container .btn {
+    display: block;
+    margin-left: 0;
+    margin-top: 30px;
+    width: 100%;
   }
 }

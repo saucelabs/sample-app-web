@@ -1,17 +1,19 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import { isProblemUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { InventoryData } from "../utils/InventoryData";
-import SummaryItem from "../components/SummaryItem";
+import CartItem from "../components/CartItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import "./CheckOutStepTwo.css";
 
-function CheckOutStepTwo(props) {
-  const { history } = props;
+const CheckOutStepTwo = ({ history }) => {
   const clearCart = () => {
+    /* istanbul ignore else */
     // No cart clear on order complete for the problem user
     if (!isProblemUser()) {
       // Wipe out our shopping cart
@@ -34,8 +36,7 @@ function CheckOutStepTwo(props) {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
-        <div className="subheader">Checkout: Overview</div>
+        <HeaderContainer secondaryTitle="Checkout: Overview" />
         <div
           id="checkout_summary_container"
           className="checkout_summary_container"
@@ -45,7 +46,7 @@ function CheckOutStepTwo(props) {
               <div className="cart_quantity_label">QTY</div>
               <div className="cart_desc_label">DESCRIPTION</div>
               {contents.map((item, i) => {
-                return <SummaryItem key={i} item={InventoryData[item]} />;
+                return <CartItem key={i} item={InventoryData[item]} />;
               })}
             </div>
             <div className="summary_info">
@@ -63,27 +64,31 @@ function CheckOutStepTwo(props) {
                 Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}
               </div>
               <div className="cart_footer">
-                <a
-                  className="cart_cancel_link btn_secondary"
-                  href="#"
+                <Button
+                  // `cart_cancel_link` has no style function
+                  // but is there for backwards compatibility
+                  customClass="cart_cancel_link"
+                  label="Cancel"
                   onClick={(evt) => {
                     evt.preventDefault();
                     history.push(ROUTES.INVENTORY);
                   }}
-                >
-                  CANCEL
-                </a>
-                <a
-                  className="btn_action cart_button"
-                  href="#"
+                  size={BUTTON_SIZES.MEDIUM}
+                  testId="cancel"
+                  type={BUTTON_TYPES.BACK}
+                />
+                <Button
+                  customClass="cart_button"
+                  label="Finish"
                   onClick={(evt) => {
                     evt.preventDefault();
                     clearCart();
                     history.push(ROUTES.CHECKOUT_COMPLETE);
                   }}
-                >
-                  FINISH
-                </a>
+                  size={BUTTON_SIZES.MEDIUM}
+                  testId="finish"
+                  type={BUTTON_TYPES.ACTION}
+                />
               </div>
             </div>
           </div>
@@ -92,6 +97,14 @@ function CheckOutStepTwo(props) {
       <SwagLabsFooter />
     </div>
   );
-}
+};
+CheckOutStepTwo.propTypes = {
+  /**
+   * The history
+   */
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default withRouter(CheckOutStepTwo);

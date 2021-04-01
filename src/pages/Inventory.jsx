@@ -6,28 +6,43 @@ import InventoryListItem from "../components/InventoryListItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import { sortAsc, sortDesc, sortHiLo, sortLoHi } from "../utils/Sorting";
+import Select from "../components/Select";
 import "./Inventory.css";
 
-function Inventory() {
+const Inventory = () => {
   const [inventoryList, setInventoryList] = useState(
     sortAsc(InventoryData, "name")
   );
+  const [activeOption, setActiveOption] = useState("az");
+  /* istanbul ignore next */
   const startPerformanceGlitch = (duration) => {
     const start = new Date().getTime();
     while (new Date().getTime() < start + duration) {
       // PageLoad increases
     }
   };
+
+  /* istanbul ignore next */
   if (isPerformanceGlitchUser()) {
     startPerformanceGlitch(5000);
   }
 
+  /**
+   * @TODO:
+   * This can't be tested yet because enzyme currently doesn't support ReactJS17,
+   * see https://github.com/enzymejs/enzyme/issues/2429.
+   * This means we can't fully mount the component and test all rendered components
+   * and functions
+   */
+  /* istanbul ignore next */
   const sortByOption = (event) => {
     if (isProblemUser()) {
       // Bail out now if we're problem user so that we have a behaviour which is broken in Chrome only for sort.
       // select option onclick is not supported in Chrome but works in IE and FF
       return;
     }
+
+    setActiveOption(event.target.value);
 
     switch (event.target.value) {
       case "az":
@@ -50,25 +65,25 @@ function Inventory() {
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
-        <HeaderContainer />
+        <HeaderContainer
+          secondaryTitle="Products"
+          secondaryHeaderBot
+          secondaryRightComponent={
+            <Select
+              activeOption={activeOption}
+              options={[
+                { key: "az", value: "Name (A to Z)" },
+                { key: "za", value: "Name (Z to A)" },
+                { key: "lohi", value: "Price (low to high)" },
+                { key: "hilo", value: "Price (high to low)" },
+              ]}
+              onChange={sortByOption}
+              testId="product_sort_container"
+            />
+          }
+        />
         <div id="inventory_container">
           <div>
-            <div className="header_secondary_container">
-              <div className="peek"></div>
-              <div id="inventory_filter_container">
-                <div className="product_label">Products</div>
-                <select
-                  onChange={sortByOption}
-                  className="product_sort_container"
-                >
-                  <option value="az">Name (A to Z)</option>
-                  <option value="za">Name (Z to A)</option>
-                  <option value="lohi">Price (low to high)</option>
-                  <option value="hilo">Price (high to low)</option>
-                </select>
-              </div>
-            </div>
-
             <div id="inventory_container" className="inventory_container">
               <div className="inventory_list">
                 {inventoryList.map((item, i) => {
@@ -91,6 +106,6 @@ function Inventory() {
       <SwagLabsFooter />
     </div>
   );
-}
+};
 
 export default withRouter(Inventory);
