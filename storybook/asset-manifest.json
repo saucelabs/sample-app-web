@@ -1,0 +1,43 @@
+{
+  "files": {
+    "0.98ee5044.iframe.bundle.js": "./0.98ee5044.iframe.bundle.js",
+    "main.css": "./static/css/main.a82a2a77.chunk.css",
+    "main.js": "./main.4e48171f.iframe.bundle.js",
+    "main.css.map": "./static/css/main.a82a2a77.chunk.css.map",
+    "runtime~main.js": "./runtime~main.0b5162e9.iframe.bundle.js",
+    "vendors~main.js": "./vendors~main.9fb7bd6f.iframe.bundle.js",
+    "vendors~main.js.map": "./vendors~main.9fb7bd6f.iframe.bundle.js.map",
+    "4.f3cfeb9c.iframe.bundle.js": "./4.f3cfeb9c.iframe.bundle.js",
+    "4.f3cfeb9c.iframe.bundle.js.map": "./4.f3cfeb9c.iframe.bundle.js.map",
+    "5.1b4473fe.iframe.bundle.js": "./5.1b4473fe.iframe.bundle.js",
+    "6.beabba76.iframe.bundle.js": "./6.beabba76.iframe.bundle.js",
+    "6.beabba76.iframe.bundle.js.map": "./6.beabba76.iframe.bundle.js.map",
+    "7.aa1bef40.iframe.bundle.js": "./7.aa1bef40.iframe.bundle.js",
+    "4.f3cfeb9c.iframe.bundle.js.LICENSE.txt": "./4.f3cfeb9c.iframe.bundle.js.LICENSE.txt",
+    "6.beabba76.iframe.bundle.js.LICENSE.txt": "./6.beabba76.iframe.bundle.js.LICENSE.txt",
+    "iframe.html": "./iframe.html",
+    "static/media/Login_Bot_graphic.png": "./static/media/Login_Bot_graphic.20658452.png",
+    "static/media/SwagBot_Footer_graphic.png": "./static/media/SwagBot_Footer_graphic.2e87acec.png",
+    "static/media/Select.css": "./static/media/filter3x.4d6d6e7f.svg",
+    "static/media/bike-light-1200x1500.jpg": "./static/media/bike-light-1200x1500.a0c9caae.jpg",
+    "static/media/bolt-shirt-1200x1500.jpg": "./static/media/bolt-shirt-1200x1500.c0dae290.jpg",
+    "static/media/CartButton.css": "./static/media/cart3x.d236358a.svg",
+    "static/media/close@3x.3a2a3ada.svg": "./static/media/close@3x.3a2a3ada.svg",
+    "static/media/header-logo.png": "./static/media/header-logo.8398d104.png",
+    "static/media/HeaderContainer.css": "./static/media/logo3x.096bf4a7.svg",
+    "static/media/menu3x.34aee3ab.svg": "./static/media/menu3x.34aee3ab.svg",
+    "static/media/pony-express.png": "./static/media/pony-express.46394a5d.png",
+    "static/media/red-onesie-1200x1500.jpg": "./static/media/red-onesie-1200x1500.1b15e1fa.jpg",
+    "static/media/red-tatt-1200x1500.jpg": "./static/media/red-tatt-1200x1500.e32b4ef9.jpg",
+    "static/media/sauce-backpack-1200x1500.jpg": "./static/media/sauce-backpack-1200x1500.34e7aa42.jpg",
+    "static/media/sauce-pullover-1200x1500.jpg": "./static/media/sauce-pullover-1200x1500.439fc934.jpg",
+    "static/media/sl-404.jpg": "./static/media/sl-404.168b1cce.jpg",
+    "vendors~main.9fb7bd6f.iframe.bundle.js.LICENSE.txt": "./vendors~main.9fb7bd6f.iframe.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.0b5162e9.iframe.bundle.js",
+    "vendors~main.9fb7bd6f.iframe.bundle.js",
+    "static/css/main.a82a2a77.chunk.css",
+    "main.4e48171f.iframe.bundle.js"
+  ]
+}
