@@ -13,13 +13,13 @@ pipeline {
 
         stage('Build application') {
             steps {
-            	sh "npx start & npx wait-on --timeout 60000 http://localhost:3000 &"
+            	sh "npm start & npx wait-on --timeout 60000 http://localhost:3000 &"
             }
         }
 
         stage('Run Functional Tests') {
             steps {
-              sh "npx run test.e2e.sauce.eu ${env.CLI_ARGS}"
+              sh "npm run test.e2e.sauce.eu ${env.CLI_ARGS}"
             }
         }
     }
