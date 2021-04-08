@@ -3,7 +3,11 @@
 
 name: Swag Labs Sample App Workflow
 
-on: [push,pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   build:
