@@ -85,7 +85,9 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.stories.{js,jsx,ts,tsx}",
-      "!src/index.{js,jsx,ts,tsx}"
+      "!src/index.{js,jsx,ts,tsx}",
+      "!src/service-worker.{js,jsx,ts,tsx}",
+      "!src/serviceWorkerRegistration.{js,jsx,ts,tsx}"
     ],
     "coverageThreshold": {
       "global": {
