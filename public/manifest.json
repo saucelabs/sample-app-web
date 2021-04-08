@@ -4,10 +4,10 @@
   "lang": "en",
   "start_url": ".",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "dir": "ltr",
   "display": "standalone",
-  "orientation": "any",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icon/splash-512x512.png",
