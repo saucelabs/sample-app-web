@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.b9d87ff6.chunk.css",
-    "main.js": "/static/js/main.a35dbddf.chunk.js",
-    "main.js.map": "/static/js/main.a35dbddf.chunk.js.map",
+    "main.js": "/static/js/main.3db41035.chunk.js",
+    "main.js.map": "/static/js/main.3db41035.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7bfd0a48.js",
     "runtime-main.js.map": "/static/js/runtime-main.7bfd0a48.js.map",
     "static/js/2.a1a947cf.chunk.js": "/static/js/2.a1a947cf.chunk.js",
     "static/js/2.a1a947cf.chunk.js.map": "/static/js/2.a1a947cf.chunk.js.map",
     "index.html": "/index.html",
+    "service-worker.js": "/service-worker.js",
+    "service-worker.js.map": "/service-worker.js.map",
     "static/css/main.b9d87ff6.chunk.css.map": "/static/css/main.b9d87ff6.chunk.css.map",
     "static/js/2.a1a947cf.chunk.js.LICENSE.txt": "/static/js/2.a1a947cf.chunk.js.LICENSE.txt",
     "static/media/Login_Bot_graphic.png": "/static/media/Login_Bot_graphic.20658452.png",
@@ -31,6 +33,6 @@
     "static/js/runtime-main.7bfd0a48.js",
     "static/js/2.a1a947cf.chunk.js",
     "static/css/main.b9d87ff6.chunk.css",
-    "static/js/main.a35dbddf.chunk.js"
+    "static/js/main.3db41035.chunk.js"
   ]
 }
