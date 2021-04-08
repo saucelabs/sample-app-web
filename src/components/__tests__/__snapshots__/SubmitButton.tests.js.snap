@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitButton should render with a custom class 1`] = `
+<input
+  className="submit-button custom_class"
+  type="submit"
+  value="Submit"
+/>
+`;
+
+exports[`SubmitButton should render with a testId 1`] = `
+<input
+  className="submit-button"
+  data-test="test-id"
+  id="test-id"
+  name="test-id"
+  type="submit"
+  value="Submit"
+/>
+`;
+
+exports[`SubmitButton should render with a testId and a name prop 1`] = `
+<input
+  className="submit-button"
+  data-test="test-id"
+  id="test-id"
+  name="name-id"
+  type="submit"
+  value="Submit"
+/>
+`;
+
+exports[`SubmitButton should render with custom props 1`] = `
+<input
+  bar="foo"
+  className="submit-button"
+  foo="bar"
+  type="submit"
+  value="Submit"
+/>
+`;
+
+exports[`SubmitButton should render with default props 1`] = `
+<input
+  className="submit-button"
+  type="submit"
+  value="Submit"
+/>
+`;

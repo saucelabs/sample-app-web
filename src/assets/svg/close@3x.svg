@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Mobile Burger/close@3x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mobile-Burger/close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M10,19.5 L30,19.5" id="Path-Copy" stroke="#E2231A" stroke-width="2" fill-rule="nonzero" transform="translate(20.000000, 19.500000) rotate(-45.000000) translate(-20.000000, -19.500000) "></path>
+        <path d="M10,19.5 L30,19.5" id="Path-Copy" stroke="#E2231A" stroke-width="2" fill-rule="nonzero" transform="translate(20.000000, 19.500000) scale(-1, 1) rotate(-45.000000) translate(-20.000000, -19.500000) "></path>
+    </g>
+</svg>

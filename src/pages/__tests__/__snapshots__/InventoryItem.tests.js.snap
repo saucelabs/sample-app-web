@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InventoryItem should render with default props 1`] = `
+<div
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      customClass="inventory_details"
+      secondaryLeftComponent={
+        <Button
+          customClass="inventory_details_back_button"
+          label="Back to products"
+          onClick={[Function]}
+          size="large"
+          testId="back-to-products"
+          type="secondary back"
+        />
+      }
+    />
+    <div
+      className="inventory_item_container"
+      id="inventory_item_container"
+    >
+      <div
+        className="inventory_details"
+      >
+        <div
+          className="inventory_details_container"
+        >
+          <div
+            className="inventory_details_img_container"
+          >
+            <img
+              alt="Sauce Labs Backpack"
+              className="inventory_details_img"
+            />
+          </div>
+          <div
+            className="inventory_details_desc_container"
+          >
+            <div
+              className="inventory_details_name large_size"
+            >
+              Sauce Labs Backpack
+            </div>
+            <div
+              className="inventory_details_desc large_size"
+            >
+              carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+            </div>
+            <div
+              className="inventory_details_price"
+            >
+              $
+              29.99
+            </div>
+            <ButtonType
+              id={4}
+              item="Sauce Labs Backpack"
+              itemInCart={false}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;
+
+exports[`InventoryItem should render with error data if a not known product is opened 1`] = `
+<div
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      customClass="inventory_details"
+      secondaryLeftComponent={
+        <Button
+          customClass="inventory_details_back_button"
+          label="Back to products"
+          onClick={[Function]}
+          size="large"
+          testId="back-to-products"
+          type="secondary back"
+        />
+      }
+    />
+    <div
+      className="inventory_item_container"
+      id="inventory_item_container"
+    >
+      <div
+        className="inventory_details"
+      >
+        <div
+          className="inventory_details_container"
+        >
+          <div
+            className="inventory_details_img_container"
+          >
+            <img
+              alt="ITEM NOT FOUND"
+              className="inventory_details_img"
+            />
+          </div>
+          <div
+            className="inventory_details_desc_container"
+          >
+            <div
+              className="inventory_details_name large_size"
+            >
+              ITEM NOT FOUND
+            </div>
+            <div
+              className="inventory_details_desc large_size"
+            >
+              We're sorry, but your call could not be completed as dialled.
+          Please check your number, and try your call again.
+          If you are in need of assistance, please dial 0 to be connected with an operator.
+          This is a recording.
+          4 T 1.
+            </div>
+            <div
+              className="inventory_details_price"
+            >
+              $
+              √-1
+            </div>
+            <ButtonType
+              id={999}
+              item="ITEM NOT FOUND"
+              itemInCart={false}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;

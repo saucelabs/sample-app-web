@@ -1,0 +1,61 @@
+.btn {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 6px 28px;
+  font-size: 14px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn_primary {
+  border: 2px solid #e2231a;
+  color: #e2231a;
+  background-color: #fff;
+}
+
+.btn_secondary {
+  border: 2px solid #474c55;
+  background-color: #fff;
+  color: #474c55;
+}
+
+.btn_action {
+  background-color: #e2231a;
+  border: 2px solid #e2231a;
+  color: #fff;
+}
+
+.btn_secondary.back {
+  position: relative;
+}
+
+.btn_secondary .back-image {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  height: 11px;
+  width: 11px;
+}
+
+.btn_small {
+  width: 160px;
+}
+
+.btn_medium {
+  width: 220px;
+}
+
+.btn_large {
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .btn_small,
+  .btn_medium,
+  .btn_large {
+    width: 100%;
+  }
+}

@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckOutStepOne should render correctly 1`] = `
+<div
+  className="page_wrapper"
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      secondaryTitle="Checkout: Your Information"
+    />
+    <div
+      className="checkout_info_container"
+      id="checkout_info_container"
+    >
+      <div
+        className="checkout_info_wrapper"
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="checkout_info"
+          >
+            <InputError
+              autoCapitalize="none"
+              autoCorrect="off"
+              id="first-name"
+              isError={false}
+              onChange={[Function]}
+              placeholder="First Name"
+              testId="firstName"
+              type="text"
+              value=""
+            />
+            <InputError
+              autoCapitalize="none"
+              autoCorrect="off"
+              id="last-name"
+              isError={false}
+              onChange={[Function]}
+              placeholder="Last Name"
+              testId="lastName"
+              type="text"
+              value=""
+            />
+            <InputError
+              autoCapitalize="none"
+              autoCorrect="off"
+              id="postal-code"
+              isError={false}
+              onChange={[Function]}
+              placeholder="Zip/Postal Code"
+              testId="postalCode"
+              type="text"
+              value=""
+            />
+            <ErrorMessage
+              errorMessage="Error: "
+              isError={false}
+              onClick={[Function]}
+            />
+          </div>
+          <div
+            className="checkout_buttons"
+          >
+            <Button
+              customClass="cart_cancel_link"
+              label="Cancel"
+              onClick={[Function]}
+              size="medium"
+              testId="cancel"
+              type="secondary back"
+            />
+            <SubmitButton
+              customClass="btn btn_primary cart_button btn_action"
+              testId="continue"
+              value="Continue"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;

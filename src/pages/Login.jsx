@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import "./Login.css";
 import {
   isLockedOutUser,
@@ -10,20 +8,23 @@ import {
   verifyCredentials,
 } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
+import InputError, { INPUT_TYPES } from "../components/InputError";
+import SubmitButton from "../components/SubmitButton";
+import ErrorMessage from "../components/ErrorMessage";
 
 function Login(props) {
-  const { history } = props;
+  const { history, location } = props;
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    if (props.location.state) {
+    if (location.state) {
       return setError(
-        `You can only access '${props.location.state.from.pathname}' when you are logged in.`
+        `You can only access '${location.state.from.pathname}' when you are logged in.`
       );
     }
-  }, [props.location.state]);
+  }, [location.state]);
 
   const dismissError = () => {
     setError("");
@@ -31,7 +32,6 @@ function Login(props) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-
     if (!username) {
       return setError("Username is required");
     }
@@ -77,44 +77,42 @@ function Login(props) {
           <div id="login_button_container" className="form_column">
             <div className="login-box">
               <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  className="form_input"
-                  data-test="username"
-                  id="user-name"
-                  name="user-name"
-                  placeholder="Username"
+                <InputError
+                  isError={Boolean(error)}
+                  type={INPUT_TYPES.TEXT}
                   value={username}
                   onChange={handleUserChange}
+                  testId="username"
+                  placeholder="Username"
+                  // Custom
+                  id="user-name"
+                  name="user-name"
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
-                <input
-                  type="password"
-                  className="form_input"
-                  data-test="password"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
+                <InputError
+                  isError={Boolean(error)}
+                  type={INPUT_TYPES.PASSWORD}
                   value={password}
                   onChange={handlePassChange}
+                  testId="password"
+                  placeholder="Password"
+                  // Custom
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
-                <input
-                  type="submit"
-                  className="btn_action"
-                  id="login-button"
-                  value="LOGIN"
+                <ErrorMessage
+                  isError={Boolean(error)}
+                  errorMessage={`Epic sadface: ${error}`}
+                  onClick={dismissError}
                 />
-                {error && (
-                  <h3 data-test="error">
-                    <button className="error-button" onClick={dismissError}>
-                      <FontAwesomeIcon icon={faTimesCircle} size="2x" />
-                    </button>
-                    Epic sadface: {error}
-                  </h3>
-                )}
+                <SubmitButton
+                  // `btn_action` has no style function
+                  // but is there for backwards compatibility
+                  customClass="btn_action"
+                  testId="login-button"
+                  value="Login"
+                />
               </form>
             </div>
           </div>

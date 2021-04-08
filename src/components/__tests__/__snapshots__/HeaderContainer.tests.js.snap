@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderContainer should render with all props 1`] = `
+<div
+  className="header_container custom_class"
+  id="header_container"
+>
+  <div
+    className="primary_header"
+  >
+    <div
+      id="menu_button_container"
+    >
+      <withRouter(DrawerMenu) />
+    </div>
+    <div
+      className="header_label"
+    >
+      <div
+        className="app_logo"
+      />
+    </div>
+    <div
+      className="shopping_cart_container"
+      id="shopping_cart_container"
+    >
+      <withRouter(CartButton) />
+    </div>
+  </div>
+  <div
+    className="header_secondary_container"
+  >
+    <LeftComponent
+      leftComponent={
+        <input
+          type="checkbox"
+        />
+      }
+    />
+    <Title
+      title="sample title"
+    />
+    <HeaderBot />
+    <RightComponent
+      rightComponent={
+        <input
+          type="radio"
+        />
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`HeaderContainer should render without any props 1`] = `
+<div
+  className="header_container"
+  id="header_container"
+>
+  <div
+    className="primary_header"
+  >
+    <div
+      id="menu_button_container"
+    >
+      <withRouter(DrawerMenu) />
+    </div>
+    <div
+      className="header_label"
+    >
+      <div
+        className="app_logo"
+      />
+    </div>
+    <div
+      className="shopping_cart_container"
+      id="shopping_cart_container"
+    >
+      <withRouter(CartButton) />
+    </div>
+  </div>
+  <div
+    className="header_secondary_container"
+  />
+</div>
+`;

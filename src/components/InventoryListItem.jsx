@@ -1,13 +1,23 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { isProblemUser } from "../utils/Credentials";
 import "./InventoryListItem.css";
 import { ROUTES } from "../utils/Constants";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
 
-function InventoryListItem(props) {
-  const { id, image_url, name, desc, price, history } = props;
+const InventoryListItem = (props) => {
+  const { desc, id, image_url, history, name, price } = props;
   const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id));
+  /**
+   * @TODO:
+   * This can't be tested yet because enzyme currently doesn't support ReactJS17,
+   * see https://github.com/enzymejs/enzyme/issues/2429.
+   * This means we can't fully mount the component and test all rendered components
+   * and functions
+   */
+  /* istanbul ignore next */
   const addToCart = (itemId) => {
     if (isProblemUser()) {
       // Bail out now, don't add to cart if the item ID is odd
@@ -19,6 +29,14 @@ function InventoryListItem(props) {
     ShoppingCart.addItem(itemId);
     setItemInCart(true);
   };
+  /**
+   * @TODO:
+   * This can't be tested yet because enzyme currently doesn't support ReactJS17,
+   * see https://github.com/enzymejs/enzyme/issues/2429.
+   * This means we can't fully mount the component and test all rendered components
+   * and functions
+   */
+  /* istanbul ignore next */
   const removeFromCart = (itemId) => {
     if (isProblemUser()) {
       // Bail out now, don't remove from cart if the item ID is even
@@ -35,27 +53,32 @@ function InventoryListItem(props) {
     linkId += 1;
   }
   const itemLink = `${ROUTES.INVENTORY_LIST}?id=${linkId}`;
-  let cartButton;
 
-  if (itemInCart) {
-    cartButton = (
-      <button
-        className="btn_secondary btn_inventory"
-        onClick={() => removeFromCart(id)}
-      >
-        REMOVE
-      </button>
+  /**
+   * @TODO:
+   * This can't be tested yet because enzyme currently doesn't support ReactJS17,
+   * see https://github.com/enzymejs/enzyme/issues/2429.
+   * This means we can't fully mount the component and test all rendered components
+   * and functions
+   */
+  /* istanbul ignore next */
+  const ButtonType = ({ id, item, itemInCart }) => {
+    const label = itemInCart ? "Remove" : "Add to cart";
+    const onClick = itemInCart ? () => removeFromCart(id) : () => addToCart(id);
+    const type = itemInCart ? BUTTON_TYPES.SECONDARY : BUTTON_TYPES.PRIMARY;
+    const testId = `${label}-${item}`.replace(/\s+/g, "-").toLowerCase();
+
+    return (
+      <Button
+        customClass="btn_inventory"
+        label={label}
+        onClick={onClick}
+        size={BUTTON_SIZES.SMALL}
+        testId={testId}
+        type={type}
+      />
     );
-  } else {
-    cartButton = (
-      <button
-        className="btn_primary btn_inventory"
-        onClick={() => addToCart(id)}
-      >
-        ADD TO CART
-      </button>
-    );
-  }
+  };
   const url = isProblemUser() ? "sl-404.jpg" : image_url;
 
   return (
@@ -76,25 +99,56 @@ function InventoryListItem(props) {
           />
         </a>
       </div>
-      <div className="inventory_item_label">
-        <a
-          href="#"
-          id={`item_${id}_title_link`}
-          onClick={(evt) => {
-            evt.preventDefault();
-            history.push(itemLink);
-          }}
-        >
-          <div className="inventory_item_name">{name}</div>
-        </a>
-        <div className="inventory_item_desc">{desc}</div>
-      </div>
-      <div className="pricebar">
-        <div className="inventory_item_price">${price}</div>
-        {cartButton}
+      <div className="inventory_item_description">
+        <div className="inventory_item_label">
+          <a
+            href="#"
+            id={`item_${id}_title_link`}
+            onClick={(evt) => {
+              evt.preventDefault();
+              history.push(itemLink);
+            }}
+          >
+            <div className="inventory_item_name">{name}</div>
+          </a>
+          <div className="inventory_item_desc">{desc}</div>
+        </div>
+        <div className="pricebar">
+          <div className="inventory_item_price">${price}</div>
+          <ButtonType id={id} itemInCart={itemInCart} item={name} />
+        </div>
       </div>
     </div>
   );
-}
+};
+
+InventoryListItem.propTypes = {
+  /**
+   * The description of the product
+   */
+  desc: PropTypes.string.isRequired,
+  /**
+   * The history
+   */
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  /**
+   * The id of the list item
+   */
+  id: PropTypes.number.isRequired,
+  /**
+   * The url of the image
+   */
+  image_url: PropTypes.string.isRequired,
+  /**
+   * The name of the product
+   */
+  name: PropTypes.string.isRequired,
+  /**
+   * The price of the product
+   */
+  price: PropTypes.number.isRequired,
+};
 
 export default withRouter(InventoryListItem);

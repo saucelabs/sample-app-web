@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inventory should render correctly 1`] = `
+<div
+  className="page_wrapper"
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      secondaryHeaderBot={true}
+      secondaryRightComponent={
+        <Select
+          activeOption="az"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "key": "az",
+                "value": "Name (A to Z)",
+              },
+              Object {
+                "key": "za",
+                "value": "Name (Z to A)",
+              },
+              Object {
+                "key": "lohi",
+                "value": "Price (low to high)",
+              },
+              Object {
+                "key": "hilo",
+                "value": "Price (high to low)",
+              },
+            ]
+          }
+          testId="product_sort_container"
+        />
+      }
+      secondaryTitle="Products"
+    />
+    <div
+      id="inventory_container"
+    >
+      <div>
+        <div
+          className="inventory_container"
+          id="inventory_container"
+        >
+          <div
+            className="inventory_list"
+          >
+            <withRouter(InventoryListItem)
+              desc="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
+              id={4}
+              image_url="sauce-backpack-1200x1500.jpg"
+              key="4"
+              name="Sauce Labs Backpack"
+              price={29.99}
+            />
+            <withRouter(InventoryListItem)
+              desc="A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included."
+              id={0}
+              image_url="bike-light-1200x1500.jpg"
+              key="0"
+              name="Sauce Labs Bike Light"
+              price={9.99}
+            />
+            <withRouter(InventoryListItem)
+              desc="Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt."
+              id={1}
+              image_url="bolt-shirt-1200x1500.jpg"
+              key="1"
+              name="Sauce Labs Bolt T-Shirt"
+              price={15.99}
+            />
+            <withRouter(InventoryListItem)
+              desc="It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office."
+              id={5}
+              image_url="sauce-pullover-1200x1500.jpg"
+              key="5"
+              name="Sauce Labs Fleece Jacket"
+              price={49.99}
+            />
+            <withRouter(InventoryListItem)
+              desc="Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel."
+              id={2}
+              image_url="red-onesie-1200x1500.jpg"
+              key="2"
+              name="Sauce Labs Onesie"
+              price={7.99}
+            />
+            <withRouter(InventoryListItem)
+              desc="This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton."
+              id={3}
+              image_url="red-tatt-1200x1500.jpg"
+              key="3"
+              name="Test.allTheThings() T-Shirt (Red)"
+              price={15.99}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;

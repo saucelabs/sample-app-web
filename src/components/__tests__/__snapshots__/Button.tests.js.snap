@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render a Action button 1`] = `
+<button
+  className="btn btn_action btn_large"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render a Back button 1`] = `
+<button
+  className="btn btn_secondary back btn_large"
+  onClick={[Function]}
+>
+  <BackImage />
+  Default button
+</button>
+`;
+
+exports[`Button should render a Large button 1`] = `
+<button
+  className="btn btn_primary btn_large"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render a Medium button 1`] = `
+<button
+  className="btn btn_primary btn_medium"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render a Primary button 1`] = `
+<button
+  className="btn btn_primary btn_large"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render a Secondary button 1`] = `
+<button
+  className="btn btn_secondary btn_large"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render a Small button 1`] = `
+<button
+  className="btn btn_primary btn_small"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render a button with a testId 1`] = `
+<button
+  className="btn btn_primary btn_large"
+  data-test="test-id"
+  id="test-id"
+  name="test-id"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render a button with custom properties 1`] = `
+<button
+  bar="foo"
+  className="btn btn_primary btn_large"
+  foo="bar"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render correctly with a custom class 1`] = `
+<button
+  className="btn btn_primary btn_large custom-class"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;
+
+exports[`Button should render correctly with the required options 1`] = `
+<button
+  className="btn btn_primary btn_large"
+  onClick={[Function]}
+>
+  Default button
+</button>
+`;

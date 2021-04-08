@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render correctly 1`] = `
+<div>
+  <div
+    className="login_logo"
+  />
+  <div
+    className="login_wrapper"
+  >
+    <div
+      className="login_wrapper-inner"
+    >
+      <div
+        className="form_column"
+        id="login_button_container"
+      >
+        <div
+          className="login-box"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <InputError
+              autoCapitalize="none"
+              autoCorrect="off"
+              id="user-name"
+              isError={false}
+              name="user-name"
+              onChange={[Function]}
+              placeholder="Username"
+              testId="username"
+              type="text"
+              value=""
+            />
+            <InputError
+              autoCapitalize="none"
+              autoCorrect="off"
+              isError={false}
+              onChange={[Function]}
+              placeholder="Password"
+              testId="password"
+              type="password"
+              value=""
+            />
+            <ErrorMessage
+              errorMessage="Epic sadface: "
+              isError={false}
+              onClick={[Function]}
+            />
+            <SubmitButton
+              customClass="btn_action"
+              testId="login-button"
+              value="Login"
+            />
+          </form>
+        </div>
+      </div>
+      <div
+        className="bot_column"
+      />
+    </div>
+    <div
+      className="login_credentials_wrap"
+    >
+      <div
+        className="login_credentials_wrap-inner"
+      >
+        <div
+          className="login_credentials"
+          id="login_credentials"
+        >
+          <h4>
+            Accepted usernames are:
+          </h4>
+          standard_user
+          <br />
+          locked_out_user
+          <br />
+          problem_user
+          <br />
+          performance_glitch_user
+          <br />
+        </div>
+        <div
+          className="login_password"
+        >
+          <h4>
+            Password for all users:
+          </h4>
+          secret_sauce
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

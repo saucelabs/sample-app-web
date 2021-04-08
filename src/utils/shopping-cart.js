@@ -1,8 +1,9 @@
 export class ShoppingCart {
   static addItem(itemId) {
     // pull out our current cart contents
-    var curContents = ShoppingCart.getCartContents();
+    const curContents = ShoppingCart.getCartContents();
 
+    /* istanbul ignore else */
     if (curContents.indexOf(itemId) < 0) {
       // Item's not yet present - add it now
       curContents.push(itemId);
@@ -14,9 +15,10 @@ export class ShoppingCart {
 
   static removeItem(itemId) {
     // pull out our current cart contents
-    var curContents = ShoppingCart.getCartContents();
-    var itemIndex = curContents.indexOf(itemId);
+    const curContents = ShoppingCart.getCartContents();
+    const itemIndex = curContents.indexOf(itemId);
 
+    /* istanbul ignore else */
     if (itemIndex >= 0) {
       // Remove this item from the array
       curContents.splice(itemIndex, 1);
@@ -28,7 +30,7 @@ export class ShoppingCart {
 
   static isItemInCart(itemId) {
     // pull out our current cart contents
-    var curContents = ShoppingCart.getCartContents();
+    const curContents = ShoppingCart.getCartContents();
 
     // If the item is in the array, return true
     return curContents.indexOf(itemId) >= 0;
@@ -36,7 +38,7 @@ export class ShoppingCart {
 
   static getCartContents() {
     // pull out our current cart contents
-    var curContents = window.localStorage.getItem("cart-contents");
+    let curContents = window.localStorage.getItem("cart-contents");
 
     // Make an empty list if this is the first item
     if (curContents == null) {
@@ -53,6 +55,7 @@ export class ShoppingCart {
     window.localStorage.setItem("cart-contents", JSON.stringify(newContents));
 
     // Notify our listeners
+    /* istanbul ignore next */
     ShoppingCart.LISTENERS.forEach((curListener) => {
       curListener.forceUpdate();
     });
@@ -62,6 +65,7 @@ export class ShoppingCart {
     window.localStorage.removeItem("cart-contents");
 
     // Notify our listeners
+    /* istanbul ignore next */
     ShoppingCart.LISTENERS.forEach((curListener) => {
       curListener.forceUpdate();
     });
