@@ -4,10 +4,17 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.storybook'
+      - 'public'
+      - 'src'
 
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./
     steps:
       - uses: actions/checkout@v2
 
@@ -17,7 +24,6 @@ jobs:
           node-version: '14.x'
 
       - name: Build site
-        working-directory: ./
         env:
           CI: false
         run: |
@@ -26,7 +32,6 @@ jobs:
           npm run build
 
       - name: Build storybook
-        working-directory: ./
         env:
           CI: false
         run: |
