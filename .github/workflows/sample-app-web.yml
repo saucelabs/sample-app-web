@@ -11,8 +11,16 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./
+    env:
+      BUILD_PREFIX: true
+      IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+      SCREENER_API_KEY: ${{ secrets.SCREENER_API_KEY }}
 
     strategy:
       matrix:
@@ -29,11 +37,9 @@ jobs:
 
     # Site Testing steps
     - name: Install dependencies
-      working-directory: ./
       run: npm install
 
     - name: Run Unit Tests and generate coverage report
-      working-directory: ./
       run: npm run test.coverage
 
     - name: Upload coverage to Codecov
@@ -41,16 +47,11 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
 
+    # Only run the last 2 steps when we are not on the main branch
     - name: Run Storybook tests
-      working-directory: ./
-      env:
-        SCREENER_API_KEY: ${{ secrets.SCREENER_API_KEY }}
+      if: ${{ !env.IS_MAIN }}
       run: npm run test.storybook.ci
 
     - name: Build and E2E test the site
-      working-directory: ./
-      env:
-        SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
-        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        BUILD_PREFIX: true
+      if: ${{ !env.IS_MAIN }}
       run: npm run start & npx wait-on --timeout 60000 http://localhost:3000 && npm run test.e2e.sauce.us
