@@ -3,6 +3,8 @@ const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
     build: `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
+    //use Tunnel ID  if not using WDIO to create tunnel
+    tunnelIdentifier: 'ciTunnel'
 };
 
 // =========================
@@ -30,8 +32,8 @@ config.capabilities = [
         'sauce:options': {
             ...defaultBrowserSauceOptions,
         },
-    },
-    {
+    }
+    /*{
         browserName: 'firefox',
         platformName: 'Windows 10',
         browserVersion: 'latest',
@@ -89,13 +91,14 @@ config.capabilities = [
         'sauce:options': {
             ...defaultBrowserSauceOptions,
         },
-    }
+    } */
 ];
 
 config.services = config.services.concat([
     ['sauce',
         {
-            sauceConnect: true,
+            //set SC to "true" to use WDIO 
+            sauceConnect: false,
             sauceConnectOpts: {
                 logfile: './sc.log',
                 verbose: 1,
