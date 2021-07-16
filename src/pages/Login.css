@@ -80,4 +80,7 @@
     min-height: 260px;
     min-width: 300px;
   }
+  .copyright {
+    text-align: center;
+  }
 }

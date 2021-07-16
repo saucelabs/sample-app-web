@@ -139,6 +139,9 @@ function Login(props) {
           </div>
         </div>
       </div>
+      <div className="copyright">
+        <a href="https://www.saucelabs.com" >(c) Sauce Labs</a>
+      </div>
     </div>
   );
 }
