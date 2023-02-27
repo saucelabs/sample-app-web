@@ -67,7 +67,6 @@ const Inventory = () => {
       <div id="contents_wrapper">
         <HeaderContainer
           secondaryTitle="Products"
-          secondaryHeaderBot
           secondaryRightComponent={
             <Select
               activeOption={activeOption}

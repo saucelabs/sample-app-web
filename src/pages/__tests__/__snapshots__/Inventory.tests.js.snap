@@ -9,7 +9,6 @@ exports[`Inventory should render correctly 1`] = `
     id="contents_wrapper"
   >
     <HeaderContainer
-      secondaryHeaderBot={true}
       secondaryRightComponent={
         <Select
           activeOption="az"

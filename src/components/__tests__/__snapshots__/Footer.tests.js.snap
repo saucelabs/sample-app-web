@@ -48,10 +48,5 @@ exports[`Footer should render correctly 1`] = `
     1234
      Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
   </div>
-  <img
-    alt="Swag Bot Footer"
-    className="footer_robot"
-    src="test-file-stub"
-  />
 </footer>
 `;
