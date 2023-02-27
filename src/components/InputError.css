@@ -3,11 +3,11 @@
   position: relative;
 }
 .input_error {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-family: Aeonik, Arial, Helvetica, sans-serif;
+  font-size: 14px;
   width: 100%;
   border: 0px;
-  border-bottom: 2px solid #ededef;
+  border-bottom: 1px solid #EDEDED;
   outline: none;
   padding: 10px 0;
 }
@@ -31,7 +31,7 @@
     /* IE 10+ */
 .form_input:-ms-input-placeholder,
 .form_input::placeholder {
-  color: #c1c7c6;
+  color: #6D7584;
 }
 
 /* Chrome/Opera/Safari */

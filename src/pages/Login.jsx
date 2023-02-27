@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import { useState } from "react";
-import "./Login.css";
+import React, { useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+import { useState } from 'react';
+import './Login.css';
 import {
   isLockedOutUser,
   setCredentials,
   verifyCredentials,
-} from "../utils/Credentials";
-import { ROUTES } from "../utils/Constants";
-import InputError, { INPUT_TYPES } from "../components/InputError";
-import SubmitButton from "../components/SubmitButton";
-import ErrorMessage from "../components/ErrorMessage";
+} from '../utils/Credentials';
+import { ROUTES } from '../utils/Constants';
+import InputError, { INPUT_TYPES } from '../components/InputError';
+import SubmitButton from '../components/SubmitButton';
+import ErrorMessage from '../components/ErrorMessage';
 
 function Login(props) {
   const { history, location } = props;
-  const [error, setError] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [error, setError] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (location.state) {
@@ -27,17 +27,17 @@ function Login(props) {
   }, [location.state]);
 
   const dismissError = () => {
-    setError("");
+    setError('');
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (!username) {
-      return setError("Username is required");
+      return setError('Username is required');
     }
 
     if (!password) {
-      return setError("Password is required");
+      return setError('Password is required');
     }
 
     if (verifyCredentials(username, password)) {
@@ -46,18 +46,18 @@ function Login(props) {
       setCredentials(username, password);
       // Catch our locked-out user and bail out
       if (isLockedOutUser()) {
-        return setError("Sorry, this user has been locked out.");
+        return setError('Sorry, this user has been locked out.');
       }
 
       // Redirect!
       history.push(ROUTES.INVENTORY);
     } else {
       return setError(
-        "Username and password do not match any user in this service"
+        'Username and password do not match any user in this service'
       );
     }
 
-    return "";
+    return '';
   };
 
   const handleUserChange = (evt) => {
@@ -70,7 +70,7 @@ function Login(props) {
 
   return (
     <div>
-      <div className="login_logo" />
+      <div className="login_logo">Swag Labs</div>
 
       <div className="login_wrapper">
         <div className="login_wrapper-inner">
@@ -116,8 +116,6 @@ function Login(props) {
               </form>
             </div>
           </div>
-
-          <div className="bot_column" />
         </div>
         <div className="login_credentials_wrap">
           <div className="login_credentials_wrap-inner">
