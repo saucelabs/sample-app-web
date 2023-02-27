@@ -1,8 +1,11 @@
 body,
 html {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: DM Sans, Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: #484c55;
+  line-height: 20px;
+  letter-spacing: 2%;
+  background-color: #EEFCF6;
+  color: #132322;
   height: 100vh;
   margin: 0;
 }
@@ -48,4 +51,10 @@ input {
   font-size: 32px;
   font-weight: 100;
   color: #fff;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 2%;
 }
