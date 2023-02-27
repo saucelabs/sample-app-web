@@ -4,7 +4,9 @@ exports[`Login should render correctly 1`] = `
 <div>
   <div
     className="login_logo"
-  />
+  >
+    Swag Labs
+  </div>
   <div
     className="login_wrapper"
   >
@@ -56,9 +58,6 @@ exports[`Login should render correctly 1`] = `
           </form>
         </div>
       </div>
-      <div
-        className="bot_column"
-      />
     </div>
     <div
       className="login_credentials_wrap"
