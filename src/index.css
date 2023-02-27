@@ -1,43 +1,8 @@
-@font-face {
-  font-family: 'AeonikFono';
-  src: url('./fonts/AeonikFono-Regular.78662f0c.woff2') format("woff2"), url('./fonts/AeonikFono-Regular.9d58fa0b.woff') format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'AeonikFonoBold';
-  src: url('./fonts/AeonikFono-Bold.e537be46.woff2') format("woff2"), url('./fonts/AeonikFono-Bold.da93b27f.woff') format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'Aeonik';
-  src: url('./fonts/Aeonik-Regular.eba6c308.woff2') format("woff2"), url('./fonts/Aeonik-Regular.b5898d76.woff') format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap
-}
-
-@font-face {
-  font-family: 'AeonikBold';
-  src: url('./fonts/Aeonik-Bold.c721a165.woff2') format("woff2"), url('./fonts/Aeonik-Bold.ddd4e862.woff') format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap
-}
-
 body,
 html {
-  font-family: Aeonik, Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 2%;
-  background-color: #EEFCF6;
-  color: #132322;
+  color: #484c55;
   height: 100vh;
   margin: 0;
 }
@@ -83,10 +48,4 @@ input {
   font-size: 32px;
   font-weight: 100;
   color: #fff;
-}
-
-h4 {
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 2%;
 }
