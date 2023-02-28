@@ -1,3 +1,7 @@
+.login_container {
+  background-color: #EEFCF6;
+  min-height: 100vh;
+}
 .login_logo {
   font-family: DM Mono,'sans-serif';
   font-size: 24px;

@@ -1,9 +1,10 @@
 .btn {
+  border: none;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
   padding: 6px 20px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   font-weight: 500;
   font-family: "DM Sans", sans-serif;

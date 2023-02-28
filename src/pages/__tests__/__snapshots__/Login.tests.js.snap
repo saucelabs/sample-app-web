@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login should render correctly 1`] = `
-<div>
+<div
+  className="login_container"
+>
   <div
     className="login_logo"
   >

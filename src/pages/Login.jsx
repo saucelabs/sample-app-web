@@ -69,7 +69,7 @@ function Login(props) {
   };
 
   return (
-    <div>
+    <div className="login_container">
       <div className="login_logo">Swag Labs</div>
 
       <div className="login_wrapper">
