@@ -27,11 +27,6 @@ input {
   height: 100vh;
   flex-direction: column;
 }
-@media only screen and (min-width: 1200px) {
-  .page_wrapper {
-    margin-bottom: -360px;
-  }
-}
 
 /*Sub header */
 .subheader {

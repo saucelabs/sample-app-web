@@ -4,7 +4,7 @@
 }
 
 .primary_header {
-  height: 56;
+  height: 56px;
 }
 
 .primary_header .header_label {
@@ -49,17 +49,6 @@
   line-height: 48px;
 }
 
-.header_secondary_container .peek {
-  background: url("../assets/img/headerBot2x.png") no-repeat center center;
-  background: url("../assets/svg/headerBot3x.svg") no-repeat center center,
-    linear-gradient(transparent, transparent);
-  display: block;
-  height: 91px;
-  width: 90px;
-  margin-top: 13px;
-  margin-left: 25px;
-}
-
 .right_component {
   margin-left: auto;
 }
@@ -68,13 +57,5 @@
   .header_secondary_container {
     height: 60px;
     padding: 0 15px;
-  }
-
-  .header_secondary_container .title {
-    font-size: 20px;
-  }
-
-  .header_secondary_container .peek {
-    display: none;
   }
 }

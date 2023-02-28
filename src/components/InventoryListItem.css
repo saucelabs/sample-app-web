@@ -1,10 +1,11 @@
 .inventory_item {
-  border: 2px solid #ededef;
+  border: 1px solid #EDEDED;
   background: #fff;
   position: relative;
   margin-bottom: 12px;
   display: flex;
   box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .inventory_item_img {
@@ -17,13 +18,14 @@
 }
 .inventory_item_img img {
   height: 100%;
-  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 .inventory_item_description {
   flex: 2;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 34px 20px 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -33,16 +35,20 @@
   text-decoration: none;
 }
 .inventory_item_name {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "DM Mono", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  color: #e2231a;
+  color: #18583A;
 }
 .inventory_item_desc {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 14px;
+  line-height: 20px;
   margin-top: 7px;
-  color: #777777;
+  color: #132322;
+}
+.inventory_item .inventory_item_desc {
+  width: inherit;
 }
 .pricebar {
   display: flex;
@@ -51,21 +57,26 @@
 }
 
 .inventory_item_price {
-  border-top: 2px solid #ededef;
-  color: #e2231a;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  color: #132322;
+  font-family: "DM Mono",sans-serif;
+  font-size: 20px;
+  line-height: 36px;
   display: inline-block;
   padding-top: 5px;
 }
 
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 1060px) {
   .inventory_item {
-    width: 49%;
+    height: 240px;
+    width: 505px;
   }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1060px) {
+  .inventory_item {
+    height: 240px;
+    width: 100%;
+  }
   .pricebar .btn {
     width: 160px;
   }
@@ -73,6 +84,7 @@
 
 @media only screen and (max-width: 480px) {
   .inventory_item {
+    height: inherit;
     flex-direction: column;
     border: none;
     margin-bottom: 40px;
@@ -82,6 +94,10 @@
     box-sizing: border-box;
     padding: 0 10px;
   }
+  .inventory_item_img img {
+    border-radius: 0;
+    width: 100%;
+  }
 
   .inventory_item_description {
     padding-bottom: 0;
@@ -89,7 +105,7 @@
 
   .pricebar {
     align-items: flex-start;
-    border-bottom: 2px solid #ededef;
+    border-bottom: 1px solid #EDEDED;
     flex-direction: column;
     padding-bottom: 40px;
   }

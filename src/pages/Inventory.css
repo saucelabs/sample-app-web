@@ -10,12 +10,12 @@
 .inventory_container {
   background-color: #fff;
   overflow: hidden;
-  margin-bottom: 30px;
   padding-top: 40px;
+  margin: 0 auto 30px auto;
 }
 
 .inventory_list {
-  max-width: 1280px;
+  max-width: 1060px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

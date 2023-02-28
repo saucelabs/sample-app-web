@@ -4,22 +4,23 @@
   outline: none;
   padding: 6px 28px;
   font-size: 14px;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 20px;
+  font-family: "DM Sans", sans-serif;
   display: inline-block;
   text-decoration: none;
-  text-transform: uppercase;
+  border-radius: 4px;
 }
 
 .btn_primary {
-  border: 2px solid #3DDC91;
-  color: #3DDC91;
+  border: 1px solid #132322;
+  color: #132322;
   background-color: #fff;
 }
 
 .btn_secondary {
-  border: 2px solid #474c55;
+  border: 1px solid #E2231A;
   background-color: #fff;
-  color: #474c55;
+  color: #E2231A;
 }
 
 .btn_action {
