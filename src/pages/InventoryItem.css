@@ -1,12 +1,12 @@
 .inventory_item_container {
+  background-color: #fff;
   padding: 40px 15px;
 }
 
 .inventory_details_container {
   display: flex;
-  max-width: 1280px;
+  max-width: 1060px;
   margin: 0 auto;
-  border: 2px solid #ededef;
 }
 
 .inventory_details_container .inventory_details_img_container {
@@ -26,25 +26,27 @@
 }
 
 .inventory_details_container .inventory_details_name {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "DM Mono", sans-serif;
   font-size: 20px;
+  line-height: 24px;
   font-weight: 500;
-  color: #e2231a;
+  color: #132322;
   margin-bottom: 15px;
 }
 
 .inventory_details_container .inventory_details_desc {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 14px;
-  color: #777777;
+  color: #132322;
   margin-bottom: 30px;
 }
 
 .inventory_details_container .inventory_details_price {
-  border-top: 2px solid #ededef;
-  color: #e2231a;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  color: #132322;
+  font-family: "DM Mono",  sans-serif;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 500;
   display: inline-block;
   padding-top: 10px;
 }
@@ -55,7 +57,7 @@
 }
 
 .inventory_details_container .large_size {
-  width: 50%;
+  width: 75%;
 }
 
 @media only screen and (max-width: 900px) {

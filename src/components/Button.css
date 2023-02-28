@@ -2,9 +2,10 @@
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  padding: 6px 28px;
+  padding: 6px 20px;
   font-size: 14px;
   line-height: 20px;
+  font-weight: 500;
   font-family: "DM Sans", sans-serif;
   display: inline-block;
   text-decoration: none;
@@ -18,9 +19,9 @@
 }
 
 .btn_secondary {
-  border: 1px solid #E2231A;
   background-color: #fff;
-  color: #E2231A;
+  color: #18583A;
+  border: none;
 }
 
 .btn_action {
@@ -35,8 +36,8 @@
 
 .btn_secondary .back-image {
   position: absolute;
-  left: 10px;
-  top: 9px;
+  left: 0;
+  top: 10px;
   height: 11px;
   width: 11px;
 }
