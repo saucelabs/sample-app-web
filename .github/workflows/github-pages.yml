@@ -1,13 +1,13 @@
 name: github pages release
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.storybook'
-      - 'public'
-      - 'src'
+on: workflow_dispatch
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - '.storybook'
+#       - 'public'
+#       - 'src'
 
 jobs:
   deploy:
