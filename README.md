@@ -82,7 +82,7 @@ Each PR to master will also test the components with the `test.storybook.ci`-com
 
 ## Deploy
 
-Merges to master will automatically deploy to:
+Merges to master need to manually be triggered in [Actions > github pages release](https://github.com/saucelabs/sample-app-web/actions/workflows/github-pages.yml) and will automatically deploy to:
 * https://www.saucedemo.com
 * https://saucelabs.github.io/sample-app-web/
 
