@@ -1,9 +1,11 @@
 .header_container {
+  border-bottom: 1px solid #ededed;
   display: flex;
   flex-direction: column;
 }
 
 .primary_header {
+  border-bottom: 1px solid #ededed;
   height: 56px;
 }
 

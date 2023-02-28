@@ -5,7 +5,6 @@
 }
 
 .summary_info_label {
-  border-top: 2px solid #efefef;
   padding: 20px 0 0;
 }
 
@@ -47,7 +46,6 @@
 .summary_tax_label,
 .summary_total_label {
   color: #132322;
-  margin-left: 50px;
 }
 
 .cart_footer .btn_secondary.back {
@@ -60,14 +58,6 @@
 }
 
 @media only screen and (min-width: 900px) {
-  .summary_info_label,
-  .summary_value_label,
-  .summary_subtotal_label,
-  .summary_tax_label,
-  .summary_total_label {
-    margin-left: 80px;
-  }
-
   .summary_info_label {
     padding: 20px 0 0;
   }

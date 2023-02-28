@@ -1,4 +1,6 @@
 .select_container {
+  border: 1px solid #ededed;
+  border-radius: 4px;
   box-sizing: border-box;
   background-color: #ffffff;
   overflow: hidden;

@@ -4,9 +4,12 @@
 }
 
 .inventory_details_container {
+  border: 1px solid #ededed;
+  border-radius: 8px;
   display: flex;
   max-width: 1060px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .inventory_details_container .inventory_details_img_container {
@@ -32,6 +35,11 @@
   font-weight: 500;
   color: #132322;
   margin-bottom: 15px;
+}
+
+a:hover .inventory_item_name,
+.btn.btn_secondary.inventory_details_back_button:hover {
+  color: #3DDC91
 }
 
 .inventory_details_container .inventory_details_desc {

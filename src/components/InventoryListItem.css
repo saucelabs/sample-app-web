@@ -44,7 +44,7 @@
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
-  margin-top: 7px;
+  margin-top: 10px;
   color: #132322;
 }
 .inventory_item .inventory_item_desc {
@@ -57,6 +57,7 @@
 }
 
 .inventory_item_price {
+  border-top: 1px solid #EDEDED;
   color: #132322;
   font-family: "DM Mono",sans-serif;
   font-size: 20px;
