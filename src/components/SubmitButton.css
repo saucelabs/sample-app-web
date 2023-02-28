@@ -1,6 +1,7 @@
 .submit-button {
   background-color: #3DDC91;
   border: 4px solid #3DDC91;
+  border-radius: 4px;
   color: #132322;
   cursor: pointer;
   display: inline-block;
