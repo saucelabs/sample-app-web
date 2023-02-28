@@ -15,7 +15,7 @@ This is the Sauce Labs Sample Application which is designed to be used from desk
 ### Requirements
 To set up the development environment directly on your host computer:
 
-1. You’ll need [Node.js](http://nodejs.org) installed (at least v12.x.x or higher). If you don't have Node installed,
+1. You’ll need [Node.js](http://nodejs.org) installed (this needs to be NodeJS 14, not higher). If you don't have Node installed,
 we recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
 1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
 1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
