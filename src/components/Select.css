@@ -4,8 +4,8 @@
   overflow: hidden;
   padding: 0 0 0 40px;
   cursor: pointer;
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   display: block;
   position: relative;
 }
@@ -19,8 +19,8 @@
   background: url("../assets/img/filter.png") no-repeat center center;
   background: url("../assets/svg/filter3x.svg") no-repeat center center,
     linear-gradient(transparent, transparent);
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   position: absolute;
   left: 0;
   top: 0;
@@ -39,9 +39,9 @@
 
 @media only screen and (min-width: 900px) {
   .select_container {
-    padding: 0 40px;
-    width: 250px;
-    line-height: 40px;
+    padding: 0 32px;
+    width: 225px;
+    line-height: 32px;
   }
 
   .select_container:after {
@@ -49,18 +49,16 @@
     background: url("../assets/img/arrow.png") no-repeat center center;
     background: url("../assets/svg/arrow3x.svg") no-repeat center center,
       linear-gradient(transparent, transparent);
-    height: 40px;
-    width: 40px;
+    height: 32px;
+    width: 32px;
     position: absolute;
     right: 0;
     top: 0;
-    transform: rotate(270deg);
   }
 
   .active_option {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
-    text-transform: uppercase;
   }
 }
