@@ -16,11 +16,24 @@
 
 .checkout_buttons {
   margin-top: 5px;
-  border-top: 2px solid #ededef;
+  border-top: 1px solid #EDEDED;
   display: flex;
   justify-content: space-between;
   padding: 40px 0;
   margin-bottom: 30px;
+}
+
+.checkout_buttons .btn_primary {
+  border: none;
+}
+
+.checkout_buttons .btn_secondary.back {
+  color: #132322;
+  border: 1px solid #132322;
+}
+
+.checkout_buttons .btn_secondary.back .back-image {
+  left: 12px;
 }
 
 .checkout_buttons .btn {
@@ -33,7 +46,8 @@
 
 @media only screen and (min-width: 900px) {
   .checkout_info {
-    border: 2px solid #ededef;
+    border: 1px solid #EDEDED;
+    border-radius: 8px;
     padding: 40px 40px 0 40px;
     margin: 70px auto 100px auto;
   }
