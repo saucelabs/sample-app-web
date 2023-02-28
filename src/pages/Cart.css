@@ -18,7 +18,8 @@
 }
 
 .cart_desc_label {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
   color: #484c55;
   display: inline-block;
 }
