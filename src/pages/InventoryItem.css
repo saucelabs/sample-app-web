@@ -56,8 +56,14 @@
   display: block;
 }
 
-.inventory_details_container .large_size {
+ .large_size {
   width: 75%;
+}
+
+.left_component .btn_secondary.back {
+  background-color: #fff;
+  color: #18583A;
+  border: none;
 }
 
 @media only screen and (max-width: 900px) {

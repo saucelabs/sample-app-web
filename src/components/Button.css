@@ -19,9 +19,9 @@
 }
 
 .btn_secondary {
+  border: 1px solid #E2231A;
   background-color: #fff;
-  color: #18583A;
-  border: none;
+  color: #E2231A;
 }
 
 .btn_action {
