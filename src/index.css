@@ -1,10 +1,15 @@
 body,
 html {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: DM Sans, Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: #484c55;
+  line-height: 20px;
+  /* letter-spacing: 1px; */
+  background-color: #fff;
+  color: #132322;
   height: 100vh;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
 }
 
 :focus {
@@ -23,11 +28,6 @@ input {
   display: flex;
   height: 100vh;
   flex-direction: column;
-}
-@media only screen and (min-width: 1200px) {
-  .page_wrapper {
-    margin-bottom: -360px;
-  }
 }
 
 /*Sub header */
@@ -48,4 +48,10 @@ input {
   font-size: 32px;
   font-weight: 100;
   color: #fff;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 20px;
+  /* letter-spacing: 2px; */
 }

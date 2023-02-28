@@ -1,8 +1,5 @@
 .cart_contents_container {
-  padding-top: 30px;
-}
-
-.cart_contents_container {
+  background-color: #fff;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 15px 30px;
@@ -10,7 +7,10 @@
 
 .cart_quantity_label {
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  font-family: 'DM Mono', sans-serif;
   padding: 20px 0;
   background-color: #fff;
   color: #484c55;
@@ -18,13 +18,22 @@
 }
 
 .cart_desc_label {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
   color: #484c55;
   display: inline-block;
 }
 
+.cart_contents_container .btn_secondary.back {
+  color: #132322;
+  border: 1px solid #132322;
+}
+
+.cart_contents_container .btn_secondary.back .back-image {
+  left: 12px;
+}
+
 .cart_footer {
-  border-top: 2px solid #ededef;
   padding: 40px 0;
   margin-bottom: 30px;
   display: flex;

@@ -18,7 +18,9 @@ exports[`HeaderContainer should render with all props 1`] = `
     >
       <div
         className="app_logo"
-      />
+      >
+        Swag Labs
+      </div>
     </div>
     <div
       className="shopping_cart_container"
@@ -40,7 +42,6 @@ exports[`HeaderContainer should render with all props 1`] = `
     <Title
       title="sample title"
     />
-    <HeaderBot />
     <RightComponent
       rightComponent={
         <input
@@ -70,7 +71,9 @@ exports[`HeaderContainer should render without any props 1`] = `
     >
       <div
         className="app_logo"
-      />
+      >
+        Swag Labs
+      </div>
     </div>
     <div
       className="shopping_cart_container"

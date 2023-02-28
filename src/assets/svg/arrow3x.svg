@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>Buttons/Arrow@3x</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Buttons/Arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon id="Triangle" fill="#484C55" fill-rule="nonzero" transform="translate(5.500000, 5.500000) rotate(-90.000000) translate(-5.500000, -5.500000) " points="5.5 0.5 10.5 10.5 0.5 10.5"></polygon>
-    </g>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M3.36389 5.53284C3.2949 5.45554 3.34999 5.33334 3.45384 5.33334H12.546C12.6498 5.33334 12.7049 5.45554 12.636 5.53284L8.08987 10.6264C8.042 10.6801 7.95784 10.6801 7.90997 10.6264L3.36389 5.53284Z"
+        fill="#132322" />
 </svg>

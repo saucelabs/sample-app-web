@@ -27,7 +27,7 @@ exports[`Cart should render correctly items 1`] = `
           <div
             className="cart_desc_label"
           >
-            DESCRIPTION
+            Description
           </div>
           <withRouter(CartItem)
             item={
@@ -122,7 +122,7 @@ exports[`Cart should render correctly without any items 1`] = `
           <div
             className="cart_desc_label"
           >
-            DESCRIPTION
+            Description
           </div>
         </div>
         <div

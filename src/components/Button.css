@@ -1,41 +1,46 @@
 .btn {
+  border: none;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  padding: 6px 28px;
-  font-size: 14px;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 6px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
   display: inline-block;
   text-decoration: none;
-  text-transform: uppercase;
+  border-radius: 4px;
 }
 
 .btn_primary {
-  border: 2px solid #e2231a;
-  color: #e2231a;
+  border: 1px solid #132322;
+  color: #132322;
   background-color: #fff;
 }
 
 .btn_secondary {
-  border: 2px solid #474c55;
+  border: 1px solid #E2231A;
   background-color: #fff;
-  color: #474c55;
+  color: #E2231A;
 }
 
 .btn_action {
-  background-color: #e2231a;
-  border: 2px solid #e2231a;
-  color: #fff;
+  background-color: #3DDC91;
+  border-radius: 4px;
+  color: #132322;
 }
 
 .btn_secondary.back {
   position: relative;
+  color: #132322;
+  border: 1px solid #132322;
 }
 
 .btn_secondary .back-image {
   position: absolute;
-  left: 10px;
-  top: 9px;
+  left: 0;
+  top: 10px;
   height: 11px;
   width: 11px;
 }

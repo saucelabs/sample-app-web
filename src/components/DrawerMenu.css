@@ -4,29 +4,28 @@
   }
 }
 .menu-item {
-  border-bottom: 2px solid #474c55;
-  color: #474c55;
+  border-bottom: 1px solid #EDEDED;
+  color: #18583A;
   display: inline-block;
-  font-weight: 400;
+  font-family: 'DM Mono', 'sans-serif';
+  font-size: 16px;
   margin-bottom: 7px;
   text-decoration: none;
   cursor: pointer;
-  text-transform: uppercase;
   padding: 10px 0;
 }
 
 .menu-item:hover {
-  border-bottom: 2px solid #e2231a;
-  color: #e2231a;
+  color: #3DDC91;
 }
 
 /* ===============Burger button styling==================== */
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  left: 15px;
+  width: 20px;
+  height: 20px;
+  left: 20px;
   top: 20px;
 }
 
@@ -37,8 +36,10 @@
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 40px !important;
-  width: 40px !important;
+  height: 20px !important;
+  width: 20px !important;
+  right: 16px !important;
+  top: 16px !important;
 }
 
 /* Color/shape of close button cross */

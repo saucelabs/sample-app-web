@@ -5,7 +5,6 @@
 }
 
 .summary_info_label {
-  border-top: 2px solid #efefef;
   padding: 20px 0 0;
 }
 
@@ -15,7 +14,6 @@
 }
 
 .summary_subtotal_label {
-  border-top: 2px solid #efefef;
   padding: 20px 0 10px;
 }
 
@@ -29,33 +27,46 @@
   margin: 0 0 8px 0;
 }
 
+.summary_info_label{
+  font-family: 'DM Mono', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+.summary_value_label{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
 .summary_info_label,
 .summary_value_label,
 .summary_subtotal_label,
 .summary_tax_label,
 .summary_total_label {
-  font-size: 16px;
-  margin-left: 50px;
+  color: #132322;
+}
+
+.cart_footer .btn_secondary.back {
+  color: #132322;
+  border: 1px solid #132322;
+}
+
+.cart_footer .btn_secondary.back .back-image {
+  left: 12px;
 }
 
 @media only screen and (min-width: 900px) {
-  .summary_info_label,
-  .summary_value_label,
-  .summary_subtotal_label,
-  .summary_tax_label,
-  .summary_total_label {
-    margin-left: 80px;
-  }
-
   .summary_info_label {
-    padding: 40px 0 0;
+    padding: 20px 0 0;
   }
 
   .summary_value_label {
-    padding: 5px 0 40px 0;
+    padding: 5px 0 0 0;
   }
 
   .summary_subtotal_label {
-    padding: 40px 0 10px;
+    padding: 0;
   }
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import SwagBotFooter from "../assets/img/SwagBot_Footer_graphic.png";
 import "./Footer.css";
 
 const SwagLabsFooter = () => {
@@ -39,7 +38,6 @@ const SwagLabsFooter = () => {
         &copy; {new Date().getFullYear()} Sauce Labs. All Rights Reserved. Terms
         of Service | Privacy Policy
       </div>
-      <img alt="Swag Bot Footer" className="footer_robot" src={SwagBotFooter} />
     </footer>
   );
 };

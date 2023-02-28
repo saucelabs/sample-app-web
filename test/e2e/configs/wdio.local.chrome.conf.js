@@ -1,4 +1,4 @@
-const {config} = require('./wdio.shared.conf');
+const { config } = require('./wdio.shared.conf');
 
 // ============
 // Capabilities
@@ -24,8 +24,3 @@ config.capabilities = [
 config.services = ['chromedriver'];
 
 exports.config = config;
-
-
-
-
-

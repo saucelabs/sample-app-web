@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Button.css";
-import backPng from "../assets/img/arrow.png";
+import backPng from "../assets/img/back-arrow.png";
 
 export const BUTTON_TYPES = {
   ACTION: "action",

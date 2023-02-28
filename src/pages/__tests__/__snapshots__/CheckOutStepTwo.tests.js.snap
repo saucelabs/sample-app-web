@@ -27,7 +27,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
           <div
             className="cart_desc_label"
           >
-            DESCRIPTION
+            Description
           </div>
           <withRouter(CartItem)
             item={
@@ -72,7 +72,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
           <div
             className="summary_info_label"
           >
-            Payment Information:
+            Payment Information
           </div>
           <div
             className="summary_value_label"
@@ -82,12 +82,17 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
           <div
             className="summary_info_label"
           >
-            Shipping Information:
+            Shipping Information
           </div>
           <div
             className="summary_value_label"
           >
-            FREE PONY EXPRESS DELIVERY!
+            Free Pony Express Delivery!
+          </div>
+          <div
+            className="summary_info_label"
+          >
+            Price Total
           </div>
           <div
             className="summary_subtotal_label"
@@ -102,7 +107,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
             6.40
           </div>
           <div
-            className="summary_total_label"
+            className="summary_info_label summary_total_label"
           >
             Total: $
             86.34
@@ -162,7 +167,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
           <div
             className="cart_desc_label"
           >
-            DESCRIPTION
+            Description
           </div>
           <withRouter(CartItem)
             item={
@@ -207,7 +212,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
           <div
             className="summary_info_label"
           >
-            Payment Information:
+            Payment Information
           </div>
           <div
             className="summary_value_label"
@@ -217,12 +222,17 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
           <div
             className="summary_info_label"
           >
-            Shipping Information:
+            Shipping Information
           </div>
           <div
             className="summary_value_label"
           >
-            FREE PONY EXPRESS DELIVERY!
+            Free Pony Express Delivery!
+          </div>
+          <div
+            className="summary_info_label"
+          >
+            Price Total
           </div>
           <div
             className="summary_subtotal_label"
@@ -237,7 +247,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
             3.20
           </div>
           <div
-            className="summary_total_label"
+            className="summary_info_label summary_total_label"
           >
             Total: $
             43.17
@@ -297,7 +307,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
           <div
             className="cart_desc_label"
           >
-            DESCRIPTION
+            Description
           </div>
         </div>
         <div
@@ -306,7 +316,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
           <div
             className="summary_info_label"
           >
-            Payment Information:
+            Payment Information
           </div>
           <div
             className="summary_value_label"
@@ -316,12 +326,17 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
           <div
             className="summary_info_label"
           >
-            Shipping Information:
+            Shipping Information
           </div>
           <div
             className="summary_value_label"
           >
-            FREE PONY EXPRESS DELIVERY!
+            Free Pony Express Delivery!
+          </div>
+          <div
+            className="summary_info_label"
+          >
+            Price Total
           </div>
           <div
             className="summary_subtotal_label"
@@ -336,7 +351,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
             0.00
           </div>
           <div
-            className="summary_total_label"
+            className="summary_info_label summary_total_label"
           >
             Total: $
             0.00

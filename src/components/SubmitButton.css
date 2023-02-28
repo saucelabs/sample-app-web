@@ -1,16 +1,18 @@
 .submit-button {
-  background-color: #ffffff;
-  border: 2px solid #e2231a;
-  color: #e2231a;
+  background-color: #3DDC91;
+  border: 4px solid #3DDC91;
+  border-radius: 4px;
+  color: #132322;
   cursor: pointer;
   display: inline-block;
   outline: none;
-  font-size: 18px;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  /* letter-spacing: 2px; */
+  font-family: DM Sans, Arial, Helvetica, sans-serif;
   line-height: initial;
   margin-bottom: 15px;
   padding: 10px 30px;
   text-decoration: none;
-  text-transform: uppercase;
   width: 100%;
 }
