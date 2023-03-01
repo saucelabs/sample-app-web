@@ -10,6 +10,7 @@
 
 .inventory_item_img {
   flex: 1;
+  overflow:hidden;
 }
 .inventory_item_img a {
   display: block;
