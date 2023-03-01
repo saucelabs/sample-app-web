@@ -317,6 +317,13 @@ h4 {
   line-height: 48px;
 }
 
+/* .primary_header, .header_secondary_container{
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+} */
+
 .right_component {
   margin-left: auto;
 }
@@ -490,6 +497,7 @@ h4 {
 .inventory_item_img {
   -webkit-flex: 1 1;
           flex: 1 1;
+  overflow:hidden;
 }
 .inventory_item_img a {
   display: block;
@@ -699,4 +707,4 @@ h4 {
 }
 
 
-/*# sourceMappingURL=main.9773dc74.chunk.css.map*/
+/*# sourceMappingURL=main.4b972fff.chunk.css.map*/
