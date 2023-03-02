@@ -22,6 +22,8 @@
   padding: 15px 30px 30px;
   margin: 0 auto;
   border: 1px solid #EDEDED;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .login_wrapper-inner{
   background-color: #fff;
@@ -41,14 +43,7 @@
   clear: both;
   line-height: 24px;
 }
-.login_credentials {
-  float: left;
-  width: 48%;
-}
-.login_password {
-  float: right;
-  width: 48%;
-}
+
 .login_credentials_wrap-inner {
   background-color: #132322;
   overflow: hidden;
