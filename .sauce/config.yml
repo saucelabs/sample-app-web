@@ -1,0 +1,22 @@
+apiVersion: v1alpha
+kind: imagerunner
+sauce:
+  region: us-west-1
+suites:
+  - name: Demo App Tests
+    workload: webdriver
+    image: mikedonovan1987/sample-app-web-orchestrate:0.0.2
+    imagePullAuth:
+      user: $DOCKER_USERNAME
+      token: $DOCKER_PASSWORD
+    # artifacts:
+    #   - "/sample-app-web/sc-orchestrate.log"
+    #   - "/sample-app-web/server-orchestrate.log"
+    entrypoint: ./orchestrate.sh
+  
+# artifacts:
+#   download:
+#     when: always
+#     match: 
+#       - "*"
+#     directory: ./artifacts

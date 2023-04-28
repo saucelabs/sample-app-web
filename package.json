@@ -59,6 +59,7 @@
     "test.e2e.local": "wdio test/e2e/configs/wdio.local.chrome.conf.js",
     "test.e2e.sauce.eu": "REGION=eu wdio test/e2e/configs/wdio.saucelabs.conf.js",
     "test.e2e.sauce.us": "wdio test/e2e/configs/wdio.saucelabs.conf.js",
+    "test.e2e.sauce.us-orchestrate": "wdio test/e2e/configs/wdio.saucelabs-orchestrate.conf.js",
     "test.lint": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "test.storybook.ci": "screener-storybook --conf test/visual/storybook/ci.config.js",
     "test.storybook.desktop": "screener-storybook --conf test/visual/storybook/desktop.config.js",
