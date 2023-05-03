@@ -2,21 +2,20 @@ apiVersion: v1alpha
 kind: imagerunner
 sauce:
   region: us-west-1
+  concurrency: 2
 suites:
-  - name: Demo App Tests
+  - name: Start Web App
     workload: webdriver
-    image: mikedonovan1987/sample-app-web-orchestrate:0.0.2
+    image: mikedonovan1987/sample-app-web-orchestrate:0.0.4
     imagePullAuth:
       user: $DOCKER_USERNAME
       token: $DOCKER_PASSWORD
-    # artifacts:
-    #   - "/sample-app-web/sc-orchestrate.log"
-    #   - "/sample-app-web/server-orchestrate.log"
-    entrypoint: ./orchestrate.sh
-  
-# artifacts:
-#   download:
-#     when: always
-#     match: 
-#       - "*"
-#     directory: ./artifacts
+    entrypoint: "./orchestrate.sh"
+    
+  - name: Demo App Tests
+    workload: webdriver
+    image: mikedonovan1987/sample-app-web-orchestrate:0.0.4
+    imagePullAuth:
+      user: $DOCKER_USERNAME
+      token: $DOCKER_PASSWORD
+    entrypoint: "npm run test.e2e.sauce.us-orchestrate"
