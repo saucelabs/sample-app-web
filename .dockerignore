@@ -1,3 +1,5 @@
 artifacts
 sc-orchestrate.log
 servier-orchestrate.log
+package-lock.json
+.github
