@@ -7,7 +7,7 @@ import {
   setCredentials,
   verifyCredentials,
 } from '../utils/Credentials';
-import { ROUTES } from '../utils/Constants';
+import { ROUTES, VALID_USERNAMES, VALID_PASSWORD } from '../utils/Constants';
 import InputError, { INPUT_TYPES } from '../components/InputError';
 import SubmitButton from '../components/SubmitButton';
 import ErrorMessage from '../components/ErrorMessage';
@@ -121,18 +121,11 @@ function Login(props) {
           <div className="login_credentials_wrap-inner">
             <div id="login_credentials" className="login_credentials">
               <h4>Accepted usernames are:</h4>
-              standard_user
-              <br />
-              locked_out_user
-              <br />
-              problem_user
-              <br />
-              performance_glitch_user
-              <br />
+              {VALID_USERNAMES.map(u => <>{u}<br /></>)}
             </div>
             <div className="login_password">
               <h4>Password for all users:</h4>
-              secret_sauce
+              {VALID_PASSWORD}
             </div>
           </div>
         </div>

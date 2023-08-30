@@ -66,6 +66,15 @@ export function isLockedOutUser() {
 }
 
 /**
+ * Check if this is an error user
+ *
+ * @return {boolean}
+ */
+export function isErrorUser() {
+  return Cookies.get(SESSION_USERNAME) === "error_user";
+}
+
+/**
  * Check if the user is logged in with a valid username
  *
  * @return {boolean}
