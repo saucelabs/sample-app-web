@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { isPerformanceGlitchUser, isProblemUser } from "../utils/Credentials";
+import { isErrorUser, isPerformanceGlitchUser, isProblemUser } from "../utils/Credentials";
 import { InventoryData } from "../utils/InventoryData.js";
 import InventoryListItem from "../components/InventoryListItem";
 import SwagLabsFooter from "../components/Footer";
@@ -8,6 +8,7 @@ import HeaderContainer from "../components/HeaderContainer";
 import { sortAsc, sortDesc, sortHiLo, sortLoHi } from "../utils/Sorting";
 import Select from "../components/Select";
 import "./Inventory.css";
+import { BacktraceClient } from '@backtrace-labs/react';
 
 const Inventory = () => {
   const [inventoryList, setInventoryList] = useState(
@@ -40,6 +41,13 @@ const Inventory = () => {
       // Bail out now if we're problem user so that we have a behaviour which is broken in Chrome only for sort.
       // select option onclick is not supported in Chrome but works in IE and FF
       return;
+    } else if (isErrorUser()) {
+      // Send an error with custom attributes to Backtrace
+      BacktraceClient.instance.send('Sorting is broken!', {
+        sortOption: event.target.value,
+        InventoryData
+      });
+      return alert('Sorting is broken! This error has been reported to Backtrace.');
     }
 
     setActiveOption(event.target.value);

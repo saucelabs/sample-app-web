@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { isProblemUser } from '../utils/Credentials';
+import { isErrorUser, isProblemUser } from '../utils/Credentials';
 import { ROUTES } from '../utils/Constants';
 import { ShoppingCart } from '../utils/shopping-cart';
 import { InventoryData } from '../utils/InventoryData';
@@ -15,10 +15,15 @@ const CheckOutStepTwo = ({ history }) => {
   const clearCart = () => {
     /* istanbul ignore else */
     // No cart clear on order complete for the problem user
-    if (!isProblemUser()) {
-      // Wipe out our shopping cart
-      ShoppingCart.resetCart();
+    if (isProblemUser()) {
+      return;
+    } else if (isErrorUser()) {
+      // An unfortunate typo! This will be reported to Backtrace
+      ShoppingCart.cesetRart();
+      return;
     }
+    // Wipe out our shopping cart
+    ShoppingCart.resetCart();
   };
   const contents = ShoppingCart.getCartContents();
   let orderTotal = 0;

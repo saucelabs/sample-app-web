@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
-import { isProblemUser } from "../utils/Credentials";
+import { isProblemUser, isErrorUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { InventoryData } from "../utils/InventoryData";
@@ -69,6 +69,11 @@ const InventoryItem = (props) => {
       if (itemId % 2 === 1) {
         return;
       }
+    } else if (isErrorUser()) {
+      // Throw an exception. This will be reported to Backtrace
+      if (itemId % 2 === 1) {
+        throw new Error('Failed to add item to the cart.');
+      }
     }
 
     ShoppingCart.addItem(itemId);
@@ -87,6 +92,11 @@ const InventoryItem = (props) => {
       // Bail out now, don't remove from cart if the item ID is even
       if (itemId % 2 === 0) {
         return;
+      }
+    } else if (isErrorUser()) {
+      // Throw an exception. This will be reported to Backtrace
+      if (itemId % 2 === 0) {
+        throw new Error('Failed to remove item from cart.');
       }
     }
 

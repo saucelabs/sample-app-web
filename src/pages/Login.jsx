@@ -11,6 +11,7 @@ import { ROUTES, VALID_USERNAMES, VALID_PASSWORD } from '../utils/Constants';
 import InputError, { INPUT_TYPES } from '../components/InputError';
 import SubmitButton from '../components/SubmitButton';
 import ErrorMessage from '../components/ErrorMessage';
+import { BacktraceClient } from '@backtrace-labs/react';
 
 function Login(props) {
   const { history, location } = props;
@@ -46,12 +47,16 @@ function Login(props) {
       setCredentials(username, password);
       // Catch our locked-out user and bail out
       if (isLockedOutUser()) {
+        // Send an error with custom attributes to Backtrace
+        BacktraceClient.instance.send(new Error('Locked out user tried to log in.'), { username });
         return setError('Sorry, this user has been locked out.');
       }
 
       // Redirect!
       history.push(ROUTES.INVENTORY);
     } else {
+      // Send an error with custom attributes to Backtrace
+      BacktraceClient.instance.send('Someone tried to login with invalid credentials.', { username });
       return setError(
         'Username and password do not match any user in this service'
       );

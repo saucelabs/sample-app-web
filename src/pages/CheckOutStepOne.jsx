@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
-import { isProblemUser } from "../utils/Credentials";
+import { isProblemUser, isErrorUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
@@ -26,6 +26,9 @@ const CheckOutStepOne = ({ history }) => {
     if (isProblemUser()) {
       // Overwrite the firstname also
       return setFirstName(evt.target.value);
+    } else if (isErrorUser()) {
+      // Fail here with TypeError. This will be reported to Backtrace
+      return setLastName(evt.totallyUndefined.value)
     }
 
     setLastName(evt.target.value);
@@ -40,7 +43,8 @@ const CheckOutStepOne = ({ history }) => {
       return setError("First Name is required");
     }
 
-    if (!lastName) {
+    // Allow to pass for error_user without lastName, as it is impossible to set (errors are thrown)
+    if (!lastName && !isErrorUser()) {
       return setError("Last Name is required");
     }
 
