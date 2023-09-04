@@ -160,9 +160,6 @@ const InventoryItem = (props) => {
                 <div className="inventory_details_name large_size">
                   {item.name}
                 </div>
-                <div className="inventory_details_desc large_size">
-                  {item.desc}
-                </div>
 
                 {/* 
                 This error boundary will catch any failing renders and display fallback if anything fails inside.

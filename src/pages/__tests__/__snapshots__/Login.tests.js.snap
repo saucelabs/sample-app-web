@@ -82,6 +82,8 @@ exports[`Login should render correctly 1`] = `
           <br />
           performance_glitch_user
           <br />
+          error_user
+          <br />
         </div>
         <div
           className="login_password"

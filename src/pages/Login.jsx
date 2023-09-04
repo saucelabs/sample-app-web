@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useState } from 'react';
 import './Login.css';
@@ -126,7 +126,7 @@ function Login(props) {
           <div className="login_credentials_wrap-inner">
             <div id="login_credentials" className="login_credentials">
               <h4>Accepted usernames are:</h4>
-              {VALID_USERNAMES.map(u => <>{u}<br /></>)}
+              {VALID_USERNAMES.map((u, i) => <Fragment key={i}>{u}<br /></Fragment>)}
             </div>
             <div className="login_password">
               <h4>Password for all users:</h4>
