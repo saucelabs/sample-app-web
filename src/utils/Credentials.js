@@ -39,6 +39,15 @@ export function removeCredentials() {
 }
 
 /**
+ * Return current logged username
+ *
+ * @return {string | undefined}
+ */
+export function currentUser() {
+  return Cookies.get(SESSION_USERNAME)
+}
+
+/**
  * Check if this is a problem user
  *
  * @return {boolean}

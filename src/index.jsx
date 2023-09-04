@@ -19,11 +19,17 @@ import Finish from './pages/Finish';
 import { ROUTES } from './utils/Constants';
 import PrivateRoute from './components/PrivateRoute';
 import { BacktraceClient, ErrorBoundary } from '@backtrace-labs/react';
+import { currentUser } from './utils/Credentials';
+import { ShoppingCart } from './utils/shopping-cart';
 
 BacktraceClient.initialize({
   name: 'Swag Store',
   version: '3.0.0',
   url: 'https://submit.backtrace.io/UNIVERSE/TOKEN/json'
+  userAttributes: () => ({
+    user: currentUser(),
+    shoppingCart: ShoppingCart.getCartContents()
+  })
 })
 
 const routing = (
