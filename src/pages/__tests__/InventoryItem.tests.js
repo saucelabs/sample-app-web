@@ -1,5 +1,6 @@
-import React, { useState as useStateMock } from "react";
 import { shallow } from "enzyme";
+import React, { useState as useStateMock } from "react";
+import * as Credentials from "../../utils/Credentials";
 import InventoryItem from "../InventoryItem";
 
 jest.mock("react", () => ({
@@ -59,6 +60,15 @@ describe("InventoryItem", () => {
     const component = shallow(<InventoryItem.WrappedComponent {...props} />);
 
     expect(component).toMatchSnapshot();
+  });
+
+  it("should render with BrokenComponent for an error user", () => {
+    const isErrorUserSpy = jest.spyOn(Credentials, "isErrorUser");
+    isErrorUserSpy.mockReturnValueOnce(true);
+
+    const component = shallow(<InventoryItem.WrappedComponent {...props} />);
+    expect(component).toMatchSnapshot();
+    expect(isErrorUserSpy).toHaveBeenCalledTimes(1);
   });
   //
   // it("should be able to open the details page when the swag image is clicked", () => {
