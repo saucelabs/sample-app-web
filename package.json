@@ -29,6 +29,7 @@
     "@babel/plugin-proposal-private-methods": "^7.13.0",
     "@babel/preset-env": "^7.13.12",
     "@babel/register": "^7.13.14",
+    "@backtrace-labs/javascript-cli": "^0.1.2",
     "@storybook/addon-actions": "^6.2.5",
     "@storybook/addon-essentials": "^6.2.5",
     "@storybook/addon-links": "^6.2.5",
@@ -53,7 +54,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && backtrace-js run",
     "test": "react-scripts test",
     "test.coverage": "react-scripts test --coverage --watchAll=false",
     "test.coverage.watch": "react-scripts test --coverage --watchAll",
