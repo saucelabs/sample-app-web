@@ -4,28 +4,28 @@
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
+import { BacktraceClient, ErrorBoundary } from '@backtrace-labs/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import PrivateRoute from './components/PrivateRoute';
 import './index.css';
-import Login from './pages/Login';
-import Inventory from './pages/Inventory';
-import InventoryItem from './pages/InventoryItem';
 import Cart from './pages/Cart';
 import CheckOutStepOne from './pages/CheckOutStepOne';
 import CheckOutStepTwo from './pages/CheckOutStepTwo';
 import Finish from './pages/Finish';
+import Inventory from './pages/Inventory';
+import InventoryItem from './pages/InventoryItem';
+import Login from './pages/Login';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import { ROUTES } from './utils/Constants';
-import PrivateRoute from './components/PrivateRoute';
-import { BacktraceClient, ErrorBoundary } from '@backtrace-labs/react';
 import { currentUser } from './utils/Credentials';
 import { ShoppingCart } from './utils/shopping-cart';
 
 BacktraceClient.initialize({
   name: 'Swag Store',
   version: '3.0.0',
-  url: 'https://submit.backtrace.io/UNIVERSE/TOKEN/json'
+  url: 'https://submit.backtrace.io/UNIVERSE/TOKEN/json',
   userAttributes: () => ({
     user: currentUser(),
     shoppingCart: ShoppingCart.getCartContents()
