@@ -27,6 +27,25 @@ we recommend installing [NVM](https://github.com/creationix/nvm) to assist manag
 
         npm install
 
+### Error reporting with Backtrace
+To set up error reporting with your Backtrace instance:
+
+1. Open `src/index.jsx` file and find the `BacktraceClient.initialize` function call:
+    ```tsx
+    BacktraceClient.initialize({
+        name: 'Swag Store',
+        version: '3.0.0',
+        url: 'https://submit.backtrace.io/UNIVERSE/TOKEN/json',
+        userAttributes: () => ({
+            user: currentUser(),
+            shoppingCart: ShoppingCart.getCartContents()
+        })
+    })
+    ```
+1. Replace `UNIVERSE` and `TOKEN` in `url` with your universe and token. 
+
+For more details, [see the docs about React integration with Backtrace](https://docs.saucelabs.com/error-reporting/language-integrations/react/).
+
 ### Build
 1. Build the application with
 
@@ -35,6 +54,26 @@ we recommend installing [NVM](https://github.com/creationix/nvm) to assist manag
     This will build the application, start Chrome and load the website on [http://localhost:3000/](http://localhost:3000/)
 
 1. Click around - this is the app!
+
+### Sourcemaps in error reporting with Backtrace
+To enable additional insight in Backtrace, you can send built sourcemaps and sources to Backtrace:
+1. Open `.backtracejsrc` file
+1. Replace `UNIVERSE` and `TOKEN` in `upload.url` with your universe and token.
+1. Build the application with
+
+        npm run build
+
+1. Run `backtrace-js`
+
+        npm run backtrace.sourcemaps
+
+1. Host the app using e.g. `http-server` (sourcemaps integration won't work with `npm run start`)
+
+        npx http-server -p 3000 ./build
+        
+1. New uploaded errors should display with sourcemaps attached!
+
+For more details, [see the docs about sourcemap integration with Backtrace](https://docs.saucelabs.com/error-reporting/platform-integrations/source-map/).
 
 ### Storybook
 This website uses components which can be tested with Storybook. To run Storybook execute the following command:
