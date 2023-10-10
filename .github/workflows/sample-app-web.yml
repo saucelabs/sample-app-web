@@ -53,5 +53,4 @@ jobs:
       run: npm run test.storybook.ci
 
     - name: Build and E2E test the site
-      if: ${{ !env.IS_MAIN }}
       run: npm run start & npx wait-on --timeout 60000 http://localhost:3000 && npm run test.e2e.sauce.us
