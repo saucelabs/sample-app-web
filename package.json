@@ -54,7 +54,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && backtrace-js run",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "test.coverage": "react-scripts test --coverage --watchAll=false",
     "test.coverage.watch": "react-scripts test --coverage --watchAll",
@@ -68,7 +68,8 @@
     "test.storybook.mobile": "screener-storybook --conf test/visual/storybook/mobile.config.js",
     "storybook": "start-storybook -p 6006 -s public",
     "build.storybook": "build-storybook -s public",
-    "postbuild.storybook": "cd scripts && ./postbuild.sh"
+    "postbuild.storybook": "cd scripts && ./postbuild.sh",
+    "backtrace.sourcemaps": "backtrace-js run"
   },
   "browserslist": {
     "production": [
