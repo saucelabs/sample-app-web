@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
-import { isProblemUser } from "../utils/Credentials";
+import { isProblemUser, isErrorUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { InventoryData } from "../utils/InventoryData";
@@ -8,6 +8,8 @@ import HeaderContainer from "../components/HeaderContainer";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import SwagLabsFooter from "../components/Footer";
 import "./InventoryItem.css";
+import BrokenComponent from "../components/BrokenComponent";
+import { ErrorBoundary } from "@backtrace-labs/react";
 
 const InventoryItem = (props) => {
   useEffect(() => {
@@ -69,6 +71,11 @@ const InventoryItem = (props) => {
       if (itemId % 2 === 1) {
         return;
       }
+    } else if (isErrorUser()) {
+      // Throw an exception. This will be reported to Backtrace
+      if (itemId % 2 === 1) {
+        throw new Error('Failed to add item to the cart.');
+      }
     }
 
     ShoppingCart.addItem(itemId);
@@ -87,6 +94,11 @@ const InventoryItem = (props) => {
       // Bail out now, don't remove from cart if the item ID is even
       if (itemId % 2 === 0) {
         return;
+      }
+    } else if (isErrorUser()) {
+      // Throw an exception. This will be reported to Backtrace
+      if (itemId % 2 === 0) {
+        throw new Error('Failed to remove item from cart.');
       }
     }
 
@@ -148,9 +160,27 @@ const InventoryItem = (props) => {
                 <div className="inventory_details_name large_size">
                   {item.name}
                 </div>
-                <div className="inventory_details_desc large_size">
-                  {item.desc}
-                </div>
+
+                {/* 
+                This error boundary will catch any failing renders and display fallback if anything fails inside.
+                The error will also be reported to Backtrace.
+                */}
+                <ErrorBoundary
+                  name="description-boundary"
+                  fallback={
+                    <div className="inventory_details_desc large_size">
+                      A description should be here, but it failed to render! This error has been reported to Backtrace.
+                    </div>
+                  }
+                >
+                  {
+                    !isErrorUser() ?
+                      <div className="inventory_details_desc large_size">
+                        {item.desc}
+                      </div> : <BrokenComponent />
+                  }
+                </ErrorBoundary>
+
                 <div className="inventory_details_price">${item.price}</div>
                 <ButtonType
                   id={item.id}

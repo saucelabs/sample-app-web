@@ -1,0 +1,11 @@
+{
+  "path": "./build/static/js",
+  "run": {
+    "upload": true,
+    "process": true
+  },
+  "upload": {
+    "url": "https://submit.backtrace.io/UNIVERSE/TOKEN/sourcemap",
+    "include-sources": true
+  }
+}

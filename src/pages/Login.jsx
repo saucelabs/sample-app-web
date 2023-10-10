@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useState } from 'react';
 import './Login.css';
@@ -7,10 +7,11 @@ import {
   setCredentials,
   verifyCredentials,
 } from '../utils/Credentials';
-import { ROUTES } from '../utils/Constants';
+import { ROUTES, VALID_USERNAMES, VALID_PASSWORD } from '../utils/Constants';
 import InputError, { INPUT_TYPES } from '../components/InputError';
 import SubmitButton from '../components/SubmitButton';
 import ErrorMessage from '../components/ErrorMessage';
+import { BacktraceClient } from '@backtrace-labs/react';
 
 function Login(props) {
   const { history, location } = props;
@@ -46,12 +47,16 @@ function Login(props) {
       setCredentials(username, password);
       // Catch our locked-out user and bail out
       if (isLockedOutUser()) {
+        // Send an error with custom attributes to Backtrace
+        BacktraceClient.instance.send(new Error('Locked out user tried to log in.'), { username });
         return setError('Sorry, this user has been locked out.');
       }
 
       // Redirect!
       history.push(ROUTES.INVENTORY);
     } else {
+      // Send an error with custom attributes to Backtrace
+      BacktraceClient.instance.send('Someone tried to login with invalid credentials.', { username });
       return setError(
         'Username and password do not match any user in this service'
       );
@@ -121,18 +126,11 @@ function Login(props) {
           <div className="login_credentials_wrap-inner">
             <div id="login_credentials" className="login_credentials">
               <h4>Accepted usernames are:</h4>
-              standard_user
-              <br />
-              locked_out_user
-              <br />
-              problem_user
-              <br />
-              performance_glitch_user
-              <br />
+              {VALID_USERNAMES.map((u, i) => <Fragment key={i}>{u}<br /></Fragment>)}
             </div>
             <div className="login_password">
               <h4>Password for all users:</h4>
-              secret_sauce
+              {VALID_PASSWORD}
             </div>
           </div>
         </div>

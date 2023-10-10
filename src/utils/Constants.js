@@ -4,6 +4,7 @@ export const VALID_USERNAMES = [
   "locked_out_user",
   "problem_user",
   "performance_glitch_user",
+  "error_user"
 ];
 export const VALID_PASSWORD = "secret_sauce";
 export const ROUTES = {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { ShoppingCart } from "../utils/shopping-cart";
-import { isProblemUser } from "../utils/Credentials";
+import { isErrorUser, isProblemUser } from "../utils/Credentials";
 import "./InventoryListItem.css";
 import { ROUTES } from "../utils/Constants";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
@@ -24,6 +24,11 @@ const InventoryListItem = (props) => {
       if (itemId % 2 === 1) {
         return;
       }
+    } else if (isErrorUser()) {
+      // Throw an exception. This will be reported to Backtrace
+      if (itemId % 2 === 1) {
+        throw new Error('Failed to add item to the cart.');
+      }
     }
 
     ShoppingCart.addItem(itemId);
@@ -42,6 +47,11 @@ const InventoryListItem = (props) => {
       // Bail out now, don't remove from cart if the item ID is even
       if (itemId % 2 === 0) {
         return;
+      }
+    } else if (isErrorUser()) {
+      // Throw an exception. This will be reported to Backtrace
+      if (itemId % 2 === 0) {
+        throw new Error('Failed to remove item from cart.');
       }
     }
 

@@ -1,7 +1,7 @@
-import React, { useState as useStateMock } from "react";
 import { shallow } from "enzyme";
-import CheckOutStepOne from "../CheckOutStepOne";
+import React, { useState as useStateMock } from "react";
 import * as Credentials from "../../utils/Credentials";
+import CheckOutStepOne from "../CheckOutStepOne";
 
 jest.mock("react", () => ({
   ...jest.requireActual("react"),
@@ -74,6 +74,20 @@ describe("CheckOutStepOne", () => {
     expect(setState).toHaveBeenCalledWith(value);
   });
 
+  it("should throw an error when data is typed in the last name field for an error user", () => {
+    const isErrorUserSpy = jest.spyOn(Credentials, "isErrorUser");
+    isErrorUserSpy.mockReturnValueOnce(true);
+
+    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
+    const InputErrors = wrapper.find("InputError");
+    const value = "last name";
+
+    expect(() => InputErrors.at(1).simulate("change", { target: { value } }))
+      .toThrow(expect.any(TypeError));
+
+    expect(isErrorUserSpy).toHaveBeenCalledTimes(1);
+  });
+
   it("should update the zip code state when data is typed in the zip code field", () => {
     const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
     const InputErrors = wrapper.find("InputError");
@@ -88,7 +102,7 @@ describe("CheckOutStepOne", () => {
     const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(setState).toHaveBeenCalledWith("First Name is required");
@@ -107,7 +121,7 @@ describe("CheckOutStepOne", () => {
     InputErrors.at(0).simulate("change", { target: { value: "first name" } });
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(setState).toHaveBeenCalledTimes(2);
@@ -133,7 +147,7 @@ describe("CheckOutStepOne", () => {
     InputErrors.at(1).simulate("change", { target: { value: "last name" } });
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(setState).toHaveBeenCalledTimes(3);
@@ -165,7 +179,7 @@ describe("CheckOutStepOne", () => {
     InputErrors.at(2).simulate("change", { target: { value: "zip code" } });
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(setState).toHaveBeenCalledTimes(3);
@@ -176,7 +190,7 @@ describe("CheckOutStepOne", () => {
     const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
     const backButton = wrapper.find("Button").at(0);
     backButton.simulate("click", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(props.history.push).toBeCalledWith("/cart.html");

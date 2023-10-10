@@ -9,6 +9,14 @@ jest.mock("react", () => ({
   useEffect: (f) => f(),
 }));
 
+jest.mock("@backtrace-labs/react", () => ({
+  BacktraceClient: {
+    instance: {
+      send: jest.fn()
+    }
+  }
+}))
+
 describe("Login", () => {
   const setState = jest.fn();
 
@@ -58,7 +66,7 @@ describe("Login", () => {
     const wrapper = shallow(<Login.WrappedComponent history location />);
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(setState).toHaveBeenCalledWith("Username is required");
@@ -82,7 +90,7 @@ describe("Login", () => {
     InputErrors.at(0).simulate("change", { target: { value: "username" } });
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(setState).toHaveBeenCalledTimes(2);
@@ -118,7 +126,7 @@ describe("Login", () => {
     InputErrors.at(1).simulate("change", { target: { value: "password" } });
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(verifyCredentialsSpy).toHaveBeenCalledTimes(1);
@@ -160,7 +168,7 @@ describe("Login", () => {
     InputErrors.at(1).simulate("change", { target: { value: "password" } });
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(verifyCredentialsSpy).toHaveBeenCalledTimes(1);
@@ -205,7 +213,7 @@ describe("Login", () => {
     InputErrors.at(1).simulate("change", { target: { value: "password" } });
     const form = wrapper.find("form").at(0);
     form.simulate("submit", {
-      preventDefault() {},
+      preventDefault() { },
     });
 
     expect(verifyCredentialsSpy).toHaveBeenCalledTimes(1);

@@ -39,6 +39,15 @@ export function removeCredentials() {
 }
 
 /**
+ * Return current logged username
+ *
+ * @return {string | undefined}
+ */
+export function currentUser() {
+  return Cookies.get(SESSION_USERNAME)
+}
+
+/**
  * Check if this is a problem user
  *
  * @return {boolean}
@@ -63,6 +72,15 @@ export function isPerformanceGlitchUser() {
  */
 export function isLockedOutUser() {
   return Cookies.get(SESSION_USERNAME) === "locked_out_user";
+}
+
+/**
+ * Check if this is an error user
+ *
+ * @return {boolean}
+ */
+export function isErrorUser() {
+  return Cookies.get(SESSION_USERNAME) === "error_user";
 }
 
 /**

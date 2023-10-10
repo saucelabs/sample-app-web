@@ -6,6 +6,13 @@ jest.mock("js-cookie", () => ({
 
 import Cookies from "js-cookie";
 import {
+  SESSION_USERNAME,
+  VALID_PASSWORD,
+  VALID_USERNAMES,
+} from "../Constants";
+import {
+  currentUser,
+  isErrorUser,
   isLockedOutUser,
   isLoggedIn,
   isPerformanceGlitchUser,
@@ -14,11 +21,6 @@ import {
   setCredentials,
   verifyCredentials,
 } from "../Credentials";
-import {
-  SESSION_USERNAME,
-  VALID_PASSWORD,
-  VALID_USERNAMES,
-} from "../Constants";
 
 describe("Credentials", () => {
   describe("verifyCredentials", () => {
@@ -60,6 +62,14 @@ describe("Credentials", () => {
     });
   });
 
+  describe("currentUser", () => {
+    it("should return current logger user from cookies", () => {
+      const expected = "a_user";
+      Cookies.get.mockReturnValueOnce(expected);
+      expect(currentUser()).toEqual(expected);
+    });
+  });
+
   describe("isProblemUser", () => {
     it("should be able to determine this is not a problem user", () => {
       Cookies.get.mockReturnValueOnce("foo");
@@ -94,6 +104,18 @@ describe("Credentials", () => {
     it("should be able to determine this is a locked out user", () => {
       Cookies.get.mockReturnValueOnce("locked_out_user");
       expect(isLockedOutUser()).toEqual(true);
+    });
+  });
+
+  describe("isErrorUser", () => {
+    it("should be able to determine this is not a problem user", () => {
+      Cookies.get.mockReturnValueOnce("foo");
+      expect(isErrorUser()).toEqual(false);
+    });
+
+    it("should be able to determine this is a problem user", () => {
+      Cookies.get.mockReturnValueOnce("error_user");
+      expect(isErrorUser()).toEqual(true);
     });
   });
 
