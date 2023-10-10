@@ -25,7 +25,7 @@ import { ShoppingCart } from './utils/shopping-cart';
 BacktraceClient.initialize({
   name: 'Swag Store',
   version: '3.0.0',
-  url: 'https://submit.backtrace.io/yolo/ebc14541a963ceeabccbe5ef6b8b01d12c788a7a71832e19f6f6ffe30087299c/json',
+  url: 'https://submit.backtrace.io/UNIVERSE/TOKEN/json',
   userAttributes: () => ({
     user: currentUser(),
     shoppingCart: ShoppingCart.getCartContents()
