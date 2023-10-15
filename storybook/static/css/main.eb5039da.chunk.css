@@ -79,13 +79,13 @@ h4 {
 }
 
 .btn_secondary {
-  border: 1px solid #E2231A;
+  border: 1px solid #e2231a;
   background-color: #fff;
-  color: #E2231A;
+  color: #e2231a;
 }
 
 .btn_action {
-  background-color: #3DDC91;
+  background-color: #3ddc91;
   border-radius: 4px;
   color: #132322;
 }
@@ -116,6 +116,17 @@ h4 {
   width: 100%;
 }
 
+.btn_inventory_misaligned {
+  position: absolute;
+  right: -20px;
+}
+
+.btn_visual_failure {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 @media only screen and (max-width: 900px) {
   .btn_small,
   .btn_medium,
@@ -125,7 +136,7 @@ h4 {
 }
 
 .cart_item {
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   border-radius: 8px;
   background: #fff;
   display: -webkit-flex;
@@ -135,7 +146,7 @@ h4 {
 }
 
 .cart_quantity {
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   box-sizing: border-box;
   text-align: center;
   font-size: 14px;
@@ -280,7 +291,7 @@ h4 {
 }
 
 .primary_header .app_logo {
-  font-family: DM Mono, 'sans-serif';
+  font-family: DM Mono, "sans-serif";
   font-size: 24px;
   line-height: 48px;
   text-align: center;
@@ -293,6 +304,13 @@ h4 {
   position: absolute;
   top: 10px;
   right: 20px;
+}
+.primary_header .shopping_cart_container.visual_failure {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 40px;
+  right: 205px;
 }
 
 .header_secondary_container {
@@ -311,7 +329,7 @@ h4 {
 
 .header_secondary_container .title {
   color: #132322;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 48px;
@@ -341,10 +359,10 @@ h4 {
   }
 }
 .menu-item {
-  border-bottom: 1px solid #EDEDED;
-  color: #18583A;
+  border-bottom: 1px solid #ededed;
+  color: #18583a;
   display: inline-block;
-  font-family: 'DM Mono', 'sans-serif';
+  font-family: "DM Mono", "sans-serif";
   font-size: 16px;
   margin-bottom: 7px;
   text-decoration: none;
@@ -353,7 +371,7 @@ h4 {
 }
 
 .menu-item:hover {
-  color: #3DDC91;
+  color: #3ddc91;
 }
 
 /* ===============Burger button styling==================== */
@@ -440,7 +458,7 @@ h4 {
   font-size: 14px;
   width: 100%;
   border: 0px;
-  border-bottom: 1px solid #EDEDED;
+  border-bottom: 1px solid #ededed;
   outline: none;
   padding: 10px 0;
 }
@@ -459,7 +477,7 @@ h4 {
 
 /* Chrome/Opera/Safari */
 .form_input::-webkit-input-placeholder {
-  color: #6D7584;
+  color: #6d7584;
 }
 .form_input::-webkit-input-placeholder,
     /* Firefox 19+ */
@@ -467,7 +485,7 @@ h4 {
     /* IE 10+ */
 .form_input:-ms-input-placeholder,
 .form_input::placeholder {
-  color: #6D7584;
+  color: #6d7584;
 }
 
 /* Chrome/Opera/Safari */
@@ -484,7 +502,7 @@ h4 {
 }
 
 .inventory_item {
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   background: #fff;
   position: relative;
   margin-bottom: 12px;
@@ -497,7 +515,7 @@ h4 {
 .inventory_item_img {
   -webkit-flex: 1 1;
           flex: 1 1;
-  overflow:hidden;
+  overflow: hidden;
 }
 .inventory_item_img a {
   display: block;
@@ -530,7 +548,10 @@ h4 {
   font-family: "DM Mono", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  color: #18583A;
+  color: #18583a;
+}
+.align_right {
+  text-align: right;
 }
 .inventory_item_desc {
   font-family: "DM Sans", sans-serif;
@@ -552,9 +573,9 @@ h4 {
 }
 
 .inventory_item_price {
-  border-top: 1px solid #EDEDED;
+  border-top: 1px solid #ededed;
   color: #132322;
-  font-family: "DM Mono",sans-serif;
+  font-family: "DM Mono", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 36px;
@@ -604,7 +625,7 @@ h4 {
   .pricebar {
     -webkit-align-items: flex-start;
             align-items: flex-start;
-    border-bottom: 1px solid #EDEDED;
+    border-bottom: 1px solid #ededed;
     -webkit-flex-direction: column;
             flex-direction: column;
     padding-bottom: 40px;
@@ -688,8 +709,8 @@ h4 {
 }
 
 .submit-button {
-  background-color: #3DDC91;
-  border: 4px solid #3DDC91;
+  background-color: #3ddc91;
+  border: 4px solid #3ddc91;
   border-radius: 4px;
   color: #132322;
   cursor: pointer;
@@ -707,4 +728,4 @@ h4 {
 }
 
 
-/*# sourceMappingURL=main.4b972fff.chunk.css.map*/
+/*# sourceMappingURL=main.eb5039da.chunk.css.map*/

@@ -1,19 +1,19 @@
 {
   "files": {
-    "0.99449da1.iframe.bundle.js": "./0.99449da1.iframe.bundle.js",
-    "main.css": "./static/css/main.4b972fff.chunk.css",
-    "main.js": "./main.45a7b33f.iframe.bundle.js",
-    "main.css.map": "./static/css/main.4b972fff.chunk.css.map",
-    "runtime~main.js": "./runtime~main.e61d42da.iframe.bundle.js",
-    "vendors~main.js": "./vendors~main.c5edca46.iframe.bundle.js",
-    "vendors~main.js.map": "./vendors~main.c5edca46.iframe.bundle.js.map",
-    "4.2f1aa195.iframe.bundle.js": "./4.2f1aa195.iframe.bundle.js",
-    "4.2f1aa195.iframe.bundle.js.map": "./4.2f1aa195.iframe.bundle.js.map",
-    "5.766b033c.iframe.bundle.js": "./5.766b033c.iframe.bundle.js",
+    "0.68d197ae.iframe.bundle.js": "./0.68d197ae.iframe.bundle.js",
+    "main.css": "./static/css/main.eb5039da.chunk.css",
+    "main.js": "./main.98791244.iframe.bundle.js",
+    "main.css.map": "./static/css/main.eb5039da.chunk.css.map",
+    "runtime~main.js": "./runtime~main.88fcd9af.iframe.bundle.js",
+    "vendors~main.js": "./vendors~main.dd1c98e1.iframe.bundle.js",
+    "vendors~main.js.map": "./vendors~main.dd1c98e1.iframe.bundle.js.map",
+    "4.5f51397f.iframe.bundle.js": "./4.5f51397f.iframe.bundle.js",
+    "4.5f51397f.iframe.bundle.js.map": "./4.5f51397f.iframe.bundle.js.map",
+    "5.d77ad00c.iframe.bundle.js": "./5.d77ad00c.iframe.bundle.js",
     "6.702e08eb.iframe.bundle.js": "./6.702e08eb.iframe.bundle.js",
     "6.702e08eb.iframe.bundle.js.map": "./6.702e08eb.iframe.bundle.js.map",
     "7.73a57b19.iframe.bundle.js": "./7.73a57b19.iframe.bundle.js",
-    "4.2f1aa195.iframe.bundle.js.LICENSE.txt": "./4.2f1aa195.iframe.bundle.js.LICENSE.txt",
+    "4.5f51397f.iframe.bundle.js.LICENSE.txt": "./4.5f51397f.iframe.bundle.js.LICENSE.txt",
     "6.702e08eb.iframe.bundle.js.LICENSE.txt": "./6.702e08eb.iframe.bundle.js.LICENSE.txt",
     "iframe.html": "./iframe.html",
     "service-worker.js": "./service-worker.js",
@@ -29,12 +29,12 @@
     "static/media/sauce-backpack-1200x1500.jpg": "./static/media/sauce-backpack-1200x1500.0a0b85a3.jpg",
     "static/media/sauce-pullover-1200x1500.jpg": "./static/media/sauce-pullover-1200x1500.51d7ffaf.jpg",
     "static/media/sl-404.jpg": "./static/media/sl-404.168b1cce.jpg",
-    "vendors~main.c5edca46.iframe.bundle.js.LICENSE.txt": "./vendors~main.c5edca46.iframe.bundle.js.LICENSE.txt"
+    "vendors~main.dd1c98e1.iframe.bundle.js.LICENSE.txt": "./vendors~main.dd1c98e1.iframe.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.e61d42da.iframe.bundle.js",
-    "vendors~main.c5edca46.iframe.bundle.js",
-    "static/css/main.4b972fff.chunk.css",
-    "main.45a7b33f.iframe.bundle.js"
+    "runtime~main.88fcd9af.iframe.bundle.js",
+    "vendors~main.dd1c98e1.iframe.bundle.js",
+    "static/css/main.eb5039da.chunk.css",
+    "main.98791244.iframe.bundle.js"
   ]
 }
