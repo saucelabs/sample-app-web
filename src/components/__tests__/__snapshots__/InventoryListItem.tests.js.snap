@@ -30,7 +30,7 @@ exports[`InventoryListItem should render with default props 1`] = `
         onClick={[Function]}
       >
         <div
-          className="inventory_item_name"
+          className="inventory_item_name "
         >
           Swag Item name
         </div>
@@ -54,6 +54,68 @@ exports[`InventoryListItem should render with default props 1`] = `
         id={1}
         item="Swag Item name"
         itemInCart={false}
+        missAlignButton={false}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InventoryListItem should render with text aligned right 1`] = `
+<div
+  className="inventory_item"
+>
+  <div
+    className="inventory_item_img"
+  >
+    <a
+      href="#"
+      id="item_1_img_link"
+      onClick={[Function]}
+    >
+      <img
+        alt="Swag Item name"
+        className="inventory_item_img"
+      />
+    </a>
+  </div>
+  <div
+    className="inventory_item_description"
+  >
+    <div
+      className="inventory_item_label"
+    >
+      <a
+        href="#"
+        id="item_1_title_link"
+        onClick={[Function]}
+      >
+        <div
+          className="inventory_item_name align_right"
+        >
+          Swag Item name
+        </div>
+      </a>
+      <div
+        className="inventory_item_desc"
+      >
+        Swag Item description
+      </div>
+    </div>
+    <div
+      className="pricebar"
+    >
+      <div
+        className="inventory_item_price"
+      >
+        $
+        9.99
+      </div>
+      <ButtonType
+        id={1}
+        item="Swag Item name"
+        itemInCart={false}
+        missAlignButton={false}
       />
     </div>
   </div>

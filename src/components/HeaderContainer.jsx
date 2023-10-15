@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './HeaderContainer.css';
-import DrawerMenu from './DrawerMenu';
-import CartButton from './CartButton';
+import React from "react";
+import PropTypes from "prop-types";
+import "./HeaderContainer.css";
+import DrawerMenu from "./DrawerMenu";
+import CartButton from "./CartButton";
+import { isVisualUser } from "../utils/Credentials";
 
 const HeaderContainer = ({
   customClass,
@@ -41,7 +42,11 @@ const HeaderContainer = ({
    */
   /* istanbul ignore next */
   const Title = ({ title }) => <span className="title">{title}</span>;
-  const extraClass = customClass ? ` ${customClass}` : '';
+  const extraClass = customClass ? ` ${customClass}` : "";
+  const isVisualFailure = isVisualUser();
+  const shoppingCartContainerClass = `shopping_cart_container${
+    isVisualFailure ? " visual_failure" : ""
+  }`;
 
   return (
     <div id="header_container" className={`header_container${extraClass}`}>
@@ -52,7 +57,10 @@ const HeaderContainer = ({
         <div className="header_label">
           <div className="app_logo">Swag Labs</div>
         </div>
-        <div id="shopping_cart_container" className="shopping_cart_container">
+        <div
+          id="shopping_cart_container"
+          className={shoppingCartContainerClass}
+        >
           <CartButton />
         </div>
       </div>

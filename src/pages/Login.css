@@ -1,9 +1,9 @@
 .login_container {
-  background-color: #EEFCF6;
+  background-color: #eefcf6;
   min-height: 100vh;
 }
 .login_logo {
-  font-family: DM Mono,'sans-serif';
+  font-family: DM Mono, "sans-serif";
   font-size: 24px;
   line-height: 48px;
   text-align: center;
@@ -21,18 +21,18 @@
   max-width: 780px;
   padding: 15px 30px 30px;
   margin: 0 auto;
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
-.login_wrapper-inner{
+.login_wrapper-inner {
   background-color: #fff;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
-.login_credentials_wrap{
-  color: #FFFFFF;
-  font-family: DM Mono, 'sans-serif';
+.login_credentials_wrap {
+  color: #ffffff;
+  font-family: DM Mono, "sans-serif";
 }
 .form_column {
   float: none;
@@ -48,11 +48,11 @@
   background-color: #132322;
   overflow: hidden;
   border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 @media only screen and (min-width: 900px) {
   .form_column {
-   max-width: 292px;
+    max-width: 292px;
     padding-top: 30px;
     margin: 0 auto;
   }

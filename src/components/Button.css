@@ -20,13 +20,13 @@
 }
 
 .btn_secondary {
-  border: 1px solid #E2231A;
+  border: 1px solid #e2231a;
   background-color: #fff;
-  color: #E2231A;
+  color: #e2231a;
 }
 
 .btn_action {
-  background-color: #3DDC91;
+  background-color: #3ddc91;
   border-radius: 4px;
   color: #132322;
 }
@@ -55,6 +55,17 @@
 
 .btn_large {
   width: 100%;
+}
+
+.btn_inventory_misaligned {
+  position: absolute;
+  right: -20px;
+}
+
+.btn_visual_failure {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 @media only screen and (max-width: 900px) {

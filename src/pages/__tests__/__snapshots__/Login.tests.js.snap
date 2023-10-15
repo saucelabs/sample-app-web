@@ -84,6 +84,8 @@ exports[`Login should render correctly 1`] = `
           <br />
           error_user
           <br />
+          visual_user
+          <br />
         </div>
         <div
           className="login_password"

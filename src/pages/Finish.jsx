@@ -1,12 +1,12 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import Checkmark from '../assets/img/checkmark.png';
-import SwagLabsFooter from '../components/Footer';
-import HeaderContainer from '../components/HeaderContainer';
-import PropTypes from 'prop-types';
-import Button, { BUTTON_SIZES } from '../components/Button';
-import { ROUTES } from '../utils/Constants';
-import './Finish.css';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import Checkmark from "../assets/img/checkmark.png";
+import SwagLabsFooter from "../components/Footer";
+import HeaderContainer from "../components/HeaderContainer";
+import PropTypes from "prop-types";
+import Button, { BUTTON_SIZES } from "../components/Button";
+import { ROUTES } from "../utils/Constants";
+import "./Finish.css";
 
 const Finish = ({ history }) => {
   return (

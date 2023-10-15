@@ -16,15 +16,15 @@
   margin: 30px auto;
 }
 
-.complete-header{
-  font-family: 'DM Mono', sans-serif;
+.complete-header {
+  font-family: "DM Mono", sans-serif;
   font-size: 24px;
   line-height: 32px;
   font-weight: 500;
 }
 
-.complete-text{
-  font-family: 'DM Sans', sans-serif;
+.complete-text {
+  font-family: "DM Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -37,7 +37,7 @@
 
 .checkout_complete_container .btn {
   border: none;
-  background-color: #3DDC91;
+  background-color: #3ddc91;
   border-radius: 4px;
   color: #132322;
 }

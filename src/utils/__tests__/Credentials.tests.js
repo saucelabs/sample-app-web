@@ -1,9 +1,3 @@
-jest.mock("js-cookie", () => ({
-  get: jest.fn(),
-  set: jest.fn(),
-  remove: jest.fn(),
-}));
-
 import Cookies from "js-cookie";
 import {
   SESSION_USERNAME,
@@ -17,10 +11,17 @@ import {
   isLoggedIn,
   isPerformanceGlitchUser,
   isProblemUser,
+  isVisualUser,
   removeCredentials,
   setCredentials,
   verifyCredentials,
 } from "../Credentials";
+
+jest.mock("js-cookie", () => ({
+  get: jest.fn(),
+  set: jest.fn(),
+  remove: jest.fn(),
+}));
 
 describe("Credentials", () => {
   describe("verifyCredentials", () => {
@@ -79,6 +80,18 @@ describe("Credentials", () => {
     it("should be able to determine this is a problem user", () => {
       Cookies.get.mockReturnValueOnce("problem_user");
       expect(isProblemUser()).toEqual(true);
+    });
+  });
+
+  describe("isVisualUser", () => {
+    it("should be able to determine this is not a visual user", () => {
+      Cookies.get.mockReturnValueOnce("foo");
+      expect(isVisualUser()).toEqual(false);
+    });
+
+    it("should be able to determine this is a visual user", () => {
+      Cookies.get.mockReturnValueOnce("visual_user");
+      expect(isVisualUser()).toEqual(true);
     });
   });
 

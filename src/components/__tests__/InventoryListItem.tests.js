@@ -23,6 +23,8 @@ describe("InventoryListItem", () => {
       image_url: "image.png",
       name: "Swag Item name",
       price: 9.99,
+      isTextAlignRight: false,
+      missAlignButton: false,
     };
     useStateMock.mockImplementation((init) => [init, setState]);
   });
@@ -34,6 +36,14 @@ describe("InventoryListItem", () => {
   it("should render with default props", () => {
     const component = shallow(
       <InventoryListItem.WrappedComponent {...props} />
+    );
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should render with text aligned right", () => {
+    const component = shallow(
+      <InventoryListItem.WrappedComponent {...props} isTextAlignRight />
     );
 
     expect(component).toMatchSnapshot();

@@ -39,7 +39,7 @@
 
 a:hover .inventory_item_name,
 .btn.btn_secondary.inventory_details_back_button:hover {
-  color: #3DDC91
+  color: #3ddc91;
 }
 
 .inventory_details_container .inventory_details_desc {
@@ -51,7 +51,7 @@ a:hover .inventory_item_name,
 
 .inventory_details_container .inventory_details_price {
   color: #132322;
-  font-family: "DM Mono",  sans-serif;
+  font-family: "DM Mono", sans-serif;
   font-size: 20px;
   line-height: 36px;
   font-weight: 500;
@@ -64,13 +64,13 @@ a:hover .inventory_item_name,
   display: block;
 }
 
- .large_size {
+.large_size {
   width: 75%;
 }
 
 .left_component .btn_secondary.back {
   background-color: #fff;
-  color: #18583A;
+  color: #18583a;
   border: none;
 }
 

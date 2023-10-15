@@ -4,10 +4,10 @@
   }
 }
 .menu-item {
-  border-bottom: 1px solid #EDEDED;
-  color: #18583A;
+  border-bottom: 1px solid #ededed;
+  color: #18583a;
   display: inline-block;
-  font-family: 'DM Mono', 'sans-serif';
+  font-family: "DM Mono", "sans-serif";
   font-size: 16px;
   margin-bottom: 7px;
   text-decoration: none;
@@ -16,7 +16,7 @@
 }
 
 .menu-item:hover {
-  color: #3DDC91;
+  color: #3ddc91;
 }
 
 /* ===============Burger button styling==================== */
