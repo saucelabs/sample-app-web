@@ -7,7 +7,7 @@
   font-size: 14px;
   width: 100%;
   border: 0px;
-  border-bottom: 1px solid #EDEDED;
+  border-bottom: 1px solid #ededed;
   outline: none;
   padding: 10px 0;
 }
@@ -31,7 +31,7 @@
     /* IE 10+ */
 .form_input:-ms-input-placeholder,
 .form_input::placeholder {
-  color: #6D7584;
+  color: #6d7584;
 }
 
 /* Chrome/Opera/Safari */

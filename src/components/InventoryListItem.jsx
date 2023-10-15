@@ -8,7 +8,16 @@ import { ROUTES } from "../utils/Constants";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
 
 const InventoryListItem = (props) => {
-  const { desc, id, image_url, history, name, price } = props;
+  const {
+    isTextAlignRight,
+    missAlignButton,
+    desc,
+    id,
+    image_url,
+    history,
+    name,
+    price,
+  } = props;
   const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id));
   /**
    * @TODO:
@@ -27,7 +36,7 @@ const InventoryListItem = (props) => {
     } else if (isErrorUser()) {
       // Throw an exception. This will be reported to Backtrace
       if (itemId % 2 === 1) {
-        throw new Error('Failed to add item to the cart.');
+        throw new Error("Failed to add item to the cart.");
       }
     }
 
@@ -51,7 +60,7 @@ const InventoryListItem = (props) => {
     } else if (isErrorUser()) {
       // Throw an exception. This will be reported to Backtrace
       if (itemId % 2 === 0) {
-        throw new Error('Failed to remove item from cart.');
+        throw new Error("Failed to remove item from cart.");
       }
     }
 
@@ -72,15 +81,17 @@ const InventoryListItem = (props) => {
    * and functions
    */
   /* istanbul ignore next */
-  const ButtonType = ({ id, item, itemInCart }) => {
+  const ButtonType = ({ id, item, itemInCart, missAlignButton }) => {
     const label = itemInCart ? "Remove" : "Add to cart";
     const onClick = itemInCart ? () => removeFromCart(id) : () => addToCart(id);
     const type = itemInCart ? BUTTON_TYPES.SECONDARY : BUTTON_TYPES.PRIMARY;
     const testId = `${label}-${item}`.replace(/\s+/g, "-").toLowerCase();
-
+    const buttonClass = `btn_inventory ${
+      missAlignButton ? "btn_inventory_misaligned" : ""
+    }`;
     return (
       <Button
-        customClass="btn_inventory"
+        customClass={buttonClass}
         label={label}
         onClick={onClick}
         size={BUTTON_SIZES.SMALL}
@@ -89,7 +100,9 @@ const InventoryListItem = (props) => {
       />
     );
   };
-  const url = isProblemUser() ? "sl-404.jpg" : image_url;
+  const itemNameClass = `inventory_item_name ${
+    isTextAlignRight ? "align_right" : ""
+  }`;
 
   return (
     <div className="inventory_item">
@@ -105,7 +118,7 @@ const InventoryListItem = (props) => {
           <img
             alt={name}
             className="inventory_item_img"
-            src={require(`../assets/img/${url}`).default}
+            src={require(`../assets/img/${image_url}`).default}
           />
         </a>
       </div>
@@ -119,13 +132,18 @@ const InventoryListItem = (props) => {
               history.push(itemLink);
             }}
           >
-            <div className="inventory_item_name">{name}</div>
+            <div className={itemNameClass}>{name}</div>
           </a>
           <div className="inventory_item_desc">{desc}</div>
         </div>
         <div className="pricebar">
           <div className="inventory_item_price">${price}</div>
-          <ButtonType id={id} itemInCart={itemInCart} item={name} />
+          <ButtonType
+            id={id}
+            itemInCart={itemInCart}
+            item={name}
+            missAlignButton={missAlignButton}
+          />
         </div>
       </div>
     </div>
@@ -159,6 +177,14 @@ InventoryListItem.propTypes = {
    * The price of the product
    */
   price: PropTypes.number.isRequired,
+  /**
+   * Whether or not the item is aligned right
+   */
+  isTextAlignRight: PropTypes.bool.isRequired,
+  /**
+   * Whether or not the the button is misaligned
+   */
+  missAlignButton: PropTypes.bool.isRequired,
 };
 
 export default withRouter(InventoryListItem);

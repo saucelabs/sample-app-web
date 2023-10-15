@@ -44,7 +44,7 @@ export function removeCredentials() {
  * @return {string | undefined}
  */
 export function currentUser() {
-  return Cookies.get(SESSION_USERNAME)
+  return Cookies.get(SESSION_USERNAME);
 }
 
 /**
@@ -93,4 +93,13 @@ export function isLoggedIn() {
   const isValidUsername = VALID_USERNAMES.includes(sessionUsername);
 
   return isValidUsername && sessionUsername !== "locked_out_user";
+}
+
+/**
+ * Check if this is a visual user
+ *
+ * @return {boolean}
+ */
+export function isVisualUser() {
+  return Cookies.get(SESSION_USERNAME) === "visual_user";
 }

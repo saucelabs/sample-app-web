@@ -1,5 +1,5 @@
 .inventory_item {
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   background: #fff;
   position: relative;
   margin-bottom: 12px;
@@ -10,7 +10,7 @@
 
 .inventory_item_img {
   flex: 1;
-  overflow:hidden;
+  overflow: hidden;
 }
 .inventory_item_img a {
   display: block;
@@ -39,7 +39,10 @@
   font-family: "DM Mono", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  color: #18583A;
+  color: #18583a;
+}
+.align_right {
+  text-align: right;
 }
 .inventory_item_desc {
   font-family: "DM Sans", sans-serif;
@@ -58,9 +61,9 @@
 }
 
 .inventory_item_price {
-  border-top: 1px solid #EDEDED;
+  border-top: 1px solid #ededed;
   color: #132322;
-  font-family: "DM Mono",sans-serif;
+  font-family: "DM Mono", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 36px;
@@ -108,7 +111,7 @@
 
   .pricebar {
     align-items: flex-start;
-    border-bottom: 1px solid #EDEDED;
+    border-bottom: 1px solid #ededed;
     flex-direction: column;
     padding-bottom: 40px;
   }

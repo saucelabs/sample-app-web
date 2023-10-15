@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { isErrorUser, isPerformanceGlitchUser, isProblemUser } from "../utils/Credentials";
+import {
+  isErrorUser,
+  isPerformanceGlitchUser,
+  isProblemUser,
+  isVisualUser,
+} from "../utils/Credentials";
 import { InventoryData } from "../utils/InventoryData.js";
 import InventoryListItem from "../components/InventoryListItem";
 import SwagLabsFooter from "../components/Footer";
@@ -8,7 +13,7 @@ import HeaderContainer from "../components/HeaderContainer";
 import { sortAsc, sortDesc, sortHiLo, sortLoHi } from "../utils/Sorting";
 import Select from "../components/Select";
 import "./Inventory.css";
-import { BacktraceClient } from '@backtrace-labs/react';
+import { BacktraceClient } from "@backtrace-labs/react";
 
 const Inventory = () => {
   const [inventoryList, setInventoryList] = useState(
@@ -22,6 +27,7 @@ const Inventory = () => {
       // PageLoad increases
     }
   };
+  const isVisualFailure = isVisualUser();
 
   /* istanbul ignore next */
   if (isPerformanceGlitchUser()) {
@@ -43,11 +49,13 @@ const Inventory = () => {
       return;
     } else if (isErrorUser()) {
       // Send an error with custom attributes to Backtrace
-      BacktraceClient.instance.send('Sorting is broken!', {
+      BacktraceClient.instance.send("Sorting is broken!", {
         sortOption: event.target.value,
-        InventoryData
+        InventoryData,
       });
-      return alert('Sorting is broken! This error has been reported to Backtrace.');
+      return alert(
+        "Sorting is broken! This error has been reported to Backtrace."
+      );
     }
 
     setActiveOption(event.target.value);
@@ -98,10 +106,16 @@ const Inventory = () => {
                     <InventoryListItem
                       key={item.id}
                       id={item.id}
-                      image_url={item.image_url}
+                      image_url={
+                        isProblemUser() || (isVisualFailure && i === 0)
+                          ? "sl-404.jpg"
+                          : item.image_url
+                      }
                       name={item.name}
                       desc={item.desc}
                       price={item.price}
+                      isTextAlignRight={isVisualFailure && i > 1 && i < 4}
+                      missAlignButton={isVisualFailure && i === 5}
                     />
                   );
                 })}

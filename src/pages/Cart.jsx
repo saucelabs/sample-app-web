@@ -1,16 +1,20 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { ROUTES } from '../utils/Constants';
-import { ShoppingCart } from '../utils/shopping-cart';
-import { InventoryData } from '../utils/InventoryData';
-import CartItem from '../components/CartItem';
-import SwagLabsFooter from '../components/Footer';
-import HeaderContainer from '../components/HeaderContainer';
-import Button, { BUTTON_SIZES, BUTTON_TYPES } from '../components/Button';
-import './Cart.css';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import { ROUTES } from "../utils/Constants";
+import { ShoppingCart } from "../utils/shopping-cart";
+import { InventoryData } from "../utils/InventoryData";
+import CartItem from "../components/CartItem";
+import SwagLabsFooter from "../components/Footer";
+import HeaderContainer from "../components/HeaderContainer";
+import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
+import "./Cart.css";
+import { isVisualUser } from "../utils/Credentials";
 
 const Cart = ({ history }) => {
   const contents = ShoppingCart.getCartContents();
+  const buttonClass = `checkout_button ${
+    isVisualUser() ? "btn_visual_failure" : ""
+  }`;
 
   return (
     <div id="page_wrapper" className="page_wrapper">
@@ -40,7 +44,7 @@ const Cart = ({ history }) => {
                 label="Checkout"
                 // `checkout_button` has no style function
                 // but is there for backwards compatibility
-                customClass="checkout_button"
+                customClass={buttonClass}
                 onClick={(evt) => {
                   evt.preventDefault();
                   history.push(ROUTES.CHECKOUT_STEP_ONE);

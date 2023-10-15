@@ -74,7 +74,7 @@ const InventoryItem = (props) => {
     } else if (isErrorUser()) {
       // Throw an exception. This will be reported to Backtrace
       if (itemId % 2 === 1) {
-        throw new Error('Failed to add item to the cart.');
+        throw new Error("Failed to add item to the cart.");
       }
     }
 
@@ -98,7 +98,7 @@ const InventoryItem = (props) => {
     } else if (isErrorUser()) {
       // Throw an exception. This will be reported to Backtrace
       if (itemId % 2 === 0) {
-        throw new Error('Failed to remove item from cart.');
+        throw new Error("Failed to remove item from cart.");
       }
     }
 
@@ -169,16 +169,18 @@ const InventoryItem = (props) => {
                   name="description-boundary"
                   fallback={
                     <div className="inventory_details_desc large_size">
-                      A description should be here, but it failed to render! This error has been reported to Backtrace.
+                      A description should be here, but it failed to render!
+                      This error has been reported to Backtrace.
                     </div>
                   }
                 >
-                  {
-                    !isErrorUser() ?
-                      <div className="inventory_details_desc large_size">
-                        {item.desc}
-                      </div> : <BrokenComponent />
-                  }
+                  {!isErrorUser() ? (
+                    <div className="inventory_details_desc large_size">
+                      {item.desc}
+                    </div>
+                  ) : (
+                    <BrokenComponent />
+                  )}
                 </ErrorBoundary>
 
                 <div className="inventory_details_price">${item.price}</div>

@@ -28,7 +28,7 @@ const CheckOutStepOne = ({ history }) => {
       return setFirstName(evt.target.value);
     } else if (isErrorUser()) {
       // Fail here with TypeError. This will be reported to Backtrace
-      return setLastName(evt.totallyUndefined.value)
+      return setLastName(evt.totallyUndefined.value);
     }
 
     setLastName(evt.target.value);

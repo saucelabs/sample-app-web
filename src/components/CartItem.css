@@ -1,5 +1,5 @@
 .cart_item {
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   border-radius: 8px;
   background: #fff;
   display: flex;
@@ -8,7 +8,7 @@
 }
 
 .cart_quantity {
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   box-sizing: border-box;
   text-align: center;
   font-size: 14px;

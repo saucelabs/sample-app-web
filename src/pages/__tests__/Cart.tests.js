@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Cart from "../Cart";
 import { ShoppingCart } from "../../utils/shopping-cart";
+import * as Credentials from "../../utils/Credentials";
 
 jest.mock("../../utils/shopping-cart");
 
@@ -22,6 +23,15 @@ describe("Cart", () => {
   it("should render correctly without any items", () => {
     const wrapper = shallow(<Cart.WrappedComponent {...props} />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should render correctly for a visual user", () => {
+    const isVisualUserSpy = jest.spyOn(Credentials, "isVisualUser");
+    isVisualUserSpy.mockReturnValue(true);
+    const wrapper = shallow(<Cart.WrappedComponent {...props} />);
+
+    expect(wrapper).toMatchSnapshot();
+    isVisualUserSpy.mockClear();
   });
 
   it("should render correctly items", () => {

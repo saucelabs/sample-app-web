@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Cart should render correctly for a visual user 1`] = `
+<div
+  className="page_wrapper"
+  id="page_wrapper"
+>
+  <div
+    id="contents_wrapper"
+  >
+    <HeaderContainer
+      secondaryTitle="Your Cart"
+    />
+    <div
+      className="cart_contents_container"
+      id="cart_contents_container"
+    >
+      <div>
+        <div
+          className="cart_list"
+        >
+          <div
+            className="cart_quantity_label"
+          >
+            QTY
+          </div>
+          <div
+            className="cart_desc_label"
+          >
+            Description
+          </div>
+        </div>
+        <div
+          className="cart_footer"
+        >
+          <Button
+            label="Continue Shopping"
+            onClick={[Function]}
+            size="medium"
+            testId="continue-shopping"
+            type="secondary back"
+          />
+          <Button
+            customClass="checkout_button btn_visual_failure"
+            label="Checkout"
+            onClick={[Function]}
+            size="medium"
+            testId="checkout"
+            type="action"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <SwagLabsFooter />
+</div>
+`;
+
 exports[`Cart should render correctly items 1`] = `
 <div
   className="page_wrapper"
@@ -80,7 +136,7 @@ exports[`Cart should render correctly items 1`] = `
             type="secondary back"
           />
           <Button
-            customClass="checkout_button"
+            customClass="checkout_button "
             label="Checkout"
             onClick={[Function]}
             size="medium"
@@ -136,7 +192,7 @@ exports[`Cart should render correctly without any items 1`] = `
             type="secondary back"
           />
           <Button
-            customClass="checkout_button"
+            customClass="checkout_button "
             label="Checkout"
             onClick={[Function]}
             size="medium"
