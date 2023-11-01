@@ -23,6 +23,14 @@ describe("DrawerMenu", () => {
     expect(component).toMatchSnapshot();
   });
 
+  it("should render correctly for a visual user", () => {
+    const isVisualUserSpy = jest.spyOn(Credentials, "isVisualUser");
+    isVisualUserSpy.mockReturnValue(true);
+    const component = shallow(<DrawerMenu.WrappedComponent {...props} />);
+
+    expect(component).toMatchSnapshot();
+  });
+
   it("should render return an incorrect about link for a problem user", () => {
     const isProblemUserSpy = jest.spyOn(Credentials, "isProblemUser");
     isProblemUserSpy.mockReturnValue(true);
