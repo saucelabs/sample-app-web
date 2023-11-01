@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 import { slide as Menu } from "react-burger-menu";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { ROUTES } from "../utils/Constants";
-import { isProblemUser, removeCredentials } from "../utils/Credentials";
+import {
+  isProblemUser,
+  isVisualUser,
+  removeCredentials,
+} from "../utils/Credentials";
 import menuClosePng from "../assets/img/close.png";
 import menuCloseSvg from "../assets/svg/close@3x.svg";
 import menuIconPng from "../assets/img/menu.png";
@@ -19,14 +23,26 @@ const DrawerMenu = ({ history }) => {
   const aboutLink = isProblemUser()
     ? "https://saucelabs.com/error/404"
     : "https://saucelabs.com/";
+  const isVisualFailure = isVisualUser();
+  const imageClass = isVisualFailure ? "visual_failure" : "";
 
   return (
     <Menu
       customBurgerIcon={
-        <img src={menuIconPng} srcSet={menuIconSvg} alt="Open Menu" />
+        <img
+          src={menuIconPng}
+          className={imageClass}
+          srcSet={menuIconSvg}
+          alt="Open Menu"
+        />
       }
       customCrossIcon={
-        <img src={menuClosePng} srcSet={menuCloseSvg} alt="Close Menu" />
+        <img
+          src={menuClosePng}
+          className={imageClass}
+          srcSet={menuCloseSvg}
+          alt="Close Menu"
+        />
       }
       outerContainerId={"page_wrapper"}
       pageWrapId={"contents_wrapper"}
