@@ -63,3 +63,7 @@
 /* Individual item */
 .bm-item {
 }
+
+.visual_failure {
+  transform: rotate(3deg);
+}
