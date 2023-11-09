@@ -117,7 +117,7 @@ const InventoryItem = (props) => {
     const label = itemInCart ? "Remove" : "Add to cart";
     const onClick = itemInCart ? () => removeFromCart(id) : () => addToCart(id);
     const type = itemInCart ? BUTTON_TYPES.SECONDARY : BUTTON_TYPES.PRIMARY;
-    const testId = label === "Remove" ? "remove" : "add-to-cart"
+    const testId = label === "Remove" ? "remove" : "add-to-cart";
 
     return (
       <Button
@@ -146,19 +146,31 @@ const InventoryItem = (props) => {
             />
           }
         />
-        <div id="inventory_item_container" className="inventory_item_container" data-testid="inventory-container">
+        <div
+          id="inventory_item_container"
+          className="inventory_item_container"
+          data-testid="inventory-container"
+        >
           <div className="inventory_details">
-            <div className="inventory_details_container" data-testid="inventory-item">
+            <div
+              className="inventory_details_container"
+              data-testid="inventory-item"
+            >
               <div className="inventory_details_img_container">
                 <img
                   alt={item.name}
                   className="inventory_details_img"
                   src={require(`../assets/img/${item.image_url}`).default}
-                  data-testid={`item-${item.name.replace(/\s+/g, "-").toLowerCase()}-img`}
+                  data-testid={`item-${item.name
+                    .replace(/\s+/g, "-")
+                    .toLowerCase()}-img`}
                 />
               </div>
               <div className="inventory_details_desc_container">
-                <div className="inventory_details_name large_size" data-testid="inventory-item-name">
+                <div
+                  className="inventory_details_name large_size"
+                  data-testid="inventory-item-name"
+                >
                   {item.name}
                 </div>
 
@@ -169,14 +181,20 @@ const InventoryItem = (props) => {
                 <ErrorBoundary
                   name="description-boundary"
                   fallback={
-                    <div className="inventory_details_desc large_size" data-testid="inventory-item-desc">
+                    <div
+                      className="inventory_details_desc large_size"
+                      data-testid="inventory-item-desc"
+                    >
                       A description should be here, but it failed to render!
                       This error has been reported to Backtrace.
                     </div>
                   }
                 >
                   {!isErrorUser() ? (
-                    <div className="inventory_details_desc large_size" data-testid="inventory-item-desc">
+                    <div
+                      className="inventory_details_desc large_size"
+                      data-testid="inventory-item-desc"
+                    >
                       {item.desc}
                     </div>
                   ) : (
@@ -184,7 +202,12 @@ const InventoryItem = (props) => {
                   )}
                 </ErrorBoundary>
 
-                <div className="inventory_details_price" data-testid="inventory-item-price">${item.price}</div>
+                <div
+                  className="inventory_details_price"
+                  data-testid="inventory-item-price"
+                >
+                  ${item.price}
+                </div>
                 <ButtonType
                   id={item.id}
                   itemInCart={itemInCart}

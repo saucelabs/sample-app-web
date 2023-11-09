@@ -128,9 +128,16 @@ function Login(props) {
             </div>
           </div>
         </div>
-        <div className="login_credentials_wrap" data-testid="login-credentials-container">
+        <div
+          className="login_credentials_wrap"
+          data-testid="login-credentials-container"
+        >
           <div className="login_credentials_wrap-inner">
-            <div id="login_credentials" className="login_credentials" data-testid="login-credentials">
+            <div
+              id="login_credentials"
+              className="login_credentials"
+              data-testid="login-credentials"
+            >
               <h4>Accepted usernames are:</h4>
               {VALID_USERNAMES.map((u, i) => (
                 <Fragment key={i}>

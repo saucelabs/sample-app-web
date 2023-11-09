@@ -35,10 +35,10 @@ const DrawerMenu = ({ history }) => {
           srcSet={menuIconSvg}
           alt="Open Menu"
           data-testid="open-menu"
-          />
-        }
-        customCrossIcon={
-          <img
+        />
+      }
+      customCrossIcon={
+        <img
           src={menuClosePng}
           className={imageClass}
           srcSet={menuCloseSvg}
@@ -62,7 +62,12 @@ const DrawerMenu = ({ history }) => {
       >
         All Items
       </a>
-      <a id="about_sidebar_link" className="menu-item" href={aboutLink} data-testid="about-sidebar-link">
+      <a
+        id="about_sidebar_link"
+        className="menu-item"
+        href={aboutLink}
+        data-testid="about-sidebar-link"
+      >
         About
       </a>
       <a

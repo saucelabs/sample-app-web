@@ -20,11 +20,22 @@ const Cart = ({ history }) => {
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
         <HeaderContainer secondaryTitle="Your Cart" />
-        <div id="cart_contents_container" className="cart_contents_container" data-testid="cart-contents-container">
+        <div
+          id="cart_contents_container"
+          className="cart_contents_container"
+          data-testid="cart-contents-container"
+        >
           <div>
             <div className="cart_list" data-testid="cart-list">
-              <div className="cart_quantity_label" data-testid="cart-quantity-label">QTY</div>
-              <div className="cart_desc_label" data-testid="cart-desc-label">Description</div>
+              <div
+                className="cart_quantity_label"
+                data-testid="cart-quantity-label"
+              >
+                QTY
+              </div>
+              <div className="cart_desc_label" data-testid="cart-desc-label">
+                Description
+              </div>
               {contents.map((item, i) => (
                 <CartItem key={i} item={InventoryData[item]} showButton />
               ))}

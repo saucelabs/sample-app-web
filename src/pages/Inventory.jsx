@@ -99,7 +99,11 @@ const Inventory = () => {
         />
         <div id="inventory_container">
           <div>
-            <div id="inventory_container" className="inventory_container" data-testid="inventory-container">
+            <div
+              id="inventory_container"
+              className="inventory_container"
+              data-testid="inventory-container"
+            >
               <div className="inventory_list" data-testid="inventory-list">
                 {inventoryList.map((item, i) => {
                   return (

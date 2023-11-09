@@ -62,7 +62,11 @@ const CheckOutStepOne = ({ history }) => {
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
         <HeaderContainer secondaryTitle="Checkout: Your Information" />
-        <div id="checkout_info_container" className="checkout_info_container" data-testid="checkout-info-container">
+        <div
+          id="checkout_info_container"
+          className="checkout_info_container"
+          data-testid="checkout-info-container"
+        >
           <div className="checkout_info_wrapper">
             <form onSubmit={handleSubmit}>
               <div className="checkout_info">

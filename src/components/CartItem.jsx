@@ -32,7 +32,9 @@ const CartItem = ({ item, history, showButton }) => {
 
     return (
       <div className="cart_item" data-testid="inventory-item">
-        <div className="cart_quantity" data-testid="item-quantity">1</div>
+        <div className="cart_quantity" data-testid="item-quantity">
+          1
+        </div>
         <div className="cart_item_label">
           <a
             href="#"
@@ -43,11 +45,26 @@ const CartItem = ({ item, history, showButton }) => {
             }}
             data-testid={`item-${id}-title-link`}
           >
-            <div className="inventory_item_name" data-testid="inventory-item-name">{name}</div>
+            <div
+              className="inventory_item_name"
+              data-testid="inventory-item-name"
+            >
+              {name}
+            </div>
           </a>
-          <div className="inventory_item_desc" data-testid="inventory-item-desc">{desc}</div>
+          <div
+            className="inventory_item_desc"
+            data-testid="inventory-item-desc"
+          >
+            {desc}
+          </div>
           <div className="item_pricebar">
-            <div className="inventory_item_price" data-testid="inventory-item-price">${price}</div>
+            <div
+              className="inventory_item_price"
+              data-testid="inventory-item-price"
+            >
+              ${price}
+            </div>
             {showButton && (
               <Button
                 customClass="cart_button"
