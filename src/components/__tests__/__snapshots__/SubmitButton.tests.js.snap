@@ -11,7 +11,7 @@ exports[`SubmitButton should render with a custom class 1`] = `
 exports[`SubmitButton should render with a testId 1`] = `
 <input
   className="submit-button"
-  data-test="test-id"
+  data-testid="test-id"
   id="test-id"
   name="test-id"
   type="submit"
@@ -22,7 +22,7 @@ exports[`SubmitButton should render with a testId 1`] = `
 exports[`SubmitButton should render with a testId and a name prop 1`] = `
 <input
   className="submit-button"
-  data-test="test-id"
+  data-testid="test-id"
   id="test-id"
   name="name-id"
   type="submit"

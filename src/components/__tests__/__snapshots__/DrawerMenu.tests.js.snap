@@ -12,6 +12,7 @@ exports[`DrawerMenu should render correctly 1`] = `
     <img
       alt="Open Menu"
       className=""
+      data-testid="open-menu"
       src="test-file-stub"
       srcSet="test-file-stub"
     />
@@ -20,6 +21,7 @@ exports[`DrawerMenu should render correctly 1`] = `
     <img
       alt="Close Menu"
       className=""
+      data-testid="close-menu"
       src="test-file-stub"
       srcSet="test-file-stub"
     />
@@ -45,6 +47,7 @@ exports[`DrawerMenu should render correctly 1`] = `
 >
   <a
     className="menu-item"
+    data-testid="inventory-sidebar-link"
     href="#"
     id="inventory_sidebar_link"
     onClick={[Function]}
@@ -53,6 +56,7 @@ exports[`DrawerMenu should render correctly 1`] = `
   </a>
   <a
     className="menu-item"
+    data-testid="about-sidebar-link"
     href="https://saucelabs.com/"
     id="about_sidebar_link"
   >
@@ -60,6 +64,7 @@ exports[`DrawerMenu should render correctly 1`] = `
   </a>
   <a
     className="menu-item"
+    data-testid="logout-sidebar-link"
     href="#"
     id="logout_sidebar_link"
     onClick={[Function]}
@@ -68,6 +73,7 @@ exports[`DrawerMenu should render correctly 1`] = `
   </a>
   <a
     className="menu-item"
+    data-testid="reset-sidebar-link"
     href="#"
     id="reset_sidebar_link"
     onClick={[Function]}
@@ -89,6 +95,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
     <img
       alt="Open Menu"
       className="visual_failure"
+      data-testid="open-menu"
       src="test-file-stub"
       srcSet="test-file-stub"
     />
@@ -97,6 +104,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
     <img
       alt="Close Menu"
       className="visual_failure"
+      data-testid="close-menu"
       src="test-file-stub"
       srcSet="test-file-stub"
     />
@@ -122,6 +130,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
 >
   <a
     className="menu-item"
+    data-testid="inventory-sidebar-link"
     href="#"
     id="inventory_sidebar_link"
     onClick={[Function]}
@@ -130,6 +139,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
   </a>
   <a
     className="menu-item"
+    data-testid="about-sidebar-link"
     href="https://saucelabs.com/"
     id="about_sidebar_link"
   >
@@ -137,6 +147,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
   </a>
   <a
     className="menu-item"
+    data-testid="logout-sidebar-link"
     href="#"
     id="logout_sidebar_link"
     onClick={[Function]}
@@ -145,6 +156,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
   </a>
   <a
     className="menu-item"
+    data-testid="reset-sidebar-link"
     href="#"
     id="reset_sidebar_link"
     onClick={[Function]}

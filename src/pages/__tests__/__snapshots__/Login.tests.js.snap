@@ -11,6 +11,7 @@ exports[`Login should render correctly 1`] = `
   </div>
   <div
     className="login_wrapper"
+    data-testid="login-container"
   >
     <div
       className="login_wrapper-inner"
@@ -63,12 +64,14 @@ exports[`Login should render correctly 1`] = `
     </div>
     <div
       className="login_credentials_wrap"
+      data-testid="login-credentials-container"
     >
       <div
         className="login_credentials_wrap-inner"
       >
         <div
           className="login_credentials"
+          data-testid="login-credentials"
           id="login_credentials"
         >
           <h4>
@@ -89,6 +92,7 @@ exports[`Login should render correctly 1`] = `
         </div>
         <div
           className="login_password"
+          data-testid="login-password"
         >
           <h4>
             Password for all users:

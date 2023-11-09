@@ -3,11 +3,13 @@
 exports[`InventoryListItem should render with default props 1`] = `
 <div
   className="inventory_item"
+  data-testid="inventory-item"
 >
   <div
     className="inventory_item_img"
   >
     <a
+      data-testid="item-1-img-link"
       href="#"
       id="item_1_img_link"
       onClick={[Function]}
@@ -15,28 +17,33 @@ exports[`InventoryListItem should render with default props 1`] = `
       <img
         alt="Swag Item name"
         className="inventory_item_img"
+        data-testid="inventory-item-swag-item-name-img"
       />
     </a>
   </div>
   <div
     className="inventory_item_description"
+    data-testid="inventory-item-description"
   >
     <div
       className="inventory_item_label"
     >
       <a
+        data-testid="item-1-title-link"
         href="#"
         id="item_1_title_link"
         onClick={[Function]}
       >
         <div
           className="inventory_item_name "
+          data-testid="inventory-item-name"
         >
           Swag Item name
         </div>
       </a>
       <div
         className="inventory_item_desc"
+        data-testid="inventory-item-desc"
       >
         Swag Item description
       </div>
@@ -46,6 +53,7 @@ exports[`InventoryListItem should render with default props 1`] = `
     >
       <div
         className="inventory_item_price"
+        data-testid="inventory-item-price"
       >
         $
         9.99
@@ -64,11 +72,13 @@ exports[`InventoryListItem should render with default props 1`] = `
 exports[`InventoryListItem should render with text aligned right 1`] = `
 <div
   className="inventory_item"
+  data-testid="inventory-item"
 >
   <div
     className="inventory_item_img"
   >
     <a
+      data-testid="item-1-img-link"
       href="#"
       id="item_1_img_link"
       onClick={[Function]}
@@ -76,28 +86,33 @@ exports[`InventoryListItem should render with text aligned right 1`] = `
       <img
         alt="Swag Item name"
         className="inventory_item_img"
+        data-testid="inventory-item-swag-item-name-img"
       />
     </a>
   </div>
   <div
     className="inventory_item_description"
+    data-testid="inventory-item-description"
   >
     <div
       className="inventory_item_label"
     >
       <a
+        data-testid="item-1-title-link"
         href="#"
         id="item_1_title_link"
         onClick={[Function]}
       >
         <div
           className="inventory_item_name align_right"
+          data-testid="inventory-item-name"
         >
           Swag Item name
         </div>
       </a>
       <div
         className="inventory_item_desc"
+        data-testid="inventory-item-desc"
       >
         Swag Item description
       </div>
@@ -107,6 +122,7 @@ exports[`InventoryListItem should render with text aligned right 1`] = `
     >
       <div
         className="inventory_item_price"
+        data-testid="inventory-item-price"
       >
         $
         9.99

@@ -3,6 +3,7 @@
 exports[`Footer should render correctly 1`] = `
 <footer
   className="footer"
+  data-testid="footer"
 >
   <ul
     className="social"
@@ -11,6 +12,7 @@ exports[`Footer should render correctly 1`] = `
       className="social_twitter"
     >
       <a
+        data-testid="social-twitter"
         href="https://twitter.com/saucelabs"
         rel="noreferrer"
         target="_blank"
@@ -22,6 +24,7 @@ exports[`Footer should render correctly 1`] = `
       className="social_facebook"
     >
       <a
+        data-testid="social-facebook"
         href="https://www.facebook.com/saucelabs"
         rel="noreferrer"
         target="_blank"
@@ -33,6 +36,7 @@ exports[`Footer should render correctly 1`] = `
       className="social_linkedin"
     >
       <a
+        data-testid="social-linkedin"
         href="https://www.linkedin.com/company/sauce-labs/"
         rel="noreferrer"
         target="_blank"
@@ -43,6 +47,7 @@ exports[`Footer should render correctly 1`] = `
   </ul>
   <div
     className="footer_copy"
+    data-testid="footer-copy"
   >
     © 
     1234

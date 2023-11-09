@@ -13,6 +13,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
     />
     <div
       className="checkout_info_container"
+      data-testid="checkout-info-container"
       id="checkout_info_container"
     >
       <div

@@ -13,20 +13,24 @@ exports[`CheckOutStepTwo should render correctly with default props 1`] = `
     />
     <div
       className="checkout_complete_container"
+      data-testid="checkout-complete-container"
       id="checkout_complete_container"
     >
       <img
         alt="Pony Express"
         className="pony_express"
+        data-testid="pony-express"
         src="test-file-stub"
       />
       <h2
         className="complete-header"
+        data-testid="complete-header"
       >
         Thank you for your order!
       </h2>
       <div
         className="complete-text"
+        data-testid="complete-text"
       >
         Your order has been dispatched, and will arrive just as fast as the pony can get there!
       </div>

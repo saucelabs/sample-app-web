@@ -6,12 +6,13 @@ exports[`Select should render with a testID 1`] = `
 >
   <span
     className="active_option"
+    data-testid="active-option"
   >
     Name (A to Z)
   </span>
   <select
     className="product_sort_container"
-    data-test="foo"
+    data-testid="foo"
     onChange={[MockFunction]}
     value="az"
   >
@@ -49,6 +50,7 @@ exports[`Select should render with default props 1`] = `
 >
   <span
     className="active_option"
+    data-testid="active-option"
   >
     Name (A to Z)
   </span>

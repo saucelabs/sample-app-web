@@ -3,9 +3,11 @@
 exports[`InventoryListItem should render with default props 1`] = `
 <div
   className="cart_item"
+  data-testid="inventory-item"
 >
   <div
     className="cart_quantity"
+    data-testid="item-quantity"
   >
     1
   </div>
@@ -13,18 +15,21 @@ exports[`InventoryListItem should render with default props 1`] = `
     className="cart_item_label"
   >
     <a
+      data-testid="item-1-title-link"
       href="#"
       id="item_1_title_link"
       onClick={[Function]}
     >
       <div
         className="inventory_item_name"
+        data-testid="inventory-item-name"
       >
         Swag Item name
       </div>
     </a>
     <div
       className="inventory_item_desc"
+      data-testid="inventory-item-desc"
     >
       Swag Item description
     </div>
@@ -33,6 +38,7 @@ exports[`InventoryListItem should render with default props 1`] = `
     >
       <div
         className="inventory_item_price"
+        data-testid="inventory-item-price"
       >
         $
         9.99
