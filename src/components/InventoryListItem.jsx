@@ -105,7 +105,7 @@ const InventoryListItem = (props) => {
   }`;
 
   return (
-    <div className="inventory_item">
+    <div className="inventory_item" data-testid="inventory-item">
       <div className="inventory_item_img">
         <a
           href="#"
@@ -114,15 +114,17 @@ const InventoryListItem = (props) => {
             evt.preventDefault();
             history.push(itemLink);
           }}
+          data-testid={`item-${id}-img-link`}
         >
           <img
             alt={name}
             className="inventory_item_img"
             src={require(`../assets/img/${image_url}`).default}
+            data-testid={`inventory-item-${name.replace(/\s+/g, "-").toLowerCase()}-img`}
           />
         </a>
       </div>
-      <div className="inventory_item_description">
+      <div className="inventory_item_description" data-testid="inventory-item-description">
         <div className="inventory_item_label">
           <a
             href="#"
@@ -131,13 +133,14 @@ const InventoryListItem = (props) => {
               evt.preventDefault();
               history.push(itemLink);
             }}
+            data-testid={`item-${id}-title-link`}
           >
-            <div className={itemNameClass}>{name}</div>
+            <div className={itemNameClass} data-testid="inventory-item-name">{name}</div>
           </a>
-          <div className="inventory_item_desc">{desc}</div>
+          <div className="inventory_item_desc" data-testid="inventory-item-desc">{desc}</div>
         </div>
         <div className="pricebar">
-          <div className="inventory_item_price">${price}</div>
+          <div className="inventory_item_price" data-testid="inventory-item-price">${price}</div>
           <ButtonType
             id={id}
             itemInCart={itemInCart}

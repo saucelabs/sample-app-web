@@ -5,7 +5,7 @@ import "./Select.css";
 const Select = ({ activeOption, onChange, options, testId }) => {
   return (
     <span className="select_container">
-      <span className="active_option">
+      <span className="active_option" data-testid="active-option">
         {
           options[options.findIndex((option) => option.key === activeOption)]
             .value
@@ -17,7 +17,7 @@ const Select = ({ activeOption, onChange, options, testId }) => {
         value={activeOption}
         {...(testId
           ? {
-              "data-test": testId,
+              "data-testid": testId,
             }
           : {})}
       >

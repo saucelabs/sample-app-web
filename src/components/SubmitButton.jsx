@@ -11,7 +11,7 @@ const SubmitButton = ({ customClass, testId, value, ...props }) => {
       value={value}
       {...(testId
         ? {
-            "data-test": testId,
+            "data-testid": testId,
             id: testId,
             name: testId,
           }

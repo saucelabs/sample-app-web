@@ -36,7 +36,7 @@ const Button = ({
       className={`btn${buttonTypeClass}${buttonSize}${extraClass}`}
       {...(testId
         ? {
-            "data-test": testId,
+            "data-testid": testId,
             id: testId,
             name: testId,
           }

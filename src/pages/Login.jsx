@@ -83,7 +83,7 @@ function Login(props) {
     <div className="login_container">
       <div className="login_logo">Swag Labs</div>
 
-      <div className="login_wrapper">
+      <div className="login_wrapper" data-testid="login-container">
         <div className="login_wrapper-inner">
           <div id="login_button_container" className="form_column">
             <div className="login-box">
@@ -128,9 +128,9 @@ function Login(props) {
             </div>
           </div>
         </div>
-        <div className="login_credentials_wrap">
+        <div className="login_credentials_wrap" data-testid="login-credentials-container">
           <div className="login_credentials_wrap-inner">
-            <div id="login_credentials" className="login_credentials">
+            <div id="login_credentials" className="login_credentials" data-testid="login-credentials">
               <h4>Accepted usernames are:</h4>
               {VALID_USERNAMES.map((u, i) => (
                 <Fragment key={i}>
@@ -139,7 +139,7 @@ function Login(props) {
                 </Fragment>
               ))}
             </div>
-            <div className="login_password">
+            <div className="login_password" data-testid="login-password">
               <h4>Password for all users:</h4>
               {VALID_PASSWORD}
             </div>

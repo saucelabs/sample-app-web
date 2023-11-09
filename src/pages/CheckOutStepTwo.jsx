@@ -45,28 +45,29 @@ const CheckOutStepTwo = ({ history }) => {
         <div
           id="checkout_summary_container"
           className="checkout_summary_container"
+          data-testid="checkout-summary-container"
         >
           <div>
-            <div className="cart_list">
-              <div className="cart_quantity_label">QTY</div>
-              <div className="cart_desc_label">Description</div>
+            <div className="cart_list" data-testid="cart-list">
+              <div className="cart_quantity_label" data-testid="cart-quantity-label">QTY</div>
+              <div className="cart_desc_label" data-testid="cart-desc-label">Description</div>
               {contents.map((item, i) => {
                 return <CartItem key={i} item={InventoryData[item]} />;
               })}
             </div>
             <div className="summary_info">
-              <div className="summary_info_label">Payment Information</div>
-              <div className="summary_value_label">SauceCard #31337</div>
-              <div className="summary_info_label">Shipping Information</div>
-              <div className="summary_value_label">
-                Free Pony Express Delivery!
+              <div className="summary_info_label" data-testid="payment-info-label">Payment Information:</div>
+              <div className="summary_value_label" data-testid="payment-info-value">SauceCard #31337</div>
+              <div className="summary_info_label" data-testid="shipping-info-label">Shipping Information:</div>
+              <div className="summary_value_label" data-testid="shipping-info-value">
+              Free Pony Express Delivery!
               </div>
-              <div className="summary_info_label">Price Total</div>
-              <div className="summary_subtotal_label">
+              <div className="summary_info_label" data-testid="total-info-label">Price Total</div>
+              <div className="summary_subtotal_label" data-testid="subtotal-label">
                 Item total: ${orderTotal}
               </div>
-              <div className="summary_tax_label">Tax: ${orderTax}</div>
-              <div className="summary_info_label summary_total_label">
+              <div className="summary_tax_label" data-testid="tax-label">Tax: ${orderTax}</div>
+              <div className="summary_total_label" data-testid="total-label">
                 Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}
               </div>
               <div className="cart_footer">
