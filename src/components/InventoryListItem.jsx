@@ -144,10 +144,7 @@ const InventoryListItem = (props) => {
               {name}
             </div>
           </a>
-          <div
-            className="inventory_item_desc"
-            data-test="inventory-item-desc"
-          >
+          <div className="inventory_item_desc" data-test="inventory-item-desc">
             {desc}
           </div>
         </div>

@@ -72,10 +72,7 @@ const HeaderContainer = ({
           <CartButton />
         </div>
       </div>
-      <div
-        className="header_secondary_container"
-        data-test="secondary-header"
-      >
+      <div className="header_secondary_container" data-test="secondary-header">
         {secondaryLeftComponent && (
           <LeftComponent leftComponent={secondaryLeftComponent} />
         )}

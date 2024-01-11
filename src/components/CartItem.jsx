@@ -52,10 +52,7 @@ const CartItem = ({ item, history, showButton }) => {
               {name}
             </div>
           </a>
-          <div
-            className="inventory_item_desc"
-            data-test="inventory-item-desc"
-          >
+          <div className="inventory_item_desc" data-test="inventory-item-desc">
             {desc}
           </div>
           <div className="item_pricebar">

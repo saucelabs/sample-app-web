@@ -87,10 +87,7 @@ const CheckOutStepTwo = ({ history }) => {
               >
                 Free Pony Express Delivery!
               </div>
-              <div
-                className="summary_info_label"
-                data-test="total-info-label"
-              >
+              <div className="summary_info_label" data-test="total-info-label">
                 Price Total
               </div>
               <div
