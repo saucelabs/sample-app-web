@@ -17,6 +17,7 @@ exports[`ErrorMessage should render an error message when there is an error 1`] 
   >
     <button
       className="error-button"
+      data-test="error-button"
       onClick={[Function]}
     >
       <FontAwesomeIcon

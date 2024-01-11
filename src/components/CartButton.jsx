@@ -23,12 +23,18 @@ const CartButton = (props) => {
 
   if (cartContents.length > 0) {
     cartBadge = (
-      <span className="shopping_cart_badge">{cartContents.length}</span>
+      <span className="shopping_cart_badge" data-test="shopping-cart-badge">
+        {cartContents.length}
+      </span>
     );
   }
 
   return (
-    <a className="shopping_cart_link" onClick={() => history.push(ROUTES.CART)}>
+    <a
+      className="shopping_cart_link"
+      onClick={() => history.push(ROUTES.CART)}
+      data-test="shopping-cart-link"
+    >
       {cartBadge}
     </a>
   );

@@ -6,6 +6,7 @@ exports[`Select should render with a testID 1`] = `
 >
   <span
     className="active_option"
+    data-test="active-option"
   >
     Name (A to Z)
   </span>
@@ -49,6 +50,7 @@ exports[`Select should render with default props 1`] = `
 >
   <span
     className="active_option"
+    data-test="active-option"
   >
     Name (A to Z)
   </span>

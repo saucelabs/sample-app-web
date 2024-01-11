@@ -13,19 +13,23 @@ exports[`Cart should render correctly for a visual user 1`] = `
     />
     <div
       className="cart_contents_container"
+      data-test="cart-contents-container"
       id="cart_contents_container"
     >
       <div>
         <div
           className="cart_list"
+          data-test="cart-list"
         >
           <div
             className="cart_quantity_label"
+            data-test="cart-quantity-label"
           >
             QTY
           </div>
           <div
             className="cart_desc_label"
+            data-test="cart-desc-label"
           >
             Description
           </div>
@@ -69,19 +73,23 @@ exports[`Cart should render correctly items 1`] = `
     />
     <div
       className="cart_contents_container"
+      data-test="cart-contents-container"
       id="cart_contents_container"
     >
       <div>
         <div
           className="cart_list"
+          data-test="cart-list"
         >
           <div
             className="cart_quantity_label"
+            data-test="cart-quantity-label"
           >
             QTY
           </div>
           <div
             className="cart_desc_label"
+            data-test="cart-desc-label"
           >
             Description
           </div>
@@ -164,19 +172,23 @@ exports[`Cart should render correctly without any items 1`] = `
     />
     <div
       className="cart_contents_container"
+      data-test="cart-contents-container"
       id="cart_contents_container"
     >
       <div>
         <div
           className="cart_list"
+          data-test="cart-list"
         >
           <div
             className="cart_quantity_label"
+            data-test="cart-quantity-label"
           >
             QTY
           </div>
           <div
             className="cart_desc_label"
+            data-test="cart-desc-label"
           >
             Description
           </div>

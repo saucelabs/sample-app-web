@@ -3,10 +3,12 @@
 exports[`HeaderContainer should render for a visual user 1`] = `
 <div
   className="header_container"
+  data-test="header-container"
   id="header_container"
 >
   <div
     className="primary_header"
+    data-test="primary-header"
   >
     <div
       id="menu_button_container"
@@ -31,6 +33,7 @@ exports[`HeaderContainer should render for a visual user 1`] = `
   </div>
   <div
     className="header_secondary_container"
+    data-test="secondary-header"
   />
 </div>
 `;
@@ -38,10 +41,12 @@ exports[`HeaderContainer should render for a visual user 1`] = `
 exports[`HeaderContainer should render with all props 1`] = `
 <div
   className="header_container custom_class"
+  data-test="header-container"
   id="header_container"
 >
   <div
     className="primary_header"
+    data-test="primary-header"
   >
     <div
       id="menu_button_container"
@@ -66,6 +71,7 @@ exports[`HeaderContainer should render with all props 1`] = `
   </div>
   <div
     className="header_secondary_container"
+    data-test="secondary-header"
   >
     <LeftComponent
       leftComponent={
@@ -91,10 +97,12 @@ exports[`HeaderContainer should render with all props 1`] = `
 exports[`HeaderContainer should render without any props 1`] = `
 <div
   className="header_container"
+  data-test="header-container"
   id="header_container"
 >
   <div
     className="primary_header"
+    data-test="primary-header"
   >
     <div
       id="menu_button_container"
@@ -119,6 +127,7 @@ exports[`HeaderContainer should render without any props 1`] = `
   </div>
   <div
     className="header_secondary_container"
+    data-test="secondary-header"
   />
 </div>
 `;

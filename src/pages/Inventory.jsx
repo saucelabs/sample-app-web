@@ -93,14 +93,18 @@ const Inventory = () => {
                 { key: "hilo", value: "Price (high to low)" },
               ]}
               onChange={sortByOption}
-              testId="product_sort_container"
+              testId="product-sort-container"
             />
           }
         />
         <div id="inventory_container">
           <div>
-            <div id="inventory_container" className="inventory_container">
-              <div className="inventory_list">
+            <div
+              id="inventory_container"
+              className="inventory_container"
+              data-test="inventory-container"
+            >
+              <div className="inventory_list" data-test="inventory-list">
                 {inventoryList.map((item, i) => {
                   return (
                     <InventoryListItem

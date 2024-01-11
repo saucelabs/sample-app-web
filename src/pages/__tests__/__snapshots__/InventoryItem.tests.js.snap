@@ -22,6 +22,7 @@ exports[`InventoryItem should render with BrokenComponent for an error user 1`] 
     />
     <div
       className="inventory_item_container"
+      data-test="inventory-container"
       id="inventory_item_container"
     >
       <div
@@ -29,6 +30,7 @@ exports[`InventoryItem should render with BrokenComponent for an error user 1`] 
       >
         <div
           className="inventory_details_container"
+          data-test="inventory-item"
         >
           <div
             className="inventory_details_img_container"
@@ -36,6 +38,7 @@ exports[`InventoryItem should render with BrokenComponent for an error user 1`] 
             <img
               alt="Sauce Labs Backpack"
               className="inventory_details_img"
+              data-test="item-sauce-labs-backpack-img"
             />
           </div>
           <div
@@ -43,6 +46,7 @@ exports[`InventoryItem should render with BrokenComponent for an error user 1`] 
           >
             <div
               className="inventory_details_name large_size"
+              data-test="inventory-item-name"
             >
               Sauce Labs Backpack
             </div>
@@ -50,6 +54,7 @@ exports[`InventoryItem should render with BrokenComponent for an error user 1`] 
               fallback={
                 <div
                   className="inventory_details_desc large_size"
+                  data-test="inventory-item-desc"
                 >
                   A description should be here, but it failed to render! This error has been reported to Backtrace.
                 </div>
@@ -60,6 +65,7 @@ exports[`InventoryItem should render with BrokenComponent for an error user 1`] 
             </ErrorBoundary>
             <div
               className="inventory_details_price"
+              data-test="inventory-item-price"
             >
               $
               29.99
@@ -100,6 +106,7 @@ exports[`InventoryItem should render with default props 1`] = `
     />
     <div
       className="inventory_item_container"
+      data-test="inventory-container"
       id="inventory_item_container"
     >
       <div
@@ -107,6 +114,7 @@ exports[`InventoryItem should render with default props 1`] = `
       >
         <div
           className="inventory_details_container"
+          data-test="inventory-item"
         >
           <div
             className="inventory_details_img_container"
@@ -114,6 +122,7 @@ exports[`InventoryItem should render with default props 1`] = `
             <img
               alt="Sauce Labs Backpack"
               className="inventory_details_img"
+              data-test="item-sauce-labs-backpack-img"
             />
           </div>
           <div
@@ -121,6 +130,7 @@ exports[`InventoryItem should render with default props 1`] = `
           >
             <div
               className="inventory_details_name large_size"
+              data-test="inventory-item-name"
             >
               Sauce Labs Backpack
             </div>
@@ -128,6 +138,7 @@ exports[`InventoryItem should render with default props 1`] = `
               fallback={
                 <div
                   className="inventory_details_desc large_size"
+                  data-test="inventory-item-desc"
                 >
                   A description should be here, but it failed to render! This error has been reported to Backtrace.
                 </div>
@@ -136,12 +147,14 @@ exports[`InventoryItem should render with default props 1`] = `
             >
               <div
                 className="inventory_details_desc large_size"
+                data-test="inventory-item-desc"
               >
                 carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
               </div>
             </ErrorBoundary>
             <div
               className="inventory_details_price"
+              data-test="inventory-item-price"
             >
               $
               29.99
@@ -182,6 +195,7 @@ exports[`InventoryItem should render with error data if a not known product is o
     />
     <div
       className="inventory_item_container"
+      data-test="inventory-container"
       id="inventory_item_container"
     >
       <div
@@ -189,6 +203,7 @@ exports[`InventoryItem should render with error data if a not known product is o
       >
         <div
           className="inventory_details_container"
+          data-test="inventory-item"
         >
           <div
             className="inventory_details_img_container"
@@ -196,6 +211,7 @@ exports[`InventoryItem should render with error data if a not known product is o
             <img
               alt="ITEM NOT FOUND"
               className="inventory_details_img"
+              data-test="item-item-not-found-img"
             />
           </div>
           <div
@@ -203,6 +219,7 @@ exports[`InventoryItem should render with error data if a not known product is o
           >
             <div
               className="inventory_details_name large_size"
+              data-test="inventory-item-name"
             >
               ITEM NOT FOUND
             </div>
@@ -210,6 +227,7 @@ exports[`InventoryItem should render with error data if a not known product is o
               fallback={
                 <div
                   className="inventory_details_desc large_size"
+                  data-test="inventory-item-desc"
                 >
                   A description should be here, but it failed to render! This error has been reported to Backtrace.
                 </div>
@@ -218,6 +236,7 @@ exports[`InventoryItem should render with error data if a not known product is o
             >
               <div
                 className="inventory_details_desc large_size"
+                data-test="inventory-item-desc"
               >
                 We're sorry, but your call could not be completed as dialled.
           Please check your number, and try your call again.
@@ -228,6 +247,7 @@ exports[`InventoryItem should render with error data if a not known product is o
             </ErrorBoundary>
             <div
               className="inventory_details_price"
+              data-test="inventory-item-price"
             >
               $
               √-1

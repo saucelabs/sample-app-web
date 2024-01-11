@@ -41,7 +41,11 @@ const HeaderContainer = ({
    * and functions
    */
   /* istanbul ignore next */
-  const Title = ({ title }) => <span className="title">{title}</span>;
+  const Title = ({ title }) => (
+    <span className="title" data-test="title">
+      {title}
+    </span>
+  );
   const extraClass = customClass ? ` ${customClass}` : "";
   const isVisualFailure = isVisualUser();
   const shoppingCartContainerClass = `shopping_cart_container${
@@ -49,8 +53,12 @@ const HeaderContainer = ({
   }`;
 
   return (
-    <div id="header_container" className={`header_container${extraClass}`}>
-      <div className="primary_header">
+    <div
+      id="header_container"
+      className={`header_container${extraClass}`}
+      data-test="header-container"
+    >
+      <div className="primary_header" data-test="primary-header">
         <div id="menu_button_container">
           <DrawerMenu />
         </div>
@@ -64,7 +72,7 @@ const HeaderContainer = ({
           <CartButton />
         </div>
       </div>
-      <div className="header_secondary_container">
+      <div className="header_secondary_container" data-test="secondary-header">
         {secondaryLeftComponent && (
           <LeftComponent leftComponent={secondaryLeftComponent} />
         )}
