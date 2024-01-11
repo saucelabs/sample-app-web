@@ -42,7 +42,7 @@
     "@wdio/sauce-service": "^7.3.1",
     "@wdio/spec-reporter": "^7.3.1",
     "@wdio/sync": "^7.3.1",
-    "chromedriver": "^110.0.0",
+    "chromedriver": "^119.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",
