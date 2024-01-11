@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const SwagLabsFooter = () => {
   return (
-    <footer className="footer" data-testid="footer">
+    <footer className="footer" data-test="footer">
       {/* <div className="footer_container"> */}
       <ul className="social">
         <li className="social_twitter">
@@ -11,7 +11,7 @@ const SwagLabsFooter = () => {
             href="https://twitter.com/saucelabs"
             target="_blank"
             rel="noreferrer"
-            data-testid="social-twitter"
+            data-test="social-twitter"
           >
             Twitter
           </a>
@@ -21,7 +21,7 @@ const SwagLabsFooter = () => {
             href="https://www.facebook.com/saucelabs"
             target="_blank"
             rel="noreferrer"
-            data-testid="social-facebook"
+            data-test="social-facebook"
           >
             Facebook
           </a>
@@ -31,14 +31,14 @@ const SwagLabsFooter = () => {
             href="https://www.linkedin.com/company/sauce-labs/"
             target="_blank"
             rel="noreferrer"
-            data-testid="social-linkedin"
+            data-test="social-linkedin"
           >
             LinkedIn
           </a>
         </li>
       </ul>
 
-      <div className="footer_copy" data-testid="footer-copy">
+      <div className="footer_copy" data-test="footer-copy">
         &copy; {new Date().getFullYear()} Sauce Labs. All Rights Reserved. Terms
         of Service | Privacy Policy
       </div>

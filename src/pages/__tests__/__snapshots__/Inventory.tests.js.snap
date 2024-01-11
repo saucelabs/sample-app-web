@@ -44,12 +44,12 @@ exports[`Inventory should render correctly 1`] = `
       <div>
         <div
           className="inventory_container"
-          data-testid="inventory-container"
+          data-test="inventory-container"
           id="inventory_container"
         >
           <div
             className="inventory_list"
-            data-testid="inventory-list"
+            data-test="inventory-list"
           >
             <withRouter(InventoryListItem)
               desc="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
@@ -164,12 +164,12 @@ exports[`Inventory should render correctly for a problem user 1`] = `
       <div>
         <div
           className="inventory_container"
-          data-testid="inventory-container"
+          data-test="inventory-container"
           id="inventory_container"
         >
           <div
             className="inventory_list"
-            data-testid="inventory-list"
+            data-test="inventory-list"
           >
             <withRouter(InventoryListItem)
               desc="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
@@ -284,12 +284,12 @@ exports[`Inventory should render correctly for a visual user 1`] = `
       <div>
         <div
           className="inventory_container"
-          data-testid="inventory-container"
+          data-test="inventory-container"
           id="inventory_container"
         >
           <div
             className="inventory_list"
-            data-testid="inventory-list"
+            data-test="inventory-list"
           >
             <withRouter(InventoryListItem)
               desc="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."

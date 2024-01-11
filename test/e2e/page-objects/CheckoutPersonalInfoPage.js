@@ -23,19 +23,19 @@ class CheckoutPersonalInfoPage extends BasePage {
     }
 
     get #firstName() {
-        return $('[data-testid="firstName"]');
+        return $('[data-test="firstName"]');
     }
 
     get #lastName() {
-        return $('[data-testid="lastName"]');
+        return $('[data-test="lastName"]');
     }
 
     get #postalCode() {
-        return $('[data-testid="postalCode"]');
+        return $('[data-test="postalCode"]');
     }
 
     get #errorMessage() {
-        return $('[data-testid="error"]');
+        return $('[data-test="error"]');
     }
 
     /**

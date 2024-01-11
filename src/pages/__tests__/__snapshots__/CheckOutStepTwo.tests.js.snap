@@ -13,23 +13,23 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
     />
     <div
       className="checkout_summary_container"
-      data-testid="checkout-summary-container"
+      data-test="checkout-summary-container"
       id="checkout_summary_container"
     >
       <div>
         <div
           className="cart_list"
-          data-testid="cart-list"
+          data-test="cart-list"
         >
           <div
             className="cart_quantity_label"
-            data-testid="cart-quantity-label"
+            data-test="cart-quantity-label"
           >
             QTY
           </div>
           <div
             className="cart_desc_label"
-            data-testid="cart-desc-label"
+            data-test="cart-desc-label"
           >
             Description
           </div>
@@ -75,51 +75,51 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
         >
           <div
             className="summary_info_label"
-            data-testid="payment-info-label"
+            data-test="payment-info-label"
           >
             Payment Information:
           </div>
           <div
             className="summary_value_label"
-            data-testid="payment-info-value"
+            data-test="payment-info-value"
           >
             SauceCard #31337
           </div>
           <div
             className="summary_info_label"
-            data-testid="shipping-info-label"
+            data-test="shipping-info-label"
           >
             Shipping Information:
           </div>
           <div
             className="summary_value_label"
-            data-testid="shipping-info-value"
+            data-test="shipping-info-value"
           >
             Free Pony Express Delivery!
           </div>
           <div
             className="summary_info_label"
-            data-testid="total-info-label"
+            data-test="total-info-label"
           >
             Price Total
           </div>
           <div
             className="summary_subtotal_label"
-            data-testid="subtotal-label"
+            data-test="subtotal-label"
           >
             Item total: $
             79.94
           </div>
           <div
             className="summary_tax_label"
-            data-testid="tax-label"
+            data-test="tax-label"
           >
             Tax: $
             6.40
           </div>
           <div
             className="summary_total_label"
-            data-testid="total-label"
+            data-test="total-label"
           >
             Total: $
             86.34
@@ -165,23 +165,23 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
     />
     <div
       className="checkout_summary_container"
-      data-testid="checkout-summary-container"
+      data-test="checkout-summary-container"
       id="checkout_summary_container"
     >
       <div>
         <div
           className="cart_list"
-          data-testid="cart-list"
+          data-test="cart-list"
         >
           <div
             className="cart_quantity_label"
-            data-testid="cart-quantity-label"
+            data-test="cart-quantity-label"
           >
             QTY
           </div>
           <div
             className="cart_desc_label"
-            data-testid="cart-desc-label"
+            data-test="cart-desc-label"
           >
             Description
           </div>
@@ -227,51 +227,51 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
         >
           <div
             className="summary_info_label"
-            data-testid="payment-info-label"
+            data-test="payment-info-label"
           >
             Payment Information:
           </div>
           <div
             className="summary_value_label"
-            data-testid="payment-info-value"
+            data-test="payment-info-value"
           >
             SauceCard #31337
           </div>
           <div
             className="summary_info_label"
-            data-testid="shipping-info-label"
+            data-test="shipping-info-label"
           >
             Shipping Information:
           </div>
           <div
             className="summary_value_label"
-            data-testid="shipping-info-value"
+            data-test="shipping-info-value"
           >
             Free Pony Express Delivery!
           </div>
           <div
             className="summary_info_label"
-            data-testid="total-info-label"
+            data-test="total-info-label"
           >
             Price Total
           </div>
           <div
             className="summary_subtotal_label"
-            data-testid="subtotal-label"
+            data-test="subtotal-label"
           >
             Item total: $
             39.97
           </div>
           <div
             className="summary_tax_label"
-            data-testid="tax-label"
+            data-test="tax-label"
           >
             Tax: $
             3.20
           </div>
           <div
             className="summary_total_label"
-            data-testid="total-label"
+            data-test="total-label"
           >
             Total: $
             43.17
@@ -317,23 +317,23 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
     />
     <div
       className="checkout_summary_container"
-      data-testid="checkout-summary-container"
+      data-test="checkout-summary-container"
       id="checkout_summary_container"
     >
       <div>
         <div
           className="cart_list"
-          data-testid="cart-list"
+          data-test="cart-list"
         >
           <div
             className="cart_quantity_label"
-            data-testid="cart-quantity-label"
+            data-test="cart-quantity-label"
           >
             QTY
           </div>
           <div
             className="cart_desc_label"
-            data-testid="cart-desc-label"
+            data-test="cart-desc-label"
           >
             Description
           </div>
@@ -343,51 +343,51 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
         >
           <div
             className="summary_info_label"
-            data-testid="payment-info-label"
+            data-test="payment-info-label"
           >
             Payment Information:
           </div>
           <div
             className="summary_value_label"
-            data-testid="payment-info-value"
+            data-test="payment-info-value"
           >
             SauceCard #31337
           </div>
           <div
             className="summary_info_label"
-            data-testid="shipping-info-label"
+            data-test="shipping-info-label"
           >
             Shipping Information:
           </div>
           <div
             className="summary_value_label"
-            data-testid="shipping-info-value"
+            data-test="shipping-info-value"
           >
             Free Pony Express Delivery!
           </div>
           <div
             className="summary_info_label"
-            data-testid="total-info-label"
+            data-test="total-info-label"
           >
             Price Total
           </div>
           <div
             className="summary_subtotal_label"
-            data-testid="subtotal-label"
+            data-test="subtotal-label"
           >
             Item total: $
             0
           </div>
           <div
             className="summary_tax_label"
-            data-testid="tax-label"
+            data-test="tax-label"
           >
             Tax: $
             0.00
           </div>
           <div
             className="summary_total_label"
-            data-testid="total-label"
+            data-test="total-label"
           >
             Total: $
             0.00

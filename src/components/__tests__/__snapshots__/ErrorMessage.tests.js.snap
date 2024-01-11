@@ -13,11 +13,11 @@ exports[`ErrorMessage should render an error message when there is an error 1`] 
   className="error-message-container error"
 >
   <h3
-    data-testid="error"
+    data-test="error"
   >
     <button
       className="error-button"
-      data-testid="error-button"
+      data-test="error-button"
       onClick={[Function]}
     >
       <FontAwesomeIcon

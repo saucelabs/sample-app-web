@@ -51,7 +51,7 @@ exports[`InputError should render an input with a testId 1`] = `
 >
   <input
     className="input_error form_input"
-    data-testid="some-id"
+    data-test="some-id"
     id="some-id"
     name="some-id"
     onChange={[MockFunction]}
@@ -68,7 +68,7 @@ exports[`InputError should render an input with custom props 1`] = `
 >
   <input
     className="input_error form_input"
-    data-testid="some-id"
+    data-test="some-id"
     foo="bar"
     id="some-id"
     name="own-name-id"
@@ -86,7 +86,7 @@ exports[`InputError should render an input with full props 1`] = `
 >
   <input
     className="input_error form_input"
-    data-testid="some-id"
+    data-test="some-id"
     foo="bar"
     id="some-id"
     name="own-name-id"

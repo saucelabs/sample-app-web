@@ -16,18 +16,18 @@ const Finish = ({ history }) => {
         <div
           id="checkout_complete_container"
           className="checkout_complete_container"
-          data-testid="checkout-complete-container"
+          data-test="checkout-complete-container"
         >
           <img
             alt="Pony Express"
             className="pony_express"
             src={Checkmark}
-            data-testid="pony-express"
+            data-test="pony-express"
           />
-          <h2 className="complete-header" data-testid="complete-header">
+          <h2 className="complete-header" data-test="complete-header">
             Thank you for your order!
           </h2>
-          <div className="complete-text" data-testid="complete-text">
+          <div className="complete-text" data-test="complete-text">
             Your order has been dispatched, and will arrive just as fast as the
             pony can get there!
           </div>

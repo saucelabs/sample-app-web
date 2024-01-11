@@ -105,7 +105,7 @@ const InventoryListItem = (props) => {
   }`;
 
   return (
-    <div className="inventory_item" data-testid="inventory-item">
+    <div className="inventory_item" data-test="inventory-item">
       <div className="inventory_item_img">
         <a
           href="#"
@@ -114,13 +114,13 @@ const InventoryListItem = (props) => {
             evt.preventDefault();
             history.push(itemLink);
           }}
-          data-testid={`item-${id}-img-link`}
+          data-test={`item-${id}-img-link`}
         >
           <img
             alt={name}
             className="inventory_item_img"
             src={require(`../assets/img/${image_url}`).default}
-            data-testid={`inventory-item-${name
+            data-test={`inventory-item-${name
               .replace(/\s+/g, "-")
               .toLowerCase()}-img`}
           />
@@ -128,7 +128,7 @@ const InventoryListItem = (props) => {
       </div>
       <div
         className="inventory_item_description"
-        data-testid="inventory-item-description"
+        data-test="inventory-item-description"
       >
         <div className="inventory_item_label">
           <a
@@ -138,15 +138,15 @@ const InventoryListItem = (props) => {
               evt.preventDefault();
               history.push(itemLink);
             }}
-            data-testid={`item-${id}-title-link`}
+            data-test={`item-${id}-title-link`}
           >
-            <div className={itemNameClass} data-testid="inventory-item-name">
+            <div className={itemNameClass} data-test="inventory-item-name">
               {name}
             </div>
           </a>
           <div
             className="inventory_item_desc"
-            data-testid="inventory-item-desc"
+            data-test="inventory-item-desc"
           >
             {desc}
           </div>
@@ -154,7 +154,7 @@ const InventoryListItem = (props) => {
         <div className="pricebar">
           <div
             className="inventory_item_price"
-            data-testid="inventory-item-price"
+            data-test="inventory-item-price"
           >
             ${price}
           </div>

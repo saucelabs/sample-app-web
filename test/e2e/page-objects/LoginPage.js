@@ -27,7 +27,7 @@ class LoginPage extends BasePage {
     }
 
     get #errorMessage() {
-        return $('[data-testid="error"]');
+        return $('[data-test="error"]');
     }
 
     /**

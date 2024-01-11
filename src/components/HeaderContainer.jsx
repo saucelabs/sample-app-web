@@ -42,7 +42,7 @@ const HeaderContainer = ({
    */
   /* istanbul ignore next */
   const Title = ({ title }) => (
-    <span className="title" data-testid="title">
+    <span className="title" data-test="title">
       {title}
     </span>
   );
@@ -56,9 +56,9 @@ const HeaderContainer = ({
     <div
       id="header_container"
       className={`header_container${extraClass}`}
-      data-testid="header-container"
+      data-test="header-container"
     >
-      <div className="primary_header" data-testid="primary-header">
+      <div className="primary_header" data-test="primary-header">
         <div id="menu_button_container">
           <DrawerMenu />
         </div>
@@ -74,7 +74,7 @@ const HeaderContainer = ({
       </div>
       <div
         className="header_secondary_container"
-        data-testid="secondary-header"
+        data-test="secondary-header"
       >
         {secondaryLeftComponent && (
           <LeftComponent leftComponent={secondaryLeftComponent} />

@@ -34,7 +34,7 @@ const DrawerMenu = ({ history }) => {
           className={imageClass}
           srcSet={menuIconSvg}
           alt="Open Menu"
-          data-testid="open-menu"
+          data-test="open-menu"
         />
       }
       customCrossIcon={
@@ -43,7 +43,7 @@ const DrawerMenu = ({ history }) => {
           className={imageClass}
           srcSet={menuCloseSvg}
           alt="Close Menu"
-          data-testid="close-menu"
+          data-test="close-menu"
         />
       }
       outerContainerId={"page_wrapper"}
@@ -58,7 +58,7 @@ const DrawerMenu = ({ history }) => {
           evt.preventDefault();
           history.push(ROUTES.INVENTORY);
         }}
-        data-testid="inventory-sidebar-link"
+        data-test="inventory-sidebar-link"
       >
         All Items
       </a>
@@ -66,7 +66,7 @@ const DrawerMenu = ({ history }) => {
         id="about_sidebar_link"
         className="menu-item"
         href={aboutLink}
-        data-testid="about-sidebar-link"
+        data-test="about-sidebar-link"
       >
         About
       </a>
@@ -79,7 +79,7 @@ const DrawerMenu = ({ history }) => {
           removeCredentials();
           history.push(ROUTES.LOGIN);
         }}
-        data-testid="logout-sidebar-link"
+        data-test="logout-sidebar-link"
       >
         Logout
       </a>
@@ -91,7 +91,7 @@ const DrawerMenu = ({ history }) => {
           evt.preventDefault();
           resetStorage();
         }}
-        data-testid="reset-sidebar-link"
+        data-test="reset-sidebar-link"
       >
         Reset App State
       </a>

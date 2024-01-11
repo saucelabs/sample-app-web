@@ -31,8 +31,8 @@ const CartItem = ({ item, history, showButton }) => {
     const itemLink = `${ROUTES.INVENTORY_LIST}?id=${linkId}`;
 
     return (
-      <div className="cart_item" data-testid="inventory-item">
-        <div className="cart_quantity" data-testid="item-quantity">
+      <div className="cart_item" data-test="inventory-item">
+        <div className="cart_quantity" data-test="item-quantity">
           1
         </div>
         <div className="cart_item_label">
@@ -43,25 +43,25 @@ const CartItem = ({ item, history, showButton }) => {
               evt.preventDefault();
               history.push(itemLink);
             }}
-            data-testid={`item-${id}-title-link`}
+            data-test={`item-${id}-title-link`}
           >
             <div
               className="inventory_item_name"
-              data-testid="inventory-item-name"
+              data-test="inventory-item-name"
             >
               {name}
             </div>
           </a>
           <div
             className="inventory_item_desc"
-            data-testid="inventory-item-desc"
+            data-test="inventory-item-desc"
           >
             {desc}
           </div>
           <div className="item_pricebar">
             <div
               className="inventory_item_price"
-              data-testid="inventory-item-price"
+              data-test="inventory-item-price"
             >
               ${price}
             </div>

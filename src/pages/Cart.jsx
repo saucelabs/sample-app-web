@@ -23,17 +23,17 @@ const Cart = ({ history }) => {
         <div
           id="cart_contents_container"
           className="cart_contents_container"
-          data-testid="cart-contents-container"
+          data-test="cart-contents-container"
         >
           <div>
-            <div className="cart_list" data-testid="cart-list">
+            <div className="cart_list" data-test="cart-list">
               <div
                 className="cart_quantity_label"
-                data-testid="cart-quantity-label"
+                data-test="cart-quantity-label"
               >
                 QTY
               </div>
-              <div className="cart_desc_label" data-testid="cart-desc-label">
+              <div className="cart_desc_label" data-test="cart-desc-label">
                 Description
               </div>
               {contents.map((item, i) => (

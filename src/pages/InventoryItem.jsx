@@ -149,19 +149,19 @@ const InventoryItem = (props) => {
         <div
           id="inventory_item_container"
           className="inventory_item_container"
-          data-testid="inventory-container"
+          data-test="inventory-container"
         >
           <div className="inventory_details">
             <div
               className="inventory_details_container"
-              data-testid="inventory-item"
+              data-test="inventory-item"
             >
               <div className="inventory_details_img_container">
                 <img
                   alt={item.name}
                   className="inventory_details_img"
                   src={require(`../assets/img/${item.image_url}`).default}
-                  data-testid={`item-${item.name
+                  data-test={`item-${item.name
                     .replace(/\s+/g, "-")
                     .toLowerCase()}-img`}
                 />
@@ -169,7 +169,7 @@ const InventoryItem = (props) => {
               <div className="inventory_details_desc_container">
                 <div
                   className="inventory_details_name large_size"
-                  data-testid="inventory-item-name"
+                  data-test="inventory-item-name"
                 >
                   {item.name}
                 </div>
@@ -183,7 +183,7 @@ const InventoryItem = (props) => {
                   fallback={
                     <div
                       className="inventory_details_desc large_size"
-                      data-testid="inventory-item-desc"
+                      data-test="inventory-item-desc"
                     >
                       A description should be here, but it failed to render!
                       This error has been reported to Backtrace.
@@ -193,7 +193,7 @@ const InventoryItem = (props) => {
                   {!isErrorUser() ? (
                     <div
                       className="inventory_details_desc large_size"
-                      data-testid="inventory-item-desc"
+                      data-test="inventory-item-desc"
                     >
                       {item.desc}
                     </div>
@@ -204,7 +204,7 @@ const InventoryItem = (props) => {
 
                 <div
                   className="inventory_details_price"
-                  data-testid="inventory-item-price"
+                  data-test="inventory-item-price"
                 >
                   ${item.price}
                 </div>

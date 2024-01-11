@@ -45,17 +45,17 @@ const CheckOutStepTwo = ({ history }) => {
         <div
           id="checkout_summary_container"
           className="checkout_summary_container"
-          data-testid="checkout-summary-container"
+          data-test="checkout-summary-container"
         >
           <div>
-            <div className="cart_list" data-testid="cart-list">
+            <div className="cart_list" data-test="cart-list">
               <div
                 className="cart_quantity_label"
-                data-testid="cart-quantity-label"
+                data-test="cart-quantity-label"
               >
                 QTY
               </div>
-              <div className="cart_desc_label" data-testid="cart-desc-label">
+              <div className="cart_desc_label" data-test="cart-desc-label">
                 Description
               </div>
               {contents.map((item, i) => {
@@ -65,44 +65,44 @@ const CheckOutStepTwo = ({ history }) => {
             <div className="summary_info">
               <div
                 className="summary_info_label"
-                data-testid="payment-info-label"
+                data-test="payment-info-label"
               >
                 Payment Information:
               </div>
               <div
                 className="summary_value_label"
-                data-testid="payment-info-value"
+                data-test="payment-info-value"
               >
                 SauceCard #31337
               </div>
               <div
                 className="summary_info_label"
-                data-testid="shipping-info-label"
+                data-test="shipping-info-label"
               >
                 Shipping Information:
               </div>
               <div
                 className="summary_value_label"
-                data-testid="shipping-info-value"
+                data-test="shipping-info-value"
               >
                 Free Pony Express Delivery!
               </div>
               <div
                 className="summary_info_label"
-                data-testid="total-info-label"
+                data-test="total-info-label"
               >
                 Price Total
               </div>
               <div
                 className="summary_subtotal_label"
-                data-testid="subtotal-label"
+                data-test="subtotal-label"
               >
                 Item total: ${orderTotal}
               </div>
-              <div className="summary_tax_label" data-testid="tax-label">
+              <div className="summary_tax_label" data-test="tax-label">
                 Tax: ${orderTax}
               </div>
-              <div className="summary_total_label" data-testid="total-label">
+              <div className="summary_total_label" data-test="total-label">
                 Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}
               </div>
               <div className="cart_footer">

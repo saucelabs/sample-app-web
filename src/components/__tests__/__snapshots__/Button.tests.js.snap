@@ -67,7 +67,7 @@ exports[`Button should render a Small button 1`] = `
 exports[`Button should render a button with a testId 1`] = `
 <button
   className="btn btn_primary btn_large"
-  data-testid="test-id"
+  data-test="test-id"
   id="test-id"
   name="test-id"
   onClick={[Function]}

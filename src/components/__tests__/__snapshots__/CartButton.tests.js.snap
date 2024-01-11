@@ -3,12 +3,12 @@
 exports[`CartButton should render the badge if products have been added into the cart 1`] = `
 <a
   className="shopping_cart_link"
-  data-testid="shopping-cart-link"
+  data-test="shopping-cart-link"
   onClick={[Function]}
 >
   <span
     className="shopping_cart_badge"
-    data-testid="shopping-cart-badge"
+    data-test="shopping-cart-badge"
   >
     3
   </span>
@@ -18,7 +18,7 @@ exports[`CartButton should render the badge if products have been added into the
 exports[`CartButton should render with default props 1`] = `
 <a
   className="shopping_cart_link"
-  data-testid="shopping-cart-link"
+  data-test="shopping-cart-link"
   onClick={[Function]}
 />
 `;

@@ -29,7 +29,7 @@ const InputError = ({
         value={value}
         {...(testId
           ? {
-              "data-testid": testId,
+              "data-test": testId,
               id: testId,
               name: testId,
             }
