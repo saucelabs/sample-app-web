@@ -6,7 +6,6 @@ import {
   isProblemUser,
   isVisualUser,
 } from "../utils/Credentials";
-import { InventoryData } from "../utils/InventoryData.js";
 import InventoryListItem from "../components/InventoryListItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
@@ -15,7 +14,8 @@ import Select from "../components/Select";
 import "./Inventory.css";
 import { BacktraceClient } from "@backtrace-labs/react";
 
-const Inventory = () => {
+const Inventory = ({data}) => {
+  const InventoryData = data;
   const [inventoryList, setInventoryList] = useState(
     sortAsc(InventoryData, "name")
   );

@@ -11,6 +11,7 @@ export const VALID_PASSWORD = "secret_sauce";
 export const ROUTES = {
   LOGIN: "/",
   INVENTORY: "/inventory.html",
+  INVENTORY_LONG: "/inventory-long.html",
   INVENTORY_LIST: "/inventory-item.html",
   CART: "/cart.html",
   CHECKOUT_STEP_ONE: "/checkout-step-one.html",

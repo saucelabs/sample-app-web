@@ -21,6 +21,8 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { ROUTES } from "./utils/Constants";
 import { currentUser } from "./utils/Credentials";
 import { ShoppingCart } from "./utils/shopping-cart";
+import { InventoryData } from "./utils/InventoryData.js";
+import { InventoryDataLong } from "./utils/InventoryDataLong.js";
 
 BacktraceClient.initialize({
   name: "Swag Store",
@@ -36,7 +38,8 @@ const routing = (
   <ErrorBoundary>
     <Router>
       <Route exact path={ROUTES.LOGIN} component={Login} />
-      <PrivateRoute path={ROUTES.INVENTORY} component={Inventory} />
+      <PrivateRoute path={ROUTES.INVENTORY} component={(props) => <Inventory data={InventoryData} {...props}/>} />
+      <PrivateRoute path={ROUTES.INVENTORY_LONG} component={(props) => <Inventory data={InventoryDataLong} {...props}/>} />
       <PrivateRoute path={ROUTES.INVENTORY_LIST} component={InventoryItem} />
       <PrivateRoute path={ROUTES.CART} component={Cart} />
       <PrivateRoute
