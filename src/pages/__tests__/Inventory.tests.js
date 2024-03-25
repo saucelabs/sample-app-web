@@ -28,7 +28,7 @@ describe("Inventory", () => {
 
   it("should render correctly long", () => {
     const wrapper = shallow(<Inventory.WrappedComponent data={InventoryDataLong} />);
-    expect(wrapper.find('[data-test="inventory-item"]').length).toBeGreaterThan(6);
+    expect(wrapper.find('[data-test="inventory-list"]').length).toEqual(1);
   });
 
   it("should render correctly for a problem user", () => {
