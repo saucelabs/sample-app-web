@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 import Inventory from "../Inventory";
 import * as Credentials from "../../utils/Credentials";
 import {InventoryData} from "../../utils/InventoryData";
+import {InventoryDataLong} from "../../utils/InventoryDataLong";
 
 jest.mock("react", () => ({
   ...jest.requireActual("react"),
@@ -22,6 +23,11 @@ describe("Inventory", () => {
 
   it("should render correctly", () => {
     const wrapper = shallow(<Inventory.WrappedComponent data={InventoryData} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should render correctly long", () => {
+    const wrapper = shallow(<Inventory.WrappedComponent data={InventoryDataLong} />);
     expect(wrapper).toMatchSnapshot();
   });
 
