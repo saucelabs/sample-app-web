@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.d9c3792d.chunk.css",
-    "main.js": "/static/js/main.9735b7ab.chunk.js",
-    "main.js.map": "/static/js/main.9735b7ab.chunk.js.map",
+    "main.js": "/static/js/main.9e1f7694.chunk.js",
+    "main.js.map": "/static/js/main.9e1f7694.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7bfd0a48.js",
     "runtime-main.js.map": "/static/js/runtime-main.7bfd0a48.js.map",
-    "static/js/2.9b02e67e.chunk.js": "/static/js/2.9b02e67e.chunk.js",
-    "static/js/2.9b02e67e.chunk.js.map": "/static/js/2.9b02e67e.chunk.js.map",
+    "static/js/2.c39c1971.chunk.js": "/static/js/2.c39c1971.chunk.js",
+    "static/js/2.c39c1971.chunk.js.map": "/static/js/2.c39c1971.chunk.js.map",
     "index.html": "/index.html",
     "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
     "static/css/main.d9c3792d.chunk.css.map": "/static/css/main.d9c3792d.chunk.css.map",
-    "static/js/2.9b02e67e.chunk.js.LICENSE.txt": "/static/js/2.9b02e67e.chunk.js.LICENSE.txt",
+    "static/js/2.c39c1971.chunk.js.LICENSE.txt": "/static/js/2.c39c1971.chunk.js.LICENSE.txt",
     "static/media/Select.css": "/static/media/filter3x.2943df5b.svg",
     "static/media/bike-light-1200x1500.jpg": "/static/media/bike-light-1200x1500.37c843b0.jpg",
     "static/media/bolt-shirt-1200x1500.jpg": "/static/media/bolt-shirt-1200x1500.c2599ac5.jpg",
@@ -27,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7bfd0a48.js",
-    "static/js/2.9b02e67e.chunk.js",
+    "static/js/2.c39c1971.chunk.js",
     "static/css/main.d9c3792d.chunk.css",
-    "static/js/main.9735b7ab.chunk.js"
+    "static/js/main.9e1f7694.chunk.js"
   ]
 }
