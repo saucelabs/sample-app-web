@@ -28,6 +28,7 @@ const Inventory = ({data}) => {
     }
   };
   const isVisualFailure = isVisualUser();
+  const randomPrice = () => Math.round(Math.random() * 10000) / 100;
 
   /* istanbul ignore next */
   if (isPerformanceGlitchUser()) {
@@ -117,7 +118,7 @@ const Inventory = ({data}) => {
                       }
                       name={item.name}
                       desc={item.desc}
-                      price={item.price}
+                      price={isVisualFailure ? randomPrice() : item.price}
                       isTextAlignRight={isVisualFailure && i > 1 && i < 4}
                       missAlignButton={isVisualFailure && i === 5}
                     />

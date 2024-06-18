@@ -43,6 +43,10 @@ describe("Inventory", () => {
   it("should render correctly for a visual user", () => {
     const isVisualUserSpy = jest.spyOn(Credentials, "isVisualUser");
     isVisualUserSpy.mockReturnValue(true);
+
+    const randomSpy = jest.spyOn(Math, "random");
+    randomSpy.mockReturnValue(0.5);
+
     const wrapper = shallow(<Inventory.WrappedComponent data={InventoryData} />);
 
     expect(wrapper).toMatchSnapshot();
