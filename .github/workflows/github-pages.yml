@@ -23,12 +23,16 @@ jobs:
         with:
           node-version: '14.x'
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' 
+    
       - name: Build site
         env:
           CI: false
         run: |
           ls
-          npm install
+          npm ci
           npm run build
 
       - name: Build storybook
