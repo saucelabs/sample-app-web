@@ -1,9 +1,9 @@
 name: github pages release
 
-on: workflow_dispatch
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 #     paths:
 #       - '.storybook'
 #       - 'public'
@@ -28,7 +28,7 @@ jobs:
           CI: false
         run: |
           ls
-          npm install
+          npm ci
           npm run build
 
       - name: Build storybook
