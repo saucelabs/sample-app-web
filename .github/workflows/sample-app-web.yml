@@ -40,7 +40,7 @@ jobs:
       run: npm ci
 
     - name: Build
-      run: npm run build
+      run: CI=false npm run build
 
     - name: Run Unit Tests and generate coverage report
       run: npm run test.coverage
