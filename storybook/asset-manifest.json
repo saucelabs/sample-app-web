@@ -10,8 +10,8 @@
     "main.js": "./main.8554732a.iframe.bundle.js",
     "main.css.map": "./static/css/main.daccb215.chunk.css.map",
     "runtime~main.js": "./runtime~main.c796fc02.iframe.bundle.js",
-    "vendors~main.js": "./vendors~main.87068718.iframe.bundle.js",
-    "vendors~main.js.map": "./vendors~main.87068718.iframe.bundle.js.map",
+    "vendors~main.js": "./vendors~main.4e6c5249.iframe.bundle.js",
+    "vendors~main.js.map": "./vendors~main.4e6c5249.iframe.bundle.js.map",
     "7.e9eca6b6.iframe.bundle.js": "./7.e9eca6b6.iframe.bundle.js",
     "7.e9eca6b6.iframe.bundle.js.map": "./7.e9eca6b6.iframe.bundle.js.map",
     "8.058d2e45.iframe.bundle.js": "./8.058d2e45.iframe.bundle.js",
@@ -36,11 +36,11 @@
     "static/media/sauce-backpack-1200x1500.jpg": "./static/media/sauce-backpack-1200x1500.0a0b85a3.jpg",
     "static/media/sauce-pullover-1200x1500.jpg": "./static/media/sauce-pullover-1200x1500.51d7ffaf.jpg",
     "static/media/sl-404.jpg": "./static/media/sl-404.168b1cce.jpg",
-    "vendors~main.87068718.iframe.bundle.js.LICENSE.txt": "./vendors~main.87068718.iframe.bundle.js.LICENSE.txt"
+    "vendors~main.4e6c5249.iframe.bundle.js.LICENSE.txt": "./vendors~main.4e6c5249.iframe.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
     "runtime~main.c796fc02.iframe.bundle.js",
-    "vendors~main.87068718.iframe.bundle.js",
+    "vendors~main.4e6c5249.iframe.bundle.js",
     "static/css/main.daccb215.chunk.css",
     "main.8554732a.iframe.bundle.js"
   ]
