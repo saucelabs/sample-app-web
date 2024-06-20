@@ -8,4 +8,4 @@ ENV PATH="$HOME/sc-4.8.2-linux/bin:$PATH"
 # web app
 WORKDIR /sample-app-web
 COPY . .
-RUN npm install
+RUN npm ci

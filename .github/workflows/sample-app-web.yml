@@ -37,7 +37,10 @@ jobs:
 
     # Site Testing steps
     - name: Install dependencies
-      run: npm install
+      run: npm ci
+
+    - name: Build
+      run: npm run build
 
     - name: Run Unit Tests and generate coverage report
       run: npm run test.coverage

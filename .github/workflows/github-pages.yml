@@ -28,7 +28,7 @@ jobs:
           CI: false
         run: |
           ls
-          npm install
+          npm ci
           npm run build
 
       - name: Build storybook
