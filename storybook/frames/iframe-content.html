@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="global.css" rel="stylesheet">
+  <style>
+      #header {
+          width: 100%;
+          height: 170px;
+      }
+
+      #container {
+          display: flex;
+          height: calc(100vh - 174px);
+      }
+
+      #sidebar {
+          width: 20%;
+          height: 100%;
+          border: none;
+      }
+
+      #main {
+          width: 80%;
+          height: 100%;
+          border: none;
+      }
+  </style>
+</head>
+
+
+<body>
+<iframe id="header" name="headerFrame" src="header.html">
+</iframe>
+<div id="container">
+  <iframe id="sidebar" name="leftFrame" src="sidebar.html"></iframe>
+  <iframe id="main" name="mainFrame" src="main.html"></iframe>
+</div>
+</body>
+</html>
