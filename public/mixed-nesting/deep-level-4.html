@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Deep Nesting — Level 4 iframe document</title>
+  <meta charset="UTF-8">
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 12px;
+          background-color: #fff;
+      }
+
+      .scroll-area {
+          margin: 8px 0;
+          height: 100px;
+          overflow-y: auto;
+          border: 1px solid #555;
+          border-radius: 4px;
+          background: #fafafa;
+          padding: 8px;
+      }
+
+      .scroll-area ol {
+          margin: 0;
+          padding-left: 22px;
+      }
+  </style>
+</head>
+<body>
+<div class="level-4-label" data-level="4">Level 4 — Iframe</div>
+<div id="level-4-scroll" class="scroll-area" data-scrollable="true">
+  <ol>
+    <li>L4 iframe scroll item 1</li><li>L4 iframe scroll item 2</li>
+    <li>L4 iframe scroll item 3</li><li>L4 iframe scroll item 4</li>
+    <li>L4 iframe scroll item 5</li><li>L4 iframe scroll item 6</li>
+    <li>L4 iframe scroll item 7</li><li>L4 iframe scroll item 8</li>
+    <li>L4 iframe scroll item 9</li><li>L4 iframe scroll item 10</li>
+    <li>L4 iframe scroll item 11</li><li>L4 iframe scroll item 12</li>
+    <li>L4 iframe scroll item 13</li><li>L4 iframe scroll item 14</li>
+    <li>L4 iframe scroll item 15</li>
+  </ol>
+</div>
+<div id="level-5-host" data-level="5"></div>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  const mode = resolveShadowMode();
+
+  const host = document.getElementById('level-5-host');
+  const shadow = host.attachShadow({ mode });
+  shadow.innerHTML = `
+    <style>
+      .level {
+        background: #fff3e0;
+        border: 2px solid #ef6c00;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 6px;
+      }
+      .label {
+        font-weight: bold;
+        color: #e65100;
+        margin-bottom: 8px;
+      }
+      iframe {
+        width: 100%;
+        height: 240px;
+        border: 2px dashed #ef6c00;
+        border-radius: 4px;
+        background: #fff;
+      }
+      .scroll-area {
+        margin-bottom: 8px;
+        height: 100px;
+        overflow-y: auto;
+        border: 1px solid #ef6c00;
+        border-radius: 4px;
+        background: #fff;
+        padding: 8px;
+      }
+      .scroll-area ol {
+        margin: 0;
+        padding-left: 22px;
+      }
+    </style>
+    <div class="level">
+      <div class="label">Level 5 — Shadow Root (${mode})</div>
+      <div id="level-5-scroll" class="scroll-area" data-scrollable="true">
+        <ol>
+          <li>L5 shadow scroll item 1</li><li>L5 shadow scroll item 2</li>
+          <li>L5 shadow scroll item 3</li><li>L5 shadow scroll item 4</li>
+          <li>L5 shadow scroll item 5</li><li>L5 shadow scroll item 6</li>
+          <li>L5 shadow scroll item 7</li><li>L5 shadow scroll item 8</li>
+          <li>L5 shadow scroll item 9</li><li>L5 shadow scroll item 10</li>
+          <li>L5 shadow scroll item 11</li><li>L5 shadow scroll item 12</li>
+          <li>L5 shadow scroll item 13</li><li>L5 shadow scroll item 14</li>
+          <li>L5 shadow scroll item 15</li>
+        </ol>
+      </div>
+      <iframe id="level-6-iframe" data-level="6" src="deep-level-6.html${window.location.search}"></iframe>
+    </div>
+  `;
+</script>
+</body>
+</html>

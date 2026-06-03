@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inner Iframe Content</title>
+  <meta charset="UTF-8">
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 15px;
+          background-color: #fffde7;
+      }
+
+      p {
+          color: #6d4c41;
+      }
+
+      .scroll-area {
+          margin-top: 10px;
+          height: 100px;
+          overflow-y: auto;
+          border: 1px solid #6d4c41;
+          border-radius: 4px;
+          background: #fff;
+          padding: 8px;
+      }
+
+      .scroll-area ol {
+          margin: 0;
+          padding-left: 22px;
+      }
+  </style>
+</head>
+<body>
+<h2>I am the iframe inside a shadow root</h2>
+<p id="iframe-paragraph">This document is loaded inside an iframe that lives in the parent page's shadow root.</p>
+<button id="iframe-button">Iframe Button</button>
+<div id="iframe-scroll" class="scroll-area" data-scrollable="true">
+  <ol>
+    <li>Iframe-in-shadow scroll item 1</li><li>Iframe-in-shadow scroll item 2</li>
+    <li>Iframe-in-shadow scroll item 3</li><li>Iframe-in-shadow scroll item 4</li>
+    <li>Iframe-in-shadow scroll item 5</li><li>Iframe-in-shadow scroll item 6</li>
+    <li>Iframe-in-shadow scroll item 7</li><li>Iframe-in-shadow scroll item 8</li>
+    <li>Iframe-in-shadow scroll item 9</li><li>Iframe-in-shadow scroll item 10</li>
+    <li>Iframe-in-shadow scroll item 11</li><li>Iframe-in-shadow scroll item 12</li>
+    <li>Iframe-in-shadow scroll item 13</li><li>Iframe-in-shadow scroll item 14</li>
+    <li>Iframe-in-shadow scroll item 15</li>
+  </ol>
+</div>
+</body>
+</html>

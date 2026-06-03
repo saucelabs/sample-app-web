@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shadow Root in Iframe</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #f4f4f4;
+      }
+
+      iframe {
+          width: 100%;
+          height: 320px;
+          border: 2px solid #6a1b9a;
+          border-radius: 6px;
+          background: #fff;
+      }
+  </style>
+</head>
+<body>
+<h1>Shadow Root in Iframe</h1>
+<p>The iframe below loads a separate document. That document attaches a shadow root
+  to a host element inside its own body.</p>
+<p>Shadow root mode: <strong id="mode-indicator"></strong>
+  (toggle via <code>?modeOpen=true</code> or <code>?modeOpen=false</code> — propagates into the iframe).</p>
+<div id="iframe-container"></div>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  resolveShadowMode();
+
+  const iframe = document.createElement('iframe');
+  iframe.id = 'content-iframe';
+  iframe.src = 'shadow-in-iframe-content.html' + window.location.search;
+  document.getElementById('iframe-container').appendChild(iframe);
+</script>
+</body>
+</html>
