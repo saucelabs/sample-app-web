@@ -1,106 +1,115 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login should render correctly 1`] = `
-<div
-  className="login_container"
->
+<DocumentFragment>
   <div
-    className="login_logo"
-  >
-    Swag Labs
-  </div>
-  <div
-    className="login_wrapper"
-    data-test="login-container"
+    class="login_container"
   >
     <div
-      className="login_wrapper-inner"
+      class="login_logo"
+    >
+      Swag Labs
+    </div>
+    <div
+      class="login_wrapper"
+      data-test="login-container"
     >
       <div
-        className="form_column"
-        id="login_button_container"
+        class="login_wrapper-inner"
       >
         <div
-          className="login-box"
+          class="form_column"
+          id="login_button_container"
         >
-          <form
-            onSubmit={[Function]}
+          <div
+            class="login-box"
           >
-            <InputError
-              autoCapitalize="none"
-              autoCorrect="off"
-              id="user-name"
-              isError={false}
-              name="user-name"
-              onChange={[Function]}
-              placeholder="Username"
-              testId="username"
-              type="text"
-              value=""
-            />
-            <InputError
-              autoCapitalize="none"
-              autoCorrect="off"
-              isError={false}
-              onChange={[Function]}
-              placeholder="Password"
-              testId="password"
-              type="password"
-              value=""
-            />
-            <ErrorMessage
-              errorMessage="Epic sadface: "
-              isError={false}
-              onClick={[Function]}
-            />
-            <SubmitButton
-              customClass="btn_action"
-              testId="login-button"
-              value="Login"
-            />
-          </form>
+            <form>
+              <div
+                class="form_group"
+              >
+                <input
+                  autocapitalize="none"
+                  autocorrect="off"
+                  class="input_error form_input"
+                  data-test="username"
+                  id="user-name"
+                  name="user-name"
+                  placeholder="Username"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="form_group"
+              >
+                <input
+                  autocapitalize="none"
+                  autocorrect="off"
+                  class="input_error form_input"
+                  data-test="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  value=""
+                />
+              </div>
+              <div
+                class="error-message-container"
+              />
+              <input
+                class="submit-button btn_action"
+                data-test="login-button"
+                id="login-button"
+                name="login-button"
+                type="submit"
+                value="Login"
+              />
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      className="login_credentials_wrap"
-      data-test="login-credentials-container"
-    >
       <div
-        className="login_credentials_wrap-inner"
+        class="login_credentials_wrap"
+        data-test="login-credentials-container"
       >
         <div
-          className="login_credentials"
-          data-test="login-credentials"
-          id="login_credentials"
+          class="login_credentials_wrap-inner"
         >
-          <h4>
-            Accepted usernames are:
-          </h4>
-          standard_user
-          <br />
-          locked_out_user
-          <br />
-          problem_user
-          <br />
-          performance_glitch_user
-          <br />
-          error_user
-          <br />
-          visual_user
-          <br />
-        </div>
-        <div
-          className="login_password"
-          data-test="login-password"
-        >
-          <h4>
-            Password for all users:
-          </h4>
-          secret_sauce
+          <div
+            class="login_credentials"
+            data-test="login-credentials"
+            id="login_credentials"
+          >
+            <h4>
+              Accepted usernames are:
+            </h4>
+            standard_user
+            <br />
+            locked_out_user
+            <br />
+            problem_user
+            <br />
+            performance_glitch_user
+            <br />
+            error_user
+            <br />
+            visual_user
+            <br />
+          </div>
+          <div
+            class="login_password"
+            data-test="login-password"
+          >
+            <h4>
+              Password for all users:
+            </h4>
+            secret_sauce
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,361 +1,1978 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Inventory should render correctly 1`] = `
-<div
-  className="page_wrapper"
-  id="page_wrapper"
->
+<DocumentFragment>
   <div
-    id="contents_wrapper"
+    class="page_wrapper"
+    id="page_wrapper"
   >
-    <HeaderContainer
-      secondaryRightComponent={
-        <Select
-          activeOption="az"
-          onChange={[Function]}
-          options={
-            Array [
-              Object {
-                "key": "az",
-                "value": "Name (A to Z)",
-              },
-              Object {
-                "key": "za",
-                "value": "Name (Z to A)",
-              },
-              Object {
-                "key": "lohi",
-                "value": "Price (low to high)",
-              },
-              Object {
-                "key": "hilo",
-                "value": "Price (high to low)",
-              },
-            ]
-          }
-          testId="product-sort-container"
-        />
-      }
-      secondaryTitle="Products"
-    />
     <div
-      id="inventory_container"
+      id="contents_wrapper"
     >
-      <div>
+      <div
+        class="header_container"
+        data-test="header-container"
+        id="header_container"
+      >
         <div
-          className="inventory_container"
-          data-test="inventory-container"
-          id="inventory_container"
+          class="primary_header"
+          data-test="primary-header"
         >
           <div
-            className="inventory_list"
-            data-test="inventory-list"
+            id="menu_button_container"
           >
-            <withRouter(InventoryListItem)
-              desc="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
-              id={4}
-              image_url="sauce-backpack-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="4"
-              missAlignButton={false}
-              name="Sauce Labs Backpack"
-              price={29.99}
+            <div>
+              <div>
+                <div
+                  class="bm-burger-button"
+                  style="z-index: 1000;"
+                >
+                  <button
+                    id="react-burger-menu-btn"
+                    style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                    type="button"
+                  >
+                    Open Menu
+                  </button>
+                  <img
+                    alt="Open Menu"
+                    class="bm-icon"
+                    data-test="open-menu"
+                    src="test-file-stub"
+                    srcset="test-file-stub"
+                    style="width: 100%; height: 100%;"
+                  />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="bm-menu-wrap"
+                id=""
+                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+              >
+                <div
+                  class="bm-menu"
+                  style="height: 100%; box-sizing: border-box; overflow: auto;"
+                >
+                  <nav
+                    class="bm-item-list"
+                    style="height: 100%;"
+                  >
+                    <a
+                      class="bm-item menu-item"
+                      data-test="inventory-sidebar-link"
+                      href="#"
+                      id="inventory_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      All Items
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="about-sidebar-link"
+                      href="https://saucelabs.com/"
+                      id="about_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      About
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="logout-sidebar-link"
+                      href="#"
+                      id="logout_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Logout
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="reset-sidebar-link"
+                      href="#"
+                      id="reset_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Reset App State
+                    </a>
+                  </nav>
+                </div>
+                <div>
+                  <div
+                    class="bm-cross-button"
+                    style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+                  >
+                    <button
+                      id="react-burger-cross-btn"
+                      style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Close Menu
+                    </button>
+                    <img
+                      alt="Close Menu"
+                      class="bm-cross"
+                      data-test="close-menu"
+                      src="test-file-stub"
+                      srcset="test-file-stub"
+                      style="width: 100%; height: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="header_label"
+          >
+            <div
+              class="app_logo"
+            >
+              Swag Labs
+            </div>
+          </div>
+          <div
+            class="shopping_cart_container"
+            id="shopping_cart_container"
+          >
+            <a
+              class="shopping_cart_link"
+              data-test="shopping-cart-link"
             />
-            <withRouter(InventoryListItem)
-              desc="A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included."
-              id={0}
-              image_url="bike-light-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="0"
-              missAlignButton={false}
-              name="Sauce Labs Bike Light"
-              price={9.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt."
-              id={1}
-              image_url="bolt-shirt-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="1"
-              missAlignButton={false}
-              name="Sauce Labs Bolt T-Shirt"
-              price={15.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office."
-              id={5}
-              image_url="sauce-pullover-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="5"
-              missAlignButton={false}
-              name="Sauce Labs Fleece Jacket"
-              price={49.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel."
-              id={2}
-              image_url="red-onesie-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="2"
-              missAlignButton={false}
-              name="Sauce Labs Onesie"
-              price={7.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton."
-              id={3}
-              image_url="red-tatt-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="3"
-              missAlignButton={false}
-              name="Test.allTheThings() T-Shirt (Red)"
-              price={15.99}
-            />
+          </div>
+        </div>
+        <div
+          class="header_secondary_container"
+          data-test="secondary-header"
+        >
+          <span
+            class="title"
+            data-test="title"
+          >
+            Products
+          </span>
+          <div
+            class="right_component"
+          >
+            <span
+              class="select_container"
+            >
+              <span
+                class="active_option"
+                data-test="active-option"
+              >
+                Name (A to Z)
+              </span>
+              <select
+                class="product_sort_container"
+                data-test="product-sort-container"
+              >
+                <option
+                  value="az"
+                >
+                  Name (A to Z)
+                </option>
+                <option
+                  value="za"
+                >
+                  Name (Z to A)
+                </option>
+                <option
+                  value="lohi"
+                >
+                  Price (low to high)
+                </option>
+                <option
+                  value="hilo"
+                >
+                  Price (high to low)
+                </option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="inventory_container"
+      >
+        <div>
+          <div
+            class="inventory_container"
+            data-test="inventory-container"
+            id="inventory_container"
+          >
+            <div
+              class="inventory_list"
+              data-test="inventory-list"
+            >
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-4-img-link"
+                    href="#"
+                    id="item_4_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Backpack"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-backpack-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-4-title-link"
+                      href="#"
+                      id="item_4_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Backpack
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $29.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-backpack"
+                      id="add-to-cart-sauce-labs-backpack"
+                      name="add-to-cart-sauce-labs-backpack"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-0-img-link"
+                    href="#"
+                    id="item_0_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Bike Light"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-bike-light-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-0-title-link"
+                      href="#"
+                      id="item_0_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Bike Light
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $9.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-bike-light"
+                      id="add-to-cart-sauce-labs-bike-light"
+                      name="add-to-cart-sauce-labs-bike-light"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-1-img-link"
+                    href="#"
+                    id="item_1_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Bolt T-Shirt"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-bolt-t-shirt-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-1-title-link"
+                      href="#"
+                      id="item_1_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Bolt T-Shirt
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $15.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-bolt-t-shirt"
+                      id="add-to-cart-sauce-labs-bolt-t-shirt"
+                      name="add-to-cart-sauce-labs-bolt-t-shirt"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-5-img-link"
+                    href="#"
+                    id="item_5_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Fleece Jacket"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-fleece-jacket-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-5-title-link"
+                      href="#"
+                      id="item_5_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Fleece Jacket
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $49.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-fleece-jacket"
+                      id="add-to-cart-sauce-labs-fleece-jacket"
+                      name="add-to-cart-sauce-labs-fleece-jacket"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-2-img-link"
+                    href="#"
+                    id="item_2_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Onesie"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-onesie-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-2-title-link"
+                      href="#"
+                      id="item_2_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Onesie
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $7.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-onesie"
+                      id="add-to-cart-sauce-labs-onesie"
+                      name="add-to-cart-sauce-labs-onesie"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-3-img-link"
+                    href="#"
+                    id="item_3_img_link"
+                  >
+                    <img
+                      alt="Test.allTheThings() T-Shirt (Red)"
+                      class="inventory_item_img"
+                      data-test="inventory-item-test.allthethings()-t-shirt-(red)-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-3-title-link"
+                      href="#"
+                      id="item_3_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Test.allTheThings() T-Shirt (Red)
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $15.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-test.allthethings()-t-shirt-(red)"
+                      id="add-to-cart-test.allthethings()-t-shirt-(red)"
+                      name="add-to-cart-test.allthethings()-t-shirt-(red)"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer
+      class="footer"
+      data-test="footer"
+    >
+      <ul
+        class="social"
+      >
+        <li
+          class="social_twitter"
+        >
+          <a
+            data-test="social-twitter"
+            href="https://twitter.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </li>
+        <li
+          class="social_facebook"
+        >
+          <a
+            data-test="social-facebook"
+            href="https://www.facebook.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          class="social_linkedin"
+        >
+          <a
+            data-test="social-linkedin"
+            href="https://www.linkedin.com/company/sauce-labs/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div
+        class="footer_copy"
+        data-test="footer-copy"
+      >
+        © 2026 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+      </div>
+    </footer>
   </div>
-  <SwagLabsFooter />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Inventory should render correctly for a problem user 1`] = `
-<div
-  className="page_wrapper"
-  id="page_wrapper"
->
+<DocumentFragment>
   <div
-    id="contents_wrapper"
+    class="page_wrapper"
+    id="page_wrapper"
   >
-    <HeaderContainer
-      secondaryRightComponent={
-        <Select
-          activeOption="az"
-          onChange={[Function]}
-          options={
-            Array [
-              Object {
-                "key": "az",
-                "value": "Name (A to Z)",
-              },
-              Object {
-                "key": "za",
-                "value": "Name (Z to A)",
-              },
-              Object {
-                "key": "lohi",
-                "value": "Price (low to high)",
-              },
-              Object {
-                "key": "hilo",
-                "value": "Price (high to low)",
-              },
-            ]
-          }
-          testId="product-sort-container"
-        />
-      }
-      secondaryTitle="Products"
-    />
     <div
-      id="inventory_container"
+      id="contents_wrapper"
     >
-      <div>
+      <div
+        class="header_container"
+        data-test="header-container"
+        id="header_container"
+      >
         <div
-          className="inventory_container"
-          data-test="inventory-container"
-          id="inventory_container"
+          class="primary_header"
+          data-test="primary-header"
         >
           <div
-            className="inventory_list"
-            data-test="inventory-list"
+            id="menu_button_container"
           >
-            <withRouter(InventoryListItem)
-              desc="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
-              id={4}
-              image_url="sl-404.jpg"
-              isTextAlignRight={false}
-              key="4"
-              missAlignButton={false}
-              name="Sauce Labs Backpack"
-              price={29.99}
+            <div>
+              <div>
+                <div
+                  class="bm-burger-button"
+                  style="z-index: 1000;"
+                >
+                  <button
+                    id="react-burger-menu-btn"
+                    style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                    type="button"
+                  >
+                    Open Menu
+                  </button>
+                  <img
+                    alt="Open Menu"
+                    class="bm-icon"
+                    data-test="open-menu"
+                    src="test-file-stub"
+                    srcset="test-file-stub"
+                    style="width: 100%; height: 100%;"
+                  />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="bm-menu-wrap"
+                id=""
+                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+              >
+                <div
+                  class="bm-menu"
+                  style="height: 100%; box-sizing: border-box; overflow: auto;"
+                >
+                  <nav
+                    class="bm-item-list"
+                    style="height: 100%;"
+                  >
+                    <a
+                      class="bm-item menu-item"
+                      data-test="inventory-sidebar-link"
+                      href="#"
+                      id="inventory_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      All Items
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="about-sidebar-link"
+                      href="https://saucelabs.com/error/404"
+                      id="about_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      About
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="logout-sidebar-link"
+                      href="#"
+                      id="logout_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Logout
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="reset-sidebar-link"
+                      href="#"
+                      id="reset_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Reset App State
+                    </a>
+                  </nav>
+                </div>
+                <div>
+                  <div
+                    class="bm-cross-button"
+                    style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+                  >
+                    <button
+                      id="react-burger-cross-btn"
+                      style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Close Menu
+                    </button>
+                    <img
+                      alt="Close Menu"
+                      class="bm-cross"
+                      data-test="close-menu"
+                      src="test-file-stub"
+                      srcset="test-file-stub"
+                      style="width: 100%; height: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="header_label"
+          >
+            <div
+              class="app_logo"
+            >
+              Swag Labs
+            </div>
+          </div>
+          <div
+            class="shopping_cart_container"
+            id="shopping_cart_container"
+          >
+            <a
+              class="shopping_cart_link"
+              data-test="shopping-cart-link"
             />
-            <withRouter(InventoryListItem)
-              desc="A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included."
-              id={0}
-              image_url="sl-404.jpg"
-              isTextAlignRight={false}
-              key="0"
-              missAlignButton={false}
-              name="Sauce Labs Bike Light"
-              price={9.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt."
-              id={1}
-              image_url="sl-404.jpg"
-              isTextAlignRight={false}
-              key="1"
-              missAlignButton={false}
-              name="Sauce Labs Bolt T-Shirt"
-              price={15.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office."
-              id={5}
-              image_url="sl-404.jpg"
-              isTextAlignRight={false}
-              key="5"
-              missAlignButton={false}
-              name="Sauce Labs Fleece Jacket"
-              price={49.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel."
-              id={2}
-              image_url="sl-404.jpg"
-              isTextAlignRight={false}
-              key="2"
-              missAlignButton={false}
-              name="Sauce Labs Onesie"
-              price={7.99}
-            />
-            <withRouter(InventoryListItem)
-              desc="This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton."
-              id={3}
-              image_url="sl-404.jpg"
-              isTextAlignRight={false}
-              key="3"
-              missAlignButton={false}
-              name="Test.allTheThings() T-Shirt (Red)"
-              price={15.99}
-            />
+          </div>
+        </div>
+        <div
+          class="header_secondary_container"
+          data-test="secondary-header"
+        >
+          <span
+            class="title"
+            data-test="title"
+          >
+            Products
+          </span>
+          <div
+            class="right_component"
+          >
+            <span
+              class="select_container"
+            >
+              <span
+                class="active_option"
+                data-test="active-option"
+              >
+                Name (A to Z)
+              </span>
+              <select
+                class="product_sort_container"
+                data-test="product-sort-container"
+              >
+                <option
+                  value="az"
+                >
+                  Name (A to Z)
+                </option>
+                <option
+                  value="za"
+                >
+                  Name (Z to A)
+                </option>
+                <option
+                  value="lohi"
+                >
+                  Price (low to high)
+                </option>
+                <option
+                  value="hilo"
+                >
+                  Price (high to low)
+                </option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="inventory_container"
+      >
+        <div>
+          <div
+            class="inventory_container"
+            data-test="inventory-container"
+            id="inventory_container"
+          >
+            <div
+              class="inventory_list"
+              data-test="inventory-list"
+            >
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-4-img-link"
+                    href="#"
+                    id="item_4_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Backpack"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-backpack-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-4-title-link"
+                      href="#"
+                      id="item_4_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Backpack
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $29.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-backpack"
+                      id="add-to-cart-sauce-labs-backpack"
+                      name="add-to-cart-sauce-labs-backpack"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-0-img-link"
+                    href="#"
+                    id="item_0_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Bike Light"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-bike-light-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-0-title-link"
+                      href="#"
+                      id="item_0_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Bike Light
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $9.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-bike-light"
+                      id="add-to-cart-sauce-labs-bike-light"
+                      name="add-to-cart-sauce-labs-bike-light"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-1-img-link"
+                    href="#"
+                    id="item_1_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Bolt T-Shirt"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-bolt-t-shirt-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-1-title-link"
+                      href="#"
+                      id="item_1_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Bolt T-Shirt
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $15.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-bolt-t-shirt"
+                      id="add-to-cart-sauce-labs-bolt-t-shirt"
+                      name="add-to-cart-sauce-labs-bolt-t-shirt"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-5-img-link"
+                    href="#"
+                    id="item_5_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Fleece Jacket"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-fleece-jacket-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-5-title-link"
+                      href="#"
+                      id="item_5_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Fleece Jacket
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $49.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-fleece-jacket"
+                      id="add-to-cart-sauce-labs-fleece-jacket"
+                      name="add-to-cart-sauce-labs-fleece-jacket"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-2-img-link"
+                    href="#"
+                    id="item_2_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Onesie"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-onesie-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-2-title-link"
+                      href="#"
+                      id="item_2_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Onesie
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $7.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-onesie"
+                      id="add-to-cart-sauce-labs-onesie"
+                      name="add-to-cart-sauce-labs-onesie"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-3-img-link"
+                    href="#"
+                    id="item_3_img_link"
+                  >
+                    <img
+                      alt="Test.allTheThings() T-Shirt (Red)"
+                      class="inventory_item_img"
+                      data-test="inventory-item-test.allthethings()-t-shirt-(red)-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-3-title-link"
+                      href="#"
+                      id="item_3_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Test.allTheThings() T-Shirt (Red)
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $15.99
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-test.allthethings()-t-shirt-(red)"
+                      id="add-to-cart-test.allthethings()-t-shirt-(red)"
+                      name="add-to-cart-test.allthethings()-t-shirt-(red)"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer
+      class="footer"
+      data-test="footer"
+    >
+      <ul
+        class="social"
+      >
+        <li
+          class="social_twitter"
+        >
+          <a
+            data-test="social-twitter"
+            href="https://twitter.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </li>
+        <li
+          class="social_facebook"
+        >
+          <a
+            data-test="social-facebook"
+            href="https://www.facebook.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          class="social_linkedin"
+        >
+          <a
+            data-test="social-linkedin"
+            href="https://www.linkedin.com/company/sauce-labs/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div
+        class="footer_copy"
+        data-test="footer-copy"
+      >
+        © 2026 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+      </div>
+    </footer>
   </div>
-  <SwagLabsFooter />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Inventory should render correctly for a visual user 1`] = `
-<div
-  className="page_wrapper"
-  id="page_wrapper"
->
+<DocumentFragment>
   <div
-    id="contents_wrapper"
+    class="page_wrapper"
+    id="page_wrapper"
   >
-    <HeaderContainer
-      secondaryRightComponent={
-        <Select
-          activeOption="az"
-          onChange={[Function]}
-          options={
-            Array [
-              Object {
-                "key": "az",
-                "value": "Name (A to Z)",
-              },
-              Object {
-                "key": "za",
-                "value": "Name (Z to A)",
-              },
-              Object {
-                "key": "lohi",
-                "value": "Price (low to high)",
-              },
-              Object {
-                "key": "hilo",
-                "value": "Price (high to low)",
-              },
-            ]
-          }
-          testId="product-sort-container"
-        />
-      }
-      secondaryTitle="Products"
-    />
     <div
-      id="inventory_container"
+      id="contents_wrapper"
     >
-      <div>
+      <div
+        class="header_container"
+        data-test="header-container"
+        id="header_container"
+      >
         <div
-          className="inventory_container"
-          data-test="inventory-container"
-          id="inventory_container"
+          class="primary_header"
+          data-test="primary-header"
         >
           <div
-            className="inventory_list"
-            data-test="inventory-list"
+            id="menu_button_container"
           >
-            <withRouter(InventoryListItem)
-              desc="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
-              id={4}
-              image_url="sl-404.jpg"
-              isTextAlignRight={false}
-              key="4"
-              missAlignButton={false}
-              name="Sauce Labs Backpack"
-              price={50}
+            <div>
+              <div>
+                <div
+                  class="bm-burger-button"
+                  style="z-index: 1000;"
+                >
+                  <button
+                    id="react-burger-menu-btn"
+                    style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                    type="button"
+                  >
+                    Open Menu
+                  </button>
+                  <img
+                    alt="Open Menu"
+                    class="bm-icon visual_failure"
+                    data-test="open-menu"
+                    src="test-file-stub"
+                    srcset="test-file-stub"
+                    style="width: 100%; height: 100%;"
+                  />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="bm-menu-wrap"
+                id=""
+                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+              >
+                <div
+                  class="bm-menu"
+                  style="height: 100%; box-sizing: border-box; overflow: auto;"
+                >
+                  <nav
+                    class="bm-item-list"
+                    style="height: 100%;"
+                  >
+                    <a
+                      class="bm-item menu-item"
+                      data-test="inventory-sidebar-link"
+                      href="#"
+                      id="inventory_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      All Items
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="about-sidebar-link"
+                      href="https://saucelabs.com/"
+                      id="about_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      About
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="logout-sidebar-link"
+                      href="#"
+                      id="logout_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Logout
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="reset-sidebar-link"
+                      href="#"
+                      id="reset_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Reset App State
+                    </a>
+                  </nav>
+                </div>
+                <div>
+                  <div
+                    class="bm-cross-button"
+                    style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+                  >
+                    <button
+                      id="react-burger-cross-btn"
+                      style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Close Menu
+                    </button>
+                    <img
+                      alt="Close Menu"
+                      class="bm-cross visual_failure"
+                      data-test="close-menu"
+                      src="test-file-stub"
+                      srcset="test-file-stub"
+                      style="width: 100%; height: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="header_label"
+          >
+            <div
+              class="app_logo"
+            >
+              Swag Labs
+            </div>
+          </div>
+          <div
+            class="shopping_cart_container visual_failure"
+            id="shopping_cart_container"
+          >
+            <a
+              class="shopping_cart_link"
+              data-test="shopping-cart-link"
             />
-            <withRouter(InventoryListItem)
-              desc="A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included."
-              id={0}
-              image_url="bike-light-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="0"
-              missAlignButton={false}
-              name="Sauce Labs Bike Light"
-              price={50}
-            />
-            <withRouter(InventoryListItem)
-              desc="Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt."
-              id={1}
-              image_url="bolt-shirt-1200x1500.jpg"
-              isTextAlignRight={true}
-              key="1"
-              missAlignButton={false}
-              name="Sauce Labs Bolt T-Shirt"
-              price={50}
-            />
-            <withRouter(InventoryListItem)
-              desc="It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office."
-              id={5}
-              image_url="sauce-pullover-1200x1500.jpg"
-              isTextAlignRight={true}
-              key="5"
-              missAlignButton={false}
-              name="Sauce Labs Fleece Jacket"
-              price={50}
-            />
-            <withRouter(InventoryListItem)
-              desc="Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel."
-              id={2}
-              image_url="red-onesie-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="2"
-              missAlignButton={false}
-              name="Sauce Labs Onesie"
-              price={50}
-            />
-            <withRouter(InventoryListItem)
-              desc="This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton."
-              id={3}
-              image_url="red-tatt-1200x1500.jpg"
-              isTextAlignRight={false}
-              key="3"
-              missAlignButton={true}
-              name="Test.allTheThings() T-Shirt (Red)"
-              price={50}
-            />
+          </div>
+        </div>
+        <div
+          class="header_secondary_container"
+          data-test="secondary-header"
+        >
+          <span
+            class="title"
+            data-test="title"
+          >
+            Products
+          </span>
+          <div
+            class="right_component"
+          >
+            <span
+              class="select_container"
+            >
+              <span
+                class="active_option"
+                data-test="active-option"
+              >
+                Name (A to Z)
+              </span>
+              <select
+                class="product_sort_container"
+                data-test="product-sort-container"
+              >
+                <option
+                  value="az"
+                >
+                  Name (A to Z)
+                </option>
+                <option
+                  value="za"
+                >
+                  Name (Z to A)
+                </option>
+                <option
+                  value="lohi"
+                >
+                  Price (low to high)
+                </option>
+                <option
+                  value="hilo"
+                >
+                  Price (high to low)
+                </option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        id="inventory_container"
+      >
+        <div>
+          <div
+            class="inventory_container"
+            data-test="inventory-container"
+            id="inventory_container"
+          >
+            <div
+              class="inventory_list"
+              data-test="inventory-list"
+            >
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-4-img-link"
+                    href="#"
+                    id="item_4_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Backpack"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-backpack-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-4-title-link"
+                      href="#"
+                      id="item_4_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Backpack
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $50
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-backpack"
+                      id="add-to-cart-sauce-labs-backpack"
+                      name="add-to-cart-sauce-labs-backpack"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-0-img-link"
+                    href="#"
+                    id="item_0_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Bike Light"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-bike-light-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-0-title-link"
+                      href="#"
+                      id="item_0_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Bike Light
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $50
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-bike-light"
+                      id="add-to-cart-sauce-labs-bike-light"
+                      name="add-to-cart-sauce-labs-bike-light"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-1-img-link"
+                    href="#"
+                    id="item_1_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Bolt T-Shirt"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-bolt-t-shirt-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-1-title-link"
+                      href="#"
+                      id="item_1_title_link"
+                    >
+                      <div
+                        class="inventory_item_name align_right"
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Bolt T-Shirt
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $50
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-bolt-t-shirt"
+                      id="add-to-cart-sauce-labs-bolt-t-shirt"
+                      name="add-to-cart-sauce-labs-bolt-t-shirt"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-5-img-link"
+                    href="#"
+                    id="item_5_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Fleece Jacket"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-fleece-jacket-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-5-title-link"
+                      href="#"
+                      id="item_5_title_link"
+                    >
+                      <div
+                        class="inventory_item_name align_right"
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Fleece Jacket
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $50
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-fleece-jacket"
+                      id="add-to-cart-sauce-labs-fleece-jacket"
+                      name="add-to-cart-sauce-labs-fleece-jacket"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-2-img-link"
+                    href="#"
+                    id="item_2_img_link"
+                  >
+                    <img
+                      alt="Sauce Labs Onesie"
+                      class="inventory_item_img"
+                      data-test="inventory-item-sauce-labs-onesie-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-2-title-link"
+                      href="#"
+                      id="item_2_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Sauce Labs Onesie
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $50
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory "
+                      data-test="add-to-cart-sauce-labs-onesie"
+                      id="add-to-cart-sauce-labs-onesie"
+                      name="add-to-cart-sauce-labs-onesie"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="inventory_item"
+                data-test="inventory-item"
+              >
+                <div
+                  class="inventory_item_img"
+                >
+                  <a
+                    data-test="item-3-img-link"
+                    href="#"
+                    id="item_3_img_link"
+                  >
+                    <img
+                      alt="Test.allTheThings() T-Shirt (Red)"
+                      class="inventory_item_img"
+                      data-test="inventory-item-test.allthethings()-t-shirt-(red)-img"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="inventory_item_description"
+                  data-test="inventory-item-description"
+                >
+                  <div
+                    class="inventory_item_label"
+                  >
+                    <a
+                      data-test="item-3-title-link"
+                      href="#"
+                      id="item_3_title_link"
+                    >
+                      <div
+                        class="inventory_item_name "
+                        data-test="inventory-item-name"
+                      >
+                        Test.allTheThings() T-Shirt (Red)
+                      </div>
+                    </a>
+                    <div
+                      class="inventory_item_desc"
+                      data-test="inventory-item-desc"
+                    >
+                      This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+                    </div>
+                  </div>
+                  <div
+                    class="pricebar"
+                  >
+                    <div
+                      class="inventory_item_price"
+                      data-test="inventory-item-price"
+                    >
+                      $50
+                    </div>
+                    <button
+                      class="btn btn_primary btn_small btn_inventory btn_inventory_misaligned"
+                      data-test="add-to-cart-test.allthethings()-t-shirt-(red)"
+                      id="add-to-cart-test.allthethings()-t-shirt-(red)"
+                      name="add-to-cart-test.allthethings()-t-shirt-(red)"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer
+      class="footer"
+      data-test="footer"
+    >
+      <ul
+        class="social"
+      >
+        <li
+          class="social_twitter"
+        >
+          <a
+            data-test="social-twitter"
+            href="https://twitter.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </li>
+        <li
+          class="social_facebook"
+        >
+          <a
+            data-test="social-facebook"
+            href="https://www.facebook.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          class="social_linkedin"
+        >
+          <a
+            data-test="social-linkedin"
+            href="https://www.linkedin.com/company/sauce-labs/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div
+        class="footer_copy"
+        data-test="footer-copy"
+      >
+        © 2026 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+      </div>
+    </footer>
   </div>
-  <SwagLabsFooter />
-</div>
+</DocumentFragment>
 `;

@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../utils/withRouter";
 import { useState } from "react";
 import "./Login.css";
 import {
@@ -22,7 +22,7 @@ function Login(props) {
   useEffect(() => {
     if (location.state) {
       return setError(
-        `You can only access '${location.state.from.pathname}' when you are logged in.`
+        `You can only access '${location.state.from.pathname}' when you are logged in.`,
       );
     }
   }, [location.state]);
@@ -50,7 +50,7 @@ function Login(props) {
         // Send an error with custom attributes to Backtrace
         BacktraceClient.instance.send(
           new Error("Locked out user tried to log in."),
-          { username }
+          { username },
         );
         return setError("Sorry, this user has been locked out.");
       }
@@ -61,10 +61,10 @@ function Login(props) {
       // Send an error with custom attributes to Backtrace
       BacktraceClient.instance.send(
         "Someone tried to login with invalid credentials.",
-        { username }
+        { username },
       );
       return setError(
-        "Username and password do not match any user in this service"
+        "Username and password do not match any user in this service",
       );
     }
 

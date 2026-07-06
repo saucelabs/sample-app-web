@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Footer from "../Footer";
 
 describe("Footer", () => {
@@ -8,8 +8,7 @@ describe("Footer", () => {
   });
 
   it("should render correctly", () => {
-    const component = shallow(<Footer />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Footer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

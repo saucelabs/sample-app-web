@@ -1,16 +1,26 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import Finish from "../Finish";
+import { ShoppingCart } from "../../utils/shopping-cart";
 
 jest.mock("../../utils/shopping-cart");
 
 let props;
 
+function renderFinish() {
+  return render(
+    <MemoryRouter>
+      <Finish.WrappedComponent {...props} />
+    </MemoryRouter>,
+  );
+}
+
 describe("CheckOutStepTwo", () => {
   beforeEach(() => {
-    props = {
-      history: { push: jest.fn() },
-    };
+    props = { history: { push: jest.fn() } };
+    ShoppingCart.getCartContents = jest.fn().mockReturnValue([]);
+    ShoppingCart.registerCartListener = jest.fn();
   });
 
   afterEach(() => {
@@ -18,17 +28,13 @@ describe("CheckOutStepTwo", () => {
   });
 
   it("should render correctly with default props", () => {
-    const wrapper = shallow(<Finish.WrappedComponent {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = renderFinish();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should redirect when clicking on back home", () => {
-    const wrapper = shallow(<Finish.WrappedComponent {...props} />);
-    const backHome = wrapper.find("Button").at(0);
-    backHome.simulate("click", {
-      preventDefault() {},
-    });
-
+    const { getByTestId } = renderFinish();
+    fireEvent.click(getByTestId("back-to-products"));
     expect(props.history.push).toBeCalledWith("/inventory.html");
   });
 });

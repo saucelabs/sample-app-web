@@ -1,28 +1,18 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, fireEvent } from "@testing-library/react";
 import ErrorMessage from "../ErrorMessage";
 
 describe("ErrorMessage", () => {
   it("should render no error message when there is not error", () => {
-    const props = {
-      isError: false,
-      errorMessage: "Error Message",
-      onClick: () => {},
-    };
-    const component = shallow(<ErrorMessage {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const props = { isError: false, errorMessage: "Error Message", onClick: () => {} };
+    const { asFragment } = render(<ErrorMessage {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render an error message when there is an error", () => {
-    const props = {
-      isError: true,
-      errorMessage: "Error Message",
-      onClick: () => {},
-    };
-    const component = shallow(<ErrorMessage {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const props = { isError: true, errorMessage: "Error Message", onClick: () => {} };
+    const { asFragment } = render(<ErrorMessage {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should be able to render custom props on the container level", () => {
@@ -33,8 +23,7 @@ describe("ErrorMessage", () => {
       foo: "bar",
       bar: "foo-bar",
     };
-    const component = shallow(<ErrorMessage {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<ErrorMessage {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

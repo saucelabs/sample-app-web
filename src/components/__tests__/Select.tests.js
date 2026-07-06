@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, fireEvent } from "@testing-library/react";
 import Select from "../Select";
 
 let props;
@@ -19,26 +19,20 @@ describe("Select", () => {
   });
 
   it("should render with default props", () => {
-    const component = shallow(<Select {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Select {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render with a testID", () => {
-    const component = shallow(<Select testId="foo" {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Select testId="foo" {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should be able to trigger the onChange", () => {
-    const component = shallow(<Select {...props} />);
-    component
-      .find("select")
-      .at(0)
-      .simulate("change", {
-        target: { value: "za", name: "Name (Z to A)" },
-      });
-
+    const { getByRole } = render(<Select {...props} />);
+    fireEvent.change(getByRole("combobox"), {
+      target: { value: "za", name: "Name (Z to A)" },
+    });
     expect(props.onChange).toHaveBeenCalledTimes(1);
   });
 });

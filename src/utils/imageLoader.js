@@ -6,7 +6,11 @@
 export default function getImage(imageUrl) {
   // If running under Jest, don't return a real src — let React omit the src attr.
   try {
-    if (typeof process !== 'undefined' && process.env && process.env.JEST_WORKER_ID) {
+    if (
+      typeof process !== "undefined" &&
+      process.env &&
+      process.env.JEST_WORKER_ID
+    ) {
       return undefined;
     }
   } catch (e) {
@@ -15,8 +19,15 @@ export default function getImage(imageUrl) {
 
   // Try webpack-style require.context if available
   try {
-    if (typeof require !== 'undefined' && typeof require.context === 'function') {
-      const images = require.context('../assets/img', false, /\.(png|jpe?g|svg|gif)$/);
+    if (
+      typeof require !== "undefined" &&
+      typeof require.context === "function"
+    ) {
+      const images = require.context(
+        "../assets/img",
+        false,
+        /\.(png|jpe?g|svg|gif)$/,
+      );
       const imgModule = images(`./${imageUrl}`);
       return imgModule && (imgModule.default || imgModule);
     }
@@ -29,7 +40,7 @@ export default function getImage(imageUrl) {
     // eslint-disable-next-line global-require, import/no-dynamic-require
     const mod = require(`../assets/img/${imageUrl}`);
     // If a module mock returns a sentinel like 'test-file-stub', treat it as absent
-    if (mod === 'test-file-stub' || (mod && mod.default === 'test-file-stub')) {
+    if (mod === "test-file-stub" || (mod && mod.default === "test-file-stub")) {
       return undefined;
     }
     return mod && (mod.default || mod);

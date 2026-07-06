@@ -1,39 +1,55 @@
-import { shallow } from "enzyme";
-import React, { useState as useStateMock } from "react";
+import React from "react";
+import { render } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import * as Credentials from "../../utils/Credentials";
 import InventoryItem from "../InventoryItem";
+import { ShoppingCart } from "../../utils/shopping-cart";
 
-jest.mock("react", () => ({
-  ...jest.requireActual("react"),
-  useState: jest.fn(),
-  useEffect: (f) => f(),
-}));
+jest.mock("@backtrace-labs/react", () => {
+  const React = require("react");
+  class ErrorBoundary extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { hasError: false };
+    }
+    static getDerivedStateFromError() {
+      return { hasError: true };
+    }
+    render() {
+      return this.state.hasError
+        ? this.props.fallback || null
+        : this.props.children;
+    }
+  }
+  return { ErrorBoundary };
+});
+
+jest.mock("../../utils/shopping-cart");
 
 let props;
 let location;
 
+function renderInventoryItem() {
+  return render(
+    <MemoryRouter>
+      <InventoryItem.WrappedComponent {...props} />
+    </MemoryRouter>,
+  );
+}
+
 describe("InventoryItem", () => {
-  const setState = jest.fn();
   const spyScrollTo = jest.fn();
 
   beforeEach(() => {
-    props = {
-      history: {
-        push: jest.fn(),
-      },
-    };
-    location = {
-      ...window.location,
-      search: "?id=4",
-    };
-    Object.defineProperty(window, "location", {
-      writable: true,
-      value: location,
-    });
+    props = { history: { push: jest.fn() } };
+    location = { ...window.location, search: "?id=4" };
+    Object.defineProperty(window, "location", { writable: true, value: location });
     Object.defineProperty(global.window, "scrollTo", { value: spyScrollTo });
     Object.defineProperty(global.window, "scrollY", { value: 1 });
     spyScrollTo.mockClear();
-    useStateMock.mockImplementation((init) => [init, setState]);
+    ShoppingCart.getCartContents = jest.fn().mockReturnValue([]);
+    ShoppingCart.registerCartListener = jest.fn();
+    ShoppingCart.isItemInCart = jest.fn().mockReturnValue(false);
   });
 
   afterEach(() => {
@@ -41,82 +57,25 @@ describe("InventoryItem", () => {
   });
 
   it("should render with default props", () => {
-    const component = shallow(<InventoryItem.WrappedComponent {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = renderInventoryItem();
+    expect(asFragment()).toMatchSnapshot();
     expect(spyScrollTo).toHaveBeenCalledTimes(1);
-    expect(setState).toHaveBeenCalledTimes(0);
   });
 
   it("should render with error data if a not known product is opened", () => {
-    location = {
-      ...window.location,
-      search: "?id=999",
-    };
     Object.defineProperty(window, "location", {
       writable: true,
-      value: location,
+      value: { ...window.location, search: "?id=999" },
     });
-    const component = shallow(<InventoryItem.WrappedComponent {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = renderInventoryItem();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render with BrokenComponent for an error user", () => {
     const isErrorUserSpy = jest.spyOn(Credentials, "isErrorUser");
     isErrorUserSpy.mockReturnValueOnce(true);
-
-    const component = shallow(<InventoryItem.WrappedComponent {...props} />);
-    expect(component).toMatchSnapshot();
+    const { asFragment } = renderInventoryItem();
+    expect(asFragment()).toMatchSnapshot();
     expect(isErrorUserSpy).toHaveBeenCalledTimes(1);
   });
-  //
-  // it("should be able to open the details page when the swag image is clicked", () => {
-  //   const component = shallow(
-  //     <InventoryListItem.WrappedComponent {...props} />
-  //   );
-  //
-  //   const imageLink = component.find(`#item_${props.id}_img_link`).at(0);
-  //   imageLink.simulate("click", {
-  //     preventDefault() {},
-  //   });
-  //   expect(props.history.push).toBeCalledWith(
-  //     `/inventory-item.html?id=${props.id}`
-  //   );
-  // });
-  //
-  // it("should be able to open the details page when the swag item title is clicked", () => {
-  //   const component = shallow(
-  //     <InventoryListItem.WrappedComponent {...props} />
-  //   );
-  //
-  //   const imageLink = component.find(`#item_${props.id}_title_link`).at(0);
-  //   imageLink.simulate("click", {
-  //     preventDefault() {},
-  //   });
-  //   expect(props.history.push).toBeCalledWith(
-  //     `/inventory-item.html?id=${props.id}`
-  //   );
-  // });
-  //
-  // it("should be able to set the image url and id for a problem user", () => {
-  //   const isProblemUserSpy = jest.spyOn(Credentials, "isProblemUser");
-  //   isProblemUserSpy.mockReturnValue(true);
-  //   const component = shallow(
-  //     <InventoryListItem.WrappedComponent {...props} />
-  //   );
-  //   const imageLink = component.find(`#item_${props.id}_title_link`).at(0);
-  //   imageLink.simulate("click", {
-  //     preventDefault() {},
-  //   });
-  //
-  //   expect(props.history.push).toBeCalledWith(
-  //     `/inventory-item.html?id=${props.id + 1}`
-  //   );
-  //   expect(setState).toHaveBeenCalledWith(
-  //     `${props.image_url}WithGarbageOnItToBreakTheUrl`
-  //   );
-  //
-  //   isProblemUserSpy.mockClear();
-  // });
 });

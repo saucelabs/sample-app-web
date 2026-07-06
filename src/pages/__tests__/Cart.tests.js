@@ -1,5 +1,6 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import Cart from "../Cart";
 import { ShoppingCart } from "../../utils/shopping-cart";
 import * as Credentials from "../../utils/Credentials";
@@ -8,11 +9,17 @@ jest.mock("../../utils/shopping-cart");
 
 let props;
 
+function renderCart(extraProps = {}) {
+  return render(
+    <MemoryRouter>
+      <Cart.WrappedComponent {...props} {...extraProps} />
+    </MemoryRouter>,
+  );
+}
+
 describe("Cart", () => {
   beforeEach(() => {
-    props = {
-      history: { push: jest.fn() },
-    };
+    props = { history: { push: jest.fn() } };
     ShoppingCart.getCartContents = jest.fn().mockReturnValue([]);
   });
 
@@ -21,44 +28,33 @@ describe("Cart", () => {
   });
 
   it("should render correctly without any items", () => {
-    const wrapper = shallow(<Cart.WrappedComponent {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = renderCart();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render correctly for a visual user", () => {
     const isVisualUserSpy = jest.spyOn(Credentials, "isVisualUser");
     isVisualUserSpy.mockReturnValue(true);
-    const wrapper = shallow(<Cart.WrappedComponent {...props} />);
-
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = renderCart();
+    expect(asFragment()).toMatchSnapshot();
     isVisualUserSpy.mockClear();
   });
 
   it("should render correctly items", () => {
-    const cartContents = [1, 2, 3];
-    ShoppingCart.getCartContents = jest.fn().mockReturnValue(cartContents);
-    const wrapper = shallow(<Cart.WrappedComponent {...props} />);
-
-    expect(wrapper).toMatchSnapshot();
+    ShoppingCart.getCartContents = jest.fn().mockReturnValue([1, 2, 3]);
+    const { asFragment } = renderCart();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should redirect when trying to continue shopping", () => {
-    const wrapper = shallow(<Cart.WrappedComponent {...props} />);
-    const ContinueShopping = wrapper.find("Button").at(0);
-    ContinueShopping.simulate("click", {
-      preventDefault() {},
-    });
-
+    const { getByTestId } = renderCart();
+    fireEvent.click(getByTestId("continue-shopping"));
     expect(props.history.push).toBeCalledWith("/inventory.html");
   });
 
   it("should redirect when trying to checkout", () => {
-    const wrapper = shallow(<Cart.WrappedComponent {...props} />);
-    const Checkout = wrapper.find("Button").at(1);
-    Checkout.simulate("click", {
-      preventDefault() {},
-    });
-
+    const { getByTestId } = renderCart();
+    fireEvent.click(getByTestId("checkout"));
     expect(props.history.push).toBeCalledWith("/checkout-step-one.html");
   });
 });

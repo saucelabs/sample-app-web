@@ -1,421 +1,1218 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckOutStepTwo should give the incorrect order total when we are logged in as a problem user 1`] = `
-<div
-  className="page_wrapper"
-  id="page_wrapper"
->
+<DocumentFragment>
   <div
-    id="contents_wrapper"
+    class="page_wrapper"
+    id="page_wrapper"
   >
-    <HeaderContainer
-      secondaryTitle="Checkout: Overview"
-    />
     <div
-      className="checkout_summary_container"
-      data-test="checkout-summary-container"
-      id="checkout_summary_container"
+      id="contents_wrapper"
     >
-      <div>
+      <div
+        class="header_container"
+        data-test="header-container"
+        id="header_container"
+      >
         <div
-          className="cart_list"
-          data-test="cart-list"
+          class="primary_header"
+          data-test="primary-header"
         >
           <div
-            className="cart_quantity_label"
-            data-test="cart-quantity-label"
+            id="menu_button_container"
           >
-            QTY
+            <div>
+              <div>
+                <div
+                  class="bm-burger-button"
+                  style="z-index: 1000;"
+                >
+                  <button
+                    id="react-burger-menu-btn"
+                    style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                    type="button"
+                  >
+                    Open Menu
+                  </button>
+                  <img
+                    alt="Open Menu"
+                    class="bm-icon"
+                    data-test="open-menu"
+                    src="test-file-stub"
+                    srcset="test-file-stub"
+                    style="width: 100%; height: 100%;"
+                  />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="bm-menu-wrap"
+                id=""
+                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+              >
+                <div
+                  class="bm-menu"
+                  style="height: 100%; box-sizing: border-box; overflow: auto;"
+                >
+                  <nav
+                    class="bm-item-list"
+                    style="height: 100%;"
+                  >
+                    <a
+                      class="bm-item menu-item"
+                      data-test="inventory-sidebar-link"
+                      href="#"
+                      id="inventory_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      All Items
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="about-sidebar-link"
+                      href="https://saucelabs.com/error/404"
+                      id="about_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      About
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="logout-sidebar-link"
+                      href="#"
+                      id="logout_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Logout
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="reset-sidebar-link"
+                      href="#"
+                      id="reset_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Reset App State
+                    </a>
+                  </nav>
+                </div>
+                <div>
+                  <div
+                    class="bm-cross-button"
+                    style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+                  >
+                    <button
+                      id="react-burger-cross-btn"
+                      style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Close Menu
+                    </button>
+                    <img
+                      alt="Close Menu"
+                      class="bm-cross"
+                      data-test="close-menu"
+                      src="test-file-stub"
+                      srcset="test-file-stub"
+                      style="width: 100%; height: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            className="cart_desc_label"
-            data-test="cart-desc-label"
+            class="header_label"
           >
-            Description
+            <div
+              class="app_logo"
+            >
+              Swag Labs
+            </div>
           </div>
-          <withRouter(CartItem)
-            item={
-              Object {
-                "desc": "Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.",
-                "id": 1,
-                "image_url": "bolt-shirt-1200x1500.jpg",
-                "name": "Sauce Labs Bolt T-Shirt",
-                "price": 15.99,
-              }
-            }
-            key="0"
-          />
-          <withRouter(CartItem)
-            item={
-              Object {
-                "desc": "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.",
-                "id": 2,
-                "image_url": "red-onesie-1200x1500.jpg",
-                "name": "Sauce Labs Onesie",
-                "price": 7.99,
-              }
-            }
-            key="1"
-          />
-          <withRouter(CartItem)
-            item={
-              Object {
-                "desc": "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.",
-                "id": 3,
-                "image_url": "red-tatt-1200x1500.jpg",
-                "name": "Test.allTheThings() T-Shirt (Red)",
-                "price": 15.99,
-              }
-            }
-            key="2"
-          />
+          <div
+            class="shopping_cart_container"
+            id="shopping_cart_container"
+          >
+            <a
+              class="shopping_cart_link"
+              data-test="shopping-cart-link"
+            >
+              <span
+                class="shopping_cart_badge"
+                data-test="shopping-cart-badge"
+              >
+                3
+              </span>
+            </a>
+          </div>
         </div>
         <div
-          className="summary_info"
+          class="header_secondary_container"
+          data-test="secondary-header"
         >
-          <div
-            className="summary_info_label"
-            data-test="payment-info-label"
+          <span
+            class="title"
+            data-test="title"
           >
-            Payment Information:
+            Checkout: Overview
+          </span>
+        </div>
+      </div>
+      <div
+        class="checkout_summary_container"
+        data-test="checkout-summary-container"
+        id="checkout_summary_container"
+      >
+        <div>
+          <div
+            class="cart_list"
+            data-test="cart-list"
+          >
+            <div
+              class="cart_quantity_label"
+              data-test="cart-quantity-label"
+            >
+              QTY
+            </div>
+            <div
+              class="cart_desc_label"
+              data-test="cart-desc-label"
+            >
+              Description
+            </div>
+            <div
+              class="cart_item"
+              data-test="inventory-item"
+            >
+              <div
+                class="cart_quantity"
+                data-test="item-quantity"
+              >
+                1
+              </div>
+              <div
+                class="cart_item_label"
+              >
+                <a
+                  data-test="item-1-title-link"
+                  href="#"
+                  id="item_1_title_link"
+                >
+                  <div
+                    class="inventory_item_name"
+                    data-test="inventory-item-name"
+                  >
+                    Sauce Labs Bolt T-Shirt
+                  </div>
+                </a>
+                <div
+                  class="inventory_item_desc"
+                  data-test="inventory-item-desc"
+                >
+                  Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+                </div>
+                <div
+                  class="item_pricebar"
+                >
+                  <div
+                    class="inventory_item_price"
+                    data-test="inventory-item-price"
+                  >
+                    $15.99
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="cart_item"
+              data-test="inventory-item"
+            >
+              <div
+                class="cart_quantity"
+                data-test="item-quantity"
+              >
+                1
+              </div>
+              <div
+                class="cart_item_label"
+              >
+                <a
+                  data-test="item-2-title-link"
+                  href="#"
+                  id="item_2_title_link"
+                >
+                  <div
+                    class="inventory_item_name"
+                    data-test="inventory-item-name"
+                  >
+                    Sauce Labs Onesie
+                  </div>
+                </a>
+                <div
+                  class="inventory_item_desc"
+                  data-test="inventory-item-desc"
+                >
+                  Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+                </div>
+                <div
+                  class="item_pricebar"
+                >
+                  <div
+                    class="inventory_item_price"
+                    data-test="inventory-item-price"
+                  >
+                    $7.99
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="cart_item"
+              data-test="inventory-item"
+            >
+              <div
+                class="cart_quantity"
+                data-test="item-quantity"
+              >
+                1
+              </div>
+              <div
+                class="cart_item_label"
+              >
+                <a
+                  data-test="item-3-title-link"
+                  href="#"
+                  id="item_3_title_link"
+                >
+                  <div
+                    class="inventory_item_name"
+                    data-test="inventory-item-name"
+                  >
+                    Test.allTheThings() T-Shirt (Red)
+                  </div>
+                </a>
+                <div
+                  class="inventory_item_desc"
+                  data-test="inventory-item-desc"
+                >
+                  This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+                </div>
+                <div
+                  class="item_pricebar"
+                >
+                  <div
+                    class="inventory_item_price"
+                    data-test="inventory-item-price"
+                  >
+                    $15.99
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            className="summary_value_label"
-            data-test="payment-info-value"
+            class="summary_info"
           >
-            SauceCard #31337
-          </div>
-          <div
-            className="summary_info_label"
-            data-test="shipping-info-label"
-          >
-            Shipping Information:
-          </div>
-          <div
-            className="summary_value_label"
-            data-test="shipping-info-value"
-          >
-            Free Pony Express Delivery!
-          </div>
-          <div
-            className="summary_info_label"
-            data-test="total-info-label"
-          >
-            Price Total
-          </div>
-          <div
-            className="summary_subtotal_label"
-            data-test="subtotal-label"
-          >
-            Item total: $
-            79.94
-          </div>
-          <div
-            className="summary_tax_label"
-            data-test="tax-label"
-          >
-            Tax: $
-            6.40
-          </div>
-          <div
-            className="summary_total_label"
-            data-test="total-label"
-          >
-            Total: $
-            86.34
-          </div>
-          <div
-            className="cart_footer"
-          >
-            <Button
-              customClass="cart_cancel_link"
-              label="Cancel"
-              onClick={[Function]}
-              size="medium"
-              testId="cancel"
-              type="secondary back"
-            />
-            <Button
-              customClass="cart_button"
-              label="Finish"
-              onClick={[Function]}
-              size="medium"
-              testId="finish"
-              type="action"
-            />
+            <div
+              class="summary_info_label"
+              data-test="payment-info-label"
+            >
+              Payment Information:
+            </div>
+            <div
+              class="summary_value_label"
+              data-test="payment-info-value"
+            >
+              SauceCard #31337
+            </div>
+            <div
+              class="summary_info_label"
+              data-test="shipping-info-label"
+            >
+              Shipping Information:
+            </div>
+            <div
+              class="summary_value_label"
+              data-test="shipping-info-value"
+            >
+              Free Pony Express Delivery!
+            </div>
+            <div
+              class="summary_info_label"
+              data-test="total-info-label"
+            >
+              Price Total
+            </div>
+            <div
+              class="summary_subtotal_label"
+              data-test="subtotal-label"
+            >
+              Item total: $79.94
+            </div>
+            <div
+              class="summary_tax_label"
+              data-test="tax-label"
+            >
+              Tax: $6.40
+            </div>
+            <div
+              class="summary_total_label"
+              data-test="total-label"
+            >
+              Total: $86.34
+            </div>
+            <div
+              class="cart_footer"
+            >
+              <button
+                class="btn btn_secondary back btn_medium cart_cancel_link"
+                data-test="cancel"
+                id="cancel"
+                name="cancel"
+              >
+                <img
+                  alt="Go back"
+                  class="back-image"
+                  src="test-file-stub"
+                />
+                Cancel
+              </button>
+              <button
+                class="btn btn_action btn_medium cart_button"
+                data-test="finish"
+                id="finish"
+                name="finish"
+              >
+                Finish
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer
+      class="footer"
+      data-test="footer"
+    >
+      <ul
+        class="social"
+      >
+        <li
+          class="social_twitter"
+        >
+          <a
+            data-test="social-twitter"
+            href="https://twitter.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </li>
+        <li
+          class="social_facebook"
+        >
+          <a
+            data-test="social-facebook"
+            href="https://www.facebook.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          class="social_linkedin"
+        >
+          <a
+            data-test="social-linkedin"
+            href="https://www.linkedin.com/company/sauce-labs/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div
+        class="footer_copy"
+        data-test="footer-copy"
+      >
+        © 2026 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+      </div>
+    </footer>
   </div>
-  <SwagLabsFooter />
-</div>
+</DocumentFragment>
 `;
 
 exports[`CheckOutStepTwo should render correctly items 1`] = `
-<div
-  className="page_wrapper"
-  id="page_wrapper"
->
+<DocumentFragment>
   <div
-    id="contents_wrapper"
+    class="page_wrapper"
+    id="page_wrapper"
   >
-    <HeaderContainer
-      secondaryTitle="Checkout: Overview"
-    />
     <div
-      className="checkout_summary_container"
-      data-test="checkout-summary-container"
-      id="checkout_summary_container"
+      id="contents_wrapper"
     >
-      <div>
+      <div
+        class="header_container"
+        data-test="header-container"
+        id="header_container"
+      >
         <div
-          className="cart_list"
-          data-test="cart-list"
+          class="primary_header"
+          data-test="primary-header"
         >
           <div
-            className="cart_quantity_label"
-            data-test="cart-quantity-label"
+            id="menu_button_container"
           >
-            QTY
+            <div>
+              <div>
+                <div
+                  class="bm-burger-button"
+                  style="z-index: 1000;"
+                >
+                  <button
+                    id="react-burger-menu-btn"
+                    style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                    type="button"
+                  >
+                    Open Menu
+                  </button>
+                  <img
+                    alt="Open Menu"
+                    class="bm-icon"
+                    data-test="open-menu"
+                    src="test-file-stub"
+                    srcset="test-file-stub"
+                    style="width: 100%; height: 100%;"
+                  />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="bm-menu-wrap"
+                id=""
+                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+              >
+                <div
+                  class="bm-menu"
+                  style="height: 100%; box-sizing: border-box; overflow: auto;"
+                >
+                  <nav
+                    class="bm-item-list"
+                    style="height: 100%;"
+                  >
+                    <a
+                      class="bm-item menu-item"
+                      data-test="inventory-sidebar-link"
+                      href="#"
+                      id="inventory_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      All Items
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="about-sidebar-link"
+                      href="https://saucelabs.com/"
+                      id="about_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      About
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="logout-sidebar-link"
+                      href="#"
+                      id="logout_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Logout
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="reset-sidebar-link"
+                      href="#"
+                      id="reset_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Reset App State
+                    </a>
+                  </nav>
+                </div>
+                <div>
+                  <div
+                    class="bm-cross-button"
+                    style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+                  >
+                    <button
+                      id="react-burger-cross-btn"
+                      style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Close Menu
+                    </button>
+                    <img
+                      alt="Close Menu"
+                      class="bm-cross"
+                      data-test="close-menu"
+                      src="test-file-stub"
+                      srcset="test-file-stub"
+                      style="width: 100%; height: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            className="cart_desc_label"
-            data-test="cart-desc-label"
+            class="header_label"
           >
-            Description
+            <div
+              class="app_logo"
+            >
+              Swag Labs
+            </div>
           </div>
-          <withRouter(CartItem)
-            item={
-              Object {
-                "desc": "Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.",
-                "id": 1,
-                "image_url": "bolt-shirt-1200x1500.jpg",
-                "name": "Sauce Labs Bolt T-Shirt",
-                "price": 15.99,
-              }
-            }
-            key="0"
-          />
-          <withRouter(CartItem)
-            item={
-              Object {
-                "desc": "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.",
-                "id": 2,
-                "image_url": "red-onesie-1200x1500.jpg",
-                "name": "Sauce Labs Onesie",
-                "price": 7.99,
-              }
-            }
-            key="1"
-          />
-          <withRouter(CartItem)
-            item={
-              Object {
-                "desc": "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.",
-                "id": 3,
-                "image_url": "red-tatt-1200x1500.jpg",
-                "name": "Test.allTheThings() T-Shirt (Red)",
-                "price": 15.99,
-              }
-            }
-            key="2"
-          />
+          <div
+            class="shopping_cart_container"
+            id="shopping_cart_container"
+          >
+            <a
+              class="shopping_cart_link"
+              data-test="shopping-cart-link"
+            >
+              <span
+                class="shopping_cart_badge"
+                data-test="shopping-cart-badge"
+              >
+                3
+              </span>
+            </a>
+          </div>
         </div>
         <div
-          className="summary_info"
+          class="header_secondary_container"
+          data-test="secondary-header"
         >
-          <div
-            className="summary_info_label"
-            data-test="payment-info-label"
+          <span
+            class="title"
+            data-test="title"
           >
-            Payment Information:
+            Checkout: Overview
+          </span>
+        </div>
+      </div>
+      <div
+        class="checkout_summary_container"
+        data-test="checkout-summary-container"
+        id="checkout_summary_container"
+      >
+        <div>
+          <div
+            class="cart_list"
+            data-test="cart-list"
+          >
+            <div
+              class="cart_quantity_label"
+              data-test="cart-quantity-label"
+            >
+              QTY
+            </div>
+            <div
+              class="cart_desc_label"
+              data-test="cart-desc-label"
+            >
+              Description
+            </div>
+            <div
+              class="cart_item"
+              data-test="inventory-item"
+            >
+              <div
+                class="cart_quantity"
+                data-test="item-quantity"
+              >
+                1
+              </div>
+              <div
+                class="cart_item_label"
+              >
+                <a
+                  data-test="item-1-title-link"
+                  href="#"
+                  id="item_1_title_link"
+                >
+                  <div
+                    class="inventory_item_name"
+                    data-test="inventory-item-name"
+                  >
+                    Sauce Labs Bolt T-Shirt
+                  </div>
+                </a>
+                <div
+                  class="inventory_item_desc"
+                  data-test="inventory-item-desc"
+                >
+                  Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.
+                </div>
+                <div
+                  class="item_pricebar"
+                >
+                  <div
+                    class="inventory_item_price"
+                    data-test="inventory-item-price"
+                  >
+                    $15.99
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="cart_item"
+              data-test="inventory-item"
+            >
+              <div
+                class="cart_quantity"
+                data-test="item-quantity"
+              >
+                1
+              </div>
+              <div
+                class="cart_item_label"
+              >
+                <a
+                  data-test="item-2-title-link"
+                  href="#"
+                  id="item_2_title_link"
+                >
+                  <div
+                    class="inventory_item_name"
+                    data-test="inventory-item-name"
+                  >
+                    Sauce Labs Onesie
+                  </div>
+                </a>
+                <div
+                  class="inventory_item_desc"
+                  data-test="inventory-item-desc"
+                >
+                  Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.
+                </div>
+                <div
+                  class="item_pricebar"
+                >
+                  <div
+                    class="inventory_item_price"
+                    data-test="inventory-item-price"
+                  >
+                    $7.99
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="cart_item"
+              data-test="inventory-item"
+            >
+              <div
+                class="cart_quantity"
+                data-test="item-quantity"
+              >
+                1
+              </div>
+              <div
+                class="cart_item_label"
+              >
+                <a
+                  data-test="item-3-title-link"
+                  href="#"
+                  id="item_3_title_link"
+                >
+                  <div
+                    class="inventory_item_name"
+                    data-test="inventory-item-name"
+                  >
+                    Test.allTheThings() T-Shirt (Red)
+                  </div>
+                </a>
+                <div
+                  class="inventory_item_desc"
+                  data-test="inventory-item-desc"
+                >
+                  This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.
+                </div>
+                <div
+                  class="item_pricebar"
+                >
+                  <div
+                    class="inventory_item_price"
+                    data-test="inventory-item-price"
+                  >
+                    $15.99
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            className="summary_value_label"
-            data-test="payment-info-value"
+            class="summary_info"
           >
-            SauceCard #31337
-          </div>
-          <div
-            className="summary_info_label"
-            data-test="shipping-info-label"
-          >
-            Shipping Information:
-          </div>
-          <div
-            className="summary_value_label"
-            data-test="shipping-info-value"
-          >
-            Free Pony Express Delivery!
-          </div>
-          <div
-            className="summary_info_label"
-            data-test="total-info-label"
-          >
-            Price Total
-          </div>
-          <div
-            className="summary_subtotal_label"
-            data-test="subtotal-label"
-          >
-            Item total: $
-            39.97
-          </div>
-          <div
-            className="summary_tax_label"
-            data-test="tax-label"
-          >
-            Tax: $
-            3.20
-          </div>
-          <div
-            className="summary_total_label"
-            data-test="total-label"
-          >
-            Total: $
-            43.17
-          </div>
-          <div
-            className="cart_footer"
-          >
-            <Button
-              customClass="cart_cancel_link"
-              label="Cancel"
-              onClick={[Function]}
-              size="medium"
-              testId="cancel"
-              type="secondary back"
-            />
-            <Button
-              customClass="cart_button"
-              label="Finish"
-              onClick={[Function]}
-              size="medium"
-              testId="finish"
-              type="action"
-            />
+            <div
+              class="summary_info_label"
+              data-test="payment-info-label"
+            >
+              Payment Information:
+            </div>
+            <div
+              class="summary_value_label"
+              data-test="payment-info-value"
+            >
+              SauceCard #31337
+            </div>
+            <div
+              class="summary_info_label"
+              data-test="shipping-info-label"
+            >
+              Shipping Information:
+            </div>
+            <div
+              class="summary_value_label"
+              data-test="shipping-info-value"
+            >
+              Free Pony Express Delivery!
+            </div>
+            <div
+              class="summary_info_label"
+              data-test="total-info-label"
+            >
+              Price Total
+            </div>
+            <div
+              class="summary_subtotal_label"
+              data-test="subtotal-label"
+            >
+              Item total: $39.97
+            </div>
+            <div
+              class="summary_tax_label"
+              data-test="tax-label"
+            >
+              Tax: $3.20
+            </div>
+            <div
+              class="summary_total_label"
+              data-test="total-label"
+            >
+              Total: $43.17
+            </div>
+            <div
+              class="cart_footer"
+            >
+              <button
+                class="btn btn_secondary back btn_medium cart_cancel_link"
+                data-test="cancel"
+                id="cancel"
+                name="cancel"
+              >
+                <img
+                  alt="Go back"
+                  class="back-image"
+                  src="test-file-stub"
+                />
+                Cancel
+              </button>
+              <button
+                class="btn btn_action btn_medium cart_button"
+                data-test="finish"
+                id="finish"
+                name="finish"
+              >
+                Finish
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer
+      class="footer"
+      data-test="footer"
+    >
+      <ul
+        class="social"
+      >
+        <li
+          class="social_twitter"
+        >
+          <a
+            data-test="social-twitter"
+            href="https://twitter.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </li>
+        <li
+          class="social_facebook"
+        >
+          <a
+            data-test="social-facebook"
+            href="https://www.facebook.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          class="social_linkedin"
+        >
+          <a
+            data-test="social-linkedin"
+            href="https://www.linkedin.com/company/sauce-labs/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div
+        class="footer_copy"
+        data-test="footer-copy"
+      >
+        © 2026 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+      </div>
+    </footer>
   </div>
-  <SwagLabsFooter />
-</div>
+</DocumentFragment>
 `;
 
 exports[`CheckOutStepTwo should render correctly without any items 1`] = `
-<div
-  className="page_wrapper"
-  id="page_wrapper"
->
+<DocumentFragment>
   <div
-    id="contents_wrapper"
+    class="page_wrapper"
+    id="page_wrapper"
   >
-    <HeaderContainer
-      secondaryTitle="Checkout: Overview"
-    />
     <div
-      className="checkout_summary_container"
-      data-test="checkout-summary-container"
-      id="checkout_summary_container"
+      id="contents_wrapper"
     >
-      <div>
+      <div
+        class="header_container"
+        data-test="header-container"
+        id="header_container"
+      >
         <div
-          className="cart_list"
-          data-test="cart-list"
+          class="primary_header"
+          data-test="primary-header"
         >
           <div
-            className="cart_quantity_label"
-            data-test="cart-quantity-label"
+            id="menu_button_container"
           >
-            QTY
+            <div>
+              <div>
+                <div
+                  class="bm-burger-button"
+                  style="z-index: 1000;"
+                >
+                  <button
+                    id="react-burger-menu-btn"
+                    style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                    type="button"
+                  >
+                    Open Menu
+                  </button>
+                  <img
+                    alt="Open Menu"
+                    class="bm-icon"
+                    data-test="open-menu"
+                    src="test-file-stub"
+                    srcset="test-file-stub"
+                    style="width: 100%; height: 100%;"
+                  />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="bm-menu-wrap"
+                id=""
+                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+              >
+                <div
+                  class="bm-menu"
+                  style="height: 100%; box-sizing: border-box; overflow: auto;"
+                >
+                  <nav
+                    class="bm-item-list"
+                    style="height: 100%;"
+                  >
+                    <a
+                      class="bm-item menu-item"
+                      data-test="inventory-sidebar-link"
+                      href="#"
+                      id="inventory_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      All Items
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="about-sidebar-link"
+                      href="https://saucelabs.com/"
+                      id="about_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      About
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="logout-sidebar-link"
+                      href="#"
+                      id="logout_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Logout
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="reset-sidebar-link"
+                      href="#"
+                      id="reset_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Reset App State
+                    </a>
+                  </nav>
+                </div>
+                <div>
+                  <div
+                    class="bm-cross-button"
+                    style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+                  >
+                    <button
+                      id="react-burger-cross-btn"
+                      style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Close Menu
+                    </button>
+                    <img
+                      alt="Close Menu"
+                      class="bm-cross"
+                      data-test="close-menu"
+                      src="test-file-stub"
+                      srcset="test-file-stub"
+                      style="width: 100%; height: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            className="cart_desc_label"
-            data-test="cart-desc-label"
+            class="header_label"
           >
-            Description
+            <div
+              class="app_logo"
+            >
+              Swag Labs
+            </div>
+          </div>
+          <div
+            class="shopping_cart_container"
+            id="shopping_cart_container"
+          >
+            <a
+              class="shopping_cart_link"
+              data-test="shopping-cart-link"
+            />
           </div>
         </div>
         <div
-          className="summary_info"
+          class="header_secondary_container"
+          data-test="secondary-header"
         >
-          <div
-            className="summary_info_label"
-            data-test="payment-info-label"
+          <span
+            class="title"
+            data-test="title"
           >
-            Payment Information:
+            Checkout: Overview
+          </span>
+        </div>
+      </div>
+      <div
+        class="checkout_summary_container"
+        data-test="checkout-summary-container"
+        id="checkout_summary_container"
+      >
+        <div>
+          <div
+            class="cart_list"
+            data-test="cart-list"
+          >
+            <div
+              class="cart_quantity_label"
+              data-test="cart-quantity-label"
+            >
+              QTY
+            </div>
+            <div
+              class="cart_desc_label"
+              data-test="cart-desc-label"
+            >
+              Description
+            </div>
           </div>
           <div
-            className="summary_value_label"
-            data-test="payment-info-value"
+            class="summary_info"
           >
-            SauceCard #31337
-          </div>
-          <div
-            className="summary_info_label"
-            data-test="shipping-info-label"
-          >
-            Shipping Information:
-          </div>
-          <div
-            className="summary_value_label"
-            data-test="shipping-info-value"
-          >
-            Free Pony Express Delivery!
-          </div>
-          <div
-            className="summary_info_label"
-            data-test="total-info-label"
-          >
-            Price Total
-          </div>
-          <div
-            className="summary_subtotal_label"
-            data-test="subtotal-label"
-          >
-            Item total: $
-            0
-          </div>
-          <div
-            className="summary_tax_label"
-            data-test="tax-label"
-          >
-            Tax: $
-            0.00
-          </div>
-          <div
-            className="summary_total_label"
-            data-test="total-label"
-          >
-            Total: $
-            0.00
-          </div>
-          <div
-            className="cart_footer"
-          >
-            <Button
-              customClass="cart_cancel_link"
-              label="Cancel"
-              onClick={[Function]}
-              size="medium"
-              testId="cancel"
-              type="secondary back"
-            />
-            <Button
-              customClass="cart_button"
-              label="Finish"
-              onClick={[Function]}
-              size="medium"
-              testId="finish"
-              type="action"
-            />
+            <div
+              class="summary_info_label"
+              data-test="payment-info-label"
+            >
+              Payment Information:
+            </div>
+            <div
+              class="summary_value_label"
+              data-test="payment-info-value"
+            >
+              SauceCard #31337
+            </div>
+            <div
+              class="summary_info_label"
+              data-test="shipping-info-label"
+            >
+              Shipping Information:
+            </div>
+            <div
+              class="summary_value_label"
+              data-test="shipping-info-value"
+            >
+              Free Pony Express Delivery!
+            </div>
+            <div
+              class="summary_info_label"
+              data-test="total-info-label"
+            >
+              Price Total
+            </div>
+            <div
+              class="summary_subtotal_label"
+              data-test="subtotal-label"
+            >
+              Item total: $0
+            </div>
+            <div
+              class="summary_tax_label"
+              data-test="tax-label"
+            >
+              Tax: $0.00
+            </div>
+            <div
+              class="summary_total_label"
+              data-test="total-label"
+            >
+              Total: $0.00
+            </div>
+            <div
+              class="cart_footer"
+            >
+              <button
+                class="btn btn_secondary back btn_medium cart_cancel_link"
+                data-test="cancel"
+                id="cancel"
+                name="cancel"
+              >
+                <img
+                  alt="Go back"
+                  class="back-image"
+                  src="test-file-stub"
+                />
+                Cancel
+              </button>
+              <button
+                class="btn btn_action btn_medium cart_button"
+                data-test="finish"
+                id="finish"
+                name="finish"
+              >
+                Finish
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer
+      class="footer"
+      data-test="footer"
+    >
+      <ul
+        class="social"
+      >
+        <li
+          class="social_twitter"
+        >
+          <a
+            data-test="social-twitter"
+            href="https://twitter.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </li>
+        <li
+          class="social_facebook"
+        >
+          <a
+            data-test="social-facebook"
+            href="https://www.facebook.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          class="social_linkedin"
+        >
+          <a
+            data-test="social-linkedin"
+            href="https://www.linkedin.com/company/sauce-labs/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div
+        class="footer_copy"
+        data-test="footer-copy"
+      >
+        © 2026 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+      </div>
+    </footer>
   </div>
-  <SwagLabsFooter />
-</div>
+</DocumentFragment>
 `;
