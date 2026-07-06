@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import Login from "../Login";
 import * as Credentials from "../../utils/Credentials";
 
-jest.mock("@backtrace-labs/react", () => ({
+jest.mock("@backtrace/react", () => ({
   BacktraceClient: { instance: { send: jest.fn() } },
 }));
 

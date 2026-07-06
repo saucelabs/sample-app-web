@@ -1,4 +1,4 @@
-import { BacktraceClient, ErrorBoundary } from "@backtrace-labs/react";
+import { BacktraceClient, ErrorBoundary } from "@backtrace/react";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";

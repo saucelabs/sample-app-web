@@ -9,5 +9,5 @@ module.exports = {
         }],
         ['@babel/preset-react', { runtime: 'automatic' }],
     ],
-    plugins: ['@babel/plugin-proposal-private-methods'],
+    plugins: ['@babel/plugin-transform-private-methods'],
 };
