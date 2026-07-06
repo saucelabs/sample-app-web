@@ -1,11 +1,14 @@
 // Polyfill for webpack's require.context used by some components (tests run in Node)
 // This must run before any modules that expect require.context are imported.
-if (typeof require.context === 'undefined' || typeof (global && global.require && global.require.context) === 'undefined') {
+if (
+  typeof require.context === "undefined" ||
+  typeof (global && global.require && global.require.context) === "undefined"
+) {
   /* eslint-disable global-require, consistent-return */
-  const path = require('path');
-  const fs = require('fs');
+  const path = require("path");
+  const fs = require("fs");
 
-  const makeContext = (base = '.', scanSubdirs = false, regExp = /.*/) => {
+  const makeContext = (base = ".", scanSubdirs = false, regExp = /.*/) => {
     const absoluteBase = path.resolve(__dirname, base);
     const modules = {};
 
@@ -18,7 +21,7 @@ if (typeof require.context === 'undefined' || typeof (global && global.require &
             if (scanSubdirs) walk(fullPath);
             return;
           }
-          const relPath = `./${path.relative(absoluteBase, fullPath).replace(/\\/g, '/')}`;
+          const relPath = `./${path.relative(absoluteBase, fullPath).replace(/\\/g, "/")}`;
           if (!regExp || regExp.test(relPath)) {
             // We'll return a simple module-like object with a `default` property
             // that points to the relative path. Tests only need a truthy src.
@@ -45,8 +48,8 @@ if (typeof require.context === 'undefined' || typeof (global && global.require &
     // ignore
   }
   try {
-    if (typeof global !== 'undefined') {
-      if (typeof global.require === 'undefined') global.require = require;
+    if (typeof global !== "undefined") {
+      if (typeof global.require === "undefined") global.require = require;
       global.require.context = makeContext;
     }
   } catch (e) {
@@ -63,10 +66,7 @@ if (typeof require.context === 'undefined' || typeof (global && global.require &
 require('./jest.setupTextEncoder.js');
 
 require('@testing-library/jest-dom');
-const { configure } = require('enzyme');
-const Adapter = require('@wojtekmaj/enzyme-adapter-react-17');
 
-// Register enzyme-to-json serializer after polyfill
-expect.addSnapshotSerializer(require('enzyme-to-json/serializer'));
-
-configure({ adapter: new Adapter() });
+// Configure RTL to use the project's data-test attribute convention
+const { configure } = require('@testing-library/react');
+configure({ testIdAttribute: 'data-test' });

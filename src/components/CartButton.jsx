@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../utils/withRouter";
 import PropTypes from "prop-types";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { ROUTES } from "../utils/Constants";
@@ -9,7 +9,7 @@ const CartButton = (props) => {
   const { history } = props;
   let cartBadge = "";
   const [cartContents, setCartContents] = useState(
-    ShoppingCart.getCartContents()
+    ShoppingCart.getCartContents(),
   );
   // Strangely enough this is being called, but not covered in the report
   /* istanbul ignore next */

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../utils/withRouter";
 import { isProblemUser, isErrorUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import { ShoppingCart } from "../utils/shopping-cart";
@@ -46,7 +46,7 @@ const InventoryItem = (props) => {
   const imgSrc = getImage(item.image_url);
 
   const [itemInCart, setItemInCart] = useState(
-    ShoppingCart.isItemInCart(inventoryId)
+    ShoppingCart.isItemInCart(inventoryId),
   );
   /**
    * @TODO:

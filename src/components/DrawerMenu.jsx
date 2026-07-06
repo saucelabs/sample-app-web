@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../utils/withRouter";
 import PropTypes from "prop-types";
 import { slide as Menu } from "react-burger-menu";
 import { ShoppingCart } from "../utils/shopping-cart";

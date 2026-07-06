@@ -1,88 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select should render with a testID 1`] = `
-<span
-  className="select_container"
->
+<DocumentFragment>
   <span
-    className="active_option"
-    data-test="active-option"
+    class="select_container"
   >
-    Name (A to Z)
-  </span>
-  <select
-    className="product_sort_container"
-    data-test="foo"
-    onChange={[MockFunction]}
-    value="az"
-  >
-    <option
-      key="az"
-      value="az"
+    <span
+      class="active_option"
+      data-test="active-option"
     >
       Name (A to Z)
-    </option>
-    <option
-      key="za"
-      value="za"
+    </span>
+    <select
+      class="product_sort_container"
+      data-test="foo"
     >
-      Name (Z to A)
-    </option>
-    <option
-      key="lohi"
-      value="lohi"
-    >
-      Price (low to high)
-    </option>
-    <option
-      key="hilo"
-      value="hilo"
-    >
-      Price (high to low)
-    </option>
-  </select>
-</span>
+      <option
+        value="az"
+      >
+        Name (A to Z)
+      </option>
+      <option
+        value="za"
+      >
+        Name (Z to A)
+      </option>
+      <option
+        value="lohi"
+      >
+        Price (low to high)
+      </option>
+      <option
+        value="hilo"
+      >
+        Price (high to low)
+      </option>
+    </select>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`Select should render with default props 1`] = `
-<span
-  className="select_container"
->
+<DocumentFragment>
   <span
-    className="active_option"
-    data-test="active-option"
+    class="select_container"
   >
-    Name (A to Z)
-  </span>
-  <select
-    className="product_sort_container"
-    onChange={[MockFunction]}
-    value="az"
-  >
-    <option
-      key="az"
-      value="az"
+    <span
+      class="active_option"
+      data-test="active-option"
     >
       Name (A to Z)
-    </option>
-    <option
-      key="za"
-      value="za"
+    </span>
+    <select
+      class="product_sort_container"
     >
-      Name (Z to A)
-    </option>
-    <option
-      key="lohi"
-      value="lohi"
-    >
-      Price (low to high)
-    </option>
-    <option
-      key="hilo"
-      value="hilo"
-    >
-      Price (high to low)
-    </option>
-  </select>
-</span>
+      <option
+        value="az"
+      >
+        Name (A to Z)
+      </option>
+      <option
+        value="za"
+      >
+        Name (Z to A)
+      </option>
+      <option
+        value="lohi"
+      >
+        Price (low to high)
+      </option>
+      <option
+        value="hilo"
+      >
+        Price (high to low)
+      </option>
+    </select>
+  </span>
+</DocumentFragment>
 `;

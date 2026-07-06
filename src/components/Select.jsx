@@ -46,7 +46,7 @@ Select.propTypes = {
     PropTypes.shape({
       key: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   /**
    * The test id

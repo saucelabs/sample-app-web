@@ -1,26 +1,22 @@
-import { shallow } from "enzyme";
-import React, { useState as useStateMock } from "react";
+import React from "react";
+import { render, fireEvent, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import * as Credentials from "../../utils/Credentials";
 import CheckOutStepOne from "../CheckOutStepOne";
 
-jest.mock("react", () => ({
-  ...jest.requireActual("react"),
-  useState: jest.fn(),
-  useEffect: (f) => f(),
-}));
-
 let props;
 
-describe("CheckOutStepOne", () => {
-  const setState = jest.fn();
+function renderCheckout() {
+  return render(
+    <MemoryRouter>
+      <CheckOutStepOne.WrappedComponent {...props} />
+    </MemoryRouter>,
+  );
+}
 
+describe("CheckOutStepOne", () => {
   beforeEach(() => {
-    props = {
-      history: {
-        push: jest.fn(),
-      },
-    };
-    useStateMock.mockImplementation((init) => [init, setState]);
+    props = { history: { push: jest.fn() } };
   });
 
   afterEach(() => {
@@ -28,172 +24,105 @@ describe("CheckOutStepOne", () => {
   });
 
   it("should render correctly", () => {
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = renderCheckout();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should be able to dismiss the error", () => {
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const ErrorMessage = wrapper.find("ErrorMessage");
-
-    ErrorMessage.at(0).simulate("click");
-
-    expect(setState).toHaveBeenCalledWith("");
+    const { getByTestId } = renderCheckout();
+    // Trigger error first by submitting empty form
+    fireEvent.submit(getByTestId("continue"));
+    expect(screen.getByTestId("error")).toBeInTheDocument();
+    // Dismiss it
+    fireEvent.click(getByTestId("error-button"));
+    expect(screen.queryByTestId("error")).not.toBeInTheDocument();
   });
 
   it("should update the first name state when data is typed in the first name field", () => {
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    const value = "first name";
-
-    InputErrors.at(0).simulate("change", { target: { value } });
-
-    expect(setState).toHaveBeenCalledWith(value);
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("firstName"), { target: { value: "John" } });
+    expect(getByTestId("firstName").value).toBe("John");
   });
 
   it("should update the last name state when data is typed in the last name field", () => {
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    const value = "last name";
-
-    InputErrors.at(1).simulate("change", { target: { value } });
-
-    expect(setState).toHaveBeenCalledWith(value);
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
+    expect(getByTestId("lastName").value).toBe("Smith");
   });
 
   it("should update the last name state when data is typed in the last name field for a problem user", () => {
     const isProblemUserSpy = jest.spyOn(Credentials, "isProblemUser");
-    isProblemUserSpy.mockReturnValueOnce(true);
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    const value = "last name";
-
-    InputErrors.at(1).simulate("change", { target: { value } });
-
-    expect(isProblemUserSpy).toHaveBeenCalledTimes(1);
-    expect(setState).toHaveBeenCalledWith(value);
+    isProblemUserSpy.mockReturnValue(true);
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
+    // problem user: last name change sets first name instead
+    expect(getByTestId("firstName").value).toBe("Smith");
+    isProblemUserSpy.mockClear();
   });
 
   it("should throw an error when data is typed in the last name field for an error user", () => {
     const isErrorUserSpy = jest.spyOn(Credentials, "isErrorUser");
-    isErrorUserSpy.mockReturnValueOnce(true);
-
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    const value = "last name";
-
-    expect(() =>
-      InputErrors.at(1).simulate("change", { target: { value } })
-    ).toThrow(expect.any(TypeError));
-
-    expect(isErrorUserSpy).toHaveBeenCalledTimes(1);
+    isErrorUserSpy.mockReturnValue(true);
+    const consoleError = jest.spyOn(console, "error").mockImplementation(() => {});
+    // React 17 re-throws event-handler errors via a window "error" event.
+    // Intercept it to prevent jest from failing the test.
+    let capturedError;
+    const windowErrorHandler = (event) => {
+      capturedError = event.error;
+      event.preventDefault();
+    };
+    window.addEventListener("error", windowErrorHandler);
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
+    window.removeEventListener("error", windowErrorHandler);
+    expect(capturedError).toBeInstanceOf(TypeError);
+    expect(isErrorUserSpy).toHaveBeenCalled();
+    consoleError.mockRestore();
+    isErrorUserSpy.mockClear();
   });
 
   it("should update the zip code state when data is typed in the zip code field", () => {
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    const value = "zip code";
-
-    InputErrors.at(2).simulate("change", { target: { value } });
-
-    expect(setState).toHaveBeenCalledWith(value);
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("postalCode"), { target: { value: "12345" } });
+    expect(getByTestId("postalCode").value).toBe("12345");
   });
 
   it("should set the no first name state when the checkout button is being pressed", () => {
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const form = wrapper.find("form").at(0);
-    form.simulate("submit", {
-      preventDefault() {},
-    });
-
-    expect(setState).toHaveBeenCalledWith("First Name is required");
+    const { getByTestId } = renderCheckout();
+    fireEvent.submit(getByTestId("continue"));
+    expect(getByTestId("error")).toBeInTheDocument();
+    expect(screen.getByText(/First Name is required/i)).toBeInTheDocument();
   });
 
   it("should set the no last name state when the checkout button is being pressed", () => {
-    useStateMock
-      // first name useState
-      .mockImplementationOnce((stateValue) => [
-        (stateValue = "first name"),
-        setState,
-      ]);
-
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    InputErrors.at(0).simulate("change", { target: { value: "first name" } });
-    const form = wrapper.find("form").at(0);
-    form.simulate("submit", {
-      preventDefault() {},
-    });
-
-    expect(setState).toHaveBeenCalledTimes(2);
-    expect(setState).toHaveBeenNthCalledWith(2, "Last Name is required");
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("firstName"), { target: { value: "John" } });
+    fireEvent.submit(getByTestId("continue"));
+    expect(getByTestId("error")).toBeInTheDocument();
+    expect(screen.getByText(/Last Name is required/i)).toBeInTheDocument();
   });
 
   it("should set the no zip code state when the checkout button is being pressed", () => {
-    useStateMock
-      // first name useState
-      .mockImplementationOnce((stateValue) => [
-        (stateValue = "first name"),
-        setState,
-      ])
-      // last name useState
-      .mockImplementationOnce((stateValue) => [
-        (stateValue = "last name"),
-        setState,
-      ]);
-
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    InputErrors.at(0).simulate("change", { target: { value: "first name" } });
-    InputErrors.at(1).simulate("change", { target: { value: "last name" } });
-    const form = wrapper.find("form").at(0);
-    form.simulate("submit", {
-      preventDefault() {},
-    });
-
-    expect(setState).toHaveBeenCalledTimes(3);
-    expect(setState).toHaveBeenNthCalledWith(3, "Postal Code is required");
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("firstName"), { target: { value: "John" } });
+    fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
+    fireEvent.submit(getByTestId("continue"));
+    expect(getByTestId("error")).toBeInTheDocument();
+    expect(screen.getByText(/Postal Code is required/i)).toBeInTheDocument();
   });
 
   it("should redirect to the checkout when valid date is used", () => {
-    useStateMock
-      // first name useState
-      .mockImplementationOnce((stateValue) => [
-        (stateValue = "first name"),
-        setState,
-      ])
-      // last name useState
-      .mockImplementationOnce((stateValue) => [
-        (stateValue = "last name"),
-        setState,
-      ])
-      // zip code useState
-      .mockImplementationOnce((stateValue) => [
-        (stateValue = "zip code"),
-        setState,
-      ]);
-
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const InputErrors = wrapper.find("InputError");
-    InputErrors.at(0).simulate("change", { target: { value: "first name" } });
-    InputErrors.at(1).simulate("change", { target: { value: "last name" } });
-    InputErrors.at(2).simulate("change", { target: { value: "zip code" } });
-    const form = wrapper.find("form").at(0);
-    form.simulate("submit", {
-      preventDefault() {},
-    });
-
-    expect(setState).toHaveBeenCalledTimes(3);
+    const { getByTestId } = renderCheckout();
+    fireEvent.change(getByTestId("firstName"), { target: { value: "John" } });
+    fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
+    fireEvent.change(getByTestId("postalCode"), { target: { value: "12345" } });
+    fireEvent.submit(getByTestId("continue"));
     expect(props.history.push).toBeCalledWith("/checkout-step-two.html");
   });
 
   it("should redirect to the cart when the cancel button is clicked", () => {
-    const wrapper = shallow(<CheckOutStepOne.WrappedComponent {...props} />);
-    const backButton = wrapper.find("Button").at(0);
-    backButton.simulate("click", {
-      preventDefault() {},
-    });
-
+    const { getByTestId } = renderCheckout();
+    fireEvent.click(getByTestId("cancel"));
     expect(props.history.push).toBeCalledWith("/cart.html");
   });
 });

@@ -3,7 +3,9 @@
   min-height: 100vh;
 }
 .login_logo {
-  font-family: DM Mono, "sans-serif";
+  font-family:
+    DM Mono,
+    "sans-serif";
   font-size: 24px;
   line-height: 48px;
   text-align: center;
@@ -32,7 +34,9 @@
 }
 .login_credentials_wrap {
   color: #ffffff;
-  font-family: DM Mono, "sans-serif";
+  font-family:
+    DM Mono,
+    "sans-serif";
 }
 .form_column {
   float: none;

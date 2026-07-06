@@ -1,57 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer should render correctly 1`] = `
-<footer
-  className="footer"
-  data-test="footer"
->
-  <ul
-    className="social"
+<DocumentFragment>
+  <footer
+    class="footer"
+    data-test="footer"
   >
-    <li
-      className="social_twitter"
+    <ul
+      class="social"
     >
-      <a
-        data-test="social-twitter"
-        href="https://twitter.com/saucelabs"
-        rel="noreferrer"
-        target="_blank"
+      <li
+        class="social_twitter"
       >
-        Twitter
-      </a>
-    </li>
-    <li
-      className="social_facebook"
+        <a
+          data-test="social-twitter"
+          href="https://twitter.com/saucelabs"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Twitter
+        </a>
+      </li>
+      <li
+        class="social_facebook"
+      >
+        <a
+          data-test="social-facebook"
+          href="https://www.facebook.com/saucelabs"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Facebook
+        </a>
+      </li>
+      <li
+        class="social_linkedin"
+      >
+        <a
+          data-test="social-linkedin"
+          href="https://www.linkedin.com/company/sauce-labs/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+      </li>
+    </ul>
+    <div
+      class="footer_copy"
+      data-test="footer-copy"
     >
-      <a
-        data-test="social-facebook"
-        href="https://www.facebook.com/saucelabs"
-        rel="noreferrer"
-        target="_blank"
-      >
-        Facebook
-      </a>
-    </li>
-    <li
-      className="social_linkedin"
-    >
-      <a
-        data-test="social-linkedin"
-        href="https://www.linkedin.com/company/sauce-labs/"
-        rel="noreferrer"
-        target="_blank"
-      >
-        LinkedIn
-      </a>
-    </li>
-  </ul>
-  <div
-    className="footer_copy"
-    data-test="footer-copy"
-  >
-    © 
-    1234
-     Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
-  </div>
-</footer>
+      © 1234 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+    </div>
+  </footer>
+</DocumentFragment>
 `;

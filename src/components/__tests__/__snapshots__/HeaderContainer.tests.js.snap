@@ -1,133 +1,460 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderContainer should render for a visual user 1`] = `
-<div
-  className="header_container"
-  data-test="header-container"
-  id="header_container"
->
+<DocumentFragment>
   <div
-    className="primary_header"
-    data-test="primary-header"
+    class="header_container"
+    data-test="header-container"
+    id="header_container"
   >
     <div
-      id="menu_button_container"
-    >
-      <withRouter(DrawerMenu) />
-    </div>
-    <div
-      className="header_label"
+      class="primary_header"
+      data-test="primary-header"
     >
       <div
-        className="app_logo"
+        id="menu_button_container"
       >
-        Swag Labs
+        <div>
+          <div>
+            <div
+              class="bm-burger-button"
+              style="z-index: 1000;"
+            >
+              <button
+                id="react-burger-menu-btn"
+                style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                type="button"
+              >
+                Open Menu
+              </button>
+              <img
+                alt="Open Menu"
+                class="bm-icon visual_failure"
+                data-test="open-menu"
+                src="test-file-stub"
+                srcset="test-file-stub"
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="bm-menu-wrap"
+            id=""
+            style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+          >
+            <div
+              class="bm-menu"
+              style="height: 100%; box-sizing: border-box; overflow: auto;"
+            >
+              <nav
+                class="bm-item-list"
+                style="height: 100%;"
+              >
+                <a
+                  class="bm-item menu-item"
+                  data-test="inventory-sidebar-link"
+                  href="#"
+                  id="inventory_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  All Items
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="about-sidebar-link"
+                  href="https://saucelabs.com/"
+                  id="about_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  About
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="logout-sidebar-link"
+                  href="#"
+                  id="logout_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Logout
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="reset-sidebar-link"
+                  href="#"
+                  id="reset_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Reset App State
+                </a>
+              </nav>
+            </div>
+            <div>
+              <div
+                class="bm-cross-button"
+                style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+              >
+                <button
+                  id="react-burger-cross-btn"
+                  style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  Close Menu
+                </button>
+                <img
+                  alt="Close Menu"
+                  class="bm-cross visual_failure"
+                  data-test="close-menu"
+                  src="test-file-stub"
+                  srcset="test-file-stub"
+                  style="width: 100%; height: 100%;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="header_label"
+      >
+        <div
+          class="app_logo"
+        >
+          Swag Labs
+        </div>
+      </div>
+      <div
+        class="shopping_cart_container visual_failure"
+        id="shopping_cart_container"
+      >
+        <a
+          class="shopping_cart_link"
+          data-test="shopping-cart-link"
+        />
       </div>
     </div>
     <div
-      className="shopping_cart_container visual_failure"
-      id="shopping_cart_container"
-    >
-      <withRouter(CartButton) />
-    </div>
+      class="header_secondary_container"
+      data-test="secondary-header"
+    />
   </div>
-  <div
-    className="header_secondary_container"
-    data-test="secondary-header"
-  />
-</div>
+</DocumentFragment>
 `;
 
 exports[`HeaderContainer should render with all props 1`] = `
-<div
-  className="header_container custom_class"
-  data-test="header-container"
-  id="header_container"
->
+<DocumentFragment>
   <div
-    className="primary_header"
-    data-test="primary-header"
+    class="header_container custom_class"
+    data-test="header-container"
+    id="header_container"
   >
     <div
-      id="menu_button_container"
-    >
-      <withRouter(DrawerMenu) />
-    </div>
-    <div
-      className="header_label"
+      class="primary_header"
+      data-test="primary-header"
     >
       <div
-        className="app_logo"
+        id="menu_button_container"
       >
-        Swag Labs
+        <div>
+          <div>
+            <div
+              class="bm-burger-button"
+              style="z-index: 1000;"
+            >
+              <button
+                id="react-burger-menu-btn"
+                style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                type="button"
+              >
+                Open Menu
+              </button>
+              <img
+                alt="Open Menu"
+                class="bm-icon"
+                data-test="open-menu"
+                src="test-file-stub"
+                srcset="test-file-stub"
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="bm-menu-wrap"
+            id=""
+            style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+          >
+            <div
+              class="bm-menu"
+              style="height: 100%; box-sizing: border-box; overflow: auto;"
+            >
+              <nav
+                class="bm-item-list"
+                style="height: 100%;"
+              >
+                <a
+                  class="bm-item menu-item"
+                  data-test="inventory-sidebar-link"
+                  href="#"
+                  id="inventory_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  All Items
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="about-sidebar-link"
+                  href="https://saucelabs.com/"
+                  id="about_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  About
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="logout-sidebar-link"
+                  href="#"
+                  id="logout_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Logout
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="reset-sidebar-link"
+                  href="#"
+                  id="reset_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Reset App State
+                </a>
+              </nav>
+            </div>
+            <div>
+              <div
+                class="bm-cross-button"
+                style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+              >
+                <button
+                  id="react-burger-cross-btn"
+                  style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  Close Menu
+                </button>
+                <img
+                  alt="Close Menu"
+                  class="bm-cross"
+                  data-test="close-menu"
+                  src="test-file-stub"
+                  srcset="test-file-stub"
+                  style="width: 100%; height: 100%;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="header_label"
+      >
+        <div
+          class="app_logo"
+        >
+          Swag Labs
+        </div>
+      </div>
+      <div
+        class="shopping_cart_container"
+        id="shopping_cart_container"
+      >
+        <a
+          class="shopping_cart_link"
+          data-test="shopping-cart-link"
+        />
       </div>
     </div>
     <div
-      className="shopping_cart_container"
-      id="shopping_cart_container"
+      class="header_secondary_container"
+      data-test="secondary-header"
     >
-      <withRouter(CartButton) />
-    </div>
-  </div>
-  <div
-    className="header_secondary_container"
-    data-test="secondary-header"
-  >
-    <LeftComponent
-      leftComponent={
+      <div
+        class="left_component"
+      >
         <input
           type="checkbox"
         />
-      }
-    />
-    <Title
-      title="sample title"
-    />
-    <RightComponent
-      rightComponent={
+      </div>
+      <span
+        class="title"
+        data-test="title"
+      >
+        sample title
+      </span>
+      <div
+        class="right_component"
+      >
         <input
           type="radio"
         />
-      }
-    />
+      </div>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HeaderContainer should render without any props 1`] = `
-<div
-  className="header_container"
-  data-test="header-container"
-  id="header_container"
->
+<DocumentFragment>
   <div
-    className="primary_header"
-    data-test="primary-header"
+    class="header_container"
+    data-test="header-container"
+    id="header_container"
   >
     <div
-      id="menu_button_container"
-    >
-      <withRouter(DrawerMenu) />
-    </div>
-    <div
-      className="header_label"
+      class="primary_header"
+      data-test="primary-header"
     >
       <div
-        className="app_logo"
+        id="menu_button_container"
       >
-        Swag Labs
+        <div>
+          <div>
+            <div
+              class="bm-burger-button"
+              style="z-index: 1000;"
+            >
+              <button
+                id="react-burger-menu-btn"
+                style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                type="button"
+              >
+                Open Menu
+              </button>
+              <img
+                alt="Open Menu"
+                class="bm-icon"
+                data-test="open-menu"
+                src="test-file-stub"
+                srcset="test-file-stub"
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="bm-menu-wrap"
+            id=""
+            style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+          >
+            <div
+              class="bm-menu"
+              style="height: 100%; box-sizing: border-box; overflow: auto;"
+            >
+              <nav
+                class="bm-item-list"
+                style="height: 100%;"
+              >
+                <a
+                  class="bm-item menu-item"
+                  data-test="inventory-sidebar-link"
+                  href="#"
+                  id="inventory_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  All Items
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="about-sidebar-link"
+                  href="https://saucelabs.com/"
+                  id="about_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  About
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="logout-sidebar-link"
+                  href="#"
+                  id="logout_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Logout
+                </a>
+                <a
+                  class="bm-item menu-item"
+                  data-test="reset-sidebar-link"
+                  href="#"
+                  id="reset_sidebar_link"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Reset App State
+                </a>
+              </nav>
+            </div>
+            <div>
+              <div
+                class="bm-cross-button"
+                style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+              >
+                <button
+                  id="react-burger-cross-btn"
+                  style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                  tabindex="-1"
+                  type="button"
+                >
+                  Close Menu
+                </button>
+                <img
+                  alt="Close Menu"
+                  class="bm-cross"
+                  data-test="close-menu"
+                  src="test-file-stub"
+                  srcset="test-file-stub"
+                  style="width: 100%; height: 100%;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="header_label"
+      >
+        <div
+          class="app_logo"
+        >
+          Swag Labs
+        </div>
+      </div>
+      <div
+        class="shopping_cart_container"
+        id="shopping_cart_container"
+      >
+        <a
+          class="shopping_cart_link"
+          data-test="shopping-cart-link"
+        />
       </div>
     </div>
     <div
-      className="shopping_cart_container"
-      id="shopping_cart_container"
-    >
-      <withRouter(CartButton) />
-    </div>
+      class="header_secondary_container"
+      data-test="secondary-header"
+    />
   </div>
-  <div
-    className="header_secondary_container"
-    data-test="secondary-header"
-  />
-</div>
+</DocumentFragment>
 `;

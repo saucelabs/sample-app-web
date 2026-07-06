@@ -1,53 +1,43 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import InputError, { INPUT_TYPES } from "../InputError";
 
 let props;
 
 describe("InputError", () => {
   beforeEach(() => {
-    props = {
-      isError: false,
-      onChange: jest.fn(),
-    };
+    props = { isError: false, onChange: jest.fn() };
   });
 
   it("should render correctly with the required options", () => {
-    const component = shallow(<InputError {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<InputError {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render secure input", () => {
-    const component = shallow(
-      <InputError {...props} type={INPUT_TYPES.PASSWORD} />
-    );
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<InputError {...props} type={INPUT_TYPES.PASSWORD} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render an error input", () => {
-    const component = shallow(<InputError {...props} isError />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<InputError {...props} isError />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render an input with a testId", () => {
-    const component = shallow(<InputError {...props} testId="some-id" />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<InputError {...props} testId="some-id" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render an input with custom props", () => {
-    const component = shallow(
-      <InputError {...props} testId="some-id" name="own-name-id" foo="bar" />
+    const { asFragment } = render(
+      <InputError {...props} testId="some-id" name="own-name-id" foo="bar" />,
     );
-
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render an input with full props", () => {
-    const component = shallow(
+    const { asFragment } = render(
       <InputError
         {...props}
         testId="some-id"
@@ -55,9 +45,8 @@ describe("InputError", () => {
         foo="bar"
         placeholder="The placeholder"
         value="the value"
-      />
+      />,
     );
-
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../utils/withRouter";
 import {
   isErrorUser,
   isPerformanceGlitchUser,
@@ -14,10 +14,10 @@ import Select from "../components/Select";
 import "./Inventory.css";
 import { BacktraceClient } from "@backtrace-labs/react";
 
-const Inventory = ({data}) => {
+const Inventory = ({ data }) => {
   const InventoryData = data;
   const [inventoryList, setInventoryList] = useState(
-    sortAsc(InventoryData, "name")
+    sortAsc(InventoryData, "name"),
   );
   const [activeOption, setActiveOption] = useState("az");
   /* istanbul ignore next */
@@ -55,7 +55,7 @@ const Inventory = ({data}) => {
         InventoryData,
       });
       return alert(
-        "Sorting is broken! This error has been reported to Backtrace."
+        "Sorting is broken! This error has been reported to Backtrace.",
       );
     }
 

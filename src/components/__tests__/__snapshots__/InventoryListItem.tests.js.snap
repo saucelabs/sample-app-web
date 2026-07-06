@@ -1,139 +1,141 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InventoryListItem should render with default props 1`] = `
-<div
-  className="inventory_item"
-  data-test="inventory-item"
->
+<DocumentFragment>
   <div
-    className="inventory_item_img"
-  >
-    <a
-      data-test="item-1-img-link"
-      href="#"
-      id="item_1_img_link"
-      onClick={[Function]}
-    >
-      <img
-        alt="Swag Item name"
-        className="inventory_item_img"
-        data-test="inventory-item-swag-item-name-img"
-      />
-    </a>
-  </div>
-  <div
-    className="inventory_item_description"
-    data-test="inventory-item-description"
+    class="inventory_item"
+    data-test="inventory-item"
   >
     <div
-      className="inventory_item_label"
+      class="inventory_item_img"
     >
       <a
-        data-test="item-1-title-link"
+        data-test="item-1-img-link"
         href="#"
-        id="item_1_title_link"
-        onClick={[Function]}
+        id="item_1_img_link"
       >
-        <div
-          className="inventory_item_name "
-          data-test="inventory-item-name"
-        >
-          Swag Item name
-        </div>
+        <img
+          alt="Swag Item name"
+          class="inventory_item_img"
+          data-test="inventory-item-swag-item-name-img"
+        />
       </a>
-      <div
-        className="inventory_item_desc"
-        data-test="inventory-item-desc"
-      >
-        Swag Item description
-      </div>
     </div>
     <div
-      className="pricebar"
+      class="inventory_item_description"
+      data-test="inventory-item-description"
     >
       <div
-        className="inventory_item_price"
-        data-test="inventory-item-price"
+        class="inventory_item_label"
       >
-        $
-        9.99
+        <a
+          data-test="item-1-title-link"
+          href="#"
+          id="item_1_title_link"
+        >
+          <div
+            class="inventory_item_name "
+            data-test="inventory-item-name"
+          >
+            Swag Item name
+          </div>
+        </a>
+        <div
+          class="inventory_item_desc"
+          data-test="inventory-item-desc"
+        >
+          Swag Item description
+        </div>
       </div>
-      <ButtonType
-        id={1}
-        item="Swag Item name"
-        itemInCart={false}
-        missAlignButton={false}
-      />
+      <div
+        class="pricebar"
+      >
+        <div
+          class="inventory_item_price"
+          data-test="inventory-item-price"
+        >
+          $9.99
+        </div>
+        <button
+          class="btn btn_primary btn_small btn_inventory "
+          data-test="add-to-cart-swag-item-name"
+          id="add-to-cart-swag-item-name"
+          name="add-to-cart-swag-item-name"
+        >
+          Add to cart
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`InventoryListItem should render with text aligned right 1`] = `
-<div
-  className="inventory_item"
-  data-test="inventory-item"
->
+<DocumentFragment>
   <div
-    className="inventory_item_img"
-  >
-    <a
-      data-test="item-1-img-link"
-      href="#"
-      id="item_1_img_link"
-      onClick={[Function]}
-    >
-      <img
-        alt="Swag Item name"
-        className="inventory_item_img"
-        data-test="inventory-item-swag-item-name-img"
-      />
-    </a>
-  </div>
-  <div
-    className="inventory_item_description"
-    data-test="inventory-item-description"
+    class="inventory_item"
+    data-test="inventory-item"
   >
     <div
-      className="inventory_item_label"
+      class="inventory_item_img"
     >
       <a
-        data-test="item-1-title-link"
+        data-test="item-1-img-link"
         href="#"
-        id="item_1_title_link"
-        onClick={[Function]}
+        id="item_1_img_link"
       >
-        <div
-          className="inventory_item_name align_right"
-          data-test="inventory-item-name"
-        >
-          Swag Item name
-        </div>
+        <img
+          alt="Swag Item name"
+          class="inventory_item_img"
+          data-test="inventory-item-swag-item-name-img"
+        />
       </a>
-      <div
-        className="inventory_item_desc"
-        data-test="inventory-item-desc"
-      >
-        Swag Item description
-      </div>
     </div>
     <div
-      className="pricebar"
+      class="inventory_item_description"
+      data-test="inventory-item-description"
     >
       <div
-        className="inventory_item_price"
-        data-test="inventory-item-price"
+        class="inventory_item_label"
       >
-        $
-        9.99
+        <a
+          data-test="item-1-title-link"
+          href="#"
+          id="item_1_title_link"
+        >
+          <div
+            class="inventory_item_name align_right"
+            data-test="inventory-item-name"
+          >
+            Swag Item name
+          </div>
+        </a>
+        <div
+          class="inventory_item_desc"
+          data-test="inventory-item-desc"
+        >
+          Swag Item description
+        </div>
       </div>
-      <ButtonType
-        id={1}
-        item="Swag Item name"
-        itemInCart={false}
-        missAlignButton={false}
-      />
+      <div
+        class="pricebar"
+      >
+        <div
+          class="inventory_item_price"
+          data-test="inventory-item-price"
+        >
+          $9.99
+        </div>
+        <button
+          class="btn btn_primary btn_small btn_inventory "
+          data-test="add-to-cart-swag-item-name"
+          id="add-to-cart-swag-item-name"
+          name="add-to-cart-swag-item-name"
+        >
+          Add to cart
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

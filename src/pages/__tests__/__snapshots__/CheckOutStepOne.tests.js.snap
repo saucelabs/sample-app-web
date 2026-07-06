@@ -1,90 +1,303 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckOutStepOne should render correctly 1`] = `
-<div
-  className="page_wrapper"
-  id="page_wrapper"
->
+<DocumentFragment>
   <div
-    id="contents_wrapper"
+    class="page_wrapper"
+    id="page_wrapper"
   >
-    <HeaderContainer
-      secondaryTitle="Checkout: Your Information"
-    />
     <div
-      className="checkout_info_container"
-      data-test="checkout-info-container"
-      id="checkout_info_container"
+      id="contents_wrapper"
     >
       <div
-        className="checkout_info_wrapper"
+        class="header_container"
+        data-test="header-container"
+        id="header_container"
       >
-        <form
-          onSubmit={[Function]}
+        <div
+          class="primary_header"
+          data-test="primary-header"
         >
           <div
-            className="checkout_info"
+            id="menu_button_container"
           >
-            <InputError
-              autoCapitalize="none"
-              autoCorrect="off"
-              id="first-name"
-              isError={false}
-              onChange={[Function]}
-              placeholder="First Name"
-              testId="firstName"
-              type="text"
-              value=""
-            />
-            <InputError
-              autoCapitalize="none"
-              autoCorrect="off"
-              id="last-name"
-              isError={false}
-              onChange={[Function]}
-              placeholder="Last Name"
-              testId="lastName"
-              type="text"
-              value=""
-            />
-            <InputError
-              autoCapitalize="none"
-              autoCorrect="off"
-              id="postal-code"
-              isError={false}
-              onChange={[Function]}
-              placeholder="Zip/Postal Code"
-              testId="postalCode"
-              type="text"
-              value=""
-            />
-            <ErrorMessage
-              errorMessage="Error: "
-              isError={false}
-              onClick={[Function]}
-            />
+            <div>
+              <div>
+                <div
+                  class="bm-burger-button"
+                  style="z-index: 1000;"
+                >
+                  <button
+                    id="react-burger-menu-btn"
+                    style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                    type="button"
+                  >
+                    Open Menu
+                  </button>
+                  <img
+                    alt="Open Menu"
+                    class="bm-icon"
+                    data-test="open-menu"
+                    src="test-file-stub"
+                    srcset="test-file-stub"
+                    style="width: 100%; height: 100%;"
+                  />
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="bm-menu-wrap"
+                id=""
+                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+              >
+                <div
+                  class="bm-menu"
+                  style="height: 100%; box-sizing: border-box; overflow: auto;"
+                >
+                  <nav
+                    class="bm-item-list"
+                    style="height: 100%;"
+                  >
+                    <a
+                      class="bm-item menu-item"
+                      data-test="inventory-sidebar-link"
+                      href="#"
+                      id="inventory_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      All Items
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="about-sidebar-link"
+                      href="https://saucelabs.com/"
+                      id="about_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      About
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="logout-sidebar-link"
+                      href="#"
+                      id="logout_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Logout
+                    </a>
+                    <a
+                      class="bm-item menu-item"
+                      data-test="reset-sidebar-link"
+                      href="#"
+                      id="reset_sidebar_link"
+                      style="display: block;"
+                      tabindex="-1"
+                    >
+                      Reset App State
+                    </a>
+                  </nav>
+                </div>
+                <div>
+                  <div
+                    class="bm-cross-button"
+                    style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+                  >
+                    <button
+                      id="react-burger-cross-btn"
+                      style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Close Menu
+                    </button>
+                    <img
+                      alt="Close Menu"
+                      class="bm-cross"
+                      data-test="close-menu"
+                      src="test-file-stub"
+                      srcset="test-file-stub"
+                      style="width: 100%; height: 100%;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            className="checkout_buttons"
+            class="header_label"
           >
-            <Button
-              customClass="cart_cancel_link"
-              label="Cancel"
-              onClick={[Function]}
-              size="medium"
-              testId="cancel"
-              type="secondary back"
-            />
-            <SubmitButton
-              customClass="btn btn_primary cart_button btn_action"
-              testId="continue"
-              value="Continue"
+            <div
+              class="app_logo"
+            >
+              Swag Labs
+            </div>
+          </div>
+          <div
+            class="shopping_cart_container"
+            id="shopping_cart_container"
+          >
+            <a
+              class="shopping_cart_link"
+              data-test="shopping-cart-link"
             />
           </div>
-        </form>
+        </div>
+        <div
+          class="header_secondary_container"
+          data-test="secondary-header"
+        >
+          <span
+            class="title"
+            data-test="title"
+          >
+            Checkout: Your Information
+          </span>
+        </div>
+      </div>
+      <div
+        class="checkout_info_container"
+        data-test="checkout-info-container"
+        id="checkout_info_container"
+      >
+        <div
+          class="checkout_info_wrapper"
+        >
+          <form>
+            <div
+              class="checkout_info"
+            >
+              <div
+                class="form_group"
+              >
+                <input
+                  autocapitalize="none"
+                  autocorrect="off"
+                  class="input_error form_input"
+                  data-test="firstName"
+                  id="first-name"
+                  name="firstName"
+                  placeholder="First Name"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="form_group"
+              >
+                <input
+                  autocapitalize="none"
+                  autocorrect="off"
+                  class="input_error form_input"
+                  data-test="lastName"
+                  id="last-name"
+                  name="lastName"
+                  placeholder="Last Name"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="form_group"
+              >
+                <input
+                  autocapitalize="none"
+                  autocorrect="off"
+                  class="input_error form_input"
+                  data-test="postalCode"
+                  id="postal-code"
+                  name="postalCode"
+                  placeholder="Zip/Postal Code"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="error-message-container"
+              />
+            </div>
+            <div
+              class="checkout_buttons"
+            >
+              <button
+                class="btn btn_secondary back btn_medium cart_cancel_link"
+                data-test="cancel"
+                id="cancel"
+                name="cancel"
+              >
+                <img
+                  alt="Go back"
+                  class="back-image"
+                  src="test-file-stub"
+                />
+                Cancel
+              </button>
+              <input
+                class="submit-button btn btn_primary cart_button btn_action"
+                data-test="continue"
+                id="continue"
+                name="continue"
+                type="submit"
+                value="Continue"
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
+    <footer
+      class="footer"
+      data-test="footer"
+    >
+      <ul
+        class="social"
+      >
+        <li
+          class="social_twitter"
+        >
+          <a
+            data-test="social-twitter"
+            href="https://twitter.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </li>
+        <li
+          class="social_facebook"
+        >
+          <a
+            data-test="social-facebook"
+            href="https://www.facebook.com/saucelabs"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          class="social_linkedin"
+        >
+          <a
+            data-test="social-linkedin"
+            href="https://www.linkedin.com/company/sauce-labs/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <div
+        class="footer_copy"
+        data-test="footer-copy"
+      >
+        © 2026 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy
+      </div>
+    </footer>
   </div>
-  <SwagLabsFooter />
-</div>
+</DocumentFragment>
 `;
