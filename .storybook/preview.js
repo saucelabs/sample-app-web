@@ -1,15 +1,24 @@
-import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-import '../src/index.css';
+import React from "react";
+import { MemoryRouter } from "react-router-dom";
+import "../src/index.css";
 
-export const parameters = {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+/** @type { import('@storybook/react').Preview } */
+const preview = {
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+  },
+  decorators: [
+    (Story) => (
+      <MemoryRouter initialEntries={["/"]}>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
-export const decorators = [
-    (Story) => (
-        <MemoryRouter initialEntries={['/']}>
-            <Story />
-        </MemoryRouter>
-    ),
-];
+export default preview;

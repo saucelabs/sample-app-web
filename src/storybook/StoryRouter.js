@@ -2,13 +2,18 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 
-// Usage: decorators: [withRouter]
-export const withRouter = (storyFn, context) => {
-  // Allow the story to pass an initialEntries array via context.parameters.router
+// Inner decorator — can be used directly as decorators: [withRouter]
+export const withRouter = (Story, context) => {
   const initialEntries = context?.parameters?.router?.initialEntries || ["/"];
   return (
-    <MemoryRouter initialEntries={initialEntries}>{storyFn()}</MemoryRouter>
+    <MemoryRouter initialEntries={initialEntries}>
+      <Story />
+    </MemoryRouter>
   );
 };
 
-export default withRouter;
+// Factory pattern matching the old storybook-react-router API:
+// decorators: [StoryRouter()]  →  StoryRouter() returns the withRouter decorator
+export default function StoryRouter() {
+  return withRouter;
+}
