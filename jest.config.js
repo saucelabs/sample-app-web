@@ -35,7 +35,6 @@ module.exports = {
   coveragePathIgnorePatterns: [
     "<rootDir>/src/jest.setupTextEncoder.js",
     "<rootDir>/src/setupTests.js",
-    "<rootDir>/src/storybook/StoryRouter.jsx",
     "<rootDir>/src/utils/imageLoader.js",
   ],
 
