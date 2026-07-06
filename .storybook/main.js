@@ -1,17 +1,11 @@
-// Minimal Storybook main configuration to force webpack5 builder
-module.exports = {
-  core: {
-    builder: "webpack5",
-  },
+/** @type { import('@storybook/react-vite').StorybookConfig } */
+const config = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-essentials",
-    "@storybook/addon-links",
-    "@storybook/addon-actions"
-  ],
+  addons: ["@storybook/addon-docs"],
   framework: {
-    name: "@storybook/react",
-    options: {}
-  }
+    name: "@storybook/react-vite",
+    options: {},
+  },
 };
 
+module.exports = config;

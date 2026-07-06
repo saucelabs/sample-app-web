@@ -8,6 +8,7 @@ import SauceLabs, { Job } from 'saucelabs';
 const defaultBrowserSauceOptions = {
     build: `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
+    seleniumVersion: '4.40.0',
 };
 
 // =====================
@@ -58,14 +59,16 @@ config.capabilities = [
     browserName: 'MicrosoftEdge',
     platformName: 'Windows 11',
     browserVersion: 'latest',
+    'wdio:enforceWebDriverClassic': true,
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
   },
   {
     browserName: 'safari',
-    platformName: 'macOS 13',
+    platformName: 'macOS 15',
     browserVersion: 'latest',
+    'wdio:enforceWebDriverClassic': true,
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },

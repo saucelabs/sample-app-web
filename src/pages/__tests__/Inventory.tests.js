@@ -16,7 +16,7 @@ function renderInventory(data = InventoryData) {
 
 describe("Inventory", () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    jest.restoreAllMocks(); // restore spy implementations, not just call tracking
   });
 
   it("should render correctly", () => {

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Cart should render correctly for a visual user 1`] = `
 <DocumentFragment>
@@ -48,7 +48,7 @@ exports[`Cart should render correctly for a visual user 1`] = `
                 aria-hidden="true"
                 class="bm-menu-wrap"
                 id=""
-                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+                style="position: fixed; right: inherit; z-index: 1100; width: 300px; height: 100%; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
               >
                 <div
                   class="bm-menu"
@@ -299,7 +299,7 @@ exports[`Cart should render correctly items 1`] = `
                   </button>
                   <img
                     alt="Open Menu"
-                    class="bm-icon"
+                    class="bm-icon visual_failure"
                     data-test="open-menu"
                     src="test-file-stub"
                     srcset="test-file-stub"
@@ -311,7 +311,7 @@ exports[`Cart should render correctly items 1`] = `
                 aria-hidden="true"
                 class="bm-menu-wrap"
                 id=""
-                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+                style="position: fixed; right: inherit; z-index: 1100; width: 300px; height: 100%; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
               >
                 <div
                   class="bm-menu"
@@ -378,7 +378,7 @@ exports[`Cart should render correctly items 1`] = `
                     </button>
                     <img
                       alt="Close Menu"
-                      class="bm-cross"
+                      class="bm-cross visual_failure"
                       data-test="close-menu"
                       src="test-file-stub"
                       srcset="test-file-stub"
@@ -399,7 +399,7 @@ exports[`Cart should render correctly items 1`] = `
             </div>
           </div>
           <div
-            class="shopping_cart_container"
+            class="shopping_cart_container visual_failure"
             id="shopping_cart_container"
           >
             <a
@@ -620,7 +620,7 @@ exports[`Cart should render correctly items 1`] = `
               Continue Shopping
             </button>
             <button
-              class="btn btn_action btn_medium checkout_button "
+              class="btn btn_action btn_medium checkout_button btn_visual_failure"
               data-test="checkout"
               id="checkout"
               name="checkout"
@@ -734,7 +734,7 @@ exports[`Cart should render correctly without any items 1`] = `
                 aria-hidden="true"
                 class="bm-menu-wrap"
                 id=""
-                style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+                style="position: fixed; right: inherit; z-index: 1100; width: 300px; height: 100%; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
               >
                 <div
                   class="bm-menu"

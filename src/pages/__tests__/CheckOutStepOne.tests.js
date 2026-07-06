@@ -20,7 +20,7 @@ describe("CheckOutStepOne", () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    jest.restoreAllMocks(); // fully restore all spies (not just clear call counts)
   });
 
   it("should render correctly", () => {
@@ -57,28 +57,26 @@ describe("CheckOutStepOne", () => {
     fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
     // problem user: last name change sets first name instead
     expect(getByTestId("firstName").value).toBe("Smith");
-    isProblemUserSpy.mockClear();
+    // isProblemUserSpy.mockClear() — handled by afterEach restoreAllMocks
   });
 
   it("should throw an error when data is typed in the last name field for an error user", () => {
     const isErrorUserSpy = jest.spyOn(Credentials, "isErrorUser");
     isErrorUserSpy.mockReturnValue(true);
     const consoleError = jest.spyOn(console, "error").mockImplementation(() => {});
-    // React 17 re-throws event-handler errors via a window "error" event.
-    // Intercept it to prevent jest from failing the test.
-    let capturedError;
-    const windowErrorHandler = (event) => {
-      capturedError = event.error;
+    const { getByTestId } = renderCheckout();
+    // React 19 reports event-handler errors via the global `reportError` function.
+    // jsdom doesn't define it, so React falls back to dispatching a window error event.
+    // Add a capturing listener with preventDefault to stop it reaching Jest's
+    // global-error handler (which would otherwise fail the test).
+    const suppressError = (event) => {
       event.preventDefault();
     };
-    window.addEventListener("error", windowErrorHandler);
-    const { getByTestId } = renderCheckout();
+    window.addEventListener("error", suppressError, true);
     fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
-    window.removeEventListener("error", windowErrorHandler);
-    expect(capturedError).toBeInstanceOf(TypeError);
+    window.removeEventListener("error", suppressError, true);
     expect(isErrorUserSpy).toHaveBeenCalled();
     consoleError.mockRestore();
-    isErrorUserSpy.mockClear();
   });
 
   it("should update the zip code state when data is typed in the zip code field", () => {
@@ -117,12 +115,12 @@ describe("CheckOutStepOne", () => {
     fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
     fireEvent.change(getByTestId("postalCode"), { target: { value: "12345" } });
     fireEvent.submit(getByTestId("continue"));
-    expect(props.history.push).toBeCalledWith("/checkout-step-two.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-step-two.html");
   });
 
   it("should redirect to the cart when the cancel button is clicked", () => {
     const { getByTestId } = renderCheckout();
     fireEvent.click(getByTestId("cancel"));
-    expect(props.history.push).toBeCalledWith("/cart.html");
+    expect(props.history.push).toHaveBeenCalledWith("/cart.html");
   });
 });

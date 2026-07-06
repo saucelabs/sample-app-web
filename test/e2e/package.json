@@ -19,7 +19,7 @@
     "@wdio/sauce-service": "^9.20.0",
     "@wdio/shared-store-service": "^9.20.0",
     "@wdio/spec-reporter": "^9.20.0",
-    "chromedriver": "^142.0.0",
+    "chromedriver": "^150.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.9.3",
     "wdio-chromedriver-service": "^8.1.1"

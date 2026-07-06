@@ -28,10 +28,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v7
 
     - name: Setup Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -53,5 +53,8 @@ jobs:
     - name: Install test dependencies
       run: npm --prefix ./test/e2e install
 
+    - name: Build the site
+      run: npm run build
+
     - name: Build and E2E test the site
-      run: npm run start & npx wait-on --timeout 60000 http://localhost:3000 && npm --prefix ./test/e2e run test.saucelabs.us
+      run: npm run preview & npx wait-on --timeout 60000 http://localhost:3000 && npm --prefix ./test/e2e run test.saucelabs.us

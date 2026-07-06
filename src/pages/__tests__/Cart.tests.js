@@ -49,12 +49,12 @@ describe("Cart", () => {
   it("should redirect when trying to continue shopping", () => {
     const { getByTestId } = renderCart();
     fireEvent.click(getByTestId("continue-shopping"));
-    expect(props.history.push).toBeCalledWith("/inventory.html");
+    expect(props.history.push).toHaveBeenCalledWith("/inventory.html");
   });
 
   it("should redirect when trying to checkout", () => {
     const { getByTestId } = renderCart();
     fireEvent.click(getByTestId("checkout"));
-    expect(props.history.push).toBeCalledWith("/checkout-step-one.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-step-one.html");
   });
 });

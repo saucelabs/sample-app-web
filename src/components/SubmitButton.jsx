@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./SubmitButton.css";
 
-const SubmitButton = ({ customClass, testId, value, ...props }) => {
+const SubmitButton = ({ customClass = undefined, testId = undefined, value, ...props }) => {
   const extraClass = customClass ? ` ${customClass}` : "";
   return (
     <input
@@ -36,9 +36,5 @@ SubmitButton.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-SubmitButton.defaultProps = {
-  customClass: undefined,
-  testId: undefined,
-};
 
 export default SubmitButton;

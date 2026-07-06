@@ -41,14 +41,14 @@ describe("CheckOutStepTwo", () => {
   it("should redirect when trying to cancel", () => {
     const { getByTestId } = renderCheckout();
     fireEvent.click(getByTestId("cancel"));
-    expect(props.history.push).toBeCalledWith("/inventory.html");
+    expect(props.history.push).toHaveBeenCalledWith("/inventory.html");
   });
 
   it("should redirect when trying to finish", () => {
     const { getByTestId } = renderCheckout();
     fireEvent.click(getByTestId("finish"));
     expect(ShoppingCart.resetCart).toHaveBeenCalledTimes(1);
-    expect(props.history.push).toBeCalledWith("/checkout-complete.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html");
   });
 
   it("should give the incorrect order total when we are logged in as a problem user", () => {
@@ -67,6 +67,6 @@ describe("CheckOutStepTwo", () => {
     fireEvent.click(getByTestId("finish"));
     expect(isProblemUserSpy).toHaveBeenCalled();
     expect(ShoppingCart.resetCart).not.toHaveBeenCalled();
-    expect(props.history.push).toBeCalledWith("/checkout-complete.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html");
   });
 });
