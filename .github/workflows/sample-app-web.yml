@@ -20,11 +20,10 @@ jobs:
       IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
       SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
       SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-      SCREENER_API_KEY: ${{ secrets.SCREENER_API_KEY }}
 
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [24.x]
 
     steps:
     - name: Checkout Repository
@@ -46,9 +45,13 @@ jobs:
       run: npm run test.coverage
 
     # Only run the last 2 steps when we are not on the main branch
-#    - name: Run Storybook tests
-#      if: ${{ !env.IS_MAIN }}
-#      run: npm run test.storybook.ci
+    - name: Install Playwright browsers
+      if: ${{ !env.IS_MAIN }}
+      run: npx playwright install --with-deps chromium firefox webkit
+
+    - name: Run Storybook visual tests
+      if: ${{ !env.IS_MAIN }}
+      run: npm run test.storybook
 
     - name: Install test dependencies
       run: npm --prefix ./test/e2e install
