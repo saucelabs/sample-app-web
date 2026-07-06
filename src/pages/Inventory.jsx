@@ -12,7 +12,7 @@ import HeaderContainer from "../components/HeaderContainer";
 import { sortAsc, sortDesc, sortHiLo, sortLoHi } from "../utils/Sorting";
 import Select from "../components/Select";
 import "./Inventory.css";
-import { BacktraceClient } from "@backtrace-labs/react";
+import { BacktraceClient } from "@backtrace/react";
 
 const Inventory = ({ data }) => {
   const InventoryData = data;

@@ -5,7 +5,7 @@ import * as Credentials from "../../utils/Credentials";
 import InventoryItem from "../InventoryItem";
 import { ShoppingCart } from "../../utils/shopping-cart";
 
-jest.mock("@backtrace-labs/react", () => {
+jest.mock("@backtrace/react", () => {
   const React = require("react");
   class ErrorBoundary extends React.Component {
     constructor(props) {

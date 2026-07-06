@@ -9,7 +9,7 @@ import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import SwagLabsFooter from "../components/Footer";
 import "./InventoryItem.css";
 import BrokenComponent from "../components/BrokenComponent";
-import { ErrorBoundary } from "@backtrace-labs/react";
+import { ErrorBoundary } from "@backtrace/react";
 import getImage from "../utils/imageLoader";
 
 const InventoryItem = (props) => {
