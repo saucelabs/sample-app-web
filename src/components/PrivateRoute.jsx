@@ -28,8 +28,5 @@ PrivateRoute.propTypes = {
   ]),
 };
 
-PrivateRoute.defaultProps = {
-  component: undefined,
-};
 
 export default PrivateRoute;

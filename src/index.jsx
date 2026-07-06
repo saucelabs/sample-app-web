@@ -6,7 +6,7 @@ import "react-app-polyfill/stable";
 
 import { BacktraceClient, ErrorBoundary } from "@backtrace-labs/react";
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import "./index.css";
@@ -80,7 +80,8 @@ const routing = (
   </ErrorBoundary>
 );
 
-ReactDOM.render(routing, document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
+root.render(routing);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

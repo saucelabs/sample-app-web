@@ -7,7 +7,7 @@ import { ShoppingCart } from "../utils/shopping-cart";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
 import "./CartItem.css";
 
-const CartItem = ({ item, history, showButton }) => {
+const CartItem = ({ item = undefined, history, showButton = false }) => {
   const [itemVisible, setItemVisible] = useState(true);
 
   const removeFromCart = (itemId) => {
@@ -93,10 +93,6 @@ CartItem.propTypes = {
    * Show the remove button
    */
   showButton: PropTypes.bool,
-};
-CartItem.defaultProps = {
-  item: undefined,
-  showButton: false,
 };
 
 export default withRouter(CartItem);
