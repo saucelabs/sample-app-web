@@ -39,6 +39,6 @@ describe("CartButton", () => {
   it("should be able to go to the cart", () => {
     const { getByTestId } = render(<CartButton.WrappedComponent {...props} />);
     fireEvent.click(getByTestId("shopping-cart-link"));
-    expect(props.history.push).toBeCalledWith("/cart.html");
+    expect(props.history.push).toHaveBeenCalledWith("/cart.html");
   });
 });

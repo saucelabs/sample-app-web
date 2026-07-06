@@ -35,6 +35,6 @@ describe("CheckOutStepTwo", () => {
   it("should redirect when clicking on back home", () => {
     const { getByTestId } = renderFinish();
     fireEvent.click(getByTestId("back-to-products"));
-    expect(props.history.push).toBeCalledWith("/inventory.html");
+    expect(props.history.push).toHaveBeenCalledWith("/inventory.html");
   });
 });

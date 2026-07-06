@@ -93,7 +93,7 @@ describe("Login", () => {
     fireEvent.change(screen.getByTestId("username"), { target: { value: "standard_user" } });
     fireEvent.change(screen.getByTestId("password"), { target: { value: "secret_sauce" } });
     fireEvent.submit(screen.getByTestId("login-button"));
-    expect(historyProps.push).toBeCalledWith("/inventory.html");
+    expect(historyProps.push).toHaveBeenCalledWith("/inventory.html");
   });
 
   it("should set the redirect error state", () => {

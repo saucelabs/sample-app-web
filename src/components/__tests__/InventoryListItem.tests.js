@@ -42,7 +42,7 @@ describe("InventoryListItem", () => {
       <InventoryListItem.WrappedComponent {...props} />,
     );
     fireEvent.click(getByTestId(`item-${props.id}-img-link`));
-    expect(props.history.push).toBeCalledWith(
+    expect(props.history.push).toHaveBeenCalledWith(
       `/inventory-item.html?id=${props.id}`,
     );
   });
@@ -52,7 +52,7 @@ describe("InventoryListItem", () => {
       <InventoryListItem.WrappedComponent {...props} />,
     );
     fireEvent.click(getByTestId(`item-${props.id}-title-link`));
-    expect(props.history.push).toBeCalledWith(
+    expect(props.history.push).toHaveBeenCalledWith(
       `/inventory-item.html?id=${props.id}`,
     );
   });
@@ -64,7 +64,7 @@ describe("InventoryListItem", () => {
       <InventoryListItem.WrappedComponent {...props} />,
     );
     fireEvent.click(getByTestId(`item-${props.id}-title-link`));
-    expect(props.history.push).toBeCalledWith(
+    expect(props.history.push).toHaveBeenCalledWith(
       `/inventory-item.html?id=${props.id + 1}`,
     );
     isProblemUserSpy.mockClear();

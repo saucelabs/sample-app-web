@@ -36,7 +36,7 @@ describe("InventoryListItem", () => {
   it("should be able to open the details page when the swag image is clicked", () => {
     const { getByTestId } = render(<CartItem.WrappedComponent {...props} />);
     fireEvent.click(getByTestId(`item-${props.item.id}-title-link`));
-    expect(props.history.push).toBeCalledWith(
+    expect(props.history.push).toHaveBeenCalledWith(
       `/inventory-item.html?id=${props.item.id}`,
     );
   });
@@ -47,8 +47,8 @@ describe("InventoryListItem", () => {
     fireEvent.click(
       getByTestId(`remove-${props.item.name.replace(/\s+/g, "-").toLowerCase()}`),
     );
-    expect(ShoppingCart.removeItem).toBeCalledTimes(1);
-    expect(ShoppingCart.removeItem).toBeCalledWith(1);
+    expect(ShoppingCart.removeItem).toHaveBeenCalledTimes(1);
+    expect(ShoppingCart.removeItem).toHaveBeenCalledWith(1);
   });
 
   it("should be able to set the link and id for a problem user", () => {
@@ -56,7 +56,7 @@ describe("InventoryListItem", () => {
     isProblemUserSpy.mockReturnValue(true);
     const { getByTestId } = render(<CartItem.WrappedComponent {...props} />);
     fireEvent.click(getByTestId(`item-${props.item.id}-title-link`));
-    expect(props.history.push).toBeCalledWith(
+    expect(props.history.push).toHaveBeenCalledWith(
       `/inventory-item.html?id=${props.item.id + 1}`,
     );
     isProblemUserSpy.mockClear();

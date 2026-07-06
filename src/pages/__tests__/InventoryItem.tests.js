@@ -42,10 +42,16 @@ describe("InventoryItem", () => {
 
   beforeEach(() => {
     props = { history: { push: jest.fn() } };
-    location = { ...window.location, search: "?id=4" };
-    Object.defineProperty(window, "location", { writable: true, value: location });
-    Object.defineProperty(global.window, "scrollTo", { value: spyScrollTo });
-    Object.defineProperty(global.window, "scrollY", { value: 1 });
+    // Use pushState to set window.location.search (works in jsdom 25)
+    window.history.pushState({}, "", "?id=4");
+    Object.defineProperty(global.window, "scrollTo", {
+      configurable: true,
+      value: spyScrollTo,
+    });
+    Object.defineProperty(global.window, "scrollY", {
+      configurable: true,
+      value: 1,
+    });
     spyScrollTo.mockClear();
     ShoppingCart.getCartContents = jest.fn().mockReturnValue([]);
     ShoppingCart.registerCartListener = jest.fn();
@@ -63,10 +69,7 @@ describe("InventoryItem", () => {
   });
 
   it("should render with error data if a not known product is opened", () => {
-    Object.defineProperty(window, "location", {
-      writable: true,
-      value: { ...window.location, search: "?id=999" },
-    });
+    window.history.pushState({}, "", "?id=999");
     const { asFragment } = renderInventoryItem();
     expect(asFragment()).toMatchSnapshot();
   });
