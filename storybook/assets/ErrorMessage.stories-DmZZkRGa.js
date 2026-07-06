@@ -1,0 +1,9 @@
+import{c as e,i as t}from"./preload-helper-B45gAKPr.js";import{t as n}from"./react-CymAsZIc.js";import{t as r}from"./iframe-C6OVsRoc.js";import{t as i}from"./prop-types-m2s_ZvQW.js";import{a,i as o,r as s,t as c}from"./free-solid-svg-icons-NQLS_fjJ.js";var l=t((()=>{})),u,d,f,p=t((()=>{n(),u=e(i()),a(),s(),l(),d=r(),f=({isError:e,errorMessage:t,onClick:n,...r})=>(0,d.jsx)(`div`,{className:`error-message-container${e?` error`:``}`,...r,children:e&&(0,d.jsxs)(`h3`,{"data-test":`error`,children:[(0,d.jsx)(`button`,{type:`button`,className:`error-button`,onClick:n,"data-test":`error-button`,children:(0,d.jsx)(o,{icon:c})}),t]})}),f.propTypes={isError:u.default.bool.isRequired,errorMessage:u.default.string.isRequired,onClick:u.default.func.isRequired},f.__docgenInfo={description:``,methods:[],displayName:`ErrorMessage`,props:{isError:{description:`If this is an isError field yes or no`,type:{name:`bool`},required:!0},errorMessage:{description:`The value of the input`,type:{name:`string`},required:!0},onClick:{description:`The on change handler`,type:{name:`func`},required:!0}}}})),m,h,g,_,v,y;t((()=>{m=e(n()),p(),h=r(),g={title:`SwagLabs/Form/ErrorMessage`,component:f},_=e=>{let[t,n]=(0,m.useState)(0);return(0,h.jsxs)(h.Fragment,{children:[(0,h.jsx)(f,{...e,onClick:()=>n(t+1)}),(0,h.jsxs)(`p`,{children:[`You clicked `,(0,h.jsx)(`strong`,{children:t}),` times.`]})]})},v=_.bind({}),v.args={isError:!0,errorMessage:`This is an error message`,onClick:()=>console.log(`clicked`)},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`args => {
+  const [value, setValue] = useState(0);
+  return <>
+      <ErrorMessage {...args} onClick={() => setValue(value + 1)} />
+      <p>
+        You clicked <strong>{value}</strong> times.
+      </p>
+    </>;
+}`,...v.parameters?.docs?.source}}},y=[`Error`]}))();export{v as Error,y as __namedExportsOrder,g as default};
