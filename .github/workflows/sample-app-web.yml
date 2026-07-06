@@ -53,5 +53,8 @@ jobs:
     - name: Install test dependencies
       run: npm --prefix ./test/e2e install
 
+    - name: Build the site
+      run: npm run build
+
     - name: Build and E2E test the site
-      run: npm run start & npx wait-on --timeout 60000 http://localhost:3000 && npm --prefix ./test/e2e run test.saucelabs.us
+      run: npm run preview & npx wait-on --timeout 60000 http://localhost:3000 && npm --prefix ./test/e2e run test.saucelabs.us

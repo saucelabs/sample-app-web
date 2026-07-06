@@ -10,6 +10,9 @@ export default defineConfig({
   build: {
     outDir: "build", // keep the same output directory as CRA used
   },
+  preview: {
+    port: 3000,
+  },
 });
 
 

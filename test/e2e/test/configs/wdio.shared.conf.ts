@@ -18,7 +18,7 @@ export const config: Options.Testrunner = {
   // ============
   // Capabilities
   // ============
-  maxInstances: 8,
+  maxInstances: 100,
   // capabilities can be found in the `wdio.local.chrome.conf.ts` or `wdio.saucelabs.conf.ts`
   capabilities: [],
   // ===================
