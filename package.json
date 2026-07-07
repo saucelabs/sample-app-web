@@ -54,7 +54,7 @@
     "test.coverage": "jest --coverage --watchAll=false",
     "test.coverage.watch": "jest --coverage --watchAll",
     "test.lint": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "test.storybook": "npm run storybook -- --ci & npx wait-on --timeout 60000 http://localhost:6006 && test-storybook",
+    "test.storybook": "npm run storybook -- --ci & npx wait-on --timeout 60000 http://localhost:6006 && SAUCE_VISUAL_BUILD_NAME='Sample App Web Visual Storybook' test-storybook",
     "storybook": "storybook dev -p 6006",
     "build.storybook": "storybook build",
     "postbuild.storybook": "cd scripts && ./postbuild.sh",
