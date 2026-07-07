@@ -40,6 +40,11 @@ config.capabilities = [
     browserName: 'chrome',
     platformName: 'Windows 11',
     browserVersion: 'latest',
+    // Needed for checkout.pdf.visual.spec.ts to pull the downloaded PDF back from
+    // the remote VM via browser.getDownloadableFiles()/downloadFile() - only
+    // supported on Selenium Grid sessions (Chrome/Edge/Firefox), not Safari or
+    // Appium (real device) sessions.
+    'se:downloadsEnabled': true,
     'goog:chromeOptions': {
       args: [
         '--no-sandbox',
@@ -58,6 +63,8 @@ config.capabilities = [
     browserName: 'firefox',
     platformName: 'Windows 11',
     browserVersion: 'latest',
+    // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+    'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -67,6 +74,8 @@ config.capabilities = [
     platformName: 'Windows 11',
     browserVersion: 'latest',
     'wdio:enforceWebDriverClassic': true,
+    // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+    'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -76,6 +85,8 @@ config.capabilities = [
     platformName: 'macOS 15',
     browserVersion: 'latest',
     'wdio:enforceWebDriverClassic': true,
+    // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+    'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -91,6 +102,8 @@ config.capabilities = [
   //   'appium:platformVersion': '18',
   //   'appium:automationName': 'XCUITest',
   //   'wdio:enforceWebDriverClassic': true,
+  //   // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+  //   'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
   //   'sauce:options': {
   //     ...defaultRealDeviceSauceOptions,
   //   },
@@ -102,6 +115,8 @@ config.capabilities = [
   //   'appium:platformVersion': '14',
   //   'appium:automationName': 'UiAutomator2',
   //   'wdio:enforceWebDriverClassic': true,
+  //   // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+  //   'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
   //   'sauce:options': {
   //     ...defaultRealDeviceSauceOptions,
   //   },
