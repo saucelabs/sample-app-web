@@ -3,6 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import CheckOutStepTwo from "../CheckOutStepTwo";
 import { ShoppingCart } from "../../utils/shopping-cart";
+import { InventoryData } from "../../utils/InventoryData";
 import * as Credentials from "../../utils/Credentials";
 
 jest.mock("../../utils/shopping-cart");
@@ -56,6 +57,31 @@ describe("CheckOutStepTwo", () => {
           orderTotal: 0,
           orderTax: "0.00",
           orderGrandTotal: "0.00",
+          orderDate: expect.any(String),
+        },
+      },
+    });
+  });
+
+  it("should include the cart items and personal info in the order snapshot when finishing", () => {
+    ShoppingCart.getCartContents = jest.fn().mockReturnValue([1, 4]);
+    props.location = {
+      state: { firstName: "John", lastName: "Doe", postalCode: "12345" },
+    };
+    const { getByTestId } = renderCheckout();
+    fireEvent.click(getByTestId("finish"));
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html", {
+      state: {
+        order: {
+          items: [InventoryData[1], InventoryData[4]],
+          personalInfo: {
+            firstName: "John",
+            lastName: "Doe",
+            postalCode: "12345",
+          },
+          orderTotal: 45.98,
+          orderTax: "3.68",
+          orderGrandTotal: "49.66",
           orderDate: expect.any(String),
         },
       },
