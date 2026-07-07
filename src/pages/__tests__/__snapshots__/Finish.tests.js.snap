@@ -180,14 +180,18 @@ exports[`CheckOutStepTwo should render correctly with default props 1`] = `
         >
           Your order has been dispatched, and will arrive just as fast as the pony can get there!
         </div>
-        <button
-          class="btn btn_primary btn_small"
-          data-test="back-to-products"
-          id="back-to-products"
-          name="back-to-products"
+        <div
+          class="complete-buttons"
         >
-          Back Home
-        </button>
+          <button
+            class="btn btn_primary btn_small"
+            data-test="back-to-products"
+            id="back-to-products"
+            name="back-to-products"
+          >
+            Back Home
+          </button>
+        </div>
       </div>
     </div>
     <footer

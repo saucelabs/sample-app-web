@@ -1,14 +1,21 @@
 const BUILD_PREFIX = process.env.BUILD_PREFIX ? `GitHub Actions-` : '';
 
-
 import { config } from './wdio.shared.conf';
 import { SauceRegions } from '@wdio/types/build/Options';
 import SauceLabs, { Job } from 'saucelabs';
 
+const BUILD_NAME = `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`;
+
 const defaultBrowserSauceOptions = {
-    build: `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`,
+    build: BUILD_NAME,
     screenResolution: '1600x1200',
     seleniumVersion: '4.40.0',
+};
+
+const defaultRealDeviceSauceOptions = {
+    build: BUILD_NAME,
+    phoneOnly: true,
+    appiumVersion: 'latest',
 };
 
 // =====================
@@ -33,6 +40,11 @@ config.capabilities = [
     browserName: 'chrome',
     platformName: 'Windows 11',
     browserVersion: 'latest',
+    // Needed for checkout.pdf.visual.spec.ts to pull the downloaded PDF back from
+    // the remote VM via browser.getDownloadableFiles()/downloadFile() - only
+    // supported on Selenium Grid sessions (Chrome/Edge/Firefox), not Safari or
+    // Appium (real device) sessions.
+    'se:downloadsEnabled': true,
     'goog:chromeOptions': {
       args: [
         '--no-sandbox',
@@ -51,6 +63,8 @@ config.capabilities = [
     browserName: 'firefox',
     platformName: 'Windows 11',
     browserVersion: 'latest',
+    // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+    'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -60,6 +74,8 @@ config.capabilities = [
     platformName: 'Windows 11',
     browserVersion: 'latest',
     'wdio:enforceWebDriverClassic': true,
+    // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+    'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -69,10 +85,42 @@ config.capabilities = [
     platformName: 'macOS 15',
     browserVersion: 'latest',
     'wdio:enforceWebDriverClassic': true,
+    // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+    'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
   },
+  /**
+   * Real devices (Sauce Labs Real Device Cloud)
+   * Enable this section if your account has RDC concurrency
+   */
+  // {
+  //   platformName: 'iOS',
+  //   browserName: 'Safari',
+  //   'appium:deviceName': 'iPhone.*',
+  //   'appium:platformVersion': '18',
+  //   'appium:automationName': 'XCUITest',
+  //   'wdio:enforceWebDriverClassic': true,
+  //   // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+  //   'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
+  //   'sauce:options': {
+  //     ...defaultRealDeviceSauceOptions,
+  //   },
+  // },
+  // {
+  //   platformName: 'Android',
+  //   browserName: 'Chrome',
+  //   'appium:deviceName': '.*Pixel.*',
+  //   'appium:platformVersion': '14',
+  //   'appium:automationName': 'UiAutomator2',
+  //   'wdio:enforceWebDriverClassic': true,
+  //   // checkout.pdf.visual.spec.ts only runs on Chrome - see the note there
+  //   'wdio:exclude': ['../../test/specs/checkout.pdf.visual.spec.ts'],
+  //   'sauce:options': {
+  //     ...defaultRealDeviceSauceOptions,
+  //   },
+  // },
 ];
 
 // ========
@@ -87,7 +135,12 @@ config.services = config.services.concat([
             proxyLocalhost: 'allow'
         }
     }],
-    'shared-store'
+    'shared-store',
+    ['@saucelabs/wdio-sauce-visual-service', {
+        buildName: 'Sample App Web - Demo Visual Checks',
+        project: 'sample-app-web',
+        region: 'us-west-1',
+    }],
 ]);
 // =====
 // Hooks

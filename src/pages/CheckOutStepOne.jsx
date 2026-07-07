@@ -53,7 +53,9 @@ const CheckOutStepOne = ({ history }) => {
     }
 
     // If we're here, we have our required info. Redirect!
-    history.push(ROUTES.CHECKOUT_STEP_TWO);
+    history.push(ROUTES.CHECKOUT_STEP_TWO, {
+      state: { firstName, lastName, postalCode },
+    });
 
     return "";
   };
