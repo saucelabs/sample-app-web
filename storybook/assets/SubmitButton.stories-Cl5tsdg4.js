@@ -1,9 +1,0 @@
-import{i as e,s as t}from"./preload-helper-CT_b8DTk.js";import{t as n}from"./react-B7Te67-h.js";import{t as r}from"./iframe-DrLPbyWR.js";import{t as i}from"./prop-types-CAcijpg_.js";var a=e((()=>{})),o,s,c,l=e((()=>{n(),o=t(i()),a(),s=r(),c=({customClass:e=void 0,testId:t=void 0,value:n,...r})=>(0,s.jsx)(`input`,{type:`submit`,className:`submit-button${e?` ${e}`:``}`,value:n,...t?{"data-test":t,id:t,name:t}:{},...r}),c.propTypes={customClass:o.default.string,testId:o.default.string,value:o.default.string.isRequired},c.__docgenInfo={description:``,methods:[],displayName:`SubmitButton`,props:{customClass:{defaultValue:{value:`undefined`,computed:!0},description:`A custom class`,type:{name:`string`},required:!1},testId:{defaultValue:{value:`undefined`,computed:!0},description:`The test id`,type:{name:`string`},required:!1},value:{description:`The value of the input`,type:{name:`string`},required:!0}}}})),u,d,f,p,m,h;e((()=>{u=t(n()),l(),d=r(),f={title:`SwagLabs/Form/Submit Button`,component:c},p=e=>{let[t,n]=(0,u.useState)(0);return(0,d.jsxs)(d.Fragment,{children:[(0,d.jsx)(c,{...e,onClick:()=>n(t+1)}),(0,d.jsxs)(`p`,{children:[`You clicked `,(0,d.jsx)(`strong`,{children:t}),` times.`]})]})},m=p.bind({}),m.args={value:`Submit button`},m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`args => {
-  const [value, setValue] = useState(0);
-  return <>
-      <SubmitButton {...args} onClick={() => setValue(value + 1)} />
-      <p>
-        You clicked <strong>{value}</strong> times.
-      </p>
-    </>;
-}`,...m.parameters?.docs?.source}}},h=[`Submit`]}))();export{m as Submit,h as __namedExportsOrder,f as default};
