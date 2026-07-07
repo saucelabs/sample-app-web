@@ -113,7 +113,7 @@ config.capabilities = [
 // ========
 config.services = config.services.concat([
     ['sauce', {
-        sauceConnect: false,
+        sauceConnect: true,
         sauceConnectOpts: {
             logFile: './sc.log',
             logLevel: 'debug',

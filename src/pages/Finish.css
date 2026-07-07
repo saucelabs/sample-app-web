@@ -42,6 +42,16 @@
   color: #132322;
 }
 
+.complete-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.checkout_complete_container .btn.generate-pdf-button {
+  background-color: #fff;
+  border: 1px solid #132322;
+}
+
 @media only screen and (min-width: 900px) {
   .checkout_complete_container {
     padding-bottom: 100px;

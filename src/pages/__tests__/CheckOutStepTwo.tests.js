@@ -48,7 +48,18 @@ describe("CheckOutStepTwo", () => {
     const { getByTestId } = renderCheckout();
     fireEvent.click(getByTestId("finish"));
     expect(ShoppingCart.resetCart).toHaveBeenCalledTimes(1);
-    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html", {
+      state: {
+        order: {
+          items: [],
+          personalInfo: {},
+          orderTotal: 0,
+          orderTax: "0.00",
+          orderGrandTotal: "0.00",
+          orderDate: expect.any(String),
+        },
+      },
+    });
   });
 
   it("should give the incorrect order total when we are logged in as a problem user", () => {
@@ -67,6 +78,17 @@ describe("CheckOutStepTwo", () => {
     fireEvent.click(getByTestId("finish"));
     expect(isProblemUserSpy).toHaveBeenCalled();
     expect(ShoppingCart.resetCart).not.toHaveBeenCalled();
-    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html", {
+      state: {
+        order: {
+          items: [],
+          personalInfo: {},
+          orderTotal: 0,
+          orderTax: "0.00",
+          orderGrandTotal: "0.00",
+          orderDate: expect.any(String),
+        },
+      },
+    });
   });
 });

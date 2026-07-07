@@ -5,13 +5,14 @@ import { isErrorUser, isProblemUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import { ShoppingCart } from "../utils/shopping-cart";
 import { InventoryData } from "../utils/InventoryData";
+import { calculateOrderTotals } from "../utils/orderCalculations";
 import CartItem from "../components/CartItem";
 import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import "./CheckOutStepTwo.css";
 
-const CheckOutStepTwo = ({ history }) => {
+const CheckOutStepTwo = ({ history, location }) => {
   const clearCart = () => {
     /* istanbul ignore else */
     // No cart clear on order complete for the problem user
@@ -25,18 +26,12 @@ const CheckOutStepTwo = ({ history }) => {
     // Wipe out our shopping cart
     ShoppingCart.resetCart();
   };
+  const personalInfo = location?.state ?? {};
   const contents = ShoppingCart.getCartContents();
-  let orderTotal = 0;
-
-  for (const curItem in contents) {
-    orderTotal = orderTotal + InventoryData[contents[curItem]].price;
-    if (isProblemUser()) {
-      // double up for the problem user
-      orderTotal = orderTotal + InventoryData[contents[curItem]].price;
-    }
-  }
-
-  const orderTax = (orderTotal * 0.08).toFixed(2);
+  const { orderTotal, orderTax, orderGrandTotal } = calculateOrderTotals(
+    contents,
+    { doublePrices: isProblemUser() },
+  );
 
   return (
     <div id="page_wrapper" className="page_wrapper">
@@ -100,7 +95,7 @@ const CheckOutStepTwo = ({ history }) => {
                 Tax: ${orderTax}
               </div>
               <div className="summary_total_label" data-test="total-label">
-                Total: ${(orderTotal + parseFloat(orderTax)).toFixed(2)}
+                Total: ${orderGrandTotal}
               </div>
               <div className="cart_footer">
                 <Button
@@ -121,8 +116,16 @@ const CheckOutStepTwo = ({ history }) => {
                   label="Finish"
                   onClick={(evt) => {
                     evt.preventDefault();
+                    const order = {
+                      items: contents.map((itemId) => InventoryData[itemId]),
+                      personalInfo,
+                      orderTotal,
+                      orderTax,
+                      orderGrandTotal,
+                      orderDate: new Date().toISOString(),
+                    };
                     clearCart();
-                    history.push(ROUTES.CHECKOUT_COMPLETE);
+                    history.push(ROUTES.CHECKOUT_COMPLETE, { state: { order } });
                   }}
                   size={BUTTON_SIZES.MEDIUM}
                   testId="finish"
@@ -144,6 +147,16 @@ CheckOutStepTwo.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  /**
+   * The router location, carrying the personal info from checkout step one
+   */
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      postalCode: PropTypes.string,
+    }),
+  }),
 };
 
 export default withRouter(CheckOutStepTwo);

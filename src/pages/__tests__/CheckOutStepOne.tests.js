@@ -115,7 +115,9 @@ describe("CheckOutStepOne", () => {
     fireEvent.change(getByTestId("lastName"), { target: { value: "Smith" } });
     fireEvent.change(getByTestId("postalCode"), { target: { value: "12345" } });
     fireEvent.submit(getByTestId("continue"));
-    expect(props.history.push).toHaveBeenCalledWith("/checkout-step-two.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-step-two.html", {
+      state: { firstName: "John", lastName: "Smith", postalCode: "12345" },
+    });
   });
 
   it("should redirect to the cart when the cancel button is clicked", () => {
