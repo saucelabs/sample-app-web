@@ -1,14 +1,21 @@
 const BUILD_PREFIX = process.env.BUILD_PREFIX ? `GitHub Actions-` : '';
 
-
 import { config } from './wdio.shared.conf';
 import { SauceRegions } from '@wdio/types/build/Options';
 import SauceLabs, { Job } from 'saucelabs';
 
+const BUILD_NAME = `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`;
+
 const defaultBrowserSauceOptions = {
-    build: `${BUILD_PREFIX}Sauce Demo App build-${new Date().getTime()}`,
+    build: BUILD_NAME,
     screenResolution: '1600x1200',
     seleniumVersion: '4.40.0',
+};
+
+const defaultRealDeviceSauceOptions = {
+    build: BUILD_NAME,
+    phoneOnly: true,
+    appiumVersion: 'latest',
 };
 
 // =====================
@@ -73,6 +80,32 @@ config.capabilities = [
       ...defaultBrowserSauceOptions,
     },
   },
+  /**
+   * Real devices (Sauce Labs Real Device Cloud)
+   * Enable this section if your account has RDC concurrency
+   */
+  // {
+  //   platformName: 'iOS',
+  //   browserName: 'Safari',
+  //   'appium:deviceName': 'iPhone.*',
+  //   'appium:platformVersion': '18',
+  //   'appium:automationName': 'XCUITest',
+  //   'wdio:enforceWebDriverClassic': true,
+  //   'sauce:options': {
+  //     ...defaultRealDeviceSauceOptions,
+  //   },
+  // },
+  // {
+  //   platformName: 'Android',
+  //   browserName: 'Chrome',
+  //   'appium:deviceName': '.*Pixel.*',
+  //   'appium:platformVersion': '14',
+  //   'appium:automationName': 'UiAutomator2',
+  //   'wdio:enforceWebDriverClassic': true,
+  //   'sauce:options': {
+  //     ...defaultRealDeviceSauceOptions,
+  //   },
+  // },
 ];
 
 // ========
@@ -80,14 +113,19 @@ config.capabilities = [
 // ========
 config.services = config.services.concat([
     ['sauce', {
-        sauceConnect: true,
+        sauceConnect: false,
         sauceConnectOpts: {
             logFile: './sc.log',
             logLevel: 'debug',
             proxyLocalhost: 'allow'
         }
     }],
-    'shared-store'
+    'shared-store',
+    ['@saucelabs/wdio-sauce-visual-service', {
+        buildName: 'Sample App Web - Demo Visual Checks',
+        project: 'sample-app-web',
+        region: 'us-west-1',
+    }],
 ]);
 // =====
 // Hooks
