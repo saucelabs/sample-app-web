@@ -71,6 +71,8 @@ describe('Checkout order PDF - Sauce Visual PDF integration (demo)', () => {
         'sample-app-web',
         '--test-name',
         'Swag Labs order PDF',
+        '--snapshot-name',
+        'Swag Labs order PDF Snapshot',
       ],
       {encoding: 'utf-8'},
     );
