@@ -77,5 +77,8 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "volta": {
+    "node": "18.20.8"
   }
 }

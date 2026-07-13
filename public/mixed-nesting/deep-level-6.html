@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Deep Nesting — Level 6 final content</title>
+  <meta charset="UTF-8">
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 16px;
+          background-color: #fce4ec;
+      }
+
+      h3 {
+          color: #ad1457;
+          margin: 0 0 8px;
+      }
+
+      p {
+          color: #880e4f;
+          margin: 4px 0;
+      }
+
+      button {
+          padding: 6px 12px;
+          background-color: #ad1457;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+<h3 data-level="6">Level 6 — Iframe (deepest)</h3>
+<p id="deepest-paragraph">You reached the deepest level. Path from the top:</p>
+<ol>
+  <li>Level 1 — Shadow Root</li>
+  <li>Level 2 — Iframe</li>
+  <li>Level 3 — Shadow Root</li>
+  <li>Level 4 — Iframe</li>
+  <li>Level 5 — Shadow Root</li>
+  <li>Level 6 — Iframe (this document)</li>
+</ol>
+<button id="deepest-button">Deepest Button</button>
+</body>
+</html>

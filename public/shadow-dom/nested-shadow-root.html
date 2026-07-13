@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nested Shadow Root Example</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #f4f4f4;
+      }
+
+      h1 {
+          color: #333;
+      }
+
+      p {
+          color: red;
+      }
+  </style>
+</head>
+<body>
+<h1>Nested Shadow Root Example</h1>
+<p>The widget below has an outer shadow root, and inside that shadow root
+  there is another host element with its own shadow root.
+  Three style boundaries: page, outer shadow, inner shadow.</p>
+
+<outer-widget id="outer"></outer-widget>
+
+<p>Shadow root mode: <strong id="mode-indicator"></strong>
+  (toggle via <code>?modeOpen=true</code> or <code>?modeOpen=false</code> in the URL — applies to both nested levels).</p>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  const mode = resolveShadowMode();
+
+  class InnerWidget extends HTMLElement {
+    constructor() {
+      super();
+      const shadow = this.attachShadow({ mode });
+      shadow.innerHTML = `
+        <style>
+          .inner {
+            background: #fff3e0;
+            border: 2px dashed #ef6c00;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 4px;
+          }
+          p {
+            color: #ef6c00;
+            margin: 4px 0;
+          }
+          button {
+            padding: 6px 12px;
+            background-color: #ef6c00;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          .scroll-area {
+            margin-top: 10px;
+            height: 110px;
+            overflow-y: auto;
+            border: 1px solid #ef6c00;
+            border-radius: 4px;
+            background: #fff;
+            padding: 8px;
+          }
+          .scroll-area ol {
+            margin: 0;
+            padding-left: 22px;
+          }
+        </style>
+        <div class="inner">
+          <p id="inner-paragraph">I am inside the INNER shadow root (nested level 2).</p>
+          <p>Neither page CSS nor outer shadow CSS can style me.</p>
+          <button id="inner-button">Inner Button</button>
+          <div id="inner-scroll" class="scroll-area" data-scrollable="true">
+            <ol>
+              <li>Inner scroll item 1</li><li>Inner scroll item 2</li><li>Inner scroll item 3</li>
+              <li>Inner scroll item 4</li><li>Inner scroll item 5</li><li>Inner scroll item 6</li>
+              <li>Inner scroll item 7</li><li>Inner scroll item 8</li><li>Inner scroll item 9</li>
+              <li>Inner scroll item 10</li><li>Inner scroll item 11</li><li>Inner scroll item 12</li>
+              <li>Inner scroll item 13</li><li>Inner scroll item 14</li><li>Inner scroll item 15</li>
+              <li>Inner scroll item 16</li><li>Inner scroll item 17</li><li>Inner scroll item 18</li>
+              <li>Inner scroll item 19</li><li>Inner scroll item 20</li>
+            </ol>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  class OuterWidget extends HTMLElement {
+    constructor() {
+      super();
+      const shadow = this.attachShadow({ mode });
+      shadow.innerHTML = `
+        <style>
+          .outer {
+            background: #e8f5e9;
+            border: 2px solid #2e7d32;
+            padding: 15px;
+            border-radius: 6px;
+          }
+          p {
+            color: #2e7d32;
+            margin: 5px 0;
+          }
+          button {
+            padding: 8px 16px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 8px;
+          }
+          h2 {
+            color: #1b5e20;
+            margin-top: 0;
+          }
+        </style>
+        <div class="outer">
+          <h2>Outer Shadow Root</h2>
+          <p id="outer-paragraph">I am inside the OUTER shadow root (nested level 1).</p>
+          <button id="outer-button">Outer Button</button>
+          <inner-widget id="inner"></inner-widget>
+        </div>
+      `;
+    }
+  }
+
+  customElements.define('inner-widget', InnerWidget);
+  customElements.define('outer-widget', OuterWidget);
+</script>
+</body>
+</html>

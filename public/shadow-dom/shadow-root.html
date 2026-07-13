@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shadow Root Example</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #f4f4f4;
+      }
+
+      h1 {
+          color: #333;
+      }
+
+      /* Page-level rules that target the SAME class and tag names used inside the shadow root. */
+      .card {
+          background: #ffcdd2;
+          border: 3px dashed red;
+          padding: 15px;
+          margin-bottom: 20px;
+          border-radius: 0;
+      }
+
+      .card p {
+          color: red;
+          font-weight: bold;
+      }
+
+      .card button {
+          background: red;
+          color: white;
+          border: 3px dashed black;
+      }
+  </style>
+</head>
+<body>
+<h1>Shadow Root Example</h1>
+<p>Both cards below use the SAME class name (<code>.card</code>) and the same tags (<code>p</code>, <code>button</code>).
+  The page stylesheet styles <code>.card</code> as red/dashed. If encapsulation works, only the LIGHT DOM card
+  picks up those red styles — the SHADOW DOM card stays blue because page CSS cannot pierce the shadow boundary.</p>
+
+<!-- Light DOM card: page CSS applies. -->
+<div class="card">
+  <p>I am the LIGHT DOM card. Page CSS reaches me — I'm red.</p>
+  <button>Light Button</button>
+</div>
+
+<!-- Shadow DOM host: same class/tags inside, but isolated. -->
+<div id="shadow-host"></div>
+
+<p>Shadow root mode: <strong id="mode-indicator"></strong>
+  (toggle via <code>?modeOpen=true</code> or <code>?modeOpen=false</code> in the URL).</p>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  const mode = resolveShadowMode();
+
+  const host = document.getElementById('shadow-host');
+  const shadow = host.attachShadow({ mode });
+
+  shadow.innerHTML = `
+    <style>
+      .card {
+        background: #e3f2fd;
+        border: 2px solid #1976d2;
+        padding: 15px;
+        border-radius: 6px;
+        font-family: Arial, sans-serif;
+      }
+      .card p {
+        color: #1976d2;
+        margin: 5px 0;
+        font-weight: normal;
+      }
+      .card button {
+        padding: 8px 16px;
+        background-color: #1976d2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .scroll-area {
+        margin-top: 10px;
+        height: 120px;
+        overflow-y: auto;
+        border: 1px solid #1976d2;
+        border-radius: 4px;
+        background: #fff;
+        padding: 8px;
+      }
+      .scroll-area ol {
+        margin: 0;
+        padding-left: 22px;
+      }
+    </style>
+    <div class="card">
+      <p id="shadow-paragraph">I am the SHADOW DOM card — same <code>.card</code> class as above, but page CSS cannot reach me.</p>
+      <p>I stay blue, with a solid blue border. No red here.</p>
+      <button id="shadow-button">Shadow Button</button>
+      <div id="shadow-scroll" class="scroll-area" data-scrollable="true">
+        <ol>
+          <li>Scrollable item 1</li><li>Scrollable item 2</li><li>Scrollable item 3</li>
+          <li>Scrollable item 4</li><li>Scrollable item 5</li><li>Scrollable item 6</li>
+          <li>Scrollable item 7</li><li>Scrollable item 8</li><li>Scrollable item 9</li>
+          <li>Scrollable item 10</li><li>Scrollable item 11</li><li>Scrollable item 12</li>
+          <li>Scrollable item 13</li><li>Scrollable item 14</li><li>Scrollable item 15</li>
+          <li>Scrollable item 16</li><li>Scrollable item 17</li><li>Scrollable item 18</li>
+          <li>Scrollable item 19</li><li>Scrollable item 20</li>
+        </ol>
+      </div>
+    </div>
+  `;
+</script>
+</body>
+</html>
