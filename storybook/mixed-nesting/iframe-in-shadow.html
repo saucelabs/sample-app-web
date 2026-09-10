@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Iframe in Shadow Root</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+  <link rel="stylesheet" href="/shadow-dom/_style.css">
+</head>
+<body>
+<h1>Iframe in Shadow Root</h1>
+<p>The host below has a shadow root, and inside that shadow root there is an iframe
+  loading a separate document.</p>
+
+<div id="shadow-host"></div>
+
+<p>Shadow root mode: <strong id="mode-indicator"></strong>
+  (toggle via <code>?modeOpen=true</code> or <code>?modeOpen=false</code> — propagates into the iframe).</p>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  const mode = resolveShadowMode();
+
+  const host = document.getElementById('shadow-host');
+  const shadow = host.attachShadow({ mode });
+  shadow.innerHTML = `
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+    <link rel="stylesheet" href="/shadow-dom/_style.css">
+    <style>
+      .wrap {
+        background: #fdf0ef;
+        border-color: #e2231a;
+      }
+      p {
+        color: #e2231a;
+        margin: 4px 0 10px;
+      }
+      iframe {
+        height: 220px;
+        border-color: #e2231a;
+      }
+    </style>
+    <div class="wrap">
+      <p id="shadow-paragraph">I am inside the shadow root. The iframe below is my child.</p>
+      <iframe id="nested-iframe" src="shadow-iframe-content.html${window.location.search}"></iframe>
+    </div>
+  `;
+</script>
+</body>
+</html>
