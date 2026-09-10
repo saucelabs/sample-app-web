@@ -37,7 +37,7 @@ const CartButton = (props) => {
       role="button"
       aria-label={
         cartContents.length > 0
-          ? `Cart, ${cartContents.length} item${cartContents.length === 1 ? "" : "s"}`
+          ? `Cart, ${cartContents.length} items`
           : "Cart, empty"
       }
     >
