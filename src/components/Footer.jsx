@@ -6,14 +6,14 @@ const SwagLabsFooter = () => {
     <footer className="footer" data-test="footer">
       {/* <div className="footer_container"> */}
       <ul className="social">
-        <li className="social_twitter">
+        <li className="social_x">
           <a
-            href="https://twitter.com/saucelabs"
+            href="https://x.com/saucelabs"
             target="_blank"
             rel="noreferrer"
-            data-test="social-twitter"
+            data-test="social-x"
           >
-            Twitter
+            X
           </a>
         </li>
         <li className="social_facebook">

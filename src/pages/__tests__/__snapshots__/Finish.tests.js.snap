@@ -208,15 +208,15 @@ exports[`CheckOutStepTwo should render correctly with default props 1`] = `
         class="social"
       >
         <li
-          class="social_twitter"
+          class="social_x"
         >
           <a
-            data-test="social-twitter"
-            href="https://twitter.com/saucelabs"
+            data-test="social-x"
+            href="https://x.com/saucelabs"
             rel="noreferrer"
             target="_blank"
           >
-            Twitter
+            X
           </a>
         </li>
         <li
