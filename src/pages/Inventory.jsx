@@ -87,6 +87,7 @@ const Inventory = ({ data }) => {
           secondaryRightComponent={
             <Select
               activeOption={activeOption}
+              ariaLabel="Sort products"
               options={[
                 { key: "az", value: "Name (A to Z)" },
                 { key: "za", value: "Name (Z to A)" },
@@ -98,7 +99,7 @@ const Inventory = ({ data }) => {
             />
           }
         />
-        <div id="inventory_container">
+        <div id="inventory_container" role="main">
           <div>
             <div
               id="inventory_container"

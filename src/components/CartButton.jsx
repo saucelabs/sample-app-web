@@ -34,6 +34,12 @@ const CartButton = (props) => {
       className="shopping_cart_link"
       onClick={() => history.push(ROUTES.CART)}
       data-test="shopping-cart-link"
+      role="button"
+      aria-label={
+        cartContents.length > 0
+          ? `Cart, ${cartContents.length} item${cartContents.length === 1 ? "" : "s"}`
+          : "Cart, empty"
+      }
     >
       {cartBadge}
     </a>

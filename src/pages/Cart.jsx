@@ -24,6 +24,7 @@ const Cart = ({ history }) => {
           id="cart_contents_container"
           className="cart_contents_container"
           data-test="cart-contents-container"
+          role="main"
         >
           <div>
             <div className="cart_list" data-test="cart-list">

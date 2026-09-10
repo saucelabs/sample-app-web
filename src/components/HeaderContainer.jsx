@@ -53,7 +53,7 @@ const HeaderContainer = ({
   }`;
 
   return (
-    <div
+    <header
       id="header_container"
       className={`header_container${extraClass}`}
       data-test="header-container"
@@ -81,7 +81,7 @@ const HeaderContainer = ({
           <RightComponent rightComponent={secondaryRightComponent} />
         )}
       </div>
-    </div>
+    </header>
   );
 };
 HeaderContainer.propTypes = {

@@ -9,7 +9,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -63,6 +63,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -83,6 +84,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -93,6 +95,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -140,8 +143,10 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, 3 items"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             >
               <span
                 class="shopping_cart_badge"
@@ -163,11 +168,12 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
             Checkout: Overview
           </span>
         </div>
-      </div>
+      </header>
       <div
         class="checkout_summary_container"
         data-test="checkout-summary-container"
         id="checkout_summary_container"
+        role="main"
       >
         <div>
           <div
@@ -200,9 +206,11 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Sauce Labs Bolt T-Shirt"
                   data-test="item-1-title-link"
                   href="#"
                   id="item_1_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -243,9 +251,11 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Sauce Labs Onesie"
                   data-test="item-2-title-link"
                   href="#"
                   id="item_2_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -286,9 +296,11 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                   data-test="item-3-title-link"
                   href="#"
                   id="item_3_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -377,7 +389,7 @@ exports[`CheckOutStepTwo should give the incorrect order total when we are logge
                 name="cancel"
               >
                 <img
-                  alt="Go back"
+                  alt=""
                   class="back-image"
                   src="test-file-stub"
                 />
@@ -460,7 +472,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -514,6 +526,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -534,6 +547,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -544,6 +558,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -591,8 +606,10 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, 3 items"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             >
               <span
                 class="shopping_cart_badge"
@@ -614,11 +631,12 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
             Checkout: Overview
           </span>
         </div>
-      </div>
+      </header>
       <div
         class="checkout_summary_container"
         data-test="checkout-summary-container"
         id="checkout_summary_container"
+        role="main"
       >
         <div>
           <div
@@ -651,9 +669,11 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Sauce Labs Bolt T-Shirt"
                   data-test="item-1-title-link"
                   href="#"
                   id="item_1_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -694,9 +714,11 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Sauce Labs Onesie"
                   data-test="item-2-title-link"
                   href="#"
                   id="item_2_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -737,9 +759,11 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                   data-test="item-3-title-link"
                   href="#"
                   id="item_3_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -828,7 +852,7 @@ exports[`CheckOutStepTwo should render correctly items 1`] = `
                 name="cancel"
               >
                 <img
-                  alt="Go back"
+                  alt=""
                   class="back-image"
                   src="test-file-stub"
                 />
@@ -911,7 +935,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -965,6 +989,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -985,6 +1010,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -995,6 +1021,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -1042,8 +1069,10 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, empty"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             />
           </div>
         </div>
@@ -1058,11 +1087,12 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
             Checkout: Overview
           </span>
         </div>
-      </div>
+      </header>
       <div
         class="checkout_summary_container"
         data-test="checkout-summary-container"
         id="checkout_summary_container"
+        role="main"
       >
         <div>
           <div
@@ -1143,7 +1173,7 @@ exports[`CheckOutStepTwo should render correctly without any items 1`] = `
                 name="cancel"
               >
                 <img
-                  alt="Go back"
+                  alt=""
                   class="back-image"
                   src="test-file-stub"
                 />

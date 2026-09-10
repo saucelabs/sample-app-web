@@ -152,6 +152,7 @@ const InventoryItem = (props) => {
           id="inventory_item_container"
           className="inventory_item_container"
           data-test="inventory-container"
+          role="main"
         >
           <div className="inventory_details">
             <div

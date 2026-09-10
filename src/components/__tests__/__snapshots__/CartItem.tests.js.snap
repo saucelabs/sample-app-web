@@ -16,9 +16,11 @@ exports[`InventoryListItem should render with default props 1`] = `
       class="cart_item_label"
     >
       <a
+        aria-label="View details for Swag Item name"
         data-test="item-1-title-link"
         href="#"
         id="item_1_title_link"
+        role="button"
       >
         <div
           class="inventory_item_name"

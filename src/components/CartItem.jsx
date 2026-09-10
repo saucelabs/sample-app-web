@@ -42,6 +42,8 @@ const CartItem = ({ item = undefined, history, showButton = false }) => {
             history.push(itemLink);
           }}
           data-test={`item-${id}-title-link`}
+          role="button"
+          aria-label={`View details for ${name}`}
         >
           <div className="inventory_item_name" data-test="inventory-item-name">
             {name}

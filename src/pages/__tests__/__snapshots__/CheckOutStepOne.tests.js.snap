@@ -9,7 +9,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -63,6 +63,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -83,6 +84,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -93,6 +95,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -140,8 +143,10 @@ exports[`CheckOutStepOne should render correctly 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, empty"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             />
           </div>
         </div>
@@ -156,16 +161,19 @@ exports[`CheckOutStepOne should render correctly 1`] = `
             Checkout: Your Information
           </span>
         </div>
-      </div>
+      </header>
       <div
         class="checkout_info_container"
         data-test="checkout-info-container"
         id="checkout_info_container"
+        role="main"
       >
         <div
           class="checkout_info_wrapper"
         >
-          <form>
+          <form
+            aria-label="Checkout information"
+          >
             <div
               class="checkout_info"
             >
@@ -173,6 +181,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
                 class="form_group"
               >
                 <input
+                  aria-label="First Name"
                   autocapitalize="none"
                   autocorrect="off"
                   class="input_error form_input"
@@ -188,6 +197,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
                 class="form_group"
               >
                 <input
+                  aria-label="Last Name"
                   autocapitalize="none"
                   autocorrect="off"
                   class="input_error form_input"
@@ -203,6 +213,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
                 class="form_group"
               >
                 <input
+                  aria-label="Zip/Postal Code"
                   autocapitalize="none"
                   autocorrect="off"
                   class="input_error form_input"
@@ -228,7 +239,7 @@ exports[`CheckOutStepOne should render correctly 1`] = `
                 name="cancel"
               >
                 <img
-                  alt="Go back"
+                  alt=""
                   class="back-image"
                   src="test-file-stub"
                 />

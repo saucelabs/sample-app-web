@@ -9,7 +9,7 @@ exports[`Cart should render correctly for a visual user 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -63,6 +63,7 @@ exports[`Cart should render correctly for a visual user 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -83,6 +84,7 @@ exports[`Cart should render correctly for a visual user 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -93,6 +95,7 @@ exports[`Cart should render correctly for a visual user 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -140,8 +143,10 @@ exports[`Cart should render correctly for a visual user 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, empty"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             />
           </div>
         </div>
@@ -156,11 +161,12 @@ exports[`Cart should render correctly for a visual user 1`] = `
             Your Cart
           </span>
         </div>
-      </div>
+      </header>
       <div
         class="cart_contents_container"
         data-test="cart-contents-container"
         id="cart_contents_container"
+        role="main"
       >
         <div>
           <div
@@ -190,7 +196,7 @@ exports[`Cart should render correctly for a visual user 1`] = `
               name="continue-shopping"
             >
               <img
-                alt="Go back"
+                alt=""
                 class="back-image"
                 src="test-file-stub"
               />
@@ -272,7 +278,7 @@ exports[`Cart should render correctly items 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -326,6 +332,7 @@ exports[`Cart should render correctly items 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -346,6 +353,7 @@ exports[`Cart should render correctly items 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -356,6 +364,7 @@ exports[`Cart should render correctly items 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -403,8 +412,10 @@ exports[`Cart should render correctly items 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, 3 items"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             >
               <span
                 class="shopping_cart_badge"
@@ -426,11 +437,12 @@ exports[`Cart should render correctly items 1`] = `
             Your Cart
           </span>
         </div>
-      </div>
+      </header>
       <div
         class="cart_contents_container"
         data-test="cart-contents-container"
         id="cart_contents_container"
+        role="main"
       >
         <div>
           <div
@@ -463,9 +475,11 @@ exports[`Cart should render correctly items 1`] = `
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Sauce Labs Bolt T-Shirt"
                   data-test="item-1-title-link"
                   href="#"
                   id="item_1_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -514,9 +528,11 @@ exports[`Cart should render correctly items 1`] = `
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Sauce Labs Onesie"
                   data-test="item-2-title-link"
                   href="#"
                   id="item_2_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -565,9 +581,11 @@ exports[`Cart should render correctly items 1`] = `
                 class="cart_item_label"
               >
                 <a
+                  aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                   data-test="item-3-title-link"
                   href="#"
                   id="item_3_title_link"
+                  role="button"
                 >
                   <div
                     class="inventory_item_name"
@@ -613,7 +631,7 @@ exports[`Cart should render correctly items 1`] = `
               name="continue-shopping"
             >
               <img
-                alt="Go back"
+                alt=""
                 class="back-image"
                 src="test-file-stub"
               />
@@ -695,7 +713,7 @@ exports[`Cart should render correctly without any items 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -749,6 +767,7 @@ exports[`Cart should render correctly without any items 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -769,6 +788,7 @@ exports[`Cart should render correctly without any items 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -779,6 +799,7 @@ exports[`Cart should render correctly without any items 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -826,8 +847,10 @@ exports[`Cart should render correctly without any items 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, empty"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             />
           </div>
         </div>
@@ -842,11 +865,12 @@ exports[`Cart should render correctly without any items 1`] = `
             Your Cart
           </span>
         </div>
-      </div>
+      </header>
       <div
         class="cart_contents_container"
         data-test="cart-contents-container"
         id="cart_contents_container"
+        role="main"
       >
         <div>
           <div
@@ -876,7 +900,7 @@ exports[`Cart should render correctly without any items 1`] = `
               name="continue-shopping"
             >
               <img
-                alt="Go back"
+                alt=""
                 class="back-image"
                 src="test-file-stub"
               />

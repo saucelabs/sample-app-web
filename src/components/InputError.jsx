@@ -27,6 +27,7 @@ const InputError = ({
         onChange={onChange}
         type={type}
         value={value}
+        aria-label={placeholder}
         {...(testId
           ? {
               "data-test": testId,

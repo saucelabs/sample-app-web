@@ -6,6 +6,7 @@ exports[`InputError should render an error input 1`] = `
     class="form_group"
   >
     <input
+      aria-label=""
       class="input_error form_input error"
       placeholder=""
       type="text"
@@ -36,6 +37,7 @@ exports[`InputError should render an input with a testId 1`] = `
     class="form_group"
   >
     <input
+      aria-label=""
       class="input_error form_input"
       data-test="some-id"
       id="some-id"
@@ -54,6 +56,7 @@ exports[`InputError should render an input with custom props 1`] = `
     class="form_group"
   >
     <input
+      aria-label=""
       class="input_error form_input"
       data-test="some-id"
       foo="bar"
@@ -73,6 +76,7 @@ exports[`InputError should render an input with full props 1`] = `
     class="form_group"
   >
     <input
+      aria-label="The placeholder"
       class="input_error form_input"
       data-test="some-id"
       foo="bar"
@@ -92,6 +96,7 @@ exports[`InputError should render correctly with the required options 1`] = `
     class="form_group"
   >
     <input
+      aria-label=""
       class="input_error form_input"
       placeholder=""
       type="text"
@@ -107,6 +112,7 @@ exports[`InputError should render secure input 1`] = `
     class="form_group"
   >
     <input
+      aria-label=""
       class="input_error form_input"
       placeholder=""
       type="password"
