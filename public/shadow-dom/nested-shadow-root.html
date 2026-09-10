@@ -4,20 +4,11 @@
   <title>Nested Shadow Root Example</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+  <link rel="stylesheet" href="/shadow-dom/_style.css">
   <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 20px;
-          background-color: #f4f4f4;
-      }
-
-      h1 {
-          color: #333;
-      }
-
       p {
-          color: red;
+          color: #e2231a;
       }
   </style>
 </head>
@@ -41,38 +32,21 @@
       super();
       const shadow = this.attachShadow({ mode });
       shadow.innerHTML = `
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+        <link rel="stylesheet" href="/shadow-dom/_style.css">
         <style>
           .inner {
-            background: #fff3e0;
-            border: 2px dashed #ef6c00;
-            padding: 12px;
+            background: #f5f4f2;
+            border-color: #474c55;
             margin-top: 10px;
-            border-radius: 4px;
           }
           p {
-            color: #ef6c00;
+            color: #474c55;
             margin: 4px 0;
           }
           button {
-            padding: 6px 12px;
-            background-color: #ef6c00;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-          }
-          .scroll-area {
-            margin-top: 10px;
-            height: 110px;
-            overflow-y: auto;
-            border: 1px solid #ef6c00;
-            border-radius: 4px;
-            background: #fff;
-            padding: 8px;
-          }
-          .scroll-area ol {
-            margin: 0;
-            padding-left: 22px;
+            border-color: #474c55;
+            color: #474c55;
           }
         </style>
         <div class="inner">
@@ -100,28 +74,24 @@
       super();
       const shadow = this.attachShadow({ mode });
       shadow.innerHTML = `
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+        <link rel="stylesheet" href="/shadow-dom/_style.css">
         <style>
           .outer {
-            background: #e8f5e9;
-            border: 2px solid #2e7d32;
-            padding: 15px;
-            border-radius: 6px;
+            background: #eafbf3;
+            border-color: #3ddc91;
           }
           p {
-            color: #2e7d32;
+            color: #2a7a5a;
             margin: 5px 0;
           }
           button {
-            padding: 8px 16px;
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            border-color: #3ddc91;
+            color: #2a7a5a;
             margin-right: 8px;
           }
           h2 {
-            color: #1b5e20;
+            color: #2a7a5a;
             margin-top: 0;
           }
         </style>

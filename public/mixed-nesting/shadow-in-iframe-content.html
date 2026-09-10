@@ -3,16 +3,15 @@
 <head>
   <title>Iframe Body with Shadow Root</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+  <link rel="stylesheet" href="/shadow-dom/_style.css">
   <style>
       body {
-          font-family: Arial, sans-serif;
-          margin: 0;
           padding: 15px;
-          background-color: #fafafa;
       }
 
       p {
-          color: red;
+          color: #e2231a;
       }
   </style>
 </head>
@@ -29,42 +28,24 @@
   const host = document.getElementById('shadow-host');
   const shadow = host.attachShadow({ mode });
   shadow.innerHTML = `
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+    <link rel="stylesheet" href="/shadow-dom/_style.css">
     <style>
       .card {
-        background: #f3e5f5;
-        border: 2px solid #6a1b9a;
-        padding: 12px;
-        border-radius: 6px;
-        font-family: Arial, sans-serif;
+        background: #eafbf3;
+        border-color: #3ddc91;
       }
       p {
-        color: #6a1b9a;
+        color: #2a7a5a;
         margin: 4px 0;
       }
       button {
-        padding: 6px 12px;
-        background-color: #6a1b9a;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .scroll-area {
-        margin-top: 10px;
-        height: 110px;
-        overflow-y: auto;
-        border: 1px solid #6a1b9a;
-        border-radius: 4px;
-        background: #fff;
-        padding: 8px;
-      }
-      .scroll-area ol {
-        margin: 0;
-        padding-left: 22px;
+        border-color: #3ddc91;
+        color: #2a7a5a;
       }
     </style>
     <div class="card">
-      <p id="shadow-paragraph">Inside the iframe's shadow root (purple, isolated from the iframe's own page styles).</p>
+      <p id="shadow-paragraph">Inside the iframe's shadow root (green, isolated from the iframe's own page styles).</p>
       <button id="shadow-button">Shadow Button (in iframe)</button>
       <div id="shadow-scroll" class="scroll-area" data-scrollable="true">
         <ol>

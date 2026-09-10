@@ -4,36 +4,24 @@
   <title>Shadow Root Example</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+  <link rel="stylesheet" href="/shadow-dom/_style.css">
   <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 20px;
-          background-color: #f4f4f4;
-      }
-
-      h1 {
-          color: #333;
-      }
-
       /* Page-level rules that target the SAME class and tag names used inside the shadow root. */
       .card {
-          background: #ffcdd2;
-          border: 3px dashed red;
-          padding: 15px;
+          background: #fdf0ef;
+          border: 1px solid #e2231a;
           margin-bottom: 20px;
-          border-radius: 0;
       }
 
       .card p {
-          color: red;
-          font-weight: bold;
+          color: #e2231a;
+          font-weight: 500;
       }
 
       .card button {
-          background: red;
-          color: white;
-          border: 3px dashed black;
+          border-color: #e2231a;
+          color: #e2231a;
       }
   </style>
 </head>
@@ -63,44 +51,26 @@
   const shadow = host.attachShadow({ mode });
 
   shadow.innerHTML = `
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+    <link rel="stylesheet" href="/shadow-dom/_style.css">
     <style>
       .card {
-        background: #e3f2fd;
-        border: 2px solid #1976d2;
-        padding: 15px;
-        border-radius: 6px;
-        font-family: Arial, sans-serif;
+        background: #eafbf3;
+        border-color: #3ddc91;
       }
       .card p {
-        color: #1976d2;
+        color: #2a7a5a;
         margin: 5px 0;
-        font-weight: normal;
+        font-weight: 400;
       }
       .card button {
-        padding: 8px 16px;
-        background-color: #1976d2;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .scroll-area {
-        margin-top: 10px;
-        height: 120px;
-        overflow-y: auto;
-        border: 1px solid #1976d2;
-        border-radius: 4px;
-        background: #fff;
-        padding: 8px;
-      }
-      .scroll-area ol {
-        margin: 0;
-        padding-left: 22px;
+        border-color: #3ddc91;
+        color: #2a7a5a;
       }
     </style>
     <div class="card">
       <p id="shadow-paragraph">I am the SHADOW DOM card — same <code>.card</code> class as above, but page CSS cannot reach me.</p>
-      <p>I stay blue, with a solid blue border. No red here.</p>
+      <p>I stay green, with a solid green border. No red here.</p>
       <button id="shadow-button">Shadow Button</button>
       <div id="shadow-scroll" class="scroll-area" data-scrollable="true">
         <ol>
