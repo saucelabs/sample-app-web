@@ -1,12 +1,10 @@
 import React from "react";
 import HeaderContainer from "../../components/HeaderContainer";
 import Button, { BUTTON_TYPES } from "../../components/Button";
-import StoryRouter from "../StoryRouter";
 
 export default {
   title: "SwagLabs/Headers",
   component: HeaderContainer,
-  decorators: [StoryRouter()],
   parameters: {
     layout: "fullscreen",
   },

@@ -1,16 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`should be able to sort an array with objects asc based on a property 1`] = `
-Array [
-  Object {
+[
+  {
     "id": 2.1,
     "name": "Ar",
   },
-  Object {
+  {
     "id": 0,
     "name": "Bar",
   },
-  Object {
+  {
     "id": 99.9,
     "name": "Rab",
   },
@@ -18,16 +18,16 @@ Array [
 `;
 
 exports[`should be able to sort an array with objects desc based on a property 1`] = `
-Array [
-  Object {
+[
+  {
     "id": 99.9,
     "name": "Rab",
   },
-  Object {
+  {
     "id": 0,
     "name": "Bar",
   },
-  Object {
+  {
     "id": 2.1,
     "name": "Ar",
   },
@@ -35,16 +35,16 @@ Array [
 `;
 
 exports[`should be able to sort an array with objects hi to low based on a property 1`] = `
-Array [
-  Object {
+[
+  {
     "id": 99.9,
     "name": "Rab",
   },
-  Object {
+  {
     "id": 2.1,
     "name": "Ar",
   },
-  Object {
+  {
     "id": 0,
     "name": "Bar",
   },
@@ -52,16 +52,16 @@ Array [
 `;
 
 exports[`should be able to sort an array with objects lo to high based on a property 1`] = `
-Array [
-  Object {
+[
+  {
     "id": 0,
     "name": "Bar",
   },
-  Object {
+  {
     "id": 2.1,
     "name": "Ar",
   },
-  Object {
+  {
     "id": 99.9,
     "name": "Rab",
   },

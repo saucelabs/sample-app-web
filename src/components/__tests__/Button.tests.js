@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../Button";
 
 let props;
@@ -13,72 +13,57 @@ describe("Button", () => {
   });
 
   it("should render correctly with the required options", () => {
-    const component = shallow(<Button {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render correctly with a custom class", () => {
-    const component = shallow(<Button customClass="custom-class" {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button customClass="custom-class" {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a Action button", () => {
-    const component = shallow(<Button type={BUTTON_TYPES.ACTION} {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button type={BUTTON_TYPES.ACTION} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a Back button", () => {
-    const component = shallow(<Button type={BUTTON_TYPES.BACK} {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button type={BUTTON_TYPES.BACK} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a Primary button", () => {
-    const component = shallow(
-      <Button type={BUTTON_TYPES.PRIMARY} {...props} />
-    );
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button type={BUTTON_TYPES.PRIMARY} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a Secondary button", () => {
-    const component = shallow(
-      <Button type={BUTTON_TYPES.SECONDARY} {...props} />
-    );
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button type={BUTTON_TYPES.SECONDARY} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a Small button", () => {
-    const component = shallow(<Button size={BUTTON_SIZES.SMALL} {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button size={BUTTON_SIZES.SMALL} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a Medium button", () => {
-    const component = shallow(<Button size={BUTTON_SIZES.MEDIUM} {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button size={BUTTON_SIZES.MEDIUM} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a Large button", () => {
-    const component = shallow(<Button size={BUTTON_SIZES.LARGE} {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button size={BUTTON_SIZES.LARGE} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a button with a testId", () => {
-    const component = shallow(<Button testId="test-id" {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button testId="test-id" {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render a button with custom properties", () => {
-    const component = shallow(<Button foo="bar" bar="foo" {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<Button foo="bar" bar="foo" {...props} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

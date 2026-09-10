@@ -1,4 +1,9 @@
+import path from 'path';
+
 export const DEFAULT_TIMEOUT = 30 * 1000;
+// Where the local Chrome capability writes downloads,
+// e.g. the order PDF from checkout.pdf.visual.spec.ts
+export const DOWNLOAD_DIR = path.resolve(__dirname, '../../downloads');
 export const PAGES = {
     CART: '/cart.html',
     CHECKOUT_COMPLETE: '/checkout-complete.html',

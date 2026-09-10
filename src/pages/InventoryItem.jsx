@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../utils/withRouter";
 import { isProblemUser, isErrorUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
 import { ShoppingCart } from "../utils/shopping-cart";
@@ -9,7 +9,7 @@ import Button, { BUTTON_SIZES, BUTTON_TYPES } from "../components/Button";
 import SwagLabsFooter from "../components/Footer";
 import "./InventoryItem.css";
 import BrokenComponent from "../components/BrokenComponent";
-import { ErrorBoundary } from "@backtrace-labs/react";
+import { ErrorBoundary } from "@backtrace/react";
 import getImage from "../utils/imageLoader";
 
 const InventoryItem = (props) => {
@@ -46,7 +46,7 @@ const InventoryItem = (props) => {
   const imgSrc = getImage(item.image_url);
 
   const [itemInCart, setItemInCart] = useState(
-    ShoppingCart.isItemInCart(inventoryId)
+    ShoppingCart.isItemInCart(inventoryId),
   );
   /**
    * @TODO:

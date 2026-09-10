@@ -1,56 +1,38 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render } from "@testing-library/react";
 import SubmitButton from "../SubmitButton";
 
 describe("SubmitButton", () => {
   it("should render with default props", () => {
-    const props = {
-      value: "Submit",
-    };
-    const component = shallow(<SubmitButton {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(<SubmitButton value="Submit" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render with a testId", () => {
-    const props = {
-      testId: "test-id",
-      value: "Submit",
-    };
-    const component = shallow(<SubmitButton {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(
+      <SubmitButton testId="test-id" value="Submit" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render with a testId and a name prop", () => {
-    const props = {
-      testId: "test-id",
-      value: "Submit",
-      name: "name-id",
-    };
-    const component = shallow(<SubmitButton {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(
+      <SubmitButton testId="test-id" value="Submit" name="name-id" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render with custom props", () => {
-    const props = {
-      value: "Submit",
-      foo: "bar",
-      bar: "foo",
-    };
-    const component = shallow(<SubmitButton {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(
+      <SubmitButton value="Submit" foo="bar" bar="foo" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render with a custom class", () => {
-    const props = {
-      customClass: "custom_class",
-      value: "Submit",
-    };
-    const component = shallow(<SubmitButton {...props} />);
-
-    expect(component).toMatchSnapshot();
+    const { asFragment } = render(
+      <SubmitButton customClass="custom_class" value="Submit" />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

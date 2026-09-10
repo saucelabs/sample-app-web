@@ -15,6 +15,7 @@ const ErrorMessage = ({ isError, errorMessage, onClick, ...props }) => {
         // But this is done to keep backwards compatibility
         <h3 data-test="error">
           <button
+            type="button"
             className="error-button"
             onClick={onClick}
             data-test="error-button"

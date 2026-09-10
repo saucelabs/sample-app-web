@@ -6,10 +6,10 @@ import CartButton from "./CartButton";
 import { isVisualUser } from "../utils/Credentials";
 
 const HeaderContainer = ({
-  customClass,
-  secondaryLeftComponent,
-  secondaryRightComponent,
-  secondaryTitle,
+  customClass = undefined,
+  secondaryLeftComponent = undefined,
+  secondaryRightComponent = undefined,
+  secondaryTitle = undefined,
 }) => {
   /**
    * @TODO:
@@ -101,12 +101,6 @@ HeaderContainer.propTypes = {
    * A title
    */
   title: PropTypes.string,
-};
-HeaderContainer.defaultProps = {
-  customClass: undefined,
-  secondaryLeftComponent: undefined,
-  secondaryRightComponent: undefined,
-  secondaryTitle: undefined,
 };
 
 export default HeaderContainer;

@@ -11,10 +11,10 @@ export const INPUT_TYPES = {
 const InputError = ({
   isError,
   onChange,
-  placeholder,
-  testId,
-  type,
-  value,
+  placeholder = "",
+  testId = undefined,
+  type = INPUT_TYPES.TEXT,
+  value = "",
   ...props
 }) => {
   return (
@@ -70,11 +70,5 @@ InputError.propTypes = {
   value: PropTypes.string,
 };
 
-InputError.defaultProps = {
-  placeholder: "",
-  testId: undefined,
-  type: INPUT_TYPES.TEXT,
-  value: "",
-};
 
 export default InputError;

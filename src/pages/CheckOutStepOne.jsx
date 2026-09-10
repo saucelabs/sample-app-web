@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "../utils/withRouter";
 import PropTypes from "prop-types";
 import { isProblemUser, isErrorUser } from "../utils/Credentials";
 import { ROUTES } from "../utils/Constants";
@@ -53,7 +53,9 @@ const CheckOutStepOne = ({ history }) => {
     }
 
     // If we're here, we have our required info. Redirect!
-    history.push(ROUTES.CHECKOUT_STEP_TWO);
+    history.push(ROUTES.CHECKOUT_STEP_TWO, {
+      state: { firstName, lastName, postalCode },
+    });
 
     return "";
   };

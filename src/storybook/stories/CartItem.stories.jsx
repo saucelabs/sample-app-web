@@ -1,11 +1,9 @@
 import React from "react";
-import StoryRouter from "../StoryRouter";
 import CartItem from "../../components/CartItem";
 
 export default {
   title: "SwagLabs/Swag Cart Item",
   component: CartItem,
-  decorators: [StoryRouter()],
   parameters: {
     layout: "centered",
   },

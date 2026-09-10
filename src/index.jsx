@@ -1,13 +1,7 @@
-// Needed to add the below due to issues in IE11, see this thread
-// https://github.com/facebook/create-react-app/issues/9906#issuecomment-720905753
-/** @jsxRuntime classic */
-import "react-app-polyfill/ie11";
-import "react-app-polyfill/stable";
-
-import { BacktraceClient, ErrorBoundary } from "@backtrace-labs/react";
+import { BacktraceClient, ErrorBoundary } from "@backtrace/react";
 import React from "react";
-import ReactDOM from "react-dom";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import "./index.css";
 import Cart from "./pages/Cart";
@@ -17,7 +11,6 @@ import Finish from "./pages/Finish";
 import Inventory from "./pages/Inventory";
 import InventoryItem from "./pages/InventoryItem";
 import Login from "./pages/Login";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { ROUTES } from "./utils/Constants";
 import { currentUser } from "./utils/Credentials";
 import { ShoppingCart } from "./utils/shopping-cart";
@@ -37,27 +30,48 @@ BacktraceClient.initialize({
 const routing = (
   <ErrorBoundary>
     <Router>
-      <Route exact path={ROUTES.LOGIN} component={Login} />
-      <PrivateRoute path={ROUTES.INVENTORY} component={(props) => <Inventory data={InventoryData} {...props}/>} />
-      <PrivateRoute path={ROUTES.INVENTORY_LONG} component={(props) => <Inventory data={InventoryDataLong} {...props}/>} />
-      <PrivateRoute path={ROUTES.INVENTORY_LIST} component={InventoryItem} />
-      <PrivateRoute path={ROUTES.CART} component={Cart} />
-      <PrivateRoute
-        path={ROUTES.CHECKOUT_STEP_ONE}
-        component={CheckOutStepOne}
-      />
-      <PrivateRoute
-        path={ROUTES.CHECKOUT_STEP_TWO}
-        component={CheckOutStepTwo}
-      />
-      <PrivateRoute path={ROUTES.CHECKOUT_COMPLETE} component={Finish} />
+      <Routes>
+        <Route path={ROUTES.LOGIN} element={<Login />} />
+        <Route
+          path={ROUTES.INVENTORY}
+          element={
+            <PrivateRoute
+              component={() => <Inventory data={InventoryData} />}
+            />
+          }
+        />
+        <Route
+          path={ROUTES.INVENTORY_LONG}
+          element={
+            <PrivateRoute
+              component={() => <Inventory data={InventoryDataLong} />}
+            />
+          }
+        />
+        <Route
+          path={ROUTES.INVENTORY_LIST}
+          element={<PrivateRoute component={InventoryItem} />}
+        />
+        <Route
+          path={ROUTES.CART}
+          element={<PrivateRoute component={Cart} />}
+        />
+        <Route
+          path={ROUTES.CHECKOUT_STEP_ONE}
+          element={<PrivateRoute component={CheckOutStepOne} />}
+        />
+        <Route
+          path={ROUTES.CHECKOUT_STEP_TWO}
+          element={<PrivateRoute component={CheckOutStepTwo} />}
+        />
+        <Route
+          path={ROUTES.CHECKOUT_COMPLETE}
+          element={<PrivateRoute component={Finish} />}
+        />
+      </Routes>
     </Router>
   </ErrorBoundary>
 );
 
-ReactDOM.render(routing, document.getElementById("root"));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
-serviceWorkerRegistration.register();
+const root = createRoot(document.getElementById("root"));
+root.render(routing);

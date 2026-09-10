@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Select.css";
 
-const Select = ({ activeOption, onChange, options, testId }) => {
+const Select = ({ activeOption, onChange, options, testId = undefined }) => {
   return (
     <span className="select_container">
       <span className="active_option" data-test="active-option">
@@ -46,15 +46,12 @@ Select.propTypes = {
     PropTypes.shape({
       key: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   /**
    * The test id
    */
   testId: PropTypes.string,
-};
-Select.defaultProps = {
-  testId: undefined,
 };
 
 export default Select;

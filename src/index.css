@@ -1,6 +1,10 @@
 body,
 html {
-  font-family: DM Sans, Arial, Helvetica, sans-serif;
+  font-family:
+    DM Sans,
+    Arial,
+    Helvetica,
+    sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* letter-spacing: 1px; */

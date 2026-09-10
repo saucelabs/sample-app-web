@@ -1,11 +1,9 @@
 import React from "react";
-import StoryRouter from "../StoryRouter";
 import InventoryListItem from "../../components/InventoryListItem";
 
 export default {
   title: "SwagLabs/Swag Overview Item",
   component: InventoryListItem,
-  decorators: [StoryRouter()],
 };
 
 const Template = (args) => (

@@ -1,5 +1,8 @@
 import {config} from './wdio.shared.conf';
 
+// Excluding locally visual tests
+config.exclude = ['../../test/specs/demo.visual.spec.ts', '../../test/specs/checkout.pdf.visual.spec.ts'];
+
 // ============
 // Capabilities
 // ============

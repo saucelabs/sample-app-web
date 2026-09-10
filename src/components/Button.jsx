@@ -15,12 +15,12 @@ export const BUTTON_SIZES = {
   LARGE: "large",
 };
 const Button = ({
-  customClass,
+  customClass = undefined,
   label,
   onClick,
-  size,
-  testId,
-  type,
+  size = BUTTON_SIZES.LARGE,
+  testId = undefined,
+  type = BUTTON_TYPES.PRIMARY,
   ...props
 }) => {
   const buttonTypeClass = ` btn_${type}`;
@@ -77,11 +77,5 @@ Button.propTypes = {
   type: PropTypes.oneOf(Object.values(BUTTON_TYPES)),
 };
 
-Button.defaultProps = {
-  customClass: undefined,
-  size: BUTTON_SIZES.LARGE,
-  testId: undefined,
-  type: BUTTON_TYPES.PRIMARY,
-};
 
 export default Button;

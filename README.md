@@ -2,7 +2,6 @@
 This is the Sauce Labs Sample Application which is designed to be used from desktop web browsers
 
 ![sample-app-web workflow](https://github.com/saucelabs/sample-app-web/actions/workflows/sample-app-web.yml/badge.svg)
-[![codecov](https://codecov.io/gh/saucelabs/sample-app-web/branch/master/graph/badge.svg?token=Q4UsgDSRd3)](https://codecov.io/gh/saucelabs/sample-app-web)
 
 - [Setup](#setup)
   - [Requirements](#requirements)
@@ -15,10 +14,9 @@ This is the Sauce Labs Sample Application which is designed to be used from desk
 ### Requirements
 To set up the development environment directly on your host computer:
 
-1. You’ll need [Node.js](http://nodejs.org) installed (this needs to be NodeJS 14, not higher). If you don't have Node installed,
-we recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions.
-1. Install [OpenJDK 8](https://adoptopenjdk.net/) for running the end-to-end tests
-1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests
+1. You'll need [Node.js](http://nodejs.org) `>=24.9.0` installed (see `.nvmrc`/`package.json` `engines` — this is a hard requirement of the Sauce Visual Storybook integration, not just a preference). If you don't have Node installed,
+we recommend installing [NVM](https://github.com/creationix/nvm) to assist managing multiple active Node.js versions (`nvm use` will pick up `.nvmrc` automatically).
+1. Install [Google Chrome](https://www.google.com/chrome/) for running the end-to-end tests locally
 1. Clone the project somewhere on your computer
 
         git clone git@github.com:<your-username>/sample-app-web.git
@@ -51,7 +49,7 @@ For more details, [see the docs about React integration with Backtrace](https://
 
         npm run start
 
-    This will build the application, start Chrome and load the website on [http://localhost:3000/](http://localhost:3000/)
+    This starts the Vite dev server, opens Chrome, and loads the website on [http://localhost:3000/](http://localhost:3000/)
 
 1. Click around - this is the app!
 
@@ -67,10 +65,10 @@ To enable additional insight in Backtrace, you can send built sourcemaps and sou
 
         npm run backtrace.sourcemaps
 
-1. Host the app using e.g. `http-server` (sourcemaps integration won't work with `npm run start`)
+1. Serve the production build (sourcemaps integration won't work with `npm run start`, which serves unbuilt source)
 
-        npx http-server -p 3000 ./build
-        
+        npm run preview
+
 1. New uploaded errors should display with sourcemaps attached!
 
 For more details, [see the docs about sourcemap integration with Backtrace](https://docs.saucelabs.com/error-reporting/platform-integrations/source-map/).
@@ -85,43 +83,40 @@ found [here](https://storybook.js.org/docs/react/get-started/introduction).
 
 ## Test
 ### E2E
+The E2E suite lives in `test/e2e` (a separate npm project using WebdriverIO 9 + Chrome, driven by the bundled `chromedriver` package — no separate Selenium server or Java install needed). Install its dependencies once:
+
+    npm --prefix ./test/e2e install
+
 #### Testing locally
-To run the application test suite (which uses Webdriver.io, Selenium, and Chrome) make sure the application is running
-on [http://localhost:3000/](http://localhost:3000/) (see above steps)
+Make sure the application is running on [http://localhost:3000/](http://localhost:3000/) (see above steps), then:
 
-    npm run test.e2e.local
+    npm --prefix ./test/e2e run test.local
 
-This will run the application test suite
+This will run the application test suite against your local Chrome.
 
 #### Testing on Sauce Labs
 Running on Sauce Labs uses Environment Variables to authenticate credentials. You can find a guide on how to do this
 [here.](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials)
 
-1. `npm run test.e2e.sauce.us` to run tests on the Sauce Labs in the US Data Center
-2. `npm run test.e2e.sauce.eu` to run tests in the EU Data Center
+1. `npm --prefix ./test/e2e run test.saucelabs.us` to run tests on the Sauce Labs US Data Center
+2. `npm --prefix ./test/e2e run test.saucelabs.eu` to run tests on the Sauce Labs EU Data Center
 
-> Make sure you've added the `SCREENER_API_KEY` variable to your environment variables.
+> Make sure you've added the `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY` variables to your environment variables.
 
 ### Visual Component Testing
-You can test the components with Screener Component testing by running the following commands
+Components are visually tested with [Sauce Visual's Storybook integration](https://docs.saucelabs.com/visual-testing/integrations/storybook/) (`@saucelabs/visual-storybook`):
 
-    # This will test all components on Chrome only
-    npm run test.storybook.ci
-    
-    # This will test all components on Chrome and Safari in mobile viewports
-    npm run test.storybook.mobile
-    
-    # This will test all componentes on Chrome, Safari, Firefox and Safari
-    # with different desktop resolutions
-    npm run test.storybook.desktop
+    npm run test.storybook
 
-Each PR to master will also test the components with the `test.storybook.ci`-command.
+This builds on Storybook's own [test runner](https://github.com/storybookjs/test-runner) to visit every story with Playwright (across `chromium`, `firefox`, and `webkit` — see `test-runner-jest.config.mjs`), take a snapshot, and upload it to Sauce Visual for review/diffing. Requires Node `>=24.9.0` (see Requirements above).
+
+Each PR (any branch other than `main`) will also run this in CI.
 
 > Make sure you've added the `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY` variables to your environment variables.
 
 ## Deploy
 
-Merges to master need to manually be triggered in [Actions > github pages release](https://github.com/saucelabs/sample-app-web/actions/workflows/github-pages.yml) and will automatically deploy to:
+Merges to main need to manually be triggered in [Actions > github pages release](https://github.com/saucelabs/sample-app-web/actions/workflows/github-pages.yml) and will automatically deploy to:
 * https://www.saucedemo.com
 * https://saucelabs.github.io/sample-app-web/
 

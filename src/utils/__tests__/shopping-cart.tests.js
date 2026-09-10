@@ -13,7 +13,7 @@ describe("shopping-cart", () => {
     window.localStorage.setItem("cart-contents", JSON.stringify([1, 2]));
 
     expect(window.localStorage.getItem("cart-contents")).toEqual(
-      JSON.stringify([1, 2])
+      JSON.stringify([1, 2]),
     );
 
     ShoppingCart.addItem(3);
@@ -25,7 +25,7 @@ describe("shopping-cart", () => {
     window.localStorage.setItem("cart-contents", JSON.stringify([1, 2, 3]));
 
     expect(window.localStorage.getItem("cart-contents")).toEqual(
-      JSON.stringify([1, 2, 3])
+      JSON.stringify([1, 2, 3]),
     );
 
     ShoppingCart.removeItem(2);
@@ -52,7 +52,7 @@ describe("shopping-cart", () => {
     ShoppingCart.setCartContents(items);
 
     expect(window.localStorage.getItem("cart-contents")).toEqual(
-      JSON.stringify(items)
+      JSON.stringify(items),
     );
   });
 

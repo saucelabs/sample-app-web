@@ -1,18 +1,26 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import CheckOutStepTwo from "../CheckOutStepTwo";
 import { ShoppingCart } from "../../utils/shopping-cart";
+import { InventoryData } from "../../utils/InventoryData";
 import * as Credentials from "../../utils/Credentials";
 
 jest.mock("../../utils/shopping-cart");
 
 let props;
 
+function renderCheckout() {
+  return render(
+    <MemoryRouter>
+      <CheckOutStepTwo.WrappedComponent {...props} />
+    </MemoryRouter>,
+  );
+}
+
 describe("CheckOutStepTwo", () => {
   beforeEach(() => {
-    props = {
-      history: { push: jest.fn() },
-    };
+    props = { history: { push: jest.fn() } };
     ShoppingCart.getCartContents = jest.fn().mockReturnValue([]);
   });
 
@@ -21,62 +29,92 @@ describe("CheckOutStepTwo", () => {
   });
 
   it("should render correctly without any items", () => {
-    const wrapper = shallow(<CheckOutStepTwo.WrappedComponent {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    const { asFragment } = renderCheckout();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should render correctly items", () => {
-    const cartContents = [1, 2, 3];
-    ShoppingCart.getCartContents = jest.fn().mockReturnValue(cartContents);
-    const wrapper = shallow(<CheckOutStepTwo.WrappedComponent {...props} />);
-
-    expect(wrapper).toMatchSnapshot();
+    ShoppingCart.getCartContents = jest.fn().mockReturnValue([1, 2, 3]);
+    const { asFragment } = renderCheckout();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should redirect when trying to cancel", () => {
-    const wrapper = shallow(<CheckOutStepTwo.WrappedComponent {...props} />);
-    const ContinueShopping = wrapper.find("Button").at(0);
-    ContinueShopping.simulate("click", {
-      preventDefault() {},
-    });
-
-    expect(props.history.push).toBeCalledWith("/inventory.html");
+    const { getByTestId } = renderCheckout();
+    fireEvent.click(getByTestId("cancel"));
+    expect(props.history.push).toHaveBeenCalledWith("/inventory.html");
   });
 
   it("should redirect when trying to finish", () => {
-    const wrapper = shallow(<CheckOutStepTwo.WrappedComponent {...props} />);
-    const Checkout = wrapper.find("Button").at(1);
-    Checkout.simulate("click", {
-      preventDefault() {},
-    });
-
+    const { getByTestId } = renderCheckout();
+    fireEvent.click(getByTestId("finish"));
     expect(ShoppingCart.resetCart).toHaveBeenCalledTimes(1);
-    expect(props.history.push).toBeCalledWith("/checkout-complete.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html", {
+      state: {
+        order: {
+          items: [],
+          personalInfo: {},
+          orderTotal: 0,
+          orderTax: "0.00",
+          orderGrandTotal: "0.00",
+          orderDate: expect.any(String),
+        },
+      },
+    });
+  });
+
+  it("should include the cart items and personal info in the order snapshot when finishing", () => {
+    ShoppingCart.getCartContents = jest.fn().mockReturnValue([1, 4]);
+    props.location = {
+      state: { firstName: "John", lastName: "Doe", postalCode: "12345" },
+    };
+    const { getByTestId } = renderCheckout();
+    fireEvent.click(getByTestId("finish"));
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html", {
+      state: {
+        order: {
+          items: [InventoryData[1], InventoryData[4]],
+          personalInfo: {
+            firstName: "John",
+            lastName: "Doe",
+            postalCode: "12345",
+          },
+          orderTotal: 45.98,
+          orderTax: "3.68",
+          orderGrandTotal: "49.66",
+          orderDate: expect.any(String),
+        },
+      },
+    });
   });
 
   it("should give the incorrect order total when we are logged in as a problem user", () => {
     const isProblemUserSpy = jest.spyOn(Credentials, "isProblemUser");
     isProblemUserSpy.mockReturnValue(true);
-    const cartContents = [1, 2, 3];
-    ShoppingCart.getCartContents = jest.fn().mockReturnValue(cartContents);
-    const wrapper = shallow(<CheckOutStepTwo.WrappedComponent {...props} />);
-
-    expect(isProblemUserSpy).toHaveBeenCalledTimes(3);
-    expect(wrapper).toMatchSnapshot();
+    ShoppingCart.getCartContents = jest.fn().mockReturnValue([1, 2, 3]);
+    const { asFragment } = renderCheckout();
+    expect(isProblemUserSpy).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should should not reset the cart when a problem user finishes", () => {
     const isProblemUserSpy = jest.spyOn(Credentials, "isProblemUser");
     isProblemUserSpy.mockReturnValue(true);
-
-    const wrapper = shallow(<CheckOutStepTwo.WrappedComponent {...props} />);
-    const Checkout = wrapper.find("Button").at(1);
-    Checkout.simulate("click", {
-      preventDefault() {},
-    });
-
-    expect(isProblemUserSpy).toHaveBeenCalledTimes(1);
+    const { getByTestId } = renderCheckout();
+    fireEvent.click(getByTestId("finish"));
+    expect(isProblemUserSpy).toHaveBeenCalled();
     expect(ShoppingCart.resetCart).not.toHaveBeenCalled();
-    expect(props.history.push).toBeCalledWith("/checkout-complete.html");
+    expect(props.history.push).toHaveBeenCalledWith("/checkout-complete.html", {
+      state: {
+        order: {
+          items: [],
+          personalInfo: {},
+          orderTotal: 0,
+          orderTax: "0.00",
+          orderGrandTotal: "0.00",
+          orderDate: expect.any(String),
+        },
+      },
+    });
   });
 });
