@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>6 Levels Deep — Shadow + Iframe</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+  <link rel="stylesheet" href="/shadow-dom/_style.css">
+</head>
+<body>
+<h1>6-Level Nested: Shadow ➜ Iframe ➜ Shadow ➜ Iframe ➜ Shadow ➜ Iframe</h1>
+<p>Each step alternates between a Shadow Root and an Iframe. Click into the deepest
+  iframe to see content rendered at nesting depth 6.</p>
+
+<div id="level-1-host" data-level="1"></div>
+
+<p>Shadow root mode: <strong id="mode-indicator"></strong>
+  (toggle via <code>?modeOpen=true</code> or <code>?modeOpen=false</code> — propagates through all 6 levels).</p>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  const mode = resolveShadowMode();
+
+  const host = document.getElementById('level-1-host');
+  const shadow = host.attachShadow({ mode });
+  shadow.innerHTML = `
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+    <link rel="stylesheet" href="/shadow-dom/_style.css">
+    <style>
+      iframe {
+        height: 520px;
+      }
+    </style>
+    <div class="level">
+      <div class="label">Level 1 — Shadow Root (${mode})</div>
+      <iframe id="level-2-iframe" data-level="2" src="deep-level-2.html${window.location.search}"></iframe>
+    </div>
+  `;
+</script>
+</body>
+</html>

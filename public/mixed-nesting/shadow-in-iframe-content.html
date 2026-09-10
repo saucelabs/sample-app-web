@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Iframe Body with Shadow Root</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+  <link rel="stylesheet" href="/shadow-dom/_style.css">
+  <style>
+      body {
+          padding: 15px;
+      }
+
+      p {
+          color: #e2231a;
+      }
+  </style>
+</head>
+<body>
+<h2>I am the iframe document</h2>
+<p>This paragraph lives in the iframe's light DOM and is styled red.</p>
+
+<div id="shadow-host"></div>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  const mode = resolveShadowMode();
+
+  const host = document.getElementById('shadow-host');
+  const shadow = host.attachShadow({ mode });
+  shadow.innerHTML = `
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+    <link rel="stylesheet" href="/shadow-dom/_style.css">
+    <style>
+      .card {
+        background: #eafbf3;
+        border-color: #3ddc91;
+      }
+      p {
+        color: #2a7a5a;
+        margin: 4px 0;
+      }
+      button {
+        border-color: #3ddc91;
+        color: #2a7a5a;
+      }
+    </style>
+    <div class="card">
+      <p id="shadow-paragraph">Inside the iframe's shadow root (green, isolated from the iframe's own page styles).</p>
+      <button id="shadow-button">Shadow Button (in iframe)</button>
+      <div id="shadow-scroll" class="scroll-area" data-scrollable="true">
+        <ol>
+          <li>Shadow-in-iframe scroll item 1</li><li>Shadow-in-iframe scroll item 2</li>
+          <li>Shadow-in-iframe scroll item 3</li><li>Shadow-in-iframe scroll item 4</li>
+          <li>Shadow-in-iframe scroll item 5</li><li>Shadow-in-iframe scroll item 6</li>
+          <li>Shadow-in-iframe scroll item 7</li><li>Shadow-in-iframe scroll item 8</li>
+          <li>Shadow-in-iframe scroll item 9</li><li>Shadow-in-iframe scroll item 10</li>
+          <li>Shadow-in-iframe scroll item 11</li><li>Shadow-in-iframe scroll item 12</li>
+          <li>Shadow-in-iframe scroll item 13</li><li>Shadow-in-iframe scroll item 14</li>
+          <li>Shadow-in-iframe scroll item 15</li>
+        </ol>
+      </div>
+    </div>
+  `;
+</script>
+</body>
+</html>

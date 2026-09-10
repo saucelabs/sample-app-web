@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Deep Nesting — Level 2 iframe document</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+  <link rel="stylesheet" href="/shadow-dom/_style.css">
+  <style>
+      body {
+          padding: 12px;
+      }
+  </style>
+</head>
+<body>
+<div class="level-2-label label" data-level="2">Level 2 — Iframe</div>
+<div id="level-3-host" data-level="3"></div>
+
+<script src="/shadow-dom/_mode.js"></script>
+<script>
+  const mode = resolveShadowMode();
+
+  const host = document.getElementById('level-3-host');
+  const shadow = host.attachShadow({ mode });
+  shadow.innerHTML = `
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500">
+    <link rel="stylesheet" href="/shadow-dom/_style.css">
+    <style>
+      .level {
+        margin-top: 6px;
+      }
+      iframe {
+        height: 380px;
+      }
+    </style>
+    <div class="level">
+      <div class="label">Level 3 — Shadow Root (${mode})</div>
+      <iframe id="level-4-iframe" data-level="4" src="deep-level-4.html${window.location.search}"></iframe>
+    </div>
+  `;
+</script>
+</body>
+</html>

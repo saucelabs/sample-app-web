@@ -1,0 +1,135 @@
+/* Shared styling for the shadow-dom / mixed-nesting test pages, matching
+   the main app's look (src/index.css, src/components/Button.css). Kept as
+   a plain stylesheet (rather than JS-in-template CSS) so it can be linked
+   from both regular documents and shadow roots. */
+
+:root {
+  --text: #132322;
+  --muted: #474c55;
+  --border: #132322;
+  --bg: #fff;
+  --accent: #132322;
+}
+
+body {
+  font-family:
+    "DM Sans",
+    Arial,
+    Helvetica,
+    sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+
+p {
+  margin: 4px 0;
+}
+
+code {
+  background: #f4f4f4;
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+.level,
+.card {
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.label {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+button,
+.btn {
+  border: 1px solid var(--accent);
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 6px 20px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 4px;
+  background-color: var(--bg);
+  color: var(--accent);
+}
+
+iframe {
+  width: 100%;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--bg);
+}
+
+.scroll-area {
+  margin-top: 10px;
+  height: 110px;
+  overflow-y: auto;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--bg);
+  padding: 8px;
+}
+
+.scroll-area ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+/* Per-level accent so nesting depth stays visually distinguishable in
+   screenshots/visual diffs, without departing from the app's palette:
+   text/graphite (#132322) stays the base, and each level nudges toward
+   the app's other brand colors (green #3ddc91, red #e2231a) or a muted
+   step of graphite. */
+[data-level="1"] {
+  --accent: #132322;
+}
+[data-level="2"] {
+  --accent: #2a7a5a;
+}
+[data-level="3"] {
+  --accent: #3ddc91;
+}
+[data-level="4"] {
+  --accent: #474c55;
+}
+[data-level="5"] {
+  --accent: #8a2f28;
+}
+[data-level="6"] {
+  --accent: #e2231a;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a {
+  color: var(--text);
+}
