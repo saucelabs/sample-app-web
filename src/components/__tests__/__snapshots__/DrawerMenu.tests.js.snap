@@ -44,6 +44,7 @@ exports[`DrawerMenu should render correctly 1`] = `
             data-test="inventory-sidebar-link"
             href="#"
             id="inventory_sidebar_link"
+            role="button"
             style="display: block;"
             tabindex="-1"
           >
@@ -64,6 +65,7 @@ exports[`DrawerMenu should render correctly 1`] = `
             data-test="logout-sidebar-link"
             href="#"
             id="logout_sidebar_link"
+            role="button"
             style="display: block;"
             tabindex="-1"
           >
@@ -74,6 +76,7 @@ exports[`DrawerMenu should render correctly 1`] = `
             data-test="reset-sidebar-link"
             href="#"
             id="reset_sidebar_link"
+            role="button"
             style="display: block;"
             tabindex="-1"
           >
@@ -153,6 +156,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
             data-test="inventory-sidebar-link"
             href="#"
             id="inventory_sidebar_link"
+            role="button"
             style="display: block;"
             tabindex="-1"
           >
@@ -173,6 +177,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
             data-test="logout-sidebar-link"
             href="#"
             id="logout_sidebar_link"
+            role="button"
             style="display: block;"
             tabindex="-1"
           >
@@ -183,6 +188,7 @@ exports[`DrawerMenu should render correctly for a visual user 1`] = `
             data-test="reset-sidebar-link"
             href="#"
             id="reset_sidebar_link"
+            role="button"
             style="display: block;"
             tabindex="-1"
           >

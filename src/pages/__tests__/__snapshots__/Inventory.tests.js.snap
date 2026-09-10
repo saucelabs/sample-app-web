@@ -9,7 +9,7 @@ exports[`Inventory should render correctly 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -63,6 +63,7 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -83,6 +84,7 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -93,6 +95,7 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -140,8 +143,10 @@ exports[`Inventory should render correctly 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, empty"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             />
           </div>
         </div>
@@ -168,6 +173,7 @@ exports[`Inventory should render correctly 1`] = `
                 Name (A to Z)
               </span>
               <select
+                aria-label="Sort products"
                 class="product_sort_container"
                 data-test="product-sort-container"
               >
@@ -195,9 +201,10 @@ exports[`Inventory should render correctly 1`] = `
             </span>
           </div>
         </div>
-      </div>
+      </header>
       <div
         id="inventory_container"
+        role="main"
       >
         <div>
           <div
@@ -217,9 +224,11 @@ exports[`Inventory should render correctly 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Backpack"
                     data-test="item-4-img-link"
                     href="#"
                     id="item_4_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Backpack"
@@ -236,9 +245,11 @@ exports[`Inventory should render correctly 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Backpack"
                       data-test="item-4-title-link"
                       href="#"
                       id="item_4_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -282,9 +293,11 @@ exports[`Inventory should render correctly 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Bike Light"
                     data-test="item-0-img-link"
                     href="#"
                     id="item_0_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Bike Light"
@@ -301,9 +314,11 @@ exports[`Inventory should render correctly 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Bike Light"
                       data-test="item-0-title-link"
                       href="#"
                       id="item_0_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -347,9 +362,11 @@ exports[`Inventory should render correctly 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Bolt T-Shirt"
                     data-test="item-1-img-link"
                     href="#"
                     id="item_1_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Bolt T-Shirt"
@@ -366,9 +383,11 @@ exports[`Inventory should render correctly 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Bolt T-Shirt"
                       data-test="item-1-title-link"
                       href="#"
                       id="item_1_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -412,9 +431,11 @@ exports[`Inventory should render correctly 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Fleece Jacket"
                     data-test="item-5-img-link"
                     href="#"
                     id="item_5_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Fleece Jacket"
@@ -431,9 +452,11 @@ exports[`Inventory should render correctly 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Fleece Jacket"
                       data-test="item-5-title-link"
                       href="#"
                       id="item_5_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -477,9 +500,11 @@ exports[`Inventory should render correctly 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Onesie"
                     data-test="item-2-img-link"
                     href="#"
                     id="item_2_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Onesie"
@@ -496,9 +521,11 @@ exports[`Inventory should render correctly 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Onesie"
                       data-test="item-2-title-link"
                       href="#"
                       id="item_2_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -542,9 +569,11 @@ exports[`Inventory should render correctly 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                     data-test="item-3-img-link"
                     href="#"
                     id="item_3_img_link"
+                    role="button"
                   >
                     <img
                       alt="Test.allTheThings() T-Shirt (Red)"
@@ -561,9 +590,11 @@ exports[`Inventory should render correctly 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                       data-test="item-3-title-link"
                       href="#"
                       id="item_3_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -668,7 +699,7 @@ exports[`Inventory should render correctly for a problem user 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -722,6 +753,7 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -742,6 +774,7 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -752,6 +785,7 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -799,8 +833,10 @@ exports[`Inventory should render correctly for a problem user 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, empty"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             />
           </div>
         </div>
@@ -827,6 +863,7 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                 Name (A to Z)
               </span>
               <select
+                aria-label="Sort products"
                 class="product_sort_container"
                 data-test="product-sort-container"
               >
@@ -854,9 +891,10 @@ exports[`Inventory should render correctly for a problem user 1`] = `
             </span>
           </div>
         </div>
-      </div>
+      </header>
       <div
         id="inventory_container"
+        role="main"
       >
         <div>
           <div
@@ -876,9 +914,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Backpack"
                     data-test="item-4-img-link"
                     href="#"
                     id="item_4_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Backpack"
@@ -895,9 +935,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Backpack"
                       data-test="item-4-title-link"
                       href="#"
                       id="item_4_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -941,9 +983,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Bike Light"
                     data-test="item-0-img-link"
                     href="#"
                     id="item_0_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Bike Light"
@@ -960,9 +1004,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Bike Light"
                       data-test="item-0-title-link"
                       href="#"
                       id="item_0_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1006,9 +1052,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Bolt T-Shirt"
                     data-test="item-1-img-link"
                     href="#"
                     id="item_1_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Bolt T-Shirt"
@@ -1025,9 +1073,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Bolt T-Shirt"
                       data-test="item-1-title-link"
                       href="#"
                       id="item_1_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1071,9 +1121,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Fleece Jacket"
                     data-test="item-5-img-link"
                     href="#"
                     id="item_5_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Fleece Jacket"
@@ -1090,9 +1142,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Fleece Jacket"
                       data-test="item-5-title-link"
                       href="#"
                       id="item_5_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1136,9 +1190,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Onesie"
                     data-test="item-2-img-link"
                     href="#"
                     id="item_2_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Onesie"
@@ -1155,9 +1211,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Onesie"
                       data-test="item-2-title-link"
                       href="#"
                       id="item_2_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1201,9 +1259,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                     data-test="item-3-img-link"
                     href="#"
                     id="item_3_img_link"
+                    role="button"
                   >
                     <img
                       alt="Test.allTheThings() T-Shirt (Red)"
@@ -1220,9 +1280,11 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                       data-test="item-3-title-link"
                       href="#"
                       id="item_3_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1327,7 +1389,7 @@ exports[`Inventory should render correctly for a visual user 1`] = `
     <div
       id="contents_wrapper"
     >
-      <div
+      <header
         class="header_container"
         data-test="header-container"
         id="header_container"
@@ -1381,6 +1443,7 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="inventory-sidebar-link"
                       href="#"
                       id="inventory_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -1401,6 +1464,7 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="logout-sidebar-link"
                       href="#"
                       id="logout_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -1411,6 +1475,7 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="reset-sidebar-link"
                       href="#"
                       id="reset_sidebar_link"
+                      role="button"
                       style="display: block;"
                       tabindex="-1"
                     >
@@ -1458,8 +1523,10 @@ exports[`Inventory should render correctly for a visual user 1`] = `
             id="shopping_cart_container"
           >
             <a
+              aria-label="Cart, empty"
               class="shopping_cart_link"
               data-test="shopping-cart-link"
+              role="button"
             />
           </div>
         </div>
@@ -1486,6 +1553,7 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                 Name (A to Z)
               </span>
               <select
+                aria-label="Sort products"
                 class="product_sort_container"
                 data-test="product-sort-container"
               >
@@ -1513,9 +1581,10 @@ exports[`Inventory should render correctly for a visual user 1`] = `
             </span>
           </div>
         </div>
-      </div>
+      </header>
       <div
         id="inventory_container"
+        role="main"
       >
         <div>
           <div
@@ -1535,9 +1604,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Backpack"
                     data-test="item-4-img-link"
                     href="#"
                     id="item_4_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Backpack"
@@ -1554,9 +1625,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Backpack"
                       data-test="item-4-title-link"
                       href="#"
                       id="item_4_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1600,9 +1673,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Bike Light"
                     data-test="item-0-img-link"
                     href="#"
                     id="item_0_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Bike Light"
@@ -1619,9 +1694,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Bike Light"
                       data-test="item-0-title-link"
                       href="#"
                       id="item_0_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1665,9 +1742,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Bolt T-Shirt"
                     data-test="item-1-img-link"
                     href="#"
                     id="item_1_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Bolt T-Shirt"
@@ -1684,9 +1763,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Bolt T-Shirt"
                       data-test="item-1-title-link"
                       href="#"
                       id="item_1_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name align_right"
@@ -1730,9 +1811,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Fleece Jacket"
                     data-test="item-5-img-link"
                     href="#"
                     id="item_5_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Fleece Jacket"
@@ -1749,9 +1832,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Fleece Jacket"
                       data-test="item-5-title-link"
                       href="#"
                       id="item_5_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name align_right"
@@ -1795,9 +1880,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Sauce Labs Onesie"
                     data-test="item-2-img-link"
                     href="#"
                     id="item_2_img_link"
+                    role="button"
                   >
                     <img
                       alt="Sauce Labs Onesie"
@@ -1814,9 +1901,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Sauce Labs Onesie"
                       data-test="item-2-title-link"
                       href="#"
                       id="item_2_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "
@@ -1860,9 +1949,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                   class="inventory_item_img"
                 >
                   <a
+                    aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                     data-test="item-3-img-link"
                     href="#"
                     id="item_3_img_link"
+                    role="button"
                   >
                     <img
                       alt="Test.allTheThings() T-Shirt (Red)"
@@ -1879,9 +1970,11 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                     class="inventory_item_label"
                   >
                     <a
+                      aria-label="View details for Test.allTheThings() T-Shirt (Red)"
                       data-test="item-3-title-link"
                       href="#"
                       id="item_3_title_link"
+                      role="button"
                     >
                       <div
                         class="inventory_item_name "

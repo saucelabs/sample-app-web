@@ -12,6 +12,7 @@ exports[`Select should render with a testID 1`] = `
       Name (A to Z)
     </span>
     <select
+      aria-label="Select an option"
       class="product_sort_container"
       data-test="foo"
     >
@@ -52,6 +53,7 @@ exports[`Select should render with default props 1`] = `
       Name (A to Z)
     </span>
     <select
+      aria-label="Select an option"
       class="product_sort_container"
     >
       <option

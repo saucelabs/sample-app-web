@@ -118,6 +118,8 @@ const InventoryListItem = (props) => {
             history.push(itemLink);
           }}
           data-test={`item-${id}-img-link`}
+          role="button"
+          aria-label={`View details for ${name}`}
         >
           <img
             alt={name}
@@ -142,6 +144,8 @@ const InventoryListItem = (props) => {
               history.push(itemLink);
             }}
             data-test={`item-${id}-title-link`}
+            role="button"
+            aria-label={`View details for ${name}`}
           >
             <div className={itemNameClass} data-test="inventory-item-name">
               {name}

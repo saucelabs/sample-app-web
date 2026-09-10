@@ -83,11 +83,11 @@ function Login(props) {
     <div className="login_container">
       <div className="login_logo">Swag Labs</div>
 
-      <div className="login_wrapper" data-test="login-container">
+      <div className="login_wrapper" data-test="login-container" role="main">
         <div className="login_wrapper-inner">
           <div id="login_button_container" className="form_column">
             <div className="login-box">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} aria-label="Login">
                 <InputError
                   isError={Boolean(error)}
                   type={INPUT_TYPES.TEXT}

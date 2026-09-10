@@ -49,6 +49,7 @@ const DrawerMenu = ({ history }) => {
       outerContainerId={"page_wrapper"}
       pageWrapId={"contents_wrapper"}
       noOverlay
+      aria-label="Main menu"
     >
       <a
         id="inventory_sidebar_link"
@@ -59,6 +60,7 @@ const DrawerMenu = ({ history }) => {
           history.push(ROUTES.INVENTORY);
         }}
         data-test="inventory-sidebar-link"
+        role="button"
       >
         All Items
       </a>
@@ -80,6 +82,7 @@ const DrawerMenu = ({ history }) => {
           history.push(ROUTES.LOGIN);
         }}
         data-test="logout-sidebar-link"
+        role="button"
       >
         Logout
       </a>
@@ -92,6 +95,7 @@ const DrawerMenu = ({ history }) => {
           resetStorage();
         }}
         data-test="reset-sidebar-link"
+        role="button"
       >
         Reset App State
       </a>

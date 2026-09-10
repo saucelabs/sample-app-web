@@ -48,6 +48,7 @@ const Finish = ({ history, location }) => {
           id="checkout_complete_container"
           className="checkout_complete_container"
           data-test="checkout-complete-container"
+          role="main"
         >
           <img
             alt="Pony Express"

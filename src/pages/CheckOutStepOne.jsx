@@ -68,9 +68,10 @@ const CheckOutStepOne = ({ history }) => {
           id="checkout_info_container"
           className="checkout_info_container"
           data-test="checkout-info-container"
+          role="main"
         >
           <div className="checkout_info_wrapper">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} aria-label="Checkout information">
               <div className="checkout_info">
                 <InputError
                   isError={Boolean(error)}

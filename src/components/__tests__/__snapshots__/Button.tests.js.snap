@@ -16,7 +16,7 @@ exports[`Button should render a Back button 1`] = `
     class="btn btn_secondary back btn_large"
   >
     <img
-      alt="Go back"
+      alt=""
       class="back-image"
       src="test-file-stub"
     />

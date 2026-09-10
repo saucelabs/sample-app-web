@@ -13,6 +13,7 @@ exports[`Login should render correctly 1`] = `
     <div
       class="login_wrapper"
       data-test="login-container"
+      role="main"
     >
       <div
         class="login_wrapper-inner"
@@ -24,11 +25,14 @@ exports[`Login should render correctly 1`] = `
           <div
             class="login-box"
           >
-            <form>
+            <form
+              aria-label="Login"
+            >
               <div
                 class="form_group"
               >
                 <input
+                  aria-label="Username"
                   autocapitalize="none"
                   autocorrect="off"
                   class="input_error form_input"
@@ -44,6 +48,7 @@ exports[`Login should render correctly 1`] = `
                 class="form_group"
               >
                 <input
+                  aria-label="Password"
                   autocapitalize="none"
                   autocorrect="off"
                   class="input_error form_input"
