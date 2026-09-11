@@ -17,6 +17,9 @@ export const ROUTES = {
   CHECKOUT_STEP_ONE: "/checkout-step-one.html",
   CHECKOUT_STEP_TWO: "/checkout-step-two.html",
   CHECKOUT_COMPLETE: "/checkout-complete.html",
+  DYNAMIC_CATALOG_LAZY_LOAD: "/dynamic-catalog-lazy-load.html",
+  DYNAMIC_CATALOG_SPINNER: "/dynamic-catalog-spinner.html",
+  DYNAMIC_CATALOG_SLIDER: "/dynamic-catalog-slider.html",
 };
 export const CART_CONTENTS = "cart-contents";
 export const SESSION_USERNAME = "session-username";

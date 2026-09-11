@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { withRouter } from "../utils/withRouter";
 import PropTypes from "prop-types";
 import { slide as Menu } from "react-burger-menu";
@@ -16,6 +16,7 @@ import menuIconSvg from "../assets/svg/menu3x.svg";
 import "./DrawerMenu.css";
 
 const DrawerMenu = ({ history }) => {
+  const [isDynamicCatalogOpen, setIsDynamicCatalogOpen] = useState(false);
   const resetStorage = () => {
     // Wipe out our shopping cart now
     ShoppingCart.resetCart();
@@ -64,6 +65,68 @@ const DrawerMenu = ({ history }) => {
       >
         All Items
       </a>
+      <a
+        id="dynamic_catalog_sidebar_link"
+        className="menu-item"
+        href="#"
+        onClick={(evt) => {
+          evt.preventDefault();
+          setIsDynamicCatalogOpen((open) => !open);
+        }}
+        data-test="dynamic-catalog-sidebar-link"
+        role="button"
+        aria-expanded={isDynamicCatalogOpen}
+        aria-controls="dynamic_catalog_submenu"
+      >
+        Dynamic Catalog
+        <span
+          className={`submenu-chevron${isDynamicCatalogOpen ? " open" : ""}`}
+          aria-hidden="true"
+        />
+      </a>
+      {isDynamicCatalogOpen && (
+        <div id="dynamic_catalog_submenu" data-test="dynamic-catalog-submenu">
+          <a
+            id="dynamic_catalog_lazy_load_link"
+            className="menu-item submenu-item"
+            href="#"
+            onClick={(evt) => {
+              evt.preventDefault();
+              history.push(ROUTES.DYNAMIC_CATALOG_LAZY_LOAD);
+            }}
+            data-test="dynamic-catalog-lazy-load-link"
+            role="button"
+          >
+            Lazy Load
+          </a>
+          <a
+            id="dynamic_catalog_spinner_link"
+            className="menu-item submenu-item"
+            href="#"
+            onClick={(evt) => {
+              evt.preventDefault();
+              history.push(ROUTES.DYNAMIC_CATALOG_SPINNER);
+            }}
+            data-test="dynamic-catalog-spinner-link"
+            role="button"
+          >
+            Spinner
+          </a>
+          <a
+            id="dynamic_catalog_slider_link"
+            className="menu-item submenu-item"
+            href="#"
+            onClick={(evt) => {
+              evt.preventDefault();
+              history.push(ROUTES.DYNAMIC_CATALOG_SLIDER);
+            }}
+            data-test="dynamic-catalog-slider-link"
+            role="button"
+          >
+            Slider
+          </a>
+        </div>
+      )}
       <a
         id="about_sidebar_link"
         className="menu-item"

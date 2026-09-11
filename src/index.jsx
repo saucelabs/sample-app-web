@@ -7,6 +7,9 @@ import "./index.css";
 import Cart from "./pages/Cart";
 import CheckOutStepOne from "./pages/CheckOutStepOne";
 import CheckOutStepTwo from "./pages/CheckOutStepTwo";
+import DynamicCatalogLazyLoad from "./pages/DynamicCatalogLazyLoad";
+import DynamicCatalogSlider from "./pages/DynamicCatalogSlider";
+import DynamicCatalogSpinner from "./pages/DynamicCatalogSpinner";
 import Finish from "./pages/Finish";
 import Inventory from "./pages/Inventory";
 import InventoryItem from "./pages/InventoryItem";
@@ -67,6 +70,18 @@ const routing = (
         <Route
           path={ROUTES.CHECKOUT_COMPLETE}
           element={<PrivateRoute component={Finish} />}
+        />
+        <Route
+          path={ROUTES.DYNAMIC_CATALOG_LAZY_LOAD}
+          element={<PrivateRoute component={DynamicCatalogLazyLoad} />}
+        />
+        <Route
+          path={ROUTES.DYNAMIC_CATALOG_SPINNER}
+          element={<PrivateRoute component={DynamicCatalogSpinner} />}
+        />
+        <Route
+          path={ROUTES.DYNAMIC_CATALOG_SLIDER}
+          element={<PrivateRoute component={DynamicCatalogSlider} />}
         />
       </Routes>
     </Router>

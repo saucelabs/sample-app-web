@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`CheckOutStepOne should render correctly 1`] = `
+exports[`DynamicCatalogLazyLoad should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="page_wrapper"
@@ -175,105 +175,85 @@ exports[`CheckOutStepOne should render correctly 1`] = `
             class="title"
             data-test="title"
           >
-            Checkout: Your Information
+            Dynamic Catalog - Lazy Load
           </span>
         </div>
       </header>
       <div
-        class="checkout_info_container"
-        data-test="checkout-info-container"
-        id="checkout_info_container"
-        role="main"
+        class="dynamic_catalog_lazy_load_container"
+        data-test="dynamic-catalog-lazy-load-container"
       >
         <div
-          class="checkout_info_wrapper"
+          class="dynamic_catalog_card"
+          data-test="lazy-load-item-0"
         >
-          <form
-            aria-label="Checkout information"
+          <div
+            class="dynamic_catalog_card_placeholder"
+            data-test="lazy-load-item-0-placeholder"
           >
-            <div
-              class="checkout_info"
-            >
-              <div
-                class="form_group"
-              >
-                <input
-                  aria-label="First Name"
-                  autocapitalize="none"
-                  autocorrect="off"
-                  class="input_error form_input"
-                  data-test="firstName"
-                  id="first-name"
-                  name="firstName"
-                  placeholder="First Name"
-                  type="text"
-                  value=""
-                />
-              </div>
-              <div
-                class="form_group"
-              >
-                <input
-                  aria-label="Last Name"
-                  autocapitalize="none"
-                  autocorrect="off"
-                  class="input_error form_input"
-                  data-test="lastName"
-                  id="last-name"
-                  name="lastName"
-                  placeholder="Last Name"
-                  type="text"
-                  value=""
-                />
-              </div>
-              <div
-                class="form_group"
-              >
-                <input
-                  aria-label="Zip/Postal Code"
-                  autocapitalize="none"
-                  autocorrect="off"
-                  class="input_error form_input"
-                  data-test="postalCode"
-                  id="postal-code"
-                  name="postalCode"
-                  placeholder="Zip/Postal Code"
-                  type="text"
-                  value=""
-                />
-              </div>
-              <div
-                class="error-message-container"
-              />
-            </div>
-            <div
-              class="checkout_buttons"
-            >
-              <button
-                class="btn btn_secondary back btn_medium cart_cancel_link"
-                data-test="cancel"
-                id="cancel"
-                name="cancel"
-              >
-                <img
-                  alt=""
-                  class="back-image"
-                  src="test-file-stub"
-                />
-                Cancel
-              </button>
-              <input
-                class="submit-button btn btn_primary cart_button btn_action"
-                data-test="continue"
-                id="continue"
-                name="continue"
-                type="submit"
-                value="Continue"
-              />
-            </div>
-          </form>
+            Loading…
+          </div>
+        </div>
+        <div
+          class="dynamic_catalog_card"
+          data-test="lazy-load-item-1"
+        >
+          <div
+            class="dynamic_catalog_card_placeholder"
+            data-test="lazy-load-item-1-placeholder"
+          >
+            Loading…
+          </div>
+        </div>
+        <div
+          class="dynamic_catalog_card"
+          data-test="lazy-load-item-2"
+        >
+          <div
+            class="dynamic_catalog_card_placeholder"
+            data-test="lazy-load-item-2-placeholder"
+          >
+            Loading…
+          </div>
+        </div>
+        <div
+          class="dynamic_catalog_card"
+          data-test="lazy-load-item-3"
+        >
+          <div
+            class="dynamic_catalog_card_placeholder"
+            data-test="lazy-load-item-3-placeholder"
+          >
+            Loading…
+          </div>
+        </div>
+        <div
+          class="dynamic_catalog_card"
+          data-test="lazy-load-item-4"
+        >
+          <div
+            class="dynamic_catalog_card_placeholder"
+            data-test="lazy-load-item-4-placeholder"
+          >
+            Loading…
+          </div>
+        </div>
+        <div
+          class="dynamic_catalog_card"
+          data-test="lazy-load-item-5"
+        >
+          <div
+            class="dynamic_catalog_card_placeholder"
+            data-test="lazy-load-item-5-placeholder"
+          >
+            Loading…
+          </div>
         </div>
       </div>
+      <div
+        class="dynamic_catalog_lazy_load_sentinel"
+        data-test="dynamic-catalog-lazy-load-sentinel"
+      />
     </div>
     <footer
       class="footer"

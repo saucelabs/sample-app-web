@@ -67,3 +67,22 @@
 .visual_failure {
   transform: rotate(3deg);
 }
+
+.submenu-chevron {
+  display: inline-block;
+  margin-left: 6px;
+  border: solid #18583a;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.submenu-chevron.open {
+  transform: rotate(-135deg);
+}
+
+.submenu-item {
+  padding-left: 20px;
+  font-size: 14px;
+}

@@ -1,0 +1,12 @@
+.dynamic_catalog_lazy_load_container {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 15px 60px;
+}
+
+.dynamic_catalog_lazy_load_sentinel {
+  height: 1px;
+}
