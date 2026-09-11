@@ -63,6 +63,23 @@ exports[`HeaderContainer should render for a visual user 1`] = `
                   All Items
                 </a>
                 <a
+                  aria-controls="dynamic_catalog_submenu"
+                  aria-expanded="false"
+                  class="bm-item menu-item"
+                  data-test="dynamic-catalog-sidebar-link"
+                  href="#"
+                  id="dynamic_catalog_sidebar_link"
+                  role="button"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Dynamic Catalog
+                  <span
+                    aria-hidden="true"
+                    class="submenu-chevron"
+                  />
+                </a>
+                <a
                   class="bm-item menu-item"
                   data-test="about-sidebar-link"
                   href="https://saucelabs.com/"
@@ -212,6 +229,23 @@ exports[`HeaderContainer should render with all props 1`] = `
                   tabindex="-1"
                 >
                   All Items
+                </a>
+                <a
+                  aria-controls="dynamic_catalog_submenu"
+                  aria-expanded="false"
+                  class="bm-item menu-item"
+                  data-test="dynamic-catalog-sidebar-link"
+                  href="#"
+                  id="dynamic_catalog_sidebar_link"
+                  role="button"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Dynamic Catalog
+                  <span
+                    aria-hidden="true"
+                    class="submenu-chevron"
+                  />
                 </a>
                 <a
                   class="bm-item menu-item"
@@ -384,6 +418,23 @@ exports[`HeaderContainer should render without any props 1`] = `
                   tabindex="-1"
                 >
                   All Items
+                </a>
+                <a
+                  aria-controls="dynamic_catalog_submenu"
+                  aria-expanded="false"
+                  class="bm-item menu-item"
+                  data-test="dynamic-catalog-sidebar-link"
+                  href="#"
+                  id="dynamic_catalog_sidebar_link"
+                  role="button"
+                  style="display: block;"
+                  tabindex="-1"
+                >
+                  Dynamic Catalog
+                  <span
+                    aria-hidden="true"
+                    class="submenu-chevron"
+                  />
                 </a>
                 <a
                   class="bm-item menu-item"

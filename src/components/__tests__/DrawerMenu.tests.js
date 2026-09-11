@@ -65,4 +65,63 @@ describe("DrawerMenu", () => {
     });
     expect(ShoppingCart.resetCart).toHaveBeenCalledTimes(1);
   });
+
+  it("should toggle the dynamic catalog submenu open and closed", () => {
+    const { getByTestId, queryByTestId } = render(
+      <DrawerMenu.WrappedComponent {...props} />,
+    );
+    expect(queryByTestId("dynamic-catalog-submenu")).not.toBeInTheDocument();
+
+    fireEvent.click(getByTestId("dynamic-catalog-sidebar-link"), {
+      preventDefault() {},
+    });
+    expect(getByTestId("dynamic-catalog-submenu")).toBeInTheDocument();
+    expect(
+      getByTestId("dynamic-catalog-sidebar-link").getAttribute("aria-expanded"),
+    ).toEqual("true");
+
+    fireEvent.click(getByTestId("dynamic-catalog-sidebar-link"), {
+      preventDefault() {},
+    });
+    expect(queryByTestId("dynamic-catalog-submenu")).not.toBeInTheDocument();
+  });
+
+  it("should be able to redirect to the lazy load page when clicking on the submenu link", () => {
+    const { getByTestId } = render(<DrawerMenu.WrappedComponent {...props} />);
+    fireEvent.click(getByTestId("dynamic-catalog-sidebar-link"), {
+      preventDefault() {},
+    });
+    fireEvent.click(getByTestId("dynamic-catalog-lazy-load-link"), {
+      preventDefault() {},
+    });
+    expect(props.history.push).toHaveBeenCalledWith(
+      "/dynamic-catalog-lazy-load.html",
+    );
+  });
+
+  it("should be able to redirect to the spinner page when clicking on the submenu link", () => {
+    const { getByTestId } = render(<DrawerMenu.WrappedComponent {...props} />);
+    fireEvent.click(getByTestId("dynamic-catalog-sidebar-link"), {
+      preventDefault() {},
+    });
+    fireEvent.click(getByTestId("dynamic-catalog-spinner-link"), {
+      preventDefault() {},
+    });
+    expect(props.history.push).toHaveBeenCalledWith(
+      "/dynamic-catalog-spinner.html",
+    );
+  });
+
+  it("should be able to redirect to the slider page when clicking on the submenu link", () => {
+    const { getByTestId } = render(<DrawerMenu.WrappedComponent {...props} />);
+    fireEvent.click(getByTestId("dynamic-catalog-sidebar-link"), {
+      preventDefault() {},
+    });
+    fireEvent.click(getByTestId("dynamic-catalog-slider-link"), {
+      preventDefault() {},
+    });
+    expect(props.history.push).toHaveBeenCalledWith(
+      "/dynamic-catalog-slider.html",
+    );
+  });
 });

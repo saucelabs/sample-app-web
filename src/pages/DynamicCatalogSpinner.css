@@ -1,0 +1,31 @@
+.dynamic_catalog_spinner_container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 40px 15px 60px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dynamic_catalog_spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ededed;
+  border-top-color: #3ddc91;
+  border-radius: 50%;
+  animation: dynamic_catalog_spin 0.8s linear infinite;
+}
+
+@keyframes dynamic_catalog_spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dynamic_catalog_spinner_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
