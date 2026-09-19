@@ -21,7 +21,7 @@
     "@wdio/sauce-service": "^9.29.1",
     "@wdio/shared-store-service": "^9.29.1",
     "@wdio/spec-reporter": "^9.29.1",
-    "chromedriver": "^150.0.1",
+    "chromedriver": "^153.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.9.3",
     "wdio-chromedriver-service": "^8.1.1"
