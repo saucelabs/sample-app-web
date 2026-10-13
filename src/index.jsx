@@ -32,7 +32,13 @@ BacktraceClient.initialize({
 
 const routing = (
   <ErrorBoundary>
-    <Router>
+    <Router
+      basename={
+        window.location.hostname === "saucelabs.github.io"
+          ? "/sample-app-web"
+          : "/"
+      }
+    >
       <Routes>
         <Route path={ROUTES.LOGIN} element={<Login />} />
         <Route

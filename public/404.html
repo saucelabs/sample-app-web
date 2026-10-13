@@ -23,12 +23,12 @@
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
       // Otherwise, leave pathSegmentsToKeep as 0.
-      var pathSegmentsToKeep = 0;
-
       var l = window.location;
+      var pathSegmentsToKeep = l.hostname === 'saucelabs.github.io' ? 1 : 0;
+      var appBasePath = pathSegmentsToKeep === 1 ? '/sample-app-web' : '';
 
       // If the path is explicitly for storybook, don't touch it
-      if (l.pathname.indexOf('/storybook') !== 0) {
+      if (l.pathname.indexOf(appBasePath + '/storybook') !== 0) {
         // Build origin
         var origin = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
 
