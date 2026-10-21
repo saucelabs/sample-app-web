@@ -1,0 +1,25 @@
+import{n as e}from"./rolldown-runtime-sJBDdmOt.js";import{et as t,n}from"./iframe-bAu9AA8u.js";import{i as r,n as i,r as a}from"./Button-V8VbCf2y.js";import{n as o,t as s}from"./HeaderContainer-Cz2LgSev.js";var c,l,u,d,f,p,m,h;function g(){return(g=e((()=>{t(),o(),r(),c=n(),l={title:`SwagLabs/Headers`,component:s,parameters:{layout:`fullscreen`}},u=e=>(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(s,{...e}),(0,c.jsx)(`p`,{children:`Resize the preview to see the mobile view. The Sauce Bot will disappear in mobile view.`})]}),d=u.bind({}),d.args={},f=u.bind({}),f.args={secondaryLeftComponent:(0,c.jsx)(a,{label:`Back to Products`,onClick:()=>{},type:i.BACK})},p=u.bind({}),p.args={secondaryTitle:`Title only`},m=u.bind({}),m.args={secondaryHeaderBot:!0,secondaryRightComponent:(0,c.jsx)(a,{label:`Go to something`,onClick:()=>{},type:i.ACTION}),secondaryTitle:`Title and Bot`},d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`args => <>
+    <HeaderContainer {...args} />
+    <p>
+      Resize the preview to see the mobile view. The Sauce Bot will disappear in
+      mobile view.
+    </p>
+  </>`,...d.parameters?.docs?.source}}},f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`args => <>
+    <HeaderContainer {...args} />
+    <p>
+      Resize the preview to see the mobile view. The Sauce Bot will disappear in
+      mobile view.
+    </p>
+  </>`,...f.parameters?.docs?.source}}},p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`args => <>
+    <HeaderContainer {...args} />
+    <p>
+      Resize the preview to see the mobile view. The Sauce Bot will disappear in
+      mobile view.
+    </p>
+  </>`,...p.parameters?.docs?.source}}},m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`args => <>
+    <HeaderContainer {...args} />
+    <p>
+      Resize the preview to see the mobile view. The Sauce Bot will disappear in
+      mobile view.
+    </p>
+  </>`,...m.parameters?.docs?.source}}},h=[`HeaderDefault`,`HeaderLeftComponent`,`HeaderTitle`,`HeaderTitleBotRight`]})))()}g();export{d as HeaderDefault,f as HeaderLeftComponent,p as HeaderTitle,m as HeaderTitleBotRight,h as __namedExportsOrder,l as default};
