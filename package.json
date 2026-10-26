@@ -42,7 +42,7 @@
     "playwright": "^1.61.1",
     "prettier": "^3.9.4",
     "prop-types": "^15.7.2",
-    "storybook": "^10.4.6",
+    "storybook": "^10.6.3",
     "vite": "^8.3.5",
     "wait-on": "^9.0.10"
   },
