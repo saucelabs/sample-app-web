@@ -60,6 +60,7 @@ describe("InventoryItem", () => {
 
   afterEach(() => {
     jest.clearAllMocks();
+    window.localStorage.removeItem("favorite-items");
   });
 
   it("should render with default props", () => {
@@ -81,5 +82,16 @@ describe("InventoryItem", () => {
     const { asFragment } = renderInventoryItem();
     expect(asFragment()).toMatchSnapshot();
     expect(isErrorUserSpy).toHaveBeenCalled();
+  });
+
+  it("should render a favorite toggle for the item", () => {
+    const { getByTestId } = renderInventoryItem();
+    expect(getByTestId("favorite-toggle-4")).toBeInTheDocument();
+  });
+
+  it("should not render a favorite toggle for a not found item", () => {
+    window.history.pushState({}, "", "?id=999");
+    const { queryByTestId } = renderInventoryItem();
+    expect(queryByTestId("favorite-toggle-999")).not.toBeInTheDocument();
   });
 });

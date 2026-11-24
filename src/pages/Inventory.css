@@ -22,3 +22,19 @@
   flex-flow: row wrap;
   padding: 0 15px 30px;
 }
+
+.inventory_header_controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inventory_empty_state {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 60px 15px;
+  text-align: center;
+  color: #767676;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+}

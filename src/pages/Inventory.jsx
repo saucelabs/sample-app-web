@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from "../utils/withRouter";
 import {
   isErrorUser,
@@ -11,15 +11,30 @@ import SwagLabsFooter from "../components/Footer";
 import HeaderContainer from "../components/HeaderContainer";
 import { sortAsc, sortDesc, sortHiLo, sortLoHi } from "../utils/Sorting";
 import Select from "../components/Select";
+import FavoritesFilterToggle, {
+  FAVORITES_FILTER_VIEWS,
+} from "../components/FavoritesFilterToggle";
+import { Favorites } from "../utils/favorites";
 import "./Inventory.css";
 import { BacktraceClient } from "@backtrace/react";
 
-const Inventory = ({ data }) => {
+const Inventory = ({ data, enableFavorites = true }) => {
   const InventoryData = data;
   const [inventoryList, setInventoryList] = useState(
     sortAsc(InventoryData, "name"),
   );
   const [activeOption, setActiveOption] = useState("az");
+  const [activeView, setActiveView] = useState(FAVORITES_FILTER_VIEWS.ALL);
+  const [favoriteIds, setFavoriteIds] = useState(Favorites.getFavoriteItems());
+  // Strangely enough this is being called, but not covered in the report
+  /* istanbul ignore next */
+  const favoritesListener = {
+    forceUpdate: () => setFavoriteIds(Favorites.getFavoriteItems()),
+  };
+
+  useEffect(() => {
+    Favorites.registerFavoritesListener(favoritesListener);
+  }, []);
   /* istanbul ignore next */
   const startPerformanceGlitch = (duration) => {
     const start = new Date().getTime();
@@ -79,24 +94,38 @@ const Inventory = ({ data }) => {
     }
   };
 
+  const displayedList =
+    enableFavorites && activeView === FAVORITES_FILTER_VIEWS.FAVORITES
+      ? inventoryList.filter((item) => favoriteIds.indexOf(item.id) >= 0)
+      : inventoryList;
+
   return (
     <div id="page_wrapper" className="page_wrapper">
       <div id="contents_wrapper">
         <HeaderContainer
           secondaryTitle="Products"
           secondaryRightComponent={
-            <Select
-              activeOption={activeOption}
-              ariaLabel="Sort products"
-              options={[
-                { key: "az", value: "Name (A to Z)" },
-                { key: "za", value: "Name (Z to A)" },
-                { key: "lohi", value: "Price (low to high)" },
-                { key: "hilo", value: "Price (high to low)" },
-              ]}
-              onChange={sortByOption}
-              testId="product-sort-container"
-            />
+            <div className="inventory_header_controls">
+              {enableFavorites && (
+                <FavoritesFilterToggle
+                  activeView={activeView}
+                  onChange={setActiveView}
+                  testId="inventory-favorites-filter"
+                />
+              )}
+              <Select
+                activeOption={activeOption}
+                ariaLabel="Sort products"
+                options={[
+                  { key: "az", value: "Name (A to Z)" },
+                  { key: "za", value: "Name (Z to A)" },
+                  { key: "lohi", value: "Price (low to high)" },
+                  { key: "hilo", value: "Price (high to low)" },
+                ]}
+                onChange={sortByOption}
+                testId="product-sort-container"
+              />
+            </div>
           }
         />
         <div id="inventory_container" role="main">
@@ -106,26 +135,36 @@ const Inventory = ({ data }) => {
               className="inventory_container"
               data-test="inventory-container"
             >
-              <div className="inventory_list" data-test="inventory-list">
-                {inventoryList.map((item, i) => {
-                  return (
-                    <InventoryListItem
-                      key={item.id}
-                      id={item.id}
-                      image_url={
-                        isProblemUser() || (isVisualFailure && i === 0)
-                          ? "sl-404.jpg"
-                          : item.image_url
-                      }
-                      name={item.name}
-                      desc={item.desc}
-                      price={isVisualFailure ? randomPrice() : item.price}
-                      isTextAlignRight={isVisualFailure && i > 1 && i < 4}
-                      missAlignButton={isVisualFailure && i === 5}
-                    />
-                  );
-                })}
-              </div>
+              {displayedList.length > 0 ? (
+                <div className="inventory_list" data-test="inventory-list">
+                  {displayedList.map((item, i) => {
+                    return (
+                      <InventoryListItem
+                        key={item.id}
+                        id={item.id}
+                        image_url={
+                          isProblemUser() || (isVisualFailure && i === 0)
+                            ? "sl-404.jpg"
+                            : item.image_url
+                        }
+                        name={item.name}
+                        desc={item.desc}
+                        price={isVisualFailure ? randomPrice() : item.price}
+                        isTextAlignRight={isVisualFailure && i > 1 && i < 4}
+                        missAlignButton={isVisualFailure && i === 5}
+                        showFavoriteToggle={enableFavorites}
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <div
+                  className="inventory_empty_state"
+                  data-test="inventory-empty-favorites"
+                >
+                  No favorites yet
+                </div>
+              )}
             </div>
           </div>
         </div>

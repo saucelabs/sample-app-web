@@ -11,6 +11,7 @@ import "./InventoryItem.css";
 import BrokenComponent from "../components/BrokenComponent";
 import { ErrorBoundary } from "@backtrace/react";
 import getImage from "../utils/imageLoader";
+import FavoriteToggle from "../components/FavoriteToggle";
 
 const InventoryItem = (props) => {
   useEffect(() => {
@@ -27,7 +28,9 @@ const InventoryItem = (props) => {
     inventoryId = parseInt(queryParams.get("id"));
   }
 
-  if (inventoryId >= 0 && InventoryData.length > inventoryId) {
+  const itemFound = inventoryId >= 0 && InventoryData.length > inventoryId;
+
+  if (itemFound) {
     item = InventoryData[inventoryId];
   } else {
     item = {
@@ -168,6 +171,12 @@ const InventoryItem = (props) => {
                     .replace(/\s+/g, "-")
                     .toLowerCase()}-img`}
                 />
+                {itemFound && (
+                  <FavoriteToggle
+                    itemId={inventoryId}
+                    testId={`favorite-toggle-${inventoryId}`}
+                  />
+                )}
               </div>
               <div className="inventory_details_desc_container">
                 <div

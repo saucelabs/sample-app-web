@@ -22,6 +22,25 @@ exports[`InventoryListItem should render with default props 1`] = `
           data-test="inventory-item-swag-item-name-img"
         />
       </a>
+      <button
+        aria-label="Add to favorites"
+        aria-pressed="false"
+        class="favorite_toggle"
+        data-test="favorite-toggle-1"
+        type="button"
+      >
+        <svg
+          class="favorite_toggle_icon"
+          fill="none"
+          stroke="#fff"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+          />
+        </svg>
+      </button>
     </div>
     <div
       class="inventory_item_description"
@@ -96,6 +115,25 @@ exports[`InventoryListItem should render with text aligned right 1`] = `
           data-test="inventory-item-swag-item-name-img"
         />
       </a>
+      <button
+        aria-label="Add to favorites"
+        aria-pressed="false"
+        class="favorite_toggle"
+        data-test="favorite-toggle-1"
+        type="button"
+      >
+        <svg
+          class="favorite_toggle_icon"
+          fill="none"
+          stroke="#fff"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+          />
+        </svg>
+      </button>
     </div>
     <div
       class="inventory_item_description"

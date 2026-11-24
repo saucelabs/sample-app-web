@@ -1,0 +1,23 @@
+.favorites_filter_toggle {
+  display: flex;
+  border: 1px solid #ededed;
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  height: 32px;
+  box-sizing: border-box;
+}
+
+.favorites_filter_toggle_option {
+  border: none;
+  background: #fff;
+  color: #767676;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.favorites_filter_toggle_option.active {
+  background: #18583a;
+  color: #fff;
+}

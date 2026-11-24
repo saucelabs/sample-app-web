@@ -180,42 +180,67 @@ exports[`Inventory should render correctly 1`] = `
           <div
             class="right_component"
           >
-            <span
-              class="select_container"
+            <div
+              class="inventory_header_controls"
             >
               <span
-                class="active_option"
-                data-test="active-option"
+                class="favorites_filter_toggle"
+                data-test="inventory-favorites-filter"
               >
-                Name (A to Z)
+                <button
+                  aria-pressed="true"
+                  class="favorites_filter_toggle_option active"
+                  data-test="inventory-favorites-filter-all"
+                  type="button"
+                >
+                  All
+                </button>
+                <button
+                  aria-pressed="false"
+                  class="favorites_filter_toggle_option"
+                  data-test="inventory-favorites-filter-favorites"
+                  type="button"
+                >
+                  Favorites
+                </button>
               </span>
-              <select
-                aria-label="Sort products"
-                class="product_sort_container"
-                data-test="product-sort-container"
+              <span
+                class="select_container"
               >
-                <option
-                  value="az"
+                <span
+                  class="active_option"
+                  data-test="active-option"
                 >
                   Name (A to Z)
-                </option>
-                <option
-                  value="za"
+                </span>
+                <select
+                  aria-label="Sort products"
+                  class="product_sort_container"
+                  data-test="product-sort-container"
                 >
-                  Name (Z to A)
-                </option>
-                <option
-                  value="lohi"
-                >
-                  Price (low to high)
-                </option>
-                <option
-                  value="hilo"
-                >
-                  Price (high to low)
-                </option>
-              </select>
-            </span>
+                  <option
+                    value="az"
+                  >
+                    Name (A to Z)
+                  </option>
+                  <option
+                    value="za"
+                  >
+                    Name (Z to A)
+                  </option>
+                  <option
+                    value="lohi"
+                  >
+                    Price (low to high)
+                  </option>
+                  <option
+                    value="hilo"
+                  >
+                    Price (high to low)
+                  </option>
+                </select>
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -253,6 +278,25 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="inventory-item-sauce-labs-backpack-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-4"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -322,6 +366,25 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="inventory-item-sauce-labs-bike-light-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-0"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -391,6 +454,25 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="inventory-item-sauce-labs-bolt-t-shirt-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-1"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -460,6 +542,25 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="inventory-item-sauce-labs-fleece-jacket-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-5"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -529,6 +630,25 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="inventory-item-sauce-labs-onesie-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-2"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -598,6 +718,25 @@ exports[`Inventory should render correctly 1`] = `
                       data-test="inventory-item-test.allthethings()-t-shirt-(red)-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-3"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -887,42 +1026,67 @@ exports[`Inventory should render correctly for a problem user 1`] = `
           <div
             class="right_component"
           >
-            <span
-              class="select_container"
+            <div
+              class="inventory_header_controls"
             >
               <span
-                class="active_option"
-                data-test="active-option"
+                class="favorites_filter_toggle"
+                data-test="inventory-favorites-filter"
               >
-                Name (A to Z)
+                <button
+                  aria-pressed="true"
+                  class="favorites_filter_toggle_option active"
+                  data-test="inventory-favorites-filter-all"
+                  type="button"
+                >
+                  All
+                </button>
+                <button
+                  aria-pressed="false"
+                  class="favorites_filter_toggle_option"
+                  data-test="inventory-favorites-filter-favorites"
+                  type="button"
+                >
+                  Favorites
+                </button>
               </span>
-              <select
-                aria-label="Sort products"
-                class="product_sort_container"
-                data-test="product-sort-container"
+              <span
+                class="select_container"
               >
-                <option
-                  value="az"
+                <span
+                  class="active_option"
+                  data-test="active-option"
                 >
                   Name (A to Z)
-                </option>
-                <option
-                  value="za"
+                </span>
+                <select
+                  aria-label="Sort products"
+                  class="product_sort_container"
+                  data-test="product-sort-container"
                 >
-                  Name (Z to A)
-                </option>
-                <option
-                  value="lohi"
-                >
-                  Price (low to high)
-                </option>
-                <option
-                  value="hilo"
-                >
-                  Price (high to low)
-                </option>
-              </select>
-            </span>
+                  <option
+                    value="az"
+                  >
+                    Name (A to Z)
+                  </option>
+                  <option
+                    value="za"
+                  >
+                    Name (Z to A)
+                  </option>
+                  <option
+                    value="lohi"
+                  >
+                    Price (low to high)
+                  </option>
+                  <option
+                    value="hilo"
+                  >
+                    Price (high to low)
+                  </option>
+                </select>
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -960,6 +1124,25 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="inventory-item-sauce-labs-backpack-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-4"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1029,6 +1212,25 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="inventory-item-sauce-labs-bike-light-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-0"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1098,6 +1300,25 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="inventory-item-sauce-labs-bolt-t-shirt-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-1"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1167,6 +1388,25 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="inventory-item-sauce-labs-fleece-jacket-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-5"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1236,6 +1476,25 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="inventory-item-sauce-labs-onesie-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-2"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1305,6 +1564,25 @@ exports[`Inventory should render correctly for a problem user 1`] = `
                       data-test="inventory-item-test.allthethings()-t-shirt-(red)-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-3"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1594,42 +1872,67 @@ exports[`Inventory should render correctly for a visual user 1`] = `
           <div
             class="right_component"
           >
-            <span
-              class="select_container"
+            <div
+              class="inventory_header_controls"
             >
               <span
-                class="active_option"
-                data-test="active-option"
+                class="favorites_filter_toggle"
+                data-test="inventory-favorites-filter"
               >
-                Name (A to Z)
+                <button
+                  aria-pressed="true"
+                  class="favorites_filter_toggle_option active"
+                  data-test="inventory-favorites-filter-all"
+                  type="button"
+                >
+                  All
+                </button>
+                <button
+                  aria-pressed="false"
+                  class="favorites_filter_toggle_option"
+                  data-test="inventory-favorites-filter-favorites"
+                  type="button"
+                >
+                  Favorites
+                </button>
               </span>
-              <select
-                aria-label="Sort products"
-                class="product_sort_container"
-                data-test="product-sort-container"
+              <span
+                class="select_container"
               >
-                <option
-                  value="az"
+                <span
+                  class="active_option"
+                  data-test="active-option"
                 >
                   Name (A to Z)
-                </option>
-                <option
-                  value="za"
+                </span>
+                <select
+                  aria-label="Sort products"
+                  class="product_sort_container"
+                  data-test="product-sort-container"
                 >
-                  Name (Z to A)
-                </option>
-                <option
-                  value="lohi"
-                >
-                  Price (low to high)
-                </option>
-                <option
-                  value="hilo"
-                >
-                  Price (high to low)
-                </option>
-              </select>
-            </span>
+                  <option
+                    value="az"
+                  >
+                    Name (A to Z)
+                  </option>
+                  <option
+                    value="za"
+                  >
+                    Name (Z to A)
+                  </option>
+                  <option
+                    value="lohi"
+                  >
+                    Price (low to high)
+                  </option>
+                  <option
+                    value="hilo"
+                  >
+                    Price (high to low)
+                  </option>
+                </select>
+              </span>
+            </div>
           </div>
         </div>
       </header>
@@ -1667,6 +1970,25 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="inventory-item-sauce-labs-backpack-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-4"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1736,6 +2058,25 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="inventory-item-sauce-labs-bike-light-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-0"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1805,6 +2146,25 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="inventory-item-sauce-labs-bolt-t-shirt-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-1"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1874,6 +2234,25 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="inventory-item-sauce-labs-fleece-jacket-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-5"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -1943,6 +2322,25 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="inventory-item-sauce-labs-onesie-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-2"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"
@@ -2012,6 +2410,25 @@ exports[`Inventory should render correctly for a visual user 1`] = `
                       data-test="inventory-item-test.allthethings()-t-shirt-(red)-img"
                     />
                   </a>
+                  <button
+                    aria-label="Add to favorites"
+                    aria-pressed="false"
+                    class="favorite_toggle"
+                    data-test="favorite-toggle-3"
+                    type="button"
+                  >
+                    <svg
+                      class="favorite_toggle_icon"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
                 </div>
                 <div
                   class="inventory_item_description"

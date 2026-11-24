@@ -11,6 +11,7 @@
 .inventory_item_img {
   flex: 1;
   overflow: hidden;
+  position: relative;
 }
 .inventory_item_img a {
   display: block;

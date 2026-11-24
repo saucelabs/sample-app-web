@@ -1,22 +1,31 @@
 import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 import getImage from "../utils/imageLoader";
+import FavoriteToggle from "./FavoriteToggle";
 import "./DynamicCatalogItemCard.css";
 
 const DynamicCatalogItemCard = forwardRef(
-  ({ item, isLoaded = true, testId }, ref) => {
+  ({ item, isLoaded = true, showFavoriteToggle = true, testId }, ref) => {
     const imgSrc = getImage(item.image_url);
 
     return (
       <div ref={ref} className="dynamic_catalog_card" data-test={testId}>
         {isLoaded ? (
           <>
-            <img
-              alt={item.name}
-              className="dynamic_catalog_card_img"
-              src={imgSrc}
-              data-test={`${testId}-img`}
-            />
+            <div className="dynamic_catalog_card_img_container">
+              <img
+                alt={item.name}
+                className="dynamic_catalog_card_img"
+                src={imgSrc}
+                data-test={`${testId}-img`}
+              />
+              {showFavoriteToggle && (
+                <FavoriteToggle
+                  itemId={item.id}
+                  testId={`${testId}-favorite-toggle`}
+                />
+              )}
+            </div>
             <div
               className="dynamic_catalog_card_name"
               data-test={`${testId}-name`}
@@ -59,6 +68,10 @@ DynamicCatalogItemCard.propTypes = {
    * Whether the item content is loaded, or a placeholder should show instead
    */
   isLoaded: PropTypes.bool,
+  /**
+   * Whether to render the favorite toggle over the item image
+   */
+  showFavoriteToggle: PropTypes.bool,
   /**
    * The base data-test id for this card
    */

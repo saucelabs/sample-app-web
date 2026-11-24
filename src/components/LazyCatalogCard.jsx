@@ -29,6 +29,7 @@ const LazyCatalogCard = ({ item, testId }) => {
       ref={nodeRef}
       item={item}
       isLoaded={isLoaded}
+      showFavoriteToggle={false}
       testId={testId}
     />
   );

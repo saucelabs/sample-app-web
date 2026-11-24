@@ -33,6 +33,18 @@
   left: 12px;
 }
 
+.favorites_list {
+  padding: 20px 0 0;
+  border-top: 1px solid #ededed;
+}
+
+.favorites_list_heading {
+  font-size: 16px;
+  font-weight: 500;
+  color: #484c55;
+  padding-bottom: 20px;
+}
+
 .cart_footer {
   padding: 40px 0;
   margin-bottom: 30px;
