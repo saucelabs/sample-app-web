@@ -21,6 +21,7 @@ describe("InventoryListItem", () => {
 
   afterEach(() => {
     jest.clearAllMocks();
+    window.localStorage.removeItem("favorite-items");
   });
 
   it("should render with default props", () => {
@@ -68,5 +69,32 @@ describe("InventoryListItem", () => {
       `/inventory-item.html?id=${props.id + 1}`,
     );
     isProblemUserSpy.mockClear();
+  });
+
+  it("should render a favorite toggle for the item", () => {
+    const { getByTestId } = render(
+      <InventoryListItem.WrappedComponent {...props} />,
+    );
+    expect(getByTestId(`favorite-toggle-${props.id}`)).toBeInTheDocument();
+  });
+
+  it("should not navigate to the details page when the favorite toggle is clicked", () => {
+    const { getByTestId } = render(
+      <InventoryListItem.WrappedComponent {...props} />,
+    );
+    fireEvent.click(getByTestId(`favorite-toggle-${props.id}`));
+    expect(props.history.push).not.toHaveBeenCalled();
+  });
+
+  it("should not render a favorite toggle when showFavoriteToggle is false", () => {
+    const { queryByTestId } = render(
+      <InventoryListItem.WrappedComponent
+        {...props}
+        showFavoriteToggle={false}
+      />,
+    );
+    expect(
+      queryByTestId(`favorite-toggle-${props.id}`),
+    ).not.toBeInTheDocument();
   });
 });

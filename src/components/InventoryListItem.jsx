@@ -6,6 +6,7 @@ import { isErrorUser, isProblemUser } from "../utils/Credentials";
 import "./InventoryListItem.css";
 import { ROUTES } from "../utils/Constants";
 import Button, { BUTTON_SIZES, BUTTON_TYPES } from "./Button";
+import FavoriteToggle from "./FavoriteToggle";
 import getImage from "../utils/imageLoader";
 
 const InventoryListItem = (props) => {
@@ -18,6 +19,7 @@ const InventoryListItem = (props) => {
     history,
     name,
     price,
+    showFavoriteToggle = true,
   } = props;
   const [itemInCart, setItemInCart] = useState(ShoppingCart.isItemInCart(id));
   const imgSrc = getImage(image_url);
@@ -130,6 +132,9 @@ const InventoryListItem = (props) => {
               .toLowerCase()}-img`}
           />
         </a>
+        {showFavoriteToggle && (
+          <FavoriteToggle itemId={id} testId={`favorite-toggle-${id}`} />
+        )}
       </div>
       <div
         className="inventory_item_description"
@@ -209,6 +214,10 @@ InventoryListItem.propTypes = {
    * Whether the button is misaligned
    */
   missAlignButton: PropTypes.bool.isRequired,
+  /**
+   * Whether to render the favorite toggle over the item image
+   */
+  showFavoriteToggle: PropTypes.bool,
 };
 
 export default withRouter(InventoryListItem);

@@ -15,6 +15,7 @@
 .inventory_details_container .inventory_details_img_container {
   flex: 2;
   display: block;
+  position: relative;
 }
 
 .inventory_details_container .inventory_details_img {

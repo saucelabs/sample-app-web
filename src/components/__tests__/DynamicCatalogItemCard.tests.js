@@ -10,6 +10,10 @@ const item = {
 };
 
 describe("DynamicCatalogItemCard", () => {
+  afterEach(() => {
+    window.localStorage.removeItem("favorite-items");
+  });
+
   it("should render the item content when loaded", () => {
     const { getByTestId } = render(
       <DynamicCatalogItemCard item={item} testId="card-0" />,
@@ -17,6 +21,24 @@ describe("DynamicCatalogItemCard", () => {
     expect(getByTestId("card-0-name")).toHaveTextContent(item.name);
     expect(getByTestId("card-0-price")).toHaveTextContent("$9.99");
     expect(getByTestId("card-0-img")).toBeInTheDocument();
+  });
+
+  it("should render a favorite toggle by default when loaded", () => {
+    const { getByTestId } = render(
+      <DynamicCatalogItemCard item={item} testId="card-0" />,
+    );
+    expect(getByTestId("card-0-favorite-toggle")).toBeInTheDocument();
+  });
+
+  it("should not render a favorite toggle when showFavoriteToggle is false", () => {
+    const { queryByTestId } = render(
+      <DynamicCatalogItemCard
+        item={item}
+        showFavoriteToggle={false}
+        testId="card-0"
+      />,
+    );
+    expect(queryByTestId("card-0-favorite-toggle")).not.toBeInTheDocument();
   });
 
   it("should render a placeholder when not loaded", () => {

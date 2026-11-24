@@ -47,7 +47,9 @@ const routing = (
           path={ROUTES.INVENTORY_LONG}
           element={
             <PrivateRoute
-              component={() => <Inventory data={InventoryDataLong} />}
+              component={() => (
+                <Inventory data={InventoryDataLong} enableFavorites={false} />
+              )}
             />
           }
         />
@@ -55,10 +57,7 @@ const routing = (
           path={ROUTES.INVENTORY_LIST}
           element={<PrivateRoute component={InventoryItem} />}
         />
-        <Route
-          path={ROUTES.CART}
-          element={<PrivateRoute component={Cart} />}
-        />
+        <Route path={ROUTES.CART} element={<PrivateRoute component={Cart} />} />
         <Route
           path={ROUTES.CHECKOUT_STEP_ONE}
           element={<PrivateRoute component={CheckOutStepOne} />}

@@ -50,7 +50,7 @@ describe("LazyCatalogCard", () => {
   });
 
   it("should load and unobserve once it intersects", () => {
-    const { getByTestId } = render(
+    const { getByTestId, queryByTestId } = render(
       <LazyCatalogCard item={item} testId="card-0" />,
     );
     const observer = MockIntersectionObserver.instances[0];
@@ -62,6 +62,7 @@ describe("LazyCatalogCard", () => {
 
     expect(getByTestId("card-0-name")).toBeInTheDocument();
     expect(observer.observed).not.toContain(target);
+    expect(queryByTestId("card-0-favorite-toggle")).not.toBeInTheDocument();
   });
 
   it("should ignore entries that are not intersecting", () => {
